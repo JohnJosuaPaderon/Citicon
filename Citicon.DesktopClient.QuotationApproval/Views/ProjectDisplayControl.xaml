@@ -1,0 +1,236 @@
+﻿<UserControl x:Class="Citicon.DesktopClient.QuotationApproval.Views.ProjectDisplayControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Citicon.DesktopClient.QuotationApproval.Views"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:citiconData="clr-namespace:Citicon.Data;assembly=Citicon"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../Assets/Common.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:TransitioningContent Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+            <materialDesign:TransitioningContent.OpeningEffect>
+                <materialDesign:TransitionEffect Kind="SlideInFromTop" Duration="0:0:1"/>
+            </materialDesign:TransitioningContent.OpeningEffect>
+
+            <materialDesign:Card>
+
+                <DockPanel>
+
+                    <materialDesign:TransitioningContent DockPanel.Dock="Top">
+                        <materialDesign:TransitioningContent.OpeningEffect>
+                            <materialDesign:TransitionEffect Kind="SlideInFromTop" Duration="0:0:1"/>
+                        </materialDesign:TransitioningContent.OpeningEffect>
+
+
+                        <materialDesign:ColorZone Mode="PrimaryMid">
+                            <TextBlock Text="Client's Information" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="10"/>
+                        </materialDesign:ColorZone>
+                    </materialDesign:TransitioningContent>
+
+                    <materialDesign:TransitioningContent>
+                        <materialDesign:TransitioningContent.OpeningEffect>
+                            <materialDesign:TransitionEffect Kind="ExpandIn" Duration="0:0:1"/>
+                        </materialDesign:TransitioningContent.OpeningEffect>
+
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBox x:Name="tbxClient_CompanyName" Grid.Row="0" Grid.Column="0" materialDesign:HintAssist.Hint="Company Name"/>
+                            <TextBox x:Name="tbxClient_Address" Grid.Row="1" Grid.Column="0" materialDesign:HintAssist.Hint="Address"/>
+                            <TextBox x:Name="tbxClient_Executive" Grid.Row="0" Grid.Column="2" materialDesign:HintAssist.Hint="Executive"/>
+                            <TextBox x:Name="tbxClient_ExecutivePosition" Grid.Row="1" Grid.Column="2" materialDesign:HintAssist.Hint="Position"/>
+                            <TextBox x:Name="tbxClient_Representative" Grid.Row="0" Grid.Column="4" materialDesign:HintAssist.Hint="Representative"/>
+                            <TextBox x:Name="tbxClient_RepresentativePosition" Grid.Row="1" Grid.Column="4" materialDesign:HintAssist.Hint="Position"/>
+                        </Grid>
+
+                    </materialDesign:TransitioningContent>
+
+                </DockPanel>
+
+            </materialDesign:Card>
+        </materialDesign:TransitioningContent>
+
+        <materialDesign:TransitioningContent Grid.Row="2" Grid.Column="0">
+            <materialDesign:TransitioningContent.OpeningEffect>
+                <materialDesign:TransitionEffect Kind="SlideInFromLeft" Duration="0:0:1"/>
+            </materialDesign:TransitioningContent.OpeningEffect>
+
+            <materialDesign:Card VerticalAlignment="Stretch">
+                <Grid>
+                    <DataGrid x:Name="dgvProjectList" RowHeight="45" IsReadOnly="True" SelectionUnit="FullRow" SelectionChanged="dgvProjectList_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Projects" Binding="{Binding}"/>
+                            <DataGridTextColumn Header="Location" Binding="{Binding Location}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button x:Name="btnRefresh" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" VerticalAlignment="Bottom" Height="40" Width="40" HorizontalAlignment="Right" Margin="5" Click="btnRefresh_Click">
+                        <materialDesign:PackIcon Kind="Refresh" Height="30" Width="30"/>
+                    </Button>
+                </Grid>
+            </materialDesign:Card>
+            
+        </materialDesign:TransitioningContent>
+
+        <materialDesign:TransitioningContent Grid.Row="2" Grid.Column="2">
+            <materialDesign:TransitioningContent.OpeningEffect>
+                <materialDesign:TransitionEffect Kind="SlideInFromRight" Duration="0:0:1"/>
+            </materialDesign:TransitioningContent.OpeningEffect>
+
+            <materialDesign:Card VerticalAlignment="Stretch">
+                
+                <DockPanel>
+
+                    <materialDesign:TransitioningContent DockPanel.Dock="Top">
+                        <materialDesign:TransitioningContent.OpeningEffect>
+                            <materialDesign:TransitionEffect Kind="SlideInFromTop" Duration="0:0:1"/>
+                        </materialDesign:TransitioningContent.OpeningEffect>
+
+                        <materialDesign:ColorZone Mode="PrimaryMid">
+                            <TextBlock Text="Project's Information" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="10"/>
+                        </materialDesign:ColorZone>
+
+                    </materialDesign:TransitioningContent>
+
+                    <ItemsControl Margin="10">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="10"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.Resources>
+                            <Style TargetType="{x:Type materialDesign:TransitioningContent}">
+                                <Setter Property="OpeningEffect">
+                                    <Setter.Value>
+                                        <materialDesign:TransitionEffect Kind="SlideInFromBottom" Duration="0:0:1"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ItemsControl.Resources>
+
+                        <materialDesign:TransitioningContent Grid.Row="0" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+
+                            <GroupBox Header="General Details">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBox x:Name="tbxGeneral_Name" Grid.Row="0" materialDesign:HintAssist.Hint="Project Name"/>
+                                    <TextBox x:Name="tbxGeneral_Location" Grid.Row="1" materialDesign:HintAssist.Hint="Location"/>
+                                </Grid>
+                            </GroupBox>
+
+                        </materialDesign:TransitioningContent>
+
+                        <materialDesign:TransitioningContent Grid.Row="2" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+
+                            <GroupBox Header="Project Designs">
+                                <DataGrid x:Name="dgvProjectDesignList">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Mix Type" Binding="{Binding MixType}"/>
+                                        <DataGridTextColumn Header="Aggregate" Binding="{Binding Aggregate}"/>
+                                        <DataGridTextColumn Header="Strength" Binding="{Binding Strength}"/>
+                                        <DataGridTextColumn Header="PSI" Binding="{Binding Psi,StringFormat='#,##0.00'}"/>
+                                        <DataGridTextColumn Header="Price/Cu.M" Binding="{Binding PricePerCubicMeter,StringFormat='#,##0.00'}"/>
+                                        <DataGridTextColumn Header="Cement Factor" Binding="{Binding CementFactor,StringFormat='#,##0.00'}"/>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </GroupBox>
+
+                        </materialDesign:TransitioningContent>
+
+                    </ItemsControl>
+
+                </DockPanel>
+                
+            </materialDesign:Card>
+
+        </materialDesign:TransitioningContent>
+        
+        <materialDesign:TransitioningContent Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+            <materialDesign:TransitioningContent.OpeningEffect>
+                <materialDesign:TransitionEffect Kind="ExpandIn" Duration="0:0:1"/>
+            </materialDesign:TransitioningContent.OpeningEffect>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:TransitioningContent Grid.Column="0">
+                    <materialDesign:TransitioningContent.OpeningEffect>
+                        <materialDesign:TransitionEffect Kind="SlideInFromRight" Duration="0:0:1"/>
+                    </materialDesign:TransitioningContent.OpeningEffect>
+
+                    <Button x:Name="PreviousButton" Style="{StaticResource NavigationButton}" Click="PreviousButton_Click">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Style="{StaticResource NavigationButtonIcon}"/>
+                    </Button>
+
+                </materialDesign:TransitioningContent>
+
+                <materialDesign:TransitioningContent Grid.Column="2">
+                    <materialDesign:TransitioningContent.OpeningEffect>
+                        <materialDesign:TransitionEffect Kind="SlideInFromLeft" Duration="0:0:1"/>
+                    </materialDesign:TransitioningContent.OpeningEffect>
+
+                    <Button x:Name="NextButton" Style="{StaticResource NavigationButton}" Click="NextButton_Click">
+                        <materialDesign:PackIcon Kind="ArrowRight" Style="{StaticResource NavigationButtonIcon}"/>
+                    </Button>
+                    
+                </materialDesign:TransitioningContent>
+            </Grid>
+            
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

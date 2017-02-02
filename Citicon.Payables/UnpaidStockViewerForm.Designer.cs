@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnpaidStockViewerForm));
             this.lblIventoryItemsTracking = new System.Windows.Forms.Label();
             this.lblItemDescription = new System.Windows.Forms.Label();
             this.tbxItemDescription = new System.Windows.Forms.TextBox();
@@ -164,7 +165,7 @@
             this.lblLastStockValue.AutoSize = true;
             this.lblLastStockValue.Location = new System.Drawing.Point(6, 356);
             this.lblLastStockValue.Name = "lblLastStockValue";
-            this.lblLastStockValue.Size = new System.Drawing.Size(148, 25);
+            this.lblLastStockValue.Size = new System.Drawing.Size(146, 25);
             this.lblLastStockValue.TabIndex = 22;
             this.lblLastStockValue.Text = "Last Stock Value";
             // 
@@ -183,7 +184,7 @@
             this.lblAddedStockValue.AutoSize = true;
             this.lblAddedStockValue.Location = new System.Drawing.Point(421, 356);
             this.lblAddedStockValue.Name = "lblAddedStockValue";
-            this.lblAddedStockValue.Size = new System.Drawing.Size(170, 25);
+            this.lblAddedStockValue.Size = new System.Drawing.Size(168, 25);
             this.lblAddedStockValue.TabIndex = 24;
             this.lblAddedStockValue.Text = "Added Stock Value";
             // 
@@ -221,7 +222,7 @@
             this.lblPaymentTerm.AutoSize = true;
             this.lblPaymentTerm.Location = new System.Drawing.Point(421, 420);
             this.lblPaymentTerm.Name = "lblPaymentTerm";
-            this.lblPaymentTerm.Size = new System.Drawing.Size(133, 25);
+            this.lblPaymentTerm.Size = new System.Drawing.Size(130, 25);
             this.lblPaymentTerm.TabIndex = 28;
             this.lblPaymentTerm.Text = "Payment Term";
             // 
@@ -297,7 +298,7 @@
             this.lblVehicle.AutoSize = true;
             this.lblVehicle.Location = new System.Drawing.Point(6, 484);
             this.lblVehicle.Name = "lblVehicle";
-            this.lblVehicle.Size = new System.Drawing.Size(74, 25);
+            this.lblVehicle.Size = new System.Drawing.Size(73, 25);
             this.lblVehicle.TabIndex = 34;
             this.lblVehicle.Text = "Vehicle";
             // 
@@ -392,7 +393,8 @@
             this.Controls.Add(this.lblIventoryItemsTracking);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UnpaidStockViewerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

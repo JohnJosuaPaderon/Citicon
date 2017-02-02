@@ -42,7 +42,9 @@ namespace Citicon.Payables
                     if (User.CurrentUser.Module == Module.CurrentModule || User.CurrentUser.Module == Supports.AdministrativeModule)
                     {
                         Hide();
-                        (new MainForm()).ShowDialog();
+                        var form = new MainForm();
+                        form.ShowDialog();
+                        form.FormClosed += (sender, e) => { form = null; };
                         tbxUsername.Text = string.Empty;
                         tbxPassword.Text = string.Empty;
                         Show();

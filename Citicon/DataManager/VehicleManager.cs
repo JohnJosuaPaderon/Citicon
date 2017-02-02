@@ -1,7 +1,9 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,6 +11,46 @@ namespace Citicon.DataManager
 {
     public sealed class VehicleManager : DataManager<Vehicle>, IDataManager<Vehicle>
     {
+        private static List<Vehicle> Vehicles;
+
+        static VehicleManager()
+        {
+            Vehicles = new List<Vehicle>();
+        }
+
+        public static async Task<Vehicle> GetByVehicleIdAsync(ulong id)
+        {
+            Vehicle vehicle = null;
+            foreach (var item in Vehicles)
+            {
+                if (item.Id == id)
+                {
+                    vehicle = item;
+                    break;
+                }
+            }
+            if (vehicle == null)
+            {
+                using (var getVehicleById = new GetVehicleById(id))
+                {
+                    vehicle = await getVehicleById.GetAsync();
+                    if (vehicle != null)
+                    {
+                        Vehicles.Add(vehicle);
+                    }
+                }
+            }
+            return vehicle;
+        }
+
+        public static async Task<IEnumerable<Vehicle>> GetTransitMixerListAsync()
+        {
+            using (var getTransitMixerVehicleList = new GetTransitMixerVehicleList())
+            {
+                return await getTransitMixerVehicleList.GetAsync();
+            }
+        }
+
         public void Add(Vehicle data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_vehicles_add"))
@@ -49,6 +91,7 @@ namespace Citicon.DataManager
             return null;
         }
 
+        [Obsolete("Use static GetVehicleByIdAsync")]
         public Vehicle GetById(ulong id)
         {
             if (id != 0)
@@ -63,6 +106,7 @@ namespace Citicon.DataManager
             return null;
         }
 
+        [Obsolete("Use static GetVehicleByIdAsync")]
         public Task<Vehicle> GetByIdAsync(ulong id)
         {
             return Task.Factory.StartNew(() => GetById(id));

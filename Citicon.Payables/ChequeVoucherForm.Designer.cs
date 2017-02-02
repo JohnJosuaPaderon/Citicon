@@ -28,17 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChequeVoucherForm));
             this.lblChequeVoucher = new System.Windows.Forms.Label();
             this.tcChequeVoucher = new System.Windows.Forms.TabControl();
             this.tpVariableCost = new System.Windows.Forms.TabPage();
+            this.lblVariableCostAccountType = new System.Windows.Forms.Label();
+            this.cmbxVariableCostAccountType = new System.Windows.Forms.ComboBox();
+            this.rtbxRemarks = new System.Windows.Forms.RichTextBox();
+            this.lblVariableCostRemarks = new System.Windows.Forms.Label();
             this.btnRemoveSameMrisNumber = new System.Windows.Forms.Button();
             this.btnRemoveSelected = new System.Windows.Forms.Button();
             this.btnRemoveAll = new System.Windows.Forms.Button();
@@ -54,28 +60,27 @@
             this.colStocksBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStocksTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpExpenses = new System.Windows.Forms.TabPage();
+            this.tbxExpenseTotalDebit = new System.Windows.Forms.TextBox();
+            this.tbxExpenseTotalCredit = new System.Windows.Forms.TextBox();
+            this.tbxExpenseDifference = new System.Windows.Forms.TextBox();
+            this.lblExpenseTotalDebit = new System.Windows.Forms.Label();
+            this.lblExpenseDifference = new System.Windows.Forms.Label();
+            this.lblExpenseTotalCredit = new System.Windows.Forms.Label();
+            this.btnAddExpense = new System.Windows.Forms.Button();
+            this.cmbxExpenseBranch = new System.Windows.Forms.ComboBox();
+            this.lblExpenseBranch = new System.Windows.Forms.Label();
+            this.cmbxExpenseCompany = new System.Windows.Forms.ComboBox();
+            this.lblExpenseCompany = new System.Windows.Forms.Label();
+            this.cmbxExpensesExpense = new System.Windows.Forms.ComboBox();
+            this.lblExpensesExpense = new System.Windows.Forms.Label();
             this.tbxExpenseRemarks = new System.Windows.Forms.TextBox();
             this.lblExpenseRemarks = new System.Windows.Forms.Label();
             this.dgvExpenses = new System.Windows.Forms.DataGridView();
             this.colExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpenseCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpenseBranch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colExpenseTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnExpenseCancel = new System.Windows.Forms.Button();
-            this.btnExpenseAdd = new System.Windows.Forms.Button();
-            this.nudExpenseAmount = new System.Windows.Forms.NumericUpDown();
-            this.lblExpenseAmount = new System.Windows.Forms.Label();
-            this.dtpExpenseSalaryPeriodEnd = new System.Windows.Forms.DateTimePicker();
-            this.lblExpenseSalaryPeriodEnd = new System.Windows.Forms.Label();
-            this.lblExpenseSalaryPeriodStart = new System.Windows.Forms.Label();
-            this.dtpExpenseSalaryPeriodStart = new System.Windows.Forms.DateTimePicker();
-            this.lblExpenseSalaryPeriod = new System.Windows.Forms.Label();
-            this.lblExpenseBranch = new System.Windows.Forms.Label();
-            this.tbxExpenseBranch = new System.Windows.Forms.TextBox();
-            this.tbxExpenseCompany = new System.Windows.Forms.TextBox();
-            this.lblExpenseCompany = new System.Windows.Forms.Label();
-            this.tbxExpenseExpense = new System.Windows.Forms.TextBox();
-            this.lblExpenseExpense = new System.Windows.Forms.Label();
+            this.colExpenseDebit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colExpenseCredit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblExpenseSupplier = new System.Windows.Forms.Label();
             this.btnChangeExpenseSupplier = new System.Windows.Forms.Button();
             this.tbxExpenseSupplier = new System.Windows.Forms.TextBox();
@@ -84,12 +89,12 @@
             this.btnExportCheque = new System.Windows.Forms.Button();
             this.tbxCheckVoucherNumber = new System.Windows.Forms.TextBox();
             this.lblCheckVoucherNumber = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tcChequeVoucher.SuspendLayout();
             this.tpVariableCost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocks)).BeginInit();
             this.tpExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudExpenseAmount)).BeginInit();
             this.SuspendLayout();
             // 
             // lblChequeVoucher
@@ -98,12 +103,13 @@
             this.lblChequeVoucher.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblChequeVoucher.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChequeVoucher.Location = new System.Drawing.Point(0, 0);
-            this.lblChequeVoucher.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblChequeVoucher.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChequeVoucher.Name = "lblChequeVoucher";
-            this.lblChequeVoucher.Size = new System.Drawing.Size(1519, 100);
+            this.lblChequeVoucher.Size = new System.Drawing.Size(1243, 84);
             this.lblChequeVoucher.TabIndex = 14;
             this.lblChequeVoucher.Text = "Cheque Voucher";
             this.lblChequeVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblChequeVoucher.Click += new System.EventHandler(this.lblChequeVoucher_Click);
             // 
             // tcChequeVoucher
             // 
@@ -112,16 +118,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tcChequeVoucher.Controls.Add(this.tpVariableCost);
             this.tcChequeVoucher.Controls.Add(this.tpExpenses);
-            this.tcChequeVoucher.Location = new System.Drawing.Point(11, 103);
+            this.tcChequeVoucher.Location = new System.Drawing.Point(9, 87);
+            this.tcChequeVoucher.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tcChequeVoucher.Name = "tcChequeVoucher";
             this.tcChequeVoucher.Padding = new System.Drawing.Point(30, 15);
             this.tcChequeVoucher.SelectedIndex = 0;
-            this.tcChequeVoucher.Size = new System.Drawing.Size(1496, 525);
+            this.tcChequeVoucher.Size = new System.Drawing.Size(1224, 488);
             this.tcChequeVoucher.TabIndex = 15;
             this.tcChequeVoucher.Selected += new System.Windows.Forms.TabControlEventHandler(this.tcChequeVoucher_Selected);
             // 
             // tpVariableCost
             // 
+            this.tpVariableCost.Controls.Add(this.lblVariableCostAccountType);
+            this.tpVariableCost.Controls.Add(this.cmbxVariableCostAccountType);
+            this.tpVariableCost.Controls.Add(this.rtbxRemarks);
+            this.tpVariableCost.Controls.Add(this.lblVariableCostRemarks);
             this.tpVariableCost.Controls.Add(this.btnRemoveSameMrisNumber);
             this.tpVariableCost.Controls.Add(this.btnRemoveSelected);
             this.tpVariableCost.Controls.Add(this.btnRemoveAll);
@@ -131,13 +142,62 @@
             this.tpVariableCost.Controls.Add(this.tbxSearchMrisNumber);
             this.tpVariableCost.Controls.Add(this.lblSearchMrisNumber);
             this.tpVariableCost.Controls.Add(this.dgvStocks);
-            this.tpVariableCost.Location = new System.Drawing.Point(4, 58);
+            this.tpVariableCost.Location = new System.Drawing.Point(4, 54);
+            this.tpVariableCost.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tpVariableCost.Name = "tpVariableCost";
-            this.tpVariableCost.Padding = new System.Windows.Forms.Padding(3);
-            this.tpVariableCost.Size = new System.Drawing.Size(1488, 463);
+            this.tpVariableCost.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpVariableCost.Size = new System.Drawing.Size(1216, 430);
             this.tpVariableCost.TabIndex = 0;
-            this.tpVariableCost.Text = "Variable Cost";
+            this.tpVariableCost.Text = "MRIS Transaction";
             this.tpVariableCost.UseVisualStyleBackColor = true;
+            this.tpVariableCost.Click += new System.EventHandler(this.tpVariableCost_Click);
+            // 
+            // lblVariableCostAccountType
+            // 
+            this.lblVariableCostAccountType.AutoSize = true;
+            this.lblVariableCostAccountType.Location = new System.Drawing.Point(5, 44);
+            this.lblVariableCostAccountType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVariableCostAccountType.Name = "lblVariableCostAccountType";
+            this.lblVariableCostAccountType.Size = new System.Drawing.Size(166, 21);
+            this.lblVariableCostAccountType.TabIndex = 89;
+            this.lblVariableCostAccountType.Text = "Accounts Payable Type";
+            // 
+            // cmbxVariableCostAccountType
+            // 
+            this.cmbxVariableCostAccountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxVariableCostAccountType.FormattingEnabled = true;
+            this.cmbxVariableCostAccountType.Items.AddRange(new object[] {
+            "TRADE",
+            "NON-TRADE"});
+            this.cmbxVariableCostAccountType.Location = new System.Drawing.Point(175, 41);
+            this.cmbxVariableCostAccountType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxVariableCostAccountType.Name = "cmbxVariableCostAccountType";
+            this.cmbxVariableCostAccountType.Size = new System.Drawing.Size(180, 29);
+            this.cmbxVariableCostAccountType.TabIndex = 88;
+            // 
+            // rtbxRemarks
+            // 
+            this.rtbxRemarks.AcceptsTab = true;
+            this.rtbxRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbxRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbxRemarks.Location = new System.Drawing.Point(175, 76);
+            this.rtbxRemarks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.rtbxRemarks.Name = "rtbxRemarks";
+            this.rtbxRemarks.Size = new System.Drawing.Size(1037, 40);
+            this.rtbxRemarks.TabIndex = 87;
+            this.rtbxRemarks.Text = "";
+            // 
+            // lblVariableCostRemarks
+            // 
+            this.lblVariableCostRemarks.AutoSize = true;
+            this.lblVariableCostRemarks.Location = new System.Drawing.Point(100, 78);
+            this.lblVariableCostRemarks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblVariableCostRemarks.Name = "lblVariableCostRemarks";
+            this.lblVariableCostRemarks.Size = new System.Drawing.Size(71, 21);
+            this.lblVariableCostRemarks.TabIndex = 86;
+            this.lblVariableCostRemarks.Text = "Remarks";
+            this.lblVariableCostRemarks.Click += new System.EventHandler(this.lblVariableCostRemarks_Click);
             // 
             // btnRemoveSameMrisNumber
             // 
@@ -145,9 +205,10 @@
             this.btnRemoveSameMrisNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnRemoveSameMrisNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSameMrisNumber.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSameMrisNumber.Location = new System.Drawing.Point(1026, 417);
+            this.btnRemoveSameMrisNumber.Location = new System.Drawing.Point(840, 390);
+            this.btnRemoveSameMrisNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRemoveSameMrisNumber.Name = "btnRemoveSameMrisNumber";
-            this.btnRemoveSameMrisNumber.Size = new System.Drawing.Size(225, 40);
+            this.btnRemoveSameMrisNumber.Size = new System.Drawing.Size(184, 34);
             this.btnRemoveSameMrisNumber.TabIndex = 84;
             this.btnRemoveSameMrisNumber.Text = "Remove Same MRIS No.";
             this.btnRemoveSameMrisNumber.UseVisualStyleBackColor = false;
@@ -159,9 +220,10 @@
             this.btnRemoveSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSelected.Location = new System.Drawing.Point(795, 417);
+            this.btnRemoveSelected.Location = new System.Drawing.Point(652, 390);
+            this.btnRemoveSelected.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRemoveSelected.Name = "btnRemoveSelected";
-            this.btnRemoveSelected.Size = new System.Drawing.Size(225, 40);
+            this.btnRemoveSelected.Size = new System.Drawing.Size(184, 34);
             this.btnRemoveSelected.TabIndex = 83;
             this.btnRemoveSelected.Text = "Remove Selected";
             this.btnRemoveSelected.UseVisualStyleBackColor = false;
@@ -173,9 +235,10 @@
             this.btnRemoveAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveAll.Location = new System.Drawing.Point(1257, 417);
+            this.btnRemoveAll.Location = new System.Drawing.Point(1028, 390);
+            this.btnRemoveAll.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(225, 40);
+            this.btnRemoveAll.Size = new System.Drawing.Size(184, 34);
             this.btnRemoveAll.TabIndex = 82;
             this.btnRemoveAll.Text = "Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = false;
@@ -186,7 +249,8 @@
             this.lblActiveSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblActiveSupplier.AutoSize = true;
             this.lblActiveSupplier.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActiveSupplier.Location = new System.Drawing.Point(633, 6);
+            this.lblActiveSupplier.Location = new System.Drawing.Point(497, 3);
+            this.lblActiveSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActiveSupplier.Name = "lblActiveSupplier";
             this.lblActiveSupplier.Size = new System.Drawing.Size(115, 37);
             this.lblActiveSupplier.TabIndex = 81;
@@ -197,14 +261,15 @@
             this.tbxActiveSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxActiveSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.tbxActiveSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbxActiveSupplier.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbxActiveSupplier.BackColor = System.Drawing.Color.White;
             this.tbxActiveSupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxActiveSupplier.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxActiveSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.tbxActiveSupplier.Location = new System.Drawing.Point(754, 6);
+            this.tbxActiveSupplier.Location = new System.Drawing.Point(616, 6);
+            this.tbxActiveSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxActiveSupplier.Name = "tbxActiveSupplier";
             this.tbxActiveSupplier.ReadOnly = true;
-            this.tbxActiveSupplier.Size = new System.Drawing.Size(728, 54);
+            this.tbxActiveSupplier.Size = new System.Drawing.Size(596, 54);
             this.tbxActiveSupplier.TabIndex = 80;
             this.tbxActiveSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -213,9 +278,10 @@
             this.btnSearchMrisNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnSearchMrisNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchMrisNumber.ForeColor = System.Drawing.Color.White;
-            this.btnSearchMrisNumber.Location = new System.Drawing.Point(440, 6);
+            this.btnSearchMrisNumber.Location = new System.Drawing.Point(359, 6);
+            this.btnSearchMrisNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSearchMrisNumber.Name = "btnSearchMrisNumber";
-            this.btnSearchMrisNumber.Size = new System.Drawing.Size(100, 33);
+            this.btnSearchMrisNumber.Size = new System.Drawing.Size(82, 29);
             this.btnSearchMrisNumber.TabIndex = 79;
             this.btnSearchMrisNumber.Text = "&Search";
             this.btnSearchMrisNumber.UseVisualStyleBackColor = false;
@@ -227,18 +293,20 @@
             this.tbxSearchMrisNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxSearchMrisNumber.BackColor = System.Drawing.Color.White;
             this.tbxSearchMrisNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxSearchMrisNumber.Location = new System.Drawing.Point(101, 6);
+            this.tbxSearchMrisNumber.Location = new System.Drawing.Point(175, 6);
+            this.tbxSearchMrisNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxSearchMrisNumber.Name = "tbxSearchMrisNumber";
-            this.tbxSearchMrisNumber.Size = new System.Drawing.Size(333, 33);
+            this.tbxSearchMrisNumber.Size = new System.Drawing.Size(180, 29);
             this.tbxSearchMrisNumber.TabIndex = 78;
             this.tbxSearchMrisNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxSearchMrisNumber_KeyDown);
             // 
             // lblSearchMrisNumber
             // 
             this.lblSearchMrisNumber.AutoSize = true;
-            this.lblSearchMrisNumber.Location = new System.Drawing.Point(6, 10);
+            this.lblSearchMrisNumber.Location = new System.Drawing.Point(96, 10);
+            this.lblSearchMrisNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchMrisNumber.Name = "lblSearchMrisNumber";
-            this.lblSearchMrisNumber.Size = new System.Drawing.Size(89, 25);
+            this.lblSearchMrisNumber.Size = new System.Drawing.Size(75, 21);
             this.lblSearchMrisNumber.TabIndex = 77;
             this.lblSearchMrisNumber.Text = "MRIS No.";
             // 
@@ -247,8 +315,8 @@
             this.dgvStocks.AllowUserToAddRows = false;
             this.dgvStocks.AllowUserToDeleteRows = false;
             this.dgvStocks.AllowUserToResizeRows = false;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStocks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -257,14 +325,14 @@
             this.dgvStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStocks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStocks.ColumnHeadersHeight = 60;
             this.dgvStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -273,17 +341,18 @@
             this.colStocksCompany,
             this.colStocksBranch,
             this.colStocksTotalAmount});
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStocks.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStocks.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvStocks.EnableHeadersVisualStyles = false;
             this.dgvStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dgvStocks.Location = new System.Drawing.Point(11, 66);
+            this.dgvStocks.Location = new System.Drawing.Point(9, 122);
+            this.dgvStocks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvStocks.MultiSelect = false;
             this.dgvStocks.Name = "dgvStocks";
             this.dgvStocks.ReadOnly = true;
@@ -291,8 +360,9 @@
             this.dgvStocks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvStocks.RowTemplate.Height = 40;
             this.dgvStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStocks.Size = new System.Drawing.Size(1471, 345);
+            this.dgvStocks.Size = new System.Drawing.Size(1203, 262);
             this.dgvStocks.TabIndex = 76;
+            this.dgvStocks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStocks_CellContentClick);
             // 
             // colStocks
             // 
@@ -307,7 +377,7 @@
             this.colStocksMrisNumber.HeaderText = "MRIS No.";
             this.colStocksMrisNumber.Name = "colStocksMrisNumber";
             this.colStocksMrisNumber.ReadOnly = true;
-            this.colStocksMrisNumber.Width = 104;
+            this.colStocksMrisNumber.Width = 91;
             // 
             // colStocksCompany
             // 
@@ -315,7 +385,7 @@
             this.colStocksCompany.HeaderText = "Company";
             this.colStocksCompany.Name = "colStocksCompany";
             this.colStocksCompany.ReadOnly = true;
-            this.colStocksCompany.Width = 116;
+            this.colStocksCompany.Width = 101;
             // 
             // colStocksBranch
             // 
@@ -323,48 +393,221 @@
             this.colStocksBranch.HeaderText = "Branch";
             this.colStocksBranch.Name = "colStocksBranch";
             this.colStocksBranch.ReadOnly = true;
-            this.colStocksBranch.Width = 95;
+            this.colStocksBranch.Width = 82;
             // 
             // colStocksTotalAmount
             // 
             this.colStocksTotalAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colStocksTotalAmount.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStocksTotalAmount.DefaultCellStyle = dataGridViewCellStyle3;
             this.colStocksTotalAmount.HeaderText = "Total Amount";
             this.colStocksTotalAmount.Name = "colStocksTotalAmount";
             this.colStocksTotalAmount.ReadOnly = true;
-            this.colStocksTotalAmount.Width = 137;
+            this.colStocksTotalAmount.Width = 115;
             // 
             // tpExpenses
             // 
+            this.tpExpenses.Controls.Add(this.tbxExpenseTotalDebit);
+            this.tpExpenses.Controls.Add(this.tbxExpenseTotalCredit);
+            this.tpExpenses.Controls.Add(this.tbxExpenseDifference);
+            this.tpExpenses.Controls.Add(this.lblExpenseTotalDebit);
+            this.tpExpenses.Controls.Add(this.lblExpenseDifference);
+            this.tpExpenses.Controls.Add(this.lblExpenseTotalCredit);
+            this.tpExpenses.Controls.Add(this.btnAddExpense);
+            this.tpExpenses.Controls.Add(this.cmbxExpenseBranch);
+            this.tpExpenses.Controls.Add(this.lblExpenseBranch);
+            this.tpExpenses.Controls.Add(this.cmbxExpenseCompany);
+            this.tpExpenses.Controls.Add(this.lblExpenseCompany);
+            this.tpExpenses.Controls.Add(this.cmbxExpensesExpense);
+            this.tpExpenses.Controls.Add(this.lblExpensesExpense);
             this.tpExpenses.Controls.Add(this.tbxExpenseRemarks);
             this.tpExpenses.Controls.Add(this.lblExpenseRemarks);
             this.tpExpenses.Controls.Add(this.dgvExpenses);
-            this.tpExpenses.Controls.Add(this.btnExpenseCancel);
-            this.tpExpenses.Controls.Add(this.btnExpenseAdd);
-            this.tpExpenses.Controls.Add(this.nudExpenseAmount);
-            this.tpExpenses.Controls.Add(this.lblExpenseAmount);
-            this.tpExpenses.Controls.Add(this.dtpExpenseSalaryPeriodEnd);
-            this.tpExpenses.Controls.Add(this.lblExpenseSalaryPeriodEnd);
-            this.tpExpenses.Controls.Add(this.lblExpenseSalaryPeriodStart);
-            this.tpExpenses.Controls.Add(this.dtpExpenseSalaryPeriodStart);
-            this.tpExpenses.Controls.Add(this.lblExpenseSalaryPeriod);
-            this.tpExpenses.Controls.Add(this.lblExpenseBranch);
-            this.tpExpenses.Controls.Add(this.tbxExpenseBranch);
-            this.tpExpenses.Controls.Add(this.tbxExpenseCompany);
-            this.tpExpenses.Controls.Add(this.lblExpenseCompany);
-            this.tpExpenses.Controls.Add(this.tbxExpenseExpense);
-            this.tpExpenses.Controls.Add(this.lblExpenseExpense);
             this.tpExpenses.Controls.Add(this.lblExpenseSupplier);
             this.tpExpenses.Controls.Add(this.btnChangeExpenseSupplier);
             this.tpExpenses.Controls.Add(this.tbxExpenseSupplier);
-            this.tpExpenses.Location = new System.Drawing.Point(4, 58);
+            this.tpExpenses.Location = new System.Drawing.Point(4, 54);
+            this.tpExpenses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tpExpenses.Name = "tpExpenses";
-            this.tpExpenses.Padding = new System.Windows.Forms.Padding(3);
-            this.tpExpenses.Size = new System.Drawing.Size(1488, 463);
+            this.tpExpenses.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpExpenses.Size = new System.Drawing.Size(1216, 430);
             this.tpExpenses.TabIndex = 1;
             this.tpExpenses.Text = "Expenses";
             this.tpExpenses.UseVisualStyleBackColor = true;
+            this.tpExpenses.Click += new System.EventHandler(this.tpExpenses_Click);
+            // 
+            // tbxExpenseTotalDebit
+            // 
+            this.tbxExpenseTotalDebit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxExpenseTotalDebit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbxExpenseTotalDebit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tbxExpenseTotalDebit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbxExpenseTotalDebit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxExpenseTotalDebit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbxExpenseTotalDebit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxExpenseTotalDebit.ForeColor = System.Drawing.Color.White;
+            this.tbxExpenseTotalDebit.Location = new System.Drawing.Point(465, 391);
+            this.tbxExpenseTotalDebit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxExpenseTotalDebit.Name = "tbxExpenseTotalDebit";
+            this.tbxExpenseTotalDebit.ReadOnly = true;
+            this.tbxExpenseTotalDebit.Size = new System.Drawing.Size(246, 33);
+            this.tbxExpenseTotalDebit.TabIndex = 116;
+            this.tbxExpenseTotalDebit.Text = "0.00";
+            this.tbxExpenseTotalDebit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxExpenseTotalDebit.TextChanged += new System.EventHandler(this.tbxExpenseTotalDebit_TextChanged);
+            // 
+            // tbxExpenseTotalCredit
+            // 
+            this.tbxExpenseTotalCredit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxExpenseTotalCredit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbxExpenseTotalCredit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tbxExpenseTotalCredit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbxExpenseTotalCredit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxExpenseTotalCredit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbxExpenseTotalCredit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxExpenseTotalCredit.ForeColor = System.Drawing.Color.White;
+            this.tbxExpenseTotalCredit.Location = new System.Drawing.Point(716, 391);
+            this.tbxExpenseTotalCredit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxExpenseTotalCredit.Name = "tbxExpenseTotalCredit";
+            this.tbxExpenseTotalCredit.ReadOnly = true;
+            this.tbxExpenseTotalCredit.Size = new System.Drawing.Size(246, 33);
+            this.tbxExpenseTotalCredit.TabIndex = 115;
+            this.tbxExpenseTotalCredit.Text = "0.00";
+            this.tbxExpenseTotalCredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxExpenseTotalCredit.TextChanged += new System.EventHandler(this.tbxExpenseTotalCredit_TextChanged);
+            // 
+            // tbxExpenseDifference
+            // 
+            this.tbxExpenseDifference.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxExpenseDifference.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbxExpenseDifference.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tbxExpenseDifference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbxExpenseDifference.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxExpenseDifference.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbxExpenseDifference.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxExpenseDifference.ForeColor = System.Drawing.Color.White;
+            this.tbxExpenseDifference.Location = new System.Drawing.Point(966, 391);
+            this.tbxExpenseDifference.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxExpenseDifference.Name = "tbxExpenseDifference";
+            this.tbxExpenseDifference.ReadOnly = true;
+            this.tbxExpenseDifference.Size = new System.Drawing.Size(246, 33);
+            this.tbxExpenseDifference.TabIndex = 114;
+            this.tbxExpenseDifference.Text = "0.00";
+            this.tbxExpenseDifference.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxExpenseDifference.TextChanged += new System.EventHandler(this.tbxExpenseDifference_TextChanged);
+            // 
+            // lblExpenseTotalDebit
+            // 
+            this.lblExpenseTotalDebit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExpenseTotalDebit.AutoSize = true;
+            this.lblExpenseTotalDebit.Location = new System.Drawing.Point(461, 368);
+            this.lblExpenseTotalDebit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExpenseTotalDebit.Name = "lblExpenseTotalDebit";
+            this.lblExpenseTotalDebit.Size = new System.Drawing.Size(83, 21);
+            this.lblExpenseTotalDebit.TabIndex = 113;
+            this.lblExpenseTotalDebit.Text = "Total Debit";
+            // 
+            // lblExpenseDifference
+            // 
+            this.lblExpenseDifference.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExpenseDifference.AutoSize = true;
+            this.lblExpenseDifference.Location = new System.Drawing.Point(962, 368);
+            this.lblExpenseDifference.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExpenseDifference.Name = "lblExpenseDifference";
+            this.lblExpenseDifference.Size = new System.Drawing.Size(81, 21);
+            this.lblExpenseDifference.TabIndex = 112;
+            this.lblExpenseDifference.Text = "Difference";
+            // 
+            // lblExpenseTotalCredit
+            // 
+            this.lblExpenseTotalCredit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExpenseTotalCredit.AutoSize = true;
+            this.lblExpenseTotalCredit.Location = new System.Drawing.Point(712, 368);
+            this.lblExpenseTotalCredit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExpenseTotalCredit.Name = "lblExpenseTotalCredit";
+            this.lblExpenseTotalCredit.Size = new System.Drawing.Size(88, 21);
+            this.lblExpenseTotalCredit.TabIndex = 111;
+            this.lblExpenseTotalCredit.Text = "Total Credit";
+            // 
+            // btnAddExpense
+            // 
+            this.btnAddExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAddExpense.FlatAppearance.BorderSize = 0;
+            this.btnAddExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddExpense.ForeColor = System.Drawing.Color.White;
+            this.btnAddExpense.Location = new System.Drawing.Point(725, 176);
+            this.btnAddExpense.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnAddExpense.Name = "btnAddExpense";
+            this.btnAddExpense.Size = new System.Drawing.Size(102, 29);
+            this.btnAddExpense.TabIndex = 110;
+            this.btnAddExpense.Text = "Add";
+            this.btnAddExpense.UseVisualStyleBackColor = false;
+            this.btnAddExpense.Click += new System.EventHandler(this.btnAddExpense_Click);
+            // 
+            // cmbxExpenseBranch
+            // 
+            this.cmbxExpenseBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxExpenseBranch.FormattingEnabled = true;
+            this.cmbxExpenseBranch.Location = new System.Drawing.Point(529, 176);
+            this.cmbxExpenseBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxExpenseBranch.Name = "cmbxExpenseBranch";
+            this.cmbxExpenseBranch.Size = new System.Drawing.Size(192, 29);
+            this.cmbxExpenseBranch.TabIndex = 109;
+            // 
+            // lblExpenseBranch
+            // 
+            this.lblExpenseBranch.AutoSize = true;
+            this.lblExpenseBranch.Location = new System.Drawing.Point(525, 152);
+            this.lblExpenseBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExpenseBranch.Name = "lblExpenseBranch";
+            this.lblExpenseBranch.Size = new System.Drawing.Size(58, 21);
+            this.lblExpenseBranch.TabIndex = 108;
+            this.lblExpenseBranch.Text = "Branch";
+            // 
+            // cmbxExpenseCompany
+            // 
+            this.cmbxExpenseCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxExpenseCompany.FormattingEnabled = true;
+            this.cmbxExpenseCompany.Location = new System.Drawing.Point(352, 176);
+            this.cmbxExpenseCompany.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxExpenseCompany.Name = "cmbxExpenseCompany";
+            this.cmbxExpenseCompany.Size = new System.Drawing.Size(173, 29);
+            this.cmbxExpenseCompany.TabIndex = 107;
+            // 
+            // lblExpenseCompany
+            // 
+            this.lblExpenseCompany.AutoSize = true;
+            this.lblExpenseCompany.Location = new System.Drawing.Point(348, 152);
+            this.lblExpenseCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExpenseCompany.Name = "lblExpenseCompany";
+            this.lblExpenseCompany.Size = new System.Drawing.Size(77, 21);
+            this.lblExpenseCompany.TabIndex = 106;
+            this.lblExpenseCompany.Text = "Company";
+            // 
+            // cmbxExpensesExpense
+            // 
+            this.cmbxExpensesExpense.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbxExpensesExpense.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbxExpensesExpense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxExpensesExpense.FormattingEnabled = true;
+            this.cmbxExpensesExpense.Location = new System.Drawing.Point(11, 176);
+            this.cmbxExpensesExpense.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxExpensesExpense.Name = "cmbxExpensesExpense";
+            this.cmbxExpensesExpense.Size = new System.Drawing.Size(337, 29);
+            this.cmbxExpensesExpense.TabIndex = 105;
+            this.cmbxExpensesExpense.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbxExpensesExpense_KeyDown);
+            this.cmbxExpensesExpense.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbxExpensesExpense_MouseClick);
+            this.cmbxExpensesExpense.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cmbxExpensesExpense_MouseDown);
+            // 
+            // lblExpensesExpense
+            // 
+            this.lblExpensesExpense.AutoSize = true;
+            this.lblExpensesExpense.Location = new System.Drawing.Point(7, 152);
+            this.lblExpensesExpense.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExpensesExpense.Name = "lblExpensesExpense";
+            this.lblExpensesExpense.Size = new System.Drawing.Size(66, 21);
+            this.lblExpensesExpense.TabIndex = 104;
+            this.lblExpensesExpense.Text = "Expense";
             // 
             // tbxExpenseRemarks
             // 
@@ -374,17 +617,19 @@
             this.tbxExpenseRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxExpenseRemarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseRemarks.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxExpenseRemarks.Location = new System.Drawing.Point(13, 248);
+            this.tbxExpenseRemarks.Location = new System.Drawing.Point(12, 116);
+            this.tbxExpenseRemarks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxExpenseRemarks.Name = "tbxExpenseRemarks";
-            this.tbxExpenseRemarks.Size = new System.Drawing.Size(1004, 33);
+            this.tbxExpenseRemarks.Size = new System.Drawing.Size(709, 33);
             this.tbxExpenseRemarks.TabIndex = 103;
             // 
             // lblExpenseRemarks
             // 
             this.lblExpenseRemarks.AutoSize = true;
-            this.lblExpenseRemarks.Location = new System.Drawing.Point(8, 220);
+            this.lblExpenseRemarks.Location = new System.Drawing.Point(7, 92);
+            this.lblExpenseRemarks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpenseRemarks.Name = "lblExpenseRemarks";
-            this.lblExpenseRemarks.Size = new System.Drawing.Size(83, 25);
+            this.lblExpenseRemarks.Size = new System.Drawing.Size(71, 21);
             this.lblExpenseRemarks.TabIndex = 102;
             this.lblExpenseRemarks.Text = "Remarks";
             // 
@@ -393,8 +638,8 @@
             this.dgvExpenses.AllowUserToAddRows = false;
             this.dgvExpenses.AllowUserToDeleteRows = false;
             this.dgvExpenses.AllowUserToResizeRows = false;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExpenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -403,41 +648,43 @@
             this.dgvExpenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpenses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvExpenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvExpenses.ColumnHeadersHeight = 60;
             this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvExpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colExpense,
             this.colExpenseCompany,
             this.colExpenseBranch,
-            this.colExpenseTotalAmount});
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExpenses.DefaultCellStyle = dataGridViewCellStyle36;
+            this.colExpenseDebit,
+            this.colExpenseCredit});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExpenses.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvExpenses.EnableHeadersVisualStyles = false;
             this.dgvExpenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dgvExpenses.Location = new System.Drawing.Point(13, 287);
+            this.dgvExpenses.Location = new System.Drawing.Point(13, 211);
+            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvExpenses.MultiSelect = false;
             this.dgvExpenses.Name = "dgvExpenses";
-            this.dgvExpenses.ReadOnly = true;
             this.dgvExpenses.RowHeadersVisible = false;
             this.dgvExpenses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvExpenses.RowTemplate.Height = 40;
             this.dgvExpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExpenses.Size = new System.Drawing.Size(1469, 170);
+            this.dgvExpenses.Size = new System.Drawing.Size(1199, 154);
             this.dgvExpenses.TabIndex = 101;
+            this.dgvExpenses.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenses_CellValueChanged);
             // 
             // colExpense
             // 
@@ -450,200 +697,49 @@
             // 
             this.colExpenseCompany.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.colExpenseCompany.HeaderText = "Company";
+            this.colExpenseCompany.MinimumWidth = 250;
             this.colExpenseCompany.Name = "colExpenseCompany";
             this.colExpenseCompany.ReadOnly = true;
-            this.colExpenseCompany.Width = 116;
+            this.colExpenseCompany.Width = 250;
             // 
             // colExpenseBranch
             // 
             this.colExpenseBranch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.colExpenseBranch.HeaderText = "Branch";
+            this.colExpenseBranch.MinimumWidth = 250;
             this.colExpenseBranch.Name = "colExpenseBranch";
             this.colExpenseBranch.ReadOnly = true;
-            this.colExpenseBranch.Width = 95;
+            this.colExpenseBranch.Width = 250;
             // 
-            // colExpenseTotalAmount
+            // colExpenseDebit
             // 
-            this.colExpenseTotalAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colExpenseTotalAmount.DefaultCellStyle = dataGridViewCellStyle35;
-            this.colExpenseTotalAmount.HeaderText = "Total Amount";
-            this.colExpenseTotalAmount.Name = "colExpenseTotalAmount";
-            this.colExpenseTotalAmount.ReadOnly = true;
-            this.colExpenseTotalAmount.Width = 137;
+            this.colExpenseDebit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = "0.00";
+            this.colExpenseDebit.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colExpenseDebit.HeaderText = "Debit";
+            this.colExpenseDebit.MinimumWidth = 200;
+            this.colExpenseDebit.Name = "colExpenseDebit";
+            this.colExpenseDebit.Width = 200;
             // 
-            // btnExpenseCancel
+            // colExpenseCredit
             // 
-            this.btnExpenseCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnExpenseCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpenseCancel.ForeColor = System.Drawing.Color.White;
-            this.btnExpenseCancel.Location = new System.Drawing.Point(1151, 248);
-            this.btnExpenseCancel.Name = "btnExpenseCancel";
-            this.btnExpenseCancel.Size = new System.Drawing.Size(125, 33);
-            this.btnExpenseCancel.TabIndex = 100;
-            this.btnExpenseCancel.Text = "Ca&ncel";
-            this.btnExpenseCancel.UseVisualStyleBackColor = false;
-            this.btnExpenseCancel.Click += new System.EventHandler(this.btnExpenseCancel_Click);
-            // 
-            // btnExpenseAdd
-            // 
-            this.btnExpenseAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnExpenseAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExpenseAdd.ForeColor = System.Drawing.Color.White;
-            this.btnExpenseAdd.Location = new System.Drawing.Point(1023, 248);
-            this.btnExpenseAdd.Name = "btnExpenseAdd";
-            this.btnExpenseAdd.Size = new System.Drawing.Size(125, 33);
-            this.btnExpenseAdd.TabIndex = 99;
-            this.btnExpenseAdd.Text = "&Add";
-            this.btnExpenseAdd.UseVisualStyleBackColor = false;
-            this.btnExpenseAdd.Click += new System.EventHandler(this.btnExpenseAdd_Click);
-            // 
-            // nudExpenseAmount
-            // 
-            this.nudExpenseAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nudExpenseAmount.DecimalPlaces = 2;
-            this.nudExpenseAmount.Location = new System.Drawing.Point(757, 184);
-            this.nudExpenseAmount.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.nudExpenseAmount.Name = "nudExpenseAmount";
-            this.nudExpenseAmount.Size = new System.Drawing.Size(260, 33);
-            this.nudExpenseAmount.TabIndex = 98;
-            this.nudExpenseAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nudExpenseAmount.ThousandsSeparator = true;
-            // 
-            // lblExpenseAmount
-            // 
-            this.lblExpenseAmount.AutoSize = true;
-            this.lblExpenseAmount.Location = new System.Drawing.Point(752, 156);
-            this.lblExpenseAmount.Name = "lblExpenseAmount";
-            this.lblExpenseAmount.Size = new System.Drawing.Size(79, 25);
-            this.lblExpenseAmount.TabIndex = 97;
-            this.lblExpenseAmount.Text = "Amount";
-            // 
-            // dtpExpenseSalaryPeriodEnd
-            // 
-            this.dtpExpenseSalaryPeriodEnd.CustomFormat = "MMM dd, yyyy";
-            this.dtpExpenseSalaryPeriodEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpenseSalaryPeriodEnd.Location = new System.Drawing.Point(1056, 120);
-            this.dtpExpenseSalaryPeriodEnd.Name = "dtpExpenseSalaryPeriodEnd";
-            this.dtpExpenseSalaryPeriodEnd.Size = new System.Drawing.Size(223, 33);
-            this.dtpExpenseSalaryPeriodEnd.TabIndex = 96;
-            this.dtpExpenseSalaryPeriodEnd.ValueChanged += new System.EventHandler(this.dtpExpenseSalaryPeriodEnd_ValueChanged);
-            // 
-            // lblExpenseSalaryPeriodEnd
-            // 
-            this.lblExpenseSalaryPeriodEnd.AutoSize = true;
-            this.lblExpenseSalaryPeriodEnd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpenseSalaryPeriodEnd.Location = new System.Drawing.Point(1023, 120);
-            this.lblExpenseSalaryPeriodEnd.Name = "lblExpenseSalaryPeriodEnd";
-            this.lblExpenseSalaryPeriodEnd.Size = new System.Drawing.Size(27, 15);
-            this.lblExpenseSalaryPeriodEnd.TabIndex = 95;
-            this.lblExpenseSalaryPeriodEnd.Text = "End";
-            // 
-            // lblExpenseSalaryPeriodStart
-            // 
-            this.lblExpenseSalaryPeriodStart.AutoSize = true;
-            this.lblExpenseSalaryPeriodStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpenseSalaryPeriodStart.Location = new System.Drawing.Point(754, 120);
-            this.lblExpenseSalaryPeriodStart.Name = "lblExpenseSalaryPeriodStart";
-            this.lblExpenseSalaryPeriodStart.Size = new System.Drawing.Size(31, 15);
-            this.lblExpenseSalaryPeriodStart.TabIndex = 94;
-            this.lblExpenseSalaryPeriodStart.Text = "Start";
-            // 
-            // dtpExpenseSalaryPeriodStart
-            // 
-            this.dtpExpenseSalaryPeriodStart.CustomFormat = "MMM dd, yyyy";
-            this.dtpExpenseSalaryPeriodStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpenseSalaryPeriodStart.Location = new System.Drawing.Point(791, 120);
-            this.dtpExpenseSalaryPeriodStart.Name = "dtpExpenseSalaryPeriodStart";
-            this.dtpExpenseSalaryPeriodStart.Size = new System.Drawing.Size(226, 33);
-            this.dtpExpenseSalaryPeriodStart.TabIndex = 93;
-            this.dtpExpenseSalaryPeriodStart.ValueChanged += new System.EventHandler(this.dtpExpenseSalaryPeriodStart_ValueChanged);
-            // 
-            // lblExpenseSalaryPeriod
-            // 
-            this.lblExpenseSalaryPeriod.AutoSize = true;
-            this.lblExpenseSalaryPeriod.Location = new System.Drawing.Point(752, 92);
-            this.lblExpenseSalaryPeriod.Name = "lblExpenseSalaryPeriod";
-            this.lblExpenseSalaryPeriod.Size = new System.Drawing.Size(123, 25);
-            this.lblExpenseSalaryPeriod.TabIndex = 92;
-            this.lblExpenseSalaryPeriod.Text = "Salary Period";
-            // 
-            // lblExpenseBranch
-            // 
-            this.lblExpenseBranch.AutoSize = true;
-            this.lblExpenseBranch.Location = new System.Drawing.Point(384, 156);
-            this.lblExpenseBranch.Name = "lblExpenseBranch";
-            this.lblExpenseBranch.Size = new System.Drawing.Size(71, 25);
-            this.lblExpenseBranch.TabIndex = 91;
-            this.lblExpenseBranch.Text = "Branch";
-            // 
-            // tbxExpenseBranch
-            // 
-            this.tbxExpenseBranch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbxExpenseBranch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbxExpenseBranch.BackColor = System.Drawing.Color.White;
-            this.tbxExpenseBranch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxExpenseBranch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxExpenseBranch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxExpenseBranch.Location = new System.Drawing.Point(385, 184);
-            this.tbxExpenseBranch.Name = "tbxExpenseBranch";
-            this.tbxExpenseBranch.Size = new System.Drawing.Size(366, 33);
-            this.tbxExpenseBranch.TabIndex = 90;
-            // 
-            // tbxExpenseCompany
-            // 
-            this.tbxExpenseCompany.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbxExpenseCompany.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbxExpenseCompany.BackColor = System.Drawing.Color.White;
-            this.tbxExpenseCompany.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxExpenseCompany.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxExpenseCompany.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxExpenseCompany.Location = new System.Drawing.Point(13, 184);
-            this.tbxExpenseCompany.Name = "tbxExpenseCompany";
-            this.tbxExpenseCompany.Size = new System.Drawing.Size(366, 33);
-            this.tbxExpenseCompany.TabIndex = 89;
-            // 
-            // lblExpenseCompany
-            // 
-            this.lblExpenseCompany.AutoSize = true;
-            this.lblExpenseCompany.Location = new System.Drawing.Point(8, 156);
-            this.lblExpenseCompany.Name = "lblExpenseCompany";
-            this.lblExpenseCompany.Size = new System.Drawing.Size(92, 25);
-            this.lblExpenseCompany.TabIndex = 88;
-            this.lblExpenseCompany.Text = "Company";
-            // 
-            // tbxExpenseExpense
-            // 
-            this.tbxExpenseExpense.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.tbxExpenseExpense.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tbxExpenseExpense.BackColor = System.Drawing.Color.White;
-            this.tbxExpenseExpense.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxExpenseExpense.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxExpenseExpense.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxExpenseExpense.Location = new System.Drawing.Point(13, 120);
-            this.tbxExpenseExpense.Name = "tbxExpenseExpense";
-            this.tbxExpenseExpense.Size = new System.Drawing.Size(738, 33);
-            this.tbxExpenseExpense.TabIndex = 87;
-            this.tbxExpenseExpense.TextChanged += new System.EventHandler(this.tbxExpenseExpense_TextChanged);
-            // 
-            // lblExpenseExpense
-            // 
-            this.lblExpenseExpense.AutoSize = true;
-            this.lblExpenseExpense.Location = new System.Drawing.Point(8, 92);
-            this.lblExpenseExpense.Name = "lblExpenseExpense";
-            this.lblExpenseExpense.Size = new System.Drawing.Size(123, 25);
-            this.lblExpenseExpense.TabIndex = 86;
-            this.lblExpenseExpense.Text = "Classification";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = "0.00";
+            this.colExpenseCredit.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colExpenseCredit.HeaderText = "Credit";
+            this.colExpenseCredit.MinimumWidth = 200;
+            this.colExpenseCredit.Name = "colExpenseCredit";
+            this.colExpenseCredit.Width = 200;
             // 
             // lblExpenseSupplier
             // 
             this.lblExpenseSupplier.AutoSize = true;
             this.lblExpenseSupplier.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpenseSupplier.Location = new System.Drawing.Point(6, 3);
+            this.lblExpenseSupplier.Location = new System.Drawing.Point(5, 3);
+            this.lblExpenseSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpenseSupplier.Name = "lblExpenseSupplier";
             this.lblExpenseSupplier.Size = new System.Drawing.Size(115, 37);
             this.lblExpenseSupplier.TabIndex = 85;
@@ -655,9 +751,10 @@
             this.btnChangeExpenseSupplier.FlatAppearance.BorderSize = 0;
             this.btnChangeExpenseSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeExpenseSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnChangeExpenseSupplier.Location = new System.Drawing.Point(751, 43);
+            this.btnChangeExpenseSupplier.Location = new System.Drawing.Point(619, 43);
+            this.btnChangeExpenseSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnChangeExpenseSupplier.Name = "btnChangeExpenseSupplier";
-            this.btnChangeExpenseSupplier.Size = new System.Drawing.Size(125, 46);
+            this.btnChangeExpenseSupplier.Size = new System.Drawing.Size(102, 46);
             this.btnChangeExpenseSupplier.TabIndex = 84;
             this.btnChangeExpenseSupplier.Text = "&Change";
             this.btnChangeExpenseSupplier.UseVisualStyleBackColor = false;
@@ -671,9 +768,10 @@
             this.tbxExpenseSupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxExpenseSupplier.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseSupplier.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxExpenseSupplier.Location = new System.Drawing.Point(13, 43);
+            this.tbxExpenseSupplier.Location = new System.Drawing.Point(11, 43);
+            this.tbxExpenseSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxExpenseSupplier.Name = "tbxExpenseSupplier";
-            this.tbxExpenseSupplier.Size = new System.Drawing.Size(738, 46);
+            this.tbxExpenseSupplier.Size = new System.Drawing.Size(604, 46);
             this.tbxExpenseSupplier.TabIndex = 83;
             this.tbxExpenseSupplier.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxExpenseSupplier_KeyDown);
             this.tbxExpenseSupplier.Leave += new System.EventHandler(this.tbxExpenseSupplier_Leave);
@@ -683,9 +781,10 @@
             this.lblGrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGrandTotal.AutoSize = true;
             this.lblGrandTotal.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrandTotal.Location = new System.Drawing.Point(711, 631);
+            this.lblGrandTotal.Location = new System.Drawing.Point(454, 578);
+            this.lblGrandTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrandTotal.Name = "lblGrandTotal";
-            this.lblGrandTotal.Size = new System.Drawing.Size(167, 40);
+            this.lblGrandTotal.Size = new System.Drawing.Size(164, 40);
             this.lblGrandTotal.TabIndex = 78;
             this.lblGrandTotal.Text = "Grand Total";
             // 
@@ -697,10 +796,11 @@
             this.tbxGrandTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.tbxGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 38.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxGrandTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.tbxGrandTotal.Location = new System.Drawing.Point(718, 674);
+            this.tbxGrandTotal.ForeColor = System.Drawing.Color.Lime;
+            this.tbxGrandTotal.Location = new System.Drawing.Point(461, 621);
+            this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
-            this.tbxGrandTotal.Size = new System.Drawing.Size(533, 75);
+            this.tbxGrandTotal.Size = new System.Drawing.Size(436, 75);
             this.tbxGrandTotal.TabIndex = 79;
             this.tbxGrandTotal.Text = "0.00";
             this.tbxGrandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -712,9 +812,10 @@
             this.btnExportCheque.FlatAppearance.BorderSize = 0;
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
-            this.btnExportCheque.Location = new System.Drawing.Point(1257, 674);
+            this.btnExportCheque.Location = new System.Drawing.Point(901, 621);
+            this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportCheque.Name = "btnExportCheque";
-            this.btnExportCheque.Size = new System.Drawing.Size(250, 75);
+            this.btnExportCheque.Size = new System.Drawing.Size(205, 75);
             this.btnExportCheque.TabIndex = 92;
             this.btnExportCheque.Text = "Export Cheque Voucher";
             this.btnExportCheque.UseVisualStyleBackColor = false;
@@ -728,12 +829,13 @@
             this.tbxCheckVoucherNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.tbxCheckVoucherNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxCheckVoucherNumber.Font = new System.Drawing.Font("Segoe UI", 38.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxCheckVoucherNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.tbxCheckVoucherNumber.Location = new System.Drawing.Point(11, 674);
+            this.tbxCheckVoucherNumber.ForeColor = System.Drawing.Color.Yellow;
+            this.tbxCheckVoucherNumber.Location = new System.Drawing.Point(9, 621);
+            this.tbxCheckVoucherNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxCheckVoucherNumber.Name = "tbxCheckVoucherNumber";
-            this.tbxCheckVoucherNumber.Size = new System.Drawing.Size(370, 75);
+            this.tbxCheckVoucherNumber.Size = new System.Drawing.Size(303, 75);
             this.tbxCheckVoucherNumber.TabIndex = 93;
-            this.tbxCheckVoucherNumber.Text = "0000000";
+            this.tbxCheckVoucherNumber.Text = "0";
             this.tbxCheckVoucherNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCheckVoucherNumber
@@ -741,18 +843,35 @@
             this.lblCheckVoucherNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCheckVoucherNumber.AutoSize = true;
             this.lblCheckVoucherNumber.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckVoucherNumber.Location = new System.Drawing.Point(4, 631);
+            this.lblCheckVoucherNumber.Location = new System.Drawing.Point(2, 578);
+            this.lblCheckVoucherNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCheckVoucherNumber.Name = "lblCheckVoucherNumber";
-            this.lblCheckVoucherNumber.Size = new System.Drawing.Size(259, 40);
+            this.lblCheckVoucherNumber.Size = new System.Drawing.Size(257, 40);
             this.lblCheckVoucherNumber.TabIndex = 94;
             this.lblCheckVoucherNumber.Text = "Check Voucher No.";
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClose.Location = new System.Drawing.Point(1110, 621);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(123, 75);
+            this.btnClose.TabIndex = 95;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // ChequeVoucherForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1519, 761);
+            this.ClientSize = new System.Drawing.Size(1243, 708);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblCheckVoucherNumber);
             this.Controls.Add(this.tbxCheckVoucherNumber);
             this.Controls.Add(this.btnExportCheque);
@@ -760,10 +879,11 @@
             this.Controls.Add(this.lblGrandTotal);
             this.Controls.Add(this.tcChequeVoucher);
             this.Controls.Add(this.lblChequeVoucher);
-            this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ChequeVoucherForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Payables | Cheque Voucher";
@@ -776,7 +896,6 @@
             this.tpExpenses.ResumeLayout(false);
             this.tpExpenses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudExpenseAmount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -810,27 +929,31 @@
         private System.Windows.Forms.TextBox tbxExpenseSupplier;
         private System.Windows.Forms.Button btnChangeExpenseSupplier;
         private System.Windows.Forms.Label lblExpenseSupplier;
-        private System.Windows.Forms.Label lblExpenseExpense;
-        private System.Windows.Forms.TextBox tbxExpenseExpense;
-        private System.Windows.Forms.Label lblExpenseCompany;
-        private System.Windows.Forms.TextBox tbxExpenseCompany;
-        private System.Windows.Forms.TextBox tbxExpenseBranch;
-        private System.Windows.Forms.Label lblExpenseBranch;
-        private System.Windows.Forms.Label lblExpenseSalaryPeriod;
-        private System.Windows.Forms.DateTimePicker dtpExpenseSalaryPeriodStart;
-        private System.Windows.Forms.Label lblExpenseSalaryPeriodStart;
-        private System.Windows.Forms.Label lblExpenseSalaryPeriodEnd;
-        private System.Windows.Forms.DateTimePicker dtpExpenseSalaryPeriodEnd;
-        private System.Windows.Forms.Label lblExpenseAmount;
-        private System.Windows.Forms.NumericUpDown nudExpenseAmount;
-        private System.Windows.Forms.Button btnExpenseAdd;
-        private System.Windows.Forms.Button btnExpenseCancel;
         private System.Windows.Forms.DataGridView dgvExpenses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseCompany;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseBranch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseTotalAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colExpense;
         private System.Windows.Forms.Label lblExpenseRemarks;
         private System.Windows.Forms.TextBox tbxExpenseRemarks;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblVariableCostRemarks;
+        private System.Windows.Forms.RichTextBox rtbxRemarks;
+        private System.Windows.Forms.Label lblExpensesExpense;
+        private System.Windows.Forms.ComboBox cmbxExpensesExpense;
+        private System.Windows.Forms.Label lblExpenseBranch;
+        private System.Windows.Forms.ComboBox cmbxExpenseCompany;
+        private System.Windows.Forms.Label lblExpenseCompany;
+        private System.Windows.Forms.ComboBox cmbxExpenseBranch;
+        private System.Windows.Forms.Button btnAddExpense;
+        private System.Windows.Forms.TextBox tbxExpenseTotalDebit;
+        private System.Windows.Forms.TextBox tbxExpenseTotalCredit;
+        private System.Windows.Forms.TextBox tbxExpenseDifference;
+        private System.Windows.Forms.Label lblExpenseTotalDebit;
+        private System.Windows.Forms.Label lblExpenseDifference;
+        private System.Windows.Forms.Label lblExpenseTotalCredit;
+        private System.Windows.Forms.Label lblVariableCostAccountType;
+        private System.Windows.Forms.ComboBox cmbxVariableCostAccountType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpense;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseCompany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseBranch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseDebit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseCredit;
     }
 }

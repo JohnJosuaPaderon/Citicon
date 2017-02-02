@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Citicon.Data
+﻿namespace Citicon.Data
 {
-    public sealed class User : Sorschia.Data
+    public class User : Sorschia.Data
     {
         public static User CurrentUser;
         private ulong id;
@@ -16,6 +10,8 @@ namespace Citicon.Data
         private bool admin;
         private string displayname;
         private Module module;
+        private bool _Inventory_OutgoingStocksOnly;
+
         public ulong Id
         {
             get { return id; }
@@ -79,24 +75,47 @@ namespace Citicon.Data
                 OnPropertyChanged("User.Module", value);
             }
         }
-        public static bool operator ==(User x, User y)
+        public bool Inventory_OutgoingStocksOnly
         {
-            return
-                x?.username == y?.username &&
-                x?.password == y?.password;
+            get { return _Inventory_OutgoingStocksOnly; }
+            set
+            {
+                if (_Inventory_OutgoingStocksOnly != value)
+                {
+                    _Inventory_OutgoingStocksOnly = value;
+                    OnPropertyChanged("User.Inventory_OutgoingStocksOnly", value);
+                }
+            }
         }
-        public static bool operator !=(User x, User y)
+
+        public static bool operator ==(User left, User right)
         {
-            return !(x == y);
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
         }
-        public override bool Equals(object obj)
+        public static bool operator !=(User left, User right)
         {
-            return (obj is User) ? (obj as User).id == id : false;
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is User)
+            {
+                return (User)arg == this;
+            }
+            return false;
         }
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
             return displayname;

@@ -1,4 +1,6 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
+using MySql.Data.MySqlClient;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -10,6 +12,22 @@ namespace Citicon.DataManager
 {
     public sealed class UserManager : DataManager<User>, IDataManager<User>
     {
+        public static async Task<User> InsertAsync(User user)
+        {
+            using (var process = new InsertUser(user))
+            {
+                return await process.ExecuteAsync();
+            }
+        }
+
+        public static async Task<User> InsertAsync(User user, MySqlConnection connection, MySqlTransaction transaction)
+        {
+            using (var process = new InsertUser(user))
+            {
+                return await process.ExecuteAsync(connection, transaction);
+            }
+        }
+
         public void Add(User data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_users_add"))
@@ -20,6 +38,8 @@ namespace Citicon.DataManager
                 query.AddParameter("@_DisplayName", data.DisplayName);
                 query.AddParameter("@_Password", Supports.Encrypt(data.Password));
                 query.AddParameter("@_Username", Supports.Encrypt(data.Username));
+                query.AddParameter("@_ModuleId", data.Module?.Id);
+                query.AddParameter("@_Inventory_OutgoingOnly", data.Inventory_OutgoingStocksOnly);
                 query.AddParameter("@_CreatedBy", User.CurrentUser?.DisplayName);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
@@ -62,7 +82,8 @@ namespace Citicon.DataManager
                     Id = dictionary.GetUInt64("UserId"),
                     Password = Supports.Decrypt(dictionary.GetString("Password")),
                     Username = Supports.Decrypt(dictionary.GetString("Username")),
-                    Module = (new ModuleManager()).GetById(dictionary.GetUInt64("ModuleId"))
+                    Module = (new ModuleManager()).GetById(dictionary.GetUInt64("ModuleId")),
+                    Inventory_OutgoingStocksOnly = dictionary.GetBoolean("Inventory_OutgoingOnly")
                 };
             }
             return null;
@@ -156,6 +177,8 @@ namespace Citicon.DataManager
                 query.AddParameter("@_DisplayName", data.DisplayName);
                 query.AddParameter("@_Password", Supports.Encrypt(data.Password));
                 query.AddParameter("@_Username", Supports.Encrypt(data.Username));
+                query.AddParameter("@_ModuleId", data.Module?.Id);
+                query.AddParameter("@_Inventory_OutgoingOnly", data.Inventory_OutgoingStocksOnly);
                 query.AddParameter("@_ModifiedBy", User.CurrentUser?.DisplayName);
                 query.Execute();
                 if (query.AffectedRows == 1) OnUpdated(data);

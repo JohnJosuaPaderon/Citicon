@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="Citicon.DesktopClient.Common.SignUpControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Citicon.DesktopClient.Common"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:citiconData="clr-namespace:Citicon.Data;assembly=Citicon"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <!-- MahApps -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+
+                <!-- Material Design -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Red.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Green.xaml" />
+
+                <!-- Material Design: MahApps Compatibility -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Defaults.xaml "/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- MahApps Brushes -->
+            <SolidColorBrush x:Key="HighlightBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentColorBrush" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="AccentColorBrush2" Color="{DynamicResource Primary400}"/>
+            <SolidColorBrush x:Key="AccentColorBrush3" Color="{DynamicResource Primary300}"/>
+            <SolidColorBrush x:Key="AccentColorBrush4" Color="{DynamicResource Primary200}"/>
+            <SolidColorBrush x:Key="WindowTitleColorBrush" Color="{DynamicResource Primary700}"/>
+            <SolidColorBrush x:Key="AccentSelectedColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <LinearGradientBrush x:Key="ProgressBrush" EndPoint="0.001,0.5" StartPoint="1.002,0.5">
+                <GradientStop Color="{DynamicResource Primary700}" Offset="0"/>
+                <GradientStop Color="{DynamicResource Primary300}" Offset="1"/>
+            </LinearGradientBrush>
+            <SolidColorBrush x:Key="CheckmarkFill" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="RightArrowFill" Color="{DynamicResource Primary500}"/>
+            <SolidColorBrush x:Key="IdealForegroundColorBrush" Color="{DynamicResource Primary500Foreground}"/>
+            <SolidColorBrush x:Key="IdealForegroundDisabledBrush" Color="{DynamicResource Primary500}" Opacity="0.4"/>
+
+            <!-- My Custom Settings-->
+            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource MaterialDesignTextBox}">
+                <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <materialDesign:Card>
+        <Grid>
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="Assets/Common.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </Grid.Resources>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <materialDesign:TransitioningContent Grid.Row="0">
+                <materialDesign:TransitioningContent.OpeningEffect>
+                    <materialDesign:TransitionEffect Kind="SlideInFromTop" Duration="0:0:1"/>
+                </materialDesign:TransitioningContent.OpeningEffect>
+
+                <materialDesign:ColorZone Mode="PrimaryMid">
+                    <TextBlock Text="Sign-up Form" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="10"/>
+                </materialDesign:ColorZone>
+
+            </materialDesign:TransitioningContent>
+
+            <materialDesign:TransitioningContent Grid.Row="1">
+                <materialDesign:TransitioningContent.OpeningEffect>
+                    <materialDesign:TransitionEffect Kind="ExpandIn" Duration="0:0:1"/>
+                </materialDesign:TransitioningContent.OpeningEffect>
+
+                <ItemsControl Margin="10">
+                    <ItemsControl.Resources>
+                        <Style TargetType="{x:Type materialDesign:TransitioningContent}">
+                            <Setter Property="OpeningEffect">
+                                <Setter.Value>
+                                    <materialDesign:TransitionEffect Kind="SlideInFromBottom" Duration="0:0:1"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ItemsControl.Resources>
+
+                    <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                        <TextBox x:Name="tbxDisplayName" materialDesign:HintAssist.Hint="Display Name"/>
+                    </materialDesign:TransitioningContent>
+
+                    <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                        <TextBox x:Name="tbxUsername" materialDesign:HintAssist.Hint="Username"/>
+                    </materialDesign:TransitioningContent>
+
+                    <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                        <PasswordBox x:Name="tbxPassword" materialDesign:HintAssist.Hint="Password"/>
+                    </materialDesign:TransitioningContent>
+
+                    <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                        <PasswordBox x:Name="tbxConfirmPassword" materialDesign:HintAssist.Hint="Confirm Password"/>
+                    </materialDesign:TransitioningContent>
+
+                    <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                        <ItemsControl>
+                            <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">   
+                                <StackPanel>
+                                    <CheckBox x:Name="ckbxQuotationUser" Content="Quotation User"/>
+                                    <GroupBox Header="Quotation User Information" Margin="0,5">
+                                        <ItemsControl>
+                                            <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                                                <CheckBox x:Name="ckbxQuotation_RedirectToFinalApproval" Content="Redirect to user automatically to Final Approval."/>
+                                            </materialDesign:TransitioningContent>
+                                        </ItemsControl>
+                                    </GroupBox>
+                                </StackPanel>
+                            </materialDesign:TransitioningContent>
+                            <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                                <StackPanel>
+                                    <CheckBox x:Name="ckbxBillingUser" Content="Billing User"/>
+                                    <GroupBox Header="Billing User Information" Margin="0,5">
+                                        <CheckBox x:Name="ckbxBilling_FullAccess" Content="Grant a full-access control for billing-related features."/>
+                                    </GroupBox>
+                                </StackPanel>
+                            </materialDesign:TransitioningContent>
+                            <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                                <StackPanel>
+                                    <CheckBox x:Name="ckbxDeliveryUser" Content="Deliveries User"/>
+                                    <GroupBox Header="Deliveries User Information" Margin="0,5">
+                                        <CheckBox x:Name="ckbxDelivery_FullAccess" Content="Grant a full-access control for delivery-related features."/>
+                                    </GroupBox>
+                                </StackPanel>
+                            </materialDesign:TransitioningContent>
+                        </ItemsControl>
+                    </materialDesign:TransitioningContent>
+
+                    <materialDesign:TransitioningContent OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="btnSave" Grid.Column="1" Content="Sign-up" Click="btnSave_Click"/>
+                            <Button x:Name="btnCancel" Grid.Column="3" Content="Cancel" Click="btnCancel_Click"/>
+
+                        </Grid>
+                    </materialDesign:TransitioningContent>
+
+                </ItemsControl>
+                
+            </materialDesign:TransitioningContent>
+
+        </Grid>
+    </materialDesign:Card>
+</UserControl>

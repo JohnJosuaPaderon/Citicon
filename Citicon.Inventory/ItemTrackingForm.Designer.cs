@@ -33,12 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemTrackingForm));
             this.lblIventoryItemsTracking = new System.Windows.Forms.Label();
             this.dgvItemTrackings = new System.Windows.Forms.DataGridView();
-            this.lblItemDescription = new System.Windows.Forms.Label();
-            this.tbxItemDescription = new System.Windows.Forms.TextBox();
-            this.lblItemCode = new System.Windows.Forms.Label();
-            this.tbxItemCode = new System.Windows.Forms.TextBox();
             this.colTrack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrackDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +43,11 @@
             this.colTrackLastStockValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrackStockValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTrackAction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblItemDescription = new System.Windows.Forms.Label();
+            this.tbxItemDescription = new System.Windows.Forms.TextBox();
+            this.lblItemCode = new System.Windows.Forms.Label();
+            this.tbxItemCode = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemTrackings)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,46 +114,8 @@
             this.dgvItemTrackings.RowHeadersVisible = false;
             this.dgvItemTrackings.RowTemplate.Height = 40;
             this.dgvItemTrackings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemTrackings.Size = new System.Drawing.Size(1537, 487);
+            this.dgvItemTrackings.Size = new System.Drawing.Size(1537, 431);
             this.dgvItemTrackings.TabIndex = 13;
-            // 
-            // lblItemDescription
-            // 
-            this.lblItemDescription.AutoSize = true;
-            this.lblItemDescription.Location = new System.Drawing.Point(6, 105);
-            this.lblItemDescription.Name = "lblItemDescription";
-            this.lblItemDescription.Size = new System.Drawing.Size(150, 25);
-            this.lblItemDescription.TabIndex = 14;
-            this.lblItemDescription.Text = "Item Description";
-            // 
-            // tbxItemDescription
-            // 
-            this.tbxItemDescription.BackColor = System.Drawing.Color.White;
-            this.tbxItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxItemDescription.Location = new System.Drawing.Point(162, 103);
-            this.tbxItemDescription.Name = "tbxItemDescription";
-            this.tbxItemDescription.ReadOnly = true;
-            this.tbxItemDescription.Size = new System.Drawing.Size(613, 33);
-            this.tbxItemDescription.TabIndex = 15;
-            // 
-            // lblItemCode
-            // 
-            this.lblItemCode.AutoSize = true;
-            this.lblItemCode.Location = new System.Drawing.Point(781, 105);
-            this.lblItemCode.Name = "lblItemCode";
-            this.lblItemCode.Size = new System.Drawing.Size(98, 25);
-            this.lblItemCode.TabIndex = 16;
-            this.lblItemCode.Text = "Item Code";
-            // 
-            // tbxItemCode
-            // 
-            this.tbxItemCode.BackColor = System.Drawing.Color.White;
-            this.tbxItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxItemCode.Location = new System.Drawing.Point(885, 103);
-            this.tbxItemCode.Name = "tbxItemCode";
-            this.tbxItemCode.ReadOnly = true;
-            this.tbxItemCode.Size = new System.Drawing.Size(523, 33);
-            this.tbxItemCode.TabIndex = 17;
             // 
             // colTrack
             // 
@@ -194,7 +158,7 @@
             this.colTrackLastStockValue.Name = "colTrackLastStockValue";
             this.colTrackLastStockValue.ReadOnly = true;
             this.colTrackLastStockValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colTrackLastStockValue.Width = 153;
+            this.colTrackLastStockValue.Width = 151;
             // 
             // colTrackStockValue
             // 
@@ -204,7 +168,7 @@
             this.colTrackStockValue.Name = "colTrackStockValue";
             this.colTrackStockValue.ReadOnly = true;
             this.colTrackStockValue.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colTrackStockValue.Width = 115;
+            this.colTrackStockValue.Width = 113;
             // 
             // colTrackAction
             // 
@@ -214,12 +178,66 @@
             this.colTrackAction.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colTrackAction.Width = 71;
             // 
+            // lblItemDescription
+            // 
+            this.lblItemDescription.AutoSize = true;
+            this.lblItemDescription.Location = new System.Drawing.Point(6, 105);
+            this.lblItemDescription.Name = "lblItemDescription";
+            this.lblItemDescription.Size = new System.Drawing.Size(150, 25);
+            this.lblItemDescription.TabIndex = 14;
+            this.lblItemDescription.Text = "Item Description";
+            // 
+            // tbxItemDescription
+            // 
+            this.tbxItemDescription.BackColor = System.Drawing.Color.White;
+            this.tbxItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxItemDescription.Location = new System.Drawing.Point(203, 103);
+            this.tbxItemDescription.Name = "tbxItemDescription";
+            this.tbxItemDescription.ReadOnly = true;
+            this.tbxItemDescription.Size = new System.Drawing.Size(613, 33);
+            this.tbxItemDescription.TabIndex = 15;
+            // 
+            // lblItemCode
+            // 
+            this.lblItemCode.AutoSize = true;
+            this.lblItemCode.Location = new System.Drawing.Point(822, 105);
+            this.lblItemCode.Name = "lblItemCode";
+            this.lblItemCode.Size = new System.Drawing.Size(98, 25);
+            this.lblItemCode.TabIndex = 16;
+            this.lblItemCode.Text = "Item Code";
+            // 
+            // tbxItemCode
+            // 
+            this.tbxItemCode.BackColor = System.Drawing.Color.White;
+            this.tbxItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxItemCode.Location = new System.Drawing.Point(954, 103);
+            this.tbxItemCode.Name = "tbxItemCode";
+            this.tbxItemCode.ReadOnly = true;
+            this.tbxItemCode.Size = new System.Drawing.Size(523, 33);
+            this.tbxItemCode.TabIndex = 17;
+            this.tbxItemCode.TextChanged += new System.EventHandler(this.tbxItemCode_TextChanged);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClose.Location = new System.Drawing.Point(1423, 587);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(125, 50);
+            this.btnClose.TabIndex = 89;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // ItemTrackingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1560, 649);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbxItemCode);
             this.Controls.Add(this.lblItemCode);
             this.Controls.Add(this.tbxItemDescription);
@@ -228,7 +246,8 @@
             this.Controls.Add(this.lblIventoryItemsTracking);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ItemTrackingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -256,5 +275,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrackLastStockValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrackDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTrack;
+        private System.Windows.Forms.Button btnClose;
     }
 }

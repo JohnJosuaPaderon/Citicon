@@ -1,14 +1,49 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace Citicon.DataManager
 {
     public sealed class VehicleTypeManager : DataManager<VehicleType>, IDataManager<VehicleType>
     {
+        private static List<VehicleType> VehicleTypes;
+
+        static VehicleTypeManager()
+        {
+            VehicleTypes = new List<VehicleType>();
+        }
+
+        public static async Task<VehicleType> GetVehicleTypeByIdAsync(ulong vehicleTypeId)
+        {
+            VehicleType vehicleType = null;
+            foreach (VehicleType item in VehicleTypes)
+            {
+                if (item.Id == vehicleTypeId)
+                {
+                    vehicleType = item;
+                    break;
+                }
+            }
+            if (vehicleType == null)
+            {
+                using (var getVehicleTypeById = new GetVehicleTypeById(vehicleTypeId))
+                {
+                    vehicleType = await getVehicleTypeById.GetAsync();
+                    if (vehicleType != null)
+                    {
+                        VehicleTypes.Add(vehicleType);
+                    }
+                }
+            }
+            return vehicleType;   
+        }
+
         public void Add(VehicleType data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_vehicletypes_add"))
@@ -46,6 +81,17 @@ namespace Citicon.DataManager
             }
             return null;
         }
+
+        public string GenerateCode()
+        {
+            using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _vehicletypes_generatecode();", CommandType.Text))
+            {
+                query.ExceptionCatched += OnExceptionCatched;
+                return query.GetValue().ToString();
+            }
+        }
+
+        [Obsolete]
         public VehicleType GetById(ulong id)
         {
             if (id != 0)
@@ -60,6 +106,7 @@ namespace Citicon.DataManager
             return null;
         }
 
+        [Obsolete]
         public Task<VehicleType> GetByIdAsync(ulong id)
         {
             return Task.Factory.StartNew(() => GetById(id));

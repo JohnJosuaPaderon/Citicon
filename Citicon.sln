@@ -1,13 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon", "Citicon\Citicon.csproj", "{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Inventory", "Citicon.Inventory\Citicon.Inventory.csproj", "{F0AB7BD6-170B-4684-A2A8-B92135553FED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Payables", "Citicon.Payables\Citicon.Payables.csproj", "{49D9292F-8B52-4DD0-BB09-B78EDE27148E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon", "Citicon\Citicon.csproj", "{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.DesktopClient.Common", "Citicon.DesktopClient.Common\Citicon.DesktopClient.Common.csproj", "{86CA8ADF-ECFE-44A4-9BE3-EDF2EFD58BCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.DesktopClient.QuotationApproval", "Citicon.DesktopClient.QuotationApproval\Citicon.DesktopClient.QuotationApproval.csproj", "{B83A8476-03A9-4932-B0CF-499B4D727373}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8174ACD8-FD50-45BE-8969-2CF449422B5C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Citicon.Inventory.zip = Citicon.Inventory.zip
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +28,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F0AB7BD6-170B-4684-A2A8-B92135553FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F0AB7BD6-170B-4684-A2A8-B92135553FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0AB7BD6-170B-4684-A2A8-B92135553FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +36,18 @@ Global
 		{49D9292F-8B52-4DD0-BB09-B78EDE27148E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49D9292F-8B52-4DD0-BB09-B78EDE27148E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49D9292F-8B52-4DD0-BB09-B78EDE27148E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CA8ADF-ECFE-44A4-9BE3-EDF2EFD58BCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CA8ADF-ECFE-44A4-9BE3-EDF2EFD58BCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CA8ADF-ECFE-44A4-9BE3-EDF2EFD58BCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CA8ADF-ECFE-44A4-9BE3-EDF2EFD58BCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B83A8476-03A9-4932-B0CF-499B4D727373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B83A8476-03A9-4932-B0CF-499B4D727373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B83A8476-03A9-4932-B0CF-499B4D727373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B83A8476-03A9-4932-B0CF-499B4D727373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

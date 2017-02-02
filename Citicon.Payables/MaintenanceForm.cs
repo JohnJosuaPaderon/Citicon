@@ -21,6 +21,7 @@ namespace Citicon.Payables
         private BankManager bankManager;
         private BankAccountManager bankAccountManager;
         private StockManager stockManager;
+        private PayableManager payableChequeManager;
 
         private Expense activeExpense;
         private Bank activeBank;
@@ -29,7 +30,7 @@ namespace Citicon.Payables
         List<Expense> expenses;
         List<Bank> banks;
         List<BankAccount> bankAccounts;
-
+        string[] chequeNumbers;
         int idxExpense;
         int idxBank;
         int idxBankAccount;
@@ -37,6 +38,8 @@ namespace Citicon.Payables
         DataGridViewRow rowExpense;
         DataGridViewRow rowBank;
         DataGridViewRow rowBankAccount;
+
+        private BankAccountManager chequeNumberManager;
 
         public MaintenanceForm()
         {
@@ -76,7 +79,44 @@ namespace Citicon.Payables
 
             stockManager = new StockManager();
             stockManager.ExceptionCatched += ExceptionCatched;
-            stockManager.NewUnpaidMrisNumberGenerated += StockManager_NewUnpaidMrisNumberGenerated;
+            //stockManager.NewUnpaidMrisNumberGenerated += StockManager_NewUnpaidMrisNumberGenerated;
+
+            chequeNumberManager = new BankAccountManager();
+            chequeNumberManager.ExceptionCatched += ExceptionCatched;
+            chequeNumberManager.Updated += ChequeNumberManager_Updated;
+            chequeNumberManager.UpdatedUnsuccessful += ChequeNumberManager_UpdatedUnsuccessful;
+
+            payableChequeManager = new PayableManager();
+            payableChequeManager.ExceptionCatched += ExceptionCatched;
+            payableChequeManager.NewChequeNumberListItemGenerated += PayableChequeManager_NewChequeNumberListItemGenerated;
+            payableChequeManager.RevokeChequeNumberExecuted += PayableChequeManager_RevokeChequeNumberExecuted;
+        }
+
+        private void PayableChequeManager_RevokeChequeNumberExecuted(int e)
+        {
+            if (e > 0)
+            {
+                tbxRevokeChequeNumber.AutoCompleteCustomSource.Remove(tbxRevokeChequeNumber.Text.Trim());
+                tbxRevokeChequeNumber.Text = string.Empty;
+                btnRevokeChequeNumber.Enabled = false;
+                notify($"{e} items has been restored!");
+            }
+            else displayError("Error on revoking cheque numbers!");
+        }
+
+        private void PayableChequeManager_NewChequeNumberListItemGenerated(string e)
+        {
+            Invoke(new Action(() => tbxRevokeChequeNumber.AutoCompleteCustomSource.Add(e)));
+        }
+
+        private void ChequeNumberManager_UpdatedUnsuccessful(BankAccount e)
+        {
+            displayError("Unsuccessfully saved!");
+        }
+
+        private void ChequeNumberManager_Updated(BankAccount e)
+        {
+            notify("Done!");
         }
 
         private void StockManager_NewUnpaidMrisNumberGenerated(string e)
@@ -95,7 +135,7 @@ namespace Citicon.Payables
         }
         private void BankAccountManager_NewItemGenerated(BankAccount e)
         {
-            Invoke(new Action(() => dgvBankAccounts.Rows.Add(e, e.Bank, e.Code)));
+            Invoke(new Action(() => dgvBankAccounts.Rows.Add(e, e.Bank, e.Code, e.ChequeNumber)));
         }
         private void ExpenseManager_NewItemGenerated(Expense e)
         {
@@ -104,23 +144,104 @@ namespace Citicon.Payables
         #endregion
 
         #region DATA ADDED
-        private async void BankManager_Added(Bank e)
+        private void BankManager_Added(Bank e)
         {
             notify("Successfully added!");
-            await loadBanks();
+            foreach (DataGridViewRow row in dgvBanks.Rows)
+            {
+                Action<int> insert = (index) => { dgvBanks.Rows.Insert(index, e, e.Code); };
+                var upper = (Bank)row.Cells[colBank.Name].Value;
+                var lowerIndex = row.Index + 1;
+                var lower = lowerIndex < dgvBanks.Rows.Count ? (Bank)dgvBanks.Rows[lowerIndex].Cells[colBank.Name].Value : null;
+                if (lower != null)
+                {
+                    if (string.Compare(upper.Description, e.Description) == -1 && string.Compare(lower.Description, e.Description) == 1)
+                    {
+                        insert(lowerIndex);
+                        break;
+                    }
+                }
+                else
+                {
+                    insert(row.Index + 1);
+                    break;
+                }
+            }
+            foreach (var item in cmbxBankAccountbank.Items)
+            {
+                Action<int> insert = (index) => { cmbxBankAccountbank.Items.Insert(index, e); };
+                var upper = (Bank)item;
+                var lowerIndex = cmbxBankAccountbank.Items.IndexOf(item) + 1;
+                var lower = lowerIndex < cmbxBankAccountbank.Items.Count ? (Bank)cmbxBankAccountbank.Items[lowerIndex] : null;
+                if (lower != null)
+                {
+                    if (string.Compare(upper.Description, e.Description) == -1 && string.Compare(lower.Description, e.Description) == 1)
+                    {
+                        insert(lowerIndex);
+                        break;
+                    }
+                }
+                else
+                {
+                    insert(lowerIndex);
+                    break;
+                }
+            }
+            activeBank = null;
             displayBank();
         }
-        private async void BankAccountManager_Added(BankAccount e)
+        private void BankAccountManager_Added(BankAccount e)
         {
             notify("Successfully added!");
-            await loadBankAccounts();
+            foreach (DataGridViewRow row in dgvBankAccounts.Rows)
+            {
+                Action<int> insert = (index) => { dgvBankAccounts.Rows.Insert(index, e, e.Bank, e.Code, e.ChequeNumber); };
+                var upper = (BankAccount)row.Cells[colBankAccounts.Name].Value;
+                var lowerIndex = row.Index + 1;
+                var lower = lowerIndex < dgvBankAccounts.Rows.Count ? (BankAccount)dgvBankAccounts.Rows[lowerIndex].Cells[colBankAccounts.Name].Value : null;
+                if (lower != null)
+                {
+                    if (string.Compare(upper.Description, e.Description) == -1 && string.Compare(lower.Description, e.Description) == 1)
+                    {
+                        insert(lowerIndex);
+                        break;
+                    }
+                }
+                else
+                {
+                    insert(row.Index + 1);
+                    break;
+                }
+            }
+            activeBankAccount = null;
             displayBankAccount();
         }
-        private async void ExpenseManager_Added(Expense e)
+        private void ExpenseManager_Added(Expense e)
         {
             notify("Successfully added!");
-            await loadExpenses();
+            foreach (DataGridViewRow row in dgvExpenses.Rows)
+            {
+                Action<int> insert = (index) => { dgvExpenses.Rows.Insert(index, e, e.Code); };
+                var upper = (Expense)row.Cells[colExpenses.Name].Value;
+                var lowerIndex = row.Index + 1;
+                var lower = lowerIndex < dgvExpenses.Rows.Count ? (Expense)dgvExpenses.Rows[lowerIndex].Cells[colExpenses.Name].Value : null;
+                if (lower != null)
+                {
+                    if (string.Compare(upper.Description, e.Description) == -1 && string.Compare(lower.Description, e.Description) == 1)
+                    {
+                        insert(lowerIndex);
+                        break;
+                    }
+                }
+                else
+                {
+                    insert(row.Index + 1);
+                    break;
+                }
+            }
+            activeExpense = null;
             displayExpense();
+            enableExpenseFields(false);
         }
         #endregion
 
@@ -185,17 +306,31 @@ namespace Citicon.Payables
         private void BankManager_Updated(Bank e)
         {
             notify("Successfully updated!");
-            insertActiveBank();
+            rowBank.Cells[colBank.Name].Value = e;
+            rowBank.Cells[colBankCode.Name].Value = e.Code;
+            activeBank = null;
+            displayBank();
+            enableBankFields(false);
         }
         private void BankAccountManager_Updated(BankAccount e)
         {
             notify("Successfully updated!");
-            insertActiveBankAccount();
+            rowBankAccount.Cells[colBankAccounts.Name].Value = e;
+            rowBankAccount.Cells[colBankAccountBank.Name].Value = e.Bank;
+            rowBankAccount.Cells[colBankAccountChequeNumber.Name].Value = e.ChequeNumber;
+            rowBankAccount.Cells[colBankAccountCode.Name].Value = e.Code;
+            activeBankAccount = null;
+            displayBankAccount();
+            enableBankAccountFields(false);
         }
         private void ExpenseManager_Updated(Expense e)
         {
             notify("Successfully updated!");
-            insertActiveExpense();
+            rowExpense.Cells[colExpenses.Name].Value = e;
+            rowExpense.Cells[colExpenseCode.Name].Value = e.Code;
+            activeExpense = null;
+            displayExpense();
+            enableExpenseFields(false);
         }
         #endregion
 
@@ -268,7 +403,7 @@ namespace Citicon.Payables
             }
             else
             {
-                tbxExpenseCode.Text = $"{Supports.CodePrefixes.Expense}-{generateCode(dgvExpenses, colExpenseCode)}";
+                tbxExpenseCode.Text = expenseManager.GenerateCode();
             }
         }
         private void displayBank()
@@ -282,7 +417,7 @@ namespace Citicon.Payables
             }
             else
             {
-                tbxBankCode.Text = $"{Supports.CodePrefixes.Bank}-{generateCode(dgvBanks, colBankCode)}";
+                tbxBankCode.Text = bankManager.GenerateCode();
             }
         }
         private void displayBankAccount()
@@ -292,10 +427,11 @@ namespace Citicon.Payables
             cmbxBankAccountbank.SelectedItem = null;
             if (activeBankAccount != null)
             {
+                cmbxBankAccountbank.SelectedItem = activeBankAccount.Bank;
                 tbxBankAccountCode.Text = activeBankAccount.Code;
                 tbxBankAccountDescription.Text = activeBankAccount.Description;
-                cmbxBankAccountbank.SelectedItem = activeBankAccount.Bank;
             }
+            else tbxBankAccountCode.Text = bankAccountManager.GenerateCode((Bank)cmbxBankAccountbank.SelectedItem);
         }
         #endregion
 
@@ -404,14 +540,17 @@ namespace Citicon.Payables
             }
             foreach (DataGridViewRow row in dgvBanks.Rows)
             {
-                var bank = (Bank)row.Cells[colBank.Name].Value;
-                if (code == bank.Code)
+                if (row.Index != idxBank)
                 {
-                    displayError("Bank Code already in use!"); return false;
-                }
-                if (description == bank.Description)
-                {
-                    displayError("Bank Name already in use!"); return false;
+                    var bank = (Bank)row.Cells[colBank.Name].Value;
+                    if (code == bank.Code)
+                    {
+                        displayError("Bank Code already in use!"); return false;
+                    }
+                    if (description == bank.Description)
+                    {
+                        displayError("Bank Name already in use!"); return false;
+                    }
                 }
             }
             return true;
@@ -426,9 +565,12 @@ namespace Citicon.Payables
             if (bank == null) { displayError("Bank should not be empty."); return false; }
             foreach (DataGridViewRow row in dgvBankAccounts.Rows)
             {
-                var bankAccount = (BankAccount)row.Cells[colBankAccounts.Name].Value;
-                if (bankAccount.Code == code) { displayError("Bank Account Code already in use!"); return false; }
-                if (bankAccount.Description == description) { displayError("Bank Account Description already in use!"); return false; }
+                if (row.Index != idxBankAccount)
+                {
+                    var bankAccount = (BankAccount)row.Cells[colBankAccounts.Name].Value;
+                    if (bankAccount.Code == code) { displayError("Bank Account Code already in use!"); return false; }
+                    if (bankAccount.Description == description) { displayError("Bank Account Description already in use!"); return false; }
+                }
             }
             return true;
         }
@@ -448,16 +590,19 @@ namespace Citicon.Payables
             }
             foreach (DataGridViewRow item in dgvExpenses.Rows)
             {
-                var expense = (Expense)item.Cells[colExpenses.Name].Value;
-                if (code == expense.Code)
+                if (item.Index != idxExpense)
                 {
-                    displayError("Expense Code already in use!");
-                    return false;
-                }
-                if (description == expense.Description)
-                {
-                    displayError("Expense name already exists!");
-                    return false;
+                    var expense = (Expense)item.Cells[colExpenses.Name].Value;
+                    if (code == expense.Code)
+                    {
+                        displayError("Expense Code already in use!");
+                        return false;
+                    }
+                    if (description == expense.Description)
+                    {
+                        displayError("Expense name already exists!");
+                        return false;
+                    }
                 }
             }
             return true;
@@ -589,9 +734,9 @@ namespace Citicon.Payables
                 {
                     if (ask("Changes in expense details has been detected, do you want to save this first?") == DialogResult.Yes)
                         saveExpense();
-                    else insertActiveExpense();
+                    else activeExpense = null;
                 }
-                else insertActiveExpense();
+                else activeExpense = null;
             }
             displayExpense();
             enableExpenseFields(false);
@@ -601,7 +746,11 @@ namespace Citicon.Payables
         private async Task loadRevokableMrisNumber()
         {
             tbxRevokeMrisNumber.AutoCompleteCustomSource.Clear();
-            await stockManager.GetUnpaidMrisNumberListAsync();
+            var list = await stockManager.GetUnpaidMrisNumberListAsync();
+            Invoke(new Action(() =>
+            {
+                tbxRevokeMrisNumber.AutoCompleteCustomSource.AddRange(list);
+            }));
         }
 
         private bool exists(List<uint> list, uint x)
@@ -610,31 +759,25 @@ namespace Citicon.Payables
                 if (x == item) return true;
             return false;
         }
-
-        private string generateCode(DataGridView dgv, DataGridViewColumn col)
-        {
-            List<uint> rawCodes = new List<uint>();
-            string code = string.Empty;
-            if (dgv.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    code = (string)row.Cells[col.Name].Value;
-                    rawCodes.Add(uint.Parse(code.Substring(code.Length - 4)));
-                }
-                for (int i = 1; i < 10000; i++)
-                    if (!exists(rawCodes, (uint)i)) return i.ToString("0000");
-            }
-            return "0001";
-        }
-
+        
         private async void MaintenanceForm_Load(object sender, EventArgs e)
         {
-            await loadBanks();
-            await loadBankAccounts();
-            await loadExpenses();
-            await loadRevokableMrisNumber();
+            if ((bool)User.CurrentUser?.Admin)
+            {
+                await loadBanks();
+                await loadBankAccounts();
+                await loadExpenses();
+                await loadRevokableMrisNumber();
+                cmbxChequeNumberRangeBank.Items.AddRange(banks?.ToArray());
+                cmbxRevokeChequeNumberBank.Items.AddRange(banks?.ToArray());
+            }
+            else
+            {
+                btnUserSettings_Click(null, null);
+                Close();
+            }
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -690,7 +833,6 @@ namespace Citicon.Payables
                 idxBank = rowBank.Index;
                 activeBank = (Bank)rowBank.Cells[colBank.Name].Value;
                 displayBank();
-                dgvBanks.Rows.Remove(rowBank);
                 enableBankFields(true);
             }
         }
@@ -703,7 +845,6 @@ namespace Citicon.Payables
                 idxBankAccount = rowBankAccount.Index;
                 activeBankAccount = (BankAccount)rowBankAccount.Cells[colBankAccounts.Name].Value;
                 displayBankAccount();
-                dgvBankAccounts.Rows.Remove(rowBankAccount);
                 enableBankAccountFields(true);
             }
         }
@@ -716,7 +857,6 @@ namespace Citicon.Payables
                 idxExpense = rowExpense.Index;
                 activeExpense = (Expense)rowExpense.Cells[colExpenses.Name].Value;
                 displayExpense();
-                dgvExpenses.Rows.Remove(rowExpense);
                 enableExpenseFields(true);
             }
         }
@@ -827,7 +967,7 @@ namespace Citicon.Payables
             if (cmbxBankAccountbank.SelectedItem != null)
             {
                 var bank = (Bank)cmbxBankAccountbank.SelectedItem;
-                tbxBankAccountCode.Text = $"{bank.Code}-{Supports.CodePrefixes.BankAccount}-{generateBankAccountCode()}";
+                tbxBankAccountCode.Text = bankAccountManager.GenerateCode(bank);
             }
         }
 
@@ -840,6 +980,119 @@ namespace Citicon.Payables
                 await loadRevokableMrisNumber();
             }
             else displayError("Failed to revoke MRIS No.");
+        }
+
+        private void cmbxChequeNumberRangeBank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbxChequeNumberRangeBankAccount.Items.Clear();
+            cmbxChequeNumberRangeBankAccount.Items.AddRange(bankAccounts.Where(x => x.Bank == cmbxChequeNumberRangeBank.SelectedItem as Bank)?.ToArray());
+            displayChequeRangeInfo();
+        }
+
+        private void displayChequeRangeInfo()
+        {
+            nudChequeNumberRangeEnd.Value = 0;
+            nudChequeNumberRangeStart.Value = 0;
+            tbxChequeNumberRangeCurrent.Text = string.Empty;
+            btnSaveChequeNumberRange.Enabled = false;
+            nudChequeNumberRangeEnd.Enabled = false;
+            nudChequeNumberRangeStart.Enabled = false;
+            if (cmbxChequeNumberRangeBankAccount.SelectedItem != null)
+            {
+                var bankAccount = (BankAccount)cmbxChequeNumberRangeBankAccount.SelectedItem;
+                nudChequeNumberRangeStart.Value = bankAccount.ChequeNumberStart;
+                nudChequeNumberRangeEnd.Value = bankAccount.ChequeNumberEnd;
+                tbxChequeNumberRangeCurrent.Text = bankAccount.ChequeNumber.ToString();
+                if (bankAccount.ChequeNumber > bankAccount.ChequeNumberEnd)
+                {
+                    btnSaveChequeNumberRange.Enabled = true;
+                    nudChequeNumberRangeStart.Enabled = true;
+                    nudChequeNumberRangeEnd.Enabled = true;
+                }
+            }
+        }
+
+        private void cmbxChequeNumberRangeBankAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            displayChequeRangeInfo();
+        }
+
+        private void btnSaveChequeNumberRange_Click(object sender, EventArgs e)
+        {
+            var bankAccount = (BankAccount)cmbxChequeNumberRangeBankAccount.SelectedItem;
+            var end = (uint)nudChequeNumberRangeEnd.Value;
+            var start = (uint)nudChequeNumberRangeStart.Value;
+            if (bankAccount.ChequeNumberEnd != end && bankAccount.ChequeNumberStart != start)
+            {
+                if (start > bankAccount.ChequeNumberEnd)
+                {
+                    if (start < end)
+                    {
+                        bankAccount.ChequeNumberStart = start;
+                        bankAccount.ChequeNumberEnd = end;
+                        bankAccount.ChequeNumber = start;
+                        chequeNumberManager.Update(bankAccount);
+
+                    }
+                    else displayError("End of the range must be greater than the start of the range!");
+                }
+                else displayError("Start of the range must not be exist in the past ranges!");
+            }
+            else
+            {
+                MessageBox.Show("Nothing to change!");
+            }
+        }
+
+        private void tpGeneralSettings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbxRevokeChequeNumberBank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbxRevokeChequeNumberBankAccount.Items.Clear();
+            cmbxRevokeChequeNumberBankAccount.Items.AddRange(bankAccounts.Where(x => x.Bank == cmbxRevokeChequeNumberBank.SelectedItem as Bank)?.ToArray());
+        }
+
+        private async void cmbxRevokeChequeNumberBankAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbxRevokeChequeNumberBankAccount.SelectedItem != null)
+            {
+                tbxRevokeChequeNumber.AutoCompleteCustomSource.Clear();
+                tbxRevokeChequeNumber.Text = string.Empty;
+                chequeNumbers = await payableChequeManager.GetChequeNumberListAsync((BankAccount)cmbxRevokeChequeNumberBankAccount.SelectedItem);
+                Invoke(new Action(() =>
+                {
+                    tbxRevokeChequeNumber.AutoCompleteCustomSource.AddRange(chequeNumbers ?? new string[] { });
+                }));
+            }
+        }
+
+        private void tbxRevokeChequeNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) checkRevokableChequeNumber();
+        }
+
+        private void checkRevokableChequeNumber()
+        {
+            btnRevokeChequeNumber.Enabled = tbxRevokeChequeNumber.AutoCompleteCustomSource.Contains(tbxRevokeChequeNumber.Text);
+        }
+
+        private void tbxRevokeChequeNumber_Leave(object sender, EventArgs e)
+        {
+            checkRevokableChequeNumber();
+        }
+
+        private void btnRevokeChequeNumber_Click(object sender, EventArgs e)
+        {
+            payableChequeManager.RevokeChequeNumber((BankAccount)cmbxRevokeChequeNumberBankAccount.SelectedItem, tbxRevokeChequeNumber.Text.Trim());
+        }
+
+        private void btnUserSettings_Click(object sender, EventArgs e)
+        {
+            UserSettingsForm form = new UserSettingsForm();
+            form.ShowDialog();
         }
     }
 }

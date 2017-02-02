@@ -18,7 +18,7 @@ namespace Citicon.Inventory
         private ItemManager itemManager;
         private Tuple<Stock, Transaction>[] trackings;
         private const string DATE_TIME_FORMAT = "MMMM dd, yyyy hh:mm:ss tt";
-        private const string NUMBER_FORMAT = "#,##0";
+        private const string NUMBER_FORMAT = "#,##0.00";
         public ItemTrackingForm(Item item)
         {
             InitializeComponent();
@@ -54,6 +54,15 @@ namespace Citicon.Inventory
             tbxItemCode.Text = currentItem.Code;
             tbxItemDescription.Text = currentItem.Description;
             trackings = await itemManager.GetTrackingsAsync(currentItem);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void tbxItemCode_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

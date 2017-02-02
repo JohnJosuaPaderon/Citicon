@@ -20,12 +20,14 @@ namespace Citicon.Inventory
         TransactionManager transactionManager;
         BranchManager branchManager;
         CompanyManager companyManager;
+        VehicleManager vehicleManager;
 
         Item[] items;
         Transaction[] transactions;
         Branch[] branches;
         Company[] companies;
         Item currentItem;
+        Vehicle[] vehicles;
 
         List<Item> tempItems;
         enum SearchCategory
@@ -57,9 +59,18 @@ namespace Citicon.Inventory
             companyManager.ExceptionCatched += ExceptionCatched;
             companyManager.NewItemGenerated += CompanyManager_NewItemGenerated;
 
+            vehicleManager = new VehicleManager();
+            vehicleManager.ExceptionCatched += ExceptionCatched;
+            vehicleManager.NewItemGenerated += VehicleManager_NewItemGenerated;
+
             tempItems = new List<Item>();
             tbxReleasedBy.AutoCompleteCustomSource.AddRange(Supports.ReleasedBySuggests);
             tbxRequestedBy.AutoCompleteCustomSource.AddRange(Supports.RequestedBySuggests);
+        }
+
+        private void VehicleManager_NewItemGenerated(Vehicle e)
+        {
+            Invoke(new Action(() => cmbxTruck.Items.Add(e)));
         }
 
         private void TransactionManager_AddedUnsuccessful(Transaction e)
@@ -121,17 +132,19 @@ namespace Citicon.Inventory
 
         private async void OutgoingStocksForm_Load(object sender, EventArgs e)
         {
-            tmrGenerateItems.Start();
-            await loadItems();
-            branches = await branchManager.GetListAsync();
-            companies = await companyManager.GetListAsync();
+            dgvItems.BringToFront();
             cmbxSearchBy.Items.Clear();
             cmbxSearchBy.Items.AddRange(Enum.GetNames(typeof(SearchCategory)));
+            branches = await branchManager.GetListAsync();
+            companies = await companyManager.GetListAsync();
+            vehicles = await vehicleManager.GetListAsync();
+            tmrGenerateItems.Start();
+            await loadItems();
         }
 
         private async void tmrGenerateItems_Tick(object sender, EventArgs e)
         {
-            await loadItems();
+            //await loadItems();
         }
 
         private void tbxSearchItems_TextChanged(object sender, EventArgs e)
@@ -141,6 +154,10 @@ namespace Citicon.Inventory
 
         private void appendItems(Item[] list, bool asIsSearching)
         {
+            if (tbxSearchItems.Text.Length < 8)
+            {
+                return;
+            }
             dgvItems.Rows.Clear();
             if (tbxSearchItems.Text.Trim() != string.Empty)
             {
@@ -159,8 +176,6 @@ namespace Citicon.Inventory
                                 if (item.Code == key) appendSingleItem(item); break;
                             case SearchCategory.Classification:
                                 if (item.Classification?.Description == key) appendSingleItem(item); break;
-                            case SearchCategory.SubClassification:
-                                if (item.SubClassification?.Description == key) appendSingleItem(item); break;
                             default:
                                 break;
                         }
@@ -177,19 +192,13 @@ namespace Citicon.Inventory
                                 if (item.Classification != null)
                                     if (item.Classification.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item);
                                 break;
-                            case SearchCategory.SubClassification:
-                                if (item.SubClassification != null)
-                                    if (item.SubClassification.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item); break;
                             default:
                                 break;
                         }
                     }
                 }
             }
-            if (dgvItems.Height <= 350)
-            {
-                dgvItems.Height = 50 + (30 * dgvItems.Rows.Count);
-            }
+            dgvItems.Height = 50 + (30 * (dgvItems.Rows.Count <= 15 ? dgvItems.Rows.Count : 15));
             if (dgvItems.Rows.Count == 0) dgvItems.Height = 0;
         }
 
@@ -197,7 +206,7 @@ namespace Citicon.Inventory
         {
             foreach (DataGridViewRow row in dgvItems.Rows)
                 if (((Item)row.Cells[colItem.Name].Value) == item) return;
-            dgvItems.Rows.Add(item, item.Code, item.Classification, item.SubClassification, item.StockValue.ToString("#,##0"));
+            dgvItems.Rows.Add(item, item.Code, item.Classification, item.StockValue.ToString("#,##0"));
             if (HasRows) dgvItems.Rows[0].Selected = true;
         }
 
@@ -255,6 +264,7 @@ namespace Citicon.Inventory
             tbxRequestedBy.Text = string.Empty;
             cmbxBranch.SelectedItem = null;
             cmbxCompany.SelectedItem = null;
+            cmbxTruck.SelectedItem = null;
             nudRemovedStockValue.Value = 0;
             dtpTransactionDate.Value = DateTime.Now;
         }
@@ -280,13 +290,13 @@ namespace Citicon.Inventory
         {
             tbxItemCode.Text = string.Empty;
             tbxItemDescription.Text = string.Empty;
-            tbxItemStockValue.Text = 0.ToString("#,##0");
+            tbxItemStockValue.Text = 0.ToString("#,##0.00");
             dgvStocks.Rows.Clear();
             if (currentItem != null)
             {
                 tbxItemCode.Text = currentItem.Code;
                 tbxItemDescription.Text = currentItem.Description;
-                tbxItemStockValue.Text = currentItem.StockValue.ToString("#,##0");
+                tbxItemStockValue.Text = currentItem.StockValue.ToString("#,##0.00");
                 transactions = await transactionManager.GetListByItemAsync(currentItem);
             }
         }
@@ -307,12 +317,19 @@ namespace Citicon.Inventory
         private void btnSave_Click(object sender, EventArgs e)
         {
             var transactionDate = dtpTransactionDate.Value;
-            var removedStockValue = (uint)nudRemovedStockValue.Value;
+            var removedStockValue = nudRemovedStockValue.Value;
             var branch = (Branch)cmbxBranch.SelectedItem;
             var company = (Company)cmbxCompany.SelectedItem;
             var requestedBy = tbxRequestedBy.Text.Trim();
             var releasedBy = tbxReleasedBy.Text.Trim();
+            var truck = (Vehicle)cmbxTruck.SelectedItem;
             var purpose = tbxPurpose.Text.Trim();
+            var seriesNumber = (uint)nudSeriesNumber.Value;
+
+            if (seriesNumber == 0)
+            {
+                displayError("Series No. should not be set to zero."); return;
+            }
 
             if (transactionDate == default(DateTime))
             {
@@ -338,9 +355,13 @@ namespace Citicon.Inventory
             {
                 displayError("Releasing personnel should be indicated!"); return;
             }
-            if (purpose == string.Empty)
+            //if (purpose == string.Empty)
+            //{
+            //    displayError("Purpose should be filled up!"); return;
+            //}
+            if (truck == null)
             {
-                displayError("Purpose should be filled up!"); return;
+                displayError("Truck should be valid!"); return;
             }
             if (currentItem == null)
             {
@@ -360,7 +381,9 @@ namespace Citicon.Inventory
                 ReleasedBy = releasedBy,
                 RemovedStockValue = removedStockValue,
                 RequestedBy = requestedBy,
-                TransactionDate = transactionDate
+                TransactionDate = transactionDate,
+                Truck = truck,
+                SeriesNumber = seriesNumber
             });
         }
 
@@ -407,6 +430,40 @@ namespace Citicon.Inventory
         private void btnCancel_Click(object sender, EventArgs e)
         {
             clearTransactionFields();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void searchableComboBox(object sender, MouseEventArgs e)
+        {
+            if (e?.Button == MouseButtons.Right && sender is ComboBox)
+            {
+                var cmbx = (ComboBox)sender;
+                cmbx.DropDownStyle = ComboBoxStyle.DropDown;
+                cmbx.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cmbx.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cmbx.AutoCompleteCustomSource.Clear();
+                var list = new List<string>();
+                foreach (var item in cmbx.Items)
+                    list.Add(item.ToString());
+                cmbx.AutoCompleteCustomSource.AddRange(list.ToArray());
+            }
+        }
+
+        private void cmbx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                changeComboBoxStyleToDropDownList((ComboBox)sender);
+            }
+        }
+
+        private void changeComboBoxStyleToDropDownList(ComboBox cmbx)
+        {
+            if (cmbx.DropDownStyle != ComboBoxStyle.DropDownList) cmbx.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

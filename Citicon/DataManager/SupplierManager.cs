@@ -4,6 +4,7 @@ using Sorschia.Extensions;
 using Sorschia.Queries;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace Citicon.DataManager
@@ -50,6 +51,15 @@ namespace Citicon.DataManager
                 };
             }
             return null;
+        }
+
+        public string GenerateCode()
+        {
+            using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _suppliers_generatecode();", CommandType.Text))
+            {
+                query.ExceptionCatched += OnExceptionCatched;
+                return query.GetValue().ToString();
+            }
         }
 
         public Supplier GetById(ulong id)

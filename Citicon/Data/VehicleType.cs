@@ -32,19 +32,29 @@
                 OnPropertyChanged("VehicleType.Description", value);
             }
         }
-        public static bool operator ==(VehicleType x, VehicleType y)
+
+        public static bool operator ==(VehicleType left, VehicleType right)
         {
-            return
-                x?.code == y?.code &&
-                x?.description == y?.description;
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.id == right.id;
         }
-        public static bool operator !=(VehicleType x, VehicleType y)
+        public static bool operator !=(VehicleType left, VehicleType right)
         {
-            return !(x == y);
+            return !(left == right);
         }
-        public override bool Equals(object obj)
+
+        public override bool Equals(object arg)
         {
-            return (obj is VehicleType) ? (obj as VehicleType).id == id : false;
+            if (arg is VehicleType)
+            {
+                return (VehicleType)arg == this;
+            }
+            return false;
         }
         public override int GetHashCode()
         {

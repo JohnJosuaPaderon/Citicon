@@ -27,28 +27,112 @@ namespace Citicon.Inventory
 
         private void ItemManager_NewItemGenerated(Item e)
         {
-            Invoke(new Action(() =>
+            Parallel.Invoke(() =>
             {
-                DataGridViewRow row = new DataGridViewRow();
-                dgvItems.Rows.Add(e, e.SubClassification?.Classification, e.SubClassification, e.StockValue.ToString("#,##0.00"));
-            }));
+                Invoke(new Action(() =>
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    dgvItems.Rows.Add(e, e.Classification, e.Code, e.MeasurementUnit, e.StockValue.ToString("#,##0.00"));
+                }));
+            });
         }
 
+        private bool existsInDataGridView(Item item)
+        {
+            foreach (DataGridViewRow row in dgvItems.Rows)
+            {
+                var x = (Item)row.Cells[colItems.Name].Value;
+                if (item.Equals(x)) return true;
+            }
+            return false;
+        }
+
+        private void displayItems()
+        {
+            foreach (Item item in items)
+            {
+                Parallel.Invoke(() =>
+                {
+                    Invoker(() =>
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        var _item = new DataGridViewTextBoxCell { Value = item };
+                        var _classification = new DataGridViewTextBoxCell { Value = item.Classification };
+                        var _code = new DataGridViewTextBoxCell { Value = item.Code };
+                        var _measurementUnit = new DataGridViewTextBoxCell { Value = item.MeasurementUnit };
+                        var _stockValue = new DataGridViewTextBoxCell { Value = item.StockValue.ToString("#,##0.00") };
+                        row.Cells.Add(_item);
+                        row.Cells.Add(_classification);
+                        row.Cells.Add(_code);
+                        row.Cells.Add(_measurementUnit);
+                        row.Cells.Add(_stockValue);
+                        DataGridViewRow x_Row = null;
+                        foreach (DataGridViewRow x in dgvItems.Rows)
+                        {
+                            if (item.Equals(x.Cells[colItems.Name].Value))
+                            {
+                                x_Row = x;
+                                break;
+                            }
+                        }
+                        //dgvItems.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => item.Equals((Item)x.Cells[colItems.Name].Value));
+                        if (existsInDataGridView(item))
+                        {
+                            x_Row.Cells[colItems.Name].Value = _item.Value;
+                            x_Row.Cells[colItemsClassification.Name].Value = _classification.Value;
+                            x_Row.Cells[colItemsCode.Name].Value = _code.Value;
+                            x_Row.Cells[colItemsMeasurementUnit.Name].Value = _measurementUnit.Value;
+                            x_Row.Cells[colItemsStockValue.Name].Value = _stockValue.Value;
+                        }
+                        else
+                        {
+                            Invoker(() => dgvItems.Rows.Insert(x_Row != null ? x_Row.Index : dgvItems.Rows.Count, row));
+                        }
+                    });
+                });
+            }
+        }
+        
         private void ExceptionCatched(Exception ex)
         {
             if (Supports.DebugMode) MessageBox.Show(ex.Message);
         }
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            lblUserDisplayName.Text = User.CurrentUser.DisplayName;
-            await getItems();
+            if (User.CurrentUser.Inventory_OutgoingStocksOnly)
+            {
+                btnRefresh.Enabled = false;
+                btnItems.Enabled = false;
+                btnIncomingStocks.Enabled = false;
+                btnReports.Enabled = false;
+                btnViewTracking.Enabled = false;
+                btnOutgoingStocks_Click(this, EventArgs.Empty);
+            }
+            else
+            {
+                lblUserDisplayName.Text = User.CurrentUser?.DisplayName;
+                getItems();
+            }
         }
 
-        private async Task getItems()
+        private void Invoker(Action method)
         {
-            dgvItems.Rows.Clear();
-            items = await itemManager.GetListAsync();
+            try { Invoke(method); }
+            catch (Exception ex) { ExceptionCatched(ex); }
+        }
+
+        private void getItems()
+        {
+            lblMessage.Visible = true;
+            var task = itemManager.GetListAsync();
+            task.ContinueWith(x =>
+            {
+                items = task.Result;
+                displayItems();
+                Invoker(() => lblMessage.Visible = false);
+                itemManager.NewItemGenerated -= ItemManager_NewItemGenerated;
+            });
         }
 
         private void btnItems_Click(object sender, EventArgs e)
@@ -61,6 +145,7 @@ namespace Citicon.Inventory
         {
             MaintenanceForm form = new MaintenanceForm();
             form.Show();
+            lblUserDisplayName.Text = User.CurrentUser?.DisplayName;
         }
 
         private void btnIncomingStocks_Click(object sender, EventArgs e)
@@ -84,9 +169,35 @@ namespace Citicon.Inventory
             }
         }
 
-        private async void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            await getItems();
+            getItems();
+        }
+
+        private void lblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            User.CurrentUser = null;
+            Close();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            ReportsForm form = new ReportsForm();
+            form.ShowDialog();
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvItems.Rows)
+            {
+                var item = (Item)row.Cells[colItems.Name].Value;
+                if (item.Description.ToUpper().Contains(tbxSearch.Text.Trim().ToUpper()))
+                {
+                    dgvItems.FirstDisplayedScrollingRowIndex = row.Index;
+                    row.Selected = true;
+                    return;
+                }
+            }
         }
     }
 }

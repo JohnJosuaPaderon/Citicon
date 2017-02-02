@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CTPMO">
+      <HintPath>..\..\..\CTPMO v.1\CTPMO\bin\Debug\CTPMO.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Sorschia 1.0\Sorschia\bin\Debug\MySql.Data.dll</HintPath>
@@ -40,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,28 +53,237 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUserForm.Designer.cs">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManager\AccessoryTypeManager.cs" />
+    <Compile Include="DataManager\AccountClassificationManager.cs" />
+    <Compile Include="DataManager\AccountManager.cs" />
+    <Compile Include="DataManager\AccountSubClassificationManager.cs" />
+    <Compile Include="DataManager\AccountTypeManager.cs" />
     <Compile Include="DataManager\BankAccountManager.cs" />
     <Compile Include="DataManager\BankManager.cs" />
+    <Compile Include="DataManager\BillingManager.cs" />
+    <Compile Include="DataManager\BillingStructureTypeManager.cs" />
     <Compile Include="DataManager\BranchManager.cs" />
+    <Compile Include="DataManager\ClassificationManager.cs" />
+    <Compile Include="DataManager\ClientManager.cs" />
     <Compile Include="DataManager\CompanyManager.cs" />
+    <Compile Include="DataManager\DeliveryManager.cs" />
+    <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
+    <Compile Include="DataManager\ExpenseManager.cs" />
+    <Compile Include="DataManager\InsertPumpType.cs" />
+    <Compile Include="DataManager\ItemManager.cs" />
+    <Compile Include="DataManager\MeasurementUnitManager.cs" />
     <Compile Include="DataManager\ModuleManager.cs" />
+    <Compile Include="DataManager\OperationTimeFrameManager.cs" />
+    <Compile Include="DataManager\OtherChargeManager.cs" />
+    <Compile Include="DataManager\OtherChargeTypeManager.cs" />
+    <Compile Include="DataManager\PayableManager.cs" />
+    <Compile Include="DataManager\PaymentTermManager.cs" />
+    <Compile Include="DataManager\ProjectDesignManager.cs" />
+    <Compile Include="DataManager\ProjectDesignMixTypeManager.cs" />
+    <Compile Include="DataManager\ProjectManager.cs" />
+    <Compile Include="DataManager\PumpcreteChargeManager.cs" />
+    <Compile Include="DataManager\PumpSizeManager.cs" />
+    <Compile Include="DataManager\PumpTypeManager.cs" />
+    <Compile Include="DataManager\PurchaseOrderManager.cs" />
+    <Compile Include="DataManager\QuotationManager.cs" />
+    <Compile Include="DataManager\QuotationStatusManager.cs" />
+    <Compile Include="DataManager\QuotationUserManager.cs" />
+    <Compile Include="DataManager\SalesInvoiceManager.cs" />
+    <Compile Include="DataManager\StockManager.cs" />
     <Compile Include="DataManager\SupplierManager.cs" />
+    <Compile Include="DataManager\TransactionManager.cs" />
+    <Compile Include="DataManager\TruckManager.cs" />
     <Compile Include="DataManager\UserManager.cs" />
     <Compile Include="DataManager\VehicleManager.cs" />
     <Compile Include="DataManager\VehicleTypeManager.cs" />
+    <Compile Include="DataManager\DepartmentManager.cs" />
+    <Compile Include="DataManager\EmployeeManager.cs" />
+    <Compile Include="DataProcess\AccessoryTypeProcesses\GetAccessoryTypeList.cs" />
+    <Compile Include="DataProcess\BillingProcesses\GetBillingListWithoutSiNumberByProject.cs" />
+    <Compile Include="DataProcess\BillingProcesses\InsertBilling.cs" />
+    <Compile Include="DataProcess\BillingStructureTypeProcesses\GetBillingStructureTypeList.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetClientById.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetClientList.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetClientListWithUnbilledDelivery.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetClientListWithoutBillingSiNumber.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetClientListWithUnpaidBillingSiNumber.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetClientMetaDataListWithQuotationForApproval.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetLegitimateClientList.cs" />
+    <Compile Include="DataProcess\DeliveryProcesses\GetDeliveryListByClient.cs" />
+    <Compile Include="DataProcess\DeliveryProcesses\UpdateDeliveryBillingId.cs" />
+    <Compile Include="DataProcess\DepartmentProcesses\GetDepartmentById.cs" />
+    <Compile Include="DataProcess\EmployeeProcesses\GetEmployeeAgent.cs" />
+    <Compile Include="DataProcess\EmployeeProcesses\GetEmployeeById.cs" />
+    <Compile Include="DataManager\JobPositionManager.cs" />
+    <Compile Include="DataManager\ProductAggregateManager.cs" />
+    <Compile Include="DataManager\ProductManager.cs" />
+    <Compile Include="DataManager\ProductStrengthManager.cs" />
+    <Compile Include="DataProcess\ExcessPipeChargeProcesses\InsertExcessPipeCharge.cs" />
+    <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListByPurchaseOrder.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListWithNoPurchaseOrderByProject.cs" />
+    <Compile Include="DataProcess\GetProjectListWithProjectDesignNoPurchaseOrderByClient.cs" />
+    <Compile Include="DataProcess\GetPurchaseOrderById.cs" />
+    <Compile Include="DataProcess\GetPurchaseOrderByNumber.cs" />
+    <Compile Include="DataProcess\GetQuotationUserById.cs" />
+    <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
+    <Compile Include="DataProcess\InsertQuotationUser.cs" />
+    <Compile Include="DataProcess\InsertUser.cs" />
+    <Compile Include="DataProcess\JobPositionProcesses\GetJobPositionById.cs" />
+    <Compile Include="DataProcess\OperationTimeFrameProcesses\InsertOperationTimeFrame.cs" />
+    <Compile Include="DataProcess\OtherChargeProcesses\InsertOtherCharge.cs" />
+    <Compile Include="DataProcess\OtherChargeTypeProcesses\GetOtherChargeTypeList.cs" />
+    <Compile Include="DataProcess\ProductAggregateProcesses\GetProductAggregateById.cs" />
+    <Compile Include="DataProcess\ProductAggregateProcesses\GetProductAggregateList.cs" />
+    <Compile Include="DataProcess\ProductProcesses\GetProductListByProjectId.cs" />
+    <Compile Include="DataProcess\ProductStrengthProcesses\GetProductStrengthById.cs" />
+    <Compile Include="DataProcess\ProductStrengthProcesses\GetProductStrengthList.cs" />
+    <Compile Include="DataProcess\ProjectBillingInfoProcesses\GetProjectBillingInfo.cs" />
+    <Compile Include="DataProcess\ProjectDesignProcesses\ApproveProjectDesign.cs" />
+    <Compile Include="DataProcess\ProjectDesignProcesses\GetProjectDesignListByProject.cs" />
+    <Compile Include="DataProcess\ProjectDesignProcesses\GetProjectDesignListForApproval.cs" />
+    <Compile Include="DataProcess\ProjectDesignProcesses\InsertProjectDesign.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\GetClientListWithQuotationForApprovalByClient.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\GetProjectById.cs" />
+    <Compile Include="DataProcess\ProjectDesignProcesses\GetProjectDesignById.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\GetProjectListByClient.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\GetProjectListWithoutBIllingSiNumberByClient.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\GetProjectListWithUnbilledDeliveryByClient.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\GetProjectListWithUnpaidBillingSiNumberByClient.cs" />
+    <Compile Include="DataProcess\PumpcreteChargeProcesses\InsertPumpcreteCharge.cs" />
+    <Compile Include="DataProcess\PumpSizeProcesses\GetPumpSizeList.cs" />
+    <Compile Include="DataProcess\PumpTypeProcesses\GetPumpTypeList.cs" />
+    <Compile Include="DataProcess\ClientProcesses\GetTallySheetClientListByDeliveryDate.cs" />
+    <Compile Include="DataProcess\DeliveryProcesses\GetTallySheetDeliveryListByClientAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\DeliveryProcesses\GetTallySheetDeliveryListByProjectAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\GetTallySheetProjectListByClientAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\QuotationProcesses\ExportQuotation.cs" />
+    <Compile Include="DataProcess\QuotationProcesses\GetForApprovalQuotationMetaDataListByProject.cs" />
+    <Compile Include="DataProcess\QuotationProcesses\GetForFinalApprovalQuotationMetaDataList.cs" />
+    <Compile Include="DataProcess\QuotationProcesses\GetQuotationById.cs" />
+    <Compile Include="DataProcess\QuotationProcesses\UpdateQuotationStatus.cs" />
+    <Compile Include="DataProcess\SaveCementSuppliedStockProject.cs" />
+    <Compile Include="DataProcess\SetProjectDesignPurchaseOrder.cs" />
+    <Compile Include="DataProcess\VehicleProcesses\GetTransitMixerVehicleList.cs" />
+    <Compile Include="DataProcess\DeliveryProcesses\GetUnbilledDeliveryListByProject.cs" />
+    <Compile Include="DataProcess\BillingProcesses\GetUnpaidBillingListBySalesInvoice.cs" />
+    <Compile Include="DataProcess\SalesInvoiceProcesses\GetUnpaidSalesInvoiceListByProject.cs" />
+    <Compile Include="DataProcess\VehicleProcesses\GetVehicleById.cs" />
+    <Compile Include="DataProcess\VehicleProcesses\GetVehicleTypeById.cs" />
+    <Compile Include="DataProcess\BillingProcesses\SaveBillingSiNumber.cs" />
+    <Compile Include="DataProcess\ProductProcesses\SaveEditedProduct.cs" />
+    <Compile Include="DataProcess\ProjectProcesses\SaveProjectDetails.cs" />
+    <Compile Include="DataProcess\PumpTypeProcesses\UpdatePumpType.cs" />
+    <Compile Include="Data\AccessoryType.cs" />
+    <Compile Include="Data\Account.cs" />
+    <Compile Include="Data\AccountClassification.cs" />
+    <Compile Include="Data\AccountSubClassification.cs" />
+    <Compile Include="Data\AccountType.cs" />
     <Compile Include="Data\Bank.cs" />
     <Compile Include="Data\BankAccount.cs" />
+    <Compile Include="Data\Billing.cs" />
+    <Compile Include="Data\BillingStructureType.cs" />
     <Compile Include="Data\Branch.cs" />
+    <Compile Include="Data\Classification.cs" />
+    <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Company.cs" />
+    <Compile Include="Data\Delivery.cs" />
+    <Compile Include="Data\Department.cs" />
+    <Compile Include="Data\Employee.cs" />
+    <Compile Include="Data\ExcessPipeCharge.cs" />
+    <Compile Include="Data\Expense.cs" />
+    <Compile Include="Data\Item.cs" />
+    <Compile Include="Data\JobPosition.cs" />
+    <Compile Include="Data\MeasurementUnit.cs" />
     <Compile Include="Data\Module.cs" />
+    <Compile Include="Data\OperationTimeFrame.cs" />
+    <Compile Include="Data\OtherCharge.cs" />
+    <Compile Include="Data\OtherChargeType.cs" />
+    <Compile Include="Data\Payable.cs" />
+    <Compile Include="Data\PaymentTerm.cs" />
+    <Compile Include="Data\Product.cs" />
+    <Compile Include="Data\Project.cs" />
+    <Compile Include="Data\ProjectBillingInfo.cs" />
+    <Compile Include="Data\ProjectDesign.cs" />
+    <Compile Include="Data\ProjectDesignMixType.cs" />
+    <Compile Include="Data\PumpcreteCharge.cs" />
+    <Compile Include="Data\PumpSize.cs" />
+    <Compile Include="Data\PumpType.cs" />
+    <Compile Include="Data\PurchaseOrder.cs" />
+    <Compile Include="Data\Quotation.cs" />
+    <Compile Include="Data\QuotationStatus.cs" />
+    <Compile Include="Data\QuotationUser.cs" />
+    <Compile Include="Data\SalesInvoice.cs" />
+    <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
+    <Compile Include="Data\Transaction.cs" />
     <Compile Include="Data\Truck.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ExporterBase.cs" />
     <Compile Include="Supports.cs" />
+    <Compile Include="UserSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSettingsForm.Designer.cs">
+      <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddUserForm.resx">
+      <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSettingsForm.resx">
+      <DependentUpon>UserSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

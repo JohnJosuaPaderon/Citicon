@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Citicon.DesktopClient.QuotationApproval.Views.ProjectDesignApprovalControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Citicon.DesktopClient.QuotationApproval.Views"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             Focusable="True"
+             GotFocus="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:TransitioningContent Grid.Row="0" Grid.Column="0" OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromLeft,Duration=0:0:1}">
+            <materialDesign:Card VerticalAlignment="Stretch">
+                <Grid>
+                    <DataGrid x:Name="dgvProjectDesigns" IsReadOnly="True" SelectionChanged="dgvProjectDesigns_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Project Designs" Binding="{Binding}"/>
+                            <DataGridTextColumn Header="Client" Binding="{Binding Project.Client}"/>
+                            <DataGridTextColumn Header="Project" Binding="{Binding Project}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnRefresh" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Click="btnRefresh_Click" >
+                        <materialDesign:PackIcon Kind="Refresh" Height="30" Width="30"/>
+                    </Button>
+                </Grid>
+            </materialDesign:Card>
+        </materialDesign:TransitioningContent>
+        <materialDesign:TransitioningContent Grid.Row="0" Grid.Column="2" OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromRight,Duration=0:0:1}">
+            <materialDesign:Card VerticalAlignment="Stretch">
+                <DockPanel>
+                    <materialDesign:TransitioningContent DockPanel.Dock="Top" OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromTop,Duration=0:0:1}">
+                        <materialDesign:ColorZone Mode="PrimaryMid">
+                            <TextBlock Text="Project Design Description" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="10"/>
+                        </materialDesign:ColorZone>
+                    </materialDesign:TransitioningContent>
+                    <ItemsControl Margin="10">
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxClient" materialDesign:HintAssist.Hint="Client" IsReadOnly="True"/>
+                        </materialDesign:TransitioningContent>
+                        <Border Height="10"/>
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxProject" materialDesign:HintAssist.Hint="Project" IsReadOnly="True"/>
+                        </materialDesign:TransitioningContent>
+                        <Border Height="10"/>
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxMixType" materialDesign:HintAssist.Hint="Mix Type" IsReadOnly="True"/>
+                        </materialDesign:TransitioningContent>
+                        <Border Height="10"/>
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxAggregate" materialDesign:HintAssist.Hint="Aggregate" IsReadOnly="True"/>
+                        </materialDesign:TransitioningContent>
+                        <Border Height="10"/>
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxStrength" materialDesign:HintAssist.Hint="Strength" IsReadOnly="True"/>
+                        </materialDesign:TransitioningContent>
+                        <Border Height="10"/>
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxPsi" materialDesign:HintAssist.Hint="PSI" IsReadOnly="True"/>
+                        </materialDesign:TransitioningContent>
+                        <Border Height="10"/>
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxPricePerCubicMeter" materialDesign:HintAssist.Hint="Price/Cu.M." LostFocus="tbxPricePerCubicMeter_LostFocus" LostTouchCapture="tbxPricePerCubicMeter_LostTouchCapture" GotTouchCapture="tbxPricePerCubicMeter_GotTouchCapture"/>
+                        </materialDesign:TransitioningContent>
+                        <Border Height="10"/>
+                        <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
+                            <TextBox x:Name="tbxCementFactor" materialDesign:HintAssist.Hint="Cement Factor" IsReadOnly="True"/>
+                        </materialDesign:TransitioningContent>
+                    </ItemsControl>
+                </DockPanel>
+            </materialDesign:Card>
+        </materialDesign:TransitioningContent>
+        <ItemsControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right">
+            <materialDesign:TransitioningContent >
+                <Button x:Name="btnApprove" Padding="30,5" Height="NaN" Click="btnApprove_Click">
+                    <StackPanel>
+                        <materialDesign:PackIcon Kind="CheckCircleOutline" Height="30" Width="30" HorizontalAlignment="Center"/>
+                        <Border Height="5"/>
+                        <TextBlock Text="Approve"/>
+                    </StackPanel>
+                </Button>
+            </materialDesign:TransitioningContent>
+        </ItemsControl>
+    </Grid>
+</UserControl>

@@ -20,8 +20,6 @@ namespace Citicon.Payables
         private BankManager bankManager;
         private BankAccountManager bankAccountManager;
         private Supplier payee;
-        private Bank bank;
-        private BankAccount bankAccount;
         private Payable[] payables;
         private Bank[] banks;
         private BankAccount[] bankAccounts;
@@ -51,7 +49,8 @@ namespace Citicon.Payables
 
         private void PayableManager_Updated(Payable e)
         {
-            grandTotalAmount += e.TotalAmount;
+            tbxCheckVoucherNumber.AutoCompleteCustomSource.Remove(e.ChequeVoucherNumber);
+            grandTotalAmount += e.Debit;
         }
 
         private void BankAccountManager_NewItemGenerated(BankAccount e)
@@ -82,7 +81,7 @@ namespace Citicon.Payables
             Invoke(new Action(() =>
             {
                 if (payee == null) payee = e.Supplier;
-                dgvPayables.Rows.Add(e, e.Company, e.Branch, e.TotalAmount.ToString("#,##0.00"));
+                dgvPayables.Rows.Add(e, e.Company, e.Branch, e.Debit.ToString("#,##0.00"));
             }));
         }
 
@@ -129,7 +128,7 @@ namespace Citicon.Payables
                     grandTotalAmount = 0;
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
-                        grandTotalAmount += ((Payable)row.Cells[colPayable.Name].Value).TotalAmount;
+                        grandTotalAmount += ((Payable)row.Cells[colPayable.Name].Value).Debit;
                         tbxGrandTotal.Text = grandTotalAmount.ToString("#,##0.00");
                     }
                     tbxPayee.Text = payee.Description;
@@ -183,7 +182,16 @@ namespace Citicon.Payables
 
         private void cmbxBankAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tbxCheckNumber.Text = ((BankAccount)cmbxBankAccounts.SelectedItem).ChequeNumber.ToString("0000000");
+            var bankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
+            if (bankAccount.ChequeNumberEnd >= bankAccount.ChequeNumber)
+            {
+                tbxCheckNumber.Text = bankAccount.ChequeNumber.ToString("0000000");
+            }
+            else
+            {
+                tbxCheckNumber.Text = "0000000";
+                MessageBox.Show("Insufficient cheque number!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private async void btnExportCheque_Click(object sender, EventArgs e)
@@ -194,10 +202,17 @@ namespace Citicon.Payables
                 {
                     grandTotalAmount = 0;
                     var chequeNumber = tbxCheckNumber.Text.Trim();
+                    if (uint.Parse(chequeNumber) <= 0)
+                    {
+                        MessageBox.Show("Insufficient cheque number!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
                         payable.ChequeNumber = chequeNumber;
+                        payable.BankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
+                        payable.TransactionDate = Supports.SystemDate;
                         payableManager.Update(payable);
                     }
                     payableManager.ExportCheque(grandTotalAmount, payee);
@@ -213,11 +228,22 @@ namespace Citicon.Payables
                     cmbxBanks.SelectedItem = null;
                     cmbxBankAccounts.Items.Clear();
                     tbxGrandTotal.Text = "0.00";
+                    clearCheckVoucherNumber();
                     MessageBox.Show("Done!", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else MessageBox.Show("No Payables in the list!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Please verify all details!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void tbxCheckVoucherNumber_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

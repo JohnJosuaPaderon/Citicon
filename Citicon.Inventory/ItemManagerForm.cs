@@ -17,11 +17,11 @@ namespace Citicon.Inventory
     public partial class ItemManagerForm : Form
     {
         private ClassificationManager classificationManager;
-        private SubClassificationManager subClassificationManager;
+        private MeasurementUnitManager measurementUnitManager;
         private ItemManager itemManager;
 
         private Classification[] classifications;
-        private SubClassification[] subClassifications;
+        private MeasurementUnit[] measurementUnits;
         private Item[] items;
         private Item currentItem;
 
@@ -32,26 +32,45 @@ namespace Citicon.Inventory
         {
             InitializeComponent();
             classificationManager = new ClassificationManager();
-            subClassificationManager = new SubClassificationManager();
+            measurementUnitManager = new MeasurementUnitManager();
             itemManager = new ItemManager();
 
             classificationManager.ExceptionCatched += ExceptionCatched;
-            subClassificationManager.ExceptionCatched += ExceptionCatched;
             itemManager.ExceptionCatched += ExceptionCatched;
+            measurementUnitManager.ExceptionCatched += ExceptionCatched;
 
             classificationManager.NewItemGenerated += ClassificationManager_NewItemGenerated;
-            subClassificationManager.NewItemGenerated += SubClassificationManager_NewItemGenerated;
             itemManager.NewItemGenerated += ItemManager_NewItemGenerated;
-
+            measurementUnitManager.NewItemGenerated += MeasurementUnitManager_NewItemGenerated;
             itemManager.Added += ItemManager_Added;
             itemManager.AddedUnsuccessful += ItemManager_AddedUnsuccessful;
             itemManager.Updated += ItemManager_Updated;
+            itemManager.Removed += ItemManager_Removed;
+        }
+
+        private void ItemManager_Removed(Item e)
+        {
+            dgvItems.Rows.Remove(row);
+            currentItem = null;
+            displayCurrentItem();
+            enableItemFields(false, false);
+            tbxItemDescription.AutoCompleteCustomSource.Remove(e.Description);
+            MessageBox.Show("item successfully removed!", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void MeasurementUnitManager_NewItemGenerated(MeasurementUnit e)
+        {
+            //Invoke(new Action(() => cmbxMeasurementUnit.Items.Add(e)));
         }
 
         private void ItemManager_Updated(Item e)
         {
             MessageBox.Show("Item has been updated successfully!");
-            dgvItems.Rows.Insert(index, e, e.Code, e.Classification, e.SubClassification, e.StockValue.ToString("#,##0"));
+            row.Cells[colItem.Name].Value = e;
+            row.Cells[colItemCode.Name].Value = e.Code;
+            row.Cells[colItemsClassification.Name].Value = e.Classification;
+            row.Cells[colItemsStockValue.Name].Value = e.StockValue.ToString("#,##0.00");
+            //dgvItems.Rows.Insert(index, e, e.Code, e.Classification, e.SubClassification, e.StockValue.ToString("#,##0"));
             currentItem = null;
             displayCurrentItem();
             enableItemFields(false, false);
@@ -65,10 +84,30 @@ namespace Citicon.Inventory
         private void ItemManager_Added(Item e)
         {
             MessageBox.Show("Item was successfully added!");
-            dgvItems.Rows.Add(e, e.Code, e.Classification, e.SubClassification, e.StockValue.ToString("#,##0"));
+            foreach (DataGridViewRow row in dgvItems.Rows)
+            {
+                Action<int> insert = (index) => { dgvItems.Rows.Insert(index, e, e.Code, e.Classification, e.StockValue.ToString("#,##0.00")); };
+                var upper = (Item)row.Cells[colItem.Name].Value;
+                var lowerIndex = row.Index + 1;
+                var lower = lowerIndex < dgvItems.Rows.Count ? (Item)dgvItems.Rows[lowerIndex].Cells[colItem.Name].Value : null;
+                if (lower != null)
+                {
+                    if (string.Compare(upper.Description, e.Description) == -1 && string.Compare(lower.Description, e.Description) == 1)
+                    {
+                        insert(lowerIndex);   
+                        break;
+                    }
+                }
+                else
+                {
+                    insert(row.Index + 1);
+                    break;
+                }
+            }
             currentItem = null;
             displayCurrentItem();
             enableItemFields(false, false);
+            tbxItemDescription.AutoCompleteCustomSource.Add(e.Description);
         }
 
         private void displayCurrentItem()
@@ -76,32 +115,33 @@ namespace Citicon.Inventory
             tbxItemCode.Text = string.Empty;
             tbxItemDescription.Text = string.Empty;
             cmbxItemClassification.SelectedItem = null;
-            cmbxItemSubClassification.SelectedItem = null;
+            cmbxMeasurementUnit.SelectedItem = null;
             nudItemStockValue.Value = 0;
+            ckbxCementSupplied.Checked = false;
             if (currentItem != null)
             {
                 cmbxItemClassification.SelectedItem = currentItem.Classification;
-                cmbxItemSubClassification.SelectedItem = currentItem.SubClassification;
+                cmbxMeasurementUnit.SelectedItem = currentItem.MeasurementUnit;
                 tbxItemCode.Text = currentItem.Code;
                 tbxItemDescription.Text = currentItem.Description;
                 nudItemStockValue.Value = currentItem.StockValue;
+                ckbxCementSupplied.Checked = currentItem.CementSupplied;
                 index = dgvItems.SelectedRows[0].Index;
             }
         }
 
         private void ItemManager_NewItemGenerated(Item e)
         {
-            Invoke(new Action(() => dgvItems.Rows.Add(e, e.Code, e.Classification, e.SubClassification, e.StockValue.ToString("#,##0"))));
+            //Invoke(new Action(() =>
+            //{
+            //    dgvItems.Rows.Add(e, e.Code, e.Classification, e.SubClassification, e.StockValue.ToString("#,##0"));
+            //    tbxItemDescription.AutoCompleteCustomSource.Add(e.Description);
+            //}));
         }
-
-        private void SubClassificationManager_NewItemGenerated(SubClassification e)
-        {
-            Invoke(new Action(() => cmbxItemSubClassification.Items.Add(e)));
-        }
-
+        
         private void ClassificationManager_NewItemGenerated(Classification e)
         {
-            Invoke(new Action(() => cmbxItemClassification.Items.Add(e)));
+            //Invoke(new Action(() => cmbxItemClassification.Items.Add(e)));
         }
 
         private void ExceptionCatched(Exception ex)
@@ -112,27 +152,57 @@ namespace Citicon.Inventory
         private async Task loadClassifications()
         {
             cmbxItemClassification.Items.Clear();
-            classifications = (await classificationManager.GetListAsync());
+            classifications = await classificationManager.GetListAsync();
         }
 
-        private async Task loadSubClassifications()
+        private void displayClassifications()
         {
-            cmbxItemSubClassification.Items.Clear();
-            subClassifications = (await subClassificationManager.GetListAsync());
+            cmbxItemClassification.Items.AddRange(classifications);
         }
-
+        
         private async Task loadItems()
         {
             dgvItems.Rows.Clear();
-            items = (await itemManager.GetListAsync());
+            tbxItemDescription.AutoCompleteCustomSource.Clear();
+            items = await itemManager.GetListAsync();
         }
         
+        private void displayItems()
+        {
+            List<DataGridViewRow> rows = new List<DataGridViewRow>();
+            List<string> autoCompleteCustomSource = new List<string>();
+            foreach (Item item in items)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Code });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Classification });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = item.StockValue.ToString("#,##0.00") });
+                autoCompleteCustomSource.Add(item.Description);
+                rows.Add(row);
+            }
+            dgvItems.Rows.AddRange(rows.ToArray());
+            tbxItemDescription.AutoCompleteCustomSource.AddRange(autoCompleteCustomSource.ToArray());
+        }
+
+        private async Task loadMeasurementUnits()
+        {
+            cmbxMeasurementUnit.Items.Clear();
+            measurementUnits = await measurementUnitManager.GetListAsync();
+        }
+
+        private void displayMeasurementUnits()
+        {
+            cmbxMeasurementUnit.Items.AddRange(measurementUnits);
+        }
+
         private void btnNewItem_Click(object sender, EventArgs e)
         {
             checkChanges();
             currentItem = null;
             displayCurrentItem();
             enableItemFields(true, true);
+            cmbxItemClassification.Focus();
         }
 
         private void enableItemFields(bool enabled, bool newItem)
@@ -140,42 +210,79 @@ namespace Citicon.Inventory
             tbxItemCode.Enabled = enabled;
             tbxItemDescription.Enabled = enabled;
             cmbxItemClassification.Enabled = enabled;
-            cmbxItemSubClassification.Enabled = enabled;
+            cmbxMeasurementUnit.Enabled = enabled;
             nudItemStockValue.Enabled = newItem;
             dgvItems.Enabled = !enabled;
         }
-
-        private void lblNoSubClassification_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        
+        private void enableFields(bool enabled)
         {
-            setClassification();
+            btnCancelItem.Enabled = enabled;
+            btnEditItem.Enabled = enabled;
+            btnNewItem.Enabled = enabled;
+            btnRemoveItem.Enabled = enabled;
+            btnSaveItem.Enabled = enabled;
+            tbxItemCode.Enabled = enabled;
+            tbxItemDescription.Enabled = enabled;
+            cmbxItemClassification.Enabled = enabled;
+            cmbxMeasurementUnit.Enabled = enabled;
+            ckbxCementSupplied.Enabled = enabled;
+            btnViewPriceHistory.Enabled = enabled;
         }
 
-        private async void ItemManagerForm_Load(object sender, EventArgs e)
+        private void displayMessage(string message)
         {
-            await loadItems();
-            await loadClassifications();
-            await loadSubClassifications();
+            Invoker(() => lblMessage.Text = message);
+        }
+
+        private void ItemManagerForm_Load(object sender, EventArgs e)
+        {
+            enableFields(false);
+            displayMessage("Initializing...");
+            List<Task> tasks = new List<Task>();
+            tasks.Add(loadClassifications());
+            tasks.Add(loadMeasurementUnits());
+            tasks.Add(loadItems());
+            var task = Task.WhenAll(tasks.ToArray());
+            task.ContinueWith(x =>
+            {
+                displayMessage("Displaying data...");
+                Invoker(() => {
+                    displayClassifications();
+                    displayMeasurementUnits();
+                    displayItems();
+                    enableFields(true);
+                });
+                displayMessage("");
+            });
+        }
+
+        private void Invoker(Action method)
+        {
+            Invoke(method);
         }
 
         private void cmbxItemClassification_SelectedIndexChanged(object sender, EventArgs e)
         {
-            setClassification();
-            generateItemCode();
+            if (cmbxItemClassification.SelectedItem != null)
+                tbxItemCode.Text = itemManager.GenerateCode((Classification)cmbxItemClassification.SelectedItem);
         }
+
         private bool itemHasChanges()
         {
             var classification = (Classification)cmbxItemClassification.SelectedItem;
             var code = tbxItemCode.Text.Trim();
             var description = tbxItemDescription.Text.Trim();
             var stockValue = (uint)nudItemStockValue.Value;
-            var subClassification = (SubClassification)cmbxItemSubClassification.SelectedItem;
+            var measurementUnit = (MeasurementUnit)cmbxMeasurementUnit.SelectedItem;
             if (currentItem != null)
             {
                 if (classification != currentItem.Classification) return true;
                 if (code != currentItem.Code) return true;
                 if (description != currentItem.Description) return true;
                 if (stockValue != currentItem.StockValue) return true;
-                if (subClassification != currentItem.SubClassification) return true;
+                if (measurementUnit != currentItem.MeasurementUnit) return true;
+                if (ckbxCementSupplied.Checked != currentItem.CementSupplied) return true;
             }
             return false;
         }
@@ -183,7 +290,7 @@ namespace Citicon.Inventory
         private void insertCurrentItem()
         {
             if (index < 0) index = dgvItems.Rows.Count - 1;
-            dgvItems.Rows.Insert(index, currentItem, currentItem.Code, currentItem.Classification, currentItem.SubClassification, currentItem.StockValue.ToString("#,##0"));
+            dgvItems.Rows.Insert(index, currentItem, currentItem.Code, currentItem.Classification, currentItem.StockValue.ToString("#,##0"));
             currentItem = null;
             row = null;
             index = -1;
@@ -207,71 +314,6 @@ namespace Citicon.Inventory
             enableItemFields(false, false);
         }
 
-        private void setClassification()
-        {
-            if (cmbxItemClassification.SelectedItem != null)
-            {
-                var classification = (Classification)cmbxItemClassification.SelectedItem;
-                cmbxItemSubClassification.Items.Clear();
-                cmbxItemSubClassification.Items.AddRange(subClassifications.Where(x => x.Classification == classification).ToArray());
-                tbxItemDescription.Text = ((Classification)cmbxItemClassification.SelectedItem).Description;
-            }
-        }
-
-        private void cmbxItemSubClassification_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            generateItemCode();
-            if (cmbxItemSubClassification.SelectedItem != null)
-            {
-                tbxItemDescription.Text += $" {((SubClassification)cmbxItemSubClassification.SelectedItem).Description}";
-            }
-        }
-
-        private void generateItemCode()
-        {
-            var classification = (Classification)cmbxItemClassification.SelectedItem;
-            var subClassification = (SubClassification)cmbxItemSubClassification.SelectedItem;
-            List<uint> rawCodes = new List<uint>();
-            if (dgvItems.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dgvItems.Rows)
-                {
-                    var tempClassification = (Classification)row.Cells[colItemsClassification.Name].Value;
-                    var tempSubClassification = (SubClassification)row.Cells[colItemsSubClassification.Name].Value;
-                    if (classification == tempClassification && subClassification == tempSubClassification)
-                    {
-                        var code = (string)row.Cells[colItemCode.Name].Value;
-                        rawCodes.Add(uint.Parse(code.Substring(code.Length - 4)));
-                    }
-                    
-                }
-                for (int i = 1; i < 10000; i++)
-                {
-                    if (!exists(rawCodes, (uint)i))
-                    {
-                        extractItemCode(classification, subClassification, i);
-                        return;
-                    }
-                }
-            }
-            else extractItemCode(classification, subClassification, 1);
-        }
-
-        private void extractItemCode(Classification classification, SubClassification subClassification, int i)
-        {
-            string code = string.Empty;
-            if (classification != null)
-                code += subClassification != null ? subClassification.Code : classification.Code;
-            else code = $"{Supports.CodePrefixes.Classification}-0000-{Supports.CodePrefixes.SubClassification}-0000";
-            tbxItemCode.Text = $"{code}-{Supports.CodePrefixes.Item}-{i.ToString("0000")}";
-        }
-
-        private bool exists(List<uint> list, uint x)
-        {
-            foreach (uint i in list) if (x == i) return true;
-            return false;
-        }
-
         private void btnEditItem_Click(object sender, EventArgs e)
         {
             if (dgvItems.SelectedRows.Count == 1)
@@ -281,7 +323,6 @@ namespace Citicon.Inventory
                 index = row.Index;
                 currentItem = (Item)row.Cells[colItem.Name].Value;
                 displayCurrentItem();
-                dgvItems.Rows.Remove(row);
                 enableItemFields(true, false);
             }
         }
@@ -318,7 +359,7 @@ namespace Citicon.Inventory
             var code = tbxItemCode.Text.Trim();
             var description = tbxItemDescription.Text.Trim();
             var stockValue = (uint)nudItemStockValue.Value;
-            var subClassification = (SubClassification)cmbxItemSubClassification.SelectedItem;
+            var measurementUnit = (MeasurementUnit)cmbxMeasurementUnit.SelectedItem;
             if (classification == null)
             {
                 displayError("Classification must be valid!");
@@ -334,27 +375,29 @@ namespace Citicon.Inventory
                 displayError("Item description must be valid!");
                 return false;
             }
-            if (stockValue == 0)
+            if (stockValue > 0)
             {
                 if (currentItem == null)
                 {
-                    if (ask("Do you want to leave stock value to zero(0)?") == DialogResult.No) return false;
+                    if (ask("Do you want to leave stock value to less than zero(0)?") == DialogResult.No) return false;
                 }
             }
-            bool asked = false;
+            if (measurementUnit == null)
+            {
+                displayError("Measurement unit must be valid!"); return false;
+            }
             foreach (DataGridViewRow row in dgvItems.Rows)
             {
                 var item = (Item)row.Cells[colItem.Name].Value;
                 
-                if (item.Code == code)
+                if (item.Code == code && row.Index != this.row.Index)
                 {
                     displayError("Item code already in use!");
                     return false;
                 }
-                if (item.Classification == classification && item.SubClassification == subClassification && !asked)
+                if (item.Description == description)
                 {
-                    asked = true;
-                    if (ask("Item with the same Classification, Sub-Classification and Supplier is already in the list, Do you want to continue?") == DialogResult.No) return false;
+                    if (ask("Description already exists! Do you want to continue?") == DialogResult.No) return false;
                 }
             }
             return true;
@@ -383,8 +426,7 @@ namespace Citicon.Inventory
                 var code = tbxItemCode.Text.Trim();
                 var description = tbxItemDescription.Text.Trim();
                 var stockValue = (uint)nudItemStockValue.Value;
-                var subClassification = (SubClassification)cmbxItemSubClassification.SelectedItem;
-
+                var measurementUnit = (MeasurementUnit)cmbxMeasurementUnit.SelectedItem;
                 if (currentItem == null)
                 {
                     currentItem = new Item
@@ -393,10 +435,10 @@ namespace Citicon.Inventory
                         Code = code,
                         Description = description,
                         StockValue = stockValue,
-                        SubClassification = subClassification
+                        MeasurementUnit = measurementUnit,
+                        CementSupplied = ckbxCementSupplied.Checked
                     };
                     itemManager.Add(currentItem);
-
                 }
                 else
                 {
@@ -406,7 +448,8 @@ namespace Citicon.Inventory
                         currentItem.Code = code;
                         currentItem.Description = description;
                         currentItem.StockValue = stockValue;
-                        currentItem.SubClassification = subClassification;
+                        currentItem.MeasurementUnit = measurementUnit;
+                        currentItem.CementSupplied = ckbxCementSupplied.Checked;
                         itemManager.Update(currentItem);
                     }
                     else displayError("No changes detected!");
@@ -415,8 +458,61 @@ namespace Citicon.Inventory
             }
         }
 
-        private void dgvItems_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+        
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvItems.Rows)
+            {
+                var item = (Item)row.Cells[colItem.Name].Value;
+                if (item.Description.StartsWith(tbxSearch.Text.Trim(), StringComparison.CurrentCultureIgnoreCase))
+                {
+                    row.Selected = true;
+                    dgvItems.FirstDisplayedScrollingRowIndex = row.Index;
+                    break;
+                }
+            }
+        }
+
+        private void searchableComboBox(object sender, MouseEventArgs e)
+        {
+            if (e?.Button == MouseButtons.Right && sender is ComboBox)
+            {
+                var cmbx = (ComboBox)sender;
+                cmbx.DropDownStyle = ComboBoxStyle.DropDown;
+                cmbx.AutoCompleteMode = AutoCompleteMode.Suggest;
+                cmbx.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                cmbx.AutoCompleteCustomSource.Clear();
+                var list = new List<string>();
+                foreach (var item in cmbx.Items)
+                    list.Add(item.ToString());
+                cmbx.AutoCompleteCustomSource.AddRange(list.ToArray());
+            }
+        }
+
+        private void cmbx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                changeComboBoxStyleToDropDownList((ComboBox)sender);
+            }
+        }
+
+        private void changeComboBoxStyleToDropDownList(ComboBox cmbx)
+        {
+            if (cmbx.DropDownStyle != ComboBoxStyle.DropDownList) cmbx.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void btnViewPriceHistory_Click(object sender, EventArgs e)
+        {
+            if (dgvItems.SelectedRows.Count == 1)
+            {
+                PriceHistoryForm form = new PriceHistoryForm((Item)dgvItems.SelectedRows[0].Cells[colItem.Name].Value);
+                form.ShowDialog();
+            }
         }
     }
 }

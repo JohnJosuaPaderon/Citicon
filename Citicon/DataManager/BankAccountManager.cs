@@ -4,6 +4,7 @@ using Sorschia.Extensions;
 using Sorschia.Queries;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace Citicon.DataManager
                 query.AddParameter("@_Code", data.Code);
                 query.AddParameter("@_Description", data.Description);
                 query.AddParameter("@_ChequeNumber", data.ChequeNumber);
+                query.AddParameter("@_ChequeNumberStart", data.ChequeNumberStart);
+                query.AddParameter("@_ChequeNumberEnd", data.ChequeNumberEnd);
                 query.AddParameter("@_CreatedBy", User.CurrentUser?.DisplayName);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
@@ -48,10 +51,22 @@ namespace Citicon.DataManager
                     Code = dictionary.GetString("Code"),
                     Description = dictionary.GetString("Description"),
                     Id = dictionary.GetUInt64("BankAccountId"),
-                    ChequeNumber = dictionary.GetUInt32("ChequeNumber")
+                    ChequeNumber = dictionary.GetUInt32("ChequeNumber"),
+                    ChequeNumberEnd = dictionary.GetUInt32("ChequeNumberEnd"),
+                    ChequeNumberStart = dictionary.GetUInt32("ChequeNumberStart")
                 };
             }
             return null;
+        }
+
+        public string GenerateCode(Bank bank)
+        {
+            using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _bankaccounts_generatecode(@_BankId);", CommandType.Text))
+            {
+                query.ExceptionCatched += OnExceptionCatched;
+                query.AddParameter("@_BankId", bank?.Id);
+                return query.GetValue().ToString();
+            }
         }
 
         public BankAccount GetById(ulong id)
@@ -127,6 +142,8 @@ namespace Citicon.DataManager
                 query.AddParameter("@_Code", data.Code);
                 query.AddParameter("@_Description", data.Description);
                 query.AddParameter("@_ChequeNumber", data.ChequeNumber);
+                query.AddParameter("@_ChequeNumberStart", data.ChequeNumberStart);
+                query.AddParameter("@_ChequeNumberEnd", data.ChequeNumberEnd);
                 query.AddParameter("@_ModifiedBy", User.CurrentUser?.DisplayName);
                 query.Execute();
                 if (query.AffectedRows == 1) OnUpdated(data);

@@ -42,20 +42,28 @@
                 OnPropertyChanged("Vehicle.PlateNumber", value);
             }
         }
-        public static bool operator ==(Vehicle x, Vehicle y)
+        public static bool operator ==(Vehicle left, Vehicle right)
         {
-            return
-                x?.type == y?.type &&
-                x?.physicalnumber == y?.physicalnumber &&
-                x?.platenumber == y?.platenumber;
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.id == right.id;
         }
-        public static bool operator !=(Vehicle x, Vehicle y)
+        public static bool operator !=(Vehicle left, Vehicle right)
         {
-            return !(x == y);
+            return !(left == right);
         }
-        public override bool Equals(object obj)
+
+        public override bool Equals(object arg)
         {
-            return (obj is Vehicle) ? (obj as Vehicle).id == id : false;
+            if (arg is Vehicle)
+            {
+                return (Vehicle)arg == this;
+            }
+            return false;
         }
         public override int GetHashCode()
         {
@@ -63,7 +71,7 @@
         }
         public override string ToString()
         {
-            return $"{type.Description} ({platenumber})";
+            return $"{physicalnumber} / {platenumber}";
         }
     }
 }

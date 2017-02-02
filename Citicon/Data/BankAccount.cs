@@ -12,6 +12,8 @@ namespace Citicon.Data
         private Bank bank;
         private string code;
         private string description;
+        private uint chequenumberstart;
+        private uint chequenumberend;
         private uint chequenumber;
         public ulong Id
         {
@@ -58,6 +60,30 @@ namespace Citicon.Data
                 {
                     description = value;
                     OnPropertyChanged("BankAccount.Description", value);
+                }
+            }
+        }
+        public uint ChequeNumberStart
+        {
+            get { return chequenumberstart; }
+            set
+            {
+                if (chequenumberstart != value)
+                {
+                    chequenumberstart = value;
+                    OnPropertyChanged("BankAccount.ChequeNumberStart", value);
+                }
+            }
+        }
+        public uint ChequeNumberEnd
+        {
+            get { return chequenumberend; }
+            set
+            {
+                if (chequenumberend != value)
+                {
+                    chequenumberend = value;
+                    OnPropertyChanged("BankAccount.ChequeNumberEnd", value);
                 }
             }
         }

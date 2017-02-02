@@ -4,6 +4,7 @@ using Sorschia.Extensions;
 using Sorschia.Queries;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,15 @@ namespace Citicon.DataManager
                 };
             }
             return null;
+        }
+
+        public string GenerateCode()
+        {
+            using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _banks_generatecode();", CommandType.Text))
+            {
+                query.ExceptionCatched += OnExceptionCatched;
+                return query.GetValue().ToString();
+            }
         }
 
         public Bank GetById(ulong id)

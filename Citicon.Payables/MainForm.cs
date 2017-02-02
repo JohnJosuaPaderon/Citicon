@@ -1,13 +1,13 @@
 ﻿using Citicon.Data;
+using Citicon.DataManager;
 using Citicon.Inventory.Data;
 using Citicon.Inventory.DataManager;
+using Citicon.Payables.Data;
+using Citicon.Payables.DataManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +16,11 @@ namespace Citicon.Payables
     public partial class MainForm : Form
     {
         StockManager stockManager;
+        ItemManager itemManager;
+        SupplierManager supplierManager;
+        BranchManager branchManager;
+        ExpenseManager expenseManager;
+
         Stock[] unpaidStocks;
         bool loadingUnpaidStocks;
         Supplier activeSupplier;
@@ -27,10 +32,51 @@ namespace Citicon.Payables
             InitializeComponent();
             stockManager = new StockManager();
             stockManager.ExceptionCatched += ExceptionCatched;
-            stockManager.NewItemGenerated += StockManager_NewItemGenerated;
-            stockManager.NewUnpaidStockGenerated += StockManager_NewUnpaidStockGenerated;
+            //stockManager.NewItemGenerated += StockManager_NewItemGenerated;
+            //stockManager.NewUnpaidStockGenerated += StockManager_NewUnpaidStockGenerated;
             stockManager.Updated += StockManager_Updated;
             stockManager.UpdatedUnsuccessful += StockManager_UpdatedUnsuccessful;
+
+            itemManager = new ItemManager();
+            itemManager.NewItemGenerated += ItemManager_NewItemGenerated;
+            supplierManager = new SupplierManager();
+            //supplierManager.NewItemGenerated += SupplierManager_NewItemGenerated;
+            branchManager = new BranchManager();
+            //branchManager.NewItemGenerated += BranchManager_NewItemGenerated;
+            expenseManager = new ExpenseManager();
+            expenseManager.NewItemGenerated += ExpenseManager_NewItemGenerated;
+        }
+
+        private void ExpenseManager_NewItemGenerated(Expense e)
+        {
+            BeginInvoke(new Action(() =>
+            {
+                cmbxExpense.Items.Add(e);
+            }));
+        }
+
+        private void BranchManager_NewItemGenerated(Branch e)
+        {
+            if (this != null)
+            {
+                Invoke(new Action(() => cmbxFilterByBranch.Items.Add(e))); 
+            }
+        }
+
+        private void SupplierManager_NewItemGenerated(Supplier e)
+        {
+            if (this != null)
+            {
+                Invoke(new Action(() => cmbxFilterBySupplier.Items.Add(e)));
+            }
+        }
+
+        private void ItemManager_NewItemGenerated(Item e)
+        {
+            if (this != null)
+            {
+                Invoke(new Action(() => cmbxFilterByItem.Items.Add(e)));
+            }
         }
 
         private void StockManager_UpdatedUnsuccessful(Stock e)
@@ -46,35 +92,42 @@ namespace Citicon.Payables
 
         private void addStockToUnpaidStock(Stock e)
         {
-            foreach (DataGridViewRow x in dgvUnpaidStocks.Rows)
+            if (this != null)
             {
-                if (e == (Stock)x.Cells[colStock.Name].Value) return;
+                //foreach (DataGridViewRow x in dgvUnpaidStocks.Rows)
+                //{
+                //    if (e == (Stock)x.Cells[colStock.Name].Value) return;
+                //}
+                DataGridViewRow row = new DataGridViewRow();
+                var dateNow = DateTime.Now;
+                var dueDate = new DateTime(e.DueDate.Year, e.DueDate.Month, e.DueDate.Day);
+                var remaingDays = (e.DueDate - new DateTime(dateNow.Year, dateNow.Month, dateNow.Day)).Days;
+                var today = remaingDays <= 0;
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = e });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = e.SiNumber });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = e.DrNumber });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = e.Supplier });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = e.AddedStockValue.ToString("#,##0.00") });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = e.DeliveryDate.ToString("MMMM dd, yyyy") });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = (e.UnitPrice * e.AddedStockValue).ToString("#,##0.00") });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = $"{(today ? "TODAY" : $"{remaingDays} Day{(remaingDays > 1 ? "s" : string.Empty)}")}" });
+                if (today)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 150, 50, 50);
+                    row.DefaultCellStyle.ForeColor = Color.White;
+                    row.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 100, 0, 0);
+                    row.DefaultCellStyle.SelectionForeColor = Color.White;
+                }
+                else if (remaingDays <= 7)
+                {
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(255, 200, 50, 50);
+                    row.DefaultCellStyle.ForeColor = Color.White;
+                    row.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 100, 50, 50);
+                    row.DefaultCellStyle.SelectionForeColor = Color.White;
+                }
+                row.Height = 40;
+                Invoke(new Action(() => dgvUnpaidStocks.Rows.Add(row))); 
             }
-            DataGridViewRow row = new DataGridViewRow();
-            var dateNow = DateTime.Now;
-            var dueDate = new DateTime(e.DueDate.Year, e.DueDate.Month, e.DueDate.Day);
-            var remaingDays = (e.DueDate - new DateTime(dateNow.Year, dateNow.Month, dateNow.Day)).Days;
-            var today = remaingDays <= 0;
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = e });
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = e.Supplier });
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = (e.UnitPrice * e.AddedStockValue).ToString("#,##0.00") });
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = $"{(today ? "TODAY" : $"{remaingDays} Day{(remaingDays > 1 ? "s" : string.Empty)}")}" });
-            if (today)
-            {
-                row.DefaultCellStyle.BackColor = Color.FromArgb(255, 150, 50, 50);
-                row.DefaultCellStyle.ForeColor = Color.White;
-                row.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 100, 0, 0);
-                row.DefaultCellStyle.SelectionForeColor = Color.White;
-            }
-            else if (remaingDays <= 7)
-            {
-                row.DefaultCellStyle.BackColor = Color.FromArgb(255, 200, 50, 50);
-                row.DefaultCellStyle.ForeColor = Color.White;
-                row.DefaultCellStyle.SelectionBackColor = Color.FromArgb(255, 100, 50, 50);
-                row.DefaultCellStyle.SelectionForeColor = Color.White;
-            }
-            row.Height = 40;
-            Invoke(new Action(() => dgvUnpaidStocks.Rows.Add(row)));
         }
 
         private void StockManager_NewUnpaidStockGenerated(Stock e)
@@ -92,28 +145,184 @@ namespace Citicon.Payables
             if (Supports.DebugMode) MessageBox.Show(ex.Message);
         }
 
-        private async void MainForm_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            lblUserDisplayName.Text = User.CurrentUser.DisplayName;
+            lblUserDisplayName.Text = User.CurrentUser?.DisplayName;
+            if (!User.CurrentUser.Admin)
+            {
+                btnChequeIssuance.Enabled = false;
+                btnChequeVoucher.Enabled = false;
+            }
             generateMrisNumber();
-            await loadUnPaidStocks();
+            Parallel.Invoke(
+                /*() => loadUnPaidStocks(),*/
+                /*async () => await branchManager.GetListAsync(),*/
+                GetBranchList,
+                GetSupplierList,
+                /*async () => await supplierManager.GetListAsync(),*/
+                /*GetItemList*/
+                async () => await itemManager.GetListAsync(),
+                async () => await expenseManager.GetListAsync());
         }
 
-        private async Task loadUnPaidStocks()
+        private void GetBranchList()
+        {
+            var task = branchManager.GetListAsync();
+            task.ContinueWith((x) =>
+            {
+                if (x.Status == TaskStatus.RanToCompletion)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        cmbxFilterByBranch.Items.AddRange(x.Result);
+                    }));
+                }
+            });
+        }
+
+        private void GetSupplierList()
+        {
+            var task = supplierManager.GetListAsync();
+            task.ContinueWith((x) =>
+            {
+                if (x.Status == TaskStatus.RanToCompletion)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        cmbxFilterBySupplier.Items.AddRange(x.Result);
+                    }));
+                }
+            });
+        }
+
+        private void GetItemList()
+        {
+            //var task = Task.Run(() =>
+            //{
+            //    return itemManager.GetList();
+            //});
+            ////var task = itemManager.GetListAsync();
+            //task.ContinueWith((x) =>
+            //{
+            //    if (x.Status == TaskStatus.RanToCompletion)
+            //    {
+            //        Invoke(new Action(() =>
+            //        {
+            //            cmbxFilterByItem.Items.AddRange(x.Result);
+            //        }));
+            //    }
+            //});
+
+            Task.Run(() =>
+            {
+                var list = itemManager.GetList();
+                Invoke(new Action(() =>
+                {
+                    cmbxFilterByItem.Items.AddRange(list);
+                }));
+            });
+        }
+
+        private void loadUnPaidStocks()
         {
             if (!loadingUnpaidStocks)
             {
+                setColumnVisibility();
                 dgvUnpaidStocks.Rows.Clear();
+                gbxFilter.Enabled = false;
+                tbxGrandTotal.Text = "0.00";
                 loadingUnpaidStocks = true;
-                unpaidStocks = await stockManager.GetUnpaidListAsync();
-                loadingUnpaidStocks = false;
+                var task = stockManager.GetUnpaidListAsync();
+                task.ContinueWith(x =>
+                {
+                    if (x.Status == TaskStatus.RanToCompletion)
+                    {
+                        if (x.Result != null)
+                        {
+                            //Parallel.ForEach(x.Result.AsEnumerable(), y => addStockToUnpaidStock(y));
+                            foreach (var item in x.Result)
+                            {
+                                Parallel.Invoke(() => addStockToUnpaidStock(item));
+                            }
+                        }
+                    }
+                    Invoke(new Action(() =>
+                    {
+                        loadingUnpaidStocks = false;
+                        gbxFilter.Enabled = true;
+                    }));
+                    countGrandTotal();
+                });
             }
             else MessageBox.Show("Unpaid stocks already loading, please wait!");
         }
 
-        private async void btnRefresh_Click(object sender, EventArgs e)
+        private void countGrandTotal()
         {
-            await loadUnPaidStocks();
+            Invoke(new Action(() =>
+            {
+                decimal total = 0;
+                foreach (DataGridViewRow row in dgvUnpaidStocks.Rows)
+                {
+                    var stock = (Stock)row.Cells[colStock.Name].Value;
+                    total += stock != null ? (stock.UnitPrice * stock.AddedStockValue) : 0;
+                }
+                tbxGrandTotal.Text = total.ToString("#,##0.00");
+            }));
+        }
+
+        private void setColumnVisibility()
+        {
+            //colStockSiNumber.Visible = !ckbxFilterBySiNumber.Checked;
+            //colStockDrNumber.Visible = !ckbxFilterByDrNumber.Checked;
+            colStockDeliveryDate.Visible = !ckbxFilterByDeliveryDate.Checked;
+            //colStockBranch.Visible = !ckbxFilterByBranch.Checked;
+            colStockSupplier.Visible = !ckbxFilterBySupplier.Checked;
+            colStock.Visible = !ckbxFilterByItem.Checked;
+        }
+
+        private void loadFilteredUnpaidStock()
+        {
+            if (!loadingUnpaidStocks)
+            {
+                setColumnVisibility();
+                dgvUnpaidStocks.Rows.Clear();
+                gbxFilter.Enabled = false;
+                tbxGrandTotal.Text = "0.00";
+                loadingUnpaidStocks = true;
+                var task = stockManager.GetFilteredUnpaidListAsyc(
+                    ckbxFilterByItem.Checked, (Item)cmbxFilterByItem.SelectedItem,
+                    ckbxFilterBySupplier.Checked, (Supplier)cmbxFilterBySupplier.SelectedItem,
+                    ckbxFilterByBranch.Checked, (Branch)cmbxFilterByBranch.SelectedItem,
+                    ckbxFilterByDeliveryDate.Checked, dtpFilterByDeliveryDate.Value,
+                    ckbxFilterBySiNumber.Checked, (uint)nudFilterBySiNumber.Value,
+                    ckbxFilterByDrNumber.Checked, (uint)nudFilterByDrNumber.Value);
+                task.ContinueWith(x =>
+                {
+                    if (x.Status == TaskStatus.RanToCompletion)
+                    {
+                        if (x.Result != null)
+                        {
+                            //Parallel.ForEach(x.Result.AsEnumerable(), y => addStockToUnpaidStock(y));
+                            foreach (var item in x.Result)
+                            {
+                                Parallel.Invoke(() => addStockToUnpaidStock(item));
+                            }
+                        }
+                    }
+                    Invoke(new Action(() =>
+                    {
+                        loadingUnpaidStocks = false;
+                        gbxFilter.Enabled = true;
+                    }));
+                    countGrandTotal();
+                });
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadUnPaidStocks();
         }
 
         private void displaySelectedUnpaidStock()
@@ -197,34 +406,38 @@ namespace Citicon.Payables
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            exportableStocks = new List<Stock>();
-            updatedSuccessfully = true;
-            foreach (DataGridViewRow row in dgvMrisNumberIssuanceQueue.Rows)
+            if (dgvMrisNumberIssuanceQueue.Rows.Count > 0)
             {
-                var stock = (Stock)row.Cells[colMrisNumberIssuanceQueue.Name].Value;
-                stock.MrisNumber = tbxActiveMrisNumber.Text.Trim();
-                stockManager.Update(stock);
-            }
-            generateMrisNumber();
-            dgvMrisNumberIssuanceQueue.Rows.Clear();
-            activeSupplier = null;
-            tbxActiveSupplier.Text = string.Empty;
-            if (updatedSuccessfully)
-            {
-                MessageBox.Show("Success!");
-                try
+                exportableStocks = new List<Stock>();
+                updatedSuccessfully = true;
+                foreach (DataGridViewRow row in dgvMrisNumberIssuanceQueue.Rows)
                 {
-                    stockManager.ExportMrisReport(exportableStocks.ToArray());
+                    var stock = (Stock)row.Cells[colMrisNumberIssuanceQueue.Name].Value;
+                    stock.MrisNumber = tbxActiveMrisNumber.Text.Trim();
+                    stockManager.Update(stock);
                 }
-                catch (Exception ex)
+                generateMrisNumber();
+                dgvMrisNumberIssuanceQueue.Rows.Clear();
+                activeSupplier = null;
+                tbxActiveSupplier.Text = string.Empty;
+                if (updatedSuccessfully)
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Success!");
+                    try
+                    {
+                        stockManager.ExportMrisReport(exportableStocks.ToArray(), UsageTextBox.Text, ReceivedStoredByTextBox.Text, InspectedAcceptedByTextBox.Text, ApprovedByTextBox.Text);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Some or all Stocks are not saved successfully!");
                 }
             }
-            else
-            {
-                MessageBox.Show("Some or all Stocks are not saved successfully!");
-            }
+            else MessageBox.Show("No MRIS to be issued.");
         }
 
         private void btnChequeVoucher_Click(object sender, EventArgs e)
@@ -243,6 +456,148 @@ namespace Citicon.Payables
         {
             ChequeIssuanceForm form = new ChequeIssuanceForm();
             form.ShowDialog();
+        }
+
+        private void lblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            User.CurrentUser = null;
+            Close();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            ReportsForm form = new ReportsForm();
+            form.ShowDialog();
+        }
+
+        private void SetFilterButtonEnable()
+        {
+            btnFilter.Enabled =
+                ckbxFilterByBranch.Checked ||
+                ckbxFilterByDeliveryDate.Checked ||
+                ckbxFilterByItem.Checked ||
+                ckbxFilterBySupplier.Checked ||
+                ckbxFilterByDrNumber.Checked ||
+                ckbxFilterBySiNumber.Checked;
+        }
+
+        private void ckbxFilterByItem_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbxFilterByItem.Enabled = ckbxFilterByItem.Checked;
+            SetFilterButtonEnable();
+        }
+
+        private void ckbxFilterBySupplier_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbxFilterBySupplier.Enabled = ckbxFilterBySupplier.Checked;
+            SetFilterButtonEnable();
+        }
+
+        private void ckbxFilterByBranch_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbxFilterByBranch.Enabled = ckbxFilterByBranch.Checked;
+            SetFilterButtonEnable();
+        }
+
+        private void ckbxFilterByDeliveryDate_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpFilterByDeliveryDate.Enabled = ckbxFilterByDeliveryDate.Checked;
+            SetFilterButtonEnable();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            loadFilteredUnpaidStock();
+        }
+
+        private void ckbxFilterByDrNumber_CheckedChanged(object sender, EventArgs e)
+        {
+            nudFilterByDrNumber.Enabled = ckbxFilterByDrNumber.Checked;
+            SetFilterButtonEnable();
+        }
+
+        private void ckbxFilterBySiNumber_CheckedChanged(object sender, EventArgs e)
+        {
+            nudFilterBySiNumber.Enabled = ckbxFilterBySiNumber.Checked;
+            SetFilterButtonEnable();
+        }
+
+        private void dgvUnpaidStocks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void nudFilterBySiNumber_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxGrandTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReprintMris_Click(object sender, EventArgs e)
+        {
+            var stocks = stockManager.GetListByMrisNumber_Reprint(tbxReprintMris.Text);
+            if (stocks?.Length > 0)
+            {
+                try
+                {
+                    stockManager.ExportMrisReport(stocks, UsageTextBox.Text, ReceivedStoredByTextBox.Text, InspectedAcceptedByTextBox.Text, ApprovedByTextBox.Text);
+                    MessageBox.Show("Successfully exported!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Failed to reprint MRIS.", "Reprint MRIS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nothing was found", "Reprint MRIS", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnChangeAccountDescription_Click(object sender, EventArgs e)
+        {
+            if (dgvMrisNumberIssuanceQueue.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No Selected Stock");
+                return;
+            }
+
+            if (cmbxExpense == null)
+            {
+                MessageBox.Show("No Selected Expenses Classification");
+                return;
+            }
+
+            var row = dgvMrisNumberIssuanceQueue.SelectedRows[0];
+            var index = row.Index;
+
+            var stock = (Stock)row.Cells[colMrisNumberIssuanceQueue.Name].Value;
+            stock.Expense = (Expense)cmbxExpense.SelectedItem;
+
+            dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name].Value = stock;
+            dgvMrisNumberIssuanceQueue.InvalidateCell(dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name]);
+        }
+
+        private void btnRemoveExpenseClassification_Click(object sender, EventArgs e)
+        {
+            if (dgvMrisNumberIssuanceQueue.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("No selected stock");
+                return;
+            }
+
+            var row = dgvMrisNumberIssuanceQueue.SelectedRows[0];
+            var index = row.Index;
+
+            var stock = (Stock)row.Cells[colMrisNumberIssuanceQueue.Name].Value;
+            stock.Expense = null;
+
+            dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name].Value = stock;
+            dgvMrisNumberIssuanceQueue.InvalidateCell(dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name]);
         }
     }
 }

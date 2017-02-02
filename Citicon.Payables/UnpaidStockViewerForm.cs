@@ -24,7 +24,7 @@ namespace Citicon.Payables
         {
             Close();
         }
-
+            
         private void UnpaidStockViewerForm_Load(object sender, EventArgs e)
         {
             tbxAddedStockValue.Text = currentStock.AddedStockValue.ToString("#,##0");
@@ -37,7 +37,6 @@ namespace Citicon.Payables
             tbxLastStockValue.Text = currentStock.LastStockValue.ToString("#,##0");
             tbxMrisNumber.Text = currentStock.MrisNumber;
             tbxPaymentTerm.Text = currentStock.PaymentTerm.Description;
-            tbxSidrNumber.Text = currentStock.SidrNumber;
             tbxSupplier.Text = currentStock.Supplier.Description;
             tbxUnitPrice.Text = currentStock.UnitPrice.ToString("#,##0.00");
             tbxVehicle.Text = currentStock.Vehicle.ToString();
