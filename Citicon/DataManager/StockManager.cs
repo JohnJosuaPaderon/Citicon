@@ -212,12 +212,18 @@ namespace Citicon.Inventory.DataManager
                     amountRange.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlDouble;
                     sheet.Cells[lastRow, amountColumn] = totalAmount.ToString("#,##0.00");
 
-                    if (totalVat != 0)
-                    {
+                    sheet.Cells[24, unitCostColumn] = "Total Amount Due";
+                    sheet.Cells[24, amountColumn] = totalAmount.ToString("#,##0.00");
+
+                    //if (totalVat != 0)
+                    //{
                         lastRow++;
-                        sheet.Cells[22, unitCostColumn] = "Total VAT";
-                        sheet.Cells[22, amountColumn] = totalVat.ToString("#,##0.00");
-                    }
+                        sheet.Cells[21, unitCostColumn] = "VAT";
+                        sheet.Cells[21, amountColumn] = totalVat.ToString("#,##0.00");
+
+                        sheet.Cells[22, unitCostColumn] = "Net Amount";
+                        sheet.Cells[22, amountColumn] = (totalAmount - totalVat).ToString("#,##0.00");
+                    //}
 
                     sheet.Cells[mrisNumberLocation.X, mrisNumberLocation.Y] = mrisNumber;
                     sheet.Cells[deliveryDateLocation.X, deliveryDateLocation.Y] = deliveryDate;

@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Header = new System.Windows.Forms.Panel();
             this.lblCiticonPayables = new System.Windows.Forms.Label();
@@ -60,8 +60,6 @@
             this.dgvMrisNumberIssuanceQueue = new System.Windows.Forms.DataGridView();
             this.colMrisNumberIssuanceQueue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMrisIssuanceQueueTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnInsertToQueue = new System.Windows.Forms.Button();
-            this.btnRemoveFromQueue = new System.Windows.Forms.Button();
             this.lblActiveSupplier = new System.Windows.Forms.Label();
             this.tbxActiveSupplier = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
@@ -103,6 +101,8 @@
             this.cmbxExpense = new System.Windows.Forms.ComboBox();
             this.btnChangeAccountDescription = new System.Windows.Forms.Button();
             this.btnRemoveExpenseClassification = new System.Windows.Forms.Button();
+            this.btnInsertToQueue = new System.Windows.Forms.Button();
+            this.btnRemoveFromQueue = new System.Windows.Forms.Button();
             this.Header.SuspendLayout();
             this.UserPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnpaidStocks)).BeginInit();
@@ -183,7 +183,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRefresh.BackColor = System.Drawing.Color.Red;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(11, 86);
@@ -200,8 +200,8 @@
             this.dgvUnpaidStocks.AllowUserToAddRows = false;
             this.dgvUnpaidStocks.AllowUserToDeleteRows = false;
             this.dgvUnpaidStocks.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvUnpaidStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvUnpaidStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUnpaidStocks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvUnpaidStocks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -209,14 +209,14 @@
             this.dgvUnpaidStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUnpaidStocks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvUnpaidStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUnpaidStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUnpaidStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUnpaidStocks.ColumnHeadersHeight = 60;
             this.dgvUnpaidStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUnpaidStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -229,16 +229,16 @@
             this.colStockTotalAmount,
             this.colStockRemainingDayCount});
             this.dgvUnpaidStocks.ContextMenuStrip = this.UnpaidStocksMenu;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUnpaidStocks.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUnpaidStocks.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvUnpaidStocks.EnableHeadersVisualStyles = false;
-            this.dgvUnpaidStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvUnpaidStocks.GridColor = System.Drawing.Color.Red;
             this.dgvUnpaidStocks.Location = new System.Drawing.Point(11, 293);
             this.dgvUnpaidStocks.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUnpaidStocks.MultiSelect = false;
@@ -304,8 +304,8 @@
             // colStockTotalAmount
             // 
             this.colStockTotalAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colStockTotalAmount.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStockTotalAmount.DefaultCellStyle = dataGridViewCellStyle3;
             this.colStockTotalAmount.HeaderText = "Total Amount";
             this.colStockTotalAmount.Name = "colStockTotalAmount";
             this.colStockTotalAmount.ReadOnly = true;
@@ -314,8 +314,8 @@
             // colStockRemainingDayCount
             // 
             this.colStockRemainingDayCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colStockRemainingDayCount.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colStockRemainingDayCount.DefaultCellStyle = dataGridViewCellStyle4;
             this.colStockRemainingDayCount.HeaderText = "Remaining Days";
             this.colStockRemainingDayCount.MinimumWidth = 100;
             this.colStockRemainingDayCount.Name = "colStockRemainingDayCount";
@@ -343,8 +343,8 @@
             this.dgvMrisNumberIssuanceQueue.AllowUserToAddRows = false;
             this.dgvMrisNumberIssuanceQueue.AllowUserToDeleteRows = false;
             this.dgvMrisNumberIssuanceQueue.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvMrisNumberIssuanceQueue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvMrisNumberIssuanceQueue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMrisNumberIssuanceQueue.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -353,29 +353,29 @@
             this.dgvMrisNumberIssuanceQueue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMrisNumberIssuanceQueue.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvMrisNumberIssuanceQueue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMrisNumberIssuanceQueue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMrisNumberIssuanceQueue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvMrisNumberIssuanceQueue.ColumnHeadersHeight = 60;
             this.dgvMrisNumberIssuanceQueue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMrisNumberIssuanceQueue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMrisNumberIssuanceQueue,
             this.colMrisIssuanceQueueTotalAmount});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMrisNumberIssuanceQueue.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMrisNumberIssuanceQueue.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMrisNumberIssuanceQueue.EnableHeadersVisualStyles = false;
-            this.dgvMrisNumberIssuanceQueue.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvMrisNumberIssuanceQueue.GridColor = System.Drawing.Color.Red;
             this.dgvMrisNumberIssuanceQueue.Location = new System.Drawing.Point(1138, 191);
             this.dgvMrisNumberIssuanceQueue.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMrisNumberIssuanceQueue.MultiSelect = false;
@@ -397,42 +397,12 @@
             // 
             // colMrisIssuanceQueueTotalAmount
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colMrisIssuanceQueueTotalAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colMrisIssuanceQueueTotalAmount.DefaultCellStyle = dataGridViewCellStyle8;
             this.colMrisIssuanceQueueTotalAmount.HeaderText = "Total Amount";
             this.colMrisIssuanceQueueTotalAmount.Name = "colMrisIssuanceQueueTotalAmount";
             this.colMrisIssuanceQueueTotalAmount.ReadOnly = true;
             this.colMrisIssuanceQueueTotalAmount.Width = 113;
-            // 
-            // btnInsertToQueue
-            // 
-            this.btnInsertToQueue.BackColor = System.Drawing.Color.Black;
-            this.btnInsertToQueue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInsertToQueue.BackgroundImage")));
-            this.btnInsertToQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInsertToQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsertToQueue.ForeColor = System.Drawing.Color.White;
-            this.btnInsertToQueue.Location = new System.Drawing.Point(1079, 322);
-            this.btnInsertToQueue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInsertToQueue.Name = "btnInsertToQueue";
-            this.btnInsertToQueue.Size = new System.Drawing.Size(55, 55);
-            this.btnInsertToQueue.TabIndex = 74;
-            this.btnInsertToQueue.UseVisualStyleBackColor = false;
-            this.btnInsertToQueue.Click += new System.EventHandler(this.btnInsertToQueue_Click);
-            // 
-            // btnRemoveFromQueue
-            // 
-            this.btnRemoveFromQueue.BackColor = System.Drawing.Color.Black;
-            this.btnRemoveFromQueue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemoveFromQueue.BackgroundImage")));
-            this.btnRemoveFromQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRemoveFromQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveFromQueue.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveFromQueue.Location = new System.Drawing.Point(1079, 387);
-            this.btnRemoveFromQueue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRemoveFromQueue.Name = "btnRemoveFromQueue";
-            this.btnRemoveFromQueue.Size = new System.Drawing.Size(55, 55);
-            this.btnRemoveFromQueue.TabIndex = 73;
-            this.btnRemoveFromQueue.UseVisualStyleBackColor = false;
-            this.btnRemoveFromQueue.Click += new System.EventHandler(this.btnRemoveFromQueue_Click);
             // 
             // lblActiveSupplier
             // 
@@ -461,7 +431,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSave.BackColor = System.Drawing.Color.Red;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
@@ -481,7 +451,7 @@
             this.tbxActiveMrisNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.tbxActiveMrisNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxActiveMrisNumber.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxActiveMrisNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tbxActiveMrisNumber.ForeColor = System.Drawing.Color.Lime;
             this.tbxActiveMrisNumber.Location = new System.Drawing.Point(1142, 630);
             this.tbxActiveMrisNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxActiveMrisNumber.Name = "tbxActiveMrisNumber";
@@ -519,7 +489,7 @@
             // 
             // btnChequeVoucher
             // 
-            this.btnChequeVoucher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnChequeVoucher.BackColor = System.Drawing.Color.Red;
             this.btnChequeVoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChequeVoucher.ForeColor = System.Drawing.Color.White;
             this.btnChequeVoucher.Location = new System.Drawing.Point(161, 86);
@@ -533,7 +503,7 @@
             // 
             // btnMaintenanceForm
             // 
-            this.btnMaintenanceForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnMaintenanceForm.BackColor = System.Drawing.Color.Red;
             this.btnMaintenanceForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaintenanceForm.ForeColor = System.Drawing.Color.White;
             this.btnMaintenanceForm.Location = new System.Drawing.Point(461, 86);
@@ -547,7 +517,7 @@
             // 
             // btnChequeIssuance
             // 
-            this.btnChequeIssuance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnChequeIssuance.BackColor = System.Drawing.Color.Red;
             this.btnChequeIssuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChequeIssuance.ForeColor = System.Drawing.Color.White;
             this.btnChequeIssuance.Location = new System.Drawing.Point(311, 86);
@@ -561,7 +531,7 @@
             // 
             // btnReports
             // 
-            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReports.BackColor = System.Drawing.Color.Red;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.Color.White;
             this.btnReports.Location = new System.Drawing.Point(610, 86);
@@ -743,7 +713,7 @@
             // btnFilter
             // 
             this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnFilter.BackColor = System.Drawing.Color.Red;
             this.btnFilter.Enabled = false;
             this.btnFilter.FlatAppearance.BorderSize = 0;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -871,7 +841,7 @@
             this.tbxGrandTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxGrandTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tbxGrandTotal.ForeColor = System.Drawing.Color.Lime;
             this.tbxGrandTotal.Location = new System.Drawing.Point(839, 519);
             this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
@@ -907,7 +877,7 @@
             // btnReprintMris
             // 
             this.btnReprintMris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReprintMris.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReprintMris.BackColor = System.Drawing.Color.Red;
             this.btnReprintMris.FlatAppearance.BorderSize = 0;
             this.btnReprintMris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReprintMris.ForeColor = System.Drawing.Color.White;
@@ -946,7 +916,7 @@
             // btnChangeAccountDescription
             // 
             this.btnChangeAccountDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChangeAccountDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnChangeAccountDescription.BackColor = System.Drawing.Color.Red;
             this.btnChangeAccountDescription.FlatAppearance.BorderSize = 0;
             this.btnChangeAccountDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeAccountDescription.ForeColor = System.Drawing.Color.White;
@@ -962,7 +932,7 @@
             // btnRemoveExpenseClassification
             // 
             this.btnRemoveExpenseClassification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveExpenseClassification.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRemoveExpenseClassification.BackColor = System.Drawing.Color.Red;
             this.btnRemoveExpenseClassification.FlatAppearance.BorderSize = 0;
             this.btnRemoveExpenseClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveExpenseClassification.ForeColor = System.Drawing.Color.White;
@@ -974,6 +944,36 @@
             this.btnRemoveExpenseClassification.Text = "Remove Expense Classification";
             this.btnRemoveExpenseClassification.UseVisualStyleBackColor = false;
             this.btnRemoveExpenseClassification.Click += new System.EventHandler(this.btnRemoveExpenseClassification_Click);
+            // 
+            // btnInsertToQueue
+            // 
+            this.btnInsertToQueue.BackColor = System.Drawing.Color.Black;
+            this.btnInsertToQueue.BackgroundImage = global::Citicon.Payables.Properties.Resources.right_arrow;
+            this.btnInsertToQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInsertToQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsertToQueue.ForeColor = System.Drawing.Color.White;
+            this.btnInsertToQueue.Location = new System.Drawing.Point(1079, 322);
+            this.btnInsertToQueue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInsertToQueue.Name = "btnInsertToQueue";
+            this.btnInsertToQueue.Size = new System.Drawing.Size(55, 55);
+            this.btnInsertToQueue.TabIndex = 74;
+            this.btnInsertToQueue.UseVisualStyleBackColor = false;
+            this.btnInsertToQueue.Click += new System.EventHandler(this.btnInsertToQueue_Click);
+            // 
+            // btnRemoveFromQueue
+            // 
+            this.btnRemoveFromQueue.BackColor = System.Drawing.Color.Black;
+            this.btnRemoveFromQueue.BackgroundImage = global::Citicon.Payables.Properties.Resources.left_arrow;
+            this.btnRemoveFromQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRemoveFromQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveFromQueue.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveFromQueue.Location = new System.Drawing.Point(1079, 387);
+            this.btnRemoveFromQueue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveFromQueue.Name = "btnRemoveFromQueue";
+            this.btnRemoveFromQueue.Size = new System.Drawing.Size(55, 55);
+            this.btnRemoveFromQueue.TabIndex = 73;
+            this.btnRemoveFromQueue.UseVisualStyleBackColor = false;
+            this.btnRemoveFromQueue.Click += new System.EventHandler(this.btnRemoveFromQueue_Click);
             // 
             // MainForm
             // 
@@ -1016,7 +1016,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.Header);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);

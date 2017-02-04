@@ -28,6 +28,7 @@ namespace Citicon.Payables.Data
         private string remarks;
         private DateTime transactiondate;
         private string accountType;
+        private DateTime chequeDate;
 
         public ulong Id
         {
@@ -245,6 +246,19 @@ namespace Citicon.Payables.Data
                 }
             }
         }
+        public DateTime ChequeDate
+        {
+            get { return chequeDate; }
+            set
+            {
+                if (chequeDate != value)
+                {
+                    chequeDate = value;
+                    OnPropertyChanged("Payable.ChequeDate", value);
+                }
+            }
+        }
+
         public static bool operator ==(Payable x, Payable y)
         {
             return

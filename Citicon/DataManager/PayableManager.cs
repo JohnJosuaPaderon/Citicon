@@ -311,7 +311,7 @@ namespace Citicon.Payables.DataManager
             }
             else throw new FileNotFoundException("Template file for Check Voucher printing was not found!", ChequeVoucherTemplate);
         }
-        public void ExportCheque(decimal grandTotalAmount, Supplier payee)
+        public void ExportCheque(decimal grandTotalAmount, Supplier payee, DateTime chequeDate)
         {
             if (File.Exists(ChequeTemplate))
             {
@@ -322,6 +322,7 @@ namespace Citicon.Payables.DataManager
                 {
                     sheet.Cells[4, 7] = grandTotalAmount.ToString("#,##0.00");
                     sheet.Cells[4, 2] = payee.Description;
+                    sheet.Cells[1, 7] = chequeDate.ToString("MM/dd/yyyy");
                     sheet.Cells[5, 2] = Sorschia.Supports.CurrencyToWords(grandTotalAmount);
                     book.SaveAs($@"{ChequeDirectory}/{DateTime.Now.ToString("yyyyMMddhhmmss")}_{payee.Code}.xlsx");
                 }
@@ -591,6 +592,7 @@ namespace Citicon.Payables.DataManager
                 query.AddParameter("@_Remarks", data.Remarks);
                 query.AddParameter("@_ModifiedBy", User.CurrentUser?.DisplayName);
                 query.AddParameter("@_TransactionDate", data.TransactionDate);
+                query.AddParameter("@_ChequeDate", data.ChequeDate);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
                 if (query.AffectedRows == 1) OnUpdated(data);

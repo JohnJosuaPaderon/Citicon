@@ -54,6 +54,8 @@
             this.lblgrandTotal = new System.Windows.Forms.Label();
             this.tbxGrandTotal = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblChequeDate = new System.Windows.Forms.Label();
+            this.dtpChequeDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayables)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             this.lblChequeIssuance.Location = new System.Drawing.Point(0, 0);
             this.lblChequeIssuance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChequeIssuance.Name = "lblChequeIssuance";
-            this.lblChequeIssuance.Size = new System.Drawing.Size(1172, 84);
+            this.lblChequeIssuance.Size = new System.Drawing.Size(1378, 84);
             this.lblChequeIssuance.TabIndex = 15;
             this.lblChequeIssuance.Text = "Cheque Issuance";
             this.lblChequeIssuance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,7 +182,7 @@
             this.dgvPayables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPayables.RowTemplate.Height = 40;
             this.dgvPayables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayables.Size = new System.Drawing.Size(1154, 339);
+            this.dgvPayables.Size = new System.Drawing.Size(1360, 339);
             this.dgvPayables.TabIndex = 102;
             // 
             // colPayable
@@ -226,7 +228,7 @@
             this.tbxCheckNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxCheckNumber.Font = new System.Drawing.Font("Segoe UI", 42.5F, System.Drawing.FontStyle.Bold);
             this.tbxCheckNumber.ForeColor = System.Drawing.Color.Lime;
-            this.tbxCheckNumber.Location = new System.Drawing.Point(814, 78);
+            this.tbxCheckNumber.Location = new System.Drawing.Point(1020, 78);
             this.tbxCheckNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxCheckNumber.Name = "tbxCheckNumber";
             this.tbxCheckNumber.ReadOnly = true;
@@ -242,7 +244,7 @@
             this.tbxPayee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPayee.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxPayee.Font = new System.Drawing.Font("Segoe UI", 28.5F);
-            this.tbxPayee.Location = new System.Drawing.Point(533, 168);
+            this.tbxPayee.Location = new System.Drawing.Point(739, 168);
             this.tbxPayee.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxPayee.Name = "tbxPayee";
             this.tbxPayee.ReadOnly = true;
@@ -255,7 +257,7 @@
             this.lblPayee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPayee.AutoSize = true;
             this.lblPayee.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayee.Location = new System.Drawing.Point(527, 133);
+            this.lblPayee.Location = new System.Drawing.Point(733, 133);
             this.lblPayee.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPayee.Name = "lblPayee";
             this.lblPayee.Size = new System.Drawing.Size(77, 32);
@@ -267,7 +269,7 @@
             this.lblCheckNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCheckNumber.AutoSize = true;
             this.lblCheckNumber.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckNumber.Location = new System.Drawing.Point(653, 78);
+            this.lblCheckNumber.Location = new System.Drawing.Point(859, 78);
             this.lblCheckNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCheckNumber.Name = "lblCheckNumber";
             this.lblCheckNumber.Size = new System.Drawing.Size(157, 37);
@@ -305,7 +307,7 @@
             this.btnExportCheque.FlatAppearance.BorderSize = 0;
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
-            this.btnExportCheque.Location = new System.Drawing.Point(871, 577);
+            this.btnExportCheque.Location = new System.Drawing.Point(1077, 577);
             this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportCheque.Name = "btnExportCheque";
             this.btnExportCheque.Size = new System.Drawing.Size(164, 77);
@@ -319,7 +321,7 @@
             this.lblgrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblgrandTotal.AutoSize = true;
             this.lblgrandTotal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgrandTotal.Location = new System.Drawing.Point(218, 577);
+            this.lblgrandTotal.Location = new System.Drawing.Point(424, 577);
             this.lblgrandTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblgrandTotal.Name = "lblgrandTotal";
             this.lblgrandTotal.Size = new System.Drawing.Size(154, 37);
@@ -336,7 +338,7 @@
             this.tbxGrandTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 38.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxGrandTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.tbxGrandTotal.Location = new System.Drawing.Point(376, 577);
+            this.tbxGrandTotal.Location = new System.Drawing.Point(582, 577);
             this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
             this.tbxGrandTotal.ReadOnly = true;
@@ -351,7 +353,7 @@
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnClose.Location = new System.Drawing.Point(1040, 577);
+            this.btnClose.Location = new System.Drawing.Point(1246, 577);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(123, 77);
@@ -360,12 +362,33 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblChequeDate
+            // 
+            this.lblChequeDate.AutoSize = true;
+            this.lblChequeDate.Location = new System.Drawing.Point(474, 173);
+            this.lblChequeDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblChequeDate.Name = "lblChequeDate";
+            this.lblChequeDate.Size = new System.Drawing.Size(99, 21);
+            this.lblChequeDate.TabIndex = 113;
+            this.lblChequeDate.Text = "Cheque Date";
+            // 
+            // dtpChequeDate
+            // 
+            this.dtpChequeDate.CustomFormat = "MMMM dd, yyyy";
+            this.dtpChequeDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpChequeDate.Location = new System.Drawing.Point(476, 197);
+            this.dtpChequeDate.Name = "dtpChequeDate";
+            this.dtpChequeDate.Size = new System.Drawing.Size(235, 29);
+            this.dtpChequeDate.TabIndex = 114;
+            // 
             // ChequeIssuanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1172, 664);
+            this.ClientSize = new System.Drawing.Size(1378, 664);
+            this.Controls.Add(this.dtpChequeDate);
+            this.Controls.Add(this.lblChequeDate);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbxGrandTotal);
             this.Controls.Add(this.lblgrandTotal);
@@ -387,7 +410,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ChequeIssuanceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Payables | Cheque Issuance";
@@ -422,5 +445,7 @@
         private System.Windows.Forms.Label lblgrandTotal;
         private System.Windows.Forms.TextBox tbxGrandTotal;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblChequeDate;
+        private System.Windows.Forms.DateTimePicker dtpChequeDate;
     }
 }

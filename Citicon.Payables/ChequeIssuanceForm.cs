@@ -211,11 +211,12 @@ namespace Citicon.Payables
                     {
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
                         payable.ChequeNumber = chequeNumber;
+                        payable.ChequeDate = dtpChequeDate.Value;
                         payable.BankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
                         payable.TransactionDate = Supports.SystemDate;
                         payableManager.Update(payable);
                     }
-                    payableManager.ExportCheque(grandTotalAmount, payee);
+                    payableManager.ExportCheque(grandTotalAmount, payee, dtpChequeDate.Value);
                     var bankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
                     bankAccount.ChequeNumber++;
                     bankAccountManager.Update(bankAccount);
