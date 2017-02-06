@@ -40,7 +40,7 @@ namespace Citicon.DataProcess
                             if (reader.HasRows)
                             {
                                 await reader.ReadAsync();
-                                client = await ClientManager.GetFromDbDataReader(reader);
+                                client = await ClientManager.GetFromDbData      Reader(reader);
                             }
                         }
                     }
