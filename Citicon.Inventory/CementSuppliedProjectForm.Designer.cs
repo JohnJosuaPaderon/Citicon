@@ -54,19 +54,21 @@
             this.lblIncomingStocks.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblIncomingStocks.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncomingStocks.Location = new System.Drawing.Point(0, 0);
-            this.lblIncomingStocks.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblIncomingStocks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIncomingStocks.Name = "lblIncomingStocks";
-            this.lblIncomingStocks.Size = new System.Drawing.Size(1705, 100);
+            this.lblIncomingStocks.Size = new System.Drawing.Size(1395, 84);
             this.lblIncomingStocks.TabIndex = 11;
             this.lblIncomingStocks.Text = "Project Selector for Cement Supplied";
             this.lblIncomingStocks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblIncomingStocks.Click += new System.EventHandler(this.lblIncomingStocks_Click);
             // 
             // lblSelectClient
             // 
             this.lblSelectClient.AutoSize = true;
-            this.lblSelectClient.Location = new System.Drawing.Point(12, 100);
+            this.lblSelectClient.Location = new System.Drawing.Point(10, 84);
+            this.lblSelectClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectClient.Name = "lblSelectClient";
-            this.lblSelectClient.Size = new System.Drawing.Size(116, 25);
+            this.lblSelectClient.Size = new System.Drawing.Size(95, 21);
             this.lblSelectClient.TabIndex = 12;
             this.lblSelectClient.Text = "Select Client";
             // 
@@ -86,8 +88,8 @@
             this.dgvClients.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -98,22 +100,23 @@
             this.colClient});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClients.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvClients.EnableHeadersVisualStyles = false;
-            this.dgvClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dgvClients.Location = new System.Drawing.Point(12, 128);
+            this.dgvClients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dgvClients.Location = new System.Drawing.Point(10, 108);
+            this.dgvClients.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvClients.MultiSelect = false;
             this.dgvClients.Name = "dgvClients";
             this.dgvClients.ReadOnly = true;
             this.dgvClients.RowHeadersVisible = false;
             this.dgvClients.RowTemplate.Height = 30;
             this.dgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClients.Size = new System.Drawing.Size(549, 555);
+            this.dgvClients.Size = new System.Drawing.Size(449, 466);
             this.dgvClients.TabIndex = 51;
             this.dgvClients.SelectionChanged += new System.EventHandler(this.dgvClients_SelectionChanged);
             // 
@@ -141,8 +144,8 @@
             this.dgvProjects.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -154,21 +157,22 @@
             this.colProject_Location});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProjects.EnableHeadersVisualStyles = false;
-            this.dgvProjects.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.dgvProjects.Location = new System.Drawing.Point(567, 128);
+            this.dgvProjects.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dgvProjects.Location = new System.Drawing.Point(464, 108);
+            this.dgvProjects.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.ReadOnly = true;
             this.dgvProjects.RowHeadersVisible = false;
             this.dgvProjects.RowTemplate.Height = 30;
             this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjects.Size = new System.Drawing.Size(1126, 555);
+            this.dgvProjects.Size = new System.Drawing.Size(921, 466);
             this.dgvProjects.TabIndex = 52;
             // 
             // colProject
@@ -191,22 +195,24 @@
             // lblSelectProject
             // 
             this.lblSelectProject.AutoSize = true;
-            this.lblSelectProject.Location = new System.Drawing.Point(562, 100);
+            this.lblSelectProject.Location = new System.Drawing.Point(460, 84);
+            this.lblSelectProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSelectProject.Name = "lblSelectProject";
-            this.lblSelectProject.Size = new System.Drawing.Size(126, 25);
+            this.lblSelectProject.Size = new System.Drawing.Size(103, 21);
             this.lblSelectProject.TabIndex = 53;
             this.lblSelectProject.Text = "Select Project";
             // 
             // btnSave
             // 
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSave.BackColor = System.Drawing.Color.Red;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1568, 689);
+            this.btnSave.Location = new System.Drawing.Point(1283, 579);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(125, 50);
+            this.btnSave.Size = new System.Drawing.Size(102, 42);
             this.btnSave.TabIndex = 79;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -214,10 +220,10 @@
             // 
             // CementSuppliedProjectForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1705, 751);
+            this.ClientSize = new System.Drawing.Size(1395, 631);
             this.ControlBox = false;
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblSelectProject);
@@ -225,10 +231,10 @@
             this.Controls.Add(this.dgvClients);
             this.Controls.Add(this.lblSelectClient);
             this.Controls.Add(this.lblIncomingStocks);
-            this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Red;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "CementSuppliedProjectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Inventory";

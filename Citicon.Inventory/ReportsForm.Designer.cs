@@ -70,7 +70,7 @@
             this.tcReports.Controls.Add(this.tpIncomingStocks);
             this.tcReports.Controls.Add(this.tpOutgoingStocks);
             this.tcReports.Location = new System.Drawing.Point(10, 86);
-            this.tcReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcReports.Margin = new System.Windows.Forms.Padding(2);
             this.tcReports.Name = "tcReports";
             this.tcReports.Padding = new System.Drawing.Point(20, 10);
             this.tcReports.SelectedIndex = 0;
@@ -81,9 +81,9 @@
             // 
             this.tpIncomingStocks.Controls.Add(this.IncomingStocksSelection);
             this.tpIncomingStocks.Location = new System.Drawing.Point(4, 44);
-            this.tpIncomingStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpIncomingStocks.Margin = new System.Windows.Forms.Padding(2);
             this.tpIncomingStocks.Name = "tpIncomingStocks";
-            this.tpIncomingStocks.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpIncomingStocks.Padding = new System.Windows.Forms.Padding(2);
             this.tpIncomingStocks.Size = new System.Drawing.Size(830, 357);
             this.tpIncomingStocks.TabIndex = 0;
             this.tpIncomingStocks.Text = "Incoming Stocks";
@@ -95,7 +95,7 @@
             this.IncomingStocksSelection.Controls.Add(this.lblIncomingStocksReportType);
             this.IncomingStocksSelection.Controls.Add(this.cmbxIncomingStocksReportType);
             this.IncomingStocksSelection.Location = new System.Drawing.Point(6, 6);
-            this.IncomingStocksSelection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.IncomingStocksSelection.Margin = new System.Windows.Forms.Padding(2);
             this.IncomingStocksSelection.Name = "IncomingStocksSelection";
             this.IncomingStocksSelection.Padding = new System.Windows.Forms.Padding(8, 4, 8, 4);
             this.IncomingStocksSelection.Size = new System.Drawing.Size(820, 199);
@@ -110,7 +110,7 @@
             this.panelIncomingStocksSettings.Controls.Add(this.dtpIncomingStocksWeeklyRangeEnd);
             this.panelIncomingStocksSettings.Controls.Add(this.cmbxIncomingStocksMonthlyMonth);
             this.panelIncomingStocksSettings.Location = new System.Drawing.Point(15, 40);
-            this.panelIncomingStocksSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelIncomingStocksSettings.Margin = new System.Windows.Forms.Padding(2);
             this.panelIncomingStocksSettings.Name = "panelIncomingStocksSettings";
             this.panelIncomingStocksSettings.Size = new System.Drawing.Size(795, 42);
             this.panelIncomingStocksSettings.TabIndex = 2;
@@ -130,7 +130,7 @@
             this.dtpIncomingStocksDailyDate.CustomFormat = "MMM dd, yyyy";
             this.dtpIncomingStocksDailyDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIncomingStocksDailyDate.Location = new System.Drawing.Point(57, 2);
-            this.dtpIncomingStocksDailyDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpIncomingStocksDailyDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpIncomingStocksDailyDate.Name = "dtpIncomingStocksDailyDate";
             this.dtpIncomingStocksDailyDate.Size = new System.Drawing.Size(129, 29);
             this.dtpIncomingStocksDailyDate.TabIndex = 1;
@@ -141,7 +141,7 @@
             this.dtpIncomingStocksWeeklyRangeStart.CustomFormat = "MMM dd, yyyy";
             this.dtpIncomingStocksWeeklyRangeStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIncomingStocksWeeklyRangeStart.Location = new System.Drawing.Point(190, 2);
-            this.dtpIncomingStocksWeeklyRangeStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpIncomingStocksWeeklyRangeStart.Margin = new System.Windows.Forms.Padding(2);
             this.dtpIncomingStocksWeeklyRangeStart.Name = "dtpIncomingStocksWeeklyRangeStart";
             this.dtpIncomingStocksWeeklyRangeStart.Size = new System.Drawing.Size(129, 29);
             this.dtpIncomingStocksWeeklyRangeStart.TabIndex = 2;
@@ -163,7 +163,7 @@
             this.dtpIncomingStocksWeeklyRangeEnd.CustomFormat = "MMM dd, yyyy";
             this.dtpIncomingStocksWeeklyRangeEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIncomingStocksWeeklyRangeEnd.Location = new System.Drawing.Point(351, 2);
-            this.dtpIncomingStocksWeeklyRangeEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpIncomingStocksWeeklyRangeEnd.Margin = new System.Windows.Forms.Padding(2);
             this.dtpIncomingStocksWeeklyRangeEnd.Name = "dtpIncomingStocksWeeklyRangeEnd";
             this.dtpIncomingStocksWeeklyRangeEnd.Size = new System.Drawing.Size(129, 29);
             this.dtpIncomingStocksWeeklyRangeEnd.TabIndex = 4;
@@ -174,7 +174,7 @@
             this.cmbxIncomingStocksMonthlyMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxIncomingStocksMonthlyMonth.FormattingEnabled = true;
             this.cmbxIncomingStocksMonthlyMonth.Location = new System.Drawing.Point(484, 2);
-            this.cmbxIncomingStocksMonthlyMonth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxIncomingStocksMonthlyMonth.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxIncomingStocksMonthlyMonth.Name = "cmbxIncomingStocksMonthlyMonth";
             this.cmbxIncomingStocksMonthlyMonth.Size = new System.Drawing.Size(193, 29);
             this.cmbxIncomingStocksMonthlyMonth.TabIndex = 5;
@@ -195,7 +195,7 @@
             this.cmbxIncomingStocksReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxIncomingStocksReportType.FormattingEnabled = true;
             this.cmbxIncomingStocksReportType.Location = new System.Drawing.Point(108, 6);
-            this.cmbxIncomingStocksReportType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxIncomingStocksReportType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxIncomingStocksReportType.Name = "cmbxIncomingStocksReportType";
             this.cmbxIncomingStocksReportType.Size = new System.Drawing.Size(267, 29);
             this.cmbxIncomingStocksReportType.TabIndex = 0;
@@ -203,11 +203,11 @@
             // 
             // tpOutgoingStocks
             // 
-            this.tpOutgoingStocks.Location = new System.Drawing.Point(4, 43);
-            this.tpOutgoingStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpOutgoingStocks.Location = new System.Drawing.Point(4, 44);
+            this.tpOutgoingStocks.Margin = new System.Windows.Forms.Padding(2);
             this.tpOutgoingStocks.Name = "tpOutgoingStocks";
-            this.tpOutgoingStocks.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpOutgoingStocks.Size = new System.Drawing.Size(830, 358);
+            this.tpOutgoingStocks.Padding = new System.Windows.Forms.Padding(2);
+            this.tpOutgoingStocks.Size = new System.Drawing.Size(830, 357);
             this.tpOutgoingStocks.TabIndex = 1;
             this.tpOutgoingStocks.Text = "Outgoing Stocks";
             this.tpOutgoingStocks.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.Controls.Add(this.tcReports);
             this.Controls.Add(this.lblIncomingStocks);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

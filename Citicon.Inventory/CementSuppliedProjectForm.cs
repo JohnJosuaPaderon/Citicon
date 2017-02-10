@@ -104,5 +104,10 @@ namespace Citicon.Inventory
                 }
             }
         }
+
+        private void lblIncomingStocks_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

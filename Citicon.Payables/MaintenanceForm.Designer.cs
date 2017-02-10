@@ -180,7 +180,7 @@
             this.tpGeneralSettings.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tpGeneralSettings.Name = "tpGeneralSettings";
             this.tpGeneralSettings.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpGeneralSettings.Size = new System.Drawing.Size(1074, 439);
+            this.tpGeneralSettings.Size = new System.Drawing.Size(1007, 439);
             this.tpGeneralSettings.TabIndex = 10;
             this.tpGeneralSettings.Text = "General Settings";
             this.tpGeneralSettings.Click += new System.EventHandler(this.tpGeneralSettings_Click);
@@ -198,7 +198,7 @@
             // 
             // btnRevokeChequeNumber
             // 
-            this.btnRevokeChequeNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRevokeChequeNumber.BackColor = System.Drawing.Color.Red;
             this.btnRevokeChequeNumber.Enabled = false;
             this.btnRevokeChequeNumber.FlatAppearance.BorderSize = 0;
             this.btnRevokeChequeNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -209,7 +209,7 @@
             this.btnRevokeChequeNumber.Size = new System.Drawing.Size(123, 28);
             this.btnRevokeChequeNumber.TabIndex = 66;
             this.btnRevokeChequeNumber.Text = "Revoke";
-            this.btnRevokeChequeNumber.UseVisualStyleBackColor = true;
+            this.btnRevokeChequeNumber.UseVisualStyleBackColor = false;
             this.btnRevokeChequeNumber.Click += new System.EventHandler(this.btnRevokeChequeNumber_Click);
             // 
             // lblRevokeChequeNumberBankAccount
@@ -285,7 +285,7 @@
             // 
             // btnSaveChequeNumberRange
             // 
-            this.btnSaveChequeNumberRange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSaveChequeNumberRange.BackColor = System.Drawing.Color.Red;
             this.btnSaveChequeNumberRange.Enabled = false;
             this.btnSaveChequeNumberRange.FlatAppearance.BorderSize = 0;
             this.btnSaveChequeNumberRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -296,7 +296,7 @@
             this.btnSaveChequeNumberRange.Size = new System.Drawing.Size(123, 29);
             this.btnSaveChequeNumberRange.TabIndex = 59;
             this.btnSaveChequeNumberRange.Text = "Save Range";
-            this.btnSaveChequeNumberRange.UseVisualStyleBackColor = true;
+            this.btnSaveChequeNumberRange.UseVisualStyleBackColor = false;
             this.btnSaveChequeNumberRange.Click += new System.EventHandler(this.btnSaveChequeNumberRange_Click);
             // 
             // tbxChequeNumberRangeCurrent
@@ -423,7 +423,7 @@
             // 
             // btnRevokeMrisNumber
             // 
-            this.btnRevokeMrisNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRevokeMrisNumber.BackColor = System.Drawing.Color.Red;
             this.btnRevokeMrisNumber.FlatAppearance.BorderSize = 0;
             this.btnRevokeMrisNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevokeMrisNumber.ForeColor = System.Drawing.Color.White;
@@ -475,13 +475,14 @@
             this.tpExpenses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tpExpenses.Name = "tpExpenses";
             this.tpExpenses.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpExpenses.Size = new System.Drawing.Size(1074, 439);
+            this.tpExpenses.Size = new System.Drawing.Size(1007, 439);
             this.tpExpenses.TabIndex = 7;
             this.tpExpenses.Text = "Account Descriptions";
             // 
             // btnCancelExpense
             // 
-            this.btnCancelExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancelExpense.BackColor = System.Drawing.Color.Red;
+            this.btnCancelExpense.FlatAppearance.BorderSize = 0;
             this.btnCancelExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelExpense.ForeColor = System.Drawing.Color.White;
             this.btnCancelExpense.Location = new System.Drawing.Point(893, 157);
@@ -495,7 +496,8 @@
             // 
             // btnSaveExpense
             // 
-            this.btnSaveExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSaveExpense.BackColor = System.Drawing.Color.Red;
+            this.btnSaveExpense.FlatAppearance.BorderSize = 0;
             this.btnSaveExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveExpense.ForeColor = System.Drawing.Color.White;
             this.btnSaveExpense.Location = new System.Drawing.Point(785, 157);
@@ -509,7 +511,8 @@
             // 
             // btnRemoveExpense
             // 
-            this.btnRemoveExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRemoveExpense.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveExpense.FlatAppearance.BorderSize = 0;
             this.btnRemoveExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveExpense.ForeColor = System.Drawing.Color.White;
             this.btnRemoveExpense.Location = new System.Drawing.Point(678, 157);
@@ -567,7 +570,8 @@
             // 
             // btnEditExpense
             // 
-            this.btnEditExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEditExpense.BackColor = System.Drawing.Color.Red;
+            this.btnEditExpense.FlatAppearance.BorderSize = 0;
             this.btnEditExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditExpense.ForeColor = System.Drawing.Color.White;
             this.btnEditExpense.Location = new System.Drawing.Point(769, 3);
@@ -581,7 +585,8 @@
             // 
             // btnNewExpense
             // 
-            this.btnNewExpense.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNewExpense.BackColor = System.Drawing.Color.Red;
+            this.btnNewExpense.FlatAppearance.BorderSize = 0;
             this.btnNewExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewExpense.ForeColor = System.Drawing.Color.White;
             this.btnNewExpense.Location = new System.Drawing.Point(662, 3);
@@ -608,7 +613,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -621,14 +626,14 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvExpenses.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExpenses.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvExpenses.EnableHeadersVisualStyles = false;
-            this.dgvExpenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvExpenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvExpenses.Location = new System.Drawing.Point(2, 3);
             this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvExpenses.MultiSelect = false;
@@ -678,7 +683,8 @@
             // 
             // btnCancelBank
             // 
-            this.btnCancelBank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancelBank.BackColor = System.Drawing.Color.Red;
+            this.btnCancelBank.FlatAppearance.BorderSize = 0;
             this.btnCancelBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelBank.ForeColor = System.Drawing.Color.White;
             this.btnCancelBank.Location = new System.Drawing.Point(893, 157);
@@ -692,7 +698,8 @@
             // 
             // btnSaveBank
             // 
-            this.btnSaveBank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSaveBank.BackColor = System.Drawing.Color.Red;
+            this.btnSaveBank.FlatAppearance.BorderSize = 0;
             this.btnSaveBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveBank.ForeColor = System.Drawing.Color.White;
             this.btnSaveBank.Location = new System.Drawing.Point(785, 157);
@@ -706,7 +713,8 @@
             // 
             // btnRemoveBank
             // 
-            this.btnRemoveBank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRemoveBank.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveBank.FlatAppearance.BorderSize = 0;
             this.btnRemoveBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveBank.ForeColor = System.Drawing.Color.White;
             this.btnRemoveBank.Location = new System.Drawing.Point(678, 157);
@@ -764,7 +772,8 @@
             // 
             // btnEditBank
             // 
-            this.btnEditBank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEditBank.BackColor = System.Drawing.Color.Red;
+            this.btnEditBank.FlatAppearance.BorderSize = 0;
             this.btnEditBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditBank.ForeColor = System.Drawing.Color.White;
             this.btnEditBank.Location = new System.Drawing.Point(769, 3);
@@ -778,7 +787,8 @@
             // 
             // btnNewbank
             // 
-            this.btnNewbank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNewbank.BackColor = System.Drawing.Color.Red;
+            this.btnNewbank.FlatAppearance.BorderSize = 0;
             this.btnNewbank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewbank.ForeColor = System.Drawing.Color.White;
             this.btnNewbank.Location = new System.Drawing.Point(662, 3);
@@ -805,7 +815,7 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -818,14 +828,14 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBanks.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBanks.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvBanks.EnableHeadersVisualStyles = false;
-            this.dgvBanks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvBanks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvBanks.Location = new System.Drawing.Point(2, 3);
             this.dgvBanks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvBanks.MultiSelect = false;
@@ -871,7 +881,7 @@
             this.tpBankAccounts.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tpBankAccounts.Name = "tpBankAccounts";
             this.tpBankAccounts.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpBankAccounts.Size = new System.Drawing.Size(1074, 439);
+            this.tpBankAccounts.Size = new System.Drawing.Size(1007, 439);
             this.tpBankAccounts.TabIndex = 9;
             this.tpBankAccounts.Text = "Bank Accounts";
             // 
@@ -900,7 +910,8 @@
             // 
             // btnCancelBankAccount
             // 
-            this.btnCancelBankAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancelBankAccount.BackColor = System.Drawing.Color.Red;
+            this.btnCancelBankAccount.FlatAppearance.BorderSize = 0;
             this.btnCancelBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnCancelBankAccount.Location = new System.Drawing.Point(893, 211);
@@ -914,7 +925,8 @@
             // 
             // btnSaveBankAccount
             // 
-            this.btnSaveBankAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSaveBankAccount.BackColor = System.Drawing.Color.Red;
+            this.btnSaveBankAccount.FlatAppearance.BorderSize = 0;
             this.btnSaveBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnSaveBankAccount.Location = new System.Drawing.Point(785, 211);
@@ -928,7 +940,8 @@
             // 
             // btnRemoveBankAccount
             // 
-            this.btnRemoveBankAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRemoveBankAccount.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveBankAccount.FlatAppearance.BorderSize = 0;
             this.btnRemoveBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnRemoveBankAccount.Location = new System.Drawing.Point(678, 211);
@@ -986,7 +999,8 @@
             // 
             // btnEditBankAccount
             // 
-            this.btnEditBankAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEditBankAccount.BackColor = System.Drawing.Color.Red;
+            this.btnEditBankAccount.FlatAppearance.BorderSize = 0;
             this.btnEditBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnEditBankAccount.Location = new System.Drawing.Point(769, 3);
@@ -1000,7 +1014,8 @@
             // 
             // btnNewBankAccount
             // 
-            this.btnNewBankAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNewBankAccount.BackColor = System.Drawing.Color.Red;
+            this.btnNewBankAccount.FlatAppearance.BorderSize = 0;
             this.btnNewBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnNewBankAccount.Location = new System.Drawing.Point(662, 3);
@@ -1027,7 +1042,7 @@
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1042,14 +1057,14 @@
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBankAccounts.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBankAccounts.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvBankAccounts.EnableHeadersVisualStyles = false;
-            this.dgvBankAccounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvBankAccounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvBankAccounts.Location = new System.Drawing.Point(2, 3);
             this.dgvBankAccounts.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvBankAccounts.MultiSelect = false;
@@ -1094,7 +1109,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClose.BackColor = System.Drawing.Color.Red;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(921, 589);
@@ -1109,7 +1124,7 @@
             // btnUserSettings
             // 
             this.btnUserSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUserSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUserSettings.BackColor = System.Drawing.Color.Red;
             this.btnUserSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserSettings.ForeColor = System.Drawing.Color.White;
             this.btnUserSettings.Location = new System.Drawing.Point(8, 589);
@@ -1132,7 +1147,7 @@
             this.Controls.Add(this.tcMaintenance);
             this.Controls.Add(this.lblMaintenance);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);

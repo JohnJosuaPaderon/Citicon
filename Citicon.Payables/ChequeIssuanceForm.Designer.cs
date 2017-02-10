@@ -103,7 +103,7 @@
             // lblChangeCheckVoucherNumber
             // 
             this.lblChangeCheckVoucherNumber.AutoSize = true;
-            this.lblChangeCheckVoucherNumber.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblChangeCheckVoucherNumber.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lblChangeCheckVoucherNumber.Location = new System.Drawing.Point(410, 100);
             this.lblChangeCheckVoucherNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChangeCheckVoucherNumber.Name = "lblChangeCheckVoucherNumber";
@@ -151,7 +151,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -166,13 +166,13 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPayables.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPayables.EnableHeadersVisualStyles = false;
-            this.dgvPayables.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvPayables.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvPayables.Location = new System.Drawing.Point(9, 232);
             this.dgvPayables.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvPayables.MultiSelect = false;
@@ -182,7 +182,7 @@
             this.dgvPayables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPayables.RowTemplate.Height = 40;
             this.dgvPayables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayables.Size = new System.Drawing.Size(1360, 339);
+            this.dgvPayables.Size = new System.Drawing.Size(1360, 364);
             this.dgvPayables.TabIndex = 102;
             // 
             // colPayable
@@ -303,14 +303,14 @@
             // btnExportCheque
             // 
             this.btnExportCheque.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExportCheque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnExportCheque.BackColor = System.Drawing.Color.Red;
             this.btnExportCheque.FlatAppearance.BorderSize = 0;
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
-            this.btnExportCheque.Location = new System.Drawing.Point(1077, 577);
+            this.btnExportCheque.Location = new System.Drawing.Point(1101, 602);
             this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportCheque.Name = "btnExportCheque";
-            this.btnExportCheque.Size = new System.Drawing.Size(164, 77);
+            this.btnExportCheque.Size = new System.Drawing.Size(164, 50);
             this.btnExportCheque.TabIndex = 109;
             this.btnExportCheque.Text = "Export Cheque";
             this.btnExportCheque.UseVisualStyleBackColor = false;
@@ -321,7 +321,7 @@
             this.lblgrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblgrandTotal.AutoSize = true;
             this.lblgrandTotal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgrandTotal.Location = new System.Drawing.Point(424, 577);
+            this.lblgrandTotal.Location = new System.Drawing.Point(448, 604);
             this.lblgrandTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblgrandTotal.Name = "lblgrandTotal";
             this.lblgrandTotal.Size = new System.Drawing.Size(154, 37);
@@ -336,13 +336,13 @@
             this.tbxGrandTotal.BackColor = System.Drawing.Color.Black;
             this.tbxGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxGrandTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 38.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxGrandTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.tbxGrandTotal.Location = new System.Drawing.Point(582, 577);
+            this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxGrandTotal.ForeColor = System.Drawing.Color.Lime;
+            this.tbxGrandTotal.Location = new System.Drawing.Point(606, 602);
             this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
             this.tbxGrandTotal.ReadOnly = true;
-            this.tbxGrandTotal.Size = new System.Drawing.Size(491, 75);
+            this.tbxGrandTotal.Size = new System.Drawing.Size(491, 50);
             this.tbxGrandTotal.TabIndex = 111;
             this.tbxGrandTotal.Text = "0.00";
             this.tbxGrandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -352,11 +352,11 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnClose.Location = new System.Drawing.Point(1246, 577);
+            this.btnClose.ForeColor = System.Drawing.Color.Red;
+            this.btnClose.Location = new System.Drawing.Point(1269, 602);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(123, 77);
+            this.btnClose.Size = new System.Drawing.Size(100, 50);
             this.btnClose.TabIndex = 112;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -407,7 +407,7 @@
             this.Controls.Add(this.tbxCheckVoucherNumber);
             this.Controls.Add(this.lblChequeIssuance);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);

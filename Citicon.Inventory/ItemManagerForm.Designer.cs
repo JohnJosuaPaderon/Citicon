@@ -93,7 +93,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -108,13 +108,13 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItems.EnableHeadersVisualStyles = false;
-            this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvItems.Location = new System.Drawing.Point(10, 119);
             this.dgvItems.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvItems.MultiSelect = false;
@@ -172,7 +172,7 @@
             // btnNewItem
             // 
             this.btnNewItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNewItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNewItem.BackColor = System.Drawing.Color.Red;
             this.btnNewItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewItem.ForeColor = System.Drawing.Color.White;
             this.btnNewItem.Location = new System.Drawing.Point(997, 87);
@@ -187,7 +187,7 @@
             // btnEditItem
             // 
             this.btnEditItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEditItem.BackColor = System.Drawing.Color.Red;
             this.btnEditItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditItem.ForeColor = System.Drawing.Color.White;
             this.btnEditItem.Location = new System.Drawing.Point(1104, 87);
@@ -279,7 +279,7 @@
             // btnCancelItem
             // 
             this.btnCancelItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancelItem.BackColor = System.Drawing.Color.Red;
             this.btnCancelItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelItem.ForeColor = System.Drawing.Color.White;
             this.btnCancelItem.Location = new System.Drawing.Point(1211, 432);
@@ -294,7 +294,7 @@
             // btnSaveItem
             // 
             this.btnSaveItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSaveItem.BackColor = System.Drawing.Color.Red;
             this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveItem.ForeColor = System.Drawing.Color.White;
             this.btnSaveItem.Location = new System.Drawing.Point(1104, 432);
@@ -309,7 +309,7 @@
             // btnRemoveItem
             // 
             this.btnRemoveItem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRemoveItem.BackColor = System.Drawing.Color.Red;
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.ForeColor = System.Drawing.Color.White;
             this.btnRemoveItem.Location = new System.Drawing.Point(997, 432);
@@ -378,7 +378,7 @@
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.Location = new System.Drawing.Point(1318, 432);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
@@ -427,13 +427,13 @@
             // btnViewPriceHistory
             // 
             this.btnViewPriceHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewPriceHistory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnViewPriceHistory.BackColor = System.Drawing.Color.Red;
             this.btnViewPriceHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewPriceHistory.ForeColor = System.Drawing.Color.White;
-            this.btnViewPriceHistory.Location = new System.Drawing.Point(1277, 87);
+            this.btnViewPriceHistory.Location = new System.Drawing.Point(1255, 87);
             this.btnViewPriceHistory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnViewPriceHistory.Name = "btnViewPriceHistory";
-            this.btnViewPriceHistory.Size = new System.Drawing.Size(143, 42);
+            this.btnViewPriceHistory.Size = new System.Drawing.Size(165, 42);
             this.btnViewPriceHistory.TabIndex = 93;
             this.btnViewPriceHistory.Text = "&View Price History";
             this.btnViewPriceHistory.UseVisualStyleBackColor = false;
@@ -469,7 +469,7 @@
             this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.lblInventoryItems);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;

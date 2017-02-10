@@ -2165,5 +2165,10 @@ namespace Citicon.Inventory
         {
             if (cmbx.DropDownStyle != ComboBoxStyle.DropDownList) cmbx.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void tpVehicles_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
