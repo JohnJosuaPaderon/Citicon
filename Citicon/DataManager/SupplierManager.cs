@@ -1,9 +1,11 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Citicon.DataManager
@@ -104,9 +106,10 @@ namespace Citicon.DataManager
             OnNewItemGenerated(ExtractFromDictionary(e));
         }
 
-        public Task<Supplier[]> GetListAsync()
+        public async Task<Supplier[]> GetListAsync()
         {
-            return Task.Factory.StartNew(GetList);
+            var process = new GetSupplierList();
+            return (await process.ExecuteAsync()).ToArray();
         }
 
         public void Remove(Supplier data)

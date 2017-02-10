@@ -105,5 +105,10 @@ namespace Citicon.Payables
                 if (ckbx.Tag == c.Tag && c != ckbx) c.Enabled = ckbx.Checked;
             }
         }
+
+        private void ChequeReports_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

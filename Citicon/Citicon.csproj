@@ -69,6 +69,7 @@
     <Compile Include="DataManager\BillingManager.cs" />
     <Compile Include="DataManager\BillingStructureTypeManager.cs" />
     <Compile Include="DataManager\BranchManager.cs" />
+    <Compile Include="DataManager\ChequeSummaryItemManager.cs" />
     <Compile Include="DataManager\ClassificationManager.cs" />
     <Compile Include="DataManager\ClientManager.cs" />
     <Compile Include="DataManager\CompanyManager.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="DataProcess\ClientProcesses\GetClientListWithUnpaidBillingSiNumber.cs" />
     <Compile Include="DataProcess\ClientProcesses\GetClientMetaDataListWithQuotationForApproval.cs" />
     <Compile Include="DataProcess\ClientProcesses\GetLegitimateClientList.cs" />
+    <Compile Include="DataProcess\DataProcess.cs" />
     <Compile Include="DataProcess\DeliveryProcesses\GetDeliveryListByClient.cs" />
     <Compile Include="DataProcess\DeliveryProcesses\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\DepartmentProcesses\GetDepartmentById.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="DataManager\ProductManager.cs" />
     <Compile Include="DataManager\ProductStrengthManager.cs" />
     <Compile Include="DataProcess\ExcessPipeChargeProcesses\InsertExcessPipeCharge.cs" />
+    <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithNoPurchaseOrderByProject.cs" />
@@ -132,10 +135,12 @@
     <Compile Include="DataProcess\GetPurchaseOrderById.cs" />
     <Compile Include="DataProcess\GetPurchaseOrderByNumber.cs" />
     <Compile Include="DataProcess\GetQuotationUserById.cs" />
+    <Compile Include="DataProcess\GetSupplierList.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
     <Compile Include="DataProcess\InsertUser.cs" />
     <Compile Include="DataProcess\JobPositionProcesses\GetJobPositionById.cs" />
+    <Compile Include="DataProcess\MySqlDataProcessUtility.cs" />
     <Compile Include="DataProcess\OperationTimeFrameProcesses\InsertOperationTimeFrame.cs" />
     <Compile Include="DataProcess\OtherChargeProcesses\InsertOtherCharge.cs" />
     <Compile Include="DataProcess\OtherChargeTypeProcesses\GetOtherChargeTypeList.cs" />
@@ -190,6 +195,7 @@
     <Compile Include="Data\Billing.cs" />
     <Compile Include="Data\BillingStructureType.cs" />
     <Compile Include="Data\Branch.cs" />
+    <Compile Include="Data\ChequeSummaryItem.cs" />
     <Compile Include="Data\Classification.cs" />
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Company.cs" />
@@ -227,7 +233,10 @@
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
+    <Compile Include="DbDataReaderExtension.cs" />
+    <Compile Include="MySqlUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationalDatabaseUtility.cs" />
     <Compile Include="Reports\ExporterBase.cs" />
     <Compile Include="Supports.cs" />
     <Compile Include="UserSettingsForm.cs">

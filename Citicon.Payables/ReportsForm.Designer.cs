@@ -57,15 +57,14 @@
             this.dtpTransactionsTransactionDateEnd = new System.Windows.Forms.DateTimePicker();
             this.lblTransactionsTransactionDateStart = new System.Windows.Forms.Label();
             this.dtpTransactionsTransactionDateStart = new System.Windows.Forms.DateTimePicker();
-            this.tpCashDisbursementsSummary = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tpCashDisbursementsBook = new System.Windows.Forms.TabPage();
+            this.tpReports_Cheques = new System.Windows.Forms.TabPage();
+            this.ChequeReports = new Citicon.Payables.Reports.ChequeReports();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnExportCheque = new System.Windows.Forms.Button();
             this.tcReports.SuspendLayout();
             this.tpTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
-            this.tpCashDisbursementsSummary.SuspendLayout();
+            this.tpReports_Cheques.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblChequeVoucher
@@ -87,14 +86,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tcReports.Controls.Add(this.tpTransactions);
-            this.tcReports.Controls.Add(this.tpCashDisbursementsSummary);
-            this.tcReports.Controls.Add(this.tpCashDisbursementsBook);
+            this.tcReports.Controls.Add(this.tpReports_Cheques);
             this.tcReports.Location = new System.Drawing.Point(10, 87);
             this.tcReports.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tcReports.Name = "tcReports";
             this.tcReports.Padding = new System.Drawing.Point(20, 10);
             this.tcReports.SelectedIndex = 0;
-            this.tcReports.Size = new System.Drawing.Size(1292, 470);
+            this.tcReports.Size = new System.Drawing.Size(1292, 482);
             this.tcReports.TabIndex = 16;
             // 
             // tpTransactions
@@ -120,7 +118,7 @@
             this.tpTransactions.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tpTransactions.Name = "tpTransactions";
             this.tpTransactions.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpTransactions.Size = new System.Drawing.Size(1284, 422);
+            this.tpTransactions.Size = new System.Drawing.Size(1284, 434);
             this.tpTransactions.TabIndex = 0;
             this.tpTransactions.Text = "Transactions";
             this.tpTransactions.UseVisualStyleBackColor = true;
@@ -208,7 +206,7 @@
             this.ckbxTransactionsBranch.AutoSize = true;
             this.ckbxTransactionsBranch.Checked = true;
             this.ckbxTransactionsBranch.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbxTransactionsBranch.Location = new System.Drawing.Point(4, 88);
+            this.ckbxTransactionsBranch.Location = new System.Drawing.Point(4, 90);
             this.ckbxTransactionsBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ckbxTransactionsBranch.Name = "ckbxTransactionsBranch";
             this.ckbxTransactionsBranch.Size = new System.Drawing.Size(77, 25);
@@ -288,7 +286,7 @@
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowHeadersVisible = false;
             this.dgvTransactions.RowTemplate.Height = 30;
-            this.dgvTransactions.Size = new System.Drawing.Size(1262, 250);
+            this.dgvTransactions.Size = new System.Drawing.Size(1262, 262);
             this.dgvTransactions.TabIndex = 81;
             // 
             // colTransactionsPayable
@@ -420,38 +418,31 @@
             this.dtpTransactionsTransactionDateStart.TabIndex = 1;
             this.dtpTransactionsTransactionDateStart.Tag = "Transactions_TransactionDate";
             // 
-            // tpCashDisbursementsSummary
+            // tpReports_Cheques
             // 
-            this.tpCashDisbursementsSummary.Controls.Add(this.label1);
-            this.tpCashDisbursementsSummary.Location = new System.Drawing.Point(4, 48);
-            this.tpCashDisbursementsSummary.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpCashDisbursementsSummary.Name = "tpCashDisbursementsSummary";
-            this.tpCashDisbursementsSummary.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpCashDisbursementsSummary.Size = new System.Drawing.Size(1284, 418);
-            this.tpCashDisbursementsSummary.TabIndex = 1;
-            this.tpCashDisbursementsSummary.Text = "Cash Disbursements Summary";
-            this.tpCashDisbursementsSummary.UseVisualStyleBackColor = true;
+            this.tpReports_Cheques.Controls.Add(this.ChequeReports);
+            this.tpReports_Cheques.Location = new System.Drawing.Point(4, 44);
+            this.tpReports_Cheques.Name = "tpReports_Cheques";
+            this.tpReports_Cheques.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReports_Cheques.Size = new System.Drawing.Size(1284, 434);
+            this.tpReports_Cheques.TabIndex = 1;
+            this.tpReports_Cheques.Text = "Cheques";
+            this.tpReports_Cheques.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // ChequeReports
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Date Range";
-            // 
-            // tpCashDisbursementsBook
-            // 
-            this.tpCashDisbursementsBook.Location = new System.Drawing.Point(4, 48);
-            this.tpCashDisbursementsBook.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpCashDisbursementsBook.Name = "tpCashDisbursementsBook";
-            this.tpCashDisbursementsBook.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpCashDisbursementsBook.Size = new System.Drawing.Size(1284, 418);
-            this.tpCashDisbursementsBook.TabIndex = 2;
-            this.tpCashDisbursementsBook.Text = "Cash Disbursements Book";
-            this.tpCashDisbursementsBook.UseVisualStyleBackColor = true;
+            this.ChequeReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChequeReports.BackColor = System.Drawing.Color.White;
+            this.ChequeReports.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChequeReports.ForeColor = System.Drawing.Color.Red;
+            this.ChequeReports.Location = new System.Drawing.Point(7, 8);
+            this.ChequeReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ChequeReports.Name = "ChequeReports";
+            this.ChequeReports.Size = new System.Drawing.Size(1270, 418);
+            this.ChequeReports.TabIndex = 0;
+            this.ChequeReports.Load += new System.EventHandler(this.ChequeReports_Load);
             // 
             // btnClose
             // 
@@ -459,10 +450,10 @@
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(1179, 564);
+            this.btnClose.Location = new System.Drawing.Point(1202, 575);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(123, 63);
+            this.btnClose.Size = new System.Drawing.Size(100, 50);
             this.btnClose.TabIndex = 97;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -475,10 +466,10 @@
             this.btnExportCheque.FlatAppearance.BorderSize = 0;
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
-            this.btnExportCheque.Location = new System.Drawing.Point(1010, 564);
+            this.btnExportCheque.Location = new System.Drawing.Point(1048, 575);
             this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportCheque.Name = "btnExportCheque";
-            this.btnExportCheque.Size = new System.Drawing.Size(164, 63);
+            this.btnExportCheque.Size = new System.Drawing.Size(150, 50);
             this.btnExportCheque.TabIndex = 96;
             this.btnExportCheque.Text = "&Print Report";
             this.btnExportCheque.UseVisualStyleBackColor = false;
@@ -497,7 +488,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ReportsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Payables | Reports";
@@ -507,8 +498,7 @@
             this.tpTransactions.ResumeLayout(false);
             this.tpTransactions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
-            this.tpCashDisbursementsSummary.ResumeLayout(false);
-            this.tpCashDisbursementsSummary.PerformLayout();
+            this.tpReports_Cheques.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -543,8 +533,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTransactionsChequeNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTransactionsPayee;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTransactionsDate;
-        private System.Windows.Forms.TabPage tpCashDisbursementsSummary;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tpCashDisbursementsBook;
+        private System.Windows.Forms.TabPage tpReports_Cheques;
+        private Reports.ChequeReports ChequeReports;
     }
 }
