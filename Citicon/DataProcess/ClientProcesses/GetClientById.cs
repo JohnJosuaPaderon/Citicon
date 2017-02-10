@@ -1,14 +1,9 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Extensions;
 using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
@@ -40,7 +35,7 @@ namespace Citicon.DataProcess
                             if (reader.HasRows)
                             {
                                 await reader.ReadAsync();
-                                client = await ClientManager.GetFromDbData      Reader(reader);
+                                client = await ClientManager.GetFromDbDataReader(reader);
                             }
                         }
                     }

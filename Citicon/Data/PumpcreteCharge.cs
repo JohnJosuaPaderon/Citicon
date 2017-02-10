@@ -1,6 +1,4 @@
-﻿using CTPMO.Data;
-
-namespace Citicon.Data
+﻿namespace Citicon.Data
 {
     public sealed class PumpcreteCharge
     {

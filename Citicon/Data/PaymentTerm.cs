@@ -1,7 +1,4 @@
-﻿using Citicon.Data;
-using System;
-
-namespace Citicon.Inventory.Data
+﻿namespace Citicon.Inventory.Data
 {
     public sealed class PaymentTerm : Sorschia.Data
     {

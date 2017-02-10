@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Text;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Citicon.Reports

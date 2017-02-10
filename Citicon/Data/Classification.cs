@@ -1,6 +1,4 @@
-﻿using Citicon.Data;
-using System;
-using System.Configuration;
+﻿using System.Configuration;
 
 namespace Citicon.Inventory.Data
 {

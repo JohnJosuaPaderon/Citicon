@@ -1,14 +1,10 @@
 ﻿using Citicon.Data;
 using Sorschia.Queries;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Citicon
 {
