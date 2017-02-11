@@ -11,6 +11,13 @@ namespace Citicon.DataManager
 {
     public sealed class BankManager : DataManager<Bank>, IDataManager<Bank>
     {
+        static BankManager()
+        {
+            BankDict = new Dictionary<ulong, Bank>();
+        }
+
+        private static Dictionary<ulong, Bank> BankDict { get; }
+
         public void Add(Bank data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_banks_add"))
@@ -44,14 +51,24 @@ namespace Citicon.DataManager
         {
             if (dictionary != null)
             {
-                return new Bank
+                var bank = new Bank
                 {
                      Code = dictionary.GetString("Code"),
                      Description = dictionary.GetString("Description"),
                      Id = dictionary.GetUInt64("BankId")
                 };
+
+                if (!BankDict.ContainsKey(bank.Id))
+                {
+                    BankDict.Add(bank.Id, bank);
+                }
+
+                return bank;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
         public string GenerateCode()
@@ -65,6 +82,11 @@ namespace Citicon.DataManager
 
         public Bank GetById(ulong id)
         {
+            if (BankDict.ContainsKey(id))
+            {
+                return BankDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_banks_getbyid"))

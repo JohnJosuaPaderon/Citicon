@@ -1,4 +1,6 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
+using CTPMO.Data;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -10,6 +12,13 @@ namespace Citicon.DataManager
 {
     public sealed class BankAccountManager : DataManager<BankAccount>, IDataManager<BankAccount>
     {
+        static BankAccountManager()
+        {
+            BankAccountDict = new Dictionary<ulong, BankAccount>();
+        }
+
+        private static Dictionary<ulong, BankAccount> BankAccountDict { get; }
+
         public void Add(BankAccount data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_bankaccounts_add"))
@@ -21,7 +30,7 @@ namespace Citicon.DataManager
                 query.AddParameter("@_ChequeNumber", data.ChequeNumber);
                 query.AddParameter("@_ChequeNumberStart", data.ChequeNumberStart);
                 query.AddParameter("@_ChequeNumberEnd", data.ChequeNumberEnd);
-                query.AddParameter("@_CreatedBy", User.CurrentUser?.DisplayName);
+                query.AddParameter("@_CreatedBy", Data.User.CurrentUser?.DisplayName);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
                 if (query.AffectedRows == 1)
@@ -42,7 +51,7 @@ namespace Citicon.DataManager
         {
             if (dictionary != null)
             {
-                return new BankAccount
+                var bankAccount = new BankAccount
                 {
                     Bank = (new BankManager()).GetById(dictionary.GetUInt64("BankId")),
                     Code = dictionary.GetString("Code"),
@@ -52,8 +61,17 @@ namespace Citicon.DataManager
                     ChequeNumberEnd = dictionary.GetUInt32("ChequeNumberEnd"),
                     ChequeNumberStart = dictionary.GetUInt32("ChequeNumberStart")
                 };
+
+                if (!BankAccountDict.ContainsKey(bankAccount.Id))
+                {
+                    BankAccountDict.Add(bankAccount.Id, bankAccount);
+                }
+                return bankAccount;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
         public string GenerateCode(Bank bank)
@@ -68,6 +86,11 @@ namespace Citicon.DataManager
 
         public BankAccount GetById(ulong id)
         {
+            if (BankAccountDict.ContainsKey(id))
+            {
+                return BankAccountDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_bankaccounts_getbyid"))
@@ -112,12 +135,25 @@ namespace Citicon.DataManager
             return Task.Factory.StartNew(GetList);
         }
 
+        public async Task<IEnumerable<BankAccount>> GetListByBankAsync(Bank bank)
+        {
+            if (bank != null)
+            {
+                var process = new GetBankAccountListByBank(bank);
+                return await process.ExecuteAsync();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void Remove(BankAccount data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_bankaccounts_remove"))
             {
                 query.AddParameter("@_BankAccountId", data.Id);
-                query.AddParameter("@_ModifiedBy", User.CurrentUser?.DisplayName);
+                query.AddParameter("@_ModifiedBy", Data.User.CurrentUser?.DisplayName);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
                 if (query.AffectedRows == 1) OnRemoved(data);
@@ -141,7 +177,7 @@ namespace Citicon.DataManager
                 query.AddParameter("@_ChequeNumber", data.ChequeNumber);
                 query.AddParameter("@_ChequeNumberStart", data.ChequeNumberStart);
                 query.AddParameter("@_ChequeNumberEnd", data.ChequeNumberEnd);
-                query.AddParameter("@_ModifiedBy", User.CurrentUser?.DisplayName);
+                query.AddParameter("@_ModifiedBy", Data.User.CurrentUser?.DisplayName);
                 query.Execute();
                 if (query.AffectedRows == 1) OnUpdated(data);
                 else OnUpdatedUnsuccessful(data);
@@ -151,6 +187,19 @@ namespace Citicon.DataManager
         public Task UpdateAsync(BankAccount data)
         {
             return Task.Factory.StartNew(() => Update(data));
+        }
+
+        public async Task<bool> ValidateChequeRangeAsync(BankAccount bankAccount, UInt32Range chequeNumberRange)
+        {
+            if (bankAccount != null)
+            {
+                var process = new ValidateChequeRange(bankAccount, chequeNumberRange);
+                return await process.ExecuteAsync();
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

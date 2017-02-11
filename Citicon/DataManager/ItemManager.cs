@@ -12,6 +12,13 @@ namespace Citicon.Inventory.DataManager
 {
     public sealed class ItemManager : DataManager<Item>, IDataManager<Item>
     {
+        static ItemManager()
+        {
+            ItemDict = new Dictionary<ulong, Item>();
+        }
+
+        private static Dictionary<ulong, Item> ItemDict { get; }
+
         public event DataManagerEventHandler<Tuple<Stock, Transaction>> NewTrackRecordGenerated;
 
         public void Add(Item data)
@@ -46,7 +53,7 @@ namespace Citicon.Inventory.DataManager
         {
             if (dictionary != null)
             {
-                return new Item
+                var item = new Item
                 {
                     Classification = (new ClassificationManager()).GetById(dictionary.GetUInt64("ClassificationId")),
                     Code = dictionary.GetString("Code"),
@@ -56,8 +63,18 @@ namespace Citicon.Inventory.DataManager
                     MeasurementUnit = (new MeasurementUnitManager()).GetById(dictionary.GetUInt64("MeasurementUnitId")),
                     CementSupplied = dictionary.GetBoolean("CementSupplied")
                 };
+
+                if (!ItemDict.ContainsKey(item.Id))
+                {
+                    ItemDict.Add(item.Id, item);
+                }
+
+                return item;
             }
-            return null;
+            else
+            {
+                return null; 
+            }
         }
 
         public List<Tuple<DateTime, decimal>> GetPriceHistory(Item item)
@@ -91,6 +108,11 @@ namespace Citicon.Inventory.DataManager
 
         public Item GetById(ulong id)
         {
+            if (ItemDict.ContainsKey(id))
+            {
+                return ItemDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_inventoryitems_getbyid"))

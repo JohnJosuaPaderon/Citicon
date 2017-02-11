@@ -125,6 +125,11 @@ namespace Citicon.Inventory
 
             clearStockFields();
             MessageBox.Show("Successfully added!");
+
+            if (ckbxRetainData.Checked)
+            {
+                nudDrNumber.Focus();
+            }
         }
         private void clearStockFields()
         {

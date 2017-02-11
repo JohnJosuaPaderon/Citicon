@@ -127,6 +127,7 @@
     <Compile Include="DataManager\ProductManager.cs" />
     <Compile Include="DataManager\ProductStrengthManager.cs" />
     <Compile Include="DataProcess\ExcessPipeChargeProcesses\InsertExcessPipeCharge.cs" />
+    <Compile Include="DataProcess\GetBankAccountListByBank.cs" />
     <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByPurchaseOrder.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="DataProcess\QuotationProcesses\UpdateQuotationStatus.cs" />
     <Compile Include="DataProcess\SaveCementSuppliedStockProject.cs" />
     <Compile Include="DataProcess\SetProjectDesignPurchaseOrder.cs" />
+    <Compile Include="DataProcess\ValidateChequeRange.cs" />
     <Compile Include="DataProcess\VehicleProcesses\GetTransitMixerVehicleList.cs" />
     <Compile Include="DataProcess\DeliveryProcesses\GetUnbilledDeliveryListByProject.cs" />
     <Compile Include="DataProcess\BillingProcesses\GetUnpaidBillingListBySalesInvoice.cs" />

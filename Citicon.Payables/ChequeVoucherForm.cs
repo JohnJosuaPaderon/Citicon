@@ -82,6 +82,11 @@ namespace Citicon.Payables
         {
             tbxExpenseSupplier.AutoCompleteCustomSource.Clear();
             suppliers = await supplierManager.GetListAsync();
+
+            foreach (var item in suppliers)
+            {
+                tbxExpenseSupplier.AutoCompleteCustomSource.Add(item.ToString());
+            }
         }
 
         private void StockManager_NewItemByMrisNumberGenerated(Stock e)
@@ -492,7 +497,7 @@ namespace Citicon.Payables
             activeExpenseSupplier = suppliers.Where(x => x.Description == tbxExpenseSupplier.Text.Trim()).FirstOrDefault();
             if (activeExpenseSupplier != null)
             {
-                tbxExpenseSupplier.ForeColor = Color.FromArgb(255, 128, 0);
+                tbxExpenseSupplier.ForeColor = Color.FromArgb(255, 192, 192);
                 tbxExpenseSupplier.BackColor = Color.FromArgb(40, 40, 40);
             }
             else clearActiveExpenseSupplier();

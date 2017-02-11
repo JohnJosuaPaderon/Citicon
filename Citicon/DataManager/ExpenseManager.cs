@@ -11,6 +11,13 @@ namespace Citicon.Payables.DataManager
 {
     public sealed class ExpenseManager : DataManager<Expense>, IDataManager<Expense>
     {
+        static ExpenseManager()
+        {
+            ExpenseDict = new Dictionary<ulong, Expense>();
+        }
+
+        private static Dictionary<ulong, Expense> ExpenseDict { get; }
+
         public void Add(Expense data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_payablesexpenses_add"))
@@ -39,14 +46,24 @@ namespace Citicon.Payables.DataManager
         {
             if (dictionary != null)
             {
-                return new Expense
+                var expense = new Expense
                 {
                     Code = dictionary.GetString("Code"),
                     Description = dictionary.GetString("Description"),
                     Id = dictionary.GetUInt64("ExpenseId")
                 };
+
+                if (!ExpenseDict.ContainsKey(expense.Id))
+                {
+                    ExpenseDict.Add(expense.Id, expense);
+                }
+
+                return expense;
             }
-            return null;
+            else
+            {
+                return null; 
+            }
         }
 
         public string GenerateCode()
@@ -60,6 +77,11 @@ namespace Citicon.Payables.DataManager
 
         public Expense GetById(ulong id)
         {
+            if (ExpenseDict.ContainsKey(id))
+            {
+                return ExpenseDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_payablesexpenses_getbyid"))

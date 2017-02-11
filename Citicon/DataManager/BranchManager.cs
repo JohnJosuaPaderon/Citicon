@@ -10,6 +10,13 @@ namespace Citicon.DataManager
 {
     public sealed class BranchManager : DataManager<Branch>, IDataManager<Branch>
     {
+        static BranchManager()
+        {
+            BranchDict = new Dictionary<ulong, Branch>();
+        }
+
+        private static Dictionary<ulong, Branch> BranchDict { get; }
+
         public void Add(Branch data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_branches_add"))
@@ -24,6 +31,7 @@ namespace Citicon.DataManager
                 {
                     data.Id = query.ParameterValues.GetUInt64("@_BranchId");
                     OnAdded(data);
+                    BranchDict.Add(data.Id, data);
                 }
                 else OnAddedUnsuccessful(data);
             }
@@ -59,6 +67,11 @@ namespace Citicon.DataManager
 
         public Branch GetById(ulong id)
         {
+            if (BranchDict.ContainsKey(id))
+            {
+                return BranchDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_branches_getbyid"))
@@ -89,7 +102,13 @@ namespace Citicon.DataManager
                     branches = new List<Branch>();
                     foreach (var item in result)
                     {
-                        branches.Add(ExtractFromDictionary(item));
+                        var branch = ExtractFromDictionary(item);
+                        branches.Add(branch);
+
+                        if (branch != null && !BranchDict.ContainsKey(branch.Id))
+                        {
+                            BranchDict.Add(branch.Id, branch);
+                        }
                     }
                 }
             }

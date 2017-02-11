@@ -153,6 +153,7 @@
             // 
             // tpGeneralSettings
             // 
+            this.tpGeneralSettings.BackColor = System.Drawing.Color.White;
             this.tpGeneralSettings.Controls.Add(this.lblRevokeChequeNumber);
             this.tpGeneralSettings.Controls.Add(this.btnRevokeChequeNumber);
             this.tpGeneralSettings.Controls.Add(this.lblRevokeChequeNumberBankAccount);
@@ -461,6 +462,7 @@
             // 
             // tpExpenses
             // 
+            this.tpExpenses.BackColor = System.Drawing.Color.White;
             this.tpExpenses.Controls.Add(this.btnCancelExpense);
             this.tpExpenses.Controls.Add(this.btnSaveExpense);
             this.tpExpenses.Controls.Add(this.btnRemoveExpense);
@@ -606,12 +608,12 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvExpenses.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvExpenses.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvExpenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpenses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvExpenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -663,6 +665,7 @@
             // 
             // tpBanks
             // 
+            this.tpBanks.BackColor = System.Drawing.Color.White;
             this.tpBanks.Controls.Add(this.btnCancelBank);
             this.tpBanks.Controls.Add(this.btnSaveBank);
             this.tpBanks.Controls.Add(this.btnRemoveBank);
@@ -808,12 +811,12 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvBanks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBanks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvBanks.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvBanks.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvBanks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBanks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvBanks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -865,6 +868,7 @@
             // 
             // tpBankAccounts
             // 
+            this.tpBankAccounts.BackColor = System.Drawing.Color.White;
             this.tpBankAccounts.Controls.Add(this.lblBankAccountBank);
             this.tpBankAccounts.Controls.Add(this.cmbxBankAccountbank);
             this.tpBankAccounts.Controls.Add(this.btnCancelBankAccount);
@@ -1035,12 +1039,12 @@
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvBankAccounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBankAccounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvBankAccounts.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvBankAccounts.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvBankAccounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBankAccounts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvBankAccounts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;

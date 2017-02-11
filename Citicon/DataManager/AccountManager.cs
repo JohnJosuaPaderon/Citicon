@@ -10,6 +10,13 @@ namespace Citicon.DataManager
 {
     public sealed class AccountManager : DataManager<Account>, IDataManager<Account>
     {
+        static AccountManager()
+        {
+            AccountDict = new Dictionary<ulong, Account>();
+        }
+
+        private static Dictionary<ulong, Account> AccountDict { get; }
+
         private AccountTypeManager TypeManager;
         private AccountClassificationManager ClassificationManager;
         private AccountSubClassificationManager SubClassificationManager;
@@ -63,8 +70,9 @@ namespace Citicon.DataManager
 
         public Account ExtractFromDictionary(Dictionary<string, object> arg)
         {
-            return arg != null ?
-                new Account
+            if (arg != null)
+            {
+                var account = new Account
                 {
                     Classification = ClassificationManager.GetById(arg.GetUInt64("AccountClassificationId")),
                     Code = arg.GetString("Code"),
@@ -72,21 +80,46 @@ namespace Citicon.DataManager
                     Name = arg.GetString("Name"),
                     SubClassification = SubClassificationManager.GetById(arg.GetUInt64("SubClassificationId")),
                     Type = TypeManager.GetById(arg.GetUInt64("AccountTypeId"))
-                } : null;
+                };
+
+                if (!AccountDict.ContainsKey(account.Id))
+                {
+                    AccountDict.Add(account.Id, account);
+                }
+
+                return account;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public async Task<Account> ExtractFromDictionaryAsync(Dictionary<string, object> arg)
         {
-            return arg != null ?
-                new Account
+            if (arg != null)
+            {
+                var account = new Account
                 {
-                    Classification = await ClassificationManager.GetByIdAsync(arg.GetUInt64("AccountClassificationId")),
+                    Classification = ClassificationManager.GetById(arg.GetUInt64("AccountClassificationId")),
                     Code = arg.GetString("Code"),
                     Id = arg.GetUInt64("AccountId"),
                     Name = arg.GetString("Name"),
                     SubClassification = await SubClassificationManager.GetByIdAsync(arg.GetUInt64("AccountSubClassificationId")),
                     Type = TypeManager.GetById(arg.GetUInt64("AccountTypeId"))
-                } : null;
+                };
+
+                if (!AccountDict.ContainsKey(account.Id))
+                {
+                    AccountDict.Add(account.Id, account);
+                }
+
+                return account;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private MySqlQuery CreateGetListQuery()

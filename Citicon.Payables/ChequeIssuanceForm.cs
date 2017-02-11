@@ -32,7 +32,7 @@ namespace Citicon.Payables
             InitializeComponent();
             payableManager = new PayableManager();
             payableManager.ExceptionCatched += ExceptionCatched;
-            payableManager.NewChequeVoucherNumber += PayableManager_NewChequeVoucherNumber;
+            //payableManager.NewChequeVoucherNumber += PayableManager_NewChequeVoucherNumber;
             payableManager.NewItemByChequeVoucherNumber += PayableManager_NewItemByChequeVoucherNumber;
             payableManager.Updated += PayableManager_Updated;
 
@@ -58,8 +58,11 @@ namespace Citicon.Payables
 
         private void BankManager_NewItemGenerated(Bank e)
         {
-            tempBanks.Add(e);
-            Invoke(new Action(() => cmbxBanks.Items.Add(e)));
+            if (e != null)
+            {
+                tempBanks.Add(e);
+                Invoke(new Action(() => cmbxBanks.Items.Add(e)));
+            }
         }
 
         private async Task loadBanks()
@@ -85,7 +88,7 @@ namespace Citicon.Payables
 
         private void PayableManager_NewChequeVoucherNumber(string e)
         {
-            Invoke(new Action(() => tbxCheckVoucherNumber.AutoCompleteCustomSource.Add(e)));
+            //Invoke(new Action(() => tbxCheckVoucherNumber.AutoCompleteCustomSource.Add(e)));
         }
 
         private void ExceptionCatched(Exception ex)
@@ -106,6 +109,11 @@ namespace Citicon.Payables
         {
             tbxCheckVoucherNumber.AutoCompleteCustomSource.Clear();
             checkVoucherNumbers = await payableManager.GetChequeVoucherNumberAsync(false);
+
+            if (checkVoucherNumbers != null)
+            {
+                tbxCheckVoucherNumber.AutoCompleteCustomSource.AddRange(checkVoucherNumbers);
+            }
         }
 
         private async Task setCheckVoucherNumber()
@@ -116,7 +124,7 @@ namespace Citicon.Payables
             if (checkVoucherNumbers.Contains(x))
             {
                 backColor = Color.FromArgb(50, 50, 50);
-                foreColor = Color.FromArgb(255, 128, 0);
+                foreColor = Color.FromArgb(255, 192, 192);
                 if (x != checkVoucherNumber)
                 {
                     payee = null;
@@ -171,6 +179,7 @@ namespace Citicon.Payables
         {
             cmbxBankAccounts.Items.Clear();
             cmbxBankAccounts.Items.AddRange(tempBankAccounts.Where(x => x.Bank == (Bank)cmbxBanks.SelectedItem)?.ToArray());
+            tbxBank.Text = (cmbxBanks.SelectedItem as Bank)?.ToString();
         }
 
         private void tbxPayee_TextChanged(object sender, EventArgs e)
@@ -190,6 +199,8 @@ namespace Citicon.Payables
                 tbxCheckNumber.Text = "0000000";
                 MessageBox.Show("Insufficient cheque number!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            tbxBankAccount.Text = bankAccount?.ToString();
         }
 
         private async void btnExportCheque_Click(object sender, EventArgs e)
@@ -243,6 +254,21 @@ namespace Citicon.Payables
         private void tbxCheckVoucherNumber_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRange_Click(object sender, EventArgs e)
+        {
+            var form = new ChequeNumberRangeForm(cmbxBankAccounts.SelectedItem as BankAccount);
+            form.ShowDialog();
+
+            var bankAccount = form.CurrentBankAccount;
+
+            if (bankAccount != null)
+            {
+                cmbxBanks.SelectedItem = bankAccount.Bank;
+                cmbxBankAccounts.SelectedItem = bankAccount;
+                tbxCheckNumber.Text = bankAccount.ChequeNumber.ToString("0000000");
+            }
         }
     }
 }

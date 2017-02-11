@@ -7,6 +7,7 @@ using Citicon.Payables.DataManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -232,6 +233,7 @@ namespace Citicon.Payables
                 gbxFilter.Enabled = false;
                 tbxGrandTotal.Text = "0.00";
                 loadingUnpaidStocks = true;
+                Debug.WriteLine("Unpaid List Generated Start : {0}", DateTime.Now);
                 var task = stockManager.GetUnpaidListAsync();
                 task.ContinueWith(x =>
                 {
@@ -244,6 +246,7 @@ namespace Citicon.Payables
                             {
                                 Parallel.Invoke(() => addStockToUnpaidStock(item));
                             }
+                            Debug.WriteLine("Unpaid List Generated End : {0}", DateTime.Now);
                         }
                     }
                     Invoke(new Action(() =>

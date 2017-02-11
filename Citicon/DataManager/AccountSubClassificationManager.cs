@@ -9,6 +9,13 @@ namespace Citicon.DataManager
 {
     public sealed class AccountSubClassificationManager : DataManager<AccountSubClassification>, IDataManager<AccountSubClassification>
     {
+        static AccountSubClassificationManager()
+        {
+            AccountSubClassificationDict = new Dictionary<ulong, AccountSubClassification>();
+        }
+
+        private static Dictionary<ulong, AccountSubClassification> AccountSubClassificationDict { get; }
+
         private AccountTypeManager TypeManager;
         private AccountClassificationManager ClassificationManager;
         public AccountSubClassificationManager()
@@ -59,28 +66,54 @@ namespace Citicon.DataManager
 
         public AccountSubClassification ExtractFromDictionary(Dictionary<string, object> dictionary)
         {
-            return dictionary != null ?
-                new AccountSubClassification
+            if (dictionary != null)
+            {
+                var accountSubClassification = new AccountSubClassification
                 {
                     Classification = ClassificationManager.GetById(dictionary.GetUInt64("AccountClassificationId")),
                     Code = dictionary.GetString("Code"),
                     Id = dictionary.GetUInt64("AccountSubClassificationId"),
                     Name = dictionary.GetString("Name"),
                     Type = TypeManager.GetById(dictionary.GetUInt64("AccountTypeId"))
-                } : null;
+                };
+
+                if (!AccountSubClassificationDict.ContainsKey(accountSubClassification.Id))
+                {
+                    AccountSubClassificationDict.Add(accountSubClassification.Id, accountSubClassification);
+                }
+
+                return accountSubClassification;
+            }
+            else
+            {
+                return null;
+            }
         }
 
-        public async Task<AccountSubClassification> ExtractFromDictionaryAsync(Dictionary<string, object> dict)
+        public async Task<AccountSubClassification> ExtractFromDictionaryAsync(Dictionary<string, object> dictionary)
         {
-            return dict != null ?
-                new AccountSubClassification
+            if (dictionary != null)
+            {
+                var accountSubClassification = new AccountSubClassification
                 {
-                    Classification = await ClassificationManager.GetByIdAsync(dict.GetUInt64("AccountClassificationId")),
-                    Code = dict.GetString("Code"),
-                    Id = dict.GetUInt64("AccountSubClassificationId"),
-                    Name = dict.GetString("Name"),
-                    Type = TypeManager.GetById(dict.GetUInt64("AccountTypeId"))
-                } : null;
+                    Classification = await ClassificationManager.GetByIdAsync(dictionary.GetUInt64("AccountClassificationId")),
+                    Code = dictionary.GetString("Code"),
+                    Id = dictionary.GetUInt64("AccountSubClassificationId"),
+                    Name = dictionary.GetString("Name"),
+                    Type = TypeManager.GetById(dictionary.GetUInt64("AccountTypeId"))
+                };
+
+                if (!AccountSubClassificationDict.ContainsKey(accountSubClassification.Id))
+                {
+                    AccountSubClassificationDict.Add(accountSubClassification.Id, accountSubClassification);
+                }
+
+                return accountSubClassification;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private MySqlQuery CreateGetListQuery()
@@ -199,6 +232,11 @@ namespace Citicon.DataManager
         }
         public AccountSubClassification GetById(ulong id)
         {
+            if (AccountSubClassificationDict.ContainsKey(id))
+            {
+                return AccountSubClassificationDict[id];
+            }
+
             using (var query = CreateGetbyIdQuery(id))
             {
                 return ExtractFromDictionary(query.GetRecord());
@@ -206,6 +244,11 @@ namespace Citicon.DataManager
         }
         public async Task<AccountSubClassification> GetByIdAsync(ulong id)
         {
+            if (AccountSubClassificationDict.ContainsKey(id))
+            {
+                return AccountSubClassificationDict[id];
+            }
+
             using (var query = CreateGetbyIdQuery(id))
                 return await ExtractFromDictionaryAsync(await query.GetRecordAsync());
         }

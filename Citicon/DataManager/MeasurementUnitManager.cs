@@ -10,6 +10,13 @@ namespace Citicon.Inventory.DataManager
 {
     public sealed class MeasurementUnitManager : DataManager<MeasurementUnit>, IDataManager<MeasurementUnit>
     {
+        static MeasurementUnitManager()
+        {
+            MeasurementUnitDict = new Dictionary<ulong, MeasurementUnit>();
+        }
+
+        private static Dictionary<ulong, MeasurementUnit> MeasurementUnitDict { get; }
+
         public void Add(MeasurementUnit data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_inventorymeasurementunits_add"))
@@ -37,18 +44,33 @@ namespace Citicon.Inventory.DataManager
         {
             if (dictionary != null)
             {
-                return new MeasurementUnit
+                var measurementUnit = new MeasurementUnit
                 {
                     Description = dictionary.GetString("Description"),
                     Id = dictionary.GetUInt64("MeasurementUnitId"),
                     Symbol = dictionary.GetString("Symbol")
                 };
+
+                if (!MeasurementUnitDict.ContainsKey(measurementUnit.Id))
+                {
+                    MeasurementUnitDict.Add(measurementUnit.Id, measurementUnit);
+                }
+
+                return measurementUnit;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
         public MeasurementUnit GetById(ulong id)
         {
+            if (MeasurementUnitDict.ContainsKey(id))
+            {
+                return MeasurementUnitDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_inventorymeasurementunits_getbyid"))

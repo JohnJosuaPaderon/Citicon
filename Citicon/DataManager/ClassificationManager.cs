@@ -11,6 +11,13 @@ namespace Citicon.Inventory.DataManager
 {
     public sealed class ClassificationManager : DataManager<Classification>, IDataManager<Classification>
     {
+        static ClassificationManager()
+        {
+            ClassificationDict = new Dictionary<ulong, Classification>();
+        }
+
+        private static Dictionary<ulong, Classification> ClassificationDict { get; }
+
         public void Add(Classification data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_inventoryclassifications_add"))
@@ -40,15 +47,25 @@ namespace Citicon.Inventory.DataManager
         {
             if (dictionary != null)
             {
-                return new Classification
+                var classification = new Classification
                 {
                      Code = dictionary.GetString("Code"),
                      Description = dictionary.GetString("Description"),
                      Id = dictionary.GetUInt64("ClassificationId"),
                      MeasurementUnit = (new MeasurementUnitManager()).GetById(dictionary.GetUInt64("MeasurementUnitId"))
                 };
+
+                if (!ClassificationDict.ContainsKey(classification.Id))
+                {
+                    ClassificationDict.Add(classification.Id, classification);
+                }
+
+                return classification;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
         public string GenerateCode()
@@ -62,6 +79,11 @@ namespace Citicon.Inventory.DataManager
 
         public Classification GetById(ulong id)
         {
+            if (ClassificationDict.ContainsKey(id))
+            {
+                return ClassificationDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_inventoryclassifications_getbyid"))

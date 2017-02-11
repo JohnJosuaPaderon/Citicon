@@ -205,12 +205,12 @@
             this.dgvUnpaidStocks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvUnpaidStocks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvUnpaidStocks.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvUnpaidStocks.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvUnpaidStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUnpaidStocks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvUnpaidStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -238,7 +238,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUnpaidStocks.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvUnpaidStocks.EnableHeadersVisualStyles = false;
-            this.dgvUnpaidStocks.GridColor = System.Drawing.Color.Red;
+            this.dgvUnpaidStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvUnpaidStocks.Location = new System.Drawing.Point(11, 293);
             this.dgvUnpaidStocks.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUnpaidStocks.MultiSelect = false;
@@ -349,12 +349,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMrisNumberIssuanceQueue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvMrisNumberIssuanceQueue.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvMrisNumberIssuanceQueue.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMrisNumberIssuanceQueue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMrisNumberIssuanceQueue.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvMrisNumberIssuanceQueue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -375,7 +375,7 @@
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMrisNumberIssuanceQueue.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMrisNumberIssuanceQueue.EnableHeadersVisualStyles = false;
-            this.dgvMrisNumberIssuanceQueue.GridColor = System.Drawing.Color.Red;
+            this.dgvMrisNumberIssuanceQueue.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvMrisNumberIssuanceQueue.Location = new System.Drawing.Point(1138, 191);
             this.dgvMrisNumberIssuanceQueue.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMrisNumberIssuanceQueue.MultiSelect = false;
@@ -671,7 +671,7 @@
             // nudFilterByDrNumber
             // 
             this.nudFilterByDrNumber.Enabled = false;
-            this.nudFilterByDrNumber.Location = new System.Drawing.Point(554, 86);
+            this.nudFilterByDrNumber.Location = new System.Drawing.Point(554, 88);
             this.nudFilterByDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudFilterByDrNumber.Maximum = new decimal(new int[] {
             999999,
@@ -718,7 +718,7 @@
             this.btnFilter.FlatAppearance.BorderSize = 0;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(808, 88);
+            this.btnFilter.Location = new System.Drawing.Point(808, 79);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(91, 36);
@@ -733,7 +733,7 @@
             this.dtpFilterByDeliveryDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFilterByDeliveryDate.Enabled = false;
             this.dtpFilterByDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(553, 55);
+            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(553, 56);
             this.dtpFilterByDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFilterByDeliveryDate.Name = "dtpFilterByDeliveryDate";
             this.dtpFilterByDeliveryDate.Size = new System.Drawing.Size(251, 27);

@@ -9,6 +9,13 @@ namespace Citicon.DataManager
 {
     public sealed class AccountClassificationManager : DataManager<AccountClassification>, IDataManager<AccountClassification>
     {
+        static AccountClassificationManager()
+        {
+            AccountClassificationDict = new Dictionary<ulong, AccountClassification>();
+        }
+
+        private static Dictionary<ulong, AccountClassification> AccountClassificationDict { get; }
+
         private AccountTypeManager TypeManager;
         public AccountClassificationManager()
         {
@@ -75,13 +82,27 @@ namespace Citicon.DataManager
 
         public AccountClassification ExtractFromDictionary(Dictionary<string, object> dictionary)
         {
-            return dictionary != null ? new AccountClassification
+            if (dictionary != null)
             {
-                Code = dictionary.GetString("Code"),
-                Id = dictionary.GetUInt64("AccountClassificationId"),
-                Name = dictionary.GetString("Name"),
-                Type = TypeManager.GetById(dictionary.GetUInt64("AccountTypeId"))
-            } : null;
+                var accountClassification = new AccountClassification
+                {
+                    Code = dictionary.GetString("Code"),
+                    Id = dictionary.GetUInt64("AccountClassificationId"),
+                    Name = dictionary.GetString("Name"),
+                    Type = TypeManager.GetById(dictionary.GetUInt64("AccountTypeId"))
+                };
+
+                if (!AccountClassificationDict.ContainsKey(accountClassification.Id))
+                {
+                    AccountClassificationDict.Add(accountClassification.Id, accountClassification);
+                }
+
+                return accountClassification;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private MySqlQuery CreateGetListQuery()
@@ -172,11 +193,21 @@ namespace Citicon.DataManager
 
         public AccountClassification GetById(ulong id)
         {
+            if (AccountClassificationDict.ContainsKey(id))
+            {
+                return AccountClassificationDict[id];
+            }
+
             using (var query = CreateGetByIdQuery(id))
                 return ExtractFromDictionary(query.GetRecord());
         }
         public async Task<AccountClassification> GetByIdAsync(ulong id)
         {
+            if (AccountClassificationDict.ContainsKey(id))
+            {
+                return AccountClassificationDict[id];
+            }
+
             using (var query = CreateGetByIdQuery(id))
                 return ExtractFromDictionary(await query.GetRecordAsync());
         }

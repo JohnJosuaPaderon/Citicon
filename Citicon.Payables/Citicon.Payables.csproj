@@ -73,6 +73,12 @@
     <Compile Include="ChequeIssuanceForm.Designer.cs">
       <DependentUpon>ChequeIssuanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChequeNumberRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChequeNumberRangeForm.Designer.cs">
+      <DependentUpon>ChequeNumberRangeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChequeVoucherForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
     <EmbeddedResource Include="ChequeIssuanceForm.resx">
       <DependentUpon>ChequeIssuanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChequeNumberRangeForm.resx">
+      <DependentUpon>ChequeNumberRangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChequeVoucherForm.resx">
       <DependentUpon>ChequeVoucherForm.cs</DependentUpon>

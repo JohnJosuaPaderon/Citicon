@@ -12,6 +12,13 @@ namespace Citicon.DataManager
 {
     public sealed class SupplierManager : DataManager<Supplier>, IDataManager<Supplier>
     {
+        static SupplierManager()
+        {
+            SupplierDict = new Dictionary<ulong, Supplier>();
+        }
+
+        private static Dictionary<ulong, Supplier> SupplierDict { get; }
+
         public void Add(Supplier data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_suppliers_add"))
@@ -42,7 +49,7 @@ namespace Citicon.DataManager
         {
             if (dictionary != null)
             {
-                return new Supplier
+                var supplier = new Supplier
                 {
                     Address = dictionary.GetString("Address"),
                     Code = dictionary.GetString("Code"),
@@ -50,8 +57,18 @@ namespace Citicon.DataManager
                     Description = dictionary.GetString("Description"),
                     Id = dictionary.GetUInt64("SupplierId")
                 };
+
+                if (!SupplierDict.ContainsKey(supplier.Id))
+                {
+                    SupplierDict.Add(supplier.Id, supplier);
+                }
+
+                return supplier;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
         public string GenerateCode()
@@ -65,6 +82,11 @@ namespace Citicon.DataManager
 
         public Supplier GetById(ulong id)
         {
+            if (SupplierDict.ContainsKey(id))
+            {
+                return SupplierDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_suppliers_getbyid"))

@@ -264,7 +264,7 @@
             this.tbxActiveSupplier.BackColor = System.Drawing.Color.White;
             this.tbxActiveSupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxActiveSupplier.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxActiveSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tbxActiveSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbxActiveSupplier.Location = new System.Drawing.Point(616, 6);
             this.tbxActiveSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxActiveSupplier.Name = "tbxActiveSupplier";

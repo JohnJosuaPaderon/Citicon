@@ -9,6 +9,13 @@ namespace Citicon.DataManager
 {
     public sealed class AccountTypeManager : DataManager<AccountType>, IDataManager<AccountType>
     {
+        static AccountTypeManager()
+        {
+            AccountTypeDict = new Dictionary<ulong, AccountType>();
+        }
+
+        private static Dictionary<ulong, AccountType> AccountTypeDict { get; } 
+
         public void Add(AccountType data)
         {
             var task = AddAsync(data);
@@ -38,12 +45,17 @@ namespace Citicon.DataManager
         {
             if (dictionary != null)
             {
-                return new AccountType
+                var accountType = new AccountType
                 {
                     Code = dictionary.GetString("Code"),
                     Id = dictionary.GetUInt64("AccountTypeId"),
                     Name = dictionary.GetString("Name")
                 };
+
+                if (!AccountTypeDict.ContainsKey(accountType.Id))
+                {
+                    AccountTypeDict.Add(accountType.Id, accountType);
+                }
             }
             return null;
         }
@@ -112,6 +124,11 @@ namespace Citicon.DataManager
 
         public AccountType GetById(ulong id)
         {
+            if (AccountTypeDict.ContainsKey(id))
+            {
+                return AccountTypeDict[id];
+            }
+
             using (var query = new MySqlQuery(Supports.ConnectionString, "_accounttypes_getbyid"))
             {
                 query.AddParameter("@_AccountTypeId", id);

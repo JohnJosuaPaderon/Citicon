@@ -10,6 +10,13 @@ namespace Citicon.Inventory.DataManager
 {
     public sealed class PaymentTermManager : DataManager<PaymentTerm>, IDataManager<PaymentTerm>
     {
+        static PaymentTermManager()
+        {
+            PaymentTermDict = new Dictionary<ulong, PaymentTerm>();
+        }
+
+        private static Dictionary<ulong, PaymentTerm> PaymentTermDict { get; }
+
         public void Add(PaymentTerm data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_inventorypaymentterms_add"))
@@ -38,18 +45,32 @@ namespace Citicon.Inventory.DataManager
         {
             if (dictionary != null)
             {
-                return new PaymentTerm
+                var paymentTerm = new PaymentTerm
                 {
                     DayCount = dictionary.GetUInt32("DayCount"),
                     Description = dictionary.GetString("Description"),
                     Id = dictionary.GetUInt64("PaymentTermId")
                 };
+
+                if (!PaymentTermDict.ContainsKey(paymentTerm.Id))
+                {
+                    PaymentTermDict.Add(paymentTerm.Id, paymentTerm);
+                }
+                return paymentTerm;
             }
-            return null;
+            else
+            {
+                return null; 
+            }
         }
 
         public PaymentTerm GetById(ulong id)
         {
+            if (PaymentTermDict.ContainsKey(id))
+            {
+                return PaymentTermDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_inventorypaymentterms_getbyid"))

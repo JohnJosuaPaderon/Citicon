@@ -10,6 +10,13 @@ namespace Citicon.DataManager
 {
     public sealed class CompanyManager : DataManager<Company>, IDataManager<Company>
     {
+        static CompanyManager()
+        {
+            CompanyDict = new Dictionary<ulong, Company>();
+        }
+
+        private static Dictionary<ulong, Company> CompanyDict { get; }
+
         public void Add(Company data)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_companies_add"))
@@ -38,14 +45,24 @@ namespace Citicon.DataManager
         {
             if (dictionary != null)
             {
-                return new Company
+                var company = new Company
                 {
                     Code = dictionary.GetString("Code"),
                     Description = dictionary.GetString("Description"),
                     Id = dictionary.GetUInt64("CompanyId")
                 };
+
+                if (!CompanyDict.ContainsKey(company.Id))
+                {
+                    CompanyDict.Add(company.Id, company);
+                }
+
+                return company;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
         public string GenerateCode()
@@ -59,6 +76,11 @@ namespace Citicon.DataManager
 
         public Company GetById(ulong id)
         {
+            if (CompanyDict.ContainsKey(id))
+            {
+                return CompanyDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_companies_getbyid"))

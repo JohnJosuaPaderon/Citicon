@@ -12,10 +12,12 @@ namespace Citicon.DataManager
     public sealed class VehicleManager : DataManager<Vehicle>, IDataManager<Vehicle>
     {
         private static List<Vehicle> Vehicles;
+        private static Dictionary<ulong, Vehicle> VehicleDict { get; }
 
         static VehicleManager()
         {
             Vehicles = new List<Vehicle>();
+            VehicleDict = new Dictionary<ulong, Vehicle>();
         }
 
         public static async Task<Vehicle> GetByVehicleIdAsync(ulong id)
@@ -80,20 +82,35 @@ namespace Citicon.DataManager
         {
             if (dictionary != null)
             {
-                return new Vehicle
+                var vehicle = new Vehicle
                 {
                     Id = dictionary.GetUInt64("VehicleId"),
                     PhysicalNumber = dictionary.GetString("PhysicalNumber"),
                     PlateNumber = dictionary.GetString("PlateNumber"),
                     Type = (new VehicleTypeManager()).GetById(dictionary.GetUInt64("TypeId"))
                 };
+
+                if (!VehicleDict.ContainsKey(vehicle.Id))
+                {
+                    VehicleDict.Add(vehicle.Id, vehicle);
+                }
+
+                return vehicle;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
         [Obsolete("Use static GetVehicleByIdAsync")]
         public Vehicle GetById(ulong id)
         {
+            if (VehicleDict.ContainsKey(id))
+            {
+                return VehicleDict[id];
+            }
+
             if (id != 0)
             {
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_vehicles_getbyid"))
