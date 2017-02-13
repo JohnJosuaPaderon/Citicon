@@ -83,6 +83,11 @@
             // nudRangeStart
             // 
             this.nudRangeStart.Location = new System.Drawing.Point(16, 119);
+            this.nudRangeStart.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
             this.nudRangeStart.Name = "nudRangeStart";
             this.nudRangeStart.Size = new System.Drawing.Size(221, 29);
             this.nudRangeStart.TabIndex = 4;
@@ -108,6 +113,11 @@
             // nudRangeEnd
             // 
             this.nudRangeEnd.Location = new System.Drawing.Point(242, 119);
+            this.nudRangeEnd.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
             this.nudRangeEnd.Name = "nudRangeEnd";
             this.nudRangeEnd.Size = new System.Drawing.Size(221, 29);
             this.nudRangeEnd.TabIndex = 6;

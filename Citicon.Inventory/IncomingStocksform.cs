@@ -195,6 +195,12 @@ namespace Citicon.Inventory
             branches = await branchManager.GetListAsync();
             companies = await companyManager.GetListAsync();
             suppliers = await supplierManager.GetListAsync();
+
+            if (suppliers != null)
+            {
+                cmbxSuppliers.Items.AddRange(suppliers);
+            }
+
             await loadItems();
 
         }

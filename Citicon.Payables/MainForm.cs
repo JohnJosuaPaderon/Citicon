@@ -446,7 +446,7 @@ namespace Citicon.Payables
         private void btnChequeVoucher_Click(object sender, EventArgs e)
         {
             ChequeVoucherForm form = new ChequeVoucherForm();
-            form.ShowDialog();
+            form.Show();
         }
 
         private void btnMaintenanceForm_Click(object sender, EventArgs e)
@@ -458,7 +458,7 @@ namespace Citicon.Payables
         private void btnChequeIssuance_Click(object sender, EventArgs e)
         {
             ChequeIssuanceForm form = new ChequeIssuanceForm();
-            form.ShowDialog();
+            form.Show();
         }
 
         private void lblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -30,6 +30,8 @@ namespace Citicon.Payables.Reports
 
                 if (summaryItemIEnumerable != null)
                 {
+                    decimal totalDisbursement = 0;
+
                     foreach (var item in summaryItemIEnumerable)
                     {
                         var row = new DataGridViewRow();
@@ -44,7 +46,11 @@ namespace Citicon.Payables.Reports
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.TotalAmount });
 
                         dgvCheques.Rows.Add(row);
+
+                        totalDisbursement += item.TotalAmount;
                     }
+
+                    tbxTotalDisbursement.Text = totalDisbursement.ToString("#,##0.00");
                 }
             }
             catch (Exception ex)

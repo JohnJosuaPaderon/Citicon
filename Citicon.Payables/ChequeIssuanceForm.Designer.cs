@@ -70,7 +70,7 @@
             this.lblChequeIssuance.Location = new System.Drawing.Point(0, 0);
             this.lblChequeIssuance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChequeIssuance.Name = "lblChequeIssuance";
-            this.lblChequeIssuance.Size = new System.Drawing.Size(1378, 84);
+            this.lblChequeIssuance.Size = new System.Drawing.Size(1388, 84);
             this.lblChequeIssuance.TabIndex = 15;
             this.lblChequeIssuance.Text = "Cheque Issuance";
             this.lblChequeIssuance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,7 +185,7 @@
             this.dgvPayables.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPayables.RowTemplate.Height = 40;
             this.dgvPayables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPayables.Size = new System.Drawing.Size(1360, 364);
+            this.dgvPayables.Size = new System.Drawing.Size(1370, 364);
             this.dgvPayables.TabIndex = 102;
             // 
             // colPayable
@@ -308,7 +308,7 @@
             this.btnExportCheque.FlatAppearance.BorderSize = 0;
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
-            this.btnExportCheque.Location = new System.Drawing.Point(1101, 602);
+            this.btnExportCheque.Location = new System.Drawing.Point(1111, 602);
             this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportCheque.Name = "btnExportCheque";
             this.btnExportCheque.Size = new System.Drawing.Size(164, 50);
@@ -322,7 +322,7 @@
             this.lblgrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblgrandTotal.AutoSize = true;
             this.lblgrandTotal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblgrandTotal.Location = new System.Drawing.Point(448, 604);
+            this.lblgrandTotal.Location = new System.Drawing.Point(458, 604);
             this.lblgrandTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblgrandTotal.Name = "lblgrandTotal";
             this.lblgrandTotal.Size = new System.Drawing.Size(154, 37);
@@ -339,7 +339,7 @@
             this.tbxGrandTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxGrandTotal.ForeColor = System.Drawing.Color.Lime;
-            this.tbxGrandTotal.Location = new System.Drawing.Point(606, 602);
+            this.tbxGrandTotal.Location = new System.Drawing.Point(616, 602);
             this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
             this.tbxGrandTotal.ReadOnly = true;
@@ -354,7 +354,7 @@
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(1269, 602);
+            this.btnClose.Location = new System.Drawing.Point(1279, 602);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 50);
@@ -418,7 +418,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1378, 664);
+            this.ClientSize = new System.Drawing.Size(1388, 664);
             this.Controls.Add(this.tbxBankAccount);
             this.Controls.Add(this.tbxBank);
             this.Controls.Add(this.btnRange);

@@ -6,9 +6,9 @@
         private Bank bank;
         private string code;
         private string description;
-        private uint chequenumberstart;
-        private uint chequenumberend;
-        private uint chequenumber;
+        private ulong chequenumberstart;
+        private ulong chequenumberend;
+        private ulong chequenumber;
         public ulong Id
         {
             get { return id; }
@@ -57,7 +57,7 @@
                 }
             }
         }
-        public uint ChequeNumberStart
+        public ulong ChequeNumberStart
         {
             get { return chequenumberstart; }
             set
@@ -69,7 +69,7 @@
                 }
             }
         }
-        public uint ChequeNumberEnd
+        public ulong ChequeNumberEnd
         {
             get { return chequenumberend; }
             set
@@ -81,7 +81,7 @@
                 }
             }
         }
-        public uint ChequeNumber
+        public ulong ChequeNumber
         {
             get { return chequenumber; }
             set

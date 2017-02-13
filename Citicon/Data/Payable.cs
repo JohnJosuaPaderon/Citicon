@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.Inventory.Data;
 using System;
+using System.Configuration;
 
 namespace Citicon.Payables.Data
 {
@@ -254,6 +255,8 @@ namespace Citicon.Payables.Data
                 }
             }
         }
+
+        public static string InputTax => ConfigurationManager.AppSettings["Payable.Description.InputTax"];
 
         public static bool operator ==(Payable x, Payable y)
         {

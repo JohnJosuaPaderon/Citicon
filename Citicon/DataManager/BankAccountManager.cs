@@ -57,9 +57,9 @@ namespace Citicon.DataManager
                     Code = dictionary.GetString("Code"),
                     Description = dictionary.GetString("Description"),
                     Id = dictionary.GetUInt64("BankAccountId"),
-                    ChequeNumber = dictionary.GetUInt32("ChequeNumber"),
-                    ChequeNumberEnd = dictionary.GetUInt32("ChequeNumberEnd"),
-                    ChequeNumberStart = dictionary.GetUInt32("ChequeNumberStart")
+                    ChequeNumber = dictionary.GetUInt64("ChequeNumber"),
+                    ChequeNumberEnd = dictionary.GetUInt64("ChequeNumberEnd"),
+                    ChequeNumberStart = dictionary.GetUInt64("ChequeNumberStart")
                 };
 
                 if (!BankAccountDict.ContainsKey(bankAccount.Id))

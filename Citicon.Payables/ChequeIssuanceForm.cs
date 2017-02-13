@@ -4,6 +4,7 @@ using Citicon.Payables.Data;
 using Citicon.Payables.DataManager;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -48,7 +49,11 @@ namespace Citicon.Payables
         private void PayableManager_Updated(Payable e)
         {
             tbxCheckVoucherNumber.AutoCompleteCustomSource.Remove(e.ChequeVoucherNumber);
-            grandTotalAmount += e.Debit;
+
+            if (e.Description != ConfigurationManager.AppSettings["Payable.Description.InputTax"])
+            {
+                grandTotalAmount += e.Debit;
+            }
         }
 
         private void BankAccountManager_NewItemGenerated(BankAccount e)
@@ -134,7 +139,11 @@ namespace Citicon.Payables
                     grandTotalAmount = 0;
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
-                        grandTotalAmount += ((Payable)row.Cells[colPayable.Name].Value).Debit;
+                        var payable = (Payable)row.Cells[colPayable.Name].Value;
+                        if (payable.Description != ConfigurationManager.AppSettings["Payable.Description.InputTax"])
+                        {
+                            grandTotalAmount += payable.Debit;
+                        }
                         tbxGrandTotal.Text = grandTotalAmount.ToString("#,##0.00");
                     }
                     tbxPayee.Text = payee.Description;

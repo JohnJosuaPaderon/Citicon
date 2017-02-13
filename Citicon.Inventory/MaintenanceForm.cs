@@ -720,6 +720,14 @@ namespace Citicon.Inventory
             dgvSuppliers.Rows.Clear();
             activeSupplier = null;
             suppliers = (await supplierManager.GetListAsync())?.ToList();
+
+            if (suppliers != null)
+            {
+                foreach (var e in suppliers)
+                {
+                    dgvSuppliers.Rows.Add(e, e.Code, e.Address, e.ContactNumber);
+                }
+            }
         }
         private async Task loadVehicles()
         {
