@@ -459,6 +459,7 @@ namespace Citicon.Inventory
             }
             if (Editing)
             {
+                editingStock.AddedStockValue = addedStockValue;
                 editingStock.PaymentTerm = paymentTerm;
                 editingStock.UnitPrice = unitPrice;
                 editingStock.AcceptedBy = acceptedBy;
@@ -613,6 +614,7 @@ namespace Citicon.Inventory
             if (stock != null)
             {
                 editingStock = stock;
+                _dueDate = editingStock.DueDate;
                 dtpDeliveryDate.Value = stock.DeliveryDate;
                 tbxAcceptedBy.Text = stock.AcceptedBy;
                 tbxRemarks.Text = stock.Remarks;
