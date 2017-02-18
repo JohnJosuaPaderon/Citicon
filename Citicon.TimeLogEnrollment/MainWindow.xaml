@@ -1,0 +1,39 @@
+﻿<mahApps:MetroWindow x:Class="Citicon.TimeLogEnrollment.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:local="clr-namespace:Citicon.TimeLogEnrollment"
+                     xmlns:mahApps="http://metro.mahapps.com/winfx/xaml/controls"
+                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                     xmlns:commonControls="clr-namespace:Citicon.CommonUi.Controls;assembly=Citicon.CommonUi"
+                     mc:Ignorable="d" Title="Citicon" EnableDWMDropShadow="True">
+    <materialDesign:DialogHost Identifier="RootDialog">
+        <materialDesign:DrawerHost>
+            <DockPanel>
+                <materialDesign:ColorZone DockPanel.Dock="Top" Style="{StaticResource SystemWindowHeadColorZone}">
+                    <TextBlock Text="Time Keeping Enrollment" Style="{StaticResource SystemWindowHeadTextBlock}"/>
+                </materialDesign:ColorZone>
+                <materialDesign:Card VerticalAlignment="Stretch" Margin="{StaticResource ControlMargin}">
+                    <Grid Margin="{StaticResource ControlMargin}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="{StaticResource GridSpacing}"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <commonControls:SearchBar x:Name="SearchBar" HorizontalAlignment="Left" PlaceHolder="Search Employee..." SearchTriggered="SearchBar_SearchTriggered" IsSuggestionEnabled="True"/>
+                        <StackPanel Grid.Row="2" DataContext="{Binding ElementName=SearchBar,Path=SelectedItem}">
+                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Last Name" Text="{Binding LastName}"/>
+                            <Border Height="{StaticResource ControlSpacing}"/>
+                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="First Name" Template="{Binding FirstName}"/>
+                            <Border Height="{StaticResource ControlSpacing}"/>
+                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Middle Name" Text="{Binding MiddleName}"/>
+                            <Border Height="{StaticResource ControlSpacing}"/>
+                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Position" Text="{Binding Position}"/>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+            </DockPanel>
+        </materialDesign:DrawerHost>
+    </materialDesign:DialogHost>
+</mahApps:MetroWindow>

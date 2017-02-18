@@ -76,6 +76,7 @@
     <Compile Include="DataManager\DeliveryManager.cs" />
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
+    <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataManager\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
     <Compile Include="DataManager\MeasurementUnitManager.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="DataManager\SalesInvoiceManager.cs" />
     <Compile Include="DataManager\StockManager.cs" />
     <Compile Include="DataManager\SupplierManager.cs" />
+    <Compile Include="DataManager\TimeLogTypeManager.cs" />
     <Compile Include="DataManager\TransactionManager.cs" />
     <Compile Include="DataManager\TruckManager.cs" />
     <Compile Include="DataManager\UserManager.cs" />
@@ -130,6 +132,8 @@
     <Compile Include="DataProcess\GetBankAccountListByBank.cs" />
     <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
+    <Compile Include="DataProcess\GetCurrentDate.cs" />
+    <Compile Include="DataProcess\GetEmployeeLoginByCode.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithNoPurchaseOrderByProject.cs" />
     <Compile Include="DataProcess\GetProjectListWithProjectDesignNoPurchaseOrderByClient.cs" />
@@ -137,10 +141,12 @@
     <Compile Include="DataProcess\GetPurchaseOrderByNumber.cs" />
     <Compile Include="DataProcess\GetQuotationUserById.cs" />
     <Compile Include="DataProcess\GetSupplierList.cs" />
+    <Compile Include="DataProcess\GetTimeLogTypeById.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
     <Compile Include="DataProcess\InsertUser.cs" />
     <Compile Include="DataProcess\JobPositionProcesses\GetJobPositionById.cs" />
+    <Compile Include="DataProcess\LogEmployee.cs" />
     <Compile Include="DataProcess\MySqlDataProcessUtility.cs" />
     <Compile Include="DataProcess\OperationTimeFrameProcesses\InsertOperationTimeFrame.cs" />
     <Compile Include="DataProcess\OtherChargeProcesses\InsertOtherCharge.cs" />
@@ -175,6 +181,7 @@
     <Compile Include="DataProcess\QuotationProcesses\GetQuotationById.cs" />
     <Compile Include="DataProcess\QuotationProcesses\UpdateQuotationStatus.cs" />
     <Compile Include="DataProcess\SaveCementSuppliedStockProject.cs" />
+    <Compile Include="DataProcess\SearchEmployee.cs" />
     <Compile Include="DataProcess\SetProjectDesignPurchaseOrder.cs" />
     <Compile Include="DataProcess\ValidateChequeRange.cs" />
     <Compile Include="DataProcess\VehicleProcesses\GetTransitMixerVehicleList.cs" />
@@ -204,6 +211,7 @@
     <Compile Include="Data\Delivery.cs" />
     <Compile Include="Data\Department.cs" />
     <Compile Include="Data\Employee.cs" />
+    <Compile Include="Data\EmployeeLogin.cs" />
     <Compile Include="Data\ExcessPipeCharge.cs" />
     <Compile Include="Data\Expense.cs" />
     <Compile Include="Data\Item.cs" />
@@ -215,6 +223,7 @@
     <Compile Include="Data\OtherChargeType.cs" />
     <Compile Include="Data\Payable.cs" />
     <Compile Include="Data\PaymentTerm.cs" />
+    <Compile Include="Data\PayrollType.cs" />
     <Compile Include="Data\Product.cs" />
     <Compile Include="Data\Project.cs" />
     <Compile Include="Data\ProjectBillingInfo.cs" />
@@ -230,6 +239,8 @@
     <Compile Include="Data\SalesInvoice.cs" />
     <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
+    <Compile Include="Data\TimeLog.cs" />
+    <Compile Include="Data\TimeLogType.cs" />
     <Compile Include="Data\Transaction.cs" />
     <Compile Include="Data\Truck.cs" />
     <Compile Include="Data\User.cs" />
@@ -294,7 +305,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Data\ViewModels\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

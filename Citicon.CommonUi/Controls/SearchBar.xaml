@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Citicon.CommonUi.Controls.SearchBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Citicon.CommonUi.Controls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" MinWidth="250">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <materialDesign:Card x:Name="_Main" Grid.Row="0" materialDesign:ShadowAssist.ShadowDepth="Depth1" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{StaticResource GridSpacing}"/>
+                    <ColumnDefinition Width="*" MinWidth="250"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="TextBox" Grid.Column="1" materialDesign:HintAssist.Hint="{Binding PlaceHolder}" Text="{Binding Keyword,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Cursor="IBeam" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" Height="NaN" Width="NaN" FontSize="13" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" SelectionBrush="{StaticResource AccentColorBrush}" BorderThickness="0" PreviewKeyDown="TextBox_PreviewKeyDown"/>
+                <Button x:Name="Button" Grid.Column="2" Style="{DynamicResource MaterialDesignFlatButton}" Padding="{StaticResource ControlMargin}" Height="NaN" Width="NaN" Click="Button_Click">
+                    <materialDesign:PackIcon Kind="Magnify" Style="{StaticResource SystemPackIcon}"/>
+                </Button>
+            </Grid>
+        </materialDesign:Card>
+        <Popup x:Name="SearchItemDisplay" Style="{x:Null}" AllowsTransparency="True">
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" Margin="1" MinWidth="250" HorizontalAlignment="Stretch">
+                <ListBox x:Name="ListBox" SelectionChanged="ListBox_SelectionChanged" ItemsSource="{Binding SuggestionItems}" BorderThickness="0" MaxHeight="250" PreviewKeyDown="ListBox_PreviewKeyDown" MouseDoubleClick="ListBox_MouseDoubleClick">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" FontSize="13"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </materialDesign:Card>
+        </Popup>
+    </Grid>
+</UserControl>

@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Citicon.TimeLog")]
+[assembly: AssemblyTitle("Citicon.TimeLogEnrollment")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Citicon.TimeLog")]
-[assembly: AssemblyCopyright("Copyright © 2017 John Josua Paderon")]
+[assembly: AssemblyProduct("Citicon.TimeLogEnrollment")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

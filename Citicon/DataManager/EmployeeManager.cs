@@ -38,5 +38,37 @@ namespace Citicon.DataManager
                 return employee;
             }
         }
+
+        public static async Task<IEnumerable<Employee>> SearchEmployeeAsync(string keyword)
+        {
+            if (!string.IsNullOrWhiteSpace(keyword))
+            {
+                var process = new SearchEmployee(keyword);
+                return await process.ExecuteAsync();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<EmployeeLogin> GetEmployeeLoginByCode(uint loginCode)
+        {
+            var process = new GetEmployeeLoginByCode(loginCode);
+            return await process.ExecuteAsync();
+        }
+
+        public static async Task<TimeLog> LogEmployeeAsync(EmployeeLogin loginInfo)
+        {
+            if (loginInfo != null)
+            {
+                var process = new LogEmployee(loginInfo);
+                return await process.ExecuteAsync();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

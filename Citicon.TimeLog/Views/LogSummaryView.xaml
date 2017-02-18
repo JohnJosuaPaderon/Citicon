@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Citicon.TimeLog.Views.LogSummaryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Citicon.TimeLog.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:viewModels="clr-namespace:Citicon.TimeLog.ViewModels"
+             mc:Ignorable="d" Unloaded="UserControl_Unloaded">
+    <UserControl.DataContext>
+        <viewModels:LogSummaryViewModel/>
+    </UserControl.DataContext>
+    <!--<materialDesign:Card VerticalAlignment="Stretch">
+        <DockPanel>
+            <materialDesign:ColorZone DockPanel.Dock="Top" Style="{StaticResource SystemGroupHeadColorZone}">
+                <TextBlock Text="{Binding Employee}" Style="{StaticResource SystemGroupHeadTextBlock}"/>
+            </materialDesign:ColorZone>
+            <materialDesign:Card Margin="{StaticResource ControlMargin}">
+                <Image x:Name="Avatar" Source="{Binding EmployeeAvatar}" Visibility="Collapsed"/>
+            </materialDesign:Card>
+        </DockPanel>
+    </materialDesign:Card>-->
+    <Grid Margin="{StaticResource ControlMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="{StaticResource GridSpacing}"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{Binding Employee}" FontSize="30" FontWeight="Bold" Typography.Capitals="SmallCaps" Foreground="White"/>
+        <TextBlock Grid.Row="2" Text="{Binding Message}" FontSize="30" Foreground="White"/>
+    </Grid>
+</UserControl>
