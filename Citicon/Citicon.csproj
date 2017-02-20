@@ -180,6 +180,7 @@
     <Compile Include="DataProcess\QuotationProcesses\GetForFinalApprovalQuotationMetaDataList.cs" />
     <Compile Include="DataProcess\QuotationProcesses\GetQuotationById.cs" />
     <Compile Include="DataProcess\QuotationProcesses\UpdateQuotationStatus.cs" />
+    <Compile Include="DataProcess\RegisterEmployeeLogin.cs" />
     <Compile Include="DataProcess\SaveCementSuppliedStockProject.cs" />
     <Compile Include="DataProcess\SearchEmployee.cs" />
     <Compile Include="DataProcess\SetProjectDesignPurchaseOrder.cs" />

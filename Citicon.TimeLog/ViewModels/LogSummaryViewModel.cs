@@ -101,14 +101,15 @@ namespace Citicon.TimeLog.ViewModels
 
         private void SaveImage(Data.TimeLog timeLog)
         {
-            var directory = ConfigurationManager.AppSettings["TimeLog.ImagesDirectory"];
+            var logInfoDate = timeLog.Logout == null ? timeLog.Login : timeLog.Logout;
+            var directory = Path.Combine(ConfigurationManager.AppSettings["TimeLog.ImagesDirectory"], logInfoDate?.ToString("yyyy"), logInfoDate?.ToString("MM-MMMM"), logInfoDate?.ToString("dd-ddd"));
 
             if (!Directory.Exists(directory))
             {
                 Directory.CreateDirectory(directory);
             }
 
-            var filePath = Path.Combine(directory, string.Format("{0}_{1}.jpg", timeLog.Id, timeLog.Logout == null ? "in" : "out"));
+            var filePath = Path.Combine(directory, string.Format("[{0}] {1}.jpg", timeLog.EmployeeLogin.Employee.ToString(), logInfoDate?.ToString("HH_mm_ss")));
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
                 var encoder = new PngBitmapEncoder();

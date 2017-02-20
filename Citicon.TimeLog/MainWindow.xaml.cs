@@ -61,7 +61,7 @@ namespace Citicon.TimeLog
 
         private void EmployeeLoginCode_LostFocus(object sender, RoutedEventArgs e)
         {
-            EmployeeLoginCode.Focus();
+            //EmployeeLoginCode.Focus();
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)

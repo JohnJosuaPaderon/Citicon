@@ -70,5 +70,18 @@ namespace Citicon.DataManager
                 return null;
             }
         }
+
+        public static async Task<EmployeeLogin> RegisterEmployeeLoginAsync(Employee employee)
+        {
+            if (employee != null)
+            {
+                var process = new RegisterEmployeeLogin(employee);
+                return await process.ExecuteAsync();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

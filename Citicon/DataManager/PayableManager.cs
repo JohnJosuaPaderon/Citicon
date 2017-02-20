@@ -16,6 +16,7 @@ using System.Xml;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace Citicon.Payables.DataManager
 {
@@ -261,7 +262,13 @@ namespace Citicon.Payables.DataManager
                     sheet.Cells[auditedByLocation.X, auditedByLocation.Y] = defaultAuditedBy;
                     sheet.Cells[postedByLocation.X, postedByLocation.Y] = defaultPostedBy;
                     sheet.Cells[recordedByLocation.X, recordedByLocation.Y] = defaultRecordedBy;
-                    book.SaveAs($@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx");
+                    var filePath = $@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx";
+                    book.SaveAs(filePath);
+
+                    if (File.Exists(filePath))
+                    {
+                        Process.Start(new ProcessStartInfo(filePath) { Verb = "print" });
+                    }
                 }
                 catch (Exception ex)
                 { throw ex; }

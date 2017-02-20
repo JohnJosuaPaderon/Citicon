@@ -25,11 +25,13 @@
                         <StackPanel Grid.Row="2" DataContext="{Binding ElementName=SearchBar,Path=SelectedItem}">
                             <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Last Name" Text="{Binding LastName}"/>
                             <Border Height="{StaticResource ControlSpacing}"/>
-                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="First Name" Template="{Binding FirstName}"/>
+                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="First Name" Text="{Binding FirstName}"/>
                             <Border Height="{StaticResource ControlSpacing}"/>
                             <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Middle Name" Text="{Binding MiddleName}"/>
                             <Border Height="{StaticResource ControlSpacing}"/>
-                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Position" Text="{Binding Position}"/>
+                            <TextBox Style="{StaticResource SystemTextBox}" materialDesign:HintAssist.Hint="Position" Text="{Binding JobPosition.Name}"/>
+                            <Border Height="{StaticResource ControlSpacing}"/>
+                            <Button x:Name="Register" Style="{StaticResource SystemProcessButton}" Content="Register" HorizontalAlignment="Right" Click="Register_Click"/>
                         </StackPanel>
                     </Grid>
                 </materialDesign:Card>

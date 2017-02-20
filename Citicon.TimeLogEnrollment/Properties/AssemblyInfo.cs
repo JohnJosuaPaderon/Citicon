@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Citicon.TimeLogEnrollment")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright © 2017 John Josua Paderon")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

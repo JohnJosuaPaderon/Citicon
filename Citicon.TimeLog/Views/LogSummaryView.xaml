@@ -7,6 +7,13 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:viewModels="clr-namespace:Citicon.TimeLog.ViewModels"
              mc:Ignorable="d" Unloaded="UserControl_Unloaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Citicon.CommonUi;component/Styles/Default.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <UserControl.DataContext>
         <viewModels:LogSummaryViewModel/>
     </UserControl.DataContext>
@@ -20,13 +27,13 @@
             </materialDesign:Card>
         </DockPanel>
     </materialDesign:Card>-->
-    <Grid Margin="{StaticResource ControlMargin}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="{StaticResource GridSpacing}"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="{Binding Employee}" FontSize="30" FontWeight="Bold" Typography.Capitals="SmallCaps" Foreground="White"/>
-        <TextBlock Grid.Row="2" Text="{Binding Message}" FontSize="30" Foreground="White"/>
+    <Grid Margin="{StaticResource ControlMargin}" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="{StaticResource GridSpacing}"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Text="{Binding Employee}" FontSize="35" FontWeight="Bold" TextDecorations="Underline" Foreground="#FFFF"/>
+        <TextBlock Grid.Column="2" Text="{Binding Message}" FontSize="35" Foreground="#BFFF"/>
     </Grid>
 </UserControl>

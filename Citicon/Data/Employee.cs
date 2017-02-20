@@ -9,6 +9,14 @@ namespace Citicon.Data
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public JobPosition Position { get; set; }
+        public JobPosition JobPosition
+        {
+            get { return Position; }
+            set
+            {
+                Position = value;
+            }
+        }
 
         public static bool operator ==(Employee left, Employee right)
         {
