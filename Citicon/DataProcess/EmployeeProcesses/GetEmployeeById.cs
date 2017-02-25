@@ -1,10 +1,10 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Extensions;
 using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
@@ -13,7 +13,6 @@ namespace Citicon.DataProcess
     {
         private long EmployeeId;
         private MySqlConnectionHelper ConnectionHelper;
-        private JobPositionManager JobPositionManager;
 
         public GetEmployeeById(long employeeId)
         {
@@ -48,8 +47,9 @@ namespace Citicon.DataProcess
                             }
                         }
                     }
-                    catch (Exception e)
+                    catch (Exception ex)
                     {
+                        Debug.WriteLine(ex.Message);
                         employee = null;
                     }
                     return employee;

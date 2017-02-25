@@ -1,7 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Data;
-using CTPMO.Extensions;
 using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;

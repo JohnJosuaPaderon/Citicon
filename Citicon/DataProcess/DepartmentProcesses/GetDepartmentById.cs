@@ -3,6 +3,7 @@ using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
@@ -41,8 +42,9 @@ namespace Citicon.DataProcess
                             }
                         }
                     }
-                    catch (Exception e)
+                    catch (Exception ex)
                     {
+                        Debug.WriteLine(ex.Message);
                         department = null;
                     }
                     return department;

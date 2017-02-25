@@ -185,8 +185,6 @@ namespace Citicon.DataProcess.QuotationProcesses
         private Word.Application Application;
         private Word.Document Document;
         private string FilePath;
-        private string Message;
-        private bool Success;
         private string SaveDirectory;
 
         public void Dispose()

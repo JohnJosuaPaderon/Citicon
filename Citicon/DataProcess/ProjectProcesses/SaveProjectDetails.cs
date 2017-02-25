@@ -3,6 +3,7 @@ using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
@@ -38,8 +39,9 @@ namespace Citicon.DataProcess
                             command.ExecuteNonQuery();
                             transaction.Commit();
                         }
-                        catch (Exception e)
+                        catch (Exception ex)
                         {
+                            Debug.WriteLine(ex.Message);
                             transaction.Rollback();
                         }
                     }

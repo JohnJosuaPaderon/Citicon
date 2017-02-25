@@ -264,11 +264,11 @@ namespace Citicon.Payables.DataManager
                     sheet.Cells[recordedByLocation.X, recordedByLocation.Y] = defaultRecordedBy;
                     var filePath = $@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx";
                     book.SaveAs(filePath);
-
-                    if (File.Exists(filePath))
-                    {
-                        Process.Start(new ProcessStartInfo(filePath) { Verb = "print" });
-                    }
+                    book.PrintOutEx();
+                    //if (File.Exists(filePath))
+                    //{
+                    //    Process.Start(new ProcessStartInfo(filePath) { Verb = "print" });
+                    //}
                 }
                 catch (Exception ex)
                 { throw ex; }
@@ -324,13 +324,15 @@ namespace Citicon.Payables.DataManager
                 Excel.Application app = new Excel.Application();
                 Excel.Workbook book = app.Workbooks.Open(ChequeTemplate);
                 Excel.Worksheet sheet = book.ActiveSheet;
+                var file = $@"{ChequeDirectory}/{DateTime.Now.ToString("yyyyMMddhhmmss")}_{payee.Code}.xlsx";
                 try
                 {
                     sheet.Cells[4, 7] = grandTotalAmount.ToString("#,##0.00");
                     sheet.Cells[4, 2] = payee.Description;
                     sheet.Cells[1, 7] = chequeDate.ToString("MM/dd/yyyy");
                     sheet.Cells[5, 2] = Sorschia.Supports.CurrencyToWords(grandTotalAmount);
-                    book.SaveAs($@"{ChequeDirectory}/{DateTime.Now.ToString("yyyyMMddhhmmss")}_{payee.Code}.xlsx");
+                    book.SaveAs(file);
+                    book.PrintOutEx();
                 }
                 catch (Exception ex)
                 {

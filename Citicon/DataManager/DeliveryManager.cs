@@ -1,8 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
 using Citicon.DataProcess.DeliveryProcesses;
-using CTPMO.Data;
-using CTPMO.Extensions;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;

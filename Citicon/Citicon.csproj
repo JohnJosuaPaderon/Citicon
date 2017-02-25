@@ -86,6 +86,7 @@
     <Compile Include="DataManager\OtherChargeTypeManager.cs" />
     <Compile Include="DataManager\PayableManager.cs" />
     <Compile Include="DataManager\PaymentTermManager.cs" />
+    <Compile Include="DataManager\PayrollManager.cs" />
     <Compile Include="DataManager\ProjectDesignManager.cs" />
     <Compile Include="DataManager\ProjectDesignMixTypeManager.cs" />
     <Compile Include="DataManager\ProjectManager.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="DataManager\ProductManager.cs" />
     <Compile Include="DataManager\ProductStrengthManager.cs" />
     <Compile Include="DataProcess\ExcessPipeChargeProcesses\InsertExcessPipeCharge.cs" />
+    <Compile Include="DataProcess\GeneratePayroll.cs" />
     <Compile Include="DataProcess\GetBankAccountListByBank.cs" />
     <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
@@ -209,10 +211,12 @@
     <Compile Include="Data\Classification.cs" />
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Company.cs" />
+    <Compile Include="Data\DateTimeRange.cs" />
     <Compile Include="Data\Delivery.cs" />
     <Compile Include="Data\Department.cs" />
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
+    <Compile Include="Data\EmployeePayroll.cs" />
     <Compile Include="Data\ExcessPipeCharge.cs" />
     <Compile Include="Data\Expense.cs" />
     <Compile Include="Data\Item.cs" />
@@ -224,6 +228,7 @@
     <Compile Include="Data\OtherChargeType.cs" />
     <Compile Include="Data\Payable.cs" />
     <Compile Include="Data\PaymentTerm.cs" />
+    <Compile Include="Data\Payroll.cs" />
     <Compile Include="Data\PayrollType.cs" />
     <Compile Include="Data\Product.cs" />
     <Compile Include="Data\Project.cs" />
@@ -252,6 +257,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelationalDatabaseUtility.cs" />
     <Compile Include="Reports\ExporterBase.cs" />
+    <Compile Include="Reports\ExportPayroll.cs" />
+    <Compile Include="Reports\SemiMonthlyPayrollExportConfiguration.cs" />
     <Compile Include="Supports.cs" />
     <Compile Include="UserSettingsForm.cs">
       <SubType>Form</SubType>

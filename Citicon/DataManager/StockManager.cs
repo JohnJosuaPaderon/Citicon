@@ -252,6 +252,7 @@ namespace Citicon.Inventory.DataManager
                     //sheet.Cells[7, 1] = supplier.Description;
                     //sheet.Cells[7, 7] = deliveryDate;
                     book.SaveAs($@"{MrisReportDirectory}/{DateTime.Now.ToString("yyyyMMddhhmm")}_{supplier.Code}.xlsx");
+                    book.PrintOutEx();
                 }
                 catch (Exception ex)
                 { throw ex; }

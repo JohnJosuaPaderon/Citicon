@@ -21,8 +21,7 @@ namespace Citicon.Payables
         SupplierManager supplierManager;
         BranchManager branchManager;
         ExpenseManager expenseManager;
-
-        Stock[] unpaidStocks;
+        
         bool loadingUnpaidStocks;
         Supplier activeSupplier;
         const string DATE_FORMAT = "MMM dd, yyyy";

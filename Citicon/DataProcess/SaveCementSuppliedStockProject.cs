@@ -4,6 +4,7 @@ using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Citicon.Inventory.DataProcess
@@ -35,8 +36,9 @@ namespace Citicon.Inventory.DataProcess
                         }
                         transaction.Commit();
                     }
-                    catch (Exception e)
+                    catch (Exception ex)
                     {
+                        Debug.WriteLine(ex.Message);
                         transaction.Rollback();
                         throw;
                     }

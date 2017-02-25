@@ -4,6 +4,7 @@ using CTPMO.Helpers;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 namespace Citicon.DataManager
 {
@@ -36,6 +37,7 @@ namespace Citicon.DataManager
                         }
                         catch (Exception e)
                         {
+                            Debug.WriteLine(e.Message);
                             transaction.Rollback();
                             throw;
                         }

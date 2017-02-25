@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Data;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data.Common;

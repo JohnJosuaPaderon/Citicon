@@ -28,6 +28,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.TimeLog", "Citicon.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.TimeLogEnrollment", "Citicon.TimeLogEnrollment\Citicon.TimeLogEnrollment.csproj", "{658CB9A6-DEEA-4A9B-A409-F78920114219}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.HumanResourceIntegration", "Citicon.HumanResourceIntegration\Citicon.HumanResourceIntegration.csproj", "{D25AB3F8-1A7E-419F-BD4A-55C7AFF5144A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{20F74695-D619-479E-BE5C-B43F359D5314}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Tests.HumanResourceIntegrationTest", "Citicon.Tests.HumanResourceIntegrationTest\Citicon.Tests.HumanResourceIntegrationTest.csproj", "{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.PayrollIntegration", "Citicon.PayrollIntegration\Citicon.PayrollIntegration.csproj", "{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Tests.PayrollIntegrationTest", "Citicon.Tests.PayrollIntegrationTest\Citicon.Tests.PayrollIntegrationTest.csproj", "{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,8 +76,28 @@ Global
 		{658CB9A6-DEEA-4A9B-A409-F78920114219}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{658CB9A6-DEEA-4A9B-A409-F78920114219}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{658CB9A6-DEEA-4A9B-A409-F78920114219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D25AB3F8-1A7E-419F-BD4A-55C7AFF5144A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D25AB3F8-1A7E-419F-BD4A-55C7AFF5144A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D25AB3F8-1A7E-419F-BD4A-55C7AFF5144A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D25AB3F8-1A7E-419F-BD4A-55C7AFF5144A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB} = {20F74695-D619-479E-BE5C-B43F359D5314}
+		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA} = {20F74695-D619-479E-BE5C-B43F359D5314}
 	EndGlobalSection
 EndGlobal

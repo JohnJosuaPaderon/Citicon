@@ -137,7 +137,7 @@ namespace Citicon.Inventory
             await loadItems();
         }
 
-        private async void tmrGenerateItems_Tick(object sender, EventArgs e)
+        private void tmrGenerateItems_Tick(object sender, EventArgs e)
         {
             //await loadItems();
         }
