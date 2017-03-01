@@ -1,8 +1,9 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace Citicon.Data
 {
-    public class EmployeePayroll
+    public class EmployeePayroll : IComparable<EmployeePayroll>
     {
         public Employee Employee { get; set; }
         public decimal BasicPay { get; set; }
@@ -43,6 +44,7 @@ namespace Citicon.Data
                 return stringBuilder.ToString();
             }
         }
+        public PayrollGroup Group { get; set; }
 
         public static bool operator ==(EmployeePayroll left, EmployeePayroll right)
         {
@@ -72,6 +74,11 @@ namespace Citicon.Data
         public override int GetHashCode()
         {
             return Employee.GetHashCode();
+        }
+
+        public int CompareTo(EmployeePayroll other)
+        {
+            return string.Compare(Employee.ToString(), other.ToString());
         }
     }
 }

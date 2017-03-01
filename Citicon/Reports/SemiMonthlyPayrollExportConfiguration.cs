@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Drawing;
 using System.IO;
 using System.Text;
 
@@ -45,9 +46,34 @@ namespace Citicon.Reports
             return cell;
         }
 
+        public int GetCellFontColor(SemiMonthlyPayrollExportConfigurationColumnIndex columnIndex)
+        {
+            var appSetting = AppSettings[string.Format("Cell.FontColor[{0}]", columnIndex.ToString())];
+
+            if (appSetting != null)
+            {
+                var colorConverter = new ColorConverter();
+                var color = colorConverter.ConvertFromString(appSetting.Value);
+
+                return ColorTranslator.ToOle((Color)color);
+            }
+            else
+            {
+                return ColorTranslator.ToOle(Color.Black);
+            }
+        }
+
         public int ColumnIndex(SemiMonthlyPayrollExportConfigurationColumnIndex columnIndex)
         {
             return Convert.ToInt32(AppSettings[string.Format("ColumnIndex[{0}]", columnIndex.ToString())].Value);
+        }
+
+        public string SumFormula(SemiMonthlyPayrollExportConfigurationColumnIndex columnIndex, int startRowIndex, int endRowIndex)
+        {
+            var columnName = GetExcelColumnName(ColumnIndex(columnIndex));
+            string formula = string.Format("=SUM({0}{1}:{0}{2})", columnName, startRowIndex, endRowIndex);
+
+            return formula;
         }
 
         public string Formula(SemiMonthlyPayrollExportConfigurationColumnIndex columnIndex, int rowIndex)
@@ -164,6 +190,8 @@ namespace Citicon.Reports
         Cash_Advance,
         Sun_Cell_Bill,
         Total_Deduction,
-        Net_Pay
+        Net_Pay,
+        SSS_EC,
+        SSS_ER
     }
 }

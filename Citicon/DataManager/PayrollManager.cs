@@ -21,12 +21,12 @@ namespace Citicon.DataManager
             }
         }
 
-        public void ExportPayroll(Payroll payroll)
+        public async Task ExportPayrollAsync(Payroll payroll)
         {
             if (payroll != null)
             {
                 var exporter = new ExportPayroll(payroll);
-                exporter.Export();
+                await exporter.ExportAsync();
             }
         }
     }

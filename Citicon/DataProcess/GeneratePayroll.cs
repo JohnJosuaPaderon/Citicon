@@ -14,11 +14,13 @@ namespace Citicon.DataProcess
             RangeDate = rangeDate;
             Branch = branch;
             JobPositionManager = new JobPositionManager();
+            PayrollGroupManager = new PayrollGroupManager();
         }
 
         private DateTimeRange RangeDate;
         private Branch Branch;
         private JobPositionManager JobPositionManager;
+        private PayrollGroupManager PayrollGroupManager;
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
@@ -30,7 +32,7 @@ namespace Citicon.DataProcess
             return command;
         }
 
-        private EmployeePayroll FromReader(DbDataReader reader)
+        private async Task<EmployeePayroll> FromReaderAsync(DbDataReader reader)
         {
             return new EmployeePayroll()
             {
@@ -53,13 +55,14 @@ namespace Citicon.DataProcess
                 SpecialHolidayOvertimeHours = reader.GetDecimal("SpecialHolidayOvertimeHours"),
                 WithHoldingTax = reader.GetDecimal("WithHoldingTax"),
                 SSSEC = reader.GetDecimal("SSSEC"),
-                SSSER = reader.GetDecimal("SSSER")
+                SSSER = reader.GetDecimal("SSSER"),
+                Group = await PayrollGroupManager.GetByIdAsync(reader.GetUInt32("PayrollGroupId"))
             };
         }
 
         public Task<IEnumerable<EmployeePayroll>> ExecuteAsync(MySqlConnection connection)
         {
-            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand(connection), FromReader);
+            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand(connection), FromReaderAsync);
         }
 
         public Task<IEnumerable<EmployeePayroll>> ExecuteAsync()

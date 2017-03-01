@@ -12,5 +12,6 @@ namespace Citicon.Data
         public DateTimeRange DateRange { get; set; }
         public Branch Branch { get; set; }
         public List<EmployeePayroll> Items { get; }
+
     }
 }

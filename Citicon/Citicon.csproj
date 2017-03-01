@@ -86,6 +86,7 @@
     <Compile Include="DataManager\OtherChargeTypeManager.cs" />
     <Compile Include="DataManager\PayableManager.cs" />
     <Compile Include="DataManager\PaymentTermManager.cs" />
+    <Compile Include="DataManager\PayrollGroupManager.cs" />
     <Compile Include="DataManager\PayrollManager.cs" />
     <Compile Include="DataManager\ProjectDesignManager.cs" />
     <Compile Include="DataManager\ProjectDesignMixTypeManager.cs" />
@@ -136,6 +137,8 @@
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetCurrentDate.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginByCode.cs" />
+    <Compile Include="DataProcess\GetPayrollGroupById.cs" />
+    <Compile Include="DataProcess\GetPayrollGroupList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithNoPurchaseOrderByProject.cs" />
     <Compile Include="DataProcess\GetProjectListWithProjectDesignNoPurchaseOrderByClient.cs" />
@@ -229,6 +232,7 @@
     <Compile Include="Data\Payable.cs" />
     <Compile Include="Data\PaymentTerm.cs" />
     <Compile Include="Data\Payroll.cs" />
+    <Compile Include="Data\PayrollGroup.cs" />
     <Compile Include="Data\PayrollType.cs" />
     <Compile Include="Data\Product.cs" />
     <Compile Include="Data\Project.cs" />

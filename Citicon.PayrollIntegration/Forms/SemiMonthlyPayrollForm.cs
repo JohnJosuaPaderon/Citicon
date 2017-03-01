@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using org.mariuszgromada.math.mxparser;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -58,7 +57,7 @@ namespace Citicon.PayrollIntegration.Forms
             }
         }
 
-        private void Export()
+        private async Task ExportAsync()
         {
             var branch = (Branch)cmbxSelectPlant.SelectedItem;
             var rangeDate = new DateTimeRange(dtpSelectRange_From.Value, dtpSelectRange_To.Value);
@@ -78,11 +77,20 @@ namespace Citicon.PayrollIntegration.Forms
 
                     try
                     {
-                        PayrollManager.ExportPayroll(payroll);
+                        btnExport.Enabled = false;
+                        btnGeneratePayroll.Enabled = false;
+                        await PayrollManager.ExportPayrollAsync(payroll);
+                        MessageBox.Show("Successfully exported!");
+                        dgvPayrollItems.Rows.Clear();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        btnExport.Enabled = true;
+                        btnGeneratePayroll.Enabled = true;
                     }
                 }
             }
@@ -128,9 +136,9 @@ namespace Citicon.PayrollIntegration.Forms
             await GeneratePayrollAsync();
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private async void btnExport_Click(object sender, EventArgs e)
         {
-            Export();
+            await ExportAsync();
         }
     }
 }

@@ -66,6 +66,7 @@
     <None Include="app.config" />
     <None Include="Forms\semi_monthly_payroll.config">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
