@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Citicon.Payables")]
+[assembly: AssemblyTitle("Citicon.ReceivablesIntegration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Citicon.Payables")]
-[assembly: AssemblyCopyright("Copyright © John Josua R. Paderon 2016-2017")]
+[assembly: AssemblyProduct("Citicon.ReceivablesIntegration")]
+[assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("49d9292f-8b52-4dd0-bb09-b78ede27148e")]
+[assembly: Guid("28dc4421-f3f2-429a-9cf9-9a02fc582195")]
 
 // Version information for an assembly consists of the following four values:
 //

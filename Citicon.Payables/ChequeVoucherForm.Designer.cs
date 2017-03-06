@@ -90,6 +90,7 @@
             this.tbxCheckVoucherNumber = new System.Windows.Forms.TextBox();
             this.lblCheckVoucherNumber = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnRemoveSelectedExpense = new System.Windows.Forms.Button();
             this.tcChequeVoucher.SuspendLayout();
             this.tpVariableCost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocks)).BeginInit();
@@ -407,6 +408,7 @@
             // 
             // tpExpenses
             // 
+            this.tpExpenses.Controls.Add(this.btnRemoveSelectedExpense);
             this.tpExpenses.Controls.Add(this.tbxExpenseTotalDebit);
             this.tpExpenses.Controls.Add(this.tbxExpenseTotalCredit);
             this.tpExpenses.Controls.Add(this.tbxExpenseDifference);
@@ -865,6 +867,20 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnRemoveSelectedExpense
+            // 
+            this.btnRemoveSelectedExpense.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveSelectedExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveSelectedExpense.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveSelectedExpense.Location = new System.Drawing.Point(831, 176);
+            this.btnRemoveSelectedExpense.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveSelectedExpense.Name = "btnRemoveSelectedExpense";
+            this.btnRemoveSelectedExpense.Size = new System.Drawing.Size(184, 29);
+            this.btnRemoveSelectedExpense.TabIndex = 117;
+            this.btnRemoveSelectedExpense.Text = "Remove Selected";
+            this.btnRemoveSelectedExpense.UseVisualStyleBackColor = false;
+            this.btnRemoveSelectedExpense.Click += new System.EventHandler(this.btnRemoveSelectedExpense_Click);
+            // 
             // ChequeVoucherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -955,5 +971,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseBranch;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseDebit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseCredit;
+        private System.Windows.Forms.Button btnRemoveSelectedExpense;
     }
 }

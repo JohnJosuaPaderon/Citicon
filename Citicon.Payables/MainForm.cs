@@ -21,6 +21,7 @@ namespace Citicon.Payables
         SupplierManager supplierManager;
         BranchManager branchManager;
         ExpenseManager expenseManager;
+        CompanyManager companyManager;
         
         bool loadingUnpaidStocks;
         Supplier activeSupplier;
@@ -42,6 +43,7 @@ namespace Citicon.Payables
             supplierManager = new SupplierManager();
             //supplierManager.NewItemGenerated += SupplierManager_NewItemGenerated;
             branchManager = new BranchManager();
+            companyManager = new CompanyManager();
             //branchManager.NewItemGenerated += BranchManager_NewItemGenerated;
             expenseManager = new ExpenseManager();
             expenseManager.NewItemGenerated += ExpenseManager_NewItemGenerated;
@@ -59,7 +61,7 @@ namespace Citicon.Payables
         {
             if (this != null)
             {
-                Invoke(new Action(() => cmbxFilterByBranch.Items.Add(e))); 
+                //Invoke(new Action(() => cmbxFilterByBranch.Items.Add(e))); 
             }
         }
 
@@ -159,10 +161,27 @@ namespace Citicon.Payables
                 /*async () => await branchManager.GetListAsync(),*/
                 GetBranchList,
                 GetSupplierList,
+                GetCompanyList,
                 /*async () => await supplierManager.GetListAsync(),*/
                 /*GetItemList*/
                 async () => await itemManager.GetListAsync(),
                 async () => await expenseManager.GetListAsync());
+        }
+
+        private void GetCompanyList()
+        {
+            var task = companyManager.GetListAsync();
+
+            task.ContinueWith(x =>
+            {
+                if (x.Status == TaskStatus.RanToCompletion)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        cmbxAccountCompany.Items.AddRange(x.Result);
+                    }));
+                }
+            });
         }
 
         private void GetBranchList()
@@ -174,7 +193,7 @@ namespace Citicon.Payables
                 {
                     Invoke(new Action(() =>
                     {
-                        cmbxFilterByBranch.Items.AddRange(x.Result);
+                        cmbxAccountBranch.Items.AddRange(x.Result);
                     }));
                 }
             });
@@ -295,7 +314,7 @@ namespace Citicon.Payables
                 var task = stockManager.GetFilteredUnpaidListAsyc(
                     ckbxFilterByItem.Checked, (Item)cmbxFilterByItem.SelectedItem,
                     ckbxFilterBySupplier.Checked, (Supplier)cmbxFilterBySupplier.SelectedItem,
-                    ckbxFilterByBranch.Checked, (Branch)cmbxFilterByBranch.SelectedItem,
+                    false, null,
                     ckbxFilterByDeliveryDate.Checked, dtpFilterByDeliveryDate.Value,
                     ckbxFilterBySiNumber.Checked, (uint)nudFilterBySiNumber.Value,
                     ckbxFilterByDrNumber.Checked, (uint)nudFilterByDrNumber.Value);
@@ -475,7 +494,7 @@ namespace Citicon.Payables
         private void SetFilterButtonEnable()
         {
             btnFilter.Enabled =
-                ckbxFilterByBranch.Checked ||
+                //ckbxFilterByBranch.Checked ||
                 ckbxFilterByDeliveryDate.Checked ||
                 ckbxFilterByItem.Checked ||
                 ckbxFilterBySupplier.Checked ||
@@ -497,8 +516,8 @@ namespace Citicon.Payables
 
         private void ckbxFilterByBranch_CheckedChanged(object sender, EventArgs e)
         {
-            cmbxFilterByBranch.Enabled = ckbxFilterByBranch.Checked;
-            SetFilterButtonEnable();
+            //cmbxFilterByBranch.Enabled = ckbxFilterByBranch.Checked;
+            //SetFilterButtonEnable();
         }
 
         private void ckbxFilterByDeliveryDate_CheckedChanged(object sender, EventArgs e)
@@ -568,20 +587,25 @@ namespace Citicon.Payables
                 return;
             }
 
-            if (cmbxExpense == null)
-            {
-                MessageBox.Show("No Selected Expenses Classification");
-                return;
-            }
-
             var row = dgvMrisNumberIssuanceQueue.SelectedRows[0];
             var index = row.Index;
 
             var stock = (Stock)row.Cells[colMrisNumberIssuanceQueue.Name].Value;
             stock.Expense = (Expense)cmbxExpense.SelectedItem;
+            stock.Branch = (Branch)cmbxAccountBranch.SelectedItem;
+            stock.Company = (Company)cmbxAccountCompany.SelectedItem;
 
             dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name].Value = stock;
             dgvMrisNumberIssuanceQueue.InvalidateCell(dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name]);
+
+            ClearAccountChange();
+        }
+
+        private void ClearAccountChange()
+        {
+            cmbxAccountBranch.SelectedItem = null;
+            cmbxAccountCompany.SelectedItem = null;
+            cmbxExpense.SelectedItem = null;
         }
 
         private void btnRemoveExpenseClassification_Click(object sender, EventArgs e)

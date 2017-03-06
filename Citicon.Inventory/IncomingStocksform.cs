@@ -121,7 +121,7 @@ namespace Citicon.Inventory
             currentItem = itemManager.GetById(currentItem.Id);
             //await displayItem();
 
-            dgvStocks.Rows.Insert(0, e, e.LastStockValue.ToString("#,##0.00"), e.AddedStockValue.ToString("#,##0.00"), e.Supplier, e.SiNumber, e.DrNumber, e.DeliveryDate.ToString("MMM dd, yyyy"));
+            dgvStocks.Rows.Insert(0, e, e.AddedStockValue.ToString("#,##0.00"), e.Supplier, e.SiNumber, e.DrNumber, e.DeliveryDate.ToString("MMM dd, yyyy"));
 
             clearStockFields();
             MessageBox.Show("Successfully added!");
@@ -171,7 +171,7 @@ namespace Citicon.Inventory
         }
         private void StockManager_NewItemStockGenerated(Stock e)
         {
-            Invoke(new Action(() => dgvStocks.Rows.Add(e, e.LastStockValue.ToString("#,##0.00"), e.AddedStockValue.ToString("#,##0.00"), e.Supplier, e.SiNumber, e.DrNumber, e.DeliveryDate.ToString("MMM dd, yyyy"))));
+            Invoke(new Action(() => dgvStocks.Rows.Add(e, e.AddedStockValue.ToString("#,##0.00"), e.Supplier, e.SiNumber, e.DrNumber, e.DeliveryDate.ToString("MMM dd, yyyy"))));
         }
         private void ItemManager_NewItemGenerated(Item e)
         {
@@ -396,8 +396,8 @@ namespace Citicon.Inventory
             var vehicle = (Vehicle)cmbxVehicles.SelectedItem;
             var siNumber = Convert.ToUInt32(nudSiNumber.Value);
             var drNumber = Convert.ToUInt32(nudDrNumber.Value);
-            var branch = (Branch)cmbxBranches.SelectedItem;
-            var company = (Company)cmbxCompanies.SelectedItem;
+            //var branch = (Branch)cmbxBranches.SelectedItem;
+            //var company = (Company)cmbxCompanies.SelectedItem;
             var addedStockValue = nudAddedStockValue.Value;
             var unitPrice = nudUnitPrice.Value;
             var supplier = (Supplier)cmbxSuppliers.SelectedItem;
@@ -429,14 +429,14 @@ namespace Citicon.Inventory
             {
                 displayError("SI No. or DR No. should be valid!"); return;
             }
-            if (branch == null)
-            {
-                displayError("Branch should be valid!"); return;
-            }
-            if (company == null)
-            {
-                displayError("Company should be valid!"); return;
-            }
+            //if (branch == null)
+            //{
+            //    displayError("Branch should be valid!"); return;
+            //}
+            //if (company == null)
+            //{
+            //    displayError("Company should be valid!"); return;
+            //}
             if (addedStockValue == 0)
             {
                 displayError("Added stock value shouldn't be having a value of 0 (zero)!"); return;
@@ -463,8 +463,8 @@ namespace Citicon.Inventory
                 editingStock.PaymentTerm = paymentTerm;
                 editingStock.UnitPrice = unitPrice;
                 editingStock.AcceptedBy = acceptedBy;
-                editingStock.Branch = branch;
-                editingStock.Company = company;
+                editingStock.Branch = null;
+                editingStock.Company = null;
                 editingStock.DeliveryDate = deliveryDate;
                 editingStock.DueDate = dueDate;
                 editingStock.MrisNumber = null;
@@ -500,8 +500,8 @@ namespace Citicon.Inventory
                     {
                         AcceptedBy = acceptedBy,
                         AddedStockValue = addedStockValue,
-                        Branch = branch,
-                        Company = company,
+                        Branch = null,
+                        Company = null,
                         DeliveryDate = deliveryDate,
                         DueDate = dueDate,
                         Item = currentItem,

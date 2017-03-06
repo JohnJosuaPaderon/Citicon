@@ -86,8 +86,6 @@
             this.btnFilter = new System.Windows.Forms.Button();
             this.dtpFilterByDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.ckbxFilterByDeliveryDate = new System.Windows.Forms.CheckBox();
-            this.cmbxFilterByBranch = new System.Windows.Forms.ComboBox();
-            this.ckbxFilterByBranch = new System.Windows.Forms.CheckBox();
             this.cmbxFilterBySupplier = new System.Windows.Forms.ComboBox();
             this.cmbxFilterByItem = new System.Windows.Forms.ComboBox();
             this.ckbxFilterBySupplier = new System.Windows.Forms.CheckBox();
@@ -103,6 +101,10 @@
             this.btnRemoveExpenseClassification = new System.Windows.Forms.Button();
             this.btnInsertToQueue = new System.Windows.Forms.Button();
             this.btnRemoveFromQueue = new System.Windows.Forms.Button();
+            this.lblAccountBranch = new System.Windows.Forms.Label();
+            this.cmbxAccountBranch = new System.Windows.Forms.ComboBox();
+            this.cmbxAccountCompany = new System.Windows.Forms.ComboBox();
+            this.lblAccountCompany = new System.Windows.Forms.Label();
             this.Header.SuspendLayout();
             this.UserPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnpaidStocks)).BeginInit();
@@ -385,7 +387,7 @@
             this.dgvMrisNumberIssuanceQueue.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMrisNumberIssuanceQueue.RowTemplate.Height = 40;
             this.dgvMrisNumberIssuanceQueue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMrisNumberIssuanceQueue.Size = new System.Drawing.Size(450, 272);
+            this.dgvMrisNumberIssuanceQueue.Size = new System.Drawing.Size(450, 257);
             this.dgvMrisNumberIssuanceQueue.TabIndex = 75;
             // 
             // colMrisNumberIssuanceQueue
@@ -640,8 +642,6 @@
             this.gbxFilter.Controls.Add(this.btnFilter);
             this.gbxFilter.Controls.Add(this.dtpFilterByDeliveryDate);
             this.gbxFilter.Controls.Add(this.ckbxFilterByDeliveryDate);
-            this.gbxFilter.Controls.Add(this.cmbxFilterByBranch);
-            this.gbxFilter.Controls.Add(this.ckbxFilterByBranch);
             this.gbxFilter.Controls.Add(this.cmbxFilterBySupplier);
             this.gbxFilter.Controls.Add(this.cmbxFilterByItem);
             this.gbxFilter.Controls.Add(this.ckbxFilterBySupplier);
@@ -659,7 +659,7 @@
             // 
             this.ckbxFilterByDrNumber.AutoSize = true;
             this.ckbxFilterByDrNumber.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByDrNumber.Location = new System.Drawing.Point(469, 87);
+            this.ckbxFilterByDrNumber.Location = new System.Drawing.Point(469, 54);
             this.ckbxFilterByDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByDrNumber.Name = "ckbxFilterByDrNumber";
             this.ckbxFilterByDrNumber.Size = new System.Drawing.Size(81, 24);
@@ -671,7 +671,7 @@
             // nudFilterByDrNumber
             // 
             this.nudFilterByDrNumber.Enabled = false;
-            this.nudFilterByDrNumber.Location = new System.Drawing.Point(554, 88);
+            this.nudFilterByDrNumber.Location = new System.Drawing.Point(554, 55);
             this.nudFilterByDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudFilterByDrNumber.Maximum = new decimal(new int[] {
             999999,
@@ -718,10 +718,10 @@
             this.btnFilter.FlatAppearance.BorderSize = 0;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(808, 79);
+            this.btnFilter.Location = new System.Drawing.Point(713, 86);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(91, 36);
+            this.btnFilter.Size = new System.Drawing.Size(91, 29);
             this.btnFilter.TabIndex = 108;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = false;
@@ -733,7 +733,7 @@
             this.dtpFilterByDeliveryDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFilterByDeliveryDate.Enabled = false;
             this.dtpFilterByDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(553, 56);
+            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(553, 23);
             this.dtpFilterByDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFilterByDeliveryDate.Name = "dtpFilterByDeliveryDate";
             this.dtpFilterByDeliveryDate.Size = new System.Drawing.Size(251, 27);
@@ -743,7 +743,7 @@
             // 
             this.ckbxFilterByDeliveryDate.AutoSize = true;
             this.ckbxFilterByDeliveryDate.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByDeliveryDate.Location = new System.Drawing.Point(431, 59);
+            this.ckbxFilterByDeliveryDate.Location = new System.Drawing.Point(431, 26);
             this.ckbxFilterByDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByDeliveryDate.Name = "ckbxFilterByDeliveryDate";
             this.ckbxFilterByDeliveryDate.Size = new System.Drawing.Size(118, 24);
@@ -751,30 +751,6 @@
             this.ckbxFilterByDeliveryDate.Text = "Delivery Date";
             this.ckbxFilterByDeliveryDate.UseVisualStyleBackColor = true;
             this.ckbxFilterByDeliveryDate.CheckedChanged += new System.EventHandler(this.ckbxFilterByDeliveryDate_CheckedChanged);
-            // 
-            // cmbxFilterByBranch
-            // 
-            this.cmbxFilterByBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbxFilterByBranch.Enabled = false;
-            this.cmbxFilterByBranch.FormattingEnabled = true;
-            this.cmbxFilterByBranch.Location = new System.Drawing.Point(553, 22);
-            this.cmbxFilterByBranch.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbxFilterByBranch.Name = "cmbxFilterByBranch";
-            this.cmbxFilterByBranch.Size = new System.Drawing.Size(251, 28);
-            this.cmbxFilterByBranch.TabIndex = 5;
-            // 
-            // ckbxFilterByBranch
-            // 
-            this.ckbxFilterByBranch.AutoSize = true;
-            this.ckbxFilterByBranch.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByBranch.Location = new System.Drawing.Point(476, 24);
-            this.ckbxFilterByBranch.Margin = new System.Windows.Forms.Padding(2);
-            this.ckbxFilterByBranch.Name = "ckbxFilterByBranch";
-            this.ckbxFilterByBranch.Size = new System.Drawing.Size(73, 24);
-            this.ckbxFilterByBranch.TabIndex = 4;
-            this.ckbxFilterByBranch.Text = "Branch";
-            this.ckbxFilterByBranch.UseVisualStyleBackColor = true;
-            this.ckbxFilterByBranch.CheckedChanged += new System.EventHandler(this.ckbxFilterByBranch_CheckedChanged);
             // 
             // cmbxFilterBySupplier
             // 
@@ -894,7 +870,7 @@
             // 
             this.lblChangeAccountDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblChangeAccountDescription.AutoSize = true;
-            this.lblChangeAccountDescription.Location = new System.Drawing.Point(1134, 465);
+            this.lblChangeAccountDescription.Location = new System.Drawing.Point(1134, 502);
             this.lblChangeAccountDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChangeAccountDescription.Name = "lblChangeAccountDescription";
             this.lblChangeAccountDescription.Size = new System.Drawing.Size(310, 20);
@@ -907,10 +883,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbxExpense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxExpense.FormattingEnabled = true;
-            this.cmbxExpense.Location = new System.Drawing.Point(1138, 487);
+            this.cmbxExpense.Location = new System.Drawing.Point(1138, 524);
             this.cmbxExpense.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxExpense.Name = "cmbxExpense";
-            this.cmbxExpense.Size = new System.Drawing.Size(356, 28);
+            this.cmbxExpense.Size = new System.Drawing.Size(360, 28);
             this.cmbxExpense.TabIndex = 113;
             // 
             // btnChangeAccountDescription
@@ -920,7 +896,7 @@
             this.btnChangeAccountDescription.FlatAppearance.BorderSize = 0;
             this.btnChangeAccountDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeAccountDescription.ForeColor = System.Drawing.Color.White;
-            this.btnChangeAccountDescription.Location = new System.Drawing.Point(1501, 486);
+            this.btnChangeAccountDescription.Location = new System.Drawing.Point(1502, 524);
             this.btnChangeAccountDescription.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAccountDescription.Name = "btnChangeAccountDescription";
             this.btnChangeAccountDescription.Size = new System.Drawing.Size(87, 28);
@@ -975,12 +951,60 @@
             this.btnRemoveFromQueue.UseVisualStyleBackColor = false;
             this.btnRemoveFromQueue.Click += new System.EventHandler(this.btnRemoveFromQueue_Click);
             // 
+            // lblAccountBranch
+            // 
+            this.lblAccountBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblAccountBranch.AutoSize = true;
+            this.lblAccountBranch.Location = new System.Drawing.Point(1134, 450);
+            this.lblAccountBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAccountBranch.Name = "lblAccountBranch";
+            this.lblAccountBranch.Size = new System.Drawing.Size(54, 20);
+            this.lblAccountBranch.TabIndex = 116;
+            this.lblAccountBranch.Text = "Branch";
+            // 
+            // cmbxAccountBranch
+            // 
+            this.cmbxAccountBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbxAccountBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxAccountBranch.FormattingEnabled = true;
+            this.cmbxAccountBranch.Location = new System.Drawing.Point(1138, 472);
+            this.cmbxAccountBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbxAccountBranch.Name = "cmbxAccountBranch";
+            this.cmbxAccountBranch.Size = new System.Drawing.Size(229, 28);
+            this.cmbxAccountBranch.TabIndex = 117;
+            // 
+            // cmbxAccountCompany
+            // 
+            this.cmbxAccountCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbxAccountCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxAccountCompany.FormattingEnabled = true;
+            this.cmbxAccountCompany.Location = new System.Drawing.Point(1371, 472);
+            this.cmbxAccountCompany.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbxAccountCompany.Name = "cmbxAccountCompany";
+            this.cmbxAccountCompany.Size = new System.Drawing.Size(218, 28);
+            this.cmbxAccountCompany.TabIndex = 119;
+            // 
+            // lblAccountCompany
+            // 
+            this.lblAccountCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblAccountCompany.AutoSize = true;
+            this.lblAccountCompany.Location = new System.Drawing.Point(1367, 450);
+            this.lblAccountCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAccountCompany.Name = "lblAccountCompany";
+            this.lblAccountCompany.Size = new System.Drawing.Size(72, 20);
+            this.lblAccountCompany.TabIndex = 118;
+            this.lblAccountCompany.Text = "Company";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1597, 691);
+            this.Controls.Add(this.cmbxAccountCompany);
+            this.Controls.Add(this.lblAccountCompany);
+            this.Controls.Add(this.cmbxAccountBranch);
+            this.Controls.Add(this.lblAccountBranch);
             this.Controls.Add(this.btnRemoveExpenseClassification);
             this.Controls.Add(this.btnChangeAccountDescription);
             this.Controls.Add(this.cmbxExpense);
@@ -1079,8 +1103,6 @@
         private System.Windows.Forms.ComboBox cmbxFilterBySupplier;
         private System.Windows.Forms.ComboBox cmbxFilterByItem;
         private System.Windows.Forms.CheckBox ckbxFilterBySupplier;
-        private System.Windows.Forms.CheckBox ckbxFilterByBranch;
-        private System.Windows.Forms.ComboBox cmbxFilterByBranch;
         private System.Windows.Forms.CheckBox ckbxFilterByDeliveryDate;
         private System.Windows.Forms.DateTimePicker dtpFilterByDeliveryDate;
         private System.Windows.Forms.Button btnFilter;
@@ -1105,5 +1127,9 @@
         private System.Windows.Forms.ComboBox cmbxExpense;
         private System.Windows.Forms.Button btnChangeAccountDescription;
         private System.Windows.Forms.Button btnRemoveExpenseClassification;
+        private System.Windows.Forms.Label lblAccountBranch;
+        private System.Windows.Forms.ComboBox cmbxAccountBranch;
+        private System.Windows.Forms.ComboBox cmbxAccountCompany;
+        private System.Windows.Forms.Label lblAccountCompany;
     }
 }

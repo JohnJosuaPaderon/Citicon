@@ -53,13 +53,6 @@
             this.lblItemCode = new System.Windows.Forms.Label();
             this.tbxItemCode = new System.Windows.Forms.TextBox();
             this.dgvStocks = new System.Windows.Forms.DataGridView();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStockLastStockValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddedStockValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesInvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliveryReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStockDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPastStockRecords = new System.Windows.Forms.Label();
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.tbxItemStockValue = new System.Windows.Forms.TextBox();
@@ -106,6 +99,12 @@
             this.lblTotalAmountDue = new System.Windows.Forms.Label();
             this.nudTotalAmountDue = new System.Windows.Forms.NumericUpDown();
             this.ckbxRetainData = new System.Windows.Forms.CheckBox();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddedStockValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesInvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliveryReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStockDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddedStockValue)).BeginInit();
@@ -366,7 +365,6 @@
             this.dgvStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colStock,
-            this.colStockLastStockValue,
             this.colAddedStockValue,
             this.colSupplier,
             this.colSalesInvoiceNumber,
@@ -392,62 +390,6 @@
             this.dgvStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStocks.Size = new System.Drawing.Size(954, 557);
             this.dgvStocks.TabIndex = 50;
-            // 
-            // colStock
-            // 
-            this.colStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
-            this.colStock.Visible = false;
-            // 
-            // colStockLastStockValue
-            // 
-            this.colStockLastStockValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colStockLastStockValue.HeaderText = "Last Stock Value";
-            this.colStockLastStockValue.Name = "colStockLastStockValue";
-            this.colStockLastStockValue.ReadOnly = true;
-            this.colStockLastStockValue.Width = 132;
-            // 
-            // colAddedStockValue
-            // 
-            this.colAddedStockValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colAddedStockValue.HeaderText = "Added Stock Value";
-            this.colAddedStockValue.Name = "colAddedStockValue";
-            this.colAddedStockValue.ReadOnly = true;
-            this.colAddedStockValue.Width = 113;
-            // 
-            // colSupplier
-            // 
-            this.colSupplier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSupplier.HeaderText = "Supplier";
-            this.colSupplier.Name = "colSupplier";
-            this.colSupplier.ReadOnly = true;
-            this.colSupplier.Width = 92;
-            // 
-            // colSalesInvoiceNumber
-            // 
-            this.colSalesInvoiceNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSalesInvoiceNumber.HeaderText = "SI No.";
-            this.colSalesInvoiceNumber.Name = "colSalesInvoiceNumber";
-            this.colSalesInvoiceNumber.ReadOnly = true;
-            this.colSalesInvoiceNumber.Width = 69;
-            // 
-            // colDeliveryReceiptNumber
-            // 
-            this.colDeliveryReceiptNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colDeliveryReceiptNumber.HeaderText = "DR No.";
-            this.colDeliveryReceiptNumber.Name = "colDeliveryReceiptNumber";
-            this.colDeliveryReceiptNumber.ReadOnly = true;
-            this.colDeliveryReceiptNumber.Width = 77;
-            // 
-            // colStockDeliveryDate
-            // 
-            this.colStockDeliveryDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colStockDeliveryDate.HeaderText = "Delivery Date";
-            this.colStockDeliveryDate.Name = "colStockDeliveryDate";
-            this.colStockDeliveryDate.ReadOnly = true;
-            this.colStockDeliveryDate.Width = 116;
             // 
             // lblPastStockRecords
             // 
@@ -550,7 +492,7 @@
             // 
             this.lblAddedStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddedStockValue.AutoSize = true;
-            this.lblAddedStockValue.Location = new System.Drawing.Point(969, 381);
+            this.lblAddedStockValue.Location = new System.Drawing.Point(969, 329);
             this.lblAddedStockValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddedStockValue.Name = "lblAddedStockValue";
             this.lblAddedStockValue.Size = new System.Drawing.Size(138, 21);
@@ -584,7 +526,7 @@
             // 
             this.nudAddedStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudAddedStockValue.DecimalPlaces = 2;
-            this.nudAddedStockValue.Location = new System.Drawing.Point(973, 405);
+            this.nudAddedStockValue.Location = new System.Drawing.Point(973, 353);
             this.nudAddedStockValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudAddedStockValue.Maximum = new decimal(new int[] {
             1000000,
@@ -602,7 +544,7 @@
             // 
             this.lblUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Location = new System.Drawing.Point(1209, 381);
+            this.lblUnitPrice.Location = new System.Drawing.Point(1209, 329);
             this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(77, 21);
@@ -613,7 +555,7 @@
             // 
             this.nudUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudUnitPrice.DecimalPlaces = 4;
-            this.nudUnitPrice.Location = new System.Drawing.Point(1213, 405);
+            this.nudUnitPrice.Location = new System.Drawing.Point(1213, 353);
             this.nudUnitPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudUnitPrice.Maximum = new decimal(new int[] {
             10000000,
@@ -631,12 +573,13 @@
             // 
             this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompany.AutoSize = true;
-            this.lblCompany.Location = new System.Drawing.Point(969, 328);
+            this.lblCompany.Location = new System.Drawing.Point(968, 153);
             this.lblCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(77, 21);
             this.lblCompany.TabIndex = 73;
             this.lblCompany.Text = "Company";
+            this.lblCompany.Visible = false;
             // 
             // cmbxCompanies
             // 
@@ -644,11 +587,12 @@
             this.cmbxCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxCompanies.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxCompanies.FormattingEnabled = true;
-            this.cmbxCompanies.Location = new System.Drawing.Point(973, 351);
+            this.cmbxCompanies.Location = new System.Drawing.Point(972, 176);
             this.cmbxCompanies.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbxCompanies.Name = "cmbxCompanies";
             this.cmbxCompanies.Size = new System.Drawing.Size(236, 29);
             this.cmbxCompanies.TabIndex = 72;
+            this.cmbxCompanies.Visible = false;
             this.cmbxCompanies.SelectedIndexChanged += new System.EventHandler(this.cmbxCompanies_SelectedIndexChanged);
             this.cmbxCompanies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
             this.cmbxCompanies.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
@@ -657,12 +601,13 @@
             // 
             this.lblBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBranch.AutoSize = true;
-            this.lblBranch.Location = new System.Drawing.Point(1209, 328);
+            this.lblBranch.Location = new System.Drawing.Point(1208, 153);
             this.lblBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBranch.Name = "lblBranch";
             this.lblBranch.Size = new System.Drawing.Size(58, 21);
             this.lblBranch.TabIndex = 71;
             this.lblBranch.Text = "Branch";
+            this.lblBranch.Visible = false;
             // 
             // cmbxBranches
             // 
@@ -670,11 +615,12 @@
             this.cmbxBranches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxBranches.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxBranches.FormattingEnabled = true;
-            this.cmbxBranches.Location = new System.Drawing.Point(1213, 351);
+            this.cmbxBranches.Location = new System.Drawing.Point(1212, 176);
             this.cmbxBranches.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbxBranches.Name = "cmbxBranches";
             this.cmbxBranches.Size = new System.Drawing.Size(235, 29);
             this.cmbxBranches.TabIndex = 70;
+            this.cmbxBranches.Visible = false;
             this.cmbxBranches.SelectedIndexChanged += new System.EventHandler(this.cmbxCompanies_SelectedIndexChanged);
             this.cmbxBranches.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
             this.cmbxBranches.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
@@ -683,7 +629,7 @@
             // 
             this.lblSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(969, 560);
+            this.lblSupplier.Location = new System.Drawing.Point(969, 508);
             this.lblSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(68, 21);
@@ -697,7 +643,7 @@
             this.cmbxSuppliers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxSuppliers.FormattingEnabled = true;
-            this.cmbxSuppliers.Location = new System.Drawing.Point(977, 582);
+            this.cmbxSuppliers.Location = new System.Drawing.Point(977, 530);
             this.cmbxSuppliers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbxSuppliers.Name = "cmbxSuppliers";
             this.cmbxSuppliers.Size = new System.Drawing.Size(476, 29);
@@ -714,7 +660,7 @@
             this.tbxAcceptedBy.BackColor = System.Drawing.Color.White;
             this.tbxAcceptedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxAcceptedBy.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxAcceptedBy.Location = new System.Drawing.Point(977, 690);
+            this.tbxAcceptedBy.Location = new System.Drawing.Point(977, 638);
             this.tbxAcceptedBy.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxAcceptedBy.Name = "tbxAcceptedBy";
             this.tbxAcceptedBy.Size = new System.Drawing.Size(475, 29);
@@ -727,7 +673,7 @@
             // 
             this.lblAcceptedBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAcceptedBy.AutoSize = true;
-            this.lblAcceptedBy.Location = new System.Drawing.Point(969, 668);
+            this.lblAcceptedBy.Location = new System.Drawing.Point(969, 616);
             this.lblAcceptedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcceptedBy.Name = "lblAcceptedBy";
             this.lblAcceptedBy.Size = new System.Drawing.Size(94, 21);
@@ -770,7 +716,7 @@
             // 
             this.lblRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(975, 722);
+            this.lblRemarks.Location = new System.Drawing.Point(975, 670);
             this.lblRemarks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(71, 21);
@@ -784,7 +730,7 @@
             this.tbxRemarks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxRemarks.BackColor = System.Drawing.Color.White;
             this.tbxRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxRemarks.Location = new System.Drawing.Point(977, 743);
+            this.tbxRemarks.Location = new System.Drawing.Point(977, 691);
             this.tbxRemarks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbxRemarks.Name = "tbxRemarks";
             this.tbxRemarks.Size = new System.Drawing.Size(475, 29);
@@ -796,7 +742,7 @@
             this.lblLength.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLength.AutoSize = true;
             this.lblLength.Enabled = false;
-            this.lblLength.Location = new System.Drawing.Point(969, 612);
+            this.lblLength.Location = new System.Drawing.Point(969, 560);
             this.lblLength.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLength.Name = "lblLength";
             this.lblLength.Size = new System.Drawing.Size(58, 21);
@@ -809,7 +755,7 @@
             this.nudLength.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudLength.DecimalPlaces = 2;
             this.nudLength.Enabled = false;
-            this.nudLength.Location = new System.Drawing.Point(973, 636);
+            this.nudLength.Location = new System.Drawing.Point(973, 584);
             this.nudLength.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudLength.Maximum = new decimal(new int[] {
             1000000,
@@ -829,7 +775,7 @@
             this.nudWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudWidth.DecimalPlaces = 2;
             this.nudWidth.Enabled = false;
-            this.nudWidth.Location = new System.Drawing.Point(1140, 636);
+            this.nudWidth.Location = new System.Drawing.Point(1140, 584);
             this.nudWidth.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudWidth.Maximum = new decimal(new int[] {
             1000000,
@@ -849,7 +795,7 @@
             this.nudHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudHeight.DecimalPlaces = 2;
             this.nudHeight.Enabled = false;
-            this.nudHeight.Location = new System.Drawing.Point(1295, 636);
+            this.nudHeight.Location = new System.Drawing.Point(1295, 584);
             this.nudHeight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudHeight.Maximum = new decimal(new int[] {
             1000000,
@@ -869,7 +815,7 @@
             this.lblWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWidth.AutoSize = true;
             this.lblWidth.Enabled = false;
-            this.lblWidth.Location = new System.Drawing.Point(1136, 612);
+            this.lblWidth.Location = new System.Drawing.Point(1136, 560);
             this.lblWidth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(52, 21);
@@ -883,7 +829,7 @@
             this.lblHeight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeight.AutoSize = true;
             this.lblHeight.Enabled = false;
-            this.lblHeight.Location = new System.Drawing.Point(1291, 614);
+            this.lblHeight.Location = new System.Drawing.Point(1291, 562);
             this.lblHeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(56, 21);
@@ -968,7 +914,7 @@
             // 
             this.ckbxIncludeWithHoldingTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbxIncludeWithHoldingTax.AutoSize = true;
-            this.ckbxIncludeWithHoldingTax.Location = new System.Drawing.Point(971, 438);
+            this.ckbxIncludeWithHoldingTax.Location = new System.Drawing.Point(971, 386);
             this.ckbxIncludeWithHoldingTax.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ckbxIncludeWithHoldingTax.Name = "ckbxIncludeWithHoldingTax";
             this.ckbxIncludeWithHoldingTax.Size = new System.Drawing.Size(202, 25);
@@ -982,7 +928,7 @@
             this.nudWithHoldingTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudWithHoldingTax.DecimalPlaces = 2;
             this.nudWithHoldingTax.Enabled = false;
-            this.nudWithHoldingTax.Location = new System.Drawing.Point(973, 467);
+            this.nudWithHoldingTax.Location = new System.Drawing.Point(973, 415);
             this.nudWithHoldingTax.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudWithHoldingTax.Maximum = new decimal(new int[] {
             10000000,
@@ -1001,7 +947,7 @@
             // 
             this.nudAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudAmountDue.DecimalPlaces = 2;
-            this.nudAmountDue.Location = new System.Drawing.Point(1213, 467);
+            this.nudAmountDue.Location = new System.Drawing.Point(1213, 415);
             this.nudAmountDue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudAmountDue.Maximum = new decimal(new int[] {
             10000000,
@@ -1019,7 +965,7 @@
             // 
             this.lblAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAmountDue.AutoSize = true;
-            this.lblAmountDue.Location = new System.Drawing.Point(1213, 438);
+            this.lblAmountDue.Location = new System.Drawing.Point(1213, 386);
             this.lblAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAmountDue.Name = "lblAmountDue";
             this.lblAmountDue.Size = new System.Drawing.Size(98, 21);
@@ -1030,7 +976,7 @@
             // 
             this.lblVat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVat.AutoSize = true;
-            this.lblVat.Location = new System.Drawing.Point(973, 500);
+            this.lblVat.Location = new System.Drawing.Point(973, 448);
             this.lblVat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVat.Name = "lblVat";
             this.lblVat.Size = new System.Drawing.Size(36, 21);
@@ -1041,7 +987,7 @@
             // 
             this.nudVat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudVat.DecimalPlaces = 2;
-            this.nudVat.Location = new System.Drawing.Point(973, 528);
+            this.nudVat.Location = new System.Drawing.Point(973, 476);
             this.nudVat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudVat.Maximum = new decimal(new int[] {
             10000000,
@@ -1059,7 +1005,7 @@
             // 
             this.lblTotalAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalAmountDue.AutoSize = true;
-            this.lblTotalAmountDue.Location = new System.Drawing.Point(1213, 500);
+            this.lblTotalAmountDue.Location = new System.Drawing.Point(1213, 448);
             this.lblTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalAmountDue.Name = "lblTotalAmountDue";
             this.lblTotalAmountDue.Size = new System.Drawing.Size(134, 21);
@@ -1070,7 +1016,7 @@
             // 
             this.nudTotalAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudTotalAmountDue.DecimalPlaces = 2;
-            this.nudTotalAmountDue.Location = new System.Drawing.Point(1213, 528);
+            this.nudTotalAmountDue.Location = new System.Drawing.Point(1213, 476);
             this.nudTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudTotalAmountDue.Maximum = new decimal(new int[] {
             10000000,
@@ -1087,7 +1033,7 @@
             // 
             this.ckbxRetainData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbxRetainData.AutoSize = true;
-            this.ckbxRetainData.Location = new System.Drawing.Point(977, 783);
+            this.ckbxRetainData.Location = new System.Drawing.Point(979, 791);
             this.ckbxRetainData.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.ckbxRetainData.Name = "ckbxRetainData";
             this.ckbxRetainData.Size = new System.Drawing.Size(109, 25);
@@ -1095,6 +1041,54 @@
             this.ckbxRetainData.Text = "Retain Data";
             this.ckbxRetainData.UseVisualStyleBackColor = true;
             this.ckbxRetainData.CheckedChanged += new System.EventHandler(this.ckbxRetainData_CheckedChanged);
+            // 
+            // colStock
+            // 
+            this.colStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            this.colStock.Visible = false;
+            // 
+            // colAddedStockValue
+            // 
+            this.colAddedStockValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colAddedStockValue.HeaderText = "Added Stock Value";
+            this.colAddedStockValue.Name = "colAddedStockValue";
+            this.colAddedStockValue.ReadOnly = true;
+            this.colAddedStockValue.Width = 113;
+            // 
+            // colSupplier
+            // 
+            this.colSupplier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSupplier.HeaderText = "Supplier";
+            this.colSupplier.Name = "colSupplier";
+            this.colSupplier.ReadOnly = true;
+            this.colSupplier.Width = 92;
+            // 
+            // colSalesInvoiceNumber
+            // 
+            this.colSalesInvoiceNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSalesInvoiceNumber.HeaderText = "SI No.";
+            this.colSalesInvoiceNumber.Name = "colSalesInvoiceNumber";
+            this.colSalesInvoiceNumber.ReadOnly = true;
+            this.colSalesInvoiceNumber.Width = 69;
+            // 
+            // colDeliveryReceiptNumber
+            // 
+            this.colDeliveryReceiptNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDeliveryReceiptNumber.HeaderText = "DR No.";
+            this.colDeliveryReceiptNumber.Name = "colDeliveryReceiptNumber";
+            this.colDeliveryReceiptNumber.ReadOnly = true;
+            this.colDeliveryReceiptNumber.Width = 77;
+            // 
+            // colStockDeliveryDate
+            // 
+            this.colStockDeliveryDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colStockDeliveryDate.HeaderText = "Delivery Date";
+            this.colStockDeliveryDate.Name = "colStockDeliveryDate";
+            this.colStockDeliveryDate.ReadOnly = true;
+            this.colStockDeliveryDate.Width = 116;
             // 
             // IncomingStocksform
             // 
@@ -1243,13 +1237,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassification;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockValue;
         private System.Windows.Forms.Button btnEditSelectedUnitPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStockLastStockValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAddedStockValue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSupplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesInvoiceNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliveryReceiptNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStockDeliveryDate;
         private System.Windows.Forms.CheckBox ckbxIncludeWithHoldingTax;
         private System.Windows.Forms.NumericUpDown nudWithHoldingTax;
         private System.Windows.Forms.NumericUpDown nudAmountDue;
@@ -1259,5 +1246,11 @@
         private System.Windows.Forms.Label lblTotalAmountDue;
         private System.Windows.Forms.NumericUpDown nudTotalAmountDue;
         private System.Windows.Forms.CheckBox ckbxRetainData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAddedStockValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalesInvoiceNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeliveryReceiptNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStockDeliveryDate;
     }
 }

@@ -17,6 +17,7 @@ using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Drawing;
 using System.Diagnostics;
+using Citicon.DataProcess;
 
 namespace Citicon.Payables.DataManager
 {
@@ -224,12 +225,14 @@ namespace Citicon.Payables.DataManager
                                 remarks = payable.Remarks;
                             //if (i + 1 < maxParticulars)
                             //    sheet.Cells[particularLocation.X + i, particularLocation.Y] = payable.Remarks;
-                            if (payable.Expense?.Id == 76)
-                            {
-                                sheet.Cells[accountLocation.X++, accountLocation.Y] = payable.Description;
-                                cashInBankRowIndex = accountsAmountLocation.X;
-                            }
-                            else if (i + 1 < maxAccounts && !payable.VariableCost)
+
+                            //if (payable.Expense?.Id == 76)
+                            //{
+                            //    sheet.Cells[accountLocation.X++, accountLocation.Y] = payable.Description;
+                            //    cashInBankRowIndex = accountsAmountLocation.X;
+                            //}
+                            //else if (i + 1 < maxAccounts && !payable.VariableCost)
+                            if (i + 1 < maxAccounts && !payable.VariableCost)
                             {
                                 sheet.Cells[accountLocation.X++, accountLocation.Y] = $"{payable.Company?.Description} - {payable.Branch?.Description?.Substring(0, 3)}. - {payable.Description}";
                             }
@@ -479,6 +482,21 @@ namespace Citicon.Payables.DataManager
         public Task<string[]> GetChequeNumberListAsync(BankAccount bankAccount)
         {
             return Task.Factory.StartNew(() => GetChequeNumberList(bankAccount));
+        }
+
+        public async Task<IEnumerable<Payable>> GetChequeVoucherNumberDetailsAsync(string chequeVoucherNumber)
+        {
+            if (!string.IsNullOrWhiteSpace(chequeVoucherNumber))
+            {
+                using (var process = new GetChequeVoucherNumberDetails(chequeVoucherNumber))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public async Task<List<Payable>> GetTransactionsAsync(

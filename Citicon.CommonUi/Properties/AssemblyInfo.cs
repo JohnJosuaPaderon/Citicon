@@ -12,7 +12,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Citicon.CommonUi")]
-[assembly: AssemblyCopyright("Copyright © 2017 John Josua Paderon")]
+[assembly: AssemblyCopyright("Copyright © John Josua R. Paderon 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

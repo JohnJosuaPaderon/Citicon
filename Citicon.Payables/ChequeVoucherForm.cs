@@ -204,12 +204,16 @@ namespace Citicon.Payables
             {
                 decimal totalDebit = 0;
                 decimal totalCredit = 0;
+                decimal cashInBank = 0;
+
                 foreach (DataGridViewRow row in dgvExpenses.Rows)
                 {
                     decimal debit;
                     decimal credit;
+
                     decimal.TryParse(row.Cells[colExpenseDebit.Name].Value.ToString().Replace(",", string.Empty), out debit);
                     decimal.TryParse(row.Cells[colExpenseCredit.Name].Value.ToString().Replace(",", string.Empty), out credit);
+                    
                     totalDebit += debit;
                     totalCredit += credit;
                 }
@@ -296,6 +300,8 @@ namespace Citicon.Payables
 
         private async void btnExportCheque_Click(object sender, EventArgs e)
         {
+            generateChequeVoucherNumber();
+
             if (dgvExpenses.Rows.Count > 0 || dgvStocks.Rows.Count > 0)
             {
                 exportablePayables = new List<Payable>();
@@ -385,17 +391,22 @@ namespace Citicon.Payables
                 }
                 else if (tcChequeVoucher.SelectedTab == tpExpenses)
                 {
-                    var _credit = decimal.Parse(tbxExpenseTotalCredit.Text.Replace(",", ""));
-                    var _debit = decimal.Parse(tbxExpenseTotalDebit.Text.Replace(",", ""));
+                    var _credit = decimal.Parse(tbxExpenseTotalCredit.Text.Replace(",", string.Empty));
+                    var _debit = decimal.Parse(tbxExpenseTotalDebit.Text.Replace(",", string.Empty));
                     if (_credit == _debit)
                     {
+                        var payables = new List<Payable>();
+                        var cashInBank = Expense.CashInBank;
+                        Payable cashInBankPayable = null;
+
                         foreach (DataGridViewRow row in dgvExpenses.Rows)
                         {
                             var branch = (Branch)row.Cells[colExpenseBranch.Name].Value;
                             var company = (Company)row.Cells[colExpenseCompany.Name].Value;
-                            var credit = decimal.Parse(row.Cells[colExpenseCredit.Name].Value.ToString().Replace(",",""));
-                            var debit = decimal.Parse(row.Cells[colExpenseDebit.Name].Value.ToString().Replace(",",""));
+                            var credit = decimal.Parse(row.Cells[colExpenseCredit.Name].Value.ToString().Replace(",", string.Empty));
+                            var debit = decimal.Parse(row.Cells[colExpenseDebit.Name].Value.ToString().Replace(",", string.Empty));
                             var expense = (Expense)row.Cells[colExpense.Name].Value;
+
                             var payable = new Payable
                             {
                                 BankAccount = null,
@@ -416,8 +427,25 @@ namespace Citicon.Payables
                                 TransactionDate = default(DateTime),
                                 VariableCost = false
                             };
-                            payableManager.Add(payable);
+
+                            if (payable.Expense.Id == cashInBank.Id)
+                            {
+                                cashInBankPayable = payable;
+                            }
+                            else
+                            {
+                                payables.Add(payable);
+                            }
                         }
+
+                        foreach (var item in payables)
+                        {
+                            //cashInBankPayable.Credit -= item.Credit;
+                            payableManager.Add(item);
+                        }
+
+                        payableManager.Add(cashInBankPayable);
+
                         clearActiveExpenseSupplier();
                         dgvExpenses.Rows.Clear();
                     }
@@ -638,6 +666,15 @@ namespace Citicon.Payables
         private void dgvStocks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnRemoveSelectedExpense_Click(object sender, EventArgs e)
+        {
+            if (dgvExpenses.SelectedRows.Count > 0)
+            {
+                dgvExpenses.Rows.Remove(dgvExpenses.SelectedRows[0]);
+                countGrandTotal();
+            }
         }
     }
 }

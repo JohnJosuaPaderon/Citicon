@@ -121,6 +121,7 @@
     <Compile Include="DataProcess\ClientProcesses\GetClientMetaDataListWithQuotationForApproval.cs" />
     <Compile Include="DataProcess\ClientProcesses\GetLegitimateClientList.cs" />
     <Compile Include="DataProcess\DataProcess.cs" />
+    <Compile Include="DataProcess\DeleteEmployee.cs" />
     <Compile Include="DataProcess\DeliveryProcesses\GetDeliveryListByClient.cs" />
     <Compile Include="DataProcess\DeliveryProcesses\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\DepartmentProcesses\GetDepartmentById.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="DataProcess\GeneratePayroll.cs" />
     <Compile Include="DataProcess\GetBankAccountListByBank.cs" />
     <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
+    <Compile Include="DataProcess\GetChequeVoucherNumberDetails.cs" />
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetCurrentDate.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginByCode.cs" />

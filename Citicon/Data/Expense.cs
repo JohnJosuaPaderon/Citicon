@@ -1,9 +1,20 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 
 namespace Citicon.Payables.Data
 {
     public sealed class Expense : Sorschia.Data
     {
+        static Expense()
+        {
+            CashInBank = new Expense()
+            {
+                Id = Convert.ToUInt64(ConfigurationManager.AppSettings["Expense[CashInBank].Id"])
+            };
+        }
+
+        public static Expense CashInBank { get; }
+
         private ulong id;
         private string code;
         private string description;

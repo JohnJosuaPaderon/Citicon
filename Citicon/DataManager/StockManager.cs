@@ -254,8 +254,8 @@ namespace Citicon.Inventory.DataManager
                     book.SaveAs($@"{MrisReportDirectory}/{DateTime.Now.ToString("yyyyMMddhhmm")}_{supplier.Code}.xlsx");
                     book.PrintOutEx();
                 }
-                catch (Exception ex)
-                { throw ex; }
+                catch (Exception)
+                { throw; }
                 finally
                 {
                     book.Close();

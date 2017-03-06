@@ -123,6 +123,12 @@
     <Compile Include="Reports\ChequeReports.Designer.cs">
       <DependentUpon>ChequeReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\ChequeVoucherDetailsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ChequeVoucherDetailsView.Designer.cs">
+      <DependentUpon>ChequeVoucherDetailsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UnpaidStockViewerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\ChequeReports.resx">
       <DependentUpon>ChequeReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ChequeVoucherDetailsView.resx">
+      <DependentUpon>ChequeVoucherDetailsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnpaidStockViewerForm.resx">
       <DependentUpon>UnpaidStockViewerForm.cs</DependentUpon>

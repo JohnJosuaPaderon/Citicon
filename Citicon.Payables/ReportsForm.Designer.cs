@@ -59,12 +59,15 @@
             this.dtpTransactionsTransactionDateStart = new System.Windows.Forms.DateTimePicker();
             this.tpReports_Cheques = new System.Windows.Forms.TabPage();
             this.ChequeReports = new Citicon.Payables.Reports.ChequeReports();
+            this.tpReports_ChequeVoucherDetailsView = new System.Windows.Forms.TabPage();
+            this.chequeVoucherDetailsView1 = new Citicon.Payables.Reports.ChequeVoucherDetailsView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnExportCheque = new System.Windows.Forms.Button();
             this.tcReports.SuspendLayout();
             this.tpTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.tpReports_Cheques.SuspendLayout();
+            this.tpReports_ChequeVoucherDetailsView.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblChequeVoucher
@@ -87,6 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tcReports.Controls.Add(this.tpTransactions);
             this.tcReports.Controls.Add(this.tpReports_Cheques);
+            this.tcReports.Controls.Add(this.tpReports_ChequeVoucherDetailsView);
             this.tcReports.Location = new System.Drawing.Point(10, 87);
             this.tcReports.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tcReports.Name = "tcReports";
@@ -286,7 +290,7 @@
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowHeadersVisible = false;
             this.dgvTransactions.RowTemplate.Height = 30;
-            this.dgvTransactions.Size = new System.Drawing.Size(1262, 262);
+            this.dgvTransactions.Size = new System.Drawing.Size(1262, 254);
             this.dgvTransactions.TabIndex = 81;
             // 
             // colTransactionsPayable
@@ -444,6 +448,26 @@
             this.ChequeReports.TabIndex = 0;
             this.ChequeReports.Load += new System.EventHandler(this.ChequeReports_Load);
             // 
+            // tpReports_ChequeVoucherDetailsView
+            // 
+            this.tpReports_ChequeVoucherDetailsView.Controls.Add(this.chequeVoucherDetailsView1);
+            this.tpReports_ChequeVoucherDetailsView.Location = new System.Drawing.Point(4, 44);
+            this.tpReports_ChequeVoucherDetailsView.Name = "tpReports_ChequeVoucherDetailsView";
+            this.tpReports_ChequeVoucherDetailsView.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReports_ChequeVoucherDetailsView.Size = new System.Drawing.Size(1284, 434);
+            this.tpReports_ChequeVoucherDetailsView.TabIndex = 2;
+            this.tpReports_ChequeVoucherDetailsView.Text = "Cheque Voucher Details";
+            this.tpReports_ChequeVoucherDetailsView.UseVisualStyleBackColor = true;
+            // 
+            // chequeVoucherDetailsView1
+            // 
+            this.chequeVoucherDetailsView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chequeVoucherDetailsView1.Location = new System.Drawing.Point(3, 3);
+            this.chequeVoucherDetailsView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chequeVoucherDetailsView1.Name = "chequeVoucherDetailsView1";
+            this.chequeVoucherDetailsView1.Size = new System.Drawing.Size(1278, 428);
+            this.chequeVoucherDetailsView1.TabIndex = 0;
+            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -499,6 +523,7 @@
             this.tpTransactions.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.tpReports_Cheques.ResumeLayout(false);
+            this.tpReports_ChequeVoucherDetailsView.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -535,5 +560,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTransactionsDate;
         private System.Windows.Forms.TabPage tpReports_Cheques;
         private Reports.ChequeReports ChequeReports;
+        private System.Windows.Forms.TabPage tpReports_ChequeVoucherDetailsView;
+        private Reports.ChequeVoucherDetailsView chequeVoucherDetailsView1;
     }
 }

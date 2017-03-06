@@ -255,6 +255,10 @@ namespace Citicon.Payables.Data
                 }
             }
         }
+        public decimal Value
+        {
+            get { return Credit != 0 ? Credit : Debit; }
+        }
 
         public static string InputTax => ConfigurationManager.AppSettings["Payable.Description.InputTax"];
 

@@ -14,6 +14,19 @@ namespace Citicon.DataManager
 
         private static Dictionary<long, Employee> Employees;
 
+        public static async Task<Employee> DeleteAsync(Employee employee, string deletedBy)
+        {
+            if (employee != null && !string.IsNullOrWhiteSpace(deletedBy))
+            {
+                using (var process = new DeleteEmployee(employee, deletedBy))
+                {
+                    employee = await process.ExecuteAsync();
+                }
+            }
+
+            return employee;
+        }
+
         public static IEnumerable<Employee> GetAgent()
         {
             using (var getEmployeeAgent = new GetEmployeeAgent())
