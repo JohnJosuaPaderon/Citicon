@@ -1,6 +1,8 @@
-﻿namespace Citicon.DataProcess
+﻿using System;
+
+namespace Citicon.DataProcess
 {
-    public abstract class DataProcess
+    public abstract class DataProcess : IDisposable
     {
         public DataProcess()
         {
@@ -9,7 +11,13 @@
             ProcessUtility = new MySqlDataProcessUtility(connectionString);
         }
 
-        protected MySqlUtility Utility { get; }
-        protected MySqlDataProcessUtility ProcessUtility { get; }
+        protected MySqlUtility Utility { get; private set; }
+        protected MySqlDataProcessUtility ProcessUtility { get; private set; }
+
+        public virtual void Dispose()
+        {
+            Utility = null;
+            ProcessUtility = null;
+        }
     }
 }

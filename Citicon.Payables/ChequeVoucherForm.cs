@@ -204,7 +204,7 @@ namespace Citicon.Payables
             {
                 decimal totalDebit = 0;
                 decimal totalCredit = 0;
-                decimal cashInBank = 0;
+                //decimal cashInBank = 0;
 
                 foreach (DataGridViewRow row in dgvExpenses.Rows)
                 {

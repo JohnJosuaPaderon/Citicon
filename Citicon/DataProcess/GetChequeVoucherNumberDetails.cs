@@ -34,9 +34,10 @@ namespace Citicon.DataProcess
             return command;
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
             ChequeVoucherNumber = null;
+            base.Dispose();
         }
 
         public Task<IEnumerable<Payable>> ExecuteAsync(MySqlConnection connection)

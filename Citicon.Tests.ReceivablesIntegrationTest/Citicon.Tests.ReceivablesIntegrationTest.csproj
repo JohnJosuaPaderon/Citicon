@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB}</ProjectGuid>
+    <ProjectGuid>{7E0344D1-D465-4CD8-8BC7-06488C15678B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Citicon.Tests.HumanResourceIntegrationTest</RootNamespace>
-    <AssemblyName>Citicon.Tests.HumanResourceIntegrationTest</AssemblyName>
+    <RootNamespace>Citicon.Tests.ReceivablesIntegrationTest</RootNamespace>
+    <AssemblyName>Citicon.Tests.ReceivablesIntegrationTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -80,17 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Citicon.HumanResourceIntegration\Citicon.HumanResourceIntegration.csproj">
-      <Project>{D25AB3F8-1A7E-419F-BD4A-55C7AFF5144A}</Project>
-      <Name>Citicon.HumanResourceIntegration</Name>
+    <ProjectReference Include="..\Citicon.ReceivablesIntegration\Citicon.ReceivablesIntegration.csproj">
+      <Project>{28DC4421-F3F2-429A-9CF9-9A02FC582195}</Project>
+      <Name>Citicon.ReceivablesIntegration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Citicon\Citicon.csproj">
-      <Project>{cec456ef-e300-48b1-9fc5-ec6e6ec46df0}</Project>
-      <Name>Citicon</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -99,6 +99,7 @@
     <Compile Include="DataManager\QuotationStatusManager.cs" />
     <Compile Include="DataManager\QuotationUserManager.cs" />
     <Compile Include="DataManager\SalesInvoiceManager.cs" />
+    <Compile Include="DataManager\ScheduledProjectDesignManager.cs" />
     <Compile Include="DataManager\StockManager.cs" />
     <Compile Include="DataManager\SupplierManager.cs" />
     <Compile Include="DataManager\TimeLogTypeManager.cs" />
@@ -133,6 +134,8 @@
     <Compile Include="DataManager\ProductStrengthManager.cs" />
     <Compile Include="DataProcess\ExcessPipeChargeProcesses\InsertExcessPipeCharge.cs" />
     <Compile Include="DataProcess\GeneratePayroll.cs" />
+    <Compile Include="DataProcess\GetApprovedProjectDesignListByProject.cs" />
+    <Compile Include="DataProcess\GetApprovedProjectList.cs" />
     <Compile Include="DataProcess\GetBankAccountListByBank.cs" />
     <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
     <Compile Include="DataProcess\GetChequeVoucherNumberDetails.cs" />
@@ -151,6 +154,8 @@
     <Compile Include="DataProcess\GetTimeLogTypeById.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
+    <Compile Include="DataProcess\InsertScheduledProjectDesign.cs" />
+    <Compile Include="DataProcess\InsertScheduledProjectDesignList.cs" />
     <Compile Include="DataProcess\InsertUser.cs" />
     <Compile Include="DataProcess\JobPositionProcesses\GetJobPositionById.cs" />
     <Compile Include="DataProcess\LogEmployee.cs" />
@@ -189,6 +194,7 @@
     <Compile Include="DataProcess\QuotationProcesses\UpdateQuotationStatus.cs" />
     <Compile Include="DataProcess\RegisterEmployeeLogin.cs" />
     <Compile Include="DataProcess\SaveCementSuppliedStockProject.cs" />
+    <Compile Include="DataProcess\ScheduledProjectDesignExists.cs" />
     <Compile Include="DataProcess\SearchEmployee.cs" />
     <Compile Include="DataProcess\SetProjectDesignPurchaseOrder.cs" />
     <Compile Include="DataProcess\ValidateChequeRange.cs" />
@@ -249,6 +255,7 @@
     <Compile Include="Data\QuotationStatus.cs" />
     <Compile Include="Data\QuotationUser.cs" />
     <Compile Include="Data\SalesInvoice.cs" />
+    <Compile Include="Data\ScheduledProjectDesign.cs" />
     <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
     <Compile Include="Data\TimeLog.cs" />

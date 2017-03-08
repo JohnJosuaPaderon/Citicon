@@ -55,10 +55,11 @@ namespace Citicon.DataProcess
             return ProcessUtility.HandleExecuteAsync(ExecuteAsync);
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
             Employee = null;
             DeletedBy = null;
+            base.Dispose();
         }
     }
 }

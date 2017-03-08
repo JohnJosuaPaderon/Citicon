@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Tests.PayrollIntegr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.ReceivablesIntegration", "Citicon.ReceivablesIntegration\Citicon.ReceivablesIntegration.csproj", "{28DC4421-F3F2-429A-9CF9-9A02FC582195}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Tests.ReceivablesIntegrationTest", "Citicon.Tests.ReceivablesIntegrationTest\Citicon.Tests.ReceivablesIntegrationTest.csproj", "{7E0344D1-D465-4CD8-8BC7-06488C15678B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,10 @@ Global
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,5 +111,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5BB58766-7C84-4FD1-A0F2-6AF5B2C4F6AB} = {20F74695-D619-479E-BE5C-B43F359D5314}
 		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA} = {20F74695-D619-479E-BE5C-B43F359D5314}
+		{7E0344D1-D465-4CD8-8BC7-06488C15678B} = {20F74695-D619-479E-BE5C-B43F359D5314}
 	EndGlobalSection
 EndGlobal
