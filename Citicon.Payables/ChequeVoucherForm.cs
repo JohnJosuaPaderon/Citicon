@@ -482,7 +482,7 @@ namespace Citicon.Payables
                                 ChequeVoucherNumber = chequeVoucherNumber,
                                 Credit = decimal.Parse(tbxGrandTotal.Text.Replace(",", "")),
                                 Debit = 0,
-                                Description = expense.Description,
+                                Description = expense?.Description,
                                 Expense = expense,
                                 Id = 0,
                                 Remarks = null,

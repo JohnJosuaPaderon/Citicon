@@ -186,7 +186,7 @@ namespace Citicon.Payables.DataManager
                             if (remarks == string.Empty)
                                 remarks = payable.Remarks;
 
-                            if (payable.Expense != null && payable.Expense.Id == Convert.ToUInt64(ConfigurationManager.AppSettings["WithHoldingTax_Id"]))
+                            if (payable.Expense != null && payable.Expense?.Id == Convert.ToUInt64(ConfigurationManager.AppSettings["WithHoldingTax_Id"]))
                             {
                                 withHoldingTax = payable;
                             }
@@ -220,7 +220,7 @@ namespace Citicon.Payables.DataManager
                             var payable = payables[i];
                             if (payee == null) payee = payable.Supplier;
                             if (chequeVoucherNumber == null) chequeVoucherNumber = payable.ChequeVoucherNumber;
-                            totalAmount += payable.Debit;
+                            //totalAmount += payable.Debit;
                             if (remarks == string.Empty)
                                 remarks = payable.Remarks;
                             //if (i + 1 < maxParticulars)
@@ -232,6 +232,12 @@ namespace Citicon.Payables.DataManager
                             //    cashInBankRowIndex = accountsAmountLocation.X;
                             //}
                             //else if (i + 1 < maxAccounts && !payable.VariableCost)
+
+                            if (payable.Expense?.Id == Expense.CashInBank?.Id)
+                            {
+                                totalAmount = payable.Value;
+                            }
+
                             if (i + 1 < maxAccounts && !payable.VariableCost)
                             {
                                 sheet.Cells[accountLocation.X++, accountLocation.Y] = $"{payable.Company?.Description} - {payable.Branch?.Description?.Substring(0, 3)}. - {payable.Description}";
