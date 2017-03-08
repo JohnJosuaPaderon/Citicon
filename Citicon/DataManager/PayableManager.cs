@@ -16,7 +16,6 @@ using System.Xml;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Drawing;
-using System.Diagnostics;
 using Citicon.DataProcess;
 
 namespace Citicon.Payables.DataManager
