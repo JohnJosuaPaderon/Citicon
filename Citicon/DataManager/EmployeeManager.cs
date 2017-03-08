@@ -96,5 +96,20 @@ namespace Citicon.DataManager
                 return null;
             }
         }
+
+        public static async Task<IEnumerable<Employee>> GetListByDepartmentAsync(Department department)
+        {
+            if (department != null)
+            {
+                using (var process = new GetEmployeeListByDepartment(department))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

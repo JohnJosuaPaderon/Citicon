@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnDeliveryScheduler = new System.Windows.Forms.Button();
+            this.btnDeliveryForm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDeliveryScheduler
@@ -47,12 +48,28 @@
             this.btnDeliveryScheduler.UseVisualStyleBackColor = false;
             this.btnDeliveryScheduler.Click += new System.EventHandler(this.btnDeliveryScheduler_Click);
             // 
+            // btnDeliveryForm
+            // 
+            this.btnDeliveryForm.BackColor = System.Drawing.Color.Red;
+            this.btnDeliveryForm.FlatAppearance.BorderSize = 0;
+            this.btnDeliveryForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeliveryForm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeliveryForm.ForeColor = System.Drawing.Color.White;
+            this.btnDeliveryForm.Location = new System.Drawing.Point(12, 68);
+            this.btnDeliveryForm.Name = "btnDeliveryForm";
+            this.btnDeliveryForm.Size = new System.Drawing.Size(250, 50);
+            this.btnDeliveryForm.TabIndex = 3;
+            this.btnDeliveryForm.Text = "Launch Delivery Form";
+            this.btnDeliveryForm.UseVisualStyleBackColor = false;
+            this.btnDeliveryForm.Click += new System.EventHandler(this.btnDeliveryForm_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(708, 481);
+            this.Controls.Add(this.btnDeliveryForm);
             this.Controls.Add(this.btnDeliveryScheduler);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
@@ -67,6 +84,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnDeliveryScheduler;
+        private System.Windows.Forms.Button btnDeliveryForm;
     }
 }
 

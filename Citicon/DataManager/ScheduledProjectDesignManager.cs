@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -47,6 +48,21 @@ namespace Citicon.DataManager
             else
             {
                 return false;
+            }
+        }
+
+        public async Task<IEnumerable<ScheduledProjectDesign>> GetListAsync(DateTime scheduledDate)
+        {
+            if (scheduledDate.Date != default(DateTime).Date)
+            {
+                using (var process = new GetScheduledProjectDesignList(scheduledDate))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
             }
         }
     }

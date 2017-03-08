@@ -16,5 +16,11 @@ namespace Citicon.Tests.ReceivablesIntegrationTest
             var form = new DeliverySchedulerForm();
             form.Show();
         }
+
+        private void btnDeliveryForm_Click(object sender, EventArgs e)
+        {
+            var form = new DeliveryForm();
+            form.Show();
+        }
     }
 }

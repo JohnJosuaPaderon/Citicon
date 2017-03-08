@@ -141,6 +141,7 @@
     <Compile Include="DataProcess\GetChequeVoucherNumberDetails.cs" />
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetCurrentDate.cs" />
+    <Compile Include="DataProcess\GetEmployeeListByDepartment.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginByCode.cs" />
     <Compile Include="DataProcess\GetPayrollGroupById.cs" />
     <Compile Include="DataProcess\GetPayrollGroupList.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="DataProcess\GetPurchaseOrderById.cs" />
     <Compile Include="DataProcess\GetPurchaseOrderByNumber.cs" />
     <Compile Include="DataProcess\GetQuotationUserById.cs" />
+    <Compile Include="DataProcess\GetScheduledProjectDesignList.cs" />
     <Compile Include="DataProcess\GetSupplierList.cs" />
     <Compile Include="DataProcess\GetTimeLogTypeById.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
