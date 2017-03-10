@@ -47,7 +47,7 @@ namespace Citicon.Data
         {
             if (RevisionNumber == 0)
             {
-                return QuotationNumber.ToString();
+                return QuotationNumber?.ToString();
             }
 
             return $"{QuotationNumber} rev. {RevisionNumber}";

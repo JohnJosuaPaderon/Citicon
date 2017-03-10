@@ -1,9 +1,11 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
 using Citicon.DesktopClient.Common;
+using Citicon.ReceivablesIntegration.Forms;
 using MahApps.Metro.Controls;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Interop;
 
 namespace Citicon.DesktopClient.QuotationApproval
 {
@@ -98,6 +100,11 @@ namespace Citicon.DesktopClient.QuotationApproval
                 case 2:
                     Transitioner.SelectedItem = ProjectDesignForApprovalSlide;
                     ProjectDesignForApproval.Focus();
+                    break;
+                case 3:
+                    var form = new DeliverySchedulerForm();
+                    WindowInteropHelper wih = new WindowInteropHelper(this);
+                    form.Show();
                     break;
             }
         }

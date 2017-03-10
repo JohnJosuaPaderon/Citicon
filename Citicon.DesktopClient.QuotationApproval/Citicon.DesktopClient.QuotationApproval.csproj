@@ -53,6 +53,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -162,6 +163,10 @@
     <ProjectReference Include="..\Citicon.DesktopClient.Common\Citicon.DesktopClient.Common.csproj">
       <Project>{86ca8adf-ecfe-44a4-9be3-edf2efd58bce}</Project>
       <Name>Citicon.DesktopClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Citicon.ReceivablesIntegration\Citicon.ReceivablesIntegration.csproj">
+      <Project>{28DC4421-F3F2-429A-9CF9-9A02FC582195}</Project>
+      <Name>Citicon.ReceivablesIntegration</Name>
     </ProjectReference>
     <ProjectReference Include="..\Citicon\Citicon.csproj">
       <Project>{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}</Project>
