@@ -30,18 +30,20 @@ namespace Citicon.DataManager
                 PricePerCubicMeter = dataReader.GetDecimal("PricePerCubicMeter"),
                 Project = await ProjectManager.GetByIdAsync(dataReader.GetUInt64("ProjectId")),
                 Psi = dataReader.GetDecimal("Psi"),
-                Strength = ProductStrengthManager.GetById(dataReader.GetInt64("StrengthId"))
+                Strength = ProductStrengthManager.GetById(dataReader.GetInt64("StrengthId")),
+                PurchaseOrder = PurchaseOrderManager.GetById(dataReader.GetUInt64("PurchaseOrderId"))
             };
         }
 
         public static async Task<ProjectDesign> GetByIdAsync(ulong projectDesignId)
         {
-            var tempProjectDesign = ProjectDesigns.FirstOrDefault(projectDesign => projectDesign.Id == projectDesignId);
+            ProjectDesign tempProjectDesign = null;
+            //var tempProjectDesign = ProjectDesigns.FirstOrDefault(projectDesign => projectDesign.Id == projectDesignId);
 
-            if (tempProjectDesign != null)
-            {
-                return tempProjectDesign;
-            }
+            //if (tempProjectDesign != null)
+            //{
+            //    return tempProjectDesign;
+            //}
 
             using (var process = new GetProjectDesignById(projectDesignId))
             {

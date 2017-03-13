@@ -102,7 +102,7 @@
             this.dgvProjects.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProjects.RowTemplate.Height = 40;
             this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjects.Size = new System.Drawing.Size(717, 415);
+            this.dgvProjects.Size = new System.Drawing.Size(628, 415);
             this.dgvProjects.TabIndex = 103;
             this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged);
             // 
@@ -165,7 +165,7 @@
             this.dgvProjectDesign.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProjectDesign.RowTemplate.Height = 40;
             this.dgvProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjectDesign.Size = new System.Drawing.Size(717, 317);
+            this.dgvProjectDesign.Size = new System.Drawing.Size(628, 317);
             this.dgvProjectDesign.TabIndex = 104;
             // 
             // colProjectDesign
@@ -179,7 +179,7 @@
             // lblScheduledDate
             // 
             this.lblScheduledDate.AutoSize = true;
-            this.lblScheduledDate.Location = new System.Drawing.Point(729, 12);
+            this.lblScheduledDate.Location = new System.Drawing.Point(640, 12);
             this.lblScheduledDate.Name = "lblScheduledDate";
             this.lblScheduledDate.Size = new System.Drawing.Size(163, 21);
             this.lblScheduledDate.TabIndex = 105;
@@ -189,7 +189,7 @@
             // 
             this.dtpScheduledDate.CustomFormat = "MMMM dd, yyyy";
             this.dtpScheduledDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpScheduledDate.Location = new System.Drawing.Point(733, 36);
+            this.dtpScheduledDate.Location = new System.Drawing.Point(644, 36);
             this.dtpScheduledDate.Name = "dtpScheduledDate";
             this.dtpScheduledDate.Size = new System.Drawing.Size(292, 29);
             this.dtpScheduledDate.TabIndex = 106;
@@ -232,7 +232,7 @@
             this.dgvScheduledProjectDesign.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvScheduledProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvScheduledProjectDesign.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvScheduledProjectDesign.Location = new System.Drawing.Point(733, 71);
+            this.dgvScheduledProjectDesign.Location = new System.Drawing.Point(643, 71);
             this.dgvScheduledProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvScheduledProjectDesign.MultiSelect = false;
             this.dgvScheduledProjectDesign.Name = "dgvScheduledProjectDesign";
@@ -241,7 +241,7 @@
             this.dgvScheduledProjectDesign.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvScheduledProjectDesign.RowTemplate.Height = 40;
             this.dgvScheduledProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvScheduledProjectDesign.Size = new System.Drawing.Size(862, 679);
+            this.dgvScheduledProjectDesign.Size = new System.Drawing.Size(952, 679);
             this.dgvScheduledProjectDesign.TabIndex = 107;
             // 
             // colScheduledProjectDesign
@@ -266,9 +266,9 @@
             this.btnScheduleSelectedProjectDesign.FlatAppearance.BorderSize = 0;
             this.btnScheduleSelectedProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnScheduleSelectedProjectDesign.ForeColor = System.Drawing.Color.White;
-            this.btnScheduleSelectedProjectDesign.Location = new System.Drawing.Point(578, 756);
+            this.btnScheduleSelectedProjectDesign.Location = new System.Drawing.Point(501, 756);
             this.btnScheduleSelectedProjectDesign.Name = "btnScheduleSelectedProjectDesign";
-            this.btnScheduleSelectedProjectDesign.Size = new System.Drawing.Size(150, 50);
+            this.btnScheduleSelectedProjectDesign.Size = new System.Drawing.Size(138, 50);
             this.btnScheduleSelectedProjectDesign.TabIndex = 108;
             this.btnScheduleSelectedProjectDesign.Text = "Include Selected";
             this.btnScheduleSelectedProjectDesign.UseVisualStyleBackColor = false;
@@ -280,9 +280,9 @@
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(1445, 756);
+            this.btnCancel.Location = new System.Drawing.Point(1507, 756);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 50);
+            this.btnCancel.Size = new System.Drawing.Size(88, 50);
             this.btnCancel.TabIndex = 109;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -294,9 +294,9 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1289, 756);
+            this.btnSave.Location = new System.Drawing.Point(1377, 756);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 50);
+            this.btnSave.Size = new System.Drawing.Size(124, 50);
             this.btnSave.TabIndex = 110;
             this.btnSave.Text = "Save Schedule";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -309,9 +309,9 @@
             this.btnRemoveAll.FlatAppearance.BorderSize = 0;
             this.btnRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveAll.Location = new System.Drawing.Point(1133, 756);
+            this.btnRemoveAll.Location = new System.Drawing.Point(1261, 756);
             this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(150, 50);
+            this.btnRemoveAll.Size = new System.Drawing.Size(110, 50);
             this.btnRemoveAll.TabIndex = 111;
             this.btnRemoveAll.Text = "Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = false;
@@ -324,9 +324,9 @@
             this.btnRemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSelected.Location = new System.Drawing.Point(977, 756);
+            this.btnRemoveSelected.Location = new System.Drawing.Point(1117, 756);
             this.btnRemoveSelected.Name = "btnRemoveSelected";
-            this.btnRemoveSelected.Size = new System.Drawing.Size(150, 50);
+            this.btnRemoveSelected.Size = new System.Drawing.Size(138, 50);
             this.btnRemoveSelected.TabIndex = 112;
             this.btnRemoveSelected.Text = "Remove Selected";
             this.btnRemoveSelected.UseVisualStyleBackColor = false;

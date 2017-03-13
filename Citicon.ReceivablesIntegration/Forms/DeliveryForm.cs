@@ -149,9 +149,10 @@ namespace Citicon.ReceivablesIntegration.Forms
 
                     frmConfirm_Delivery.projectId = (int)scheduledProjectDesign.Design.Project.Id;
                     frmConfirm_Delivery.clientId = (int)scheduledProjectDesign.Design.Project.Client.Id;
+                    frmConfirm_Delivery.projectDesignId = (int)scheduledProjectDesign.Design.Id;
                     frmConfirm_Delivery.personnelList = personnelIds;
 
-                    var form = new frmConfirm_Delivery();
+                    var form = new frmConfirm_Delivery(scheduledProjectDesign.Design);
                     form.ShowDialog();
                 }
                 else
@@ -172,9 +173,15 @@ namespace Citicon.ReceivablesIntegration.Forms
             await GetPersonnelAsync();
         }
 
-        private void btnConfirmDelivery_Click(object sender, EventArgs e)
+        private async void btnConfirmDelivery_Click(object sender, EventArgs e)
         {
             ConfirmDelivery();
+            await GetScheduledListAsync();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

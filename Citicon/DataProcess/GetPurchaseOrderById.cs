@@ -32,7 +32,7 @@ namespace Citicon.DataProcess
         {
             var command = new MySqlCommand("GetPurchaseOrderById", connection);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@_PurchaseOrderId", PurchaseOrderId);
+            command.Parameters.AddWithValue("@_Id", PurchaseOrderId);
             return command;
         }
 

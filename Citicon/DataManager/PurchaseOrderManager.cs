@@ -37,15 +37,15 @@ namespace Citicon.DataManager
         {
             if (purchaseOrderId > 0)
             {
-                var purchaseOrder = PurchaseOrderList.FirstOrDefault(x => x.Id == purchaseOrderId);
-
-                if (purchaseOrder == null)
-                {
+                //var purchaseOrder = PurchaseOrderList.FirstOrDefault(x => x.Id == purchaseOrderId);
+                PurchaseOrder purchaseOrder = null;
+                //if (purchaseOrder == null)
+                //{
                     using (var process = new GetPurchaseOrderById(purchaseOrderId))
                     {
                         purchaseOrder = Manage(process.Execute());
                     }
-                }
+                //}
 
                 return purchaseOrder;
             }

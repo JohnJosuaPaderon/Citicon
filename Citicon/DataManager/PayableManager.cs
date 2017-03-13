@@ -270,7 +270,8 @@ namespace Citicon.Payables.DataManager
                     sheet.Cells[auditedByLocation.X, auditedByLocation.Y] = defaultAuditedBy;
                     sheet.Cells[postedByLocation.X, postedByLocation.Y] = defaultPostedBy;
                     sheet.Cells[recordedByLocation.X, recordedByLocation.Y] = defaultRecordedBy;
-                    var filePath = $@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx";
+                    //var filePath = $@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx";
+                    var filePath = Path.Combine(ChequeVoucherDirectory, string.Format("{0}_yyMMddHHmm.xlsx", chequeVoucherNumber));
                     book.SaveAs(filePath);
                     book.PrintOutEx();
                     //if (File.Exists(filePath))
