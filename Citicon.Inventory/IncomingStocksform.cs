@@ -396,8 +396,8 @@ namespace Citicon.Inventory
             var vehicle = (Vehicle)cmbxVehicles.SelectedItem;
             var siNumber = Convert.ToUInt32(nudSiNumber.Value);
             var drNumber = Convert.ToUInt32(nudDrNumber.Value);
-            //var branch = (Branch)cmbxBranches.SelectedItem;
-            //var company = (Company)cmbxCompanies.SelectedItem;
+            var branch = (Branch)cmbxBranches.SelectedItem;
+            var company = (Company)cmbxCompanies.SelectedItem;
             var addedStockValue = nudAddedStockValue.Value;
             var unitPrice = nudUnitPrice.Value;
             var supplier = (Supplier)cmbxSuppliers.SelectedItem;
@@ -463,8 +463,8 @@ namespace Citicon.Inventory
                 editingStock.PaymentTerm = paymentTerm;
                 editingStock.UnitPrice = unitPrice;
                 editingStock.AcceptedBy = acceptedBy;
-                editingStock.Branch = null;
-                editingStock.Company = null;
+                editingStock.Branch = branch;
+                editingStock.Company = company;
                 editingStock.DeliveryDate = deliveryDate;
                 editingStock.DueDate = dueDate;
                 editingStock.MrisNumber = null;
@@ -500,8 +500,8 @@ namespace Citicon.Inventory
                     {
                         AcceptedBy = acceptedBy,
                         AddedStockValue = addedStockValue,
-                        Branch = null,
-                        Company = null,
+                        Branch = branch,
+                        Company = company,
                         DeliveryDate = deliveryDate,
                         DueDate = dueDate,
                         Item = currentItem,

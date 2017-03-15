@@ -193,6 +193,7 @@ namespace Citicon.Payables
                 {
                     Invoke(new Action(() =>
                     {
+                        cmbxFilterByBranch.Items.Add(x.Result);
                         cmbxAccountBranch.Items.AddRange(x.Result);
                     }));
                 }
@@ -314,7 +315,7 @@ namespace Citicon.Payables
                 var task = stockManager.GetFilteredUnpaidListAsyc(
                     ckbxFilterByItem.Checked, (Item)cmbxFilterByItem.SelectedItem,
                     ckbxFilterBySupplier.Checked, (Supplier)cmbxFilterBySupplier.SelectedItem,
-                    false, null,
+                    ckbxFilterByBranch.Checked, (Branch)cmbxFilterByBranch.SelectedItem,
                     ckbxFilterByDeliveryDate.Checked, dtpFilterByDeliveryDate.Value,
                     ckbxFilterBySiNumber.Checked, (uint)nudFilterBySiNumber.Value,
                     ckbxFilterByDrNumber.Checked, (uint)nudFilterByDrNumber.Value);
@@ -494,7 +495,7 @@ namespace Citicon.Payables
         private void SetFilterButtonEnable()
         {
             btnFilter.Enabled =
-                //ckbxFilterByBranch.Checked ||
+                ckbxFilterByBranch.Checked ||
                 ckbxFilterByDeliveryDate.Checked ||
                 ckbxFilterByItem.Checked ||
                 ckbxFilterBySupplier.Checked ||
@@ -516,8 +517,8 @@ namespace Citicon.Payables
 
         private void ckbxFilterByBranch_CheckedChanged(object sender, EventArgs e)
         {
-            //cmbxFilterByBranch.Enabled = ckbxFilterByBranch.Checked;
-            //SetFilterButtonEnable();
+            cmbxFilterByBranch.Enabled = ckbxFilterByBranch.Checked;
+            SetFilterButtonEnable();
         }
 
         private void ckbxFilterByDeliveryDate_CheckedChanged(object sender, EventArgs e)

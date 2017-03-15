@@ -3,6 +3,7 @@
     public sealed class PurchaseOrder
     {
         public ulong Id { get; set; }
+        public Project Project { get; set; }
         public string Number { get; set; }
         public decimal Balance { get; set; }
         public decimal RunningBalance { get; set; }

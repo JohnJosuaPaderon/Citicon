@@ -11,12 +11,7 @@ namespace Citicon.DataProcess
     {
         public GetBankAccountListByBank(Bank bank)
         {
-            if (bank == null)
-            {
-                throw new ArgumentNullException(nameof(bank));
-            }
-
-            Bank = bank;
+            Bank = bank ?? throw new ArgumentNullException(nameof(bank));
         }
 
         private Bank Bank;

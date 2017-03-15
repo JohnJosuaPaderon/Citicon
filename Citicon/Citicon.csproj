@@ -95,6 +95,8 @@
     <Compile Include="DataManager\PumpSizeManager.cs" />
     <Compile Include="DataManager\PumpTypeManager.cs" />
     <Compile Include="DataManager\PurchaseOrderManager.cs" />
+    <Compile Include="DataManager\PurchaseOrderProjectDesignManager.cs" />
+    <Compile Include="DataManager\PurchaseOrderTransactionManager.cs" />
     <Compile Include="DataManager\QuotationManager.cs" />
     <Compile Include="DataManager\QuotationStatusManager.cs" />
     <Compile Include="DataManager\QuotationUserManager.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="DataProcess\GetBankAccountListByBank.cs" />
     <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
     <Compile Include="DataProcess\GetChequeVoucherNumberDetails.cs" />
+    <Compile Include="DataProcess\GetClientListWithApprovedProjectDesign.cs" />
     <Compile Include="DataProcess\GetClientListWithProjectDesignNoPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetCurrentDate.cs" />
     <Compile Include="DataProcess\GetEmployeeListByDepartment.cs" />
@@ -147,6 +150,7 @@
     <Compile Include="DataProcess\GetPayrollGroupList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithNoPurchaseOrderByProject.cs" />
+    <Compile Include="DataProcess\GetProjectListWithApprovedProjectDesignByClient.cs" />
     <Compile Include="DataProcess\GetProjectListWithProjectDesignNoPurchaseOrderByClient.cs" />
     <Compile Include="DataProcess\GetPurchaseOrderById.cs" />
     <Compile Include="DataProcess\GetPurchaseOrderByNumber.cs" />
@@ -155,6 +159,10 @@
     <Compile Include="DataProcess\GetSupplierList.cs" />
     <Compile Include="DataProcess\GetTimeLogTypeById.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
+    <Compile Include="DataProcess\InsertPurchaseOrderProjectDesign.cs" />
+    <Compile Include="DataProcess\InsertPurchaseOrderTransaction.cs" />
+    <Compile Include="DataProcess\PurchaseOrderNumberExists.cs" />
+    <Compile Include="DataProcess\_InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
     <Compile Include="DataProcess\InsertScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\InsertScheduledProjectDesignList.cs" />
@@ -253,6 +261,8 @@
     <Compile Include="Data\PumpSize.cs" />
     <Compile Include="Data\PumpType.cs" />
     <Compile Include="Data\PurchaseOrder.cs" />
+    <Compile Include="Data\PurchaseOrderProjectDesign.cs" />
+    <Compile Include="Data\PurchaseOrderTransaction.cs" />
     <Compile Include="Data\Quotation.cs" />
     <Compile Include="Data\QuotationStatus.cs" />
     <Compile Include="Data\QuotationUser.cs" />

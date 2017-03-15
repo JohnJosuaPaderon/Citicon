@@ -50,7 +50,8 @@ namespace Citicon.Data
             displayBuilder.Append($"{MixType} ");
             displayBuilder.Append($"{Psi} ");
             displayBuilder.Append($"{Aggregate} ");
-            displayBuilder.Append($"{Strength}");
+            displayBuilder.Append($"{Strength} ");
+            displayBuilder.Append($"CF {CementFactor}");
 
             return displayBuilder.ToString();
         }

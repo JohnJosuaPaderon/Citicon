@@ -150,6 +150,7 @@ namespace Citicon.ReceivablesIntegration.Forms
                     frmConfirm_Delivery.projectId = (int)scheduledProjectDesign.Design.Project.Id;
                     frmConfirm_Delivery.clientId = (int)scheduledProjectDesign.Design.Project.Client.Id;
                     frmConfirm_Delivery.projectDesignId = (int)scheduledProjectDesign.Design.Id;
+                    frmConfirm_Delivery.pricePerCubic = (double)scheduledProjectDesign.Design.PricePerCubicMeter;
                     frmConfirm_Delivery.personnelList = personnelIds;
 
                     var form = new frmConfirm_Delivery(scheduledProjectDesign.Design);

@@ -166,5 +166,20 @@ namespace Citicon.DataManager
                 return await process.ExecuteAsync();
             }
         }
+
+        public static async Task<IEnumerable<Project>> GetListWithApprovedProjectDesignByClientAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new GetProjectListWithApprovedProjectDesignByClient(client))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

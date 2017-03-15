@@ -22,5 +22,11 @@ namespace Citicon.Tests.ReceivablesIntegrationTest
             var form = new DeliveryForm();
             form.Show();
         }
+
+        private void btnPurchaseOrderManagementForm_Click(object sender, EventArgs e)
+        {
+            var form = new PurchaseOrderManagementForm();
+            form.ShowDialog();
+        }
     }
 }

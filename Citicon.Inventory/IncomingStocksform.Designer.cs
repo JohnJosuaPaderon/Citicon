@@ -53,6 +53,12 @@
             this.lblItemCode = new System.Windows.Forms.Label();
             this.tbxItemCode = new System.Windows.Forms.TextBox();
             this.dgvStocks = new System.Windows.Forms.DataGridView();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddedStockValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalesInvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeliveryReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStockDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPastStockRecords = new System.Windows.Forms.Label();
             this.dtpDeliveryDate = new System.Windows.Forms.DateTimePicker();
             this.tbxItemStockValue = new System.Windows.Forms.TextBox();
@@ -99,12 +105,6 @@
             this.lblTotalAmountDue = new System.Windows.Forms.Label();
             this.nudTotalAmountDue = new System.Windows.Forms.NumericUpDown();
             this.ckbxRetainData = new System.Windows.Forms.CheckBox();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddedStockValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSalesInvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeliveryReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStockDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAddedStockValue)).BeginInit();
@@ -391,6 +391,54 @@
             this.dgvStocks.Size = new System.Drawing.Size(954, 557);
             this.dgvStocks.TabIndex = 50;
             // 
+            // colStock
+            // 
+            this.colStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            this.colStock.Visible = false;
+            // 
+            // colAddedStockValue
+            // 
+            this.colAddedStockValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colAddedStockValue.HeaderText = "Added Stock Value";
+            this.colAddedStockValue.Name = "colAddedStockValue";
+            this.colAddedStockValue.ReadOnly = true;
+            this.colAddedStockValue.Width = 113;
+            // 
+            // colSupplier
+            // 
+            this.colSupplier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSupplier.HeaderText = "Supplier";
+            this.colSupplier.Name = "colSupplier";
+            this.colSupplier.ReadOnly = true;
+            this.colSupplier.Width = 92;
+            // 
+            // colSalesInvoiceNumber
+            // 
+            this.colSalesInvoiceNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colSalesInvoiceNumber.HeaderText = "SI No.";
+            this.colSalesInvoiceNumber.Name = "colSalesInvoiceNumber";
+            this.colSalesInvoiceNumber.ReadOnly = true;
+            this.colSalesInvoiceNumber.Width = 69;
+            // 
+            // colDeliveryReceiptNumber
+            // 
+            this.colDeliveryReceiptNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colDeliveryReceiptNumber.HeaderText = "DR No.";
+            this.colDeliveryReceiptNumber.Name = "colDeliveryReceiptNumber";
+            this.colDeliveryReceiptNumber.ReadOnly = true;
+            this.colDeliveryReceiptNumber.Width = 77;
+            // 
+            // colStockDeliveryDate
+            // 
+            this.colStockDeliveryDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colStockDeliveryDate.HeaderText = "Delivery Date";
+            this.colStockDeliveryDate.Name = "colStockDeliveryDate";
+            this.colStockDeliveryDate.ReadOnly = true;
+            this.colStockDeliveryDate.Width = 116;
+            // 
             // lblPastStockRecords
             // 
             this.lblPastStockRecords.AutoSize = true;
@@ -481,7 +529,7 @@
             // 
             this.lblSiNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSiNumber.AutoSize = true;
-            this.lblSiNumber.Location = new System.Drawing.Point(969, 274);
+            this.lblSiNumber.Location = new System.Drawing.Point(1136, 274);
             this.lblSiNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSiNumber.Name = "lblSiNumber";
             this.lblSiNumber.Size = new System.Drawing.Size(51, 21);
@@ -601,13 +649,12 @@
             // 
             this.lblBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBranch.AutoSize = true;
-            this.lblBranch.Location = new System.Drawing.Point(1208, 153);
+            this.lblBranch.Location = new System.Drawing.Point(970, 274);
             this.lblBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBranch.Name = "lblBranch";
             this.lblBranch.Size = new System.Drawing.Size(58, 21);
             this.lblBranch.TabIndex = 71;
             this.lblBranch.Text = "Branch";
-            this.lblBranch.Visible = false;
             // 
             // cmbxBranches
             // 
@@ -615,12 +662,11 @@
             this.cmbxBranches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxBranches.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxBranches.FormattingEnabled = true;
-            this.cmbxBranches.Location = new System.Drawing.Point(1212, 176);
+            this.cmbxBranches.Location = new System.Drawing.Point(974, 297);
             this.cmbxBranches.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbxBranches.Name = "cmbxBranches";
-            this.cmbxBranches.Size = new System.Drawing.Size(235, 29);
+            this.cmbxBranches.Size = new System.Drawing.Size(162, 29);
             this.cmbxBranches.TabIndex = 70;
-            this.cmbxBranches.Visible = false;
             this.cmbxBranches.SelectedIndexChanged += new System.EventHandler(this.cmbxCompanies_SelectedIndexChanged);
             this.cmbxBranches.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
             this.cmbxBranches.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
@@ -857,7 +903,7 @@
             // 
             this.lblDrNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDrNumber.AutoSize = true;
-            this.lblDrNumber.Location = new System.Drawing.Point(1209, 274);
+            this.lblDrNumber.Location = new System.Drawing.Point(1291, 274);
             this.lblDrNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDrNumber.Name = "lblDrNumber";
             this.lblDrNumber.Size = new System.Drawing.Size(59, 21);
@@ -867,7 +913,7 @@
             // nudSiNumber
             // 
             this.nudSiNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSiNumber.Location = new System.Drawing.Point(973, 297);
+            this.nudSiNumber.Location = new System.Drawing.Point(1140, 297);
             this.nudSiNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudSiNumber.Maximum = new decimal(new int[] {
             1000000,
@@ -875,14 +921,14 @@
             0,
             0});
             this.nudSiNumber.Name = "nudSiNumber";
-            this.nudSiNumber.Size = new System.Drawing.Size(236, 29);
+            this.nudSiNumber.Size = new System.Drawing.Size(151, 29);
             this.nudSiNumber.TabIndex = 90;
             this.nudSiNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudDrNumber
             // 
             this.nudDrNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudDrNumber.Location = new System.Drawing.Point(1213, 297);
+            this.nudDrNumber.Location = new System.Drawing.Point(1295, 297);
             this.nudDrNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.nudDrNumber.Maximum = new decimal(new int[] {
             1000000,
@@ -890,7 +936,7 @@
             0,
             0});
             this.nudDrNumber.Name = "nudDrNumber";
-            this.nudDrNumber.Size = new System.Drawing.Size(234, 29);
+            this.nudDrNumber.Size = new System.Drawing.Size(152, 29);
             this.nudDrNumber.TabIndex = 91;
             this.nudDrNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1041,54 +1087,6 @@
             this.ckbxRetainData.Text = "Retain Data";
             this.ckbxRetainData.UseVisualStyleBackColor = true;
             this.ckbxRetainData.CheckedChanged += new System.EventHandler(this.ckbxRetainData_CheckedChanged);
-            // 
-            // colStock
-            // 
-            this.colStock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
-            this.colStock.Visible = false;
-            // 
-            // colAddedStockValue
-            // 
-            this.colAddedStockValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colAddedStockValue.HeaderText = "Added Stock Value";
-            this.colAddedStockValue.Name = "colAddedStockValue";
-            this.colAddedStockValue.ReadOnly = true;
-            this.colAddedStockValue.Width = 113;
-            // 
-            // colSupplier
-            // 
-            this.colSupplier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSupplier.HeaderText = "Supplier";
-            this.colSupplier.Name = "colSupplier";
-            this.colSupplier.ReadOnly = true;
-            this.colSupplier.Width = 92;
-            // 
-            // colSalesInvoiceNumber
-            // 
-            this.colSalesInvoiceNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colSalesInvoiceNumber.HeaderText = "SI No.";
-            this.colSalesInvoiceNumber.Name = "colSalesInvoiceNumber";
-            this.colSalesInvoiceNumber.ReadOnly = true;
-            this.colSalesInvoiceNumber.Width = 69;
-            // 
-            // colDeliveryReceiptNumber
-            // 
-            this.colDeliveryReceiptNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colDeliveryReceiptNumber.HeaderText = "DR No.";
-            this.colDeliveryReceiptNumber.Name = "colDeliveryReceiptNumber";
-            this.colDeliveryReceiptNumber.ReadOnly = true;
-            this.colDeliveryReceiptNumber.Width = 77;
-            // 
-            // colStockDeliveryDate
-            // 
-            this.colStockDeliveryDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colStockDeliveryDate.HeaderText = "Delivery Date";
-            this.colStockDeliveryDate.Name = "colStockDeliveryDate";
-            this.colStockDeliveryDate.ReadOnly = true;
-            this.colStockDeliveryDate.Width = 116;
             // 
             // IncomingStocksform
             // 

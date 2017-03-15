@@ -35,6 +35,7 @@ namespace Citicon.DataProcess
                         command.Parameters.AddWithValue("@_DesignMixType", ProjectDesign.MixType);
                         command.Parameters.AddWithValue("@_Psi", ProjectDesign.Psi);
                         command.Parameters.AddWithValue("@_AggregateId", ProjectDesign.Aggregate?.Id);
+                        command.Parameters.AddWithValue("@_CementFactor", ProjectDesign.CementFactor);
                         command.Parameters.AddWithValue("@_StrengthId", ProjectDesign.Strength?.Id);
                         try
                         {

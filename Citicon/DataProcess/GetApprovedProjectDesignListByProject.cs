@@ -14,12 +14,7 @@ namespace Citicon.DataProcess
     {
         public GetApprovedProjectDesignListByProject(Project project)
         {
-            if (project == null)
-            {
-                throw new ArgumentNullException(nameof(project));
-            }
-
-            Project = project;
+            Project = project ?? throw new ArgumentNullException(nameof(project));
         }
 
         private Project Project;

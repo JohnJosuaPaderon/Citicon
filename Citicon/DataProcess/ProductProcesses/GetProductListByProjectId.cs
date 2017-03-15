@@ -47,7 +47,8 @@ namespace Citicon.DataProcess
                                         Project = Project,
                                         Psi = reader.GetDecimal("PSI"),
                                         //Remarks = reader.GetString("Remarks"),
-                                        Strength = ProductStrengthManager.GetById(reader.GetInt64("StrengthId"))
+                                        Strength = ProductStrengthManager.GetById(reader.GetInt64("StrengthId")),
+                                        CementFactor = reader.GetDecimal("CementFactor")
                                     });
                                 }
                             }

@@ -12,12 +12,7 @@ namespace Citicon.DataProcess
     {
         public GetEmployeeListByDepartment(Department department)
         {
-            if (department == null)
-            {
-                throw new ArgumentNullException(nameof(department));
-            }
-
-            Department = department;
+            Department = department ?? throw new ArgumentNullException(nameof(department));
         }
 
         private Department Department;

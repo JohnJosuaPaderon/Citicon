@@ -79,6 +79,8 @@
             this.ApprovedByTextBox = new System.Windows.Forms.TextBox();
             this.ApprovedByLabel = new System.Windows.Forms.Label();
             this.gbxFilter = new System.Windows.Forms.GroupBox();
+            this.cmbxFilterByBranch = new System.Windows.Forms.ComboBox();
+            this.ckbxFilterByBranch = new System.Windows.Forms.CheckBox();
             this.ckbxFilterByDrNumber = new System.Windows.Forms.CheckBox();
             this.nudFilterByDrNumber = new System.Windows.Forms.NumericUpDown();
             this.nudFilterBySiNumber = new System.Windows.Forms.NumericUpDown();
@@ -99,12 +101,12 @@
             this.cmbxExpense = new System.Windows.Forms.ComboBox();
             this.btnChangeAccountDescription = new System.Windows.Forms.Button();
             this.btnRemoveExpenseClassification = new System.Windows.Forms.Button();
-            this.btnInsertToQueue = new System.Windows.Forms.Button();
-            this.btnRemoveFromQueue = new System.Windows.Forms.Button();
             this.lblAccountBranch = new System.Windows.Forms.Label();
             this.cmbxAccountBranch = new System.Windows.Forms.ComboBox();
             this.cmbxAccountCompany = new System.Windows.Forms.ComboBox();
             this.lblAccountCompany = new System.Windows.Forms.Label();
+            this.btnInsertToQueue = new System.Windows.Forms.Button();
+            this.btnRemoveFromQueue = new System.Windows.Forms.Button();
             this.Header.SuspendLayout();
             this.UserPane.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUnpaidStocks)).BeginInit();
@@ -635,6 +637,8 @@
             // 
             // gbxFilter
             // 
+            this.gbxFilter.Controls.Add(this.cmbxFilterByBranch);
+            this.gbxFilter.Controls.Add(this.ckbxFilterByBranch);
             this.gbxFilter.Controls.Add(this.ckbxFilterByDrNumber);
             this.gbxFilter.Controls.Add(this.nudFilterByDrNumber);
             this.gbxFilter.Controls.Add(this.nudFilterBySiNumber);
@@ -655,11 +659,35 @@
             this.gbxFilter.TabStop = false;
             this.gbxFilter.Text = "Filtering";
             // 
+            // cmbxFilterByBranch
+            // 
+            this.cmbxFilterByBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxFilterByBranch.Enabled = false;
+            this.cmbxFilterByBranch.FormattingEnabled = true;
+            this.cmbxFilterByBranch.Location = new System.Drawing.Point(553, 24);
+            this.cmbxFilterByBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbxFilterByBranch.Name = "cmbxFilterByBranch";
+            this.cmbxFilterByBranch.Size = new System.Drawing.Size(251, 28);
+            this.cmbxFilterByBranch.TabIndex = 114;
+            // 
+            // ckbxFilterByBranch
+            // 
+            this.ckbxFilterByBranch.AutoSize = true;
+            this.ckbxFilterByBranch.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckbxFilterByBranch.Location = new System.Drawing.Point(477, 26);
+            this.ckbxFilterByBranch.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbxFilterByBranch.Name = "ckbxFilterByBranch";
+            this.ckbxFilterByBranch.Size = new System.Drawing.Size(73, 24);
+            this.ckbxFilterByBranch.TabIndex = 113;
+            this.ckbxFilterByBranch.Text = "Branch";
+            this.ckbxFilterByBranch.UseVisualStyleBackColor = true;
+            this.ckbxFilterByBranch.CheckedChanged += new System.EventHandler(this.ckbxFilterByBranch_CheckedChanged);
+            // 
             // ckbxFilterByDrNumber
             // 
             this.ckbxFilterByDrNumber.AutoSize = true;
             this.ckbxFilterByDrNumber.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByDrNumber.Location = new System.Drawing.Point(469, 54);
+            this.ckbxFilterByDrNumber.Location = new System.Drawing.Point(469, 87);
             this.ckbxFilterByDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByDrNumber.Name = "ckbxFilterByDrNumber";
             this.ckbxFilterByDrNumber.Size = new System.Drawing.Size(81, 24);
@@ -671,7 +699,7 @@
             // nudFilterByDrNumber
             // 
             this.nudFilterByDrNumber.Enabled = false;
-            this.nudFilterByDrNumber.Location = new System.Drawing.Point(554, 55);
+            this.nudFilterByDrNumber.Location = new System.Drawing.Point(554, 88);
             this.nudFilterByDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudFilterByDrNumber.Maximum = new decimal(new int[] {
             999999,
@@ -701,7 +729,7 @@
             // 
             this.ckbxFilterBySiNumber.AutoSize = true;
             this.ckbxFilterBySiNumber.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterBySiNumber.Location = new System.Drawing.Point(35, 88);
+            this.ckbxFilterBySiNumber.Location = new System.Drawing.Point(33, 88);
             this.ckbxFilterBySiNumber.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterBySiNumber.Name = "ckbxFilterBySiNumber";
             this.ckbxFilterBySiNumber.Size = new System.Drawing.Size(73, 24);
@@ -718,7 +746,7 @@
             this.btnFilter.FlatAppearance.BorderSize = 0;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(713, 86);
+            this.btnFilter.Location = new System.Drawing.Point(808, 85);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(91, 29);
@@ -733,7 +761,7 @@
             this.dtpFilterByDeliveryDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFilterByDeliveryDate.Enabled = false;
             this.dtpFilterByDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(553, 23);
+            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(553, 56);
             this.dtpFilterByDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFilterByDeliveryDate.Name = "dtpFilterByDeliveryDate";
             this.dtpFilterByDeliveryDate.Size = new System.Drawing.Size(251, 27);
@@ -743,7 +771,7 @@
             // 
             this.ckbxFilterByDeliveryDate.AutoSize = true;
             this.ckbxFilterByDeliveryDate.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByDeliveryDate.Location = new System.Drawing.Point(431, 26);
+            this.ckbxFilterByDeliveryDate.Location = new System.Drawing.Point(431, 59);
             this.ckbxFilterByDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByDeliveryDate.Name = "ckbxFilterByDeliveryDate";
             this.ckbxFilterByDeliveryDate.Size = new System.Drawing.Size(118, 24);
@@ -921,36 +949,6 @@
             this.btnRemoveExpenseClassification.UseVisualStyleBackColor = false;
             this.btnRemoveExpenseClassification.Click += new System.EventHandler(this.btnRemoveExpenseClassification_Click);
             // 
-            // btnInsertToQueue
-            // 
-            this.btnInsertToQueue.BackColor = System.Drawing.Color.Black;
-            this.btnInsertToQueue.BackgroundImage = global::Citicon.Payables.Properties.Resources.right_arrow;
-            this.btnInsertToQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnInsertToQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsertToQueue.ForeColor = System.Drawing.Color.White;
-            this.btnInsertToQueue.Location = new System.Drawing.Point(1079, 322);
-            this.btnInsertToQueue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInsertToQueue.Name = "btnInsertToQueue";
-            this.btnInsertToQueue.Size = new System.Drawing.Size(55, 55);
-            this.btnInsertToQueue.TabIndex = 74;
-            this.btnInsertToQueue.UseVisualStyleBackColor = false;
-            this.btnInsertToQueue.Click += new System.EventHandler(this.btnInsertToQueue_Click);
-            // 
-            // btnRemoveFromQueue
-            // 
-            this.btnRemoveFromQueue.BackColor = System.Drawing.Color.Black;
-            this.btnRemoveFromQueue.BackgroundImage = global::Citicon.Payables.Properties.Resources.left_arrow;
-            this.btnRemoveFromQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnRemoveFromQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveFromQueue.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveFromQueue.Location = new System.Drawing.Point(1079, 387);
-            this.btnRemoveFromQueue.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRemoveFromQueue.Name = "btnRemoveFromQueue";
-            this.btnRemoveFromQueue.Size = new System.Drawing.Size(55, 55);
-            this.btnRemoveFromQueue.TabIndex = 73;
-            this.btnRemoveFromQueue.UseVisualStyleBackColor = false;
-            this.btnRemoveFromQueue.Click += new System.EventHandler(this.btnRemoveFromQueue_Click);
-            // 
             // lblAccountBranch
             // 
             this.lblAccountBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -994,6 +992,36 @@
             this.lblAccountCompany.Size = new System.Drawing.Size(72, 20);
             this.lblAccountCompany.TabIndex = 118;
             this.lblAccountCompany.Text = "Company";
+            // 
+            // btnInsertToQueue
+            // 
+            this.btnInsertToQueue.BackColor = System.Drawing.Color.Black;
+            this.btnInsertToQueue.BackgroundImage = global::Citicon.Payables.Properties.Resources.right_arrow;
+            this.btnInsertToQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnInsertToQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsertToQueue.ForeColor = System.Drawing.Color.White;
+            this.btnInsertToQueue.Location = new System.Drawing.Point(1079, 322);
+            this.btnInsertToQueue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInsertToQueue.Name = "btnInsertToQueue";
+            this.btnInsertToQueue.Size = new System.Drawing.Size(55, 55);
+            this.btnInsertToQueue.TabIndex = 74;
+            this.btnInsertToQueue.UseVisualStyleBackColor = false;
+            this.btnInsertToQueue.Click += new System.EventHandler(this.btnInsertToQueue_Click);
+            // 
+            // btnRemoveFromQueue
+            // 
+            this.btnRemoveFromQueue.BackColor = System.Drawing.Color.Black;
+            this.btnRemoveFromQueue.BackgroundImage = global::Citicon.Payables.Properties.Resources.left_arrow;
+            this.btnRemoveFromQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRemoveFromQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveFromQueue.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveFromQueue.Location = new System.Drawing.Point(1079, 387);
+            this.btnRemoveFromQueue.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveFromQueue.Name = "btnRemoveFromQueue";
+            this.btnRemoveFromQueue.Size = new System.Drawing.Size(55, 55);
+            this.btnRemoveFromQueue.TabIndex = 73;
+            this.btnRemoveFromQueue.UseVisualStyleBackColor = false;
+            this.btnRemoveFromQueue.Click += new System.EventHandler(this.btnRemoveFromQueue_Click);
             // 
             // MainForm
             // 
@@ -1073,8 +1101,6 @@
         private System.Windows.Forms.Label lblHelloUser;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridView dgvUnpaidStocks;
-        private System.Windows.Forms.Button btnRemoveFromQueue;
-        private System.Windows.Forms.Button btnInsertToQueue;
         private System.Windows.Forms.DataGridView dgvMrisNumberIssuanceQueue;
         private System.Windows.Forms.ContextMenuStrip UnpaidStocksMenu;
         private System.Windows.Forms.ToolStripMenuItem ViewUnpaidStockDetails;
@@ -1131,5 +1157,9 @@
         private System.Windows.Forms.ComboBox cmbxAccountBranch;
         private System.Windows.Forms.ComboBox cmbxAccountCompany;
         private System.Windows.Forms.Label lblAccountCompany;
+        private System.Windows.Forms.ComboBox cmbxFilterByBranch;
+        private System.Windows.Forms.CheckBox ckbxFilterByBranch;
+        private System.Windows.Forms.Button btnInsertToQueue;
+        private System.Windows.Forms.Button btnRemoveFromQueue;
     }
 }
