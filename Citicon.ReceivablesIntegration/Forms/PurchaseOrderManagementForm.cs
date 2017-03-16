@@ -14,7 +14,7 @@ namespace Citicon.ReceivablesIntegration.Forms
             InitializeComponent();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -42,9 +42,7 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             cmbxProject.Items.Clear();
 
-            var client = cmbxClient.SelectedItem as Client;
-
-            if (client != null)
+            if (cmbxClient.SelectedItem is Client client)
             {
                 try
                 {
@@ -67,9 +65,8 @@ namespace Citicon.ReceivablesIntegration.Forms
             dgvProjectDesign.Rows.Clear();
             dgvPurchaseOrderProjectDesign.Rows.Clear();
 
-            var project = cmbxProject.SelectedItem as Project;
 
-            if (project != null)
+            if (cmbxProject.SelectedItem is Project project)
             {
                 try
                 {
@@ -92,9 +89,7 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private async Task SaveAsync()
         {
-            var project = cmbxProject.SelectedItem as Project;
-
-            if (project != null)
+            if (cmbxProject.SelectedItem is Project project)
             {
                 if (dgvPurchaseOrderProjectDesign.Rows.Count > 0)
                 {
@@ -106,14 +101,16 @@ namespace Citicon.ReceivablesIntegration.Forms
                     }
                     else
                     {
-                        var purchaseOrder = new PurchaseOrder();
-                        purchaseOrder.Project = project;
-                        purchaseOrder.Number = purchaseOrderNumber;
-                        purchaseOrder.Balance = nudInitialBalance.Value;
-
-                        var purchaseOrderTransaction = new PurchaseOrderTransaction();
-                        purchaseOrderTransaction.PurchaseOrder = purchaseOrder;
-
+                        var purchaseOrder = new PurchaseOrder()
+                        {
+                            Project = project,
+                            Number = purchaseOrderNumber,
+                            Balance = nudInitialBalance.Value
+                        };
+                        var purchaseOrderTransaction = new PurchaseOrderTransaction()
+                        {
+                            PurchaseOrder = purchaseOrder
+                        };
                         foreach (DataGridViewRow row in dgvPurchaseOrderProjectDesign.Rows)
                         {
                             purchaseOrderTransaction.PurchaseOrderProjectDesigns.Add(row.Cells[colPurchaseOrderProjectDesign.Name].Value as PurchaseOrderProjectDesign);
@@ -156,9 +153,10 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private void AddProjectDesignToUI(ProjectDesign projectDesign)
         {
-            var row = new DataGridViewRow();
-            row.Height = 30;
-            
+            var row = new DataGridViewRow()
+            {
+                Height = 30
+            };
             row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign });
 
             dgvProjectDesign.Rows.Add(row);
@@ -169,16 +167,16 @@ namespace Citicon.ReceivablesIntegration.Forms
             if (dgvProjectDesign.SelectedRows.Count == 1)
             {
                 var selectedRow = dgvProjectDesign.SelectedRows[0];
-                var projectDesign = selectedRow.Cells[colProjectDesign.Name].Value as ProjectDesign;
 
-                if (projectDesign != null)
+                if (selectedRow.Cells[colProjectDesign.Name].Value is ProjectDesign projectDesign)
                 {
                     if (nudMaxVolume.Value > 0)
                     {
-                        var purchaseOrderProjectDesign = new PurchaseOrderProjectDesign();
-                        purchaseOrderProjectDesign.ProjectDesign = projectDesign;
-                        purchaseOrderProjectDesign.MaxVolume = nudMaxVolume.Value;
-
+                        var purchaseOrderProjectDesign = new PurchaseOrderProjectDesign()
+                        {
+                            ProjectDesign = projectDesign,
+                            MaxVolume = nudMaxVolume.Value
+                        };
                         AddPurchaseOrderProjectDesignToUI(purchaseOrderProjectDesign);
                         dgvProjectDesign.Rows.Remove(selectedRow);
                         nudMaxVolume.Value = 0;
@@ -204,9 +202,8 @@ namespace Citicon.ReceivablesIntegration.Forms
             if (dgvPurchaseOrderProjectDesign.SelectedRows.Count == 1)
             {
                 var selectedRow = dgvPurchaseOrderProjectDesign.SelectedRows[0];
-                var purchaseOrderProjectDesign = selectedRow.Cells[colPurchaseOrderProjectDesign.Name].Value as PurchaseOrderProjectDesign;
 
-                if (purchaseOrderProjectDesign != null)
+                if (selectedRow.Cells[colPurchaseOrderProjectDesign.Name].Value is PurchaseOrderProjectDesign purchaseOrderProjectDesign)
                 {
                     AddProjectDesignToUI(purchaseOrderProjectDesign.ProjectDesign);
                     dgvPurchaseOrderProjectDesign.Rows.Remove(selectedRow);
@@ -224,9 +221,10 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private void AddPurchaseOrderProjectDesignToUI(PurchaseOrderProjectDesign purchaseOrderProjectDesign)
         {
-            var row = new DataGridViewRow();
-            row.Height = 30;
-
+            var row = new DataGridViewRow()
+            {
+                Height = 30
+            };
             row.Cells.Add(new DataGridViewTextBoxCell { Value = purchaseOrderProjectDesign });
             row.Cells.Add(new DataGridViewTextBoxCell { Value = purchaseOrderProjectDesign.ProjectDesign });
             row.Cells.Add(new DataGridViewTextBoxCell { Value = purchaseOrderProjectDesign.MaxVolume });
@@ -239,27 +237,27 @@ namespace Citicon.ReceivablesIntegration.Forms
             await GetClientListAsync();
         }
 
-        private async void cmbxClient_SelectedIndexChanged(object sender, EventArgs e)
+        private async void CmbxClient_SelectedIndexChanged(object sender, EventArgs e)
         {
             await GetProjectListByClientAsync();
         }
 
-        private async void cmbxProject_SelectedIndexChanged(object sender, EventArgs e)
+        private async void CmbxProject_SelectedIndexChanged(object sender, EventArgs e)
         {
             await GetProjectDesignListByProjectAsync();
         }
 
-        private void btnIncludeProjectDesign_Click(object sender, EventArgs e)
+        private void BtnIncludeProjectDesign_Click(object sender, EventArgs e)
         {
             IncludeProjectDesign();
         }
 
-        private void btnExcludeProjectDesign_Click(object sender, EventArgs e)
+        private void BtnExcludeProjectDesign_Click(object sender, EventArgs e)
         {
             ExcludeProjectDesign();
         }
 
-        private async void btnSave_Click(object sender, EventArgs e)
+        private async void BtnSave_Click(object sender, EventArgs e)
         {
             await SaveAsync();
         }

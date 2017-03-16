@@ -61,7 +61,7 @@
             this.btnGenerate.TabIndex = 1;
             this.btnGenerate.Text = "Search";
             this.btnGenerate.UseVisualStyleBackColor = false;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            this.btnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
             // dgvCheques
             // 

@@ -162,7 +162,7 @@
             this.cmbxClient.Name = "cmbxClient";
             this.cmbxClient.Size = new System.Drawing.Size(639, 29);
             this.cmbxClient.TabIndex = 106;
-            this.cmbxClient.SelectedIndexChanged += new System.EventHandler(this.cmbxClient_SelectedIndexChanged);
+            this.cmbxClient.SelectedIndexChanged += new System.EventHandler(this.CmbxClient_SelectedIndexChanged);
             // 
             // cmbxProject
             // 
@@ -172,7 +172,7 @@
             this.cmbxProject.Name = "cmbxProject";
             this.cmbxProject.Size = new System.Drawing.Size(639, 29);
             this.cmbxProject.TabIndex = 108;
-            this.cmbxProject.SelectedIndexChanged += new System.EventHandler(this.cmbxProject_SelectedIndexChanged);
+            this.cmbxProject.SelectedIndexChanged += new System.EventHandler(this.CmbxProject_SelectedIndexChanged);
             // 
             // lblProject
             // 
@@ -196,7 +196,7 @@
             this.btnSave.TabIndex = 112;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnCancel
             // 
@@ -210,7 +210,7 @@
             this.btnCancel.TabIndex = 111;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // dgvPurchaseOrderProjectDesign
             // 
@@ -304,7 +304,7 @@
             this.btnIncludeProjectDesign.Size = new System.Drawing.Size(55, 55);
             this.btnIncludeProjectDesign.TabIndex = 74;
             this.btnIncludeProjectDesign.UseVisualStyleBackColor = false;
-            this.btnIncludeProjectDesign.Click += new System.EventHandler(this.btnIncludeProjectDesign_Click);
+            this.btnIncludeProjectDesign.Click += new System.EventHandler(this.BtnIncludeProjectDesign_Click);
             // 
             // btnExcludeProjectDesign
             // 
@@ -319,7 +319,7 @@
             this.btnExcludeProjectDesign.Size = new System.Drawing.Size(55, 55);
             this.btnExcludeProjectDesign.TabIndex = 73;
             this.btnExcludeProjectDesign.UseVisualStyleBackColor = false;
-            this.btnExcludeProjectDesign.Click += new System.EventHandler(this.btnExcludeProjectDesign_Click);
+            this.btnExcludeProjectDesign.Click += new System.EventHandler(this.BtnExcludeProjectDesign_Click);
             // 
             // nudMaxVolume
             // 

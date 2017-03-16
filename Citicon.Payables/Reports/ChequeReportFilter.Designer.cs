@@ -31,10 +31,10 @@
             this.Filter = new System.Windows.Forms.GroupBox();
             this.cmbxSupplier = new System.Windows.Forms.ComboBox();
             this.ckbxSupplier = new System.Windows.Forms.CheckBox();
-            this.dtpRangeDate_Start = new System.Windows.Forms.DateTimePicker();
             this.pnlRangeDate = new System.Windows.Forms.Panel();
             this.dtpRangeDate_End = new System.Windows.Forms.DateTimePicker();
             this.lblRangeDateTo = new System.Windows.Forms.Label();
+            this.dtpRangeDate_Start = new System.Windows.Forms.DateTimePicker();
             this.ckbxRangeDate = new System.Windows.Forms.CheckBox();
             this.Filter.SuspendLayout();
             this.pnlRangeDate.SuspendLayout();
@@ -51,7 +51,7 @@
             this.Filter.Controls.Add(this.ckbxRangeDate);
             this.Filter.Location = new System.Drawing.Point(3, 3);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(754, 102);
+            this.Filter.Size = new System.Drawing.Size(754, 203);
             this.Filter.TabIndex = 0;
             this.Filter.TabStop = false;
             this.Filter.Text = "Filter";
@@ -65,7 +65,7 @@
             this.cmbxSupplier.Name = "cmbxSupplier";
             this.cmbxSupplier.Size = new System.Drawing.Size(357, 29);
             this.cmbxSupplier.TabIndex = 3;
-            this.cmbxSupplier.SelectedIndexChanged += new System.EventHandler(this.cmbxSupplier_SelectedIndexChanged);
+            this.cmbxSupplier.SelectedIndexChanged += new System.EventHandler(this.CmbxSupplier_SelectedIndexChanged);
             // 
             // ckbxSupplier
             // 
@@ -76,17 +76,7 @@
             this.ckbxSupplier.TabIndex = 2;
             this.ckbxSupplier.Text = "Supplier";
             this.ckbxSupplier.UseVisualStyleBackColor = true;
-            this.ckbxSupplier.CheckedChanged += new System.EventHandler(this.ckbxSupplier_CheckedChanged);
-            // 
-            // dtpRangeDate_Start
-            // 
-            this.dtpRangeDate_Start.CustomFormat = "MMM dd, yyyy";
-            this.dtpRangeDate_Start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpRangeDate_Start.Location = new System.Drawing.Point(0, 0);
-            this.dtpRangeDate_Start.Name = "dtpRangeDate_Start";
-            this.dtpRangeDate_Start.Size = new System.Drawing.Size(160, 29);
-            this.dtpRangeDate_Start.TabIndex = 0;
-            this.dtpRangeDate_Start.ValueChanged += new System.EventHandler(this.dtpRangeDate_Start_ValueChanged);
+            this.ckbxSupplier.CheckedChanged += new System.EventHandler(this.CkbxSupplier_CheckedChanged);
             // 
             // pnlRangeDate
             // 
@@ -107,7 +97,7 @@
             this.dtpRangeDate_End.Name = "dtpRangeDate_End";
             this.dtpRangeDate_End.Size = new System.Drawing.Size(160, 29);
             this.dtpRangeDate_End.TabIndex = 2;
-            this.dtpRangeDate_End.ValueChanged += new System.EventHandler(this.dtpRangeDate_End_ValueChanged);
+            this.dtpRangeDate_End.ValueChanged += new System.EventHandler(this.DtpRangeDate_End_ValueChanged);
             // 
             // lblRangeDateTo
             // 
@@ -118,6 +108,16 @@
             this.lblRangeDateTo.TabIndex = 0;
             this.lblRangeDateTo.Text = "To";
             // 
+            // dtpRangeDate_Start
+            // 
+            this.dtpRangeDate_Start.CustomFormat = "MMM dd, yyyy";
+            this.dtpRangeDate_Start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpRangeDate_Start.Location = new System.Drawing.Point(0, 0);
+            this.dtpRangeDate_Start.Name = "dtpRangeDate_Start";
+            this.dtpRangeDate_Start.Size = new System.Drawing.Size(160, 29);
+            this.dtpRangeDate_Start.TabIndex = 0;
+            this.dtpRangeDate_Start.ValueChanged += new System.EventHandler(this.DtpRangeDate_Start_ValueChanged);
+            // 
             // ckbxRangeDate
             // 
             this.ckbxRangeDate.AutoSize = true;
@@ -127,7 +127,7 @@
             this.ckbxRangeDate.TabIndex = 0;
             this.ckbxRangeDate.Text = "Range Date";
             this.ckbxRangeDate.UseVisualStyleBackColor = true;
-            this.ckbxRangeDate.CheckedChanged += new System.EventHandler(this.ckbxRangeDate_CheckedChanged);
+            this.ckbxRangeDate.CheckedChanged += new System.EventHandler(this.CkbxRangeDate_CheckedChanged);
             // 
             // ChequeReportFilter
             // 
@@ -139,7 +139,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ChequeReportFilter";
-            this.Size = new System.Drawing.Size(760, 108);
+            this.Size = new System.Drawing.Size(760, 209);
             this.Load += new System.EventHandler(this.ChequeReportFilter_Load);
             this.Filter.ResumeLayout(false);
             this.Filter.PerformLayout();

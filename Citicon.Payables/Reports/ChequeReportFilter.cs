@@ -22,14 +22,14 @@ namespace Citicon.Payables.Reports
         public DateTimeRange RangeDate { get; private set; }
         public Supplier Supplier { get; private set; }
 
-        private void ckbxRangeDate_CheckedChanged(object sender, EventArgs e)
+        private void CkbxRangeDate_CheckedChanged(object sender, EventArgs e)
         {
             pnlRangeDate.Enabled = ckbxRangeDate.Checked;
             FilterByRangeDate = ckbxRangeDate.Checked;
             ChangeHasFiltered();
         }
 
-        private void ckbxSupplier_CheckedChanged(object sender, EventArgs e)
+        private void CkbxSupplier_CheckedChanged(object sender, EventArgs e)
         {
             cmbxSupplier.Enabled = ckbxSupplier.Checked;
             FilterBySupplier = ckbxSupplier.Checked;
@@ -53,17 +53,17 @@ namespace Citicon.Payables.Reports
             ChangeHasFiltered();
         }
 
-        private void dtpRangeDate_Start_ValueChanged(object sender, EventArgs e)
+        private void DtpRangeDate_Start_ValueChanged(object sender, EventArgs e)
         {
             RangeDate = new DateTimeRange(dtpRangeDate_Start.Value, dtpRangeDate_End.Value);
         }
 
-        private void dtpRangeDate_End_ValueChanged(object sender, EventArgs e)
+        private void DtpRangeDate_End_ValueChanged(object sender, EventArgs e)
         {
             RangeDate = new DateTimeRange(dtpRangeDate_Start.Value, dtpRangeDate_End.Value);
         }
 
-        private void cmbxSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbxSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
             Supplier = (Supplier)cmbxSupplier.SelectedItem;
         }

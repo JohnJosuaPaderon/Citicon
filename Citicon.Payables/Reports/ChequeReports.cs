@@ -11,12 +11,12 @@ namespace Citicon.Payables.Reports
         {
             InitializeComponent();
             ChequeSummaryItemManager = new ChequeSummaryItemManager();
-            ReportFilter.HasFiltered = hasFilteredChanged;
+            ReportFilter.HasFiltered = HasFilteredChanged;
         }
 
         private ChequeSummaryItemManager ChequeSummaryItemManager;
 
-        private void hasFilteredChanged(bool hasfiltered)
+        private void HasFilteredChanged(bool hasfiltered)
         {
             btnGenerate.Enabled = hasfiltered;
         }
@@ -34,9 +34,10 @@ namespace Citicon.Payables.Reports
 
                     foreach (var item in summaryItemIEnumerable)
                     {
-                        var row = new DataGridViewRow();
-                        row.Height = 30;
-
+                        var row = new DataGridViewRow()
+                        {
+                            Height = 30
+                        };
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.ChequeNumbber });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.ChequeDate });
@@ -59,7 +60,7 @@ namespace Citicon.Payables.Reports
             }
         }
 
-        private async void btnGenerate_Click(object sender, EventArgs e)
+        private async void BtnGenerate_Click(object sender, EventArgs e)
         {
             await GetChequeSummaryIEnumerableAsync();
         }

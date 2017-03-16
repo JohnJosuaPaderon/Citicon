@@ -49,9 +49,10 @@ namespace Citicon.Payables.Reports
 
         private void AddToDataGridView(Payable payable)
         {
-            var row = new DataGridViewRow();
-            row.Height = 30;
-
+            var row = new DataGridViewRow()
+            {
+                Height = 30
+            };
             row.Cells.Add(new DataGridViewTextBoxCell { Value = payable });
             row.Cells.Add(new DataGridViewTextBoxCell { Value = payable.Description });
             row.Cells.Add(new DataGridViewTextBoxCell { Value = payable.Branch });
@@ -61,7 +62,7 @@ namespace Citicon.Payables.Reports
             dgvPayables.Rows.Add(row);
         }
 
-        private async void btnSearch_Click(object sender, EventArgs e)
+        private async void BtnSearch_Click(object sender, EventArgs e)
         {
             await SearchAsync();
         }
