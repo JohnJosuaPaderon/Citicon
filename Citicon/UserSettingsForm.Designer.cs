@@ -98,7 +98,7 @@
             this.lblPassword.AutoSize = true;
             this.lblPassword.Location = new System.Drawing.Point(48, 183);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(92, 25);
+            this.lblPassword.Size = new System.Drawing.Size(91, 25);
             this.lblPassword.TabIndex = 16;
             this.lblPassword.Text = "Password";
             // 
@@ -130,7 +130,7 @@
             this.lblCurrentPassword.Enabled = false;
             this.lblCurrentPassword.Location = new System.Drawing.Point(142, 222);
             this.lblCurrentPassword.Name = "lblCurrentPassword";
-            this.lblCurrentPassword.Size = new System.Drawing.Size(161, 25);
+            this.lblCurrentPassword.Size = new System.Drawing.Size(160, 25);
             this.lblCurrentPassword.TabIndex = 19;
             this.lblCurrentPassword.Text = "Current Password";
             // 
@@ -164,7 +164,7 @@
             this.lblNewPassword.Enabled = false;
             this.lblNewPassword.Location = new System.Drawing.Point(168, 261);
             this.lblNewPassword.Name = "lblNewPassword";
-            this.lblNewPassword.Size = new System.Drawing.Size(135, 25);
+            this.lblNewPassword.Size = new System.Drawing.Size(134, 25);
             this.lblNewPassword.TabIndex = 21;
             this.lblNewPassword.Text = "New Password";
             // 
@@ -186,7 +186,7 @@
             this.lblReTypePassword.Enabled = false;
             this.lblReTypePassword.Location = new System.Drawing.Point(141, 300);
             this.lblReTypePassword.Name = "lblReTypePassword";
-            this.lblReTypePassword.Size = new System.Drawing.Size(162, 25);
+            this.lblReTypePassword.Size = new System.Drawing.Size(160, 25);
             this.lblReTypePassword.TabIndex = 23;
             this.lblReTypePassword.Text = "Re-type Password";
             // 
@@ -225,7 +225,7 @@
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
             this.btnCancel.Location = new System.Drawing.Point(648, 456);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(125, 50);
@@ -237,7 +237,7 @@
             // btnSaveChanges
             // 
             this.btnSaveChanges.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSaveChanges.BackColor = System.Drawing.Color.Red;
             this.btnSaveChanges.FlatAppearance.BorderSize = 0;
             this.btnSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChanges.ForeColor = System.Drawing.Color.White;
@@ -252,7 +252,7 @@
             // btnAddNewUser
             // 
             this.btnAddNewUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddNewUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAddNewUser.BackColor = System.Drawing.Color.Red;
             this.btnAddNewUser.FlatAppearance.BorderSize = 0;
             this.btnAddNewUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewUser.ForeColor = System.Drawing.Color.White;
@@ -290,7 +290,7 @@
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.Header);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "UserSettingsForm";
