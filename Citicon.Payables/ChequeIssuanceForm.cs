@@ -140,9 +140,13 @@ namespace Citicon.Payables
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
-                        if (payable.Description != ConfigurationManager.AppSettings["Payable.Description.InputTax"])
+                        //if (payable.Description != ConfigurationManager.AppSettings["Payable.Description.InputTax"])
+                        //{
+                        //    grandTotalAmount += payable.Debit;
+                        //}
+                        if (payable.Expense == Expense.CashInBank)
                         {
-                            grandTotalAmount += payable.Debit;
+                            grandTotalAmount = payable.Value;
                         }
                         tbxGrandTotal.Text = grandTotalAmount.ToString("#,##0.00");
                     }
@@ -244,8 +248,8 @@ namespace Citicon.Payables
                     tbxCheckVoucherNumber.Text = string.Empty;
                     tbxPayee.Text = string.Empty;
                     payee = null;
-                    cmbxBanks.SelectedItem = null;
-                    cmbxBankAccounts.Items.Clear();
+                    //cmbxBanks.SelectedItem = null;
+                    //cmbxBankAccounts.Items.Clear();
                     tbxGrandTotal.Text = "0.00";
                     clearCheckVoucherNumber();
                     MessageBox.Show("Done!", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
