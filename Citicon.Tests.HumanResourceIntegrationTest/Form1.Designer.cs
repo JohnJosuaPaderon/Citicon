@@ -45,7 +45,7 @@
             this.btnEmployeeManagementForm.TabIndex = 0;
             this.btnEmployeeManagementForm.Text = "Employee Management Form";
             this.btnEmployeeManagementForm.UseVisualStyleBackColor = false;
-            this.btnEmployeeManagementForm.Click += new System.EventHandler(this.btnEmployeeManagementForm_Click);
+            this.btnEmployeeManagementForm.Click += new System.EventHandler(this.BtnEmployeeManagementForm_Click);
             // 
             // Form1
             // 

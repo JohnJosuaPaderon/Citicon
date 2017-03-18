@@ -100,7 +100,7 @@ namespace Citicon.Inventory
         private void StockManager_Updated(Stock e)
         {
             MessageBox.Show("Successfully modified!");
-            clearStockFields();
+            ClearStockFields();
             DisplayStock(null);
             foreach (DataGridViewRow row in dgvStocks.Rows)
             {
@@ -123,7 +123,7 @@ namespace Citicon.Inventory
 
             dgvStocks.Rows.Insert(0, e, e.AddedStockValue.ToString("#,##0.00"), e.Supplier, e.SiNumber, e.DrNumber, e.DeliveryDate.ToString("MMM dd, yyyy"));
 
-            clearStockFields();
+            ClearStockFields();
             MessageBox.Show("Successfully added!");
 
             if (ckbxRetainData.Checked)
@@ -131,7 +131,7 @@ namespace Citicon.Inventory
                 nudDrNumber.Focus();
             }
         }
-        private void clearStockFields()
+        private void ClearStockFields()
         {
             Editing = false;
             if (!ckbxRetainData.Checked)
@@ -201,24 +201,24 @@ namespace Citicon.Inventory
                 cmbxSuppliers.Items.AddRange(suppliers);
             }
 
-            await loadItems();
+            await LoadItems();
 
         }
-        private async void tmrGenerateItems_Tick(object sender, EventArgs e)
+        private async void TmrGenerateItems_Tick(object sender, EventArgs e)
         {
-            await loadItems();
+            await LoadItems();
         }
-        private async Task loadItems()
+        private async Task LoadItems()
         {
             items = null;
             tempItems.Clear();
             items = await itemManager.GetListAsync();
         }
-        private void tbxSearchItems_TextChanged(object sender, EventArgs e)
+        private void TbxSearchItems_TextChanged(object sender, EventArgs e)
         {
-            appendItems(items != null ? items : tempItems?.ToArray(), false);
+            AppendItems(items ?? tempItems?.ToArray(), false);
         }
-        private void appendItems(Item[] list, bool asIsSearching)
+        private void AppendItems(Item[] list, bool asIsSearching)
         {
             dgvItems.Rows.Clear();
             if (tbxSearchItems.Text.Trim() != string.Empty)
@@ -233,11 +233,11 @@ namespace Citicon.Inventory
                         switch (searchCategory)
                         {
                             case SearchCategory.Description:
-                                if (item.Description == key) appendSingleItem(item); break;
+                                if (item.Description == key) AppendSingleItem(item); break;
                             case SearchCategory.Code:
-                                if (item.Code == key) appendSingleItem(item); break;
+                                if (item.Code == key) AppendSingleItem(item); break;
                             case SearchCategory.Classification:
-                                if (item.Classification?.Description == key) appendSingleItem(item); break;
+                                if (item.Classification?.Description == key) AppendSingleItem(item); break;
                             default:
                                 break;
                         }
@@ -247,12 +247,12 @@ namespace Citicon.Inventory
                         switch (searchCategory)
                         {
                             case SearchCategory.Description:
-                                if (item.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item); break;
+                                if (item.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) AppendSingleItem(item); break;
                             case SearchCategory.Code:
-                                if (item.Code.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item); break;
+                                if (item.Code.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) AppendSingleItem(item); break;
                             case SearchCategory.Classification:
                                 if (item.Classification != null)
-                                    if (item.Classification.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item);
+                                    if (item.Classification.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) AppendSingleItem(item);
                                 break;
                             default:
                                 break;
@@ -263,16 +263,16 @@ namespace Citicon.Inventory
             dgvItems.Height = 50 + (30 * (dgvItems.Rows.Count <= 15 ? dgvItems.Rows.Count : 15));
             if (dgvItems.Rows.Count == 0) dgvItems.Height = 0;
         }
-        private void appendSingleItem(Item item)
+        private void AppendSingleItem(Item item)
         {
             foreach (DataGridViewRow row in dgvItems.Rows)
                 if (((Item)row.Cells[colItem.Name].Value) == item) return;
             dgvItems.Rows.Add(item, item.Code, item.Classification, item.StockValue.ToString("#,##0"));
             if (HasRows) dgvItems.Rows[0].Selected = true;
         }
-        private void cmbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            appendItems(items != null ? items : tempItems?.ToArray(), false);
+            AppendItems(items ?? tempItems?.ToArray(), false);
         }
         private bool HasRows
         {
@@ -282,11 +282,11 @@ namespace Citicon.Inventory
         {
             get { return dgvItems.SelectedRows.Count > 0; }
         }
-        private async void tbxSearchItems_KeyDown(object sender, KeyEventArgs e)
+        private async void TbxSearchItems_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                await getItemFromDatagridView();
+                await GetItemFromDatagridView();
             }
             else if (e.KeyCode == Keys.Down)
             {
@@ -298,11 +298,11 @@ namespace Citicon.Inventory
                 }
             }
         }
-        private async void dgvItems_KeyDown(object sender, KeyEventArgs e)
+        private async void DgvItems_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                await getItemFromDatagridView();
+                await GetItemFromDatagridView();
             }
             else if (e.KeyCode != Keys.Down && e.KeyCode != Keys.Up && e.KeyCode != Keys.Left && e.KeyCode != Keys.Right)
             {
@@ -312,22 +312,22 @@ namespace Citicon.Inventory
                 tbxSearchItems.Select(tbxSearchItems.Text.Length, 0);
             }
         }
-        private async void dgvItems_DoubleClick(object sender, EventArgs e)
+        private async void DgvItems_DoubleClick(object sender, EventArgs e)
         {
-            await getItemFromDatagridView();
+            await GetItemFromDatagridView();
         }
-        private async Task getItemFromDatagridView()
+        private async Task GetItemFromDatagridView()
         {
             if (HasSelectedRows)
             {
                 currentItem = (Item)dgvItems.SelectedRows[0].Cells[colItem.Name].Value;
                 dgvItems.Rows.Clear();
                 dgvItems.Height = 0;
-                await displayItem();
+                await DisplayItem();
             }
             else MessageBox.Show("No item is selected!");
         }
-        private void enableMeasurementDescriptionFields(Control control, bool enabled)
+        private void EnableMeasurementDescriptionFields(Control control, bool enabled)
         {
             if (control is IContainerControl)
             {
@@ -337,9 +337,9 @@ namespace Citicon.Inventory
                 }
             }
         }
-        private async Task displayItem()
+        private async Task DisplayItem()
         {
-            enableMeasurementDescriptionFields(this, false);
+            EnableMeasurementDescriptionFields(this, false);
             tbxItemCode.Text = string.Empty;
             tbxItemDescription.Text = string.Empty;
             tbxItemStockValue.Text = 0.ToString("#,##0.00");
@@ -349,28 +349,28 @@ namespace Citicon.Inventory
                 tbxItemCode.Text = currentItem.Code;
                 tbxItemDescription.Text = currentItem.Description;
                 tbxItemStockValue.Text = currentItem.StockValue.ToString("#,##0.00");
-                if (currentItem.MeasurementUnit == MeasurementUnit.CubicMeter) enableMeasurementDescriptionFields(this, true);
+                if (currentItem.MeasurementUnit == MeasurementUnit.CubicMeter) EnableMeasurementDescriptionFields(this, true);
                 stocks = await stockManager.GetListByItemAsync(currentItem);
                 
             }
         }
-        private void btnSearchItems_Click(object sender, EventArgs e)
+        private void BtnSearchItems_Click(object sender, EventArgs e)
         {
-            appendItems(items != null ? items : tempItems?.ToArray(), true);
+            AppendItems(items ?? tempItems?.ToArray(), true);
         }
-        private void tbxSearchItems_Enter(object sender, EventArgs e)
+        private void TbxSearchItems_Enter(object sender, EventArgs e)
         {
             tbxSearchItems.Select(0, tbxSearchItems.Text.Length);
         }
-        private void cmbxPaymentTerms_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbxPaymentTerms_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!Editing)
             {
-                changeComboBoxStyleToDropDownList(cmbxPaymentTerms);
-                calculateDueDate();
+                ChangeComboBoxStyleToDropDownList(cmbxPaymentTerms);
+                CalculateDueDate();
             }
         }
-        private void saveAcceptedBySuggest()
+        private void SaveAcceptedBySuggest()
         {
             if (!tbxAcceptedBy.AutoCompleteCustomSource.Contains(tbxAcceptedBy.Text.Trim()))
             {
@@ -379,15 +379,15 @@ namespace Citicon.Inventory
                 Supports.AppendAcceptedBySuggest(x);
             }
         }
-        private void tbxAcceptedBy_KeyDown(object sender, KeyEventArgs e)
+        private void TbxAcceptedBy_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) saveAcceptedBySuggest();
+            if (e.KeyCode == Keys.Enter) SaveAcceptedBySuggest();
         }
-        private void displayError(string message)
+        private void DisplayError(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             var deliveryDate = dtpDeliveryDate.Value;
             var paymentTerm = (PaymentTerm)cmbxPaymentTerms.SelectedItem;
@@ -411,15 +411,15 @@ namespace Citicon.Inventory
                 : string.Empty;
             if (deliveryDate == default(DateTime))
             {
-                displayError("Delivery Date must be valid!"); return;
+                DisplayError("Delivery Date must be valid!"); return;
             }
             if (paymentTerm == null)
             {
-                displayError("Please select a valid Payment Term"); return;
+                DisplayError("Please select a valid Payment Term"); return;
             }
             if (dueDate < deliveryDate)
             {
-                displayError("Due Date is invalid!"); return;
+                DisplayError("Due Date is invalid!"); return;
             }
             //if (vehicle == null)
             //{
@@ -427,7 +427,7 @@ namespace Citicon.Inventory
             //}
             if (siNumber <= 0 && drNumber <= 0)
             {
-                displayError("SI No. or DR No. should be valid!"); return;
+                DisplayError("SI No. or DR No. should be valid!"); return;
             }
             //if (branch == null)
             //{
@@ -439,23 +439,23 @@ namespace Citicon.Inventory
             //}
             if (addedStockValue == 0)
             {
-                displayError("Added stock value shouldn't be having a value of 0 (zero)!"); return;
+                DisplayError("Added stock value shouldn't be having a value of 0 (zero)!"); return;
             }
             if (unitPrice < 0)
             {
-                displayError("Unit Price shouldn't be having less than a value of 0 (zero)!"); return;
+                DisplayError("Unit Price shouldn't be having less than a value of 0 (zero)!"); return;
             }
             if (supplier == null)
             {
-                displayError("Supplier should be valid!"); return;
+                DisplayError("Supplier should be valid!"); return;
             }
             if (acceptedBy == string.Empty)
             {
-                displayError("Accepting personel must be valid!"); return;
+                DisplayError("Accepting personel must be valid!"); return;
             }
             if (currentItem == null)
             {
-                displayError("Please select a valid Inventory item first!"); return;
+                DisplayError("Please select a valid Inventory item first!"); return;
             }
             if (Editing)
             {
@@ -523,11 +523,11 @@ namespace Citicon.Inventory
                 }
             }
         }
-        private void dtpDeliveryDate_ValueChanged(object sender, EventArgs e)
+        private void DtpDeliveryDate_ValueChanged(object sender, EventArgs e)
         {
-            calculateDueDate();
+            CalculateDueDate();
         }
-        private void calculateDueDate()
+        private void CalculateDueDate()
         {
             if (cmbxPaymentTerms.SelectedItem != null)
             {
@@ -536,27 +536,27 @@ namespace Citicon.Inventory
                 MessageBox.Show($"This must be paid on\\before {_dueDate.ToString("MMMM dd, yyyy")}");
             }
         }
-        private void tbxAcceptedBy_Leave(object sender, EventArgs e)
+        private void TbxAcceptedBy_Leave(object sender, EventArgs e)
         {   
-            saveAcceptedBySuggest();
+            SaveAcceptedBySuggest();
         }
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
-            clearStockFields();
+            ClearStockFields();
         }
-        private void dgvItems_QueryContinueDrag(object sender, QueryContinueDragEventArgs e)
+        private void DgvItems_QueryContinueDrag(object sender, QueryContinueDragEventArgs e)
         {
 
         }
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-        private void cmbxPaymentTerms_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void CmbxPaymentTerms_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             
         }
-        private void searchableComboBox(object sender, MouseEventArgs e)
+        private void SearchableComboBox(object sender, MouseEventArgs e)
         {
             if (e?.Button == MouseButtons.Right && sender is ComboBox)
             {
@@ -571,22 +571,22 @@ namespace Citicon.Inventory
                 cmbx.AutoCompleteCustomSource.AddRange(list.ToArray());
             }
         }
-        private void cmbx_KeyDown(object sender, KeyEventArgs e)
+        private void Cmbx_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                changeComboBoxStyleToDropDownList((ComboBox)sender);
+                ChangeComboBoxStyleToDropDownList((ComboBox)sender);
             }
         }
-        private void changeComboBoxStyleToDropDownList(ComboBox cmbx)
+        private void ChangeComboBoxStyleToDropDownList(ComboBox cmbx)
         {
             if (cmbx.DropDownStyle != ComboBoxStyle.DropDownList) cmbx.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        private void cmbxCompanies_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbxCompanies_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
-        private void btnEditSelectedUnitPrice_Click(object sender, EventArgs e)
+        private void BtnEditSelectedUnitPrice_Click(object sender, EventArgs e)
         {
             if (dgvStocks.SelectedRows.Count == 1)
             {
@@ -633,10 +633,9 @@ namespace Citicon.Inventory
                         foreach (var item in lwh)
                         {
                             string key;
-                            decimal value;
                             var x = item.Split('=');
                             key = x[0].Trim().Replace("\0","").ToLower();
-                            decimal.TryParse(x[1].Trim().Replace("\0", ""), out value);
+                            decimal.TryParse(x[1].Trim().Replace("\0", ""), out decimal value);
                             pair.Add(key, value);
                         }
                         nudLength.Value = pair["l"];
@@ -651,13 +650,13 @@ namespace Citicon.Inventory
             }
         }
 
-        private void ckbxIncludeWithHoldingTax_CheckedChanged(object sender, EventArgs e)
+        private void CkbxIncludeWithHoldingTax_CheckedChanged(object sender, EventArgs e)
         {
             nudWithHoldingTax.Enabled = ckbxIncludeWithHoldingTax.Checked;
             nudWithHoldingTax.Value = 0;
         }
 
-        private void nudWithHoldingTax_EnabledChanged(object sender, EventArgs e)
+        private void NudWithHoldingTax_EnabledChanged(object sender, EventArgs e)
         {
             if (!nudWithHoldingTax.Enabled)
             {
@@ -665,47 +664,47 @@ namespace Citicon.Inventory
             }
         }
 
-        private void lblHeight_Click(object sender, EventArgs e)
+        private void LblHeight_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void lblWidth_Click(object sender, EventArgs e)
+        private void LblWidth_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void nudHeight_ValueChanged(object sender, EventArgs e)
+        private void NudHeight_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void nudWidth_ValueChanged(object sender, EventArgs e)
+        private void NudWidth_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void nudLength_ValueChanged(object sender, EventArgs e)
+        private void NudLength_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void tbxRemarks_TextChanged(object sender, EventArgs e)
+        private void TbxRemarks_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void tbxAcceptedBy_TextChanged(object sender, EventArgs e)
+        private void TbxAcceptedBy_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void lblSupplier_Click(object sender, EventArgs e)
+        private void LblSupplier_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void nudUnitPrice_ValueChanged(object sender, EventArgs e)
+        private void NudUnitPrice_ValueChanged(object sender, EventArgs e)
         {
             if (nudWithHoldingTax.Value != 0)
             {
@@ -718,12 +717,12 @@ namespace Citicon.Inventory
             }
         }
 
-        private void nudAmountDue_ValueChanged(object sender, EventArgs e)
+        private void NudAmountDue_ValueChanged(object sender, EventArgs e)
         {
             nudVat.Value = nudAmountDue.Value * 0.12M;
         }
 
-        private void nudVat_ValueChanged(object sender, EventArgs e)
+        private void NudVat_ValueChanged(object sender, EventArgs e)
         {
             var sum = nudVat.Value + nudAmountDue.Value;
 
@@ -735,7 +734,7 @@ namespace Citicon.Inventory
             nudTotalAmountDue.Value = sum;
         }
 
-        private void ckbxRetainData_CheckedChanged(object sender, EventArgs e)
+        private void CkbxRetainData_CheckedChanged(object sender, EventArgs e)
         {
 
         }

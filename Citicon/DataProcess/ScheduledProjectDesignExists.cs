@@ -9,12 +9,7 @@ namespace Citicon.DataProcess
     {
         public ScheduledProjectDesignExists(ScheduledProjectDesign scheduledDesign)
         {
-            if (scheduledDesign == null)
-            {
-                throw new ArgumentNullException(nameof(scheduledDesign));
-            }
-
-            ScheduledDesign = scheduledDesign;
+            ScheduledDesign = scheduledDesign ?? throw new ArgumentNullException(nameof(scheduledDesign));
         }
 
         private ScheduledProjectDesign ScheduledDesign;
@@ -23,9 +18,11 @@ namespace Citicon.DataProcess
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand();
-            command.Connection = connection;
-            command.CommandText = string.Format("SELECT ScheduledProjectDesignExists({0}, {1});", Parameter_ProjectDesignId, Parameter_ScheduledDate);
+            var command = new MySqlCommand()
+            {
+                Connection = connection,
+                CommandText = string.Format("SELECT ScheduledProjectDesignExists({0}, {1});", Parameter_ProjectDesignId, Parameter_ScheduledDate)
+            };
             command.Parameters.AddWithValue(Parameter_ProjectDesignId, ScheduledDesign.Design.Id);
             command.Parameters.AddWithValue(Parameter_ScheduledDate, ScheduledDesign.ScheduledDate);
 

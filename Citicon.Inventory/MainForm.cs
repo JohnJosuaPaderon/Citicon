@@ -31,7 +31,7 @@ namespace Citicon.Inventory
             });
         }
 
-        private bool existsInDataGridView(Item item)
+        private bool ExistsInDataGridView(Item item)
         {
             foreach (DataGridViewRow row in dgvItems.Rows)
             {
@@ -41,7 +41,7 @@ namespace Citicon.Inventory
             return false;
         }
 
-        private void displayItems()
+        private void DisplayItems()
         {
             foreach (Item item in items)
             {
@@ -70,7 +70,7 @@ namespace Citicon.Inventory
                             }
                         }
                         //dgvItems.Rows.Cast<DataGridViewRow>().FirstOrDefault(x => item.Equals((Item)x.Cells[colItems.Name].Value));
-                        if (existsInDataGridView(item))
+                        if (ExistsInDataGridView(item))
                         {
                             x_Row.Cells[colItems.Name].Value = _item.Value;
                             x_Row.Cells[colItemsClassification.Name].Value = _classification.Value;
@@ -101,12 +101,12 @@ namespace Citicon.Inventory
                 btnIncomingStocks.Enabled = false;
                 btnReports.Enabled = false;
                 btnViewTracking.Enabled = false;
-                btnOutgoingStocks_Click(this, EventArgs.Empty);
+                BtnOutgoingStocks_Click(this, EventArgs.Empty);
             }
             else
             {
                 lblUserDisplayName.Text = User.CurrentUser?.DisplayName;
-                getItems();
+                GetItems();
             }
         }
 
@@ -116,45 +116,45 @@ namespace Citicon.Inventory
             catch (Exception ex) { ExceptionCatched(ex); }
         }
 
-        private void getItems()
+        private void GetItems()
         {
             lblMessage.Visible = true;
             var task = itemManager.GetListAsync();
             task.ContinueWith(x =>
             {
                 items = task.Result;
-                displayItems();
+                DisplayItems();
                 Invoker(() => lblMessage.Visible = false);
                 itemManager.NewItemGenerated -= ItemManager_NewItemGenerated;
             });
         }
 
-        private void btnItems_Click(object sender, EventArgs e)
+        private void BtnItems_Click(object sender, EventArgs e)
         {
             ItemManagerForm form = new ItemManagerForm();
             form.ShowDialog();
         }
 
-        private void btnMaintenance_Click(object sender, EventArgs e)
+        private void BtnMaintenance_Click(object sender, EventArgs e)
         {
             MaintenanceForm form = new MaintenanceForm();
             form.Show();
             lblUserDisplayName.Text = User.CurrentUser?.DisplayName;
         }
 
-        private void btnIncomingStocks_Click(object sender, EventArgs e)
+        private void BtnIncomingStocks_Click(object sender, EventArgs e)
         {
             IncomingStocksform form = new IncomingStocksform();
             form.ShowDialog();
         }
 
-        private void btnOutgoingStocks_Click(object sender, EventArgs e)
+        private void BtnOutgoingStocks_Click(object sender, EventArgs e)
         {
             OutgoingStocksForm form = new OutgoingStocksForm();
             form.ShowDialog();
         }
 
-        private void btnViewTracking_Click(object sender, EventArgs e)
+        private void BtnViewTracking_Click(object sender, EventArgs e)
         {
             if (dgvItems.SelectedRows.Count == 1)
             {
@@ -163,24 +163,24 @@ namespace Citicon.Inventory
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void BtnRefresh_Click(object sender, EventArgs e)
         {
-            getItems();
+            GetItems();
         }
 
-        private void lblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             User.CurrentUser = null;
             Close();
         }
 
-        private void btnReports_Click(object sender, EventArgs e)
+        private void BtnReports_Click(object sender, EventArgs e)
         {
             ReportsForm form = new ReportsForm();
             form.ShowDialog();
         }
 
-        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        private void TbxSearch_TextChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvItems.Rows)
             {

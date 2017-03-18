@@ -137,7 +137,7 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             }
         }
 
-        private void dgvQuotationList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DgvQuotationList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SelectedQuotation = (Quotation)dgvQuotationList.SelectedItem;
         }
@@ -147,7 +147,7 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             PreviousButtonClick?.Invoke(this, new RoutedEventArgs());
         }
 
-        private void btnApproved_Click(object sender, RoutedEventArgs e)
+        private void BtnApproved_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedQuotation == null)
             {
@@ -172,7 +172,7 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             }
         }
 
-        private void btnForRevision_Click(object sender, RoutedEventArgs e)
+        private void BtnForRevision_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedQuotation == null)
             {
@@ -184,7 +184,7 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             task.ContinueWith(DisplayQuotationResult);
         }
 
-        private void btnFinalApproved_Click(object sender, RoutedEventArgs e)
+        private void BtnFinalApproved_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedQuotation == null)
             {
@@ -196,12 +196,12 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             task.ContinueWith(DisplayQuotationResult);
         }
 
-        private async void btnRefresh_Click(object sender, RoutedEventArgs e)
+        private async void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             await LoadQuotationListAsync();
         }
 
-        private void btnViewNoteDetailsInWord_Click(object sender, RoutedEventArgs e)
+        private void BtnViewNoteDetailsInWord_Click(object sender, RoutedEventArgs e)
         {
             if (!Supports.OpenFileQuotationFile(SelectedQuotation?.ToString()))
             {

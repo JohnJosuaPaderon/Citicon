@@ -10,12 +10,7 @@ namespace Citicon.DataProcess
     {
         public LogEmployee(EmployeeLogin loginInfo)
         {
-            if (loginInfo == null)
-            {
-                throw new ArgumentNullException(nameof(loginInfo));
-            }
-
-            LoginInfo = loginInfo;
+            LoginInfo = loginInfo ?? throw new ArgumentNullException(nameof(loginInfo));
             TimeLogTypeManager = new TimeLogTypeManager();
         }
 

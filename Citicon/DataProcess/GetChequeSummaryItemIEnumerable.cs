@@ -9,12 +9,16 @@ namespace Citicon.DataProcess
 {
     internal sealed class GetChequeSummaryItemIEnumerable : DataProcess
     {
-        public GetChequeSummaryItemIEnumerable(bool filterByRangeDate, DateTimeRange rangeDate, bool filterBySupplier, Supplier supplier)
+        public GetChequeSummaryItemIEnumerable(bool filterByRangeDate, DateTimeRange rangeDate, bool filterBySupplier, Supplier supplier, bool filterByBranch, Branch branch, bool filterByCompany, Company company)
         {
             FilterByRangeDate = filterByRangeDate;
             FilterBySupplier = filterBySupplier;
             RangeDate = rangeDate;
             Supplier = supplier;
+            FilterByBranch = filterByBranch;
+            Branch = branch;
+            FilterByCompany = filterByCompany;
+            Company = company;
             SupplierManager = new SupplierManager();
             BankAccountManager = new BankAccountManager();
         }
@@ -23,6 +27,10 @@ namespace Citicon.DataProcess
         private DateTimeRange RangeDate;
         private bool FilterBySupplier;
         private Supplier Supplier;
+        private bool FilterByBranch;
+        private Branch Branch;
+        private bool FilterByCompany;
+        private Company Company;
         private SupplierManager SupplierManager;
         private BankAccountManager BankAccountManager;
 
@@ -30,10 +38,14 @@ namespace Citicon.DataProcess
         {
             var command = Utility.CreateProcedureCommand("GetFilteredChequeSummary", connection);
             command.Parameters.AddWithValue("@_FilterByRangeDate", FilterByRangeDate);
-            command.Parameters.AddWithValue("@_RangeStart", RangeDate.Start);
-            command.Parameters.AddWithValue("@_RangeEnd", RangeDate.End);
+            command.Parameters.AddWithValue("@_RangeStart", RangeDate?.Start);
+            command.Parameters.AddWithValue("@_RangeEnd", RangeDate?.End);
             command.Parameters.AddWithValue("@_FilterBySupplierId", FilterBySupplier);
             command.Parameters.AddWithValue("@_SupplierId", Supplier?.Id);
+            command.Parameters.AddWithValue("@_FilterByBranchId", FilterByBranch);
+            command.Parameters.AddWithValue("@_BranchId", Branch?.Id);
+            command.Parameters.AddWithValue("@_FilterByCompanyId", FilterByCompany);
+            command.Parameters.AddWithValue("@_CompanyId", Company?.Id);
 
             return command;
         }

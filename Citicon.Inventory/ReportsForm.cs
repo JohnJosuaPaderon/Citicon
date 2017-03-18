@@ -23,7 +23,7 @@ namespace Citicon.Inventory
             cmbxIncomingStocksMonthlyMonth.Tag = ReportType.Monthly;
         }
 
-        private void showIncomingReportSettings()
+        private void ShowIncomingReportSettings()
         {
             foreach (Control control in panelIncomingStocksSettings.Controls)
             {
@@ -31,7 +31,7 @@ namespace Citicon.Inventory
             }
         }
 
-        private void cmbxIncomingStocksReportType_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbxIncomingStocksReportType_SelectedIndexChanged(object sender, EventArgs e)
         {
             incomingStocksReportType = (ReportType)Enum.Parse(typeof(ReportType), cmbxIncomingStocksReportType.SelectedItem.ToString());
             switch (incomingStocksReportType)
@@ -49,7 +49,7 @@ namespace Citicon.Inventory
                     lblIncomingStocksSelect.Text = "Select";
                     break;
             }
-            showIncomingReportSettings();
+            ShowIncomingReportSettings();
         }
     }
 }

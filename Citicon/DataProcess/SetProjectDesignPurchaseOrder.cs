@@ -12,11 +12,6 @@ namespace Citicon.DataProcess
     {
         public SetProjectDesignPurchaseOrder(PurchaseOrder purchaseOrder, List<ProjectDesign> projectDesignList)
         {
-            if (purchaseOrder == null)
-            {
-                throw new ArgumentNullException(nameof(purchaseOrder));
-            }
-
             if (projectDesignList == null)
             {
                 throw new ArgumentNullException(nameof(projectDesignList));
@@ -27,7 +22,7 @@ namespace Citicon.DataProcess
                 throw new ArgumentException("Cannot be empty.", nameof(projectDesignList));
             }
 
-            PurchaseOrder = purchaseOrder;
+            PurchaseOrder = purchaseOrder ?? throw new ArgumentNullException(nameof(purchaseOrder));
             ProjectDesignList = projectDesignList;
             ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
@@ -38,8 +33,10 @@ namespace Citicon.DataProcess
 
         private MySqlCommand CreateCommand(ProjectDesign projectDesign, MySqlConnection connection, MySqlTransaction transaction)
         {
-            var command = new MySqlCommand("SetProjectDesignPurchaseOrderId", connection, transaction);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("SetProjectDesignPurchaseOrderId", connection, transaction)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             command.Parameters.AddWithValue("@_PurchaseOrderId", PurchaseOrder.Id);
             command.Parameters.AddWithValue("@_ProjectDesignId", projectDesign.Id);
             return command;

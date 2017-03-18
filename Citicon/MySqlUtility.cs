@@ -13,41 +13,45 @@ namespace Citicon
 
         public MySqlParameter CreateInOutParameter(string parameterName, object value)
         {
-            var parameter = new MySqlParameter();
-            parameter.ParameterName = parameterName;
-            parameter.Direction = ParameterDirection.InputOutput;
-            parameter.Value = value;
-
+            var parameter = new MySqlParameter()
+            {
+                ParameterName = parameterName,
+                Direction = ParameterDirection.InputOutput,
+                Value = value
+            };
             return parameter;
         }
 
         public MySqlParameter CreateOutParameter(string parameterName)
         {
-            var parameter = new MySqlParameter();
-            parameter.ParameterName = parameterName;
-            parameter.Direction = ParameterDirection.Output;
-
+            var parameter = new MySqlParameter()
+            {
+                ParameterName = parameterName,
+                Direction = ParameterDirection.Output
+            };
             return parameter;
         }
 
         public MySqlCommand CreateProcedureCommand(string storedProcedure, MySqlConnection connection)
         {
-            var command = new MySqlCommand();
-            command.CommandText = storedProcedure;
-            command.Connection = connection;
-            command.CommandType = CommandType.StoredProcedure;
-
+            var command = new MySqlCommand()
+            {
+                CommandText = storedProcedure,
+                Connection = connection,
+                CommandType = CommandType.StoredProcedure
+            };
             return command;
         }
 
         public MySqlCommand CreateProcedureCommand(string storedProcedure, MySqlConnection connection, MySqlTransaction transaction)
         {
-            var command = new MySqlCommand();
-            command.CommandText = storedProcedure;
-            command.Connection = connection;
-            command.Transaction = transaction;
-            command.CommandType = CommandType.StoredProcedure;
-
+            var command = new MySqlCommand()
+            {
+                CommandText = storedProcedure,
+                Connection = connection,
+                Transaction = transaction,
+                CommandType = CommandType.StoredProcedure
+            };
             return command;
         }
 

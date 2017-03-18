@@ -26,12 +26,12 @@ namespace Citicon
 
         private void UserManager_AddedUnsuccessful(User e)
         {
-            displayError("Failed to add user");
+            DisplayError("Failed to add user");
         }
 
         private void UserManager_Added(User e)
         {
-            notify("User added successfully!");
+            Notify("User added successfully!");
             tbxConfirmPassword.Text = string.Empty;
             tbxDisplayName.Text = string.Empty;
             tbxPassword.Text = string.Empty;
@@ -49,22 +49,22 @@ namespace Citicon
             users = await userManager.GetListAsync();
         }
 
-        private void displayError(string message)
+        private void DisplayError(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void notify(string message)
+        private void Notify(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (tbxUsername.Text.Trim() == string.Empty) { displayError("Username must be valid!"); return; }
-            if (tbxPassword.Text.Trim() == string.Empty) { displayError("Password must be valid!"); return; }
-            if (tbxConfirmPassword.Text.Trim() != tbxPassword.Text.Trim()) { displayError("Passwords don't match!"); return; }
-            if (tbxDisplayName.Text.Trim() == string.Empty) { displayError("Display Name must be valid!"); return; }
+            if (tbxUsername.Text.Trim() == string.Empty) { DisplayError("Username must be valid!"); return; }
+            if (tbxPassword.Text.Trim() == string.Empty) { DisplayError("Password must be valid!"); return; }
+            if (tbxConfirmPassword.Text.Trim() != tbxPassword.Text.Trim()) { DisplayError("Passwords don't match!"); return; }
+            if (tbxDisplayName.Text.Trim() == string.Empty) { DisplayError("Display Name must be valid!"); return; }
             userManager.Add(new User
             {
                 Active = true,
@@ -77,7 +77,7 @@ namespace Citicon
             });
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }

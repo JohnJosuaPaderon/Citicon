@@ -49,12 +49,12 @@ namespace Citicon.Inventory
             trackings = await itemManager.GetTrackingsAsync(currentItem);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void tbxItemCode_TextChanged(object sender, EventArgs e)
+        private void TbxItemCode_TextChanged(object sender, EventArgs e)
         {
         }
     }

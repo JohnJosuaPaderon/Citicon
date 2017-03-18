@@ -8,10 +8,11 @@ namespace Citicon.DataProcess
     {
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand();
-            command.Connection = connection;
-            command.CommandText = "SELECT NOW();";
-
+            var command = new MySqlCommand()
+            {
+                Connection = connection,
+                CommandText = "SELECT NOW();"
+            };
             return command;
         }
 

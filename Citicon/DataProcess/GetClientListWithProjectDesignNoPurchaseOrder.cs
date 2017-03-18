@@ -25,8 +25,10 @@ namespace Citicon.DataProcess
         #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand("GetClientListWithProjectDesignNoPurchaseOrderId", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("GetClientListWithProjectDesignNoPurchaseOrderId", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             return command;
         }
 

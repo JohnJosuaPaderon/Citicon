@@ -29,14 +29,14 @@
         <materialDesign:TransitioningContent Grid.Row="0" Grid.Column="0" OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromLeft,Duration=0:0:1}">
             <materialDesign:Card VerticalAlignment="Stretch">
                 <Grid>
-                    <DataGrid x:Name="dgvProjectDesigns" IsReadOnly="True" SelectionChanged="dgvProjectDesigns_SelectionChanged">
+                    <DataGrid x:Name="dgvProjectDesigns" IsReadOnly="True" SelectionChanged="DgvProjectDesigns_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Project Designs" Binding="{Binding}"/>
                             <DataGridTextColumn Header="Client" Binding="{Binding Project.Client}"/>
                             <DataGridTextColumn Header="Project" Binding="{Binding Project}"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="btnRefresh" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Click="btnRefresh_Click" >
+                    <Button x:Name="btnRefresh" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Click="BtnRefresh_Click" >
                         <materialDesign:PackIcon Kind="Refresh" Height="30" Width="30"/>
                     </Button>
                 </Grid>
@@ -76,7 +76,7 @@
                         </materialDesign:TransitioningContent>
                         <Border Height="10"/>
                         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
-                            <TextBox x:Name="tbxPricePerCubicMeter" materialDesign:HintAssist.Hint="Price/Cu.M." LostFocus="tbxPricePerCubicMeter_LostFocus" LostTouchCapture="tbxPricePerCubicMeter_LostTouchCapture" GotTouchCapture="tbxPricePerCubicMeter_GotTouchCapture"/>
+                            <TextBox x:Name="tbxPricePerCubicMeter" materialDesign:HintAssist.Hint="Price/Cu.M." LostFocus="TbxPricePerCubicMeter_LostFocus" LostTouchCapture="TbxPricePerCubicMeter_LostTouchCapture" GotTouchCapture="TbxPricePerCubicMeter_GotTouchCapture"/>
                         </materialDesign:TransitioningContent>
                         <Border Height="10"/>
                         <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect Kind=SlideInFromBottom,Duration=0:0:1}" OpeningEffectsOffset="{materialDesign:IndexedItemOffsetMultiplier 0:0:0.1}">
@@ -88,7 +88,7 @@
         </materialDesign:TransitioningContent>
         <ItemsControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right">
             <materialDesign:TransitioningContent >
-                <Button x:Name="btnApprove" Padding="30,5" Height="NaN" Click="btnApprove_Click">
+                <Button x:Name="btnApprove" Padding="30,5" Height="NaN" Click="BtnApprove_Click">
                     <StackPanel>
                         <materialDesign:PackIcon Kind="CheckCircleOutline" Height="30" Width="30" HorizontalAlignment="Center"/>
                         <Border Height="5"/>

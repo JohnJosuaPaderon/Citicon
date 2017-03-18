@@ -20,12 +20,12 @@ namespace Citicon.Inventory
             if (Supports.DebugMode) MessageBox.Show(ex.Message);
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
-            login();
+            Login();
         }
 
-        private void login()
+        private void Login()
         {
             userManager.Login(tbxUsername.Text, tbxPassword.Text);
             if (User.CurrentUser != null)
@@ -40,23 +40,23 @@ namespace Citicon.Inventory
                         tbxPassword.Text = string.Empty;
                         Show();
                     }
-                    else displayError("ACCESS DENIED!");
+                    else DisplayError("ACCESS DENIED!");
                 }
-                else displayError("INACTIVE USER!");
+                else DisplayError("INACTIVE USER!");
             }
-            else displayError("USER NOT FOUND!");
+            else DisplayError("USER NOT FOUND!");
         }
-        private void displayError(string message)
+        private void DisplayError(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void TextBox_Login(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) login();
+            if (e.KeyCode == Keys.Enter) Login();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }

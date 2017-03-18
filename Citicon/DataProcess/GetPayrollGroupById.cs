@@ -10,12 +10,7 @@ namespace Citicon.DataProcess
     {
         public GetPayrollGroupById(uint payrollGroupId)
         {
-            if (payrollGroupId == 0)
-            {
-                throw new ArgumentException("Value cannot be zero.", nameof(payrollGroupId));
-            }
-
-            PayrollGroupId = payrollGroupId;
+            PayrollGroupId = payrollGroupId == 0 ? throw new ArgumentException("Value cannot be zero.", nameof(payrollGroupId)) : payrollGroupId;
         }
 
         private uint PayrollGroupId;

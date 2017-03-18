@@ -160,8 +160,8 @@
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
-                            <Button x:Name="btnSave" Grid.Column="1" Content="Sign-up" Click="btnSave_Click"/>
-                            <Button x:Name="btnCancel" Grid.Column="3" Content="Cancel" Click="btnCancel_Click"/>
+                            <Button x:Name="btnSave" Grid.Column="1" Content="Sign-up" Click="BtnSave_Click"/>
+                            <Button x:Name="btnCancel" Grid.Column="3" Content="Cancel" Click="BtnCancel_Click"/>
 
                         </Grid>
                     </materialDesign:TransitioningContent>

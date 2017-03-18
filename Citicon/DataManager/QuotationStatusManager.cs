@@ -7,10 +7,7 @@ namespace Citicon.DataManager
     {
         public static QuotationStatus Parse(string value)
         {
-            QuotationStatus quotationStatus;
-
-            Enum.TryParse(value, out quotationStatus);
-
+            Enum.TryParse(value, out QuotationStatus quotationStatus);
             return quotationStatus;
         }
 

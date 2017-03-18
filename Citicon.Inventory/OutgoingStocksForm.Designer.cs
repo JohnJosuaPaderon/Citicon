@@ -151,8 +151,8 @@
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(754, 0);
             this.dgvItems.TabIndex = 64;
-            this.dgvItems.DoubleClick += new System.EventHandler(this.dgvItems_DoubleClick);
-            this.dgvItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvItems_KeyDown);
+            this.dgvItems.DoubleClick += new System.EventHandler(this.DgvItems_DoubleClick);
+            this.dgvItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvItems_KeyDown);
             // 
             // colItem
             // 
@@ -275,7 +275,7 @@
             this.cmbxSearchBy.Name = "cmbxSearchBy";
             this.cmbxSearchBy.Size = new System.Drawing.Size(299, 29);
             this.cmbxSearchBy.TabIndex = 66;
-            this.cmbxSearchBy.SelectedIndexChanged += new System.EventHandler(this.cmbxSearchBy_SelectedIndexChanged);
+            this.cmbxSearchBy.SelectedIndexChanged += new System.EventHandler(this.CmbxSearchBy_SelectedIndexChanged);
             // 
             // lblSearchBy
             // 
@@ -302,7 +302,7 @@
             this.btnSearchItems.TabIndex = 63;
             this.btnSearchItems.Text = "Search";
             this.btnSearchItems.UseVisualStyleBackColor = false;
-            this.btnSearchItems.Click += new System.EventHandler(this.btnSearchItems_Click);
+            this.btnSearchItems.Click += new System.EventHandler(this.BtnSearchItems_Click);
             // 
             // tbxSearchItems
             // 
@@ -316,9 +316,9 @@
             this.tbxSearchItems.Name = "tbxSearchItems";
             this.tbxSearchItems.Size = new System.Drawing.Size(756, 29);
             this.tbxSearchItems.TabIndex = 62;
-            this.tbxSearchItems.TextChanged += new System.EventHandler(this.tbxSearchItems_TextChanged);
-            this.tbxSearchItems.Enter += new System.EventHandler(this.tbxSearchItems_Enter);
-            this.tbxSearchItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxSearchItems_KeyDown);
+            this.tbxSearchItems.TextChanged += new System.EventHandler(this.TbxSearchItems_TextChanged);
+            this.tbxSearchItems.Enter += new System.EventHandler(this.TbxSearchItems_Enter);
+            this.tbxSearchItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxSearchItems_KeyDown);
             // 
             // lblSearchItem
             // 
@@ -416,7 +416,7 @@
             // tmrGenerateItems
             // 
             this.tmrGenerateItems.Interval = 10000;
-            this.tmrGenerateItems.Tick += new System.EventHandler(this.tmrGenerateItems_Tick);
+            this.tmrGenerateItems.Tick += new System.EventHandler(this.TmrGenerateItems_Tick);
             // 
             // lblTransactionDate
             // 
@@ -479,8 +479,8 @@
             this.cmbxBranch.Name = "cmbxBranch";
             this.cmbxBranch.Size = new System.Drawing.Size(201, 29);
             this.cmbxBranch.TabIndex = 79;
-            this.cmbxBranch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxBranch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxBranch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxBranch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // lblBranch
             // 
@@ -515,8 +515,8 @@
             this.cmbxCompany.Name = "cmbxCompany";
             this.cmbxCompany.Size = new System.Drawing.Size(201, 29);
             this.cmbxCompany.TabIndex = 81;
-            this.cmbxCompany.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxCompany.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxCompany.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxCompany.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // lblRequestedBy
             // 
@@ -553,8 +553,8 @@
             this.tbxRequestedBy.Name = "tbxRequestedBy";
             this.tbxRequestedBy.Size = new System.Drawing.Size(406, 29);
             this.tbxRequestedBy.TabIndex = 85;
-            this.tbxRequestedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxRequestedBy_KeyDown);
-            this.tbxRequestedBy.Leave += new System.EventHandler(this.tbxRequestedBy_Leave);
+            this.tbxRequestedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxRequestedBy_KeyDown);
+            this.tbxRequestedBy.Leave += new System.EventHandler(this.TbxRequestedBy_Leave);
             // 
             // tbxReleasedBy
             // 
@@ -569,8 +569,8 @@
             this.tbxReleasedBy.Name = "tbxReleasedBy";
             this.tbxReleasedBy.Size = new System.Drawing.Size(406, 29);
             this.tbxReleasedBy.TabIndex = 86;
-            this.tbxReleasedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxReleasedBy_KeyDown);
-            this.tbxReleasedBy.Leave += new System.EventHandler(this.tbxReleasedBy_Leave);
+            this.tbxReleasedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxReleasedBy_KeyDown);
+            this.tbxReleasedBy.Leave += new System.EventHandler(this.TbxReleasedBy_Leave);
             // 
             // lblPurpose
             // 
@@ -610,7 +610,7 @@
             this.btnCancel.TabIndex = 90;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnSave
             // 
@@ -626,7 +626,7 @@
             this.btnSave.TabIndex = 89;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // lblTruck
             // 
@@ -651,8 +651,8 @@
             this.cmbxTruck.Size = new System.Drawing.Size(407, 29);
             this.cmbxTruck.Sorted = true;
             this.cmbxTruck.TabIndex = 92;
-            this.cmbxTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxTruck.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxTruck.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // btnClose
             // 
@@ -667,7 +667,7 @@
             this.btnClose.TabIndex = 93;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // lblSeriesNumber
             // 

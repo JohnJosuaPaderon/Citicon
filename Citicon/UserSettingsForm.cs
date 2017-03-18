@@ -35,7 +35,7 @@ namespace Citicon
             ckbxEditDisplayName.Checked = false;
             ckbxEditUsername.Checked = false;
             ckbxChangePassword.Checked = false;
-            resetFields();
+            ResetFields();
         }
 
         private void ExceptionCatched(Exception ex)
@@ -52,10 +52,10 @@ namespace Citicon
             changesFore = Color.Black;
             errorBack = Color.Firebrick;
             errorFore = Color.White;
-            resetFields();
+            ResetFields();
         }
 
-        private void resetFields()
+        private void ResetFields()
         {
             if (!ckbxEditDisplayName.Checked) tbxUsername.Text = User.CurrentUser?.Username;
             if (!ckbxEditUsername.Checked) tbxDisplayName.Text = User.CurrentUser?.DisplayName;
@@ -74,19 +74,19 @@ namespace Citicon
             }
         }
 
-        private void ckbxEditDisplayName_CheckedChanged(object sender, EventArgs e)
+        private void CkbxEditDisplayName_CheckedChanged(object sender, EventArgs e)
         {
             tbxDisplayName.Enabled = ckbxEditDisplayName.Checked;
-            resetFields();
+            ResetFields();
         }
 
-        private void ckbxEditUsername_CheckedChanged(object sender, EventArgs e)
+        private void CkbxEditUsername_CheckedChanged(object sender, EventArgs e)
         {
             tbxUsername.Enabled = ckbxEditUsername.Checked;
-            resetFields();
+            ResetFields();
         }
 
-        private void ckbxChangePassword_CheckedChanged(object sender, EventArgs e)
+        private void CkbxChangePassword_CheckedChanged(object sender, EventArgs e)
         {
             bool check = ckbxChangePassword.Checked;
             lblCurrentPassword.Enabled = check;
@@ -95,15 +95,15 @@ namespace Citicon
             tbxCurrentPassword.Enabled = check;
             tbxNewPassword.Enabled = check;
             tbxReTypePassword.Enabled = check;
-            resetFields();
+            ResetFields();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void tbxDisplayName_TextChanged(object sender, EventArgs e)
+        private void TbxDisplayName_TextChanged(object sender, EventArgs e)
         {
             if (tbxDisplayName.Text.Trim() == string.Empty)
             {
@@ -122,7 +122,7 @@ namespace Citicon
             }
         }
 
-        private void tbxUsername_TextChanged(object sender, EventArgs e)
+        private void TbxUsername_TextChanged(object sender, EventArgs e)
         {
             if (tbxUsername.Text.Trim() == string.Empty)
             {
@@ -141,7 +141,7 @@ namespace Citicon
             }
         }
 
-        private void tbxCurrentPassword_TextChanged(object sender, EventArgs e)
+        private void TbxCurrentPassword_TextChanged(object sender, EventArgs e)
         {
             if (tbxCurrentPassword.Text.Trim() != User.CurrentUser?.Password)
             {
@@ -155,7 +155,7 @@ namespace Citicon
             }
         }
 
-        private void tbxNewPassword_TextChanged(object sender, EventArgs e)
+        private void TbxNewPassword_TextChanged(object sender, EventArgs e)
         {
             var newPassword = tbxNewPassword.Text.Trim();
             if (newPassword == string.Empty || newPassword == User.CurrentUser?.Password)
@@ -170,7 +170,7 @@ namespace Citicon
             }
         }
 
-        private void tbxReTypePassword_TextChanged(object sender, EventArgs e)
+        private void TbxReTypePassword_TextChanged(object sender, EventArgs e)
         {
             var reTypePassword = tbxReTypePassword.Text.Trim();
             var newPassword = tbxNewPassword.Text.Trim();
@@ -186,7 +186,7 @@ namespace Citicon
             }
         }
 
-        private void btnSaveChanges_Click(object sender, EventArgs e)
+        private void BtnSaveChanges_Click(object sender, EventArgs e)
         {
             var activeDisplayName = User.CurrentUser?.DisplayName;
             var activeUsername = User.CurrentUser?.Username;
@@ -229,7 +229,7 @@ namespace Citicon
             }
         }
 
-        private void btnAddNewUser_Click(object sender, EventArgs e)
+        private void BtnAddNewUser_Click(object sender, EventArgs e)
         {
             AddUserForm form = new AddUserForm();
             form.ShowDialog();

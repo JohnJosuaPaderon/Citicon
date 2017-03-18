@@ -15,12 +15,7 @@ namespace Citicon.DataProcess
         #region Constructor
         public GetProjectDesignListByPurchaseOrder(PurchaseOrder purchaseOrder)
         {
-            if (purchaseOrder == null)
-            {
-                throw new ArgumentNullException(nameof(purchaseOrder));
-            }
-
-            PurchaseOrder = purchaseOrder;
+            PurchaseOrder = purchaseOrder ?? throw new ArgumentNullException(nameof(purchaseOrder));
             ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
         #endregion
@@ -33,8 +28,10 @@ namespace Citicon.DataProcess
         #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand("GetProjectDesignListByPurchaseOrderId", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("GetProjectDesignListByPurchaseOrderId", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             command.Parameters.AddWithValue("@_PurchaseOrderId", PurchaseOrder.Id);
             return command;
         }

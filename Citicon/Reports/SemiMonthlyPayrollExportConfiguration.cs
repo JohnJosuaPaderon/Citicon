@@ -10,8 +10,10 @@ namespace Citicon.Reports
     {
         public SemiMonthlyPayrollExportConfiguration()
         {
-            var configMap = new ExeConfigurationFileMap();
-            configMap.ExeConfigFilename = ConfigurationManager.AppSettings["SemiMonthlyPayrollExportConfigFile"];
+            var configMap = new ExeConfigurationFileMap()
+            {
+                ExeConfigFilename = ConfigurationManager.AppSettings["SemiMonthlyPayrollExportConfigFile"]
+            };
             Source = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
 
             BranchCell = GetCell("Branch");
@@ -23,26 +25,25 @@ namespace Citicon.Reports
 
         private int GetCellColumnIndex(string key)
         {
-            int cellColumnIndex;
-            int.TryParse(AppSettings[string.Format("Cell.ColumnIndex[{0}]", key)].Value, out cellColumnIndex);
+            int.TryParse(AppSettings[string.Format("Cell.ColumnIndex[{0}]", key)].Value, out int cellColumnIndex);
 
             return cellColumnIndex;
         }
 
         private int GetCellRowIndex(string key)
         {
-            int cellRowIndex;
-            int.TryParse(AppSettings[string.Format("Cell.RowIndex[{0}]", key)].Value, out cellRowIndex);
+            int.TryParse(AppSettings[string.Format("Cell.RowIndex[{0}]", key)].Value, out int cellRowIndex);
 
             return cellRowIndex;
         }
 
         private ExcelCell GetCell(string key)
         {
-            var cell = new ExcelCell();
-            cell.ColumnIndex = GetCellColumnIndex(key);
-            cell.RowIndex = GetCellRowIndex(key);
-
+            var cell = new ExcelCell()
+            {
+                ColumnIndex = GetCellColumnIndex(key),
+                RowIndex = GetCellRowIndex(key)
+            };
             return cell;
         }
 
@@ -83,8 +84,7 @@ namespace Citicon.Reports
 
             foreach (var item in Enum.GetNames(typeof(SemiMonthlyPayrollExportConfigurationColumnIndex)))
             {
-                SemiMonthlyPayrollExportConfigurationColumnIndex itemColumnIndex;
-                Enum.TryParse(item, out itemColumnIndex); 
+                Enum.TryParse(item, out SemiMonthlyPayrollExportConfigurationColumnIndex itemColumnIndex);
                 stringBuilder = stringBuilder.Replace(string.Format("[{0}]", item), string.Format("{0}{1}", GetExcelColumnName(ColumnIndex(itemColumnIndex)), rowIndex));
             }
 

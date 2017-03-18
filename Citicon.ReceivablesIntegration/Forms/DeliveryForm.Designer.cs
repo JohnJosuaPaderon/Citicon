@@ -119,7 +119,7 @@
             this.dgvScheduledProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvScheduledProjectDesign.Size = new System.Drawing.Size(876, 417);
             this.dgvScheduledProjectDesign.TabIndex = 108;
-            this.dgvScheduledProjectDesign.SelectionChanged += new System.EventHandler(this.dgvScheduledProjectDesign_SelectionChanged);
+            this.dgvScheduledProjectDesign.SelectionChanged += new System.EventHandler(this.DgvScheduledProjectDesign_SelectionChanged);
             // 
             // gbxProjectDesignDetails
             // 
@@ -364,7 +364,7 @@
             this.btnConfirmDelivery.TabIndex = 111;
             this.btnConfirmDelivery.Text = "Confirm Delivery";
             this.btnConfirmDelivery.UseVisualStyleBackColor = false;
-            this.btnConfirmDelivery.Click += new System.EventHandler(this.btnConfirmDelivery_Click);
+            this.btnConfirmDelivery.Click += new System.EventHandler(this.BtnConfirmDelivery_Click);
             // 
             // btnCancel
             // 
@@ -378,7 +378,7 @@
             this.btnCancel.TabIndex = 112;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // colScheduledProjectDesign
             // 

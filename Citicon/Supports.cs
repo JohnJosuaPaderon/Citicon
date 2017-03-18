@@ -50,41 +50,41 @@ namespace Citicon
             TouchKeyBoardProcess = null;
         }
 
-        private static string acceptedBySuggestionsLookupPath
+        private static string AcceptedBySuggestionsLookupPath
         {
             get { return ConfigurationManager.AppSettings["AcceptedBy.SuggestionsLookup"]; }
         }
-        private static string releasedBySuggestionLookupPath
+        private static string ReleasedBySuggestionLookupPath
         {
             get { return ConfigurationManager.AppSettings["ReleasedBy.SuggestionsLookup"]; }
         }
-        private static string requestedBySuggestionLookupPath
+        private static string RequestedBySuggestionLookupPath
         {
             get { return ConfigurationManager.AppSettings["RequestedBy.SuggestionsLookup"]; }
         }
         public static string[] AcceptedBySuggests
         {
-            get { return File.ReadAllLines(acceptedBySuggestionsLookupPath); }
+            get { return File.ReadAllLines(AcceptedBySuggestionsLookupPath); }
         }
         public static string[] ReleasedBySuggests
         {
-            get { return File.ReadAllLines(acceptedBySuggestionsLookupPath); }
+            get { return File.ReadAllLines(AcceptedBySuggestionsLookupPath); }
         }
         public static string[] RequestedBySuggests
         {
-            get { return File.ReadAllLines(requestedBySuggestionLookupPath); }
+            get { return File.ReadAllLines(RequestedBySuggestionLookupPath); }
         }
         public static void AppendAcceptedBySuggest(string suggests)
         {
-            File.AppendAllText(acceptedBySuggestionsLookupPath, $"\n{suggests}");
+            File.AppendAllText(AcceptedBySuggestionsLookupPath, $"\n{suggests}");
         }
         public static void AppendReleasedBySuggest(string suggests)
         {
-            File.AppendAllText(releasedBySuggestionLookupPath, $"\n{suggests}");
+            File.AppendAllText(ReleasedBySuggestionLookupPath, $"\n{suggests}");
         }
         public static void AppendRequestedBySuggest(string suggests)
         {
-            File.AppendAllText(requestedBySuggestionLookupPath, $"\n{suggests}");
+            File.AppendAllText(RequestedBySuggestionLookupPath, $"\n{suggests}");
         }
         public static DateTime SystemDate
         {
@@ -100,27 +100,27 @@ namespace Citicon
         }
         public struct CodePrefixes
         {
-            private static string getCodePrefix(string name)
+            private static string GetCodePrefix(string name)
             {
                 return ConfigurationManager.AppSettings[$"CodePrefix.{name}"];
             }
-            public static string Supplier { get { return getCodePrefix("Supplier"); } }
-            public static string Branch { get { return getCodePrefix("Branch"); } }
-            public static string Classification { get { return getCodePrefix("Classification"); } }
-            public static string SubClassification { get { return getCodePrefix("SubClassification"); } }
-            public static string Company { get { return getCodePrefix("Company"); } }
-            public static string VehicleType { get { return getCodePrefix("VehicleType"); } }
-            public static string Item { get { return getCodePrefix("Item"); } }
-            public static string Expense { get { return getCodePrefix("Expense"); } }
-            public static string Bank { get { return getCodePrefix("Bank"); } }
-            public static string BankAccount { get { return getCodePrefix("BankAccount"); } }
+            public static string Supplier { get { return GetCodePrefix("Supplier"); } }
+            public static string Branch { get { return GetCodePrefix("Branch"); } }
+            public static string Classification { get { return GetCodePrefix("Classification"); } }
+            public static string SubClassification { get { return GetCodePrefix("SubClassification"); } }
+            public static string Company { get { return GetCodePrefix("Company"); } }
+            public static string VehicleType { get { return GetCodePrefix("VehicleType"); } }
+            public static string Item { get { return GetCodePrefix("Item"); } }
+            public static string Expense { get { return GetCodePrefix("Expense"); } }
+            public static string Bank { get { return GetCodePrefix("Bank"); } }
+            public static string BankAccount { get { return GetCodePrefix("BankAccount"); } }
         }
         public static bool DebugMode
         {
             get { return bool.Parse(ConfigurationManager.AppSettings["DebugMode"]); }
         }
-        public static string ConnectionString { get { return getconfigx("connectionstring"); } }
-        public static string AdministratorKey { get { return getconfigx("administratorkey"); } }
+        public static string ConnectionString { get { return Getconfigx("connectionstring"); } }
+        public static string AdministratorKey { get { return Getconfigx("administratorkey"); } }
         public static Module AdministrativeModule
         {
             get
@@ -133,7 +133,7 @@ namespace Citicon
                 };
             }
         }
-        private static string configDir
+        private static string ConfigDir
         {
             get
             {
@@ -142,10 +142,10 @@ namespace Citicon
                 return directory;
             }
         }
-        private static string getconfigx(string name)
+        private static string Getconfigx(string name)
         {
             string defaultFile = $@"{Environment.CurrentDirectory}/{name}.ini";
-            string configFile = $@"{configDir}/{name}.ini";
+            string configFile = $@"{ConfigDir}/{name}.ini";
             if (!File.Exists(configFile))
             {
                 if (File.Exists(defaultFile)) File.WriteAllText(configFile, Encrypt(File.ReadAllText(defaultFile)));
@@ -157,7 +157,7 @@ namespace Citicon
         {
             get
             {
-                string file = $@"{configDir}/cryptokey.ini";
+                string file = $@"{ConfigDir}/cryptokey.ini";
                 if (!File.Exists(file)) { File.WriteAllText(file, ""); throw new FileNotFoundException("Crypto key"); }
                 return $"{File.ReadAllText(file).Replace(" ", "").ToUpper()}.sh";
             }

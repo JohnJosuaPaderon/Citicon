@@ -109,7 +109,7 @@ namespace Citicon.DesktopClient.QuotationApproval
             }
         }
 
-        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        private void BtnLogOut_Click(object sender, RoutedEventArgs e)
         {
             User.CurrentUser = null;
             MenuToggleButton.IsChecked = false;

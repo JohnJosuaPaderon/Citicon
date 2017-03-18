@@ -77,8 +77,8 @@ namespace Citicon.Inventory
         {
             dgvStocks.Rows.Add(e, e.LastStockValue, e.RemovedStockValue, e.TransactionDate.ToString("MMM dd, yyyy"));
             currentItem = itemManager.GetById(currentItem.Id);
-            await displayItem();
-            clearTransactionFields();
+            await DisplayItem();
+            ClearTransactionFields();
             MessageBox.Show("Transaction has been saved!");
             try
             {
@@ -86,7 +86,7 @@ namespace Citicon.Inventory
             }
             catch (Exception ex)
             {
-                displayError(ex.Message);
+                DisplayError(ex.Message);
             }
         }
 
@@ -105,7 +105,7 @@ namespace Citicon.Inventory
             Invoke(new Action(() => dgvStocks.Rows.Add(e, e.LastStockValue, e.RemovedStockValue, e.TransactionDate.ToString("MMM dd, yyyy"))));
         }
 
-        private async Task loadItems()
+        private async Task LoadItems()
         {
             items = null;
             tempItems.Clear();
@@ -134,20 +134,20 @@ namespace Citicon.Inventory
             companies = await companyManager.GetListAsync();
             vehicles = await vehicleManager.GetListAsync();
             tmrGenerateItems.Start();
-            await loadItems();
+            await LoadItems();
         }
 
-        private void tmrGenerateItems_Tick(object sender, EventArgs e)
+        private void TmrGenerateItems_Tick(object sender, EventArgs e)
         {
             //await loadItems();
         }
 
-        private void tbxSearchItems_TextChanged(object sender, EventArgs e)
+        private void TbxSearchItems_TextChanged(object sender, EventArgs e)
         {
-            appendItems(items != null ? items : tempItems?.ToArray(), false);
+            AppendItems(items ?? tempItems?.ToArray(), false);
         }
 
-        private void appendItems(Item[] list, bool asIsSearching)
+        private void AppendItems(Item[] list, bool asIsSearching)
         {
             if (tbxSearchItems.Text.Length < 8)
             {
@@ -166,11 +166,11 @@ namespace Citicon.Inventory
                         switch (searchCategory)
                         {
                             case SearchCategory.Description:
-                                if (item.Description == key) appendSingleItem(item); break;
+                                if (item.Description == key) AppendSingleItem(item); break;
                             case SearchCategory.Code:
-                                if (item.Code == key) appendSingleItem(item); break;
+                                if (item.Code == key) AppendSingleItem(item); break;
                             case SearchCategory.Classification:
-                                if (item.Classification?.Description == key) appendSingleItem(item); break;
+                                if (item.Classification?.Description == key) AppendSingleItem(item); break;
                             default:
                                 break;
                         }
@@ -180,12 +180,12 @@ namespace Citicon.Inventory
                         switch (searchCategory)
                         {
                             case SearchCategory.Description:
-                                if (item.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item); break;
+                                if (item.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) AppendSingleItem(item); break;
                             case SearchCategory.Code:
-                                if (item.Code.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item); break;
+                                if (item.Code.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) AppendSingleItem(item); break;
                             case SearchCategory.Classification:
                                 if (item.Classification != null)
-                                    if (item.Classification.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) appendSingleItem(item);
+                                    if (item.Classification.Description.StartsWith(key, StringComparison.CurrentCultureIgnoreCase)) AppendSingleItem(item);
                                 break;
                             default:
                                 break;
@@ -197,7 +197,7 @@ namespace Citicon.Inventory
             if (dgvItems.Rows.Count == 0) dgvItems.Height = 0;
         }
 
-        private void appendSingleItem(Item item)
+        private void AppendSingleItem(Item item)
         {
             foreach (DataGridViewRow row in dgvItems.Rows)
                 if (((Item)row.Cells[colItem.Name].Value) == item) return;
@@ -205,9 +205,9 @@ namespace Citicon.Inventory
             if (HasRows) dgvItems.Rows[0].Selected = true;
         }
 
-        private void cmbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            appendItems(items != null ? items : tempItems?.ToArray(), false);
+            AppendItems(items ?? tempItems?.ToArray(), false);
         }
 
         private bool HasRows
@@ -220,11 +220,11 @@ namespace Citicon.Inventory
             get { return dgvItems.SelectedRows.Count > 0; }
         }
 
-        private async void tbxSearchItems_KeyDown(object sender, KeyEventArgs e)
+        private async void TbxSearchItems_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                await getItemFromDatagridView();
+                await GetItemFromDatagridView();
             }
             else if (e.KeyCode == Keys.Down)
             {
@@ -237,11 +237,11 @@ namespace Citicon.Inventory
             }
         }
 
-        private async void dgvItems_KeyDown(object sender, KeyEventArgs e)
+        private async void DgvItems_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                await getItemFromDatagridView();
+                await GetItemFromDatagridView();
             }
             else if (e.KeyCode != Keys.Down && e.KeyCode != Keys.Up && e.KeyCode != Keys.Left && e.KeyCode != Keys.Right)
             {
@@ -252,7 +252,7 @@ namespace Citicon.Inventory
             }
         }
 
-        private void clearTransactionFields()
+        private void ClearTransactionFields()
         {
             tbxPurpose.Text = string.Empty;
             tbxReleasedBy.Text = string.Empty;
@@ -264,24 +264,24 @@ namespace Citicon.Inventory
             dtpTransactionDate.Value = DateTime.Now;
         }
 
-        private async void dgvItems_DoubleClick(object sender, EventArgs e)
+        private async void DgvItems_DoubleClick(object sender, EventArgs e)
         {
-            await getItemFromDatagridView();
+            await GetItemFromDatagridView();
         }
 
-        private async Task getItemFromDatagridView()
+        private async Task GetItemFromDatagridView()
         {
             if (HasSelectedRows)
             {
                 currentItem = (Item)dgvItems.SelectedRows[0].Cells[colItem.Name].Value;
                 dgvItems.Rows.Clear();
                 dgvItems.Height = 0;
-                await displayItem();
+                await DisplayItem();
             }
             else MessageBox.Show("No item is selected!");
         }
 
-        private async Task displayItem()
+        private async Task DisplayItem()
         {
             tbxItemCode.Text = string.Empty;
             tbxItemDescription.Text = string.Empty;
@@ -296,20 +296,20 @@ namespace Citicon.Inventory
             }
         }
 
-        private void btnSearchItems_Click(object sender, EventArgs e)
+        private void BtnSearchItems_Click(object sender, EventArgs e)
         {
-            appendItems(items != null ? items : tempItems?.ToArray(), true);
+            AppendItems(items ?? tempItems?.ToArray(), true);
         }
 
-        private void tbxSearchItems_Enter(object sender, EventArgs e)
+        private void TbxSearchItems_Enter(object sender, EventArgs e)
         {
             tbxSearchItems.Select(0, tbxSearchItems.Text.Length);
         }
-        private void displayError(string message)
+        private void DisplayError(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             var transactionDate = dtpTransactionDate.Value;
             var removedStockValue = nudRemovedStockValue.Value;
@@ -323,32 +323,32 @@ namespace Citicon.Inventory
 
             if (seriesNumber == 0)
             {
-                displayError("Series No. should not be set to zero."); return;
+                DisplayError("Series No. should not be set to zero."); return;
             }
 
             if (transactionDate == default(DateTime))
             {
-                displayError("Transaction Date should be valid!"); return;
+                DisplayError("Transaction Date should be valid!"); return;
             }
             if (removedStockValue == 0)
             {
-                displayError("Removed stock valud should not be 0 (zero)!"); return;
+                DisplayError("Removed stock valud should not be 0 (zero)!"); return;
             }
             if (branch == null)
             {
-                displayError("Branch should be valid!"); return;
+                DisplayError("Branch should be valid!"); return;
             }
             if (company == null)
             {
-                displayError("Company should be valid!"); return;
+                DisplayError("Company should be valid!"); return;
             }
             if (requestedBy == string.Empty)
             {
-                displayError("Requesting personnel should be indicated!"); return;
+                DisplayError("Requesting personnel should be indicated!"); return;
             }
             if (releasedBy == string.Empty)
             {
-                displayError("Releasing personnel should be indicated!"); return;
+                DisplayError("Releasing personnel should be indicated!"); return;
             }
             //if (purpose == string.Empty)
             //{
@@ -356,15 +356,15 @@ namespace Citicon.Inventory
             //}
             if (truck == null)
             {
-                displayError("Truck should be valid!"); return;
+                DisplayError("Truck should be valid!"); return;
             }
             if (currentItem == null)
             {
-                displayError("Please select an item first!"); return;
+                DisplayError("Please select an item first!"); return;
             }
             if (currentItem.StockValue < removedStockValue)
             {
-                displayError($"Stock value to be removed is greater than the current stock value of {currentItem}!"); return;
+                DisplayError($"Stock value to be removed is greater than the current stock value of {currentItem}!"); return;
             }
             transactionManager.Add(new Transaction
             {
@@ -382,7 +382,7 @@ namespace Citicon.Inventory
             });
         }
 
-        private void saveReleasedBySuggest()
+        private void SaveReleasedBySuggest()
         {
             var x = tbxReleasedBy.Text.Trim();
             if (!tbxReleasedBy.AutoCompleteCustomSource.Contains(x))
@@ -392,7 +392,7 @@ namespace Citicon.Inventory
             }
         }
 
-        private void saveRequestedBySuggest()
+        private void SaveRequestedBySuggest()
         {
             var x = tbxRequestedBy.Text.Trim();
             if (!tbxRequestedBy.AutoCompleteCustomSource.Contains(x))
@@ -402,37 +402,37 @@ namespace Citicon.Inventory
             }
         }
 
-        private void tbxRequestedBy_KeyDown(object sender, KeyEventArgs e)
+        private void TbxRequestedBy_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) saveRequestedBySuggest();
+            if (e.KeyCode == Keys.Enter) SaveRequestedBySuggest();
         }
 
-        private void tbxReleasedBy_KeyDown(object sender, KeyEventArgs e)
+        private void TbxReleasedBy_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) saveReleasedBySuggest();
+            if (e.KeyCode == Keys.Enter) SaveReleasedBySuggest();
         }
 
-        private void tbxRequestedBy_Leave(object sender, EventArgs e)
+        private void TbxRequestedBy_Leave(object sender, EventArgs e)
         {
-            saveRequestedBySuggest();
+            SaveRequestedBySuggest();
         }
 
-        private void tbxReleasedBy_Leave(object sender, EventArgs e)
+        private void TbxReleasedBy_Leave(object sender, EventArgs e)
         {
-            saveReleasedBySuggest();
+            SaveReleasedBySuggest();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
-            clearTransactionFields();
+            ClearTransactionFields();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void searchableComboBox(object sender, MouseEventArgs e)
+        private void SearchableComboBox(object sender, MouseEventArgs e)
         {
             if (e?.Button == MouseButtons.Right && sender is ComboBox)
             {
@@ -448,15 +448,15 @@ namespace Citicon.Inventory
             }
         }
 
-        private void cmbx_KeyDown(object sender, KeyEventArgs e)
+        private void Cmbx_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                changeComboBoxStyleToDropDownList((ComboBox)sender);
+                ChangeComboBoxStyleToDropDownList((ComboBox)sender);
             }
         }
 
-        private void changeComboBoxStyleToDropDownList(ComboBox cmbx)
+        private void ChangeComboBoxStyleToDropDownList(ComboBox cmbx)
         {
             if (cmbx.DropDownStyle != ComboBoxStyle.DropDownList) cmbx.DropDownStyle = ComboBoxStyle.DropDownList;
         }

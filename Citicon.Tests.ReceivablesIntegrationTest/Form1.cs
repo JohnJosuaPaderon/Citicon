@@ -11,19 +11,19 @@ namespace Citicon.Tests.ReceivablesIntegrationTest
             InitializeComponent();
         }
 
-        private void btnDeliveryScheduler_Click(object sender, EventArgs e)
+        private void BtnDeliveryScheduler_Click(object sender, EventArgs e)
         {
             var form = new DeliverySchedulerForm();
             form.Show();
         }
 
-        private void btnDeliveryForm_Click(object sender, EventArgs e)
+        private void BtnDeliveryForm_Click(object sender, EventArgs e)
         {
             var form = new DeliveryForm();
             form.Show();
         }
 
-        private void btnPurchaseOrderManagementForm_Click(object sender, EventArgs e)
+        private void BtnPurchaseOrderManagementForm_Click(object sender, EventArgs e)
         {
             var form = new PurchaseOrderManagementForm();
             form.ShowDialog();

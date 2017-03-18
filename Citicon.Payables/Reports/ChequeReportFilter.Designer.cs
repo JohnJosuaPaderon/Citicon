@@ -36,6 +36,10 @@
             this.lblRangeDateTo = new System.Windows.Forms.Label();
             this.dtpRangeDate_Start = new System.Windows.Forms.DateTimePicker();
             this.ckbxRangeDate = new System.Windows.Forms.CheckBox();
+            this.FilterByBranchCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByBranchComboBox = new System.Windows.Forms.ComboBox();
+            this.FilterByCompanyComboBox = new System.Windows.Forms.ComboBox();
+            this.FilterByCompanyCheckBox = new System.Windows.Forms.CheckBox();
             this.Filter.SuspendLayout();
             this.pnlRangeDate.SuspendLayout();
             this.SuspendLayout();
@@ -45,13 +49,17 @@
             this.Filter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Filter.Controls.Add(this.FilterByCompanyComboBox);
+            this.Filter.Controls.Add(this.FilterByCompanyCheckBox);
+            this.Filter.Controls.Add(this.FilterByBranchComboBox);
+            this.Filter.Controls.Add(this.FilterByBranchCheckBox);
             this.Filter.Controls.Add(this.cmbxSupplier);
             this.Filter.Controls.Add(this.ckbxSupplier);
             this.Filter.Controls.Add(this.pnlRangeDate);
             this.Filter.Controls.Add(this.ckbxRangeDate);
             this.Filter.Location = new System.Drawing.Point(3, 3);
             this.Filter.Name = "Filter";
-            this.Filter.Size = new System.Drawing.Size(754, 203);
+            this.Filter.Size = new System.Drawing.Size(927, 114);
             this.Filter.TabIndex = 0;
             this.Filter.TabStop = false;
             this.Filter.Text = "Filter";
@@ -129,6 +137,50 @@
             this.ckbxRangeDate.UseVisualStyleBackColor = true;
             this.ckbxRangeDate.CheckedChanged += new System.EventHandler(this.CkbxRangeDate_CheckedChanged);
             // 
+            // FilterByBranchCheckBox
+            // 
+            this.FilterByBranchCheckBox.AutoSize = true;
+            this.FilterByBranchCheckBox.Location = new System.Drawing.Point(508, 30);
+            this.FilterByBranchCheckBox.Name = "FilterByBranchCheckBox";
+            this.FilterByBranchCheckBox.Size = new System.Drawing.Size(77, 25);
+            this.FilterByBranchCheckBox.TabIndex = 4;
+            this.FilterByBranchCheckBox.Text = "Branch";
+            this.FilterByBranchCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByBranchCheckBox.CheckedChanged += new System.EventHandler(this.FilterByBranchCheckBox_CheckedChanged);
+            // 
+            // FilterByBranchComboBox
+            // 
+            this.FilterByBranchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FilterByBranchComboBox.Enabled = false;
+            this.FilterByBranchComboBox.FormattingEnabled = true;
+            this.FilterByBranchComboBox.Location = new System.Drawing.Point(610, 28);
+            this.FilterByBranchComboBox.Name = "FilterByBranchComboBox";
+            this.FilterByBranchComboBox.Size = new System.Drawing.Size(289, 29);
+            this.FilterByBranchComboBox.TabIndex = 5;
+            this.FilterByBranchComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterByBranchComboBox_SelectedIndexChanged);
+            // 
+            // FilterByCompanyComboBox
+            // 
+            this.FilterByCompanyComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FilterByCompanyComboBox.Enabled = false;
+            this.FilterByCompanyComboBox.FormattingEnabled = true;
+            this.FilterByCompanyComboBox.Location = new System.Drawing.Point(610, 63);
+            this.FilterByCompanyComboBox.Name = "FilterByCompanyComboBox";
+            this.FilterByCompanyComboBox.Size = new System.Drawing.Size(289, 29);
+            this.FilterByCompanyComboBox.TabIndex = 7;
+            this.FilterByCompanyComboBox.SelectedIndexChanged += new System.EventHandler(this.FilterByCompanyComboBox_SelectedIndexChanged);
+            // 
+            // FilterByCompanyCheckBox
+            // 
+            this.FilterByCompanyCheckBox.AutoSize = true;
+            this.FilterByCompanyCheckBox.Location = new System.Drawing.Point(508, 65);
+            this.FilterByCompanyCheckBox.Name = "FilterByCompanyCheckBox";
+            this.FilterByCompanyCheckBox.Size = new System.Drawing.Size(96, 25);
+            this.FilterByCompanyCheckBox.TabIndex = 6;
+            this.FilterByCompanyCheckBox.Text = "Company";
+            this.FilterByCompanyCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByCompanyCheckBox.CheckedChanged += new System.EventHandler(this.FilterByCompanyCheckBox_CheckedChanged);
+            // 
             // ChequeReportFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -139,7 +191,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ChequeReportFilter";
-            this.Size = new System.Drawing.Size(760, 209);
+            this.Size = new System.Drawing.Size(933, 120);
             this.Load += new System.EventHandler(this.ChequeReportFilter_Load);
             this.Filter.ResumeLayout(false);
             this.Filter.PerformLayout();
@@ -159,5 +211,9 @@
         private System.Windows.Forms.Label lblRangeDateTo;
         private System.Windows.Forms.CheckBox ckbxSupplier;
         private System.Windows.Forms.ComboBox cmbxSupplier;
+        private System.Windows.Forms.ComboBox FilterByBranchComboBox;
+        private System.Windows.Forms.CheckBox FilterByBranchCheckBox;
+        private System.Windows.Forms.ComboBox FilterByCompanyComboBox;
+        private System.Windows.Forms.CheckBox FilterByCompanyCheckBox;
     }
 }

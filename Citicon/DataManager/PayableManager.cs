@@ -121,8 +121,7 @@ namespace Citicon.Payables.DataManager
 
         private int CellMaxCount(string excelName, string fieldName)
         {
-            int maxCount;
-            int.TryParse(ConfigurationManager.AppSettings[$"{excelName}.MaxCount[{fieldName}]"], out maxCount);
+            int.TryParse(ConfigurationManager.AppSettings[$"{excelName}.MaxCount[{fieldName}]"], out int maxCount);
             return maxCount;
         }
 

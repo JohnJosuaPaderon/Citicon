@@ -47,7 +47,7 @@
             this.btnDeliveryScheduler.TabIndex = 2;
             this.btnDeliveryScheduler.Text = "Launch Delivery Scheduler Form";
             this.btnDeliveryScheduler.UseVisualStyleBackColor = false;
-            this.btnDeliveryScheduler.Click += new System.EventHandler(this.btnDeliveryScheduler_Click);
+            this.btnDeliveryScheduler.Click += new System.EventHandler(this.BtnDeliveryScheduler_Click);
             // 
             // btnDeliveryForm
             // 
@@ -62,7 +62,7 @@
             this.btnDeliveryForm.TabIndex = 3;
             this.btnDeliveryForm.Text = "Launch Delivery Form";
             this.btnDeliveryForm.UseVisualStyleBackColor = false;
-            this.btnDeliveryForm.Click += new System.EventHandler(this.btnDeliveryForm_Click);
+            this.btnDeliveryForm.Click += new System.EventHandler(this.BtnDeliveryForm_Click);
             // 
             // btnPurchaseOrderManagementForm
             // 
@@ -77,7 +77,7 @@
             this.btnPurchaseOrderManagementForm.TabIndex = 4;
             this.btnPurchaseOrderManagementForm.Text = "Launch Purchase Order Management Form";
             this.btnPurchaseOrderManagementForm.UseVisualStyleBackColor = false;
-            this.btnPurchaseOrderManagementForm.Click += new System.EventHandler(this.btnPurchaseOrderManagementForm_Click);
+            this.btnPurchaseOrderManagementForm.Click += new System.EventHandler(this.BtnPurchaseOrderManagementForm_Click);
             // 
             // Form1
             // 

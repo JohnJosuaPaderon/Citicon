@@ -25,8 +25,10 @@ namespace Citicon.DataProcess.ProjectDesignProcesses
         #region Helper Methods
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand("GetProjectDesignListForApproval", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("GetProjectDesignListForApproval", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             return command;
         }
         #endregion

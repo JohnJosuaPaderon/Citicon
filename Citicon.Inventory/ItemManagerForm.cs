@@ -45,8 +45,8 @@ namespace Citicon.Inventory
         {
             dgvItems.Rows.Remove(row);
             currentItem = null;
-            displayCurrentItem();
-            enableItemFields(false, false);
+            DisplayCurrentItem();
+            EnableItemFields(false, false);
             tbxItemDescription.AutoCompleteCustomSource.Remove(e.Description);
             MessageBox.Show("item successfully removed!", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -65,13 +65,13 @@ namespace Citicon.Inventory
             row.Cells[colItemsStockValue.Name].Value = e.StockValue.ToString("#,##0.00");
             //dgvItems.Rows.Insert(index, e, e.Code, e.Classification, e.SubClassification, e.StockValue.ToString("#,##0"));
             currentItem = null;
-            displayCurrentItem();
-            enableItemFields(false, false);
+            DisplayCurrentItem();
+            EnableItemFields(false, false);
         }
 
         private void ItemManager_AddedUnsuccessful(Item e)
         {
-            displayError("Item was not saved!");
+            DisplayError("Item was not saved!");
         }
 
         private void ItemManager_Added(Item e)
@@ -98,12 +98,12 @@ namespace Citicon.Inventory
                 }
             }
             currentItem = null;
-            displayCurrentItem();
-            enableItemFields(false, false);
+            DisplayCurrentItem();
+            EnableItemFields(false, false);
             tbxItemDescription.AutoCompleteCustomSource.Add(e.Description);
         }
 
-        private void displayCurrentItem()
+        private void DisplayCurrentItem()
         {
             tbxItemCode.Text = string.Empty;
             tbxItemDescription.Text = string.Empty;
@@ -142,25 +142,25 @@ namespace Citicon.Inventory
             if (Supports.DebugMode) MessageBox.Show(ex.Message);
         }
 
-        private async Task loadClassifications()
+        private async Task LoadClassifications()
         {
             cmbxItemClassification.Items.Clear();
             classifications = await classificationManager.GetListAsync();
         }
 
-        private void displayClassifications()
+        private void DisplayClassifications()
         {
             cmbxItemClassification.Items.AddRange(classifications);
         }
         
-        private async Task loadItems()
+        private async Task LoadItems()
         {
             dgvItems.Rows.Clear();
             tbxItemDescription.AutoCompleteCustomSource.Clear();
             items = await itemManager.GetListAsync();
         }
         
-        private void displayItems()
+        private void DisplayItems()
         {
             List<DataGridViewRow> rows = new List<DataGridViewRow>();
             List<string> autoCompleteCustomSource = new List<string>();
@@ -178,27 +178,27 @@ namespace Citicon.Inventory
             tbxItemDescription.AutoCompleteCustomSource.AddRange(autoCompleteCustomSource.ToArray());
         }
 
-        private async Task loadMeasurementUnits()
+        private async Task LoadMeasurementUnits()
         {
             cmbxMeasurementUnit.Items.Clear();
             measurementUnits = await measurementUnitManager.GetListAsync();
         }
 
-        private void displayMeasurementUnits()
+        private void DisplayMeasurementUnits()
         {
             cmbxMeasurementUnit.Items.AddRange(measurementUnits);
         }
 
-        private void btnNewItem_Click(object sender, EventArgs e)
+        private void BtnNewItem_Click(object sender, EventArgs e)
         {
-            checkChanges();
+            CheckChanges();
             currentItem = null;
-            displayCurrentItem();
-            enableItemFields(true, true);
+            DisplayCurrentItem();
+            EnableItemFields(true, true);
             cmbxItemClassification.Focus();
         }
 
-        private void enableItemFields(bool enabled, bool newItem)
+        private void EnableItemFields(bool enabled, bool newItem)
         {
             tbxItemCode.Enabled = enabled;
             tbxItemDescription.Enabled = enabled;
@@ -208,7 +208,7 @@ namespace Citicon.Inventory
             dgvItems.Enabled = !enabled;
         }
         
-        private void enableFields(bool enabled)
+        private void EnableFields(bool enabled)
         {
             btnCancelItem.Enabled = enabled;
             btnEditItem.Enabled = enabled;
@@ -223,30 +223,32 @@ namespace Citicon.Inventory
             btnViewPriceHistory.Enabled = enabled;
         }
 
-        private void displayMessage(string message)
+        private void DisplayMessage(string message)
         {
             Invoker(() => lblMessage.Text = message);
         }
 
         private void ItemManagerForm_Load(object sender, EventArgs e)
         {
-            enableFields(false);
-            displayMessage("Initializing...");
-            List<Task> tasks = new List<Task>();
-            tasks.Add(loadClassifications());
-            tasks.Add(loadMeasurementUnits());
-            tasks.Add(loadItems());
+            EnableFields(false);
+            DisplayMessage("Initializing...");
+            List<Task> tasks = new List<Task>
+            {
+                LoadClassifications(),
+                LoadMeasurementUnits(),
+                LoadItems()
+            };
             var task = Task.WhenAll(tasks.ToArray());
             task.ContinueWith(x =>
             {
-                displayMessage("Displaying data...");
+                DisplayMessage("Displaying data...");
                 Invoker(() => {
-                    displayClassifications();
-                    displayMeasurementUnits();
-                    displayItems();
-                    enableFields(true);
+                    DisplayClassifications();
+                    DisplayMeasurementUnits();
+                    DisplayItems();
+                    EnableFields(true);
                 });
-                displayMessage("");
+                DisplayMessage("");
             });
         }
 
@@ -255,13 +257,13 @@ namespace Citicon.Inventory
             Invoke(method);
         }
 
-        private void cmbxItemClassification_SelectedIndexChanged(object sender, EventArgs e)
+        private void CmbxItemClassification_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbxItemClassification.SelectedItem != null)
                 tbxItemCode.Text = itemManager.GenerateCode((Classification)cmbxItemClassification.SelectedItem);
         }
 
-        private bool itemHasChanges()
+        private bool ItemHasChanges()
         {
             var classification = (Classification)cmbxItemClassification.SelectedItem;
             var code = tbxItemCode.Text.Trim();
@@ -280,55 +282,55 @@ namespace Citicon.Inventory
             return false;
         }
 
-        private void insertCurrentItem()
+        private void InsertCurrentItem()
         {
             if (index < 0) index = dgvItems.Rows.Count - 1;
             dgvItems.Rows.Insert(index, currentItem, currentItem.Code, currentItem.Classification, currentItem.StockValue.ToString("#,##0"));
             currentItem = null;
             row = null;
             index = -1;
-            displayCurrentItem();
-            enableItemFields(false, false);
+            DisplayCurrentItem();
+            EnableItemFields(false, false);
         }
 
-        private void checkChanges()
+        private void CheckChanges()
         {
             if (currentItem != null)
             {
-                if (itemHasChanges())
+                if (ItemHasChanges())
                 {
-                    if (ask("Changes have been detected, Do you want to save this first before continue?") == DialogResult.Yes)
-                        saveItem();
-                    else insertCurrentItem();
+                    if (Ask("Changes have been detected, Do you want to save this first before continue?") == DialogResult.Yes)
+                        SaveItem();
+                    else InsertCurrentItem();
                 }
-                else insertCurrentItem();
+                else InsertCurrentItem();
             }
-            displayCurrentItem();
-            enableItemFields(false, false);
+            DisplayCurrentItem();
+            EnableItemFields(false, false);
         }
 
-        private void btnEditItem_Click(object sender, EventArgs e)
+        private void BtnEditItem_Click(object sender, EventArgs e)
         {
             if (dgvItems.SelectedRows.Count == 1)
             {
-                checkChanges();
+                CheckChanges();
                 row = dgvItems.SelectedRows[0];
                 index = row.Index;
                 currentItem = (Item)row.Cells[colItem.Name].Value;
-                displayCurrentItem();
-                enableItemFields(true, false);
+                DisplayCurrentItem();
+                EnableItemFields(true, false);
             }
         }
 
-        private void btnRemoveItem_Click(object sender, EventArgs e)
+        private void BtnRemoveItem_Click(object sender, EventArgs e)
         {
             if (dgvItems.SelectedRows.Count == 1)
             {
-                checkChanges();
+                CheckChanges();
                 row = dgvItems.SelectedRows[0];
                 index = row.Index;
                 currentItem = (Item)row.Cells[colItem.Name].Value;
-                if (ask($"Are you sure, you want to remove {currentItem}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {currentItem}?") == DialogResult.Yes)
                 {
                     itemManager.Remove(currentItem);
                 }
@@ -336,17 +338,17 @@ namespace Citicon.Inventory
             }
         }
 
-        private void dgvItems_SelectionChanged(object sender, EventArgs e)
+        private void DgvItems_SelectionChanged(object sender, EventArgs e)
         {
-            enableItemFields(false, false);
+            EnableItemFields(false, false);
         }
 
-        private void btnCancelItem_Click(object sender, EventArgs e)
+        private void BtnCancelItem_Click(object sender, EventArgs e)
         {
-            checkChanges();
+            CheckChanges();
         }
 
-        private bool validate()
+        private bool Validation()
         {
             var classification = (Classification)cmbxItemClassification.SelectedItem;
             var code = tbxItemCode.Text.Trim();
@@ -355,29 +357,29 @@ namespace Citicon.Inventory
             var measurementUnit = (MeasurementUnit)cmbxMeasurementUnit.SelectedItem;
             if (classification == null)
             {
-                displayError("Classification must be valid!");
+                DisplayError("Classification must be valid!");
                 return false;
             }
             if (code == string.Empty)
             {
-                displayError("Item code must be valid!");
+                DisplayError("Item code must be valid!");
                 return false;
             }
             if (description == string.Empty)
             {
-                displayError("Item description must be valid!");
+                DisplayError("Item description must be valid!");
                 return false;
             }
             if (stockValue > 0)
             {
                 if (currentItem == null)
                 {
-                    if (ask("Do you want to leave stock value to less than zero(0)?") == DialogResult.No) return false;
+                    if (Ask("Do you want to leave stock value to less than zero(0)?") == DialogResult.No) return false;
                 }
             }
             if (measurementUnit == null)
             {
-                displayError("Measurement unit must be valid!"); return false;
+                DisplayError("Measurement unit must be valid!"); return false;
             }
             foreach (DataGridViewRow row in dgvItems.Rows)
             {
@@ -385,35 +387,35 @@ namespace Citicon.Inventory
                 
                 if (item.Code == code && row.Index != this.row.Index)
                 {
-                    displayError("Item code already in use!");
+                    DisplayError("Item code already in use!");
                     return false;
                 }
                 if (item.Description == description)
                 {
-                    if (ask("Description already exists! Do you want to continue?") == DialogResult.No) return false;
+                    if (Ask("Description already exists! Do you want to continue?") == DialogResult.No) return false;
                 }
             }
             return true;
         }
 
-        private void displayError(string message)
+        private void DisplayError(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private DialogResult ask(string message)
+        private DialogResult Ask(string message)
         {
             return MessageBox.Show(message, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
-        private void btnSaveItem_Click(object sender, EventArgs e)
+        private void BtnSaveItem_Click(object sender, EventArgs e)
         {
-            saveItem();
+            SaveItem();
         }
 
-        private void saveItem()
+        private void SaveItem()
         {   
-            if (validate())
+            if (Validation())
             {
                 var classification = (Classification)cmbxItemClassification.SelectedItem;
                 var code = tbxItemCode.Text.Trim();
@@ -435,7 +437,7 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (itemHasChanges())
+                    if (ItemHasChanges())
                     {
                         currentItem.Classification = classification;
                         currentItem.Code = code;
@@ -445,18 +447,18 @@ namespace Citicon.Inventory
                         currentItem.CementSupplied = ckbxCementSupplied.Checked;
                         itemManager.Update(currentItem);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
                 currentItem = null;
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
         
-        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        private void TbxSearch_TextChanged(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvItems.Rows)
             {
@@ -470,7 +472,7 @@ namespace Citicon.Inventory
             }
         }
 
-        private void searchableComboBox(object sender, MouseEventArgs e)
+        private void SearchableComboBox(object sender, MouseEventArgs e)
         {
             if (e?.Button == MouseButtons.Right && sender is ComboBox)
             {
@@ -486,20 +488,20 @@ namespace Citicon.Inventory
             }
         }
 
-        private void cmbx_KeyDown(object sender, KeyEventArgs e)
+        private void Cmbx_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                changeComboBoxStyleToDropDownList((ComboBox)sender);
+                ChangeComboBoxStyleToDropDownList((ComboBox)sender);
             }
         }
 
-        private void changeComboBoxStyleToDropDownList(ComboBox cmbx)
+        private void ChangeComboBoxStyleToDropDownList(ComboBox cmbx)
         {
             if (cmbx.DropDownStyle != ComboBoxStyle.DropDownList) cmbx.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void btnViewPriceHistory_Click(object sender, EventArgs e)
+        private void BtnViewPriceHistory_Click(object sender, EventArgs e)
         {
             if (dgvItems.SelectedRows.Count == 1)
             {

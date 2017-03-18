@@ -11,7 +11,6 @@ namespace Citicon.Payables.Reports
         {
             InitializeComponent();
             ChequeSummaryItemManager = new ChequeSummaryItemManager();
-            ReportFilter.HasFiltered = HasFilteredChanged;
         }
 
         private ChequeSummaryItemManager ChequeSummaryItemManager;
@@ -26,7 +25,7 @@ namespace Citicon.Payables.Reports
             try
             {
                 dgvCheques.Rows.Clear();
-                var summaryItemIEnumerable = await ChequeSummaryItemManager.GetFilterIEnumerableAsync(ReportFilter.FilterByRangeDate, ReportFilter.RangeDate, ReportFilter.FilterBySupplier, ReportFilter.Supplier);
+                var summaryItemIEnumerable = await ChequeSummaryItemManager.GetFilterIEnumerableAsync(ReportFilter.FilterByRangeDate, ReportFilter.RangeDate, ReportFilter.FilterBySupplier, ReportFilter.Supplier, ReportFilter.FilterByBranch, ReportFilter.Branch, ReportFilter.FilterByCompany, ReportFilter.Company);
 
                 if (summaryItemIEnumerable != null)
                 {
@@ -63,6 +62,11 @@ namespace Citicon.Payables.Reports
         private async void BtnGenerate_Click(object sender, EventArgs e)
         {
             await GetChequeSummaryIEnumerableAsync();
+        }
+
+        private void ChequeReports_Load(object sender, EventArgs e)
+        {
+            ReportFilter.HasFiltered = HasFilteredChanged;
         }
     }
 }

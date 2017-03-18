@@ -66,9 +66,10 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             if (personnel != null)
             {
-                var row = new DataGridViewRow();
-                row.Height = 30;
-
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
                 row.Cells.Add(new DataGridViewCheckBoxCell { Value = false });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = personnel });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = personnel.Position });
@@ -81,9 +82,10 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             if (scheduledProjectDesign != null)
             {
-                var row = new DataGridViewRow();
-                row.Height = 30;
-
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.Project });
@@ -131,9 +133,7 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             if (dgvScheduledProjectDesign.SelectedRows.Count == 1)
             {
-                var scheduledProjectDesign = dgvScheduledProjectDesign.SelectedRows[0].Cells[colScheduledProjectDesign.Name].Value as ScheduledProjectDesign;
-
-                if (scheduledProjectDesign != null)
+                if (dgvScheduledProjectDesign.SelectedRows[0].Cells[colScheduledProjectDesign.Name].Value is ScheduledProjectDesign scheduledProjectDesign)
                 {
                     var personnelIds = new List<int>();
 
@@ -163,7 +163,7 @@ namespace Citicon.ReceivablesIntegration.Forms
             }
         }
 
-        private void dgvScheduledProjectDesign_SelectionChanged(object sender, EventArgs e)
+        private void DgvScheduledProjectDesign_SelectionChanged(object sender, EventArgs e)
         {
             DisplaySelectedScheduledDesign();
         }
@@ -174,13 +174,13 @@ namespace Citicon.ReceivablesIntegration.Forms
             await GetPersonnelAsync();
         }
 
-        private async void btnConfirmDelivery_Click(object sender, EventArgs e)
+        private async void BtnConfirmDelivery_Click(object sender, EventArgs e)
         {
             ConfirmDelivery();
             await GetScheduledListAsync();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }

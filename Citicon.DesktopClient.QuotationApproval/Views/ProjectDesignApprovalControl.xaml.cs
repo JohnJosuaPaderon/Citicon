@@ -60,7 +60,7 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             DependencyProperty.Register("SelectedProjectDesign", typeof(ProjectDesign), typeof(ProjectDesignApprovalControl), new PropertyMetadata(null));
         #endregion
 
-        private async void btnRefresh_Click(object sender, RoutedEventArgs e)
+        private async void BtnRefresh_Click(object sender, RoutedEventArgs e)
         {
             await LoadProjectDesignsAsync();
         }
@@ -118,12 +118,12 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             }
         }
 
-        private void dgvProjectDesigns_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DgvProjectDesigns_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SelectedProjectDesign = (ProjectDesign)dgvProjectDesigns.SelectedItem;
         }
 
-        private void btnApprove_Click(object sender, RoutedEventArgs e)
+        private void BtnApprove_Click(object sender, RoutedEventArgs e)
         {
             if (SelectedProjectDesign != null)
             {
@@ -161,7 +161,7 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
             }
         }
 
-        private void tbxPricePerCubicMeter_LostFocus(object sender, RoutedEventArgs e)
+        private void TbxPricePerCubicMeter_LostFocus(object sender, RoutedEventArgs e)
         {
             LostPricePerCubicMeter();
         }
@@ -177,19 +177,18 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
 
         public decimal Parse(string value)
         {
-            decimal amount;
             value = value.Replace(",", "");
             value.Replace(" ", "");
-            decimal.TryParse(value, out amount);
+            decimal.TryParse(value, out decimal amount);
             return amount;
         }
 
-        private void tbxPricePerCubicMeter_GotTouchCapture(object sender, TouchEventArgs e)
+        private void TbxPricePerCubicMeter_GotTouchCapture(object sender, TouchEventArgs e)
         {
             Supports.OpenTouchKeyboard();
         }
 
-        private void tbxPricePerCubicMeter_LostTouchCapture(object sender, TouchEventArgs e)
+        private void TbxPricePerCubicMeter_LostTouchCapture(object sender, TouchEventArgs e)
         {
             LostPricePerCubicMeter();
         }

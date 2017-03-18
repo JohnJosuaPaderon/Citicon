@@ -24,8 +24,10 @@ namespace Citicon.DataProcess
         #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
-            var command = new MySqlCommand("_InsertPurchaseOrder", connection, transaction);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("_InsertPurchaseOrder", connection, transaction)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             command.Parameters.Add(new MySqlParameter() { ParameterName = "@_PurchaseOrderId", Direction = ParameterDirection.Output });
             command.Parameters.AddWithValue("@_Number", PurchaseOrder.Number);
             command.Parameters.AddWithValue("@_Balance", PurchaseOrder.Balance);

@@ -220,7 +220,7 @@
             this.tbxItemCode.ReadOnly = true;
             this.tbxItemCode.Size = new System.Drawing.Size(428, 29);
             this.tbxItemCode.TabIndex = 17;
-            this.tbxItemCode.TextChanged += new System.EventHandler(this.tbxItemCode_TextChanged);
+            this.tbxItemCode.TextChanged += new System.EventHandler(this.TbxItemCode_TextChanged);
             // 
             // btnClose
             // 
@@ -235,7 +235,7 @@
             this.btnClose.TabIndex = 89;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // ItemTrackingForm
             // 

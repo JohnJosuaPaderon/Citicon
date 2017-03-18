@@ -155,9 +155,9 @@
             this.tbxSearchItems.Name = "tbxSearchItems";
             this.tbxSearchItems.Size = new System.Drawing.Size(954, 29);
             this.tbxSearchItems.TabIndex = 12;
-            this.tbxSearchItems.TextChanged += new System.EventHandler(this.tbxSearchItems_TextChanged);
-            this.tbxSearchItems.Enter += new System.EventHandler(this.tbxSearchItems_Enter);
-            this.tbxSearchItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxSearchItems_KeyDown);
+            this.tbxSearchItems.TextChanged += new System.EventHandler(this.TbxSearchItems_TextChanged);
+            this.tbxSearchItems.Enter += new System.EventHandler(this.TbxSearchItems_Enter);
+            this.tbxSearchItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxSearchItems_KeyDown);
             // 
             // btnSearchItems
             // 
@@ -173,7 +173,7 @@
             this.btnSearchItems.TabIndex = 36;
             this.btnSearchItems.Text = "Search";
             this.btnSearchItems.UseVisualStyleBackColor = false;
-            this.btnSearchItems.Click += new System.EventHandler(this.btnSearchItems_Click);
+            this.btnSearchItems.Click += new System.EventHandler(this.BtnSearchItems_Click);
             // 
             // dgvItems
             // 
@@ -228,9 +228,9 @@
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(953, 0);
             this.dgvItems.TabIndex = 37;
-            this.dgvItems.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.dgvItems_QueryContinueDrag);
-            this.dgvItems.DoubleClick += new System.EventHandler(this.dgvItems_DoubleClick);
-            this.dgvItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvItems_KeyDown);
+            this.dgvItems.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.DgvItems_QueryContinueDrag);
+            this.dgvItems.DoubleClick += new System.EventHandler(this.DgvItems_DoubleClick);
+            this.dgvItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvItems_KeyDown);
             // 
             // colItem
             // 
@@ -263,7 +263,7 @@
             // tmrGenerateItems
             // 
             this.tmrGenerateItems.Interval = 60000;
-            this.tmrGenerateItems.Tick += new System.EventHandler(this.tmrGenerateItems_Tick);
+            this.tmrGenerateItems.Tick += new System.EventHandler(this.TmrGenerateItems_Tick);
             // 
             // lblSearchBy
             // 
@@ -287,7 +287,7 @@
             this.cmbxSearchBy.Name = "cmbxSearchBy";
             this.cmbxSearchBy.Size = new System.Drawing.Size(369, 29);
             this.cmbxSearchBy.TabIndex = 39;
-            this.cmbxSearchBy.SelectedIndexChanged += new System.EventHandler(this.cmbxSearchBy_SelectedIndexChanged);
+            this.cmbxSearchBy.SelectedIndexChanged += new System.EventHandler(this.CmbxSearchBy_SelectedIndexChanged);
             // 
             // lblItemDescription
             // 
@@ -459,7 +459,7 @@
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.dtpDeliveryDate.Size = new System.Drawing.Size(237, 29);
             this.dtpDeliveryDate.TabIndex = 53;
-            this.dtpDeliveryDate.ValueChanged += new System.EventHandler(this.dtpDeliveryDate_ValueChanged);
+            this.dtpDeliveryDate.ValueChanged += new System.EventHandler(this.DtpDeliveryDate_ValueChanged);
             // 
             // tbxItemStockValue
             // 
@@ -496,10 +496,10 @@
             this.cmbxPaymentTerms.Name = "cmbxPaymentTerms";
             this.cmbxPaymentTerms.Size = new System.Drawing.Size(235, 29);
             this.cmbxPaymentTerms.TabIndex = 63;
-            this.cmbxPaymentTerms.SelectedIndexChanged += new System.EventHandler(this.cmbxPaymentTerms_SelectedIndexChanged);
-            this.cmbxPaymentTerms.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxPaymentTerms.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.cmbxPaymentTerms_MouseDoubleClick);
-            this.cmbxPaymentTerms.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxPaymentTerms.SelectedIndexChanged += new System.EventHandler(this.CmbxPaymentTerms_SelectedIndexChanged);
+            this.cmbxPaymentTerms.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxPaymentTerms.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.CmbxPaymentTerms_MouseDoubleClick);
+            this.cmbxPaymentTerms.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // cmbxVehicles
             // 
@@ -586,7 +586,7 @@
             this.nudAddedStockValue.TabIndex = 67;
             this.nudAddedStockValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudAddedStockValue.ThousandsSeparator = true;
-            this.nudAddedStockValue.ValueChanged += new System.EventHandler(this.nudUnitPrice_ValueChanged);
+            this.nudAddedStockValue.ValueChanged += new System.EventHandler(this.NudUnitPrice_ValueChanged);
             // 
             // lblUnitPrice
             // 
@@ -615,7 +615,7 @@
             this.nudUnitPrice.TabIndex = 69;
             this.nudUnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudUnitPrice.ThousandsSeparator = true;
-            this.nudUnitPrice.ValueChanged += new System.EventHandler(this.nudUnitPrice_ValueChanged);
+            this.nudUnitPrice.ValueChanged += new System.EventHandler(this.NudUnitPrice_ValueChanged);
             // 
             // lblCompany
             // 
@@ -641,9 +641,9 @@
             this.cmbxCompanies.Size = new System.Drawing.Size(236, 29);
             this.cmbxCompanies.TabIndex = 72;
             this.cmbxCompanies.Visible = false;
-            this.cmbxCompanies.SelectedIndexChanged += new System.EventHandler(this.cmbxCompanies_SelectedIndexChanged);
-            this.cmbxCompanies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxCompanies.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxCompanies.SelectedIndexChanged += new System.EventHandler(this.CmbxCompanies_SelectedIndexChanged);
+            this.cmbxCompanies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxCompanies.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // lblBranch
             // 
@@ -667,9 +667,9 @@
             this.cmbxBranches.Name = "cmbxBranches";
             this.cmbxBranches.Size = new System.Drawing.Size(162, 29);
             this.cmbxBranches.TabIndex = 70;
-            this.cmbxBranches.SelectedIndexChanged += new System.EventHandler(this.cmbxCompanies_SelectedIndexChanged);
-            this.cmbxBranches.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxBranches.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxBranches.SelectedIndexChanged += new System.EventHandler(this.CmbxCompanies_SelectedIndexChanged);
+            this.cmbxBranches.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxBranches.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // lblSupplier
             // 
@@ -681,7 +681,7 @@
             this.lblSupplier.Size = new System.Drawing.Size(68, 21);
             this.lblSupplier.TabIndex = 75;
             this.lblSupplier.Text = "Supplier";
-            this.lblSupplier.Click += new System.EventHandler(this.lblSupplier_Click);
+            this.lblSupplier.Click += new System.EventHandler(this.LblSupplier_Click);
             // 
             // cmbxSuppliers
             // 
@@ -694,9 +694,9 @@
             this.cmbxSuppliers.Name = "cmbxSuppliers";
             this.cmbxSuppliers.Size = new System.Drawing.Size(476, 29);
             this.cmbxSuppliers.TabIndex = 74;
-            this.cmbxSuppliers.SelectedIndexChanged += new System.EventHandler(this.cmbxCompanies_SelectedIndexChanged);
-            this.cmbxSuppliers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxSuppliers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxSuppliers.SelectedIndexChanged += new System.EventHandler(this.CmbxCompanies_SelectedIndexChanged);
+            this.cmbxSuppliers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxSuppliers.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // tbxAcceptedBy
             // 
@@ -711,9 +711,9 @@
             this.tbxAcceptedBy.Name = "tbxAcceptedBy";
             this.tbxAcceptedBy.Size = new System.Drawing.Size(475, 29);
             this.tbxAcceptedBy.TabIndex = 77;
-            this.tbxAcceptedBy.TextChanged += new System.EventHandler(this.tbxAcceptedBy_TextChanged);
-            this.tbxAcceptedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxAcceptedBy_KeyDown);
-            this.tbxAcceptedBy.Leave += new System.EventHandler(this.tbxAcceptedBy_Leave);
+            this.tbxAcceptedBy.TextChanged += new System.EventHandler(this.TbxAcceptedBy_TextChanged);
+            this.tbxAcceptedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxAcceptedBy_KeyDown);
+            this.tbxAcceptedBy.Leave += new System.EventHandler(this.TbxAcceptedBy_Leave);
             // 
             // lblAcceptedBy
             // 
@@ -740,7 +740,7 @@
             this.btnSave.TabIndex = 78;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // btnCancel
             // 
@@ -756,7 +756,7 @@
             this.btnCancel.TabIndex = 79;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // lblRemarks
             // 
@@ -781,7 +781,7 @@
             this.tbxRemarks.Name = "tbxRemarks";
             this.tbxRemarks.Size = new System.Drawing.Size(475, 29);
             this.tbxRemarks.TabIndex = 81;
-            this.tbxRemarks.TextChanged += new System.EventHandler(this.tbxRemarks_TextChanged);
+            this.tbxRemarks.TextChanged += new System.EventHandler(this.TbxRemarks_TextChanged);
             // 
             // lblLength
             // 
@@ -814,7 +814,7 @@
             this.nudLength.Tag = "MeasurementDescription";
             this.nudLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudLength.ThousandsSeparator = true;
-            this.nudLength.ValueChanged += new System.EventHandler(this.nudLength_ValueChanged);
+            this.nudLength.ValueChanged += new System.EventHandler(this.NudLength_ValueChanged);
             // 
             // nudWidth
             // 
@@ -834,7 +834,7 @@
             this.nudWidth.Tag = "MeasurementDescription";
             this.nudWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudWidth.ThousandsSeparator = true;
-            this.nudWidth.ValueChanged += new System.EventHandler(this.nudWidth_ValueChanged);
+            this.nudWidth.ValueChanged += new System.EventHandler(this.NudWidth_ValueChanged);
             // 
             // nudHeight
             // 
@@ -854,7 +854,7 @@
             this.nudHeight.Tag = "MeasurementDescription";
             this.nudHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudHeight.ThousandsSeparator = true;
-            this.nudHeight.ValueChanged += new System.EventHandler(this.nudHeight_ValueChanged);
+            this.nudHeight.ValueChanged += new System.EventHandler(this.NudHeight_ValueChanged);
             // 
             // lblWidth
             // 
@@ -868,7 +868,7 @@
             this.lblWidth.TabIndex = 86;
             this.lblWidth.Tag = "MeasurementDescription";
             this.lblWidth.Text = "Width";
-            this.lblWidth.Click += new System.EventHandler(this.lblWidth_Click);
+            this.lblWidth.Click += new System.EventHandler(this.LblWidth_Click);
             // 
             // lblHeight
             // 
@@ -882,7 +882,7 @@
             this.lblHeight.TabIndex = 87;
             this.lblHeight.Tag = "MeasurementDescription";
             this.lblHeight.Text = "Height";
-            this.lblHeight.Click += new System.EventHandler(this.lblHeight_Click);
+            this.lblHeight.Click += new System.EventHandler(this.LblHeight_Click);
             // 
             // btnClose
             // 
@@ -897,7 +897,7 @@
             this.btnClose.TabIndex = 88;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // lblDrNumber
             // 
@@ -954,7 +954,7 @@
             this.btnEditSelectedUnitPrice.TabIndex = 92;
             this.btnEditSelectedUnitPrice.Text = "Edit  Selected";
             this.btnEditSelectedUnitPrice.UseVisualStyleBackColor = false;
-            this.btnEditSelectedUnitPrice.Click += new System.EventHandler(this.btnEditSelectedUnitPrice_Click);
+            this.btnEditSelectedUnitPrice.Click += new System.EventHandler(this.BtnEditSelectedUnitPrice_Click);
             // 
             // ckbxIncludeWithHoldingTax
             // 
@@ -967,7 +967,7 @@
             this.ckbxIncludeWithHoldingTax.TabIndex = 93;
             this.ckbxIncludeWithHoldingTax.Text = "Include With-Holding Tax";
             this.ckbxIncludeWithHoldingTax.UseVisualStyleBackColor = true;
-            this.ckbxIncludeWithHoldingTax.CheckedChanged += new System.EventHandler(this.ckbxIncludeWithHoldingTax_CheckedChanged);
+            this.ckbxIncludeWithHoldingTax.CheckedChanged += new System.EventHandler(this.CkbxIncludeWithHoldingTax_CheckedChanged);
             // 
             // nudWithHoldingTax
             // 
@@ -986,8 +986,8 @@
             this.nudWithHoldingTax.TabIndex = 94;
             this.nudWithHoldingTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudWithHoldingTax.ThousandsSeparator = true;
-            this.nudWithHoldingTax.ValueChanged += new System.EventHandler(this.nudUnitPrice_ValueChanged);
-            this.nudWithHoldingTax.EnabledChanged += new System.EventHandler(this.nudWithHoldingTax_EnabledChanged);
+            this.nudWithHoldingTax.ValueChanged += new System.EventHandler(this.NudUnitPrice_ValueChanged);
+            this.nudWithHoldingTax.EnabledChanged += new System.EventHandler(this.NudWithHoldingTax_EnabledChanged);
             // 
             // nudAmountDue
             // 
@@ -1005,7 +1005,7 @@
             this.nudAmountDue.TabIndex = 95;
             this.nudAmountDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudAmountDue.ThousandsSeparator = true;
-            this.nudAmountDue.ValueChanged += new System.EventHandler(this.nudAmountDue_ValueChanged);
+            this.nudAmountDue.ValueChanged += new System.EventHandler(this.NudAmountDue_ValueChanged);
             // 
             // lblAmountDue
             // 
@@ -1045,7 +1045,7 @@
             this.nudVat.TabIndex = 97;
             this.nudVat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudVat.ThousandsSeparator = true;
-            this.nudVat.ValueChanged += new System.EventHandler(this.nudVat_ValueChanged);
+            this.nudVat.ValueChanged += new System.EventHandler(this.NudVat_ValueChanged);
             // 
             // lblTotalAmountDue
             // 
@@ -1086,7 +1086,7 @@
             this.ckbxRetainData.TabIndex = 101;
             this.ckbxRetainData.Text = "Retain Data";
             this.ckbxRetainData.UseVisualStyleBackColor = true;
-            this.ckbxRetainData.CheckedChanged += new System.EventHandler(this.ckbxRetainData_CheckedChanged);
+            this.ckbxRetainData.CheckedChanged += new System.EventHandler(this.CkbxRetainData_CheckedChanged);
             // 
             // IncomingStocksform
             // 

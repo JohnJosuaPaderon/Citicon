@@ -24,8 +24,10 @@ namespace Citicon.DataProcess.ClientProcesses
         #region Helper Methods
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand("GetLegitimateClientList", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("GetLegitimateClientList", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             return command;
         }
         #endregion

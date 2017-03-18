@@ -11,29 +11,86 @@ namespace Citicon.Payables.Reports
         public ChequeReportFilter()
         {
             InitializeComponent();
-            SupplierManager = new SupplierManager();
         }
 
         private SupplierManager SupplierManager;
+        private BranchManager BranchManager;
+        private CompanyManager CompanyManager;
         public Action<bool> HasFiltered { get; set; }
 
-        public bool FilterByRangeDate { get; private set; }
-        public bool FilterBySupplier { get; private set; }
+        private bool _FilterByRangeDate;
+        private bool _FilterBySupplier;
+        private bool _FilterByBranch;
+        private bool _FilterByCompany;
+
+        public bool FilterByRangeDate
+        {
+            get { return _FilterByRangeDate; }
+            private set
+            {
+                if (_FilterByRangeDate != value)
+                {
+                    _FilterByRangeDate = value;
+                    pnlRangeDate.Enabled = value;
+                    OnHasFiltered();
+                }
+            }
+        }
+        public bool FilterBySupplier
+        {
+            get { return _FilterBySupplier; }
+            private set
+            {
+                if (_FilterBySupplier != value)
+                {
+                    _FilterBySupplier = value;
+                    cmbxSupplier.Enabled = value;
+                    OnHasFiltered();
+                }
+            }
+        }
+        
+        public bool FilterByBranch
+        {
+            get { return _FilterByBranch; }
+            private set
+            {
+                if (_FilterByBranch != value)
+                {
+                    _FilterByBranch = value;
+                    FilterByBranchComboBox.Enabled = value;
+                    OnHasFiltered();
+                }
+            }
+        }
+
+        public bool FilterByCompany
+        {
+            get { return _FilterByCompany; }
+            set
+            {
+                if (_FilterByCompany != value)
+                {
+                    _FilterByCompany = value;
+                    FilterByCompanyComboBox.Enabled = value;
+                    OnHasFiltered();
+                }
+            }
+        }
+
         public DateTimeRange RangeDate { get; private set; }
         public Supplier Supplier { get; private set; }
+        public Branch Branch { get; private set; }
+        public Company Company { get; private set; }
 
         private void CkbxRangeDate_CheckedChanged(object sender, EventArgs e)
         {
-            pnlRangeDate.Enabled = ckbxRangeDate.Checked;
             FilterByRangeDate = ckbxRangeDate.Checked;
-            ChangeHasFiltered();
         }
 
         private void CkbxSupplier_CheckedChanged(object sender, EventArgs e)
         {
-            cmbxSupplier.Enabled = ckbxSupplier.Checked;
             FilterBySupplier = ckbxSupplier.Checked;
-            ChangeHasFiltered();
         }
 
         private async Task GetSupplierListAsync()
@@ -47,10 +104,38 @@ namespace Citicon.Payables.Reports
             }
         }
 
+        private async Task GetBranchListAsync()
+        {
+            FilterByBranchComboBox.Items.Clear();
+            var branches = await BranchManager.GetListAsync();
+
+            if (branches != null)
+            {
+                FilterByBranchComboBox.Items.AddRange(branches);
+            }
+        }
+
+        private async Task GetCompanyListAsync()
+        {
+            FilterByCompanyComboBox.Items.Clear();
+            var companies = await CompanyManager.GetListAsync();
+
+            if (companies != null)
+            {
+                FilterByCompanyComboBox.Items.AddRange(companies);
+            }
+        }
+
         private async void ChequeReportFilter_Load(object sender, EventArgs e)
         {
+            SupplierManager = new SupplierManager();
+            BranchManager = new BranchManager();
+            CompanyManager = new CompanyManager();
+
             await GetSupplierListAsync();
-            ChangeHasFiltered();
+            await GetBranchListAsync();
+            await GetCompanyListAsync();
+            OnHasFiltered();
         }
 
         private void DtpRangeDate_Start_ValueChanged(object sender, EventArgs e)
@@ -65,13 +150,33 @@ namespace Citicon.Payables.Reports
 
         private void CmbxSupplier_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Supplier = (Supplier)cmbxSupplier.SelectedItem;
+            Supplier = cmbxSupplier.SelectedItem as Supplier;
         }
 
-        private void ChangeHasFiltered()
+        private void OnHasFiltered()
         {
-            var filtered = ckbxRangeDate.Checked || ckbxSupplier.Checked;
+            var filtered = ckbxRangeDate.Checked || ckbxSupplier.Checked || FilterByBranchCheckBox.Checked || FilterByCompanyCheckBox.Checked;
             HasFiltered?.Invoke(filtered);
+        }
+
+        private void FilterByBranchCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterByBranch = FilterByBranchCheckBox.Checked;
+        }
+
+        private void FilterByCompanyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterByCompany = FilterByCompanyCheckBox.Checked;
+        }
+
+        private void FilterByBranchComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Branch = FilterByBranchComboBox.SelectedItem as Branch;
+        }
+
+        private void FilterByCompanyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Company = FilterByCompanyComboBox.SelectedItem as Company;
         }
     }
 }

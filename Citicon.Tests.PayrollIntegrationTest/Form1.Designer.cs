@@ -45,7 +45,7 @@
             this.btnSemiMonthlyPayrollForm.TabIndex = 1;
             this.btnSemiMonthlyPayrollForm.Text = "Semi-Monthly Payroll Form";
             this.btnSemiMonthlyPayrollForm.UseVisualStyleBackColor = false;
-            this.btnSemiMonthlyPayrollForm.Click += new System.EventHandler(this.btnSemiMonthlyPayrollForm_Click);
+            this.btnSemiMonthlyPayrollForm.Click += new System.EventHandler(this.BtnSemiMonthlyPayrollForm_Click);
             // 
             // Form1
             // 

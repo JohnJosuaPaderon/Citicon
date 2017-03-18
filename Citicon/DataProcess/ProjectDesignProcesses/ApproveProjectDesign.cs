@@ -25,8 +25,10 @@ namespace Citicon.DataProcess.ProjectDesignProcesses
         #region Helper Methods
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
-            var command = new MySqlCommand("ApproveProjectDesign", connection, transaction);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("ApproveProjectDesign", connection, transaction)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             command.Parameters.AddWithValue("@_ProjectDesignId", ProjectDesign.Id);
             command.Parameters.AddWithValue("@_PricePerCubicMeter", ProjectDesign.PricePerCubicMeter);
             return command;

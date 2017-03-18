@@ -91,15 +91,13 @@ namespace Citicon.Inventory.DataManager
 
         private uint GetColumnIndex(string excelName, string fieldName)
         {
-            uint value;
-            uint.TryParse(ConfigurationManager.AppSettings[$"{excelName}.ColumnIndex[{fieldName}]"], out value);
+            uint.TryParse(ConfigurationManager.AppSettings[$"{excelName}.ColumnIndex[{fieldName}]"], out uint value);
             return value;
         }
 
         private uint MrisRowStartIndex(string fieldName)
         {
-            uint value;
-            uint.TryParse(ConfigurationManager.AppSettings[$"Mris.RowStartIndex[{fieldName}]"], out value);
+            uint.TryParse(ConfigurationManager.AppSettings[$"Mris.RowStartIndex[{fieldName}]"], out uint value);
             return value;
         }
 
@@ -110,8 +108,7 @@ namespace Citicon.Inventory.DataManager
 
         private uint MrisMaxCount(string fieldName)
         {
-            uint value;
-            uint.TryParse(ConfigurationManager.AppSettings[$"Mris.MaxCount[{fieldName}]"], out value);
+            uint.TryParse(ConfigurationManager.AppSettings[$"Mris.MaxCount[{fieldName}]"], out uint value);
             return value;
         }
 
@@ -538,7 +535,7 @@ namespace Citicon.Inventory.DataManager
 
         private void UnpaidStockQuery_ActiveRecordChanged(Dictionary<string, object> e)
         {
-            if (NewUnpaidStockGenerated != null) NewUnpaidStockGenerated(ExtractFromDictionary(e));
+            NewUnpaidStockGenerated?.Invoke(ExtractFromDictionary(e));
         }
 
         private void ItemStockQuery_ActiveRecordChanged(Dictionary<string, object> e)

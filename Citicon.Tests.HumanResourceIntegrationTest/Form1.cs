@@ -11,7 +11,7 @@ namespace Citicon.Tests.HumanResourceIntegrationTest
             InitializeComponent();
         }
 
-        private void btnEmployeeManagementForm_Click(object sender, EventArgs e)
+        private void BtnEmployeeManagementForm_Click(object sender, EventArgs e)
         {
             var form = new EmployeeManagementForm();
             form.ShowDialog();

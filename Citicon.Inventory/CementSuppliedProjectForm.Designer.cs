@@ -60,7 +60,7 @@
             this.lblIncomingStocks.TabIndex = 11;
             this.lblIncomingStocks.Text = "Project Selector for Cement Supplied";
             this.lblIncomingStocks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblIncomingStocks.Click += new System.EventHandler(this.lblIncomingStocks_Click);
+            this.lblIncomingStocks.Click += new System.EventHandler(this.LblIncomingStocks_Click);
             // 
             // lblSelectClient
             // 
@@ -118,7 +118,7 @@
             this.dgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClients.Size = new System.Drawing.Size(449, 466);
             this.dgvClients.TabIndex = 51;
-            this.dgvClients.SelectionChanged += new System.EventHandler(this.dgvClients_SelectionChanged);
+            this.dgvClients.SelectionChanged += new System.EventHandler(this.DgvClients_SelectionChanged);
             // 
             // colClient
             // 
@@ -216,7 +216,7 @@
             this.btnSave.TabIndex = 79;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // CementSuppliedProjectForm
             // 

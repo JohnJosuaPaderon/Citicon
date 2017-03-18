@@ -9,12 +9,7 @@ namespace Citicon.DataProcess
     {
         public InsertScheduledProjectDesign(ScheduledProjectDesign scheduledDesign)
         {
-            if (scheduledDesign == null)
-            {
-                throw new ArgumentNullException(nameof(scheduledDesign));
-            }
-
-            ScheduledDesign = scheduledDesign;
+            ScheduledDesign = scheduledDesign ?? throw new ArgumentNullException(nameof(scheduledDesign));
         }
 
         private ScheduledProjectDesign ScheduledDesign;

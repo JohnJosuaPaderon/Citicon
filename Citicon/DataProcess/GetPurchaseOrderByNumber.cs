@@ -12,12 +12,7 @@ namespace Citicon.DataProcess
         #region Constructor
         public GetPurchaseOrderByNumber(string purchaseOrderNumber)
         {
-            if (string.IsNullOrWhiteSpace(purchaseOrderNumber))
-            {
-                throw new ArgumentException("Cannot be null or white space.", nameof(purchaseOrderNumber));
-            }
-
-            PurchaseOrderNumber = purchaseOrderNumber;
+            PurchaseOrderNumber = string.IsNullOrWhiteSpace(purchaseOrderNumber) ? throw new ArgumentException("Cannot be null or white space.", nameof(purchaseOrderNumber)) : purchaseOrderNumber;
             ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
         #endregion
@@ -30,8 +25,10 @@ namespace Citicon.DataProcess
         #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand("GetPurchaseOrderByNumber", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("GetPurchaseOrderByNumber", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             command.Parameters.AddWithValue("@_PurchaseOrderNumber", PurchaseOrderNumber);
             return command;
         }

@@ -16,7 +16,7 @@ namespace Citicon.DesktopClient.Common
             InitializeComponent();
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             if (ValidateInfo())
             {
@@ -55,16 +55,18 @@ namespace Citicon.DesktopClient.Common
 
         private void InsertUser()
         {
-            User user = new User();
-            user.Username = tbxUsername.Text;
-            user.Password = tbxPassword.Password;
-            user.DisplayName = tbxDisplayName.Text;
-
+            User user = new User()
+            {
+                Username = tbxUsername.Text,
+                Password = tbxPassword.Password,
+                DisplayName = tbxDisplayName.Text
+            };
             if (ckbxQuotationUser.IsChecked.Value)
             {
-                var quotationUser = new QuotationUser(user);
-                quotationUser.RedirectToFinalApproval = ckbxQuotation_RedirectToFinalApproval.IsChecked.Value;
-
+                var quotationUser = new QuotationUser(user)
+                {
+                    RedirectToFinalApproval = ckbxQuotation_RedirectToFinalApproval.IsChecked.Value
+                };
                 var insertQuotationUserTask = QuotationUserManager.InsertAsync(quotationUser);
                 insertQuotationUserTask.ContinueWith(DisplayInsertQuotationUserResult);
             }
@@ -111,7 +113,7 @@ namespace Citicon.DesktopClient.Common
             ckbxQuotation_RedirectToFinalApproval.IsChecked = false;
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             ClearFields();
         }

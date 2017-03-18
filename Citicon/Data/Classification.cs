@@ -6,11 +6,11 @@ namespace Citicon.Inventory.Data
     {
         public struct Codes
         {
-            private static string getCode(string key)
+            private static string GetCode(string key)
             {
                 return ConfigurationManager.AppSettings[$"ClassificationCode.{key}"];
             }
-            public static string Aggregate { get { return getCode("Aggregate"); } }
+            public static string Aggregate { get { return GetCode("Aggregate"); } }
         }
         private ulong id;
         private string code;

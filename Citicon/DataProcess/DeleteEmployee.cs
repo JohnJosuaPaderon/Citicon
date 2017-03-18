@@ -9,12 +9,7 @@ namespace Citicon.DataProcess
     {
         public DeleteEmployee(Employee employee, string deletedBy)
         {
-            if (string.IsNullOrWhiteSpace(deletedBy))
-            {
-                throw new ArgumentException("Value cannot be null or white space.", nameof(deletedBy));
-            }
-
-            DeletedBy = deletedBy;
+            DeletedBy = string.IsNullOrWhiteSpace(deletedBy) ? throw new ArgumentException("Value cannot be null or white space.", nameof(deletedBy)) : deletedBy;
             Employee = employee ?? throw new ArgumentNullException(nameof(employee));
         }
 

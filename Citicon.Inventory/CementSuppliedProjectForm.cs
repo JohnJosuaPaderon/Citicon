@@ -32,8 +32,10 @@ namespace Citicon.Inventory
                     var clientRows = new List<DataGridViewRow>();
                     foreach (var item in task.Result)
                     {
-                        var row = new DataGridViewRow();
-                        row.Height = 30;
+                        var row = new DataGridViewRow()
+                        {
+                            Height = 30
+                        };
                         row.Cells.Add(new DataGridViewTextBoxCell() { Value = item });
                         clientRows.Add(row);
                     }
@@ -46,7 +48,7 @@ namespace Citicon.Inventory
             }
         }
 
-        private void dgvClients_SelectionChanged(object sender, EventArgs e)
+        private void DgvClients_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvClients.SelectedRows.Count > 0)
             {
@@ -67,8 +69,10 @@ namespace Citicon.Inventory
                     var projectRows = new List<DataGridViewRow>();
                     foreach (var item in task.Result)
                     {
-                        var row = new DataGridViewRow();
-                        row.Height = 30;
+                        var row = new DataGridViewRow()
+                        {
+                            Height = 30
+                        };
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Location });
                         projectRows.Add(row);
@@ -79,7 +83,7 @@ namespace Citicon.Inventory
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void BtnSave_Click(object sender, EventArgs e)
         {
             if (dgvClients.SelectedRows.Count > 0)
             {
@@ -105,7 +109,7 @@ namespace Citicon.Inventory
             }
         }
 
-        private void lblIncomingStocks_Click(object sender, EventArgs e)
+        private void LblIncomingStocks_Click(object sender, EventArgs e)
         {
 
         }

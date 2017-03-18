@@ -199,7 +199,7 @@
             this.cmbxIncomingStocksReportType.Name = "cmbxIncomingStocksReportType";
             this.cmbxIncomingStocksReportType.Size = new System.Drawing.Size(267, 29);
             this.cmbxIncomingStocksReportType.TabIndex = 0;
-            this.cmbxIncomingStocksReportType.SelectedIndexChanged += new System.EventHandler(this.cmbxIncomingStocksReportType_SelectedIndexChanged);
+            this.cmbxIncomingStocksReportType.SelectedIndexChanged += new System.EventHandler(this.CmbxIncomingStocksReportType_SelectedIndexChanged);
             // 
             // tpOutgoingStocks
             // 

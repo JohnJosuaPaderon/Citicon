@@ -38,7 +38,7 @@ namespace Citicon.HumanResourceIntegration.Forms
             }
         }
 
-        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        private void TbxSearch_TextChanged(object sender, EventArgs e)
         {
             Employees.Clear();
 
@@ -51,7 +51,7 @@ namespace Citicon.HumanResourceIntegration.Forms
             }
         }
 
-        private void lbxSearchSuggest_DoubleClick(object sender, EventArgs e)
+        private void LbxSearchSuggest_DoubleClick(object sender, EventArgs e)
         {
             SelectItem();
         }

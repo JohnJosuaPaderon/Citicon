@@ -80,7 +80,7 @@
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(450, 33);
             this.tbxUsername.TabIndex = 13;
-            this.tbxUsername.TextChanged += new System.EventHandler(this.tbxUsername_TextChanged);
+            this.tbxUsername.TextChanged += new System.EventHandler(this.TbxUsername_TextChanged);
             // 
             // tbxPassword
             // 
@@ -111,7 +111,7 @@
             this.ckbxEditUsername.TabIndex = 17;
             this.ckbxEditUsername.Text = "Edit";
             this.ckbxEditUsername.UseVisualStyleBackColor = true;
-            this.ckbxEditUsername.CheckedChanged += new System.EventHandler(this.ckbxEditUsername_CheckedChanged);
+            this.ckbxEditUsername.CheckedChanged += new System.EventHandler(this.CkbxEditUsername_CheckedChanged);
             // 
             // ckbxChangePassword
             // 
@@ -122,7 +122,7 @@
             this.ckbxChangePassword.TabIndex = 18;
             this.ckbxChangePassword.Text = "Change";
             this.ckbxChangePassword.UseVisualStyleBackColor = true;
-            this.ckbxChangePassword.CheckedChanged += new System.EventHandler(this.ckbxChangePassword_CheckedChanged);
+            this.ckbxChangePassword.CheckedChanged += new System.EventHandler(this.CkbxChangePassword_CheckedChanged);
             // 
             // lblCurrentPassword
             // 
@@ -144,7 +144,7 @@
             this.tbxCurrentPassword.Size = new System.Drawing.Size(450, 33);
             this.tbxCurrentPassword.TabIndex = 20;
             this.tbxCurrentPassword.UseSystemPasswordChar = true;
-            this.tbxCurrentPassword.TextChanged += new System.EventHandler(this.tbxCurrentPassword_TextChanged);
+            this.tbxCurrentPassword.TextChanged += new System.EventHandler(this.TbxCurrentPassword_TextChanged);
             // 
             // tbxNewPassword
             // 
@@ -156,7 +156,7 @@
             this.tbxNewPassword.Size = new System.Drawing.Size(450, 33);
             this.tbxNewPassword.TabIndex = 22;
             this.tbxNewPassword.UseSystemPasswordChar = true;
-            this.tbxNewPassword.TextChanged += new System.EventHandler(this.tbxNewPassword_TextChanged);
+            this.tbxNewPassword.TextChanged += new System.EventHandler(this.TbxNewPassword_TextChanged);
             // 
             // lblNewPassword
             // 
@@ -178,7 +178,7 @@
             this.tbxReTypePassword.Size = new System.Drawing.Size(450, 33);
             this.tbxReTypePassword.TabIndex = 24;
             this.tbxReTypePassword.UseSystemPasswordChar = true;
-            this.tbxReTypePassword.TextChanged += new System.EventHandler(this.tbxReTypePassword_TextChanged);
+            this.tbxReTypePassword.TextChanged += new System.EventHandler(this.TbxReTypePassword_TextChanged);
             // 
             // lblReTypePassword
             // 
@@ -198,7 +198,7 @@
             this.tbxDisplayName.Name = "tbxDisplayName";
             this.tbxDisplayName.Size = new System.Drawing.Size(450, 33);
             this.tbxDisplayName.TabIndex = 26;
-            this.tbxDisplayName.TextChanged += new System.EventHandler(this.tbxDisplayName_TextChanged);
+            this.tbxDisplayName.TextChanged += new System.EventHandler(this.TbxDisplayName_TextChanged);
             // 
             // lblDisplayName
             // 
@@ -218,7 +218,7 @@
             this.ckbxEditDisplayName.TabIndex = 27;
             this.ckbxEditDisplayName.Text = "Edit";
             this.ckbxEditDisplayName.UseVisualStyleBackColor = true;
-            this.ckbxEditDisplayName.CheckedChanged += new System.EventHandler(this.ckbxEditDisplayName_CheckedChanged);
+            this.ckbxEditDisplayName.CheckedChanged += new System.EventHandler(this.CkbxEditDisplayName_CheckedChanged);
             // 
             // btnCancel
             // 
@@ -232,7 +232,7 @@
             this.btnCancel.TabIndex = 80;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // btnSaveChanges
             // 
@@ -247,7 +247,7 @@
             this.btnSaveChanges.TabIndex = 81;
             this.btnSaveChanges.Text = "Save Changes";
             this.btnSaveChanges.UseVisualStyleBackColor = false;
-            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
+            this.btnSaveChanges.Click += new System.EventHandler(this.BtnSaveChanges_Click);
             // 
             // btnAddNewUser
             // 
@@ -262,7 +262,7 @@
             this.btnAddNewUser.TabIndex = 82;
             this.btnAddNewUser.Text = "Add New User";
             this.btnAddNewUser.UseVisualStyleBackColor = false;
-            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
+            this.btnAddNewUser.Click += new System.EventHandler(this.BtnAddNewUser_Click);
             // 
             // UserSettingsForm
             // 

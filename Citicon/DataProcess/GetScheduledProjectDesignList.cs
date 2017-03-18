@@ -12,12 +12,7 @@ namespace Citicon.DataProcess
     {
         public GetScheduledProjectDesignList(DateTime scheduledDate)
         {
-            if (scheduledDate.Date == default(DateTime).Date)
-            {
-                throw new ArgumentException("Value cannot be equal to 0001/01/01", nameof(scheduledDate));
-            }
-
-            ScheduledDate = scheduledDate.Date;
+            ScheduledDate = scheduledDate.Date == default(DateTime).Date ? throw new ArgumentException("Value cannot be equal to 0001/01/01", nameof(scheduledDate)) : scheduledDate.Date;
         }
 
         private DateTime ScheduledDate;

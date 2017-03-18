@@ -10,12 +10,7 @@ namespace Citicon.DataProcess
     {
         public ValidateChequeRange(BankAccount bankAccount, UInt32Range chequeNumberRange)
         {
-            if (bankAccount == null)
-            {
-                throw new ArgumentNullException(nameof(bankAccount));
-            }
-
-            BankAccount = bankAccount;
+            BankAccount = bankAccount ?? throw new ArgumentNullException(nameof(bankAccount));
             ChequeNumberRange = chequeNumberRange;
         }
 
@@ -27,9 +22,11 @@ namespace Citicon.DataProcess
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand();
-            command.Connection = connection;
-            command.CommandText = string.Format("SELECT ValidateChequeRange({0}, {1}, {2})", PARAMETER_BANKACCOUNTID, PARAMETER_RANGESTART, PARAMETER_RANGEEND);
+            var command = new MySqlCommand()
+            {
+                Connection = connection,
+                CommandText = string.Format("SELECT ValidateChequeRange({0}, {1}, {2})", PARAMETER_BANKACCOUNTID, PARAMETER_RANGESTART, PARAMETER_RANGEEND)
+            };
             command.Parameters.AddWithValue(PARAMETER_BANKACCOUNTID, BankAccount.Id);
             command.Parameters.AddWithValue(PARAMETER_RANGESTART, ChequeNumberRange.Start);
             command.Parameters.AddWithValue(PARAMETER_RANGEEND, ChequeNumberRange.End);

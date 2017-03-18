@@ -12,10 +12,9 @@ namespace Citicon.DataManager
         {
             get
             {
-                ulong id;
                 string name;
 
-                ulong.TryParse(ConfigurationManager.AppSettings["BillingStructureTypeManager.DefaultValue.Id"], out id);
+                ulong.TryParse(ConfigurationManager.AppSettings["BillingStructureTypeManager.DefaultValue.Id"], out ulong id);
                 name = ConfigurationManager.AppSettings["BillingStructureTypeManager.DefaultValue.Name"] ?? $"[{nameof(BillingStructureType)}]";
 
                 return new BillingStructureType()

@@ -123,7 +123,7 @@
             this.colChequeSummary.Name = "colChequeSummary";
             this.colChequeSummary.ReadOnly = true;
             this.colChequeSummary.Visible = false;
-            this.colChequeSummary.Width = 159;
+            this.colChequeSummary.Width = 160;
             // 
             // colChequeNumber
             // 
@@ -208,6 +208,7 @@
             this.ReportFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportFilter.BackColor = System.Drawing.Color.White;
+            this.ReportFilter.FilterByCompany = false;
             this.ReportFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportFilter.ForeColor = System.Drawing.Color.Red;
             this.ReportFilter.HasFiltered = null;
@@ -232,6 +233,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ChequeReports";
             this.Size = new System.Drawing.Size(926, 513);
+            this.Load += new System.EventHandler(this.ChequeReports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

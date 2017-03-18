@@ -14,12 +14,7 @@ namespace Citicon.Reports
     {
         public ExportPayroll(Payroll payroll)
         {
-            if (payroll == null)
-            {
-                throw new ArgumentNullException(nameof(payroll));
-            }
-
-            Payroll = payroll;
+            Payroll = payroll ?? throw new ArgumentNullException(nameof(payroll));
             PayrollGroupManager = new PayrollGroupManager();
             Configuration = new SemiMonthlyPayrollExportConfiguration();
         }

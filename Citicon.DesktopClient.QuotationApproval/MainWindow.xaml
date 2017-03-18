@@ -37,7 +37,7 @@
                     </StackPanel>
                     
                     <Grid DockPanel.Dock="Bottom">
-                        <Button x:Name="btnLogOut" Height="50" Content="Log-out" Margin="10" Padding="10" Click="btnLogOut_Click"/>
+                        <Button x:Name="btnLogOut" Height="50" Content="Log-out" Margin="10" Padding="10" Click="BtnLogOut_Click"/>
                     </Grid>
                     
                     <ListBox x:Name="Menu" SelectionChanged="Menu_SelectionChanged">

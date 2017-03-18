@@ -10,8 +10,7 @@ namespace Citicon.Inventory.Data
         {
             get
             {
-                ulong id;
-                ulong.TryParse(ConfigurationManager.AppSettings["MeasurementUnit.Id.CubicMeter"], out id);
+                ulong.TryParse(ConfigurationManager.AppSettings["MeasurementUnit.Id.CubicMeter"], out ulong id);
                 var manager = new MeasurementUnitManager();
                 manager.ExceptionCatched += (Exception ex) => { };
                 return manager.GetById(id);

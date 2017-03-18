@@ -17,9 +17,7 @@ namespace Citicon
 
         private static byte GetByte(object dbValue)
         {
-            byte byteValue;
-            byte.TryParse(dbValue.ToString(), out byteValue);
-
+            byte.TryParse(dbValue.ToString(), out byte byteValue);
             return byteValue;
         }
 
@@ -30,9 +28,7 @@ namespace Citicon
 
         private static char GetChar(object dbValue)
         {
-            char charValue;
-            char.TryParse(dbValue.ToString(), out charValue);
-
+            char.TryParse(dbValue.ToString(), out char charValue);
             return charValue;
         }
 
@@ -43,9 +39,7 @@ namespace Citicon
 
         private static DateTime GetDateTime(object dbValue)
         {
-            DateTime dateTimeValue;
-            DateTime.TryParse(dbValue.ToString(), out dateTimeValue);
-
+            DateTime.TryParse(dbValue.ToString(), out DateTime dateTimeValue);
             return dateTimeValue;
         }
 
@@ -56,9 +50,7 @@ namespace Citicon
 
         private static decimal GetDecimal(object dbValue)
         {
-            decimal decimalValue;
-            decimal.TryParse(dbValue.ToString(), out decimalValue);
-
+            decimal.TryParse(dbValue.ToString(), out decimal decimalValue);
             return decimalValue;
         }
 
@@ -69,9 +61,7 @@ namespace Citicon
 
         private static double GetDouble(object dbValue)
         {
-            double doubleValue;
-            double.TryParse(dbValue.ToString(), out doubleValue);
-
+            double.TryParse(dbValue.ToString(), out double doubleValue);
             return doubleValue;
         }
 
@@ -82,9 +72,7 @@ namespace Citicon
 
         private static short GetInt16(object dbValue)
         {
-            short shortValue;
-            short.TryParse(dbValue.ToString(), out shortValue);
-
+            short.TryParse(dbValue.ToString(), out short shortValue);
             return shortValue;
         }
 
@@ -95,9 +83,7 @@ namespace Citicon
 
         private static int GetInt32(object dbValue)
         {
-            int intValue;
-            int.TryParse(dbValue.ToString(), out intValue);
-
+            int.TryParse(dbValue.ToString(), out int intValue);
             return intValue;
         }
 
@@ -108,9 +94,7 @@ namespace Citicon
 
         private static long GetInt64(object dbValue)
         {
-            long longValue;
-            long.TryParse(dbValue.ToString(), out longValue);
-
+            long.TryParse(dbValue.ToString(), out long longValue);
             return longValue;
         }
 
@@ -121,9 +105,7 @@ namespace Citicon
 
         private static sbyte GetSByte(object dbValue)
         {
-            sbyte sbyteValue;
-            sbyte.TryParse(dbValue.ToString(), out sbyteValue);
-
+            sbyte.TryParse(dbValue.ToString(), out sbyte sbyteValue);
             return sbyteValue;
         }
 
@@ -134,9 +116,7 @@ namespace Citicon
 
         private static float GetSingle(object dbValue)
         {
-            float floatValue;
-            float.TryParse(dbValue.ToString(), out floatValue);
-
+            float.TryParse(dbValue.ToString(), out float floatValue);
             return floatValue;
         }
 
@@ -160,9 +140,7 @@ namespace Citicon
 
         private static ushort GetUInt16(object dbValue)
         {
-            ushort ushortValue;
-            ushort.TryParse(dbValue.ToString(), out ushortValue);
-
+            ushort.TryParse(dbValue.ToString(), out ushort ushortValue);
             return ushortValue;
         }
 
@@ -173,9 +151,7 @@ namespace Citicon
 
         private static uint GetUInt32(object dbValue)
         {
-            uint uintValue;
-            uint.TryParse(dbValue.ToString(), out uintValue);
-
+            uint.TryParse(dbValue.ToString(), out uint uintValue);
             return uintValue;
         }
 
@@ -191,9 +167,7 @@ namespace Citicon
 
         private static ulong GetUInt64(object dbValue)
         {
-            ulong ulongValue;
-            ulong.TryParse(dbValue.ToString(), out ulongValue);
-
+            ulong.TryParse(dbValue.ToString(), out ulong ulongValue);
             return ulongValue;
         }
 

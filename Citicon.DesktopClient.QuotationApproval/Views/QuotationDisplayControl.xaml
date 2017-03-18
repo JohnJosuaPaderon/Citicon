@@ -92,14 +92,14 @@
 
             <materialDesign:Card VerticalAlignment="Stretch">
                 <Grid>
-                    <DataGrid x:Name="dgvQuotationList" RowHeight="45" IsReadOnly="True" SelectionChanged="dgvQuotationList_SelectionChanged">
+                    <DataGrid x:Name="dgvQuotationList" RowHeight="45" IsReadOnly="True" SelectionChanged="DgvQuotationList_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Quotation No." Binding="{Binding}"/>
                             <DataGridTextColumn Header="Date" Binding="{Binding QuotationDate, StringFormat='MMMM dd, yyyy'}"/>
                         </DataGrid.Columns>
                     </DataGrid>
 
-                    <Button x:Name="btnRefresh" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" VerticalAlignment="Bottom" Height="40" Width="40" HorizontalAlignment="Right" Margin="5" Click="btnRefresh_Click">
+                    <Button x:Name="btnRefresh" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" VerticalAlignment="Bottom" Height="40" Width="40" HorizontalAlignment="Right" Margin="5" Click="BtnRefresh_Click">
                         <materialDesign:PackIcon Kind="Refresh" Height="30" Width="30"/>
                     </Button>
                 </Grid>
@@ -164,7 +164,7 @@
             <materialDesign:Card VerticalAlignment="Stretch">
                 <Grid>
                     <RichTextBox x:Name="rtbxNoteDetails" Margin="10" BorderThickness="0"/>
-                    <Button x:Name="btnViewNoteDetailsInWord" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="View in Word" Click="btnViewNoteDetailsInWord_Click"/>
+                    <Button x:Name="btnViewNoteDetailsInWord" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="View in Word" Click="BtnViewNoteDetailsInWord_Click"/>
                 </Grid>
             </materialDesign:Card>
 
@@ -187,11 +187,11 @@
                 </Button>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="btnFinalApproved" Content="Set Final Approve" Height="60" Click="btnFinalApproved_Click"/>
+                    <Button x:Name="btnFinalApproved" Content="Set Final Approve" Height="60" Click="BtnFinalApproved_Click"/>
                     <Border Width="10"/>
-                    <Button x:Name="btnApproved" Content="Approve" Height="60" Click="btnApproved_Click"/>
+                    <Button x:Name="btnApproved" Content="Approve" Height="60" Click="BtnApproved_Click"/>
                     <Border Width="10"/>
-                    <Button x:Name="btnForRevision" Content="For Revision" Height="60" Click="btnForRevision_Click"/>
+                    <Button x:Name="btnForRevision" Content="For Revision" Height="60" Click="BtnForRevision_Click"/>
                 </StackPanel>
 
                 <Button x:Name="NextButton" Grid.Column="2" Style="{StaticResource NavigationButton}" Visibility="Collapsed">

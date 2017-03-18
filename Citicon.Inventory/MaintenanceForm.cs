@@ -166,7 +166,7 @@ namespace Citicon.Inventory
         #region DATA ADDED
         private void BranchManager_Added(Branch e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvBranches.Rows)
             {
                 Action<int> insert = (index) => { dgvBranches.Rows.Insert(index, e, e.Code); };
@@ -188,12 +188,12 @@ namespace Citicon.Inventory
                 }
             }
             activeBranch = null;
-            displayBranch();
-            enableBranchFields(false);
+            DisplayBranch();
+            EnableBranchFields(false);
         }
         private void ClassificationManager_Added(Classification e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvClassifications.Rows)
             {
                 Action<int> insert = (index) => { dgvClassifications.Rows.Insert(index, e, e.Code, e.MeasurementUnit); };
@@ -215,12 +215,12 @@ namespace Citicon.Inventory
                 }
             }
             activeClassification = null;
-            displayClassification();
-            enableClassificationFields(false);
+            DisplayClassification();
+            EnableClassificationFields(false);
         }
         private void CompanyManager_Added(Company e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvCompanies.Rows)
             {
                 Action<int> insert = (index) => { dgvCompanies.Rows.Insert(index, e, e.Code); };
@@ -242,12 +242,12 @@ namespace Citicon.Inventory
                 }
             }
             activeCompany = null;
-            displayCompany();
-            enableCompanyFields(false);
+            DisplayCompany();
+            EnableCompanyFields(false);
         }
         private void MeasurementUnitManager_Added(MeasurementUnit e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvMeasurementUnits.Rows)
             {
                 Action<int> insert = (index) => { dgvMeasurementUnits.Rows.Insert(index, e, e.Symbol); };
@@ -272,12 +272,12 @@ namespace Citicon.Inventory
             foreach (DataGridViewRow row in dgvMeasurementUnits.Rows)
                 cmbxClassificationMeasurementUnit.Items.Add((MeasurementUnit)row.Cells[colClassificationMeasurementUnit.Name].Value);
             activeMeasurementUnit = null;
-            displayMeasurementUnit();
-            enableMeasurementUnitFields(false);
+            DisplayMeasurementUnit();
+            EnableMeasurementUnitFields(false);
         }
         private void PaymentTermManager_Added(PaymentTerm e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvPaymentTerms.Rows)
             {
                 Action<int> insert = (index) => { dgvPaymentTerms.Rows.Insert(index, e, e.DayCount); };
@@ -299,12 +299,12 @@ namespace Citicon.Inventory
                 }
             }
             activePaymentTerm = null;
-            displayPaymentTerm();
-            enablePaymentTermFields(false);
+            DisplayPaymentTerm();
+            EnablePaymentTermFields(false);
         }
         private void SupplierManager_Added(Supplier e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvSuppliers.Rows)
             {
                 Action<int> insert = (index) => { dgvSuppliers.Rows.Insert(index, e, e.Code, e.Address, e.ContactNumber); };
@@ -326,12 +326,12 @@ namespace Citicon.Inventory
                 }
             }
             activeSupplier = null;
-            displaySupplier();
-            enableSupplierFields(false);
+            DisplaySupplier();
+            EnableSupplierFields(false);
         }
         private void VehicleManager_Added(Vehicle e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvVehicles.Rows)
             {
                 Action<int> insert = (index) => { dgvVehicles.Rows.Insert(index, e, e.Type); };
@@ -353,12 +353,12 @@ namespace Citicon.Inventory
                 }
             }
             activeVehicle = null;
-            displayVehicle();
-            enableVehicleFields(false);
+            DisplayVehicle();
+            EnableVehicleFields(false);
         }
         private void VehicleTypeManager_Added(VehicleType e)
         {
-            notify("Successfully added!");
+            Notify("Successfully added!");
             foreach (DataGridViewRow row in dgvVehicleTypes.Rows)
             {
                 Action<int> insert = (index) => { dgvVehicleTypes.Rows.Insert(index, e, e.Code); };
@@ -383,50 +383,50 @@ namespace Citicon.Inventory
             foreach (DataGridViewRow row in dgvVehicleTypes.Rows)
                 cmbxVehicleVehicleType.Items.Add((VehicleType)row.Cells[colVehicleType.Name].Value);
             activeVehicleType = null;
-            displayVehicleType();
-            enableVehicleTypeFields(false);
+            DisplayVehicleType();
+            EnableVehicleTypeFields(false);
         }
         #endregion
 
         #region DATA ADDED UNSUCCESSFUL
         private void BranchManager_AddedUnsuccessful(Branch e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         private void ClassificationManager_AddedUnsuccessful(Classification e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         private void CompanyManager_AddedUnsuccessful(Company e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         private void MeasurementUnitManager_AddedUnsuccessful(MeasurementUnit e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         private void PaymentTermManager_AddedUnsuccessful(PaymentTerm e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         private void SupplierManager_AddedUnsuccessful(Supplier e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         private void VehicleManager_AddedUnsuccessful(Vehicle e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         private void VehicleTypeManager_AddedUnsuccessful(VehicleType e)
         {
-            displayError("Adding failed!");
+            DisplayError("Adding failed!");
         }
         #endregion
 
         #region DATA REMOVED
         private void BranchManager_Removed(Branch e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvBranches.Rows.Remove(rowBranch);
             rowBranch = null;
             idxBranch = -1;
@@ -434,7 +434,7 @@ namespace Citicon.Inventory
         }
         private void ClassificationManager_Removed(Classification e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvClassifications.Rows.Remove(rowClassification);
             rowClassification = null;
             idxClassification = -1;
@@ -442,7 +442,7 @@ namespace Citicon.Inventory
         }
         private void CompanyManager_Removed(Company e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvCompanies.Rows.Remove(rowCompany);
             rowCompany = null;
             idxCompany = -1;
@@ -450,7 +450,7 @@ namespace Citicon.Inventory
         }
         private void MeasurementUnitManager_Removed(MeasurementUnit e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvMeasurementUnits.Rows.Remove(rowMeasurementUnit);
             rowMeasurementUnit = null;
             idxMeasurementUnit = -1;
@@ -458,7 +458,7 @@ namespace Citicon.Inventory
         }
         private void PaymentTermManager_Removed(PaymentTerm e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvPaymentTerms.Rows.Remove(rowPaymentTerm);
             rowPaymentTerm = null;
             idxPaymentTerm = -1;
@@ -466,7 +466,7 @@ namespace Citicon.Inventory
         }
         private void SupplierManager_Removed(Supplier e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvSuppliers.Rows.Remove(rowSupplier);
             rowSupplier = null;
             idxSupplier = -1;
@@ -474,7 +474,7 @@ namespace Citicon.Inventory
         }
         private void VehicleManager_Removed(Vehicle e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvVehicles.Rows.Remove(rowVehicle);
             rowVehicle = null;
             idxVehicle = -1;
@@ -482,7 +482,7 @@ namespace Citicon.Inventory
         }
         private void VehicleTypeManager_Removed(VehicleType e)
         {
-            notify("Successfully removed!");
+            Notify("Successfully removed!");
             dgvVehicleTypes.Rows.Remove(rowVehicleType);
             rowVehicleType = null;
             idxVehicleType = -1;
@@ -493,148 +493,148 @@ namespace Citicon.Inventory
         #region DATA REMOVED UNSUCCESSFUL
         private void BranchManager_RemovedUnsuccessful(Branch e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         private void ClassificationManager_RemovedUnsuccessful(Classification e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         private void CompanyManager_RemovedUnsuccessful(Company e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         private void MeasurementUnitManager_RemovedUnsuccessful(MeasurementUnit e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         private void PaymentTermManager_RemovedUnsuccessful(PaymentTerm e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         private void SupplierManager_RemovedUnsuccessful(Supplier e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         private void VehicleManager_RemovedUnsuccessful(Vehicle e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         private void VehicleTypeManager_RemovedUnsuccessful(VehicleType e)
         {
-            displayError("Removing failed!");
+            DisplayError("Removing failed!");
         }
         #endregion
 
         #region DATA UPDATED
         private void BranchManager_Updated(Branch e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowBranch.Cells[colBranch.Name].Value = e;
             rowBranch.Cells[colBranchCode.Name].Value = e.Code;
             activeBranch = null;
-            displayBranch();
-            enableBranchFields(false);
+            DisplayBranch();
+            EnableBranchFields(false);
         }
         private void ClassificationManager_Updated(Classification e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowClassification.Cells[colClassification.Name].Value = e;
             rowClassification.Cells[colClassificationCode.Name].Value = e.Code;
             rowClassification.Cells[colClassificationMeasurementUnit.Name].Value = e.MeasurementUnit;
             activeClassification = null;
-            displayClassification();
-            enableBranchFields(false);
+            DisplayClassification();
+            EnableBranchFields(false);
         }
         private void CompanyManager_Updated(Company e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowCompany.Cells[colCompany.Name].Value = e;
             rowCompany.Cells[colCompanyCode.Name].Value = e.Code;
             activeCompany = null;
-            displayCompany();
-            enableCompanyFields(false);
+            DisplayCompany();
+            EnableCompanyFields(false);
         }
         private void MeasurementUnitManager_Updated(MeasurementUnit e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowMeasurementUnit.Cells[colMeasurementUnit.Name].Value = e;
             rowMeasurementUnit.Cells[colMeasurementUnitSymbol.Name].Value = e.Symbol;
             activeMeasurementUnit = null;
-            displayMeasurementUnit();
-            enableMeasurementUnitFields(false);
+            DisplayMeasurementUnit();
+            EnableMeasurementUnitFields(false);
         }
         private void PaymentTermManager_Updated(PaymentTerm e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowPaymentTerm.Cells[colPaymentTerm.Name].Value = e;
             rowPaymentTerm.Cells[colPaymentTermDayCount.Name].Value = e.DayCount;
             activePaymentTerm = null;
-            displayPaymentTerm();
-            enablePaymentTermFields(false);
+            DisplayPaymentTerm();
+            EnablePaymentTermFields(false);
         }
         private void SupplierManager_Updated(Supplier e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowSupplier.Cells[colSupplier.Name].Value = e;
             rowSupplier.Cells[colSupplierAddress.Name].Value = e.Address;
             rowSupplier.Cells[colSupplierCode.Name].Value = e.Code;
             rowSupplier.Cells[colSupplierContactNumber.Name].Value = e.ContactNumber;
             activeSupplier = null;
-            displaySupplier();
-            enableSupplierFields(false);
+            DisplaySupplier();
+            EnableSupplierFields(false);
         }
         private void VehicleManager_Updated(Vehicle e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowVehicle.Cells[colVehicle.Name].Value = e;
             rowVehicle.Cells[colVehicleVehicleType.Name].Value = e.Type;
             activeVehicle = null;
-            displayVehicle();
-            enableVehicleFields(false);
+            DisplayVehicle();
+            EnableVehicleFields(false);
         }
         private void VehicleTypeManager_Updated(VehicleType e)
         {
-            notify("Successfully updated!");
+            Notify("Successfully updated!");
             rowVehicleType.Cells[colVehicleType.Name].Value = e;
             rowVehicleType.Cells[colVehicleTypeCode.Name].Value = e.Code;
             activeVehicleType = null;
-            displayVehicleType();
-            enableVehicleTypeFields(false);
+            DisplayVehicleType();
+            EnableVehicleTypeFields(false);
         }
         #endregion
 
         #region DATA UPDATED UNSUCCESSFUL
         private void BranchManager_UpdatedUnsuccessful(Branch e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         private void ClassificationManager_UpdatedUnsuccessful(Classification e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         private void CompanyManager_UpdatedUnsuccessful(Company e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         private void MeasurementUnitManager_UpdatedUnsuccessful(MeasurementUnit e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         private void PaymentTermManager_UpdatedUnsuccessful(PaymentTerm e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         private void SupplierManager_UpdatedUnsuccessful(Supplier e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         private void VehicleManager_UpdatedUnsuccessful(Vehicle e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         private void VehicleTypeManager_UpdatedUnsuccessful(VehicleType e)
         {
-            displayError("Updating failed!");
+            DisplayError("Updating failed!");
         }
         #endregion
 
@@ -685,37 +685,37 @@ namespace Citicon.Inventory
         #endregion
 
         #region DATA LOADING
-        private async Task loadBranches()
+        private async Task LoadBranches()
         {
             dgvBranches.Rows.Clear();
             activeBranch = null;
             branches = (await branchManager.GetListAsync())?.ToList();
         }
-        private async Task loadCompanies()
+        private async Task LoadCompanies()
         {
             dgvCompanies.Rows.Clear();
             activeCompany = null;
             companies = (await companyManager.GetListAsync())?.ToList();
         }
-        private async Task loadClassifications()
+        private async Task LoadClassifications()
         {
             dgvClassifications.Rows.Clear();
             activeClassification = null;
             classifications = (await classificationManager.GetListAsync())?.ToList();
         }
-        private async Task loadMeasurementUnits()
+        private async Task LoadMeasurementUnits()
         {
             dgvMeasurementUnits.Rows.Clear();
             cmbxClassificationMeasurementUnit.Items.Clear();
             measurementUnits = (await measurementUnitManager.GetListAsync())?.ToList();
         }
-        private async Task loadPaymentTerms()
+        private async Task LoadPaymentTerms()
         {
             dgvPaymentTerms.Rows.Clear();
             activePaymentTerm = null;
             paymentTerms = (await paymentTermManager.GetListAsync())?.ToList();
         }
-        private async Task loadSuppliers()
+        private async Task LoadSuppliers()
         {
             dgvSuppliers.Rows.Clear();
             activeSupplier = null;
@@ -729,13 +729,13 @@ namespace Citicon.Inventory
                 }
             }
         }
-        private async Task loadVehicles()
+        private async Task LoadVehicles()
         {
             dgvVehicles.Rows.Clear();
             activeVehicle = null;
             vehicles = (await vehicleManager.GetListAsync())?.ToList();
         }
-        private async Task loadVehicleTypes()
+        private async Task LoadVehicleTypes()
         {
             dgvVehicleTypes.Rows.Clear();
             cmbxVehicleVehicleType.Items.Clear();
@@ -752,48 +752,48 @@ namespace Citicon.Inventory
         {
             if (User.CurrentUser.Inventory_OutgoingStocksOnly)
             {
-                btnUserSettings_Click(sender, EventArgs.Empty);
+                BtnUserSettings_Click(sender, EventArgs.Empty);
                 Close();
             }
             else
             {
-                await loadBranches();
-                await loadCompanies();
-                await loadSuppliers();
-                await loadPaymentTerms();
-                await loadMeasurementUnits();
-                await loadVehicleTypes();
-                await loadClassifications();
-                await loadVehicles();
+                await LoadBranches();
+                await LoadCompanies();
+                await LoadSuppliers();
+                await LoadPaymentTerms();
+                await LoadMeasurementUnits();
+                await LoadVehicleTypes();
+                await LoadClassifications();
+                await LoadVehicles();
             }
         }
-        private void deselectRows(DataGridView dgv)
+        private void DeselectRows(DataGridView dgv)
         {
             foreach (DataGridViewRow item in dgv.Rows)
                 item.Selected = false;
         }
-        private void btnClose_Click(object sender, EventArgs e)
+        private void BtnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         #region DISPLAY MESSAGE
-        private void notify(string message)
+        private void Notify(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        private void displayError(string message)
+        private void DisplayError(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        private DialogResult ask(string message)
+        private DialogResult Ask(string message)
         {
             return MessageBox.Show(message, Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
         #endregion
 
         #region DISPLAY DATA
-        private void displayBranch()
+        private void DisplayBranch()
         {
             tbxBranchCode.Text = string.Empty;
             tbxBranchDescription.Text = string.Empty;
@@ -807,7 +807,7 @@ namespace Citicon.Inventory
                 tbxBranchCode.Text = branchManager.GenerateCode();
             }
         }
-        private void displayCompany()
+        private void DisplayCompany()
         {
             tbxCompanyCode.Text = string.Empty;
             tbxCompanyDescription.Text = string.Empty;
@@ -821,7 +821,7 @@ namespace Citicon.Inventory
                 tbxCompanyCode.Text = companyManager.GenerateCode();
             }
         }
-        private void displayClassification()
+        private void DisplayClassification()
         {
             tbxClassificationCode.Text = string.Empty;
             tbxClassificationDescription.Text = string.Empty;
@@ -837,7 +837,7 @@ namespace Citicon.Inventory
                 tbxClassificationCode.Text = classificationManager.GenerateCode();
             }
         }
-        private void displayMeasurementUnit()
+        private void DisplayMeasurementUnit()
         {
             tbxMeasurementUnitDescription.Text = string.Empty;
             tbxMeasurementUnitSymbol.Text = string.Empty;
@@ -847,7 +847,7 @@ namespace Citicon.Inventory
                 tbxMeasurementUnitSymbol.Text = activeMeasurementUnit.Symbol;
             }
         }
-        private void displayPaymentTerm()
+        private void DisplayPaymentTerm()
         {
             tbxPaymentTermDescription.Text = string.Empty;
             nudPaymentTermDayCount.Value = 0;
@@ -857,7 +857,7 @@ namespace Citicon.Inventory
                 nudPaymentTermDayCount.Value = activePaymentTerm.DayCount;
             }
         }
-        private void displaySupplier()
+        private void DisplaySupplier()
         {
             tbxSupplierAddress.Text = string.Empty;
             tbxSupplierCode.Text = string.Empty;
@@ -875,7 +875,7 @@ namespace Citicon.Inventory
                 tbxSupplierCode.Text = supplierManager.GenerateCode();
             }
         }
-        private void displayVehicle()
+        private void DisplayVehicle()
         {
             tbxVehiclePhysicalNumber.Text = string.Empty;
             tbxVehiclePlateNumber.Text = string.Empty;
@@ -887,7 +887,7 @@ namespace Citicon.Inventory
                 cmbxVehicleVehicleType.SelectedItem = activeVehicle.Type;
             }
         }
-        private void displayVehicleType()
+        private void DisplayVehicleType()
         {
             tbxVehicleTypeCode.Text = string.Empty;
             tbxVehicleTypeDescription.Text = string.Empty;
@@ -901,46 +901,46 @@ namespace Citicon.Inventory
         #endregion
 
         #region ENABLE DATA FIELDS
-        private void enableBranchFields(bool enabled)
+        private void EnableBranchFields(bool enabled)
         {
             tbxBranchCode.Enabled = enabled;
             tbxBranchDescription.Enabled = enabled;
         }
-        private void enableCompanyFields(bool enabled)
+        private void EnableCompanyFields(bool enabled)
         {
             tbxCompanyCode.Enabled = enabled;
             tbxCompanyDescription.Enabled = enabled;
         }
-        private void enableClassificationFields(bool enabled)
+        private void EnableClassificationFields(bool enabled)
         {
             tbxClassificationCode.Enabled = enabled;
             tbxClassificationDescription.Enabled = enabled;
             cmbxClassificationMeasurementUnit.Enabled = enabled;
         }
-        private void enableMeasurementUnitFields(bool enabled)
+        private void EnableMeasurementUnitFields(bool enabled)
         {
             tbxMeasurementUnitDescription.Enabled = enabled;
             tbxMeasurementUnitSymbol.Enabled = enabled;
         }
-        private void enablePaymentTermFields(bool enabled)
+        private void EnablePaymentTermFields(bool enabled)
         {
             tbxPaymentTermDescription.Enabled = enabled;
             nudPaymentTermDayCount.Enabled = enabled;
         }
-        private void enableSupplierFields(bool enabled)
+        private void EnableSupplierFields(bool enabled)
         {
             tbxSupplierAddress.Enabled = enabled;
             tbxSupplierCode.Enabled = enabled;
             tbxSupplierContactNumber.Enabled = enabled;
             tbxSupplierDescription.Enabled = enabled;
         }
-        private void enableVehicleFields(bool enabled)
+        private void EnableVehicleFields(bool enabled)
         {
             tbxVehiclePhysicalNumber.Enabled = enabled;
             tbxVehiclePlateNumber.Enabled = enabled;
             cmbxVehicleVehicleType.Enabled = enabled;
         }
-        private void enableVehicleTypeFields(bool enabled)
+        private void EnableVehicleTypeFields(bool enabled)
         {
             tbxVehicleTypeCode.Enabled = enabled;
             tbxVehicleTypeDescription.Enabled = enabled;
@@ -948,7 +948,7 @@ namespace Citicon.Inventory
         #endregion
 
         #region DATA HAS CHANGES
-        private bool branchHasChanges()
+        private bool BranchHasChanges()
         {
             var code = tbxBranchCode.Text.Trim();
             var description = tbxBranchDescription.Text.Trim();
@@ -959,7 +959,7 @@ namespace Citicon.Inventory
             }
             return false;
         }
-        private bool companyHasChanges()
+        private bool CompanyHasChanges()
         {
             var code = tbxCompanyCode.Text.Trim();
             var description = tbxCompanyDescription.Text.Trim();
@@ -970,7 +970,7 @@ namespace Citicon.Inventory
             }
             return false;
         }
-        private bool classificationHasChanges()
+        private bool ClassificationHasChanges()
         {
             var code = tbxClassificationCode.Text.Trim();
             var description = tbxClassificationDescription.Text.Trim();
@@ -983,7 +983,7 @@ namespace Citicon.Inventory
             }
             return false;
         }
-        private bool measurementUnitHasChanges()
+        private bool MeasurementUnitHasChanges()
         {
             var description = tbxMeasurementUnitDescription.Text.Trim();
             var symbol = tbxMeasurementUnitSymbol.Text.Trim();
@@ -994,7 +994,7 @@ namespace Citicon.Inventory
             }
             return false;
         }
-        private bool paymentTermHasChanges()
+        private bool PaymentTermHasChanges()
         {
             var description = tbxPaymentTermDescription.Text.Trim();
             var dayCount = (uint)nudPaymentTermDayCount.Value;
@@ -1005,7 +1005,7 @@ namespace Citicon.Inventory
             }
             return false;
         }
-        private bool supplierHasChanges()
+        private bool SupplierHasChanges()
         {
             var code = tbxSupplierCode.Text.Trim();
             var description = tbxSupplierDescription.Text.Trim();
@@ -1020,7 +1020,7 @@ namespace Citicon.Inventory
             }
             return false;
         }
-        private bool vehicleHasChanges()
+        private bool VehicleHasChanges()
         {
             var physicalNumber = tbxVehiclePhysicalNumber.Text.Trim();
             var plateNumber = tbxVehiclePlateNumber.Text.Trim();
@@ -1033,7 +1033,7 @@ namespace Citicon.Inventory
             }
             return false;
         }
-        private bool vehicleTypeHasChanges()
+        private bool VehicleTypeHasChanges()
         {
             var code = tbxVehicleTypeCode.Text.Trim();
             var description = tbxVehicleTypeDescription.Text.Trim();
@@ -1047,224 +1047,224 @@ namespace Citicon.Inventory
         #endregion
 
         #region CHECK DATA CHANGES
-        private void checkBranchChanges()
+        private void CheckBranchChanges()
         {
             if (activeBranch != null)
             {
-                if (branchHasChanges())
+                if (BranchHasChanges())
                 {
-                    if (ask("Changes in branch details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        saveBranch();
+                    if (Ask("Changes in branch details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SaveBranch();
                     else activeBranch = null;
                 }
                 else activeBranch = null;
             }
-            displayBranch();
-            enableBranchFields(false);
+            DisplayBranch();
+            EnableBranchFields(false);
         }
-        private void checkCompanyChanges()
+        private void CheckCompanyChanges()
         {
             if (activeCompany != null)
             {
-                if (companyHasChanges())
+                if (CompanyHasChanges())
                 {
-                    if (ask("Changes in company details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        saveCompany();
+                    if (Ask("Changes in company details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SaveCompany();
                     else activeCompany = null;
                 }
                 else activeCompany = null;
             }
-            displayCompany();
-            enableCompanyFields(false);
+            DisplayCompany();
+            EnableCompanyFields(false);
         }
-        private void checkClassificationChanges()
+        private void CheckClassificationChanges()
         {
             if (activeClassification != null)
             {
-                if (classificationHasChanges())
+                if (ClassificationHasChanges())
                 {
-                    if (ask("Changes in classification details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        saveClassification();
+                    if (Ask("Changes in classification details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SaveClassification();
                     activeClassification = null;
                 }
                 activeClassification = null;
             }
-            displayClassification();
-            enableClassificationFields(false);
+            DisplayClassification();
+            EnableClassificationFields(false);
         }
-        private void checkMeasurementUnitChanges()
+        private void CheckMeasurementUnitChanges()
         {
             if (activeMeasurementUnit != null)
             {
-                if (measurementUnitHasChanges())
+                if (MeasurementUnitHasChanges())
                 {
-                    if (ask("Changes in measurement unit details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        saveMeasurementUnit();
+                    if (Ask("Changes in measurement unit details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SaveMeasurementUnit();
                     else activeMeasurementUnit = null;
                 }
                 else activeMeasurementUnit = null;
             }
-            displayMeasurementUnit();
-            enableMeasurementUnitFields(false);
+            DisplayMeasurementUnit();
+            EnableMeasurementUnitFields(false);
         }
-        private void checkPaymentTermChanges()
+        private void CheckPaymentTermChanges()
         {
             if (activePaymentTerm != null)
             {
-                if (paymentTermHasChanges())
+                if (PaymentTermHasChanges())
                 {
-                    if (ask("Changes in payment term details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        savePaymentTerm();
+                    if (Ask("Changes in payment term details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SavePaymentTerm();
                     else activePaymentTerm = null;
                 }
                 else activePaymentTerm = null;
             }
-            displayPaymentTerm();
-            enablePaymentTermFields(false);
+            DisplayPaymentTerm();
+            EnablePaymentTermFields(false);
         }
-        private void checkSupplierChanges()
+        private void CheckSupplierChanges()
         {
             if (activeSupplier != null)
             {
-                if (supplierHasChanges())
+                if (SupplierHasChanges())
                 {
-                    if (ask("Changes in supplier details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        saveSupplier();
+                    if (Ask("Changes in supplier details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SaveSupplier();
                     else activeSupplier = null;
                 }
                 else activeSupplier = null;
             }
-            displaySupplier();
-            enableSupplierFields(false);
+            DisplaySupplier();
+            EnableSupplierFields(false);
         }
-        private void checkVehicleChanges()
+        private void CheckVehicleChanges()
         {
             if (activeVehicle != null)
             {
-                if (vehicleHasChanges())
+                if (VehicleHasChanges())
                 {
-                    if (ask("Changes in vehicle details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        saveVehicle();
+                    if (Ask("Changes in vehicle details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SaveVehicle();
                     else activeVehicle = null;
                 }
                 else activeVehicle = null;
             }
-            displayVehicle();
-            enableVehicleFields(false);
+            DisplayVehicle();
+            EnableVehicleFields(false);
         }
-        private void checkVehicleTypeChanges()
+        private void CheckVehicleTypeChanges()
         {
             if (activeVehicleType != null)
             {
-                if (vehicleTypeHasChanges())
+                if (VehicleTypeHasChanges())
                 {
-                    if (ask("Changes in vehicle type details has been detected, do you want to save this first?") == DialogResult.Yes)
-                        saveVehicleType();
+                    if (Ask("Changes in vehicle type details has been detected, do you want to save this first?") == DialogResult.Yes)
+                        SaveVehicleType();
                     else activeVehicleType = null;
                 }
                 else activeVehicleType = null;
             }
-            displayVehicleType();
-            enableVehicleTypeFields(false);
+            DisplayVehicleType();
+            EnableVehicleTypeFields(false);
         }
         #endregion
 
         #region INSERT ACTIVE DATA TO DISPLAY
-        private void insertActiveBranch()
+        private void InsertActiveBranch()
         {
             if (idxBranch < 0) idxBranch = dgvBranches.Rows.Count - 1;
             dgvBranches.Rows.Insert(idxBranch, activeBranch, activeBranch.Code);
             activeBranch = null;
             rowBranch = null;
             idxBranch = -1;
-            displayBranch();
-            enableBranchFields(false);
+            DisplayBranch();
+            EnableBranchFields(false);
         }
-        private void insertActiveCompany()
+        private void InsertActiveCompany()
         {
             if (idxCompany < 0) idxCompany = dgvCompanies.Rows.Count - 1;
             dgvCompanies.Rows.Insert(idxCompany, activeCompany, activeCompany.Code);
             activeCompany = null;
             rowCompany = null;
             idxCompany = -1;
-            displayCompany();
-            enableCompanyFields(false);
+            DisplayCompany();
+            EnableCompanyFields(false);
         }
-        private void insertActiveClassification()
+        private void InsertActiveClassification()
         {
             if (idxClassification < 0) idxClassification = dgvClassifications.Rows.Count - 1;
             dgvClassifications.Rows.Insert(idxClassification, activeClassification, activeClassification.Code, activeClassification.MeasurementUnit);
             activeClassification = null;
             rowClassification = null;
             idxClassification = -1;
-            displayClassification();
-            enableClassificationFields(false);
+            DisplayClassification();
+            EnableClassificationFields(false);
         }
-        private void insertActiveMeasurementUnit()
+        private void InsertActiveMeasurementUnit()
         {
             if (idxMeasurementUnit < 0) idxMeasurementUnit = dgvMeasurementUnits.Rows.Count - 1;
             dgvMeasurementUnits.Rows.Insert(idxMeasurementUnit, activeMeasurementUnit, activeMeasurementUnit.Symbol);
             activeMeasurementUnit = null;
             rowMeasurementUnit = null;
             idxMeasurementUnit = -1;
-            displayMeasurementUnit();
-            enableMeasurementUnitFields(false);
+            DisplayMeasurementUnit();
+            EnableMeasurementUnitFields(false);
         }
-        private void insertActivePaymentTerm()
+        private void InsertActivePaymentTerm()
         {
             if (idxPaymentTerm < 0) idxPaymentTerm = dgvPaymentTerms.Rows.Count - 1;
             dgvPaymentTerms.Rows.Insert(idxPaymentTerm, activePaymentTerm, activePaymentTerm.DayCount);
             activePaymentTerm = null;
             rowPaymentTerm = null;
             idxPaymentTerm = -1;
-            displayPaymentTerm();
-            enablePaymentTermFields(false);
+            DisplayPaymentTerm();
+            EnablePaymentTermFields(false);
         }
-        private void insertActiveSupplier()
+        private void InsertActiveSupplier()
         {
             if (idxSupplier < 0) idxSupplier = dgvSuppliers.Rows.Count - 1;
             dgvSuppliers.Rows.Insert(idxSupplier, activeSupplier, activeSupplier.Code, activeSupplier.Address, activeSupplier.ContactNumber);
             activeSupplier = null;
             rowSupplier = null;
             idxSupplier = -1;
-            displaySupplier();
-            enableSupplierFields(false);
+            DisplaySupplier();
+            EnableSupplierFields(false);
         }
-        private void insertActiveVehicle()
+        private void InsertActiveVehicle()
         {
             if (idxVehicle < 0) idxVehicle = dgvVehicles.Rows.Count - 1;
             dgvVehicles.Rows.Insert(idxVehicle, activeVehicle, activeVehicle.Type);
             activeVehicle = null;
             rowVehicle = null;
             idxVehicle = -1;
-            displayVehicle();
-            enableVehicleFields(false);
+            DisplayVehicle();
+            EnableVehicleFields(false);
         }
-        private void insertActiveVehicleType()
+        private void InsertActiveVehicleType()
         {
             if (idxVehicleType < 0) idxVehicleType = dgvVehicleTypes.Rows.Count - 1;
             dgvVehicleTypes.Rows.Insert(idxVehicleType, activeVehicleType, activeVehicleType.Code);
             activeVehicleType = null;
             rowVehicleType = null;
             idxVehicleType = -1;
-            displayVehicleType();
-            enableVehicleTypeFields(false);
+            DisplayVehicleType();
+            EnableVehicleTypeFields(false);
         }
         #endregion
 
         #region DATA VALIDATION
-        private bool branchValidation()
+        private bool BranchValidation()
         {
             var code = tbxBranchCode.Text.Trim();
             var description = tbxBranchDescription.Text.Trim();
             if (code == string.Empty)
             {
-                displayError("Branch code must be valid!");
+                DisplayError("Branch code must be valid!");
                 return false;
             }
             if (description == string.Empty)
             {
-                displayError("Branch name must be valid!");
+                DisplayError("Branch name must be valid!");
                 return false;
             }
             foreach (DataGridViewRow item in dgvBranches.Rows)
@@ -1274,30 +1274,30 @@ namespace Citicon.Inventory
                     var branch = (Branch)item.Cells[colBranch.Name].Value;
                     if (code == branch.Code)
                     {
-                        displayError("Branch Code already in use!");
+                        DisplayError("Branch Code already in use!");
                         return false;
                     }
                     if (description == branch.Description)
                     {
-                        displayError("Branch name already exists!");
+                        DisplayError("Branch name already exists!");
                         return false;
                     }
                 }
             }
             return true;
         }
-        private bool companyValidation()
+        private bool CompanyValidation()
         {
             var code = tbxCompanyCode.Text.Trim();
             var description = tbxCompanyDescription.Text.Trim();
             if (code == string.Empty)
             {
-                displayError("Company code must be valid!");
+                DisplayError("Company code must be valid!");
                 return false;
             }
             if (description == string.Empty)
             {
-                displayError("Company description must be valid!");
+                DisplayError("Company description must be valid!");
                 return false;
             }
             foreach (DataGridViewRow item in dgvCompanies.Rows)
@@ -1307,36 +1307,36 @@ namespace Citicon.Inventory
                     var company = (Company)item.Cells[colCompany.Name].Value;
                     if (code == company.Code)
                     {
-                        displayError("Company code already in use!");
+                        DisplayError("Company code already in use!");
                         return false;
                     }
                     if (description == company.Description)
                     {
-                        displayError("Company name already exists!");
+                        DisplayError("Company name already exists!");
                         return false;
                     }
                 }
             }
             return true;
         }
-        private bool classificationValidation()
+        private bool ClassificationValidation()
         {
             var code = tbxClassificationCode.Text.Trim();
             var description = tbxClassificationDescription.Text.Trim();
             var measurementUnit = (MeasurementUnit)cmbxClassificationMeasurementUnit.SelectedItem;
             if (code == string.Empty)
             {
-                displayError("Classification code must be valid!");
+                DisplayError("Classification code must be valid!");
                 return false;
             }
             if (description == string.Empty)
             {
-                displayError("Classification name must be valid!");
+                DisplayError("Classification name must be valid!");
                 return false;
             }
             if (measurementUnit == null)
             {
-                displayError("Measurement unit for classification must be valid!");
+                DisplayError("Measurement unit for classification must be valid!");
                 return false;
             }
             foreach (DataGridViewRow item in dgvClassifications.Rows)
@@ -1346,30 +1346,30 @@ namespace Citicon.Inventory
                     var classification = (Classification)item.Cells[colClassification.Name].Value;
                     if (code == classification.Code)
                     {
-                        displayError("Classification code already in use!");
+                        DisplayError("Classification code already in use!");
                         return false;
                     }
                     if (description == classification.Description)
                     {
-                        displayError("Classification name already exists!");
+                        DisplayError("Classification name already exists!");
                         return false;
                     }
                 }
             }
             return true;
         }
-        private bool measurementUnitValidation()
+        private bool MeasurementUnitValidation()
         {
             var description = tbxMeasurementUnitDescription.Text.Trim();
             var symbol = tbxMeasurementUnitSymbol.Text.Trim();
             if (description == string.Empty)
             {
-                displayError("Measurement unit name must be valid!");
+                DisplayError("Measurement unit name must be valid!");
                 return false;
             }
             if (symbol == string.Empty)
             {
-                displayError("Measurement unit symbol must be valid!");
+                DisplayError("Measurement unit symbol must be valid!");
                 return false;
             }
             foreach (DataGridViewRow item in dgvMeasurementUnits.Rows)
@@ -1379,25 +1379,25 @@ namespace Citicon.Inventory
                     var measurementUnit = (MeasurementUnit)item.Cells[colMeasurementUnit.Name].Value;
                     if (description == measurementUnit.Description)
                     {
-                        displayError("Measurement unit name already exists!");
+                        DisplayError("Measurement unit name already exists!");
                         return false;
                     }
                     if (symbol == measurementUnit.Symbol)
                     {
-                        displayError("Measurement unit symbol already in use!");
+                        DisplayError("Measurement unit symbol already in use!");
                         return false;
                     }
                 }
             }
             return true;
         }
-        private bool paymentTermValidation()
+        private bool PaymentTermValidation()
         {
             var description = tbxPaymentTermDescription.Text.Trim();
             var dayCount = (uint)nudPaymentTermDayCount.Value;
             if (description == string.Empty)
             {
-                displayError("Payment term name must be valid!");
+                DisplayError("Payment term name must be valid!");
                 return false;
             }
             //if (dayCount == 0)
@@ -1412,7 +1412,7 @@ namespace Citicon.Inventory
                     var paymentTerm = (PaymentTerm)item.Cells[colPaymentTerm.Name].Value;
                     if (description == paymentTerm.Description)
                     {
-                        displayError("Payment term name already exists!");
+                        DisplayError("Payment term name already exists!");
                         return false;
                     }
                     //if (dayCount == paymentTerm.DayCount)
@@ -1424,18 +1424,18 @@ namespace Citicon.Inventory
             }
             return true;
         }
-        private bool supplierValidation()
+        private bool SupplierValidation()
         {
             var description = tbxSupplierDescription.Text.Trim();
             var code = tbxSupplierCode.Text.Trim();
             if (description == string.Empty)
             {
-                displayError("Supplier name must be valid!");
+                DisplayError("Supplier name must be valid!");
                 return false;
             }
             if (code == string.Empty)
             {
-                displayError("Supplier code must be valid!");
+                DisplayError("Supplier code must be valid!");
                 return false;
             }
             foreach (DataGridViewRow item in dgvSuppliers.Rows)
@@ -1445,30 +1445,30 @@ namespace Citicon.Inventory
                     var supplier = (Supplier)item.Cells[colSupplier.Name].Value;
                     if (description == supplier.Description)
                     {
-                        displayError("Supplier name already exists!");
+                        DisplayError("Supplier name already exists!");
                         return false;
                     }
                     if (code == supplier.Code)
                     {
-                        displayError("Supplier code already in use!");
+                        DisplayError("Supplier code already in use!");
                         return false;
                     }
                 }
             }
             return true;
         }
-        private bool vehicleValidation()
+        private bool VehicleValidation()
         {
             var physicalNumber = tbxVehiclePhysicalNumber.Text.Trim();
             var plateNumber = tbxVehiclePlateNumber.Text.Trim();
             if (physicalNumber == string.Empty)
             {
-                displayError("Vehicle's physical no. must be valid!");
+                DisplayError("Vehicle's physical no. must be valid!");
                 return false;
             }
             if (plateNumber == string.Empty)
             {
-                displayError("Vehicle's plate no. must be valid!");
+                DisplayError("Vehicle's plate no. must be valid!");
                 return false;
             }
             foreach (DataGridViewRow item in dgvVehicles.Rows)
@@ -1478,25 +1478,25 @@ namespace Citicon.Inventory
                     var vehicle = (Vehicle)item.Cells[colVehicle.Name].Value;
                     if (plateNumber == vehicle.PlateNumber)
                     {
-                        displayError("Plate no. already in use!");
+                        DisplayError("Plate no. already in use!");
                         return false;
                     }
                 }
             }
             return true;
         }
-        private bool vehicleTypeValidation()
+        private bool VehicleTypeValidation()
         {
             var code = tbxVehicleTypeCode.Text.Trim();
             var description = tbxVehicleTypeDescription.Text.Trim();
             if (code == string.Empty)
             {
-                displayError("Vehicle type code must be valid!");
+                DisplayError("Vehicle type code must be valid!");
                 return false;
             }
             if (description == string.Empty)
             {
-                displayError("Vehicle type name must be valid!");
+                DisplayError("Vehicle type name must be valid!");
                 return false;
             }
             foreach (DataGridViewRow item in dgvVehicleTypes.Rows)
@@ -1506,12 +1506,12 @@ namespace Citicon.Inventory
                     var vehicleType = (VehicleType)item.Cells[colVehicleType.Name].Value;
                     if (code == vehicleType.Code)
                     {
-                        displayError("Code already in use!");
+                        DisplayError("Code already in use!");
                         return false;
                     }
                     if (description == vehicleType.Description)
                     {
-                        displayError("Vehicle type name already exists!");
+                        DisplayError("Vehicle type name already exists!");
                         return false;
                     }
                 }
@@ -1521,9 +1521,9 @@ namespace Citicon.Inventory
         #endregion
 
         #region SAVE DATA
-        private void saveBranch()
+        private void SaveBranch()
         {
-            if (branchValidation())
+            if (BranchValidation())
             {
                 var code = tbxBranchCode.Text.Trim();
                 var description = tbxBranchDescription.Text.Trim();
@@ -1538,19 +1538,19 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (branchHasChanges())
+                    if (BranchHasChanges())
                     {
                         activeBranch.Code = code;
                         activeBranch.Description = description;
                         branchManager.Update(activeBranch);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
-        private void saveCompany()
+        private void SaveCompany()
         {
-            if (companyValidation())
+            if (CompanyValidation())
             {
                 var code = tbxCompanyCode.Text.Trim();
                 var description = tbxCompanyDescription.Text.Trim();
@@ -1565,19 +1565,19 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (companyHasChanges())
+                    if (CompanyHasChanges())
                     {
                         activeCompany.Code = code;
                         activeCompany.Description = description;
                         companyManager.Update(activeCompany);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
-        private void saveClassification()
+        private void SaveClassification()
         {
-            if (classificationValidation())
+            if (ClassificationValidation())
             {
                 var code = tbxClassificationCode.Text.Trim();
                 var description = tbxClassificationDescription.Text.Trim();
@@ -1594,20 +1594,20 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (classificationHasChanges())
+                    if (ClassificationHasChanges())
                     {
                         activeClassification.Code = code;
                         activeClassification.Description = description;
                         activeClassification.MeasurementUnit = measurementUnit;
                         classificationManager.Update(activeClassification);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
-        private void saveMeasurementUnit()
+        private void SaveMeasurementUnit()
         {
-            if (measurementUnitValidation())
+            if (MeasurementUnitValidation())
             {
                 var description = tbxMeasurementUnitDescription.Text.Trim();
                 var symbol = tbxMeasurementUnitSymbol.Text.Trim();
@@ -1622,19 +1622,19 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (measurementUnitHasChanges())
+                    if (MeasurementUnitHasChanges())
                     {
                         activeMeasurementUnit.Description = description;
                         activeMeasurementUnit.Symbol = symbol;
                         measurementUnitManager.Update(activeMeasurementUnit);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
-        private void savePaymentTerm()
+        private void SavePaymentTerm()
         {
-            if (paymentTermValidation())
+            if (PaymentTermValidation())
             {
                 var description = tbxPaymentTermDescription.Text.Trim();
                 var dayCount = (uint)nudPaymentTermDayCount.Value;
@@ -1649,19 +1649,19 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (paymentTermHasChanges())
+                    if (PaymentTermHasChanges())
                     {
                         activePaymentTerm.DayCount = dayCount;
                         activePaymentTerm.Description = description;
                         paymentTermManager.Update(activePaymentTerm);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
-        private void saveSupplier()
+        private void SaveSupplier()
         {
-            if (supplierValidation())
+            if (SupplierValidation())
             {
                 var description = tbxSupplierDescription.Text.Trim();
                 var code = tbxSupplierCode.Text.Trim();
@@ -1680,7 +1680,7 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (supplierHasChanges())
+                    if (SupplierHasChanges())
                     {
                         activeSupplier.Address = address;
                         activeSupplier.Code = code;
@@ -1688,13 +1688,13 @@ namespace Citicon.Inventory
                         activeSupplier.Description = description;
                         supplierManager.Update(activeSupplier);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
-        private void saveVehicle()
+        private void SaveVehicle()
         {
-            if (vehicleValidation())
+            if (VehicleValidation())
             {
                 var physicalNumber = tbxVehiclePhysicalNumber.Text.Trim();
                 var plateNumber = tbxVehiclePlateNumber.Text.Trim();
@@ -1711,20 +1711,20 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (vehicleHasChanges())
+                    if (VehicleHasChanges())
                     {
                         activeVehicle.PhysicalNumber = physicalNumber;
                         activeVehicle.PlateNumber = plateNumber;
                         activeVehicle.Type = vehicleType;
                         vehicleManager.Update(activeVehicle);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
-        private void saveVehicleType()
+        private void SaveVehicleType()
         {
-            if (vehicleTypeValidation())
+            if (VehicleTypeValidation())
             {
                 var code = tbxVehicleTypeCode.Text.Trim();
                 var description = tbxVehicleTypeDescription.Text.Trim();
@@ -1739,291 +1739,291 @@ namespace Citicon.Inventory
                 }
                 else
                 {
-                    if (vehicleTypeHasChanges())
+                    if (VehicleTypeHasChanges())
                     {
                         activeVehicleType.Code = code;
                         activeVehicleType.Description = description;
                         vehicleTypeManager.Update(activeVehicleType);
                     }
-                    else displayError("No changes detected!");
+                    else DisplayError("No changes detected!");
                 }
             }
         }
         #endregion
 
         #region DATA GRID VIEW DATA SELECTION CHANGED
-        private void dgvBranches_SelectionChanged(object sender, EventArgs e)
+        private void DgvBranches_SelectionChanged(object sender, EventArgs e)
         {
-            enableBranchFields(false);
+            EnableBranchFields(false);
         }
-        private void dgvCompanies_SelectionChanged(object sender, EventArgs e)
+        private void DgvCompanies_SelectionChanged(object sender, EventArgs e)
         {
-            enableCompanyFields(false);
+            EnableCompanyFields(false);
         }
-        private void dgvClassifications_SelectionChanged(object sender, EventArgs e)
+        private void DgvClassifications_SelectionChanged(object sender, EventArgs e)
         {
-            enableClassificationFields(false);
+            EnableClassificationFields(false);
         }
-        private void dgvMeasurementUnits_SelectionChanged(object sender, EventArgs e)
+        private void DgvMeasurementUnits_SelectionChanged(object sender, EventArgs e)
         {
-            enableMeasurementUnitFields(false);
+            EnableMeasurementUnitFields(false);
         }
-        private void dgvPaymentTerms_SelectionChanged(object sender, EventArgs e)
+        private void DgvPaymentTerms_SelectionChanged(object sender, EventArgs e)
         {
-            enablePaymentTermFields(false);
+            EnablePaymentTermFields(false);
         }
-        private void dgvSuppliers_SelectionChanged(object sender, EventArgs e)
+        private void DgvSuppliers_SelectionChanged(object sender, EventArgs e)
         {
-            enableSupplierFields(false);
+            EnableSupplierFields(false);
         }
-        private void dgvVehicles_SelectionChanged(object sender, EventArgs e)
+        private void DgvVehicles_SelectionChanged(object sender, EventArgs e)
         {
-            enableVehicleFields(false);
+            EnableVehicleFields(false);
         }
-        private void dgvVehicleTypes_SelectionChanged(object sender, EventArgs e)
+        private void DgvVehicleTypes_SelectionChanged(object sender, EventArgs e)
         {
-            enableVehicleTypeFields(false);
+            EnableVehicleTypeFields(false);
         }
         #endregion
 
         #region BUTTON NEW DATA CLICK
-        private void btnNewBranches_Click(object sender, EventArgs e)
+        private void BtnNewBranches_Click(object sender, EventArgs e)
         {
-            checkBranchChanges();
+            CheckBranchChanges();
             activeBranch = null;
-            displayBranch();
-            enableBranchFields(true);
+            DisplayBranch();
+            EnableBranchFields(true);
         }
-        private void btnNewCompany_Click(object sender, EventArgs e)
+        private void BtnNewCompany_Click(object sender, EventArgs e)
         {
-            checkCompanyChanges();
+            CheckCompanyChanges();
             activeCompany = null;
-            displayCompany();
-            enableCompanyFields(true);
+            DisplayCompany();
+            EnableCompanyFields(true);
         }
-        private void btnNewClassification_Click(object sender, EventArgs e)
+        private void BtnNewClassification_Click(object sender, EventArgs e)
         {
-            checkClassificationChanges();
+            CheckClassificationChanges();
             activeClassification = null;
-            displayClassification();
-            enableClassificationFields(true);
+            DisplayClassification();
+            EnableClassificationFields(true);
         }
-        private void btnNewMeasurementUnit_Click(object sender, EventArgs e)
+        private void BtnNewMeasurementUnit_Click(object sender, EventArgs e)
         {
-            checkMeasurementUnitChanges();
+            CheckMeasurementUnitChanges();
             activeMeasurementUnit = null;
-            displayMeasurementUnit();
-            enableMeasurementUnitFields(true);
+            DisplayMeasurementUnit();
+            EnableMeasurementUnitFields(true);
         }
-        private void btnNewSupplier_Click(object sender, EventArgs e)
+        private void BtnNewSupplier_Click(object sender, EventArgs e)
         {
-            checkSupplierChanges();
+            CheckSupplierChanges();
             activeSupplier = null;
-            displaySupplier();
-            enableSupplierFields(true);
+            DisplaySupplier();
+            EnableSupplierFields(true);
         }
-        private void btnNewVehicle_Click(object sender, EventArgs e)
+        private void BtnNewVehicle_Click(object sender, EventArgs e)
         {
-            checkVehicleChanges();
+            CheckVehicleChanges();
             activeVehicle = null;
-            displayVehicle();
-            enableVehicleFields(true);
+            DisplayVehicle();
+            EnableVehicleFields(true);
         }
-        private void btnNewVehicleType_Click(object sender, EventArgs e)
+        private void BtnNewVehicleType_Click(object sender, EventArgs e)
         {
-            checkVehicleTypeChanges();
+            CheckVehicleTypeChanges();
             activeVehicleType = null;
-            displayVehicleType();
-            enableVehicleTypeFields(true);
+            DisplayVehicleType();
+            EnableVehicleTypeFields(true);
         }
-        private void btnNewPaymentTerm_Click(object sender, EventArgs e)
+        private void BtnNewPaymentTerm_Click(object sender, EventArgs e)
         {
-            checkPaymentTermChanges();
+            CheckPaymentTermChanges();
             activePaymentTerm = null;
-            displayPaymentTerm();
-            enablePaymentTermFields(true);
+            DisplayPaymentTerm();
+            EnablePaymentTermFields(true);
         }
         #endregion
 
         #region BUTTON EDIT DATA CLICK
-        private void btnEditBranch_Click(object sender, EventArgs e)
+        private void BtnEditBranch_Click(object sender, EventArgs e)
         {
             if (dgvBranches.SelectedRows.Count == 1)
             {
-                checkBranchChanges();
+                CheckBranchChanges();
                 rowBranch = dgvBranches.SelectedRows[0];
                 idxBranch = rowBranch.Index;
                 activeBranch = (Branch)rowBranch.Cells[colBranch.Name].Value;
-                displayBranch();
-                enableBranchFields(true);
+                DisplayBranch();
+                EnableBranchFields(true);
             }
         }
-        private void btnEditCompany_Click(object sender, EventArgs e)
+        private void BtnEditCompany_Click(object sender, EventArgs e)
         {
             if (dgvCompanies.SelectedRows.Count == 1)
             {
-                checkCompanyChanges();
+                CheckCompanyChanges();
                 rowCompany = dgvCompanies.SelectedRows[0];
                 idxCompany = rowCompany.Index;
                 activeCompany = (Company)rowCompany.Cells[colCompany.Name].Value;
-                displayCompany();
-                enableCompanyFields(true);
+                DisplayCompany();
+                EnableCompanyFields(true);
             }
         }
-        private void btnEditClassification_Click(object sender, EventArgs e)
+        private void BtnEditClassification_Click(object sender, EventArgs e)
         {
             if (dgvClassifications.SelectedRows.Count == 1)
             {
-                checkClassificationChanges();
+                CheckClassificationChanges();
                 rowClassification = dgvClassifications.SelectedRows[0];
                 idxClassification = rowClassification.Index;
                 activeClassification = (Classification)rowClassification.Cells[colClassification.Name].Value;
-                displayClassification();
-                enableClassificationFields(true);
+                DisplayClassification();
+                EnableClassificationFields(true);
             }
         }
-        private void btnEditMeasurementUnit_Click(object sender, EventArgs e)
+        private void BtnEditMeasurementUnit_Click(object sender, EventArgs e)
         {
             if (dgvMeasurementUnits.SelectedRows.Count == 1)
             {
-                checkMeasurementUnitChanges();
+                CheckMeasurementUnitChanges();
                 rowMeasurementUnit = dgvMeasurementUnits.SelectedRows[0];
                 idxMeasurementUnit = rowMeasurementUnit.Index;
                 activeMeasurementUnit = (MeasurementUnit)rowMeasurementUnit.Cells[colMeasurementUnit.Name].Value;
-                displayMeasurementUnit();
-                enableMeasurementUnitFields(true);
+                DisplayMeasurementUnit();
+                EnableMeasurementUnitFields(true);
             }
         }
-        private void btnEditSupplier_Click(object sender, EventArgs e)
+        private void BtnEditSupplier_Click(object sender, EventArgs e)
         {
             if (dgvSuppliers.SelectedRows.Count == 1)
             {
-                checkSupplierChanges();
+                CheckSupplierChanges();
                 rowSupplier = dgvSuppliers.SelectedRows[0];
                 idxSupplier = rowSupplier.Index;
                 activeSupplier = (Supplier)rowSupplier.Cells[colSupplier.Name].Value;
-                displaySupplier();
-                enableSupplierFields(true);
+                DisplaySupplier();
+                EnableSupplierFields(true);
             }
         }
-        private void btnEditVehicle_Click(object sender, EventArgs e)
+        private void BtnEditVehicle_Click(object sender, EventArgs e)
         {
             if (dgvVehicles.SelectedRows.Count == 1)
             {
-                checkVehicleChanges();
+                CheckVehicleChanges();
                 rowVehicle = dgvVehicles.SelectedRows[0];
                 idxVehicle = rowVehicle.Index;
                 activeVehicle = (Vehicle)rowVehicle.Cells[colVehicle.Name].Value;
-                displayVehicle();
-                enableVehicleFields(true);
+                DisplayVehicle();
+                EnableVehicleFields(true);
             }
         }
-        private void btnEditVehicleType_Click(object sender, EventArgs e)
+        private void BtnEditVehicleType_Click(object sender, EventArgs e)
         {
             if (dgvVehicleTypes.SelectedRows.Count == 1)
             {
-                checkVehicleTypeChanges();
+                CheckVehicleTypeChanges();
                 rowVehicleType = dgvVehicleTypes.SelectedRows[0];
                 idxVehicleType = rowVehicleType.Index;
                 activeVehicleType = (VehicleType)rowVehicleType.Cells[colVehicleType.Name].Value;
-                displayVehicleType();
-                enableVehicleTypeFields(true);
+                DisplayVehicleType();
+                EnableVehicleTypeFields(true);
             }
         }
-        private void btnEditPaymentTerm_Click(object sender, EventArgs e)
+        private void BtnEditPaymentTerm_Click(object sender, EventArgs e)
         {
             if (dgvPaymentTerms.SelectedRows.Count == 1)
             {
-                checkPaymentTermChanges();
+                CheckPaymentTermChanges();
                 rowPaymentTerm = dgvPaymentTerms.SelectedRows[0];
                 idxPaymentTerm = rowPaymentTerm.Index;
                 activePaymentTerm = (PaymentTerm)rowPaymentTerm.Cells[colPaymentTerm.Name].Value;
-                displayPaymentTerm();
-                enablePaymentTermFields(true);
+                DisplayPaymentTerm();
+                EnablePaymentTermFields(true);
             }
         }
         #endregion
 
         #region BUTTON CANCEL DATA CLICK
-        private void btnCancelBranch_Click(object sender, EventArgs e)
+        private void BtnCancelBranch_Click(object sender, EventArgs e)
         {
-            checkBranchChanges();
+            CheckBranchChanges();
         }
-        private void btnCancelCompany_Click(object sender, EventArgs e)
+        private void BtnCancelCompany_Click(object sender, EventArgs e)
         {
-            checkCompanyChanges();
+            CheckCompanyChanges();
         }
-        private void btnCancelClassification_Click(object sender, EventArgs e)
+        private void BtnCancelClassification_Click(object sender, EventArgs e)
         {
-            checkClassificationChanges();
+            CheckClassificationChanges();
         }
-        private void btnCancelMeasurementUnit_Click(object sender, EventArgs e)
+        private void BtnCancelMeasurementUnit_Click(object sender, EventArgs e)
         {
-            checkMeasurementUnitChanges();
+            CheckMeasurementUnitChanges();
         }
-        private void btnCancelSupplier_Click(object sender, EventArgs e)
+        private void BtnCancelSupplier_Click(object sender, EventArgs e)
         {
-            checkSupplierChanges();
+            CheckSupplierChanges();
         }
-        private void btnCancelVehicle_Click(object sender, EventArgs e)
+        private void BtnCancelVehicle_Click(object sender, EventArgs e)
         {
-            checkVehicleChanges();
+            CheckVehicleChanges();
         }
-        private void btnCancelVehicleType_Click(object sender, EventArgs e)
+        private void BtnCancelVehicleType_Click(object sender, EventArgs e)
         {
-            checkVehicleTypeChanges();
+            CheckVehicleTypeChanges();
         }
-        private void btnCancelPaymentTerm_Click(object sender, EventArgs e)
+        private void BtnCancelPaymentTerm_Click(object sender, EventArgs e)
         {
-            checkPaymentTermChanges();
+            CheckPaymentTermChanges();
         }
         #endregion
 
         #region BUTTON SAVE DATA CLICK
-        private void btnSaveBranch_Click(object sender, EventArgs e)
+        private void BtnSaveBranch_Click(object sender, EventArgs e)
         {
-            saveBranch();
+            SaveBranch();
         }
-        private void btnSaveCompany_Click(object sender, EventArgs e)
+        private void BtnSaveCompany_Click(object sender, EventArgs e)
         {
-            saveCompany();
+            SaveCompany();
         }
-        private void btnSaveClassification_Click(object sender, EventArgs e)
+        private void BtnSaveClassification_Click(object sender, EventArgs e)
         {
-            saveClassification();
+            SaveClassification();
         }
-        private void btnSaveMeasurementUnit_Click(object sender, EventArgs e)
+        private void BtnSaveMeasurementUnit_Click(object sender, EventArgs e)
         {
-            saveMeasurementUnit();
+            SaveMeasurementUnit();
         }
-        private void btnSaveSupplier_Click(object sender, EventArgs e)
+        private void BtnSaveSupplier_Click(object sender, EventArgs e)
         {
-            saveSupplier();
+            SaveSupplier();
         }
-        private void btnSaveVehicle_Click(object sender, EventArgs e)
+        private void BtnSaveVehicle_Click(object sender, EventArgs e)
         {
-            saveVehicle();
+            SaveVehicle();
         }
-        private void btnSaveVehicleType_Click(object sender, EventArgs e)
+        private void BtnSaveVehicleType_Click(object sender, EventArgs e)
         {
-            saveVehicleType();
+            SaveVehicleType();
         }
-        private void btnSavePaymentTerm_Click(object sender, EventArgs e)
+        private void BtnSavePaymentTerm_Click(object sender, EventArgs e)
         {
-            savePaymentTerm();
+            SavePaymentTerm();
         }
         #endregion
 
         #region BUTTON REMOVE DATA CLICK
-        private void btnRemoveBranch_Click(object sender, EventArgs e)
+        private void BtnRemoveBranch_Click(object sender, EventArgs e)
         {
             if (dgvBranches.SelectedRows.Count == 1)
             {
-                checkBranchChanges();
+                CheckBranchChanges();
                 rowBranch = dgvBranches.SelectedRows[0];
                 idxBranch = rowBranch.Index;
                 activeBranch = (Branch)rowBranch.Cells[colBranch.Name].Value;
-                if (ask($"Are you sure, you want to remove {activeBranch} branch?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activeBranch} branch?") == DialogResult.Yes)
                 {
                     branchManager.Remove(activeBranch);
                 }
@@ -2031,105 +2031,105 @@ namespace Citicon.Inventory
             }
 
         }
-        private void btnRemoveCompany_Click(object sender, EventArgs e)
+        private void BtnRemoveCompany_Click(object sender, EventArgs e)
         {
             if (dgvCompanies.SelectedRows.Count == 1)
             {
-                checkCompanyChanges();
+                CheckCompanyChanges();
                 rowCompany = dgvCompanies.SelectedRows[0];
                 idxCompany = rowCompany.Index;
                 activeCompany = (Company)rowCompany.Cells[colCompany.Name].Value;
-                if (ask($"Are you sure, you want to remove {activeCompany}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activeCompany}?") == DialogResult.Yes)
                 {
                     companyManager.Remove(activeCompany);
                 }
                 activeCompany = null;
             }
         }
-        private void btnRemoveClassification_Click(object sender, EventArgs e)
+        private void BtnRemoveClassification_Click(object sender, EventArgs e)
         {
             if (dgvClassifications.SelectedRows.Count == 1)
             {
-                checkClassificationChanges();
+                CheckClassificationChanges();
                 rowClassification = dgvClassifications.SelectedRows[0];
                 idxClassification = rowClassification.Index;
                 activeClassification = (Classification)rowClassification.Cells[colClassification.Name].Value;
-                if (ask($"Are you sure, you want to remove {activeClassification}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activeClassification}?") == DialogResult.Yes)
                 {
                     classificationManager.Remove(activeClassification);
                 }
                 activeClassification = null;
             }
         }
-        private void btnRemoveMeasurementUnit_Click(object sender, EventArgs e)
+        private void BtnRemoveMeasurementUnit_Click(object sender, EventArgs e)
         {
             if (dgvMeasurementUnits.SelectedRows.Count == 1)
             {
-                checkMeasurementUnitChanges();
+                CheckMeasurementUnitChanges();
                 rowMeasurementUnit = dgvMeasurementUnits.SelectedRows[0];
                 idxMeasurementUnit = rowMeasurementUnit.Index;
                 activeMeasurementUnit = (MeasurementUnit)rowMeasurementUnit.Cells[colMeasurementUnit.Name].Value;
-                if (ask($"Are you sure, you want to remove {activeMeasurementUnit}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activeMeasurementUnit}?") == DialogResult.Yes)
                 {
                     measurementUnitManager.Remove(activeMeasurementUnit);
                 }
                 activeMeasurementUnit = null;
             }
         }
-        private void btnRemoveSupplier_Click(object sender, EventArgs e)
+        private void BtnRemoveSupplier_Click(object sender, EventArgs e)
         {
             if (dgvSuppliers.SelectedRows.Count == 1)
             {
-                checkSupplierChanges();
+                CheckSupplierChanges();
                 rowSupplier = dgvSuppliers.SelectedRows[0];
                 idxSupplier = rowSupplier.Index;
                 activeSupplier = (Supplier)rowSupplier.Cells[colSupplier.Name].Value;
-                if (ask($"Are you sure, you want to remove {activeSupplier}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activeSupplier}?") == DialogResult.Yes)
                 {
                     supplierManager.Remove(activeSupplier);
                 }
                 activeSupplier = null;
             }
         }
-        private void btnRemoveVehicle_Click(object sender, EventArgs e)
+        private void BtnRemoveVehicle_Click(object sender, EventArgs e)
         {
             if (dgvVehicles.SelectedRows.Count == 1)
             {
-                checkVehicleChanges();
+                CheckVehicleChanges();
                 rowVehicle = dgvVehicles.SelectedRows[0];
                 idxVehicle = rowVehicle.Index;
                 activeVehicle = (Vehicle)rowVehicle.Cells[colVehicle.Name].Value;
-                if (ask($"Are you sure, you want to remove {activeVehicle}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activeVehicle}?") == DialogResult.Yes)
                 {
                     vehicleManager.Remove(activeVehicle);
                 }
                 activeVehicle = null;
             }
         }
-        private void btnRemoveVehicleType_Click(object sender, EventArgs e)
+        private void BtnRemoveVehicleType_Click(object sender, EventArgs e)
         {
             if (dgvVehicleTypes.SelectedRows.Count == 1)
             {
-                checkVehicleTypeChanges();
+                CheckVehicleTypeChanges();
                 rowVehicleType = dgvVehicleTypes.SelectedRows[0];
                 idxVehicleType = rowVehicleType.Index;
                 activeVehicleType = (VehicleType)rowVehicleType.Cells[colVehicleType.Name].Value;
-                if (ask($"Are you sure, you want to remove {activeVehicleType}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activeVehicleType}?") == DialogResult.Yes)
                 {
                     vehicleTypeManager.Remove(activeVehicleType);
                 }
                 activeVehicleType = null;
             }
         }
-        private void btnRemovePaymentTerm_Click(object sender, EventArgs e)
+        private void BtnRemovePaymentTerm_Click(object sender, EventArgs e)
         {
             if (dgvPaymentTerms.SelectedRows.Count == 1)
             {
-                checkPaymentTermChanges();
+                CheckPaymentTermChanges();
                 rowPaymentTerm = dgvPaymentTerms.SelectedRows[0];
                 idxPaymentTerm = rowPaymentTerm.Index;
                 activePaymentTerm = (PaymentTerm)rowPaymentTerm.Cells[colPaymentTerm.Name].Value;
-                if (ask($"Are you sure, you want to remove {activePaymentTerm}?") == DialogResult.Yes)
+                if (Ask($"Are you sure, you want to remove {activePaymentTerm}?") == DialogResult.Yes)
                 {
                     paymentTermManager.Remove(activePaymentTerm);
                 }
@@ -2139,13 +2139,13 @@ namespace Citicon.Inventory
 
         #endregion
 
-        private void btnUserSettings_Click(object sender, EventArgs e)
+        private void BtnUserSettings_Click(object sender, EventArgs e)
         {
             UserSettingsForm form = new UserSettingsForm();
             form.ShowDialog();
         }
 
-        private void searchableComboBox(object sender, MouseEventArgs e)
+        private void SearchableComboBox(object sender, MouseEventArgs e)
         {
             if (e?.Button == MouseButtons.Right && sender is ComboBox)
             {
@@ -2161,20 +2161,20 @@ namespace Citicon.Inventory
             }
         }
 
-        private void cmbx_KeyDown(object sender, KeyEventArgs e)
+        private void Cmbx_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                changeComboBoxStyleToDropDownList((ComboBox)sender);
+                ChangeComboBoxStyleToDropDownList((ComboBox)sender);
             }
         }
 
-        private void changeComboBoxStyleToDropDownList(ComboBox cmbx)
+        private void ChangeComboBoxStyleToDropDownList(ComboBox cmbx)
         {
             if (cmbx.DropDownStyle != ComboBoxStyle.DropDownList) cmbx.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void tpVehicles_Click(object sender, EventArgs e)
+        private void TpVehicles_Click(object sender, EventArgs e)
         {
 
         }

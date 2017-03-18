@@ -7,8 +7,7 @@ namespace Citicon.DataManager
     {
         public static ProjectDesignMixType Parse(string arg)
         {
-            ProjectDesignMixType mixType;
-            Enum.TryParse(arg, out mixType);
+            Enum.TryParse(arg, out ProjectDesignMixType mixType);
             return mixType;
         }
     }

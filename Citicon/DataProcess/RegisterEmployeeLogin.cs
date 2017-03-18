@@ -9,12 +9,7 @@ namespace Citicon.DataProcess
     {
         public RegisterEmployeeLogin(Employee employee)
         {
-            if (employee == null)
-            {
-                throw new ArgumentNullException(nameof(employee));
-            }
-
-            Employee = employee;
+            Employee = employee ?? throw new ArgumentNullException(nameof(employee));
         }
 
         private Employee Employee;

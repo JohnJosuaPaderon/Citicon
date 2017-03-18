@@ -16,9 +16,11 @@ namespace Citicon.DataProcess
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand();
-            command.Connection = connection;
-            command.CommandText = string.Format("SELECT PurchaseOrderNumberExists({0});", Parameter_Number);
+            var command = new MySqlCommand()
+            {
+                Connection = connection,
+                CommandText = string.Format("SELECT PurchaseOrderNumberExists({0});", Parameter_Number)
+            };
             command.Parameters.AddWithValue(Parameter_Number, PurchaseOrderNumber);
 
             return command;

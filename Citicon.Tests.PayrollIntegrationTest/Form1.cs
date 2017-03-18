@@ -11,7 +11,7 @@ namespace Citicon.Tests.PayrollIntegrationTest
             InitializeComponent();
         }
 
-        private void btnSemiMonthlyPayrollForm_Click(object sender, EventArgs e)
+        private void BtnSemiMonthlyPayrollForm_Click(object sender, EventArgs e)
         {
             var form = new SemiMonthlyPayrollForm();
             form.ShowDialog();

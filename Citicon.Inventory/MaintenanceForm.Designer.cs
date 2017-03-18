@@ -273,7 +273,7 @@
             this.btnCancelCompany.TabIndex = 32;
             this.btnCancelCompany.Text = "&Cancel";
             this.btnCancelCompany.UseVisualStyleBackColor = false;
-            this.btnCancelCompany.Click += new System.EventHandler(this.btnCancelCompany_Click);
+            this.btnCancelCompany.Click += new System.EventHandler(this.BtnCancelCompany_Click);
             // 
             // btnSaveCompany
             // 
@@ -288,7 +288,7 @@
             this.btnSaveCompany.TabIndex = 31;
             this.btnSaveCompany.Text = "&Save";
             this.btnSaveCompany.UseVisualStyleBackColor = false;
-            this.btnSaveCompany.Click += new System.EventHandler(this.btnSaveCompany_Click);
+            this.btnSaveCompany.Click += new System.EventHandler(this.BtnSaveCompany_Click);
             // 
             // btnRemoveCompany
             // 
@@ -303,7 +303,7 @@
             this.btnRemoveCompany.TabIndex = 30;
             this.btnRemoveCompany.Text = "&Remove";
             this.btnRemoveCompany.UseVisualStyleBackColor = false;
-            this.btnRemoveCompany.Click += new System.EventHandler(this.btnRemoveCompany_Click);
+            this.btnRemoveCompany.Click += new System.EventHandler(this.BtnRemoveCompany_Click);
             // 
             // tbxCompanyCode
             // 
@@ -362,7 +362,7 @@
             this.btnEditCompany.TabIndex = 22;
             this.btnEditCompany.Text = "&Edit";
             this.btnEditCompany.UseVisualStyleBackColor = false;
-            this.btnEditCompany.Click += new System.EventHandler(this.btnEditCompany_Click);
+            this.btnEditCompany.Click += new System.EventHandler(this.BtnEditCompany_Click);
             // 
             // btnNewCompany
             // 
@@ -377,7 +377,7 @@
             this.btnNewCompany.TabIndex = 21;
             this.btnNewCompany.Text = "&New";
             this.btnNewCompany.UseVisualStyleBackColor = false;
-            this.btnNewCompany.Click += new System.EventHandler(this.btnNewCompany_Click);
+            this.btnNewCompany.Click += new System.EventHandler(this.BtnNewCompany_Click);
             // 
             // dgvCompanies
             // 
@@ -425,7 +425,7 @@
             this.dgvCompanies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCompanies.Size = new System.Drawing.Size(655, 422);
             this.dgvCompanies.TabIndex = 13;
-            this.dgvCompanies.SelectionChanged += new System.EventHandler(this.dgvCompanies_SelectionChanged);
+            this.dgvCompanies.SelectionChanged += new System.EventHandler(this.DgvCompanies_SelectionChanged);
             // 
             // colCompany
             // 
@@ -476,7 +476,7 @@
             this.btnCancelBranch.TabIndex = 21;
             this.btnCancelBranch.Text = "&Cancel";
             this.btnCancelBranch.UseVisualStyleBackColor = false;
-            this.btnCancelBranch.Click += new System.EventHandler(this.btnCancelBranch_Click);
+            this.btnCancelBranch.Click += new System.EventHandler(this.BtnCancelBranch_Click);
             // 
             // tbxBranchCode
             // 
@@ -513,7 +513,7 @@
             this.btnSaveBranch.TabIndex = 17;
             this.btnSaveBranch.Text = "&Save";
             this.btnSaveBranch.UseVisualStyleBackColor = false;
-            this.btnSaveBranch.Click += new System.EventHandler(this.btnSaveBranch_Click);
+            this.btnSaveBranch.Click += new System.EventHandler(this.BtnSaveBranch_Click);
             // 
             // tbxBranchDescription
             // 
@@ -550,7 +550,7 @@
             this.btnRemoveBranch.TabIndex = 14;
             this.btnRemoveBranch.Text = "&Remove";
             this.btnRemoveBranch.UseVisualStyleBackColor = false;
-            this.btnRemoveBranch.Click += new System.EventHandler(this.btnRemoveBranch_Click);
+            this.btnRemoveBranch.Click += new System.EventHandler(this.BtnRemoveBranch_Click);
             // 
             // btnEditBranch
             // 
@@ -565,7 +565,7 @@
             this.btnEditBranch.TabIndex = 13;
             this.btnEditBranch.Text = "&Edit";
             this.btnEditBranch.UseVisualStyleBackColor = false;
-            this.btnEditBranch.Click += new System.EventHandler(this.btnEditBranch_Click);
+            this.btnEditBranch.Click += new System.EventHandler(this.BtnEditBranch_Click);
             // 
             // btnNewBranches
             // 
@@ -580,7 +580,7 @@
             this.btnNewBranches.TabIndex = 11;
             this.btnNewBranches.Text = "&New";
             this.btnNewBranches.UseVisualStyleBackColor = false;
-            this.btnNewBranches.Click += new System.EventHandler(this.btnNewBranches_Click);
+            this.btnNewBranches.Click += new System.EventHandler(this.BtnNewBranches_Click);
             // 
             // dgvBranches
             // 
@@ -628,7 +628,7 @@
             this.dgvBranches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBranches.Size = new System.Drawing.Size(655, 422);
             this.dgvBranches.TabIndex = 12;
-            this.dgvBranches.SelectionChanged += new System.EventHandler(this.dgvBranches_SelectionChanged);
+            this.dgvBranches.SelectionChanged += new System.EventHandler(this.DgvBranches_SelectionChanged);
             // 
             // colBranch
             // 
@@ -679,8 +679,8 @@
             this.cmbxClassificationMeasurementUnit.Name = "cmbxClassificationMeasurementUnit";
             this.cmbxClassificationMeasurementUnit.Size = new System.Drawing.Size(334, 29);
             this.cmbxClassificationMeasurementUnit.TabIndex = 37;
-            this.cmbxClassificationMeasurementUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxClassificationMeasurementUnit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxClassificationMeasurementUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxClassificationMeasurementUnit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // lblClassificationMeasurementUnit
             // 
@@ -705,7 +705,7 @@
             this.btnCancelClassification.TabIndex = 35;
             this.btnCancelClassification.Text = "&Cancel";
             this.btnCancelClassification.UseVisualStyleBackColor = false;
-            this.btnCancelClassification.Click += new System.EventHandler(this.btnCancelClassification_Click);
+            this.btnCancelClassification.Click += new System.EventHandler(this.BtnCancelClassification_Click);
             // 
             // btnSaveClassification
             // 
@@ -720,7 +720,7 @@
             this.btnSaveClassification.TabIndex = 34;
             this.btnSaveClassification.Text = "&Save";
             this.btnSaveClassification.UseVisualStyleBackColor = false;
-            this.btnSaveClassification.Click += new System.EventHandler(this.btnSaveClassification_Click);
+            this.btnSaveClassification.Click += new System.EventHandler(this.BtnSaveClassification_Click);
             // 
             // btnRemoveClassification
             // 
@@ -735,7 +735,7 @@
             this.btnRemoveClassification.TabIndex = 33;
             this.btnRemoveClassification.Text = "&Remove";
             this.btnRemoveClassification.UseVisualStyleBackColor = false;
-            this.btnRemoveClassification.Click += new System.EventHandler(this.btnRemoveClassification_Click);
+            this.btnRemoveClassification.Click += new System.EventHandler(this.BtnRemoveClassification_Click);
             // 
             // tbxClassificationCode
             // 
@@ -794,7 +794,7 @@
             this.btnEditClassification.TabIndex = 22;
             this.btnEditClassification.Text = "&Edit";
             this.btnEditClassification.UseVisualStyleBackColor = false;
-            this.btnEditClassification.Click += new System.EventHandler(this.btnEditClassification_Click);
+            this.btnEditClassification.Click += new System.EventHandler(this.BtnEditClassification_Click);
             // 
             // btnNewClassification
             // 
@@ -809,7 +809,7 @@
             this.btnNewClassification.TabIndex = 21;
             this.btnNewClassification.Text = "&New";
             this.btnNewClassification.UseVisualStyleBackColor = false;
-            this.btnNewClassification.Click += new System.EventHandler(this.btnNewClassification_Click);
+            this.btnNewClassification.Click += new System.EventHandler(this.BtnNewClassification_Click);
             // 
             // dgvClassifications
             // 
@@ -858,7 +858,7 @@
             this.dgvClassifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClassifications.Size = new System.Drawing.Size(655, 422);
             this.dgvClassifications.TabIndex = 13;
-            this.dgvClassifications.SelectionChanged += new System.EventHandler(this.dgvClassifications_SelectionChanged);
+            this.dgvClassifications.SelectionChanged += new System.EventHandler(this.DgvClassifications_SelectionChanged);
             // 
             // colClassification
             // 
@@ -917,7 +917,7 @@
             this.btnCancelMeasurementUnit.TabIndex = 31;
             this.btnCancelMeasurementUnit.Text = "&Cancel";
             this.btnCancelMeasurementUnit.UseVisualStyleBackColor = false;
-            this.btnCancelMeasurementUnit.Click += new System.EventHandler(this.btnCancelMeasurementUnit_Click);
+            this.btnCancelMeasurementUnit.Click += new System.EventHandler(this.BtnCancelMeasurementUnit_Click);
             // 
             // tbxMeasurementUnitSymbol
             // 
@@ -953,7 +953,7 @@
             this.btnSaveMeasurementUnit.TabIndex = 28;
             this.btnSaveMeasurementUnit.Text = "&Save";
             this.btnSaveMeasurementUnit.UseVisualStyleBackColor = false;
-            this.btnSaveMeasurementUnit.Click += new System.EventHandler(this.btnSaveMeasurementUnit_Click);
+            this.btnSaveMeasurementUnit.Click += new System.EventHandler(this.BtnSaveMeasurementUnit_Click);
             // 
             // tbxMeasurementUnitDescription
             // 
@@ -990,7 +990,7 @@
             this.btnRemoveMeasurementUnit.TabIndex = 25;
             this.btnRemoveMeasurementUnit.Text = "&Remove";
             this.btnRemoveMeasurementUnit.UseVisualStyleBackColor = false;
-            this.btnRemoveMeasurementUnit.Click += new System.EventHandler(this.btnRemoveMeasurementUnit_Click);
+            this.btnRemoveMeasurementUnit.Click += new System.EventHandler(this.BtnRemoveMeasurementUnit_Click);
             // 
             // btnEditMeasurementUnit
             // 
@@ -1005,7 +1005,7 @@
             this.btnEditMeasurementUnit.TabIndex = 24;
             this.btnEditMeasurementUnit.Text = "&Edit";
             this.btnEditMeasurementUnit.UseVisualStyleBackColor = false;
-            this.btnEditMeasurementUnit.Click += new System.EventHandler(this.btnEditMeasurementUnit_Click);
+            this.btnEditMeasurementUnit.Click += new System.EventHandler(this.BtnEditMeasurementUnit_Click);
             // 
             // btnNewMeasurementUnit
             // 
@@ -1020,7 +1020,7 @@
             this.btnNewMeasurementUnit.TabIndex = 22;
             this.btnNewMeasurementUnit.Text = "&New";
             this.btnNewMeasurementUnit.UseVisualStyleBackColor = false;
-            this.btnNewMeasurementUnit.Click += new System.EventHandler(this.btnNewMeasurementUnit_Click);
+            this.btnNewMeasurementUnit.Click += new System.EventHandler(this.BtnNewMeasurementUnit_Click);
             // 
             // dgvMeasurementUnits
             // 
@@ -1068,7 +1068,7 @@
             this.dgvMeasurementUnits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMeasurementUnits.Size = new System.Drawing.Size(655, 422);
             this.dgvMeasurementUnits.TabIndex = 23;
-            this.dgvMeasurementUnits.SelectionChanged += new System.EventHandler(this.dgvMeasurementUnits_SelectionChanged);
+            this.dgvMeasurementUnits.SelectionChanged += new System.EventHandler(this.DgvMeasurementUnits_SelectionChanged);
             // 
             // colMeasurementUnit
             // 
@@ -1133,7 +1133,7 @@
             this.btnCancelPaymentTerm.TabIndex = 41;
             this.btnCancelPaymentTerm.Text = "&Cancel";
             this.btnCancelPaymentTerm.UseVisualStyleBackColor = false;
-            this.btnCancelPaymentTerm.Click += new System.EventHandler(this.btnCancelPaymentTerm_Click);
+            this.btnCancelPaymentTerm.Click += new System.EventHandler(this.BtnCancelPaymentTerm_Click);
             // 
             // lblPaymentTermDayCount
             // 
@@ -1158,7 +1158,7 @@
             this.btnSavePaymentTerm.TabIndex = 38;
             this.btnSavePaymentTerm.Text = "&Save";
             this.btnSavePaymentTerm.UseVisualStyleBackColor = false;
-            this.btnSavePaymentTerm.Click += new System.EventHandler(this.btnSavePaymentTerm_Click);
+            this.btnSavePaymentTerm.Click += new System.EventHandler(this.BtnSavePaymentTerm_Click);
             // 
             // tbxPaymentTermDescription
             // 
@@ -1195,7 +1195,7 @@
             this.btnRemovePaymentTerm.TabIndex = 35;
             this.btnRemovePaymentTerm.Text = "&Remove";
             this.btnRemovePaymentTerm.UseVisualStyleBackColor = false;
-            this.btnRemovePaymentTerm.Click += new System.EventHandler(this.btnRemovePaymentTerm_Click);
+            this.btnRemovePaymentTerm.Click += new System.EventHandler(this.BtnRemovePaymentTerm_Click);
             // 
             // btnEditPaymentTerm
             // 
@@ -1210,7 +1210,7 @@
             this.btnEditPaymentTerm.TabIndex = 34;
             this.btnEditPaymentTerm.Text = "&Edit";
             this.btnEditPaymentTerm.UseVisualStyleBackColor = false;
-            this.btnEditPaymentTerm.Click += new System.EventHandler(this.btnEditPaymentTerm_Click);
+            this.btnEditPaymentTerm.Click += new System.EventHandler(this.BtnEditPaymentTerm_Click);
             // 
             // btnNewPaymentTerm
             // 
@@ -1225,7 +1225,7 @@
             this.btnNewPaymentTerm.TabIndex = 32;
             this.btnNewPaymentTerm.Text = "&New";
             this.btnNewPaymentTerm.UseVisualStyleBackColor = false;
-            this.btnNewPaymentTerm.Click += new System.EventHandler(this.btnNewPaymentTerm_Click);
+            this.btnNewPaymentTerm.Click += new System.EventHandler(this.BtnNewPaymentTerm_Click);
             // 
             // dgvPaymentTerms
             // 
@@ -1273,7 +1273,7 @@
             this.dgvPaymentTerms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPaymentTerms.Size = new System.Drawing.Size(655, 422);
             this.dgvPaymentTerms.TabIndex = 33;
-            this.dgvPaymentTerms.SelectionChanged += new System.EventHandler(this.dgvPaymentTerms_SelectionChanged);
+            this.dgvPaymentTerms.SelectionChanged += new System.EventHandler(this.DgvPaymentTerms_SelectionChanged);
             // 
             // colPaymentTerm
             // 
@@ -1328,7 +1328,7 @@
             this.btnCancelSupplier.TabIndex = 48;
             this.btnCancelSupplier.Text = "&Cancel";
             this.btnCancelSupplier.UseVisualStyleBackColor = false;
-            this.btnCancelSupplier.Click += new System.EventHandler(this.btnCancelSupplier_Click);
+            this.btnCancelSupplier.Click += new System.EventHandler(this.BtnCancelSupplier_Click);
             // 
             // btnSaveSupplier
             // 
@@ -1343,7 +1343,7 @@
             this.btnSaveSupplier.TabIndex = 47;
             this.btnSaveSupplier.Text = "&Save";
             this.btnSaveSupplier.UseVisualStyleBackColor = false;
-            this.btnSaveSupplier.Click += new System.EventHandler(this.btnSaveSupplier_Click);
+            this.btnSaveSupplier.Click += new System.EventHandler(this.BtnSaveSupplier_Click);
             // 
             // btnRemoveSupplier
             // 
@@ -1358,7 +1358,7 @@
             this.btnRemoveSupplier.TabIndex = 46;
             this.btnRemoveSupplier.Text = "&Remove";
             this.btnRemoveSupplier.UseVisualStyleBackColor = false;
-            this.btnRemoveSupplier.Click += new System.EventHandler(this.btnRemoveSupplier_Click);
+            this.btnRemoveSupplier.Click += new System.EventHandler(this.BtnRemoveSupplier_Click);
             // 
             // tbxSupplierContactNumber
             // 
@@ -1462,7 +1462,7 @@
             this.btnEditSupplier.TabIndex = 36;
             this.btnEditSupplier.Text = "&Edit";
             this.btnEditSupplier.UseVisualStyleBackColor = false;
-            this.btnEditSupplier.Click += new System.EventHandler(this.btnEditSupplier_Click);
+            this.btnEditSupplier.Click += new System.EventHandler(this.BtnEditSupplier_Click);
             // 
             // btnNewSupplier
             // 
@@ -1477,7 +1477,7 @@
             this.btnNewSupplier.TabIndex = 35;
             this.btnNewSupplier.Text = "&New";
             this.btnNewSupplier.UseVisualStyleBackColor = false;
-            this.btnNewSupplier.Click += new System.EventHandler(this.btnNewSupplier_Click);
+            this.btnNewSupplier.Click += new System.EventHandler(this.BtnNewSupplier_Click);
             // 
             // dgvSuppliers
             // 
@@ -1527,7 +1527,7 @@
             this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSuppliers.Size = new System.Drawing.Size(655, 422);
             this.dgvSuppliers.TabIndex = 34;
-            this.dgvSuppliers.SelectionChanged += new System.EventHandler(this.dgvSuppliers_SelectionChanged);
+            this.dgvSuppliers.SelectionChanged += new System.EventHandler(this.DgvSuppliers_SelectionChanged);
             // 
             // colSupplier
             // 
@@ -1583,7 +1583,7 @@
             this.tpVehicles.Size = new System.Drawing.Size(1179, 428);
             this.tpVehicles.TabIndex = 7;
             this.tpVehicles.Text = "Vehicles";
-            this.tpVehicles.Click += new System.EventHandler(this.tpVehicles_Click);
+            this.tpVehicles.Click += new System.EventHandler(this.TpVehicles_Click);
             // 
             // btnCancelVehicle
             // 
@@ -1598,7 +1598,7 @@
             this.btnCancelVehicle.TabIndex = 52;
             this.btnCancelVehicle.Text = "&Cancel";
             this.btnCancelVehicle.UseVisualStyleBackColor = false;
-            this.btnCancelVehicle.Click += new System.EventHandler(this.btnCancelVehicle_Click);
+            this.btnCancelVehicle.Click += new System.EventHandler(this.BtnCancelVehicle_Click);
             // 
             // btnSaveVehicle
             // 
@@ -1613,7 +1613,7 @@
             this.btnSaveVehicle.TabIndex = 51;
             this.btnSaveVehicle.Text = "&Save";
             this.btnSaveVehicle.UseVisualStyleBackColor = false;
-            this.btnSaveVehicle.Click += new System.EventHandler(this.btnSaveVehicle_Click);
+            this.btnSaveVehicle.Click += new System.EventHandler(this.BtnSaveVehicle_Click);
             // 
             // btnRemoveVehicle
             // 
@@ -1628,7 +1628,7 @@
             this.btnRemoveVehicle.TabIndex = 50;
             this.btnRemoveVehicle.Text = "&Remove";
             this.btnRemoveVehicle.UseVisualStyleBackColor = false;
-            this.btnRemoveVehicle.Click += new System.EventHandler(this.btnRemoveVehicle_Click);
+            this.btnRemoveVehicle.Click += new System.EventHandler(this.BtnRemoveVehicle_Click);
             // 
             // cmbxVehicleVehicleType
             // 
@@ -1641,8 +1641,8 @@
             this.cmbxVehicleVehicleType.Name = "cmbxVehicleVehicleType";
             this.cmbxVehicleVehicleType.Size = new System.Drawing.Size(334, 29);
             this.cmbxVehicleVehicleType.TabIndex = 49;
-            this.cmbxVehicleVehicleType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbx_KeyDown);
-            this.cmbxVehicleVehicleType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.searchableComboBox);
+            this.cmbxVehicleVehicleType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
+            this.cmbxVehicleVehicleType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
             // 
             // lblVehicleVehicleType
             // 
@@ -1711,7 +1711,7 @@
             this.btnEditVehicle.TabIndex = 43;
             this.btnEditVehicle.Text = "&Edit";
             this.btnEditVehicle.UseVisualStyleBackColor = false;
-            this.btnEditVehicle.Click += new System.EventHandler(this.btnEditVehicle_Click);
+            this.btnEditVehicle.Click += new System.EventHandler(this.BtnEditVehicle_Click);
             // 
             // btnNewVehicle
             // 
@@ -1726,7 +1726,7 @@
             this.btnNewVehicle.TabIndex = 42;
             this.btnNewVehicle.Text = "&New";
             this.btnNewVehicle.UseVisualStyleBackColor = false;
-            this.btnNewVehicle.Click += new System.EventHandler(this.btnNewVehicle_Click);
+            this.btnNewVehicle.Click += new System.EventHandler(this.BtnNewVehicle_Click);
             // 
             // dgvVehicles
             // 
@@ -1774,7 +1774,7 @@
             this.dgvVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVehicles.Size = new System.Drawing.Size(655, 422);
             this.dgvVehicles.TabIndex = 14;
-            this.dgvVehicles.SelectionChanged += new System.EventHandler(this.dgvVehicles_SelectionChanged);
+            this.dgvVehicles.SelectionChanged += new System.EventHandler(this.DgvVehicles_SelectionChanged);
             // 
             // colVehicle
             // 
@@ -1825,7 +1825,7 @@
             this.btnCancelVehicleType.TabIndex = 42;
             this.btnCancelVehicleType.Text = "&Cancel";
             this.btnCancelVehicleType.UseVisualStyleBackColor = false;
-            this.btnCancelVehicleType.Click += new System.EventHandler(this.btnCancelVehicleType_Click);
+            this.btnCancelVehicleType.Click += new System.EventHandler(this.BtnCancelVehicleType_Click);
             // 
             // btnSaveVehicleType
             // 
@@ -1840,7 +1840,7 @@
             this.btnSaveVehicleType.TabIndex = 41;
             this.btnSaveVehicleType.Text = "&Save";
             this.btnSaveVehicleType.UseVisualStyleBackColor = false;
-            this.btnSaveVehicleType.Click += new System.EventHandler(this.btnSaveVehicleType_Click);
+            this.btnSaveVehicleType.Click += new System.EventHandler(this.BtnSaveVehicleType_Click);
             // 
             // btnRemoveVehicleType
             // 
@@ -1855,7 +1855,7 @@
             this.btnRemoveVehicleType.TabIndex = 40;
             this.btnRemoveVehicleType.Text = "&Remove";
             this.btnRemoveVehicleType.UseVisualStyleBackColor = false;
-            this.btnRemoveVehicleType.Click += new System.EventHandler(this.btnRemoveVehicleType_Click);
+            this.btnRemoveVehicleType.Click += new System.EventHandler(this.BtnRemoveVehicleType_Click);
             // 
             // tbxVehicleTypeCode
             // 
@@ -1914,7 +1914,7 @@
             this.btnEditVehicleType.TabIndex = 35;
             this.btnEditVehicleType.Text = "&Edit";
             this.btnEditVehicleType.UseVisualStyleBackColor = false;
-            this.btnEditVehicleType.Click += new System.EventHandler(this.btnEditVehicleType_Click);
+            this.btnEditVehicleType.Click += new System.EventHandler(this.BtnEditVehicleType_Click);
             // 
             // btnNewVehicleType
             // 
@@ -1929,7 +1929,7 @@
             this.btnNewVehicleType.TabIndex = 34;
             this.btnNewVehicleType.Text = "&New";
             this.btnNewVehicleType.UseVisualStyleBackColor = false;
-            this.btnNewVehicleType.Click += new System.EventHandler(this.btnNewVehicleType_Click);
+            this.btnNewVehicleType.Click += new System.EventHandler(this.BtnNewVehicleType_Click);
             // 
             // dgvVehicleTypes
             // 
@@ -1977,7 +1977,7 @@
             this.dgvVehicleTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVehicleTypes.Size = new System.Drawing.Size(655, 422);
             this.dgvVehicleTypes.TabIndex = 33;
-            this.dgvVehicleTypes.SelectionChanged += new System.EventHandler(this.dgvVehicleTypes_SelectionChanged);
+            this.dgvVehicleTypes.SelectionChanged += new System.EventHandler(this.DgvVehicleTypes_SelectionChanged);
             // 
             // colVehicleType
             // 
@@ -2118,7 +2118,7 @@
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // btnUserSettings
             // 
@@ -2134,7 +2134,7 @@
             this.btnUserSettings.TabIndex = 11;
             this.btnUserSettings.Text = "User Settings";
             this.btnUserSettings.UseVisualStyleBackColor = false;
-            this.btnUserSettings.Click += new System.EventHandler(this.btnUserSettings_Click);
+            this.btnUserSettings.Click += new System.EventHandler(this.BtnUserSettings_Click);
             // 
             // MaintenanceForm
             // 

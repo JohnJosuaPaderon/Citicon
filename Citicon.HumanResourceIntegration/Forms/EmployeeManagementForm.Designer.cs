@@ -40,7 +40,7 @@
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(347, 23);
             this.tbxSearch.TabIndex = 0;
-            this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            this.tbxSearch.TextChanged += new System.EventHandler(this.TbxSearch_TextChanged);
             // 
             // lblSearch
             // 
@@ -60,7 +60,7 @@
             this.lbxSearchSuggest.Size = new System.Drawing.Size(347, 4);
             this.lbxSearchSuggest.TabIndex = 2;
             this.lbxSearchSuggest.Visible = false;
-            this.lbxSearchSuggest.DoubleClick += new System.EventHandler(this.lbxSearchSuggest_DoubleClick);
+            this.lbxSearchSuggest.DoubleClick += new System.EventHandler(this.LbxSearchSuggest_DoubleClick);
             // 
             // EmployeeManagementForm
             // 

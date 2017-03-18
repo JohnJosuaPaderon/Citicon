@@ -12,12 +12,7 @@ namespace Citicon.DataProcess
         #region Constructor
         public GetPurchaseOrderById(ulong purchaseOrderId)
         {
-            if (purchaseOrderId == 0)
-            {
-                throw new ArgumentException("Cannot be zero.", nameof(purchaseOrderId));
-            }
-
-            PurchaseOrderId = purchaseOrderId;
+            PurchaseOrderId = purchaseOrderId == 0 ? throw new ArgumentException("Cannot be zero.", nameof(purchaseOrderId)) : purchaseOrderId;
             ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
         #endregion
@@ -30,8 +25,10 @@ namespace Citicon.DataProcess
         #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            var command = new MySqlCommand("GetPurchaseOrderById", connection);
-            command.CommandType = CommandType.StoredProcedure;
+            var command = new MySqlCommand("GetPurchaseOrderById", connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
             command.Parameters.AddWithValue("@_Id", PurchaseOrderId);
             return command;
         }

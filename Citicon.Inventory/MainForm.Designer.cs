@@ -118,7 +118,7 @@
             this.lblLogout.TabStop = true;
             this.lblLogout.Text = "Log out";
             this.lblLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogout_LinkClicked);
+            this.lblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblLogout_LinkClicked);
             // 
             // lblHelloUser
             // 
@@ -143,7 +143,7 @@
             this.btnItems.TabIndex = 6;
             this.btnItems.Text = "&Items";
             this.btnItems.UseVisualStyleBackColor = false;
-            this.btnItems.Click += new System.EventHandler(this.btnItems_Click);
+            this.btnItems.Click += new System.EventHandler(this.BtnItems_Click);
             // 
             // btnIncomingStocks
             // 
@@ -157,7 +157,7 @@
             this.btnIncomingStocks.TabIndex = 7;
             this.btnIncomingStocks.Text = "I&ncoming Stocks";
             this.btnIncomingStocks.UseVisualStyleBackColor = false;
-            this.btnIncomingStocks.Click += new System.EventHandler(this.btnIncomingStocks_Click);
+            this.btnIncomingStocks.Click += new System.EventHandler(this.BtnIncomingStocks_Click);
             // 
             // btnOutgoingStocks
             // 
@@ -171,7 +171,7 @@
             this.btnOutgoingStocks.TabIndex = 8;
             this.btnOutgoingStocks.Text = "&Outgoing Stocks";
             this.btnOutgoingStocks.UseVisualStyleBackColor = false;
-            this.btnOutgoingStocks.Click += new System.EventHandler(this.btnOutgoingStocks_Click);
+            this.btnOutgoingStocks.Click += new System.EventHandler(this.BtnOutgoingStocks_Click);
             // 
             // btnMaintenance
             // 
@@ -185,7 +185,7 @@
             this.btnMaintenance.TabIndex = 9;
             this.btnMaintenance.Text = "&Maintenance";
             this.btnMaintenance.UseVisualStyleBackColor = false;
-            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
+            this.btnMaintenance.Click += new System.EventHandler(this.BtnMaintenance_Click);
             // 
             // btnReports
             // 
@@ -199,7 +199,7 @@
             this.btnReports.TabIndex = 10;
             this.btnReports.Text = "R&eports";
             this.btnReports.UseVisualStyleBackColor = false;
-            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
+            this.btnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 
             // dgvItems
             // 
@@ -301,7 +301,7 @@
             this.btnViewTracking.TabIndex = 12;
             this.btnViewTracking.Text = "&View Tracking";
             this.btnViewTracking.UseVisualStyleBackColor = false;
-            this.btnViewTracking.Click += new System.EventHandler(this.btnViewTracking_Click);
+            this.btnViewTracking.Click += new System.EventHandler(this.BtnViewTracking_Click);
             // 
             // btnRefresh
             // 
@@ -315,7 +315,7 @@
             this.btnRefresh.TabIndex = 13;
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // lblSearch
             // 
@@ -335,7 +335,7 @@
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(519, 29);
             this.tbxSearch.TabIndex = 15;
-            this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            this.tbxSearch.TextChanged += new System.EventHandler(this.TbxSearch_TextChanged);
             // 
             // lblMessage
             // 
