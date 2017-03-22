@@ -56,9 +56,9 @@ namespace Citicon.Payables.Data
         }
         public static bool operator ==(Expense x, Expense y)
         {
-            return
-                x?.code == y?.code &&
-                x?.description == y?.description;
+            return x?.id == y?.id;
+                //x?.code == y?.code &&
+                //x?.description == y?.description;
         }
         public static bool operator !=(Expense x, Expense y)
         {

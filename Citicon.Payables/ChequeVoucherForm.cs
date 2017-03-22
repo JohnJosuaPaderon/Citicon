@@ -198,7 +198,6 @@ namespace Citicon.Payables
                     var stock = (Stock)row.Cells[colStocks.Name].Value;
                     total += stock.UnitPrice * stock.AddedStockValue;
                 }
-                tbxGrandTotal.Text = total.ToString("#,##0.00");
             }
             else if (tcChequeVoucher.SelectedTab == tpExpenses)
             {
@@ -211,15 +210,24 @@ namespace Citicon.Payables
                     decimal debit;
                     decimal credit;
 
+                    var expense = row.Cells[colExpense.Name].Value as Expense;
+
                     decimal.TryParse(row.Cells[colExpenseDebit.Name].Value.ToString().Replace(",", string.Empty), out debit);
                     decimal.TryParse(row.Cells[colExpenseCredit.Name].Value.ToString().Replace(",", string.Empty), out credit);
                     
                     totalDebit += debit;
                     totalCredit += credit;
+
+                    if (expense == Expense.CashInBank)
+                    {
+                        total += credit;
+                    }
                 }
                 tbxExpenseTotalDebit.Text = totalDebit.ToString("#,##0.00");
                 tbxExpenseTotalCredit.Text = totalCredit.ToString("#,##0.00");
             }
+
+            tbxGrandTotal.Text = total.ToString("#,##0.00");
         }
 
         private async void tbxSearchMrisNumber_KeyDown(object sender, KeyEventArgs e)
@@ -644,8 +652,8 @@ namespace Citicon.Payables
             decimal.TryParse(tbxExpenseTotalDebit.Text.Trim(), out debit);
             decimal.TryParse(tbxExpenseTotalCredit.Text.Trim(), out credit);
             tbxExpenseDifference.Text = (debit - credit).ToString("#,##0.00");
-            if (debit == credit)
-                tbxGrandTotal.Text = debit.ToString("#,##0.00");
+            //if (debit == credit)
+            //    tbxGrandTotal.Text = debit.ToString("#,##0.00");
         }
 
         private void tbxExpenseDifference_TextChanged(object sender, EventArgs e)

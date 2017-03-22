@@ -25,10 +25,11 @@ namespace Citicon.ReceivablesIntegration.Forms
 
                 foreach (DataGridViewRow row in dgvScheduledProjectDesign.Rows)
                 {
-                    var scheduledDesign = new ScheduledProjectDesign();
-                    scheduledDesign.Design = row.Cells[colScheduledProjectDesign.Name].Value as ProjectDesign;
-                    scheduledDesign.ScheduledDate = dtpScheduledDate.Value;
-
+                    var scheduledDesign = new ScheduledProjectDesign()
+                    {
+                        Design = row.Cells[colScheduledProjectDesign.Name].Value as ProjectDesign,
+                        ScheduledDate = dtpScheduledDate.Value
+                    };
                     if (!await ScheduledProjectDesignManager.ExistsAsync(scheduledDesign))
                     {
                         scheduledDesigns.Add(scheduledDesign);

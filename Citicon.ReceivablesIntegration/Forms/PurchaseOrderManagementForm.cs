@@ -104,8 +104,7 @@ namespace Citicon.ReceivablesIntegration.Forms
                         var purchaseOrder = new PurchaseOrder()
                         {
                             Project = project,
-                            Number = purchaseOrderNumber,
-                            Balance = nudInitialBalance.Value
+                            Number = purchaseOrderNumber
                         };
                         var purchaseOrderTransaction = new PurchaseOrderTransaction()
                         {
@@ -127,7 +126,6 @@ namespace Citicon.ReceivablesIntegration.Forms
                                 dgvProjectDesign.Rows.Clear();
                                 dgvPurchaseOrderProjectDesign.Rows.Clear();
                                 nudPurchaseOrderNumber.Value = 0;
-                                nudInitialBalance.Value = 0;
                             }
                             else
                             {

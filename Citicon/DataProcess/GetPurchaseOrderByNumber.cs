@@ -37,10 +37,9 @@ namespace Citicon.DataProcess
         {
             return new PurchaseOrder
             {
-                Balance = reader.GetDecimal("Balance"),
                 Id = reader.GetUInt64("Id"),
                 Number = PurchaseOrderNumber,
-                RunningBalance = reader.GetDecimal("RunningBalance")
+                //RunningBalance = reader.GetDecimal("RunningBalance")
             };
         }
         #endregion

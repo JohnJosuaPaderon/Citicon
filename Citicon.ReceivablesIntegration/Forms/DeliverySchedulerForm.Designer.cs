@@ -39,20 +39,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliverySchedulerForm));
             this.dgvProjects = new System.Windows.Forms.DataGridView();
+            this.colProject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProject_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProjectDesign = new System.Windows.Forms.DataGridView();
+            this.colProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblScheduledDate = new System.Windows.Forms.Label();
             this.dtpScheduledDate = new System.Windows.Forms.DateTimePicker();
             this.dgvScheduledProjectDesign = new System.Windows.Forms.DataGridView();
+            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledProjectDesign_Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnScheduleSelectedProjectDesign = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRemoveAll = new System.Windows.Forms.Button();
             this.btnRemoveSelected = new System.Windows.Forms.Button();
-            this.colProject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProject_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
@@ -106,6 +106,21 @@
             this.dgvProjects.TabIndex = 103;
             this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged);
             // 
+            // colProject
+            // 
+            this.colProject.HeaderText = "Projects";
+            this.colProject.MinimumWidth = 100;
+            this.colProject.Name = "colProject";
+            this.colProject.ReadOnly = true;
+            // 
+            // colProject_Client
+            // 
+            this.colProject_Client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProject_Client.HeaderText = "Client";
+            this.colProject_Client.MinimumWidth = 100;
+            this.colProject_Client.Name = "colProject_Client";
+            this.colProject_Client.ReadOnly = true;
+            // 
             // dgvProjectDesign
             // 
             this.dgvProjectDesign.AllowUserToAddRows = false;
@@ -154,6 +169,14 @@
             this.dgvProjectDesign.Size = new System.Drawing.Size(628, 317);
             this.dgvProjectDesign.TabIndex = 104;
             // 
+            // colProjectDesign
+            // 
+            this.colProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProjectDesign.HeaderText = "Project Designs";
+            this.colProjectDesign.MinimumWidth = 500;
+            this.colProjectDesign.Name = "colProjectDesign";
+            this.colProjectDesign.ReadOnly = true;
+            // 
             // lblScheduledDate
             // 
             this.lblScheduledDate.AutoSize = true;
@@ -165,7 +188,7 @@
             // 
             // dtpScheduledDate
             // 
-            this.dtpScheduledDate.CustomFormat = "MMMM dd, yyyy";
+            this.dtpScheduledDate.CustomFormat = "MMMM dd, yyyy hh:mm tt";
             this.dtpScheduledDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpScheduledDate.Location = new System.Drawing.Point(644, 36);
             this.dtpScheduledDate.Name = "dtpScheduledDate";
@@ -221,6 +244,21 @@
             this.dgvScheduledProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvScheduledProjectDesign.Size = new System.Drawing.Size(952, 679);
             this.dgvScheduledProjectDesign.TabIndex = 107;
+            // 
+            // colScheduledProjectDesign
+            // 
+            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
+            this.colScheduledProjectDesign.MinimumWidth = 100;
+            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
+            this.colScheduledProjectDesign.ReadOnly = true;
+            // 
+            // colScheduledProjectDesign_Project
+            // 
+            this.colScheduledProjectDesign_Project.HeaderText = "Project";
+            this.colScheduledProjectDesign_Project.MinimumWidth = 100;
+            this.colScheduledProjectDesign_Project.Name = "colScheduledProjectDesign_Project";
+            this.colScheduledProjectDesign_Project.ReadOnly = true;
             // 
             // btnScheduleSelectedProjectDesign
             // 
@@ -294,44 +332,6 @@
             this.btnRemoveSelected.Text = "Remove Selected";
             this.btnRemoveSelected.UseVisualStyleBackColor = false;
             this.btnRemoveSelected.Click += new System.EventHandler(this.btnRemoveSelected_Click);
-            // 
-            // colProject
-            // 
-            this.colProject.HeaderText = "Projects";
-            this.colProject.MinimumWidth = 100;
-            this.colProject.Name = "colProject";
-            this.colProject.ReadOnly = true;
-            // 
-            // colProject_Client
-            // 
-            this.colProject_Client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProject_Client.HeaderText = "Client";
-            this.colProject_Client.MinimumWidth = 100;
-            this.colProject_Client.Name = "colProject_Client";
-            this.colProject_Client.ReadOnly = true;
-            // 
-            // colProjectDesign
-            // 
-            this.colProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProjectDesign.HeaderText = "Project Designs";
-            this.colProjectDesign.MinimumWidth = 500;
-            this.colProjectDesign.Name = "colProjectDesign";
-            this.colProjectDesign.ReadOnly = true;
-            // 
-            // colScheduledProjectDesign
-            // 
-            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
-            this.colScheduledProjectDesign.MinimumWidth = 100;
-            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
-            this.colScheduledProjectDesign.ReadOnly = true;
-            // 
-            // colScheduledProjectDesign_Project
-            // 
-            this.colScheduledProjectDesign_Project.HeaderText = "Project";
-            this.colScheduledProjectDesign_Project.MinimumWidth = 100;
-            this.colScheduledProjectDesign_Project.Name = "colScheduledProjectDesign_Project";
-            this.colScheduledProjectDesign_Project.ReadOnly = true;
             // 
             // DeliverySchedulerForm
             // 

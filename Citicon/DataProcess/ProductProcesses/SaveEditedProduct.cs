@@ -32,7 +32,7 @@ namespace Citicon.DataProcess
                         command.Parameters.AddWithValue("@_ProjectId", ProjectDesign.Project.Id);
                         command.Parameters.AddWithValue("@_PricePerCubicMeter", ProjectDesign.PricePerCubicMeter);
                         command.Parameters.AddWithValue("@_InitialVolume", ProjectDesign.InitialVolume);
-                        command.Parameters.AddWithValue("@_DesignMixType", ProjectDesign.MixType);
+                        command.Parameters.AddWithValue("@_DesignMixType", ProjectDesign.MixType.ToString());
                         command.Parameters.AddWithValue("@_Psi", ProjectDesign.Psi);
                         command.Parameters.AddWithValue("@_AggregateId", ProjectDesign.Aggregate?.Id);
                         command.Parameters.AddWithValue("@_CementFactor", ProjectDesign.CementFactor);

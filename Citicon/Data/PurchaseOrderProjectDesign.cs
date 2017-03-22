@@ -5,6 +5,11 @@
         public PurchaseOrder PurchaseOrder { get; set; }
         public ProjectDesign ProjectDesign { get; set; }
         public decimal MaxVolume { get; set; }
+        public decimal ConsumedVolume { get; set; }
+        public decimal Balance
+        {
+            get { return MaxVolume - ConsumedVolume; }
+        }
 
         public static bool operator ==(PurchaseOrderProjectDesign left, PurchaseOrderProjectDesign right)
         {

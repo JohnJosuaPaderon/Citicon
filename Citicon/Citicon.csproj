@@ -138,6 +138,7 @@
     <Compile Include="DataProcess\GeneratePayroll.cs" />
     <Compile Include="DataProcess\GetApprovedProjectDesignListByProject.cs" />
     <Compile Include="DataProcess\GetApprovedProjectList.cs" />
+    <Compile Include="DataProcess\GetAvailablePurchaseOrderProjectDesign.cs" />
     <Compile Include="DataProcess\GetBankAccountListByBank.cs" />
     <Compile Include="DataProcess\GetChequeSummaryItemIEnumerable.cs" />
     <Compile Include="DataProcess\GetChequeVoucherNumberDetails.cs" />
@@ -338,9 +339,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data\ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

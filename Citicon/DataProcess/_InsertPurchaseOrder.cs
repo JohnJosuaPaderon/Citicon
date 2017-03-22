@@ -30,7 +30,6 @@ namespace Citicon.DataProcess
             };
             command.Parameters.Add(new MySqlParameter() { ParameterName = "@_PurchaseOrderId", Direction = ParameterDirection.Output });
             command.Parameters.AddWithValue("@_Number", PurchaseOrder.Number);
-            command.Parameters.AddWithValue("@_Balance", PurchaseOrder.Balance);
             return command;
         }
 

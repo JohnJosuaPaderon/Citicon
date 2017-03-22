@@ -54,13 +54,10 @@
             this.btnExcludeProjectDesign = new System.Windows.Forms.Button();
             this.nudMaxVolume = new System.Windows.Forms.NumericUpDown();
             this.lblMaxVolume = new System.Windows.Forms.Label();
-            this.lblInitialBalance = new System.Windows.Forms.Label();
-            this.nudInitialBalance = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudPurchaseOrderNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxVolume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudInitialBalance)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPurchaseOrderNumber
@@ -125,7 +122,7 @@
             this.dgvProjectDesign.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvProjectDesign.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvProjectDesign.Location = new System.Drawing.Point(21, 222);
+            this.dgvProjectDesign.Location = new System.Drawing.Point(21, 187);
             this.dgvProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvProjectDesign.MultiSelect = false;
             this.dgvProjectDesign.Name = "dgvProjectDesign";
@@ -134,7 +131,7 @@
             this.dgvProjectDesign.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProjectDesign.RowTemplate.Height = 40;
             this.dgvProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjectDesign.Size = new System.Drawing.Size(639, 511);
+            this.dgvProjectDesign.Size = new System.Drawing.Size(639, 546);
             this.dgvProjectDesign.TabIndex = 104;
             // 
             // colProjectDesign
@@ -148,7 +145,7 @@
             // lblClient
             // 
             this.lblClient.AutoSize = true;
-            this.lblClient.Location = new System.Drawing.Point(17, 107);
+            this.lblClient.Location = new System.Drawing.Point(17, 72);
             this.lblClient.Name = "lblClient";
             this.lblClient.Size = new System.Drawing.Size(50, 21);
             this.lblClient.TabIndex = 105;
@@ -158,7 +155,7 @@
             // 
             this.cmbxClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxClient.FormattingEnabled = true;
-            this.cmbxClient.Location = new System.Drawing.Point(21, 131);
+            this.cmbxClient.Location = new System.Drawing.Point(21, 96);
             this.cmbxClient.Name = "cmbxClient";
             this.cmbxClient.Size = new System.Drawing.Size(639, 29);
             this.cmbxClient.TabIndex = 106;
@@ -168,7 +165,7 @@
             // 
             this.cmbxProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxProject.FormattingEnabled = true;
-            this.cmbxProject.Location = new System.Drawing.Point(21, 187);
+            this.cmbxProject.Location = new System.Drawing.Point(21, 152);
             this.cmbxProject.Name = "cmbxProject";
             this.cmbxProject.Size = new System.Drawing.Size(639, 29);
             this.cmbxProject.TabIndex = 108;
@@ -177,7 +174,7 @@
             // lblProject
             // 
             this.lblProject.AutoSize = true;
-            this.lblProject.Location = new System.Drawing.Point(17, 163);
+            this.lblProject.Location = new System.Drawing.Point(17, 128);
             this.lblProject.Name = "lblProject";
             this.lblProject.Size = new System.Drawing.Size(58, 21);
             this.lblProject.TabIndex = 107;
@@ -251,7 +248,7 @@
             this.dgvPurchaseOrderProjectDesign.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPurchaseOrderProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvPurchaseOrderProjectDesign.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvPurchaseOrderProjectDesign.Location = new System.Drawing.Point(723, 222);
+            this.dgvPurchaseOrderProjectDesign.Location = new System.Drawing.Point(723, 187);
             this.dgvPurchaseOrderProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvPurchaseOrderProjectDesign.MultiSelect = false;
             this.dgvPurchaseOrderProjectDesign.Name = "dgvPurchaseOrderProjectDesign";
@@ -260,7 +257,7 @@
             this.dgvPurchaseOrderProjectDesign.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPurchaseOrderProjectDesign.RowTemplate.Height = 40;
             this.dgvPurchaseOrderProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchaseOrderProjectDesign.Size = new System.Drawing.Size(900, 511);
+            this.dgvPurchaseOrderProjectDesign.Size = new System.Drawing.Size(900, 546);
             this.dgvPurchaseOrderProjectDesign.TabIndex = 113;
             // 
             // colPurchaseOrderProjectDesign
@@ -298,7 +295,7 @@
             this.btnIncludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnIncludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncludeProjectDesign.ForeColor = System.Drawing.Color.White;
-            this.btnIncludeProjectDesign.Location = new System.Drawing.Point(664, 460);
+            this.btnIncludeProjectDesign.Location = new System.Drawing.Point(664, 403);
             this.btnIncludeProjectDesign.Margin = new System.Windows.Forms.Padding(2);
             this.btnIncludeProjectDesign.Name = "btnIncludeProjectDesign";
             this.btnIncludeProjectDesign.Size = new System.Drawing.Size(55, 55);
@@ -313,7 +310,7 @@
             this.btnExcludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcludeProjectDesign.ForeColor = System.Drawing.Color.White;
-            this.btnExcludeProjectDesign.Location = new System.Drawing.Point(664, 519);
+            this.btnExcludeProjectDesign.Location = new System.Drawing.Point(664, 462);
             this.btnExcludeProjectDesign.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcludeProjectDesign.Name = "btnExcludeProjectDesign";
             this.btnExcludeProjectDesign.Size = new System.Drawing.Size(55, 55);
@@ -325,7 +322,7 @@
             // 
             this.nudMaxVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nudMaxVolume.DecimalPlaces = 3;
-            this.nudMaxVolume.Location = new System.Drawing.Point(360, 757);
+            this.nudMaxVolume.Location = new System.Drawing.Point(360, 744);
             this.nudMaxVolume.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -341,35 +338,11 @@
             // 
             this.lblMaxVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMaxVolume.AutoSize = true;
-            this.lblMaxVolume.Location = new System.Drawing.Point(258, 759);
+            this.lblMaxVolume.Location = new System.Drawing.Point(258, 746);
             this.lblMaxVolume.Name = "lblMaxVolume";
             this.lblMaxVolume.Size = new System.Drawing.Size(96, 21);
             this.lblMaxVolume.TabIndex = 115;
             this.lblMaxVolume.Text = "Max Volume";
-            // 
-            // lblInitialBalance
-            // 
-            this.lblInitialBalance.AutoSize = true;
-            this.lblInitialBalance.Location = new System.Drawing.Point(249, 77);
-            this.lblInitialBalance.Name = "lblInitialBalance";
-            this.lblInitialBalance.Size = new System.Drawing.Size(105, 21);
-            this.lblInitialBalance.TabIndex = 116;
-            this.lblInitialBalance.Text = "Initial Balance";
-            // 
-            // nudInitialBalance
-            // 
-            this.nudInitialBalance.DecimalPlaces = 3;
-            this.nudInitialBalance.Location = new System.Drawing.Point(360, 75);
-            this.nudInitialBalance.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.nudInitialBalance.Name = "nudInitialBalance";
-            this.nudInitialBalance.Size = new System.Drawing.Size(300, 29);
-            this.nudInitialBalance.TabIndex = 117;
-            this.nudInitialBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nudInitialBalance.ThousandsSeparator = true;
             // 
             // PurchaseOrderManagementForm
             // 
@@ -377,8 +350,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1635, 806);
-            this.Controls.Add(this.nudInitialBalance);
-            this.Controls.Add(this.lblInitialBalance);
             this.Controls.Add(this.lblMaxVolume);
             this.Controls.Add(this.nudMaxVolume);
             this.Controls.Add(this.dgvPurchaseOrderProjectDesign);
@@ -406,7 +377,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderProjectDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxVolume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudInitialBalance)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -429,8 +399,6 @@
         private System.Windows.Forms.Button btnExcludeProjectDesign;
         private System.Windows.Forms.NumericUpDown nudMaxVolume;
         private System.Windows.Forms.Label lblMaxVolume;
-        private System.Windows.Forms.Label lblInitialBalance;
-        private System.Windows.Forms.NumericUpDown nudInitialBalance;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseOrderProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseOrderProjectDesign_ProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseOrderProjectDesign_MaxVolume;

@@ -32,5 +32,20 @@ namespace Citicon.DataManager
 
             return purchaseOrderProjectDesign;
         }
+
+        public static async Task<PurchaseOrderProjectDesign> GetAvailableAsync(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new GetAvailablePurchaseOrderProjectDesign(projectDesign))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
