@@ -146,7 +146,10 @@ namespace Citicon.Inventory
                 nudUnitPrice.Value = 0;
                 tbxRemarks.Text = string.Empty;
                 nudDrNumber.Value = 0;
-                nudSiNumber.Value = 0; 
+                nudSiNumber.Value = 0;
+                nudLength.Value = 0;
+                nudWidth.Value = 0;
+                nudHeight.Value = 0;
             }
         }
         private void SupplierManager_NewItemGenerated(Supplier e)
@@ -334,6 +337,12 @@ namespace Citicon.Inventory
                 foreach (Control c in control.Controls)
                 {
                     if (c.Tag == (object)"MeasurementDescription") c.Enabled = enabled;
+
+                    if (c is NumericUpDown)
+                    {
+                        var nud = c as NumericUpDown;
+                        nud.Value = 0;
+                    }
                 }
             }
         }

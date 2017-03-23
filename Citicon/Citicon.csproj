@@ -44,6 +44,7 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -279,6 +280,8 @@
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
+    <Compile Include="GSM\COM.cs" />
+    <Compile Include="GSM\SMS.cs" />
     <Compile Include="MySqlUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RelationalDatabaseUtility.cs" />
