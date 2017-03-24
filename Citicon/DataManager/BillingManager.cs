@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
-using Citicon.DataProcess.BillingProcesses;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

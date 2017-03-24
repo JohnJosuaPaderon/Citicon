@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Citicon.DataProcess.DeliveryProcesses
+namespace Citicon.DataProcess
 {
     public sealed class UpdateDeliveryBillingId
     {

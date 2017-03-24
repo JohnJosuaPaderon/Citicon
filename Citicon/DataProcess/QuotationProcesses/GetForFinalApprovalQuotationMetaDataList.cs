@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Citicon.DataProcess.QuotationProcesses
+namespace Citicon.DataProcess
 {
     public sealed class GetForFinalApprovalQuotationMetaDataList : IDisposable
     {

@@ -160,10 +160,13 @@
     <Compile Include="DataProcess\GetScheduledProjectDesignList.cs" />
     <Compile Include="DataProcess\GetSupplierList.cs" />
     <Compile Include="DataProcess\GetTimeLogTypeById.cs" />
+    <Compile Include="DataProcess\InsertClient.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrderProjectDesign.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrderTransaction.cs" />
     <Compile Include="DataProcess\PurchaseOrderNumberExists.cs" />
+    <Compile Include="DataProcess\ValidateClient.cs" />
+    <Compile Include="DataProcess\ValidationResult.cs" />
     <Compile Include="DataProcess\_InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
     <Compile Include="DataProcess\InsertScheduledProjectDesign.cs" />
@@ -280,6 +283,25 @@
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
+    <Compile Include="Forms\ClientManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientManagementForm.Designer.cs">
+      <DependentUpon>ClientManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\ClientViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ClientViewControl.Designer.cs">
+      <DependentUpon>ClientViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditClientDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditClientDialog.Designer.cs">
+      <DependentUpon>AddEditClientDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DataDialogMode.cs" />
     <Compile Include="GSM\COM.cs" />
     <Compile Include="GSM\SMS.cs" />
     <Compile Include="MySqlUtility.cs" />
@@ -299,6 +321,15 @@
   <ItemGroup>
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientManagementForm.resx">
+      <DependentUpon>ClientManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ClientViewControl.resx">
+      <DependentUpon>ClientViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
+      <DependentUpon>AddEditClientDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>

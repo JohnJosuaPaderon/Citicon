@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
-using Citicon.DataProcess.ClientProcesses;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -169,6 +168,42 @@ namespace Citicon.DataManager
             using (var process = new GetClientListWithApprovedProjectDesign())
             {
                 return await process.ExecuteAsync();
+            }
+        }
+
+        public static async Task<Client> InsertAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new InsertClient(client))
+                {
+                    client = await process.ExecuteAsync();
+
+                    if (client != null)
+                    {
+                        if (!Clients.Contains(client))
+                        {
+                            Clients.Add(client);
+                        }
+                    }
+                }
+            }
+
+            return client;
+        }
+
+        public static ValidationResult Validate(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new ValidateClient(client))
+                {
+                    return process.Execute();
+                }
+            }
+            else
+            {
+                return new ValidationResult(false, "Invalid client.");
             }
         }
     }

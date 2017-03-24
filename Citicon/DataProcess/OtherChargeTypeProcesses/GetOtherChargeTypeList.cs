@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Citicon.DataProcess.OtherChargeTypeProcesses
+namespace Citicon.DataProcess
 {
     public sealed class GetOtherChargeTypeList : IDisposable
     {

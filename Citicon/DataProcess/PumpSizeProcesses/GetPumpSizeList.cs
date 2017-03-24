@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Citicon.DataProcess.PumpSizeProcesses
+namespace Citicon.DataProcess
 {
     public sealed class GetPumpSizeList : IDisposable
     {

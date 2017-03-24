@@ -4,7 +4,7 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Citicon.DataProcess.OtherChargeProcesses
+namespace Citicon.DataProcess
 {
     public sealed class InsertOtherCharge
     {

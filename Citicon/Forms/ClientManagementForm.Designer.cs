@@ -34,10 +34,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientManagementForm));
             this.ClientDataGridView = new System.Windows.Forms.DataGridView();
             this.colClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddNew = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.ClientView = new Citicon.Forms.Controls.ClientViewControl();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.AddNewButton = new System.Windows.Forms.Button();
+            this.ViewProjectsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +61,7 @@
             this.ClientDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -70,7 +73,7 @@
             this.colClient});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -78,8 +81,7 @@
             this.ClientDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.ClientDataGridView.EnableHeadersVisualStyles = false;
             this.ClientDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientDataGridView.Location = new System.Drawing.Point(11, 12);
-            this.ClientDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ClientDataGridView.Location = new System.Drawing.Point(10, 40);
             this.ClientDataGridView.MultiSelect = false;
             this.ClientDataGridView.Name = "ClientDataGridView";
             this.ClientDataGridView.ReadOnly = true;
@@ -87,7 +89,7 @@
             this.ClientDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.ClientDataGridView.RowTemplate.Height = 40;
             this.ClientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ClientDataGridView.Size = new System.Drawing.Size(968, 782);
+            this.ClientDataGridView.Size = new System.Drawing.Size(1060, 642);
             this.ClientDataGridView.TabIndex = 104;
             this.ClientDataGridView.SelectionChanged += new System.EventHandler(this.ClientDataGridView_SelectionChanged);
             // 
@@ -99,75 +101,122 @@
             this.colClient.Name = "colClient";
             this.colClient.ReadOnly = true;
             // 
-            // btnAddNew
-            // 
-            this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddNew.BackColor = System.Drawing.Color.Red;
-            this.btnAddNew.FlatAppearance.BorderSize = 0;
-            this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNew.ForeColor = System.Drawing.Color.White;
-            this.btnAddNew.Location = new System.Drawing.Point(1182, 476);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(100, 40);
-            this.btnAddNew.TabIndex = 105;
-            this.btnAddNew.Text = "Add New";
-            this.btnAddNew.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.BackColor = System.Drawing.Color.Red;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(1288, 476);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 40);
-            this.btnEdit.TabIndex = 106;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1394, 476);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 40);
-            this.btnDelete.TabIndex = 108;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // ClientView
             // 
             this.ClientView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ClientView.AutoSize = true;
             this.ClientView.BackColor = System.Drawing.Color.White;
             this.ClientView.Client = null;
-            this.ClientView.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientView.ForeColor = System.Drawing.Color.Red;
-            this.ClientView.Location = new System.Drawing.Point(984, 12);
+            this.ClientView.Location = new System.Drawing.Point(1077, 81);
+            this.ClientView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ClientView.Name = "ClientView";
-            this.ClientView.Size = new System.Drawing.Size(510, 458);
+            this.ClientView.Size = new System.Drawing.Size(400, 478);
             this.ClientView.TabIndex = 109;
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Location = new System.Drawing.Point(10, 14);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(47, 17);
+            this.SearchLabel.TabIndex = 110;
+            this.SearchLabel.Text = "Search";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Location = new System.Drawing.Point(62, 11);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(335, 25);
+            this.SearchTextBox.TabIndex = 111;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteButton.FlatAppearance.BorderSize = 0;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteButton.Location = new System.Drawing.Point(1293, 40);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(100, 35);
+            this.DeleteButton.TabIndex = 114;
+            this.DeleteButton.Text = "DELETE";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.BackColor = System.Drawing.Color.Red;
+            this.EditButton.FlatAppearance.BorderSize = 0;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditButton.ForeColor = System.Drawing.Color.White;
+            this.EditButton.Location = new System.Drawing.Point(1185, 40);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(100, 35);
+            this.EditButton.TabIndex = 113;
+            this.EditButton.Text = "EDIT";
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // AddNewButton
+            // 
+            this.AddNewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddNewButton.BackColor = System.Drawing.Color.Red;
+            this.AddNewButton.FlatAppearance.BorderSize = 0;
+            this.AddNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNewButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewButton.ForeColor = System.Drawing.Color.White;
+            this.AddNewButton.Location = new System.Drawing.Point(1077, 40);
+            this.AddNewButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AddNewButton.Name = "AddNewButton";
+            this.AddNewButton.Size = new System.Drawing.Size(100, 35);
+            this.AddNewButton.TabIndex = 112;
+            this.AddNewButton.Text = "ADD NEW";
+            this.AddNewButton.UseVisualStyleBackColor = false;
+            this.AddNewButton.Click += new System.EventHandler(this.AddNewButton_Click);
+            // 
+            // ViewProjectsButton
+            // 
+            this.ViewProjectsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ViewProjectsButton.BackColor = System.Drawing.Color.Red;
+            this.ViewProjectsButton.FlatAppearance.BorderSize = 0;
+            this.ViewProjectsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ViewProjectsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewProjectsButton.ForeColor = System.Drawing.Color.White;
+            this.ViewProjectsButton.Location = new System.Drawing.Point(1352, 565);
+            this.ViewProjectsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ViewProjectsButton.Name = "ViewProjectsButton";
+            this.ViewProjectsButton.Size = new System.Drawing.Size(125, 35);
+            this.ViewProjectsButton.TabIndex = 115;
+            this.ViewProjectsButton.Text = "VIEW PROJECTS";
+            this.ViewProjectsButton.UseVisualStyleBackColor = false;
+            this.ViewProjectsButton.Click += new System.EventHandler(this.ViewProjectsButton_Click);
             // 
             // ClientManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1506, 806);
+            this.ClientSize = new System.Drawing.Size(1490, 693);
+            this.Controls.Add(this.ViewProjectsButton);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.AddNewButton);
+            this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.ClientView);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.ClientDataGridView);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ClientManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Client Management Form";
@@ -183,9 +232,12 @@
 
         private System.Windows.Forms.DataGridView ClientDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClient;
-        private System.Windows.Forms.Button btnAddNew;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
         private Controls.ClientViewControl ClientView;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button AddNewButton;
+        private System.Windows.Forms.Button ViewProjectsButton;
     }
 }

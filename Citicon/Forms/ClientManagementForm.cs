@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -59,6 +60,49 @@ namespace Citicon.Forms
         private async void ClientDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             await GetClientAsync();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var key = SearchTextBox.Text.Trim().ToUpper();
+
+            if (!string.IsNullOrWhiteSpace(key))
+            {
+                foreach (DataGridViewRow row in ClientDataGridView.Rows)
+                {
+                    if (row.Cells[colClient.Name].Value is Client client && client.CompanyName.ToUpper().StartsWith(key))
+                    {
+                        row.Selected = true;
+                        ClientDataGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void AddNewButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new AddEditClientDialog();
+            dialog.ShowDialog();
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (ClientView.Client != null)
+            {
+                var dialog = new AddEditClientDialog(ClientView.Client);
+                dialog.ShowDialog();
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewProjectsButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

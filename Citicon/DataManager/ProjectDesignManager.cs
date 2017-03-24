@@ -1,10 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
-using Citicon.DataProcess.ProjectDesignProcesses;
-using CTPMO.Extensions;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Citicon.DataManager

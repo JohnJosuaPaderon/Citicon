@@ -1,13 +1,13 @@
-﻿namespace Citicon.Forms.Controls
+﻿namespace Citicon.Forms.Dialogs
 {
-    partial class ClientViewControl
+    partial class AddEditClientDialog
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,14 +20,15 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditClientDialog));
             this.GroupBox = new System.Windows.Forms.GroupBox();
             this.LegitimateCheckBox = new System.Windows.Forms.CheckBox();
             this.TINTextBox = new System.Windows.Forms.TextBox();
@@ -50,7 +51,7 @@
             this.ContactPersonContactNumberTextBox = new System.Windows.Forms.TextBox();
             this.ContactPersonContactNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ExecutivePositionTextBox = new System.Windows.Forms.TextBox();
+            this.ExecutivePositionComboBox = new System.Windows.Forms.ComboBox();
             this.ExecutiveMobileNumberTextBox = new System.Windows.Forms.TextBox();
             this.ExecutiveMobileNumberLabel = new System.Windows.Forms.Label();
             this.ExecutiveTelephoneNumberTextBox = new System.Windows.Forms.TextBox();
@@ -58,6 +59,8 @@
             this.ExecutivePositionLabel = new System.Windows.Forms.Label();
             this.ExecutiveNameTextBox = new System.Windows.Forms.TextBox();
             this.ExecutiveNameLabel = new System.Windows.Forms.Label();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.GroupBox.SuspendLayout();
             this.ContactPersonGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,19 +75,19 @@
             this.GroupBox.Controls.Add(this.AddressLabel);
             this.GroupBox.Controls.Add(this.CompanyNameTextBox);
             this.GroupBox.Controls.Add(this.CompanyNameLabel);
-            this.GroupBox.Location = new System.Drawing.Point(4, 3);
+            this.GroupBox.Location = new System.Drawing.Point(13, 12);
             this.GroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GroupBox.Name = "GroupBox";
             this.GroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.GroupBox.Size = new System.Drawing.Size(394, 169);
-            this.GroupBox.TabIndex = 0;
+            this.GroupBox.TabIndex = 117;
             this.GroupBox.TabStop = false;
             this.GroupBox.Text = "Client Details";
             // 
             // LegitimateCheckBox
             // 
             this.LegitimateCheckBox.AutoSize = true;
-            this.LegitimateCheckBox.Location = new System.Drawing.Point(297, 14);
+            this.LegitimateCheckBox.Location = new System.Drawing.Point(299, 14);
             this.LegitimateCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LegitimateCheckBox.Name = "LegitimateCheckBox";
             this.LegitimateCheckBox.Size = new System.Drawing.Size(87, 21);
@@ -98,9 +101,9 @@
             this.TINTextBox.Location = new System.Drawing.Point(11, 134);
             this.TINTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TINTextBox.Name = "TINTextBox";
-            this.TINTextBox.ReadOnly = true;
-            this.TINTextBox.Size = new System.Drawing.Size(373, 25);
+            this.TINTextBox.Size = new System.Drawing.Size(374, 25);
             this.TINTextBox.TabIndex = 3;
+            this.TINTextBox.TextChanged += new System.EventHandler(this.TINTextBox_TextChanged);
             // 
             // TINLabel
             // 
@@ -118,9 +121,9 @@
             this.AddressTextBox.Location = new System.Drawing.Point(11, 86);
             this.AddressTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.ReadOnly = true;
-            this.AddressTextBox.Size = new System.Drawing.Size(373, 25);
+            this.AddressTextBox.Size = new System.Drawing.Size(374, 25);
             this.AddressTextBox.TabIndex = 2;
+            this.AddressTextBox.TextChanged += new System.EventHandler(this.AddressTextBox_TextChanged);
             // 
             // AddressLabel
             // 
@@ -138,9 +141,9 @@
             this.CompanyNameTextBox.Location = new System.Drawing.Point(11, 41);
             this.CompanyNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CompanyNameTextBox.Name = "CompanyNameTextBox";
-            this.CompanyNameTextBox.ReadOnly = true;
-            this.CompanyNameTextBox.Size = new System.Drawing.Size(373, 25);
+            this.CompanyNameTextBox.Size = new System.Drawing.Size(374, 25);
             this.CompanyNameTextBox.TabIndex = 1;
+            this.CompanyNameTextBox.TextChanged += new System.EventHandler(this.CompanyNameTextBox_TextChanged);
             // 
             // CompanyNameLabel
             // 
@@ -166,12 +169,12 @@
             this.ContactPersonGroupBox.Controls.Add(this.ContactPersonEmailAddressLabel);
             this.ContactPersonGroupBox.Controls.Add(this.ContactPersonContactNumberTextBox);
             this.ContactPersonGroupBox.Controls.Add(this.ContactPersonContactNumberLabel);
-            this.ContactPersonGroupBox.Location = new System.Drawing.Point(4, 179);
+            this.ContactPersonGroupBox.Location = new System.Drawing.Point(13, 188);
             this.ContactPersonGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonGroupBox.Name = "ContactPersonGroupBox";
             this.ContactPersonGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonGroupBox.Size = new System.Drawing.Size(394, 169);
-            this.ContactPersonGroupBox.TabIndex = 1;
+            this.ContactPersonGroupBox.TabIndex = 118;
             this.ContactPersonGroupBox.TabStop = false;
             this.ContactPersonGroupBox.Text = "Contact Person";
             // 
@@ -181,9 +184,9 @@
             this.ContactPersonPositionTextBox.Location = new System.Drawing.Point(202, 86);
             this.ContactPersonPositionTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonPositionTextBox.Name = "ContactPersonPositionTextBox";
-            this.ContactPersonPositionTextBox.ReadOnly = true;
             this.ContactPersonPositionTextBox.Size = new System.Drawing.Size(183, 25);
             this.ContactPersonPositionTextBox.TabIndex = 3;
+            this.ContactPersonPositionTextBox.TextChanged += new System.EventHandler(this.ContactPersonPositionTextBox_TextChanged);
             // 
             // ContactPersonPositionLabel
             // 
@@ -201,9 +204,9 @@
             this.ContactPersonTitleTextBox.Location = new System.Drawing.Point(11, 86);
             this.ContactPersonTitleTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonTitleTextBox.Name = "ContactPersonTitleTextBox";
-            this.ContactPersonTitleTextBox.ReadOnly = true;
             this.ContactPersonTitleTextBox.Size = new System.Drawing.Size(183, 25);
             this.ContactPersonTitleTextBox.TabIndex = 2;
+            this.ContactPersonTitleTextBox.TextChanged += new System.EventHandler(this.ContactPersonTitleTextBox_TextChanged);
             // 
             // ContactPersonTitleLabel
             // 
@@ -221,9 +224,9 @@
             this.ContactPersonLastNameTextBox.Location = new System.Drawing.Point(202, 41);
             this.ContactPersonLastNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonLastNameTextBox.Name = "ContactPersonLastNameTextBox";
-            this.ContactPersonLastNameTextBox.ReadOnly = true;
             this.ContactPersonLastNameTextBox.Size = new System.Drawing.Size(183, 25);
             this.ContactPersonLastNameTextBox.TabIndex = 1;
+            this.ContactPersonLastNameTextBox.TextChanged += new System.EventHandler(this.ContactPersonLastNameTextBox_TextChanged);
             // 
             // ContactPersonLastNameLabel
             // 
@@ -241,9 +244,9 @@
             this.ContactPersonFirstNameTextBox.Location = new System.Drawing.Point(11, 41);
             this.ContactPersonFirstNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonFirstNameTextBox.Name = "ContactPersonFirstNameTextBox";
-            this.ContactPersonFirstNameTextBox.ReadOnly = true;
             this.ContactPersonFirstNameTextBox.Size = new System.Drawing.Size(183, 25);
             this.ContactPersonFirstNameTextBox.TabIndex = 0;
+            this.ContactPersonFirstNameTextBox.TextChanged += new System.EventHandler(this.ContactPersonFirstNameTextBox_TextChanged);
             // 
             // ContactPersonFirstNameLabel
             // 
@@ -261,9 +264,9 @@
             this.ContactPersonEmailAddressTextBox.Location = new System.Drawing.Point(11, 134);
             this.ContactPersonEmailAddressTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonEmailAddressTextBox.Name = "ContactPersonEmailAddressTextBox";
-            this.ContactPersonEmailAddressTextBox.ReadOnly = true;
             this.ContactPersonEmailAddressTextBox.Size = new System.Drawing.Size(183, 25);
             this.ContactPersonEmailAddressTextBox.TabIndex = 4;
+            this.ContactPersonEmailAddressTextBox.TextChanged += new System.EventHandler(this.ContactPersonEmailAddressTextBox_TextChanged);
             // 
             // ContactPersonEmailAddressLabel
             // 
@@ -281,9 +284,9 @@
             this.ContactPersonContactNumberTextBox.Location = new System.Drawing.Point(202, 134);
             this.ContactPersonContactNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ContactPersonContactNumberTextBox.Name = "ContactPersonContactNumberTextBox";
-            this.ContactPersonContactNumberTextBox.ReadOnly = true;
             this.ContactPersonContactNumberTextBox.Size = new System.Drawing.Size(183, 25);
             this.ContactPersonContactNumberTextBox.TabIndex = 5;
+            this.ContactPersonContactNumberTextBox.TextChanged += new System.EventHandler(this.ContactPersonContactNumberTextBox_TextChanged);
             // 
             // ContactPersonContactNumberLabel
             // 
@@ -297,7 +300,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ExecutivePositionTextBox);
+            this.groupBox1.Controls.Add(this.ExecutivePositionComboBox);
             this.groupBox1.Controls.Add(this.ExecutiveMobileNumberTextBox);
             this.groupBox1.Controls.Add(this.ExecutiveMobileNumberLabel);
             this.groupBox1.Controls.Add(this.ExecutiveTelephoneNumberTextBox);
@@ -305,24 +308,24 @@
             this.groupBox1.Controls.Add(this.ExecutivePositionLabel);
             this.groupBox1.Controls.Add(this.ExecutiveNameTextBox);
             this.groupBox1.Controls.Add(this.ExecutiveNameLabel);
-            this.groupBox1.Location = new System.Drawing.Point(4, 355);
+            this.groupBox1.Location = new System.Drawing.Point(13, 364);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Size = new System.Drawing.Size(394, 122);
-            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabIndex = 119;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Executive\'s Details";
             // 
-            // ExecutivePositionTextBox
+            // ExecutivePositionComboBox
             // 
-            this.ExecutivePositionTextBox.BackColor = System.Drawing.Color.White;
-            this.ExecutivePositionTextBox.Location = new System.Drawing.Point(202, 41);
-            this.ExecutivePositionTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ExecutivePositionTextBox.Name = "ExecutivePositionTextBox";
-            this.ExecutivePositionTextBox.ReadOnly = true;
-            this.ExecutivePositionTextBox.Size = new System.Drawing.Size(183, 25);
-            this.ExecutivePositionTextBox.TabIndex = 1;
+            this.ExecutivePositionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ExecutivePositionComboBox.FormattingEnabled = true;
+            this.ExecutivePositionComboBox.Location = new System.Drawing.Point(201, 41);
+            this.ExecutivePositionComboBox.Name = "ExecutivePositionComboBox";
+            this.ExecutivePositionComboBox.Size = new System.Drawing.Size(184, 25);
+            this.ExecutivePositionComboBox.TabIndex = 17;
+            this.ExecutivePositionComboBox.SelectedIndexChanged += new System.EventHandler(this.ExecutivePositionComboBox_SelectedIndexChanged);
             // 
             // ExecutiveMobileNumberTextBox
             // 
@@ -330,9 +333,9 @@
             this.ExecutiveMobileNumberTextBox.Location = new System.Drawing.Point(202, 89);
             this.ExecutiveMobileNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ExecutiveMobileNumberTextBox.Name = "ExecutiveMobileNumberTextBox";
-            this.ExecutiveMobileNumberTextBox.ReadOnly = true;
             this.ExecutiveMobileNumberTextBox.Size = new System.Drawing.Size(183, 25);
             this.ExecutiveMobileNumberTextBox.TabIndex = 3;
+            this.ExecutiveMobileNumberTextBox.TextChanged += new System.EventHandler(this.ExecutiveMobileNumberTextBox_TextChanged);
             // 
             // ExecutiveMobileNumberLabel
             // 
@@ -350,9 +353,9 @@
             this.ExecutiveTelephoneNumberTextBox.Location = new System.Drawing.Point(11, 89);
             this.ExecutiveTelephoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ExecutiveTelephoneNumberTextBox.Name = "ExecutiveTelephoneNumberTextBox";
-            this.ExecutiveTelephoneNumberTextBox.ReadOnly = true;
             this.ExecutiveTelephoneNumberTextBox.Size = new System.Drawing.Size(183, 25);
             this.ExecutiveTelephoneNumberTextBox.TabIndex = 2;
+            this.ExecutiveTelephoneNumberTextBox.TextChanged += new System.EventHandler(this.ExecutiveTelephoneNumberTextBox_TextChanged);
             // 
             // ExecutiveTelephoneNumberLabel
             // 
@@ -380,9 +383,9 @@
             this.ExecutiveNameTextBox.Location = new System.Drawing.Point(11, 41);
             this.ExecutiveNameTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ExecutiveNameTextBox.Name = "ExecutiveNameTextBox";
-            this.ExecutiveNameTextBox.ReadOnly = true;
             this.ExecutiveNameTextBox.Size = new System.Drawing.Size(183, 25);
             this.ExecutiveNameTextBox.TabIndex = 0;
+            this.ExecutiveNameTextBox.TextChanged += new System.EventHandler(this.ExecutiveNameTextBox_TextChanged);
             // 
             // ExecutiveNameLabel
             // 
@@ -394,19 +397,57 @@
             this.ExecutiveNameLabel.TabIndex = 10;
             this.ExecutiveNameLabel.Text = "Name";
             // 
-            // ClientViewControl
+            // SaveButton
+            // 
+            this.SaveButton.BackColor = System.Drawing.Color.Red;
+            this.SaveButton.FlatAppearance.BorderSize = 0;
+            this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.ForeColor = System.Drawing.Color.White;
+            this.SaveButton.Location = new System.Drawing.Point(199, 492);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(100, 35);
+            this.SaveButton.TabIndex = 120;
+            this.SaveButton.Text = "SAVE";
+            this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // CancelButton
+            // 
+            this.CancelButton.BackColor = System.Drawing.Color.White;
+            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelButton.ForeColor = System.Drawing.Color.Red;
+            this.CancelButton.Location = new System.Drawing.Point(307, 492);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(100, 35);
+            this.CancelButton.TabIndex = 121;
+            this.CancelButton.Text = "CANCEL";
+            this.CancelButton.UseVisualStyleBackColor = false;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // AddEditClientDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.ContactPersonGroupBox);
+            this.ClientSize = new System.Drawing.Size(420, 537);
+            this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.GroupBox);
+            this.Controls.Add(this.ContactPersonGroupBox);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.SaveButton);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "ClientViewControl";
-            this.Size = new System.Drawing.Size(402, 479);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "AddEditClientDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add or Edit New Client";
+            this.Load += new System.EventHandler(this.AddEditClientDialog_Load);
             this.GroupBox.ResumeLayout(false);
             this.GroupBox.PerformLayout();
             this.ContactPersonGroupBox.ResumeLayout(false);
@@ -420,13 +461,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GroupBox;
-        private System.Windows.Forms.Label CompanyNameLabel;
+        private System.Windows.Forms.CheckBox LegitimateCheckBox;
+        private System.Windows.Forms.TextBox TINTextBox;
+        private System.Windows.Forms.Label TINLabel;
         private System.Windows.Forms.TextBox AddressTextBox;
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.TextBox CompanyNameTextBox;
-        private System.Windows.Forms.TextBox TINTextBox;
-        private System.Windows.Forms.Label TINLabel;
-        private System.Windows.Forms.CheckBox LegitimateCheckBox;
+        private System.Windows.Forms.Label CompanyNameLabel;
         private System.Windows.Forms.GroupBox ContactPersonGroupBox;
         private System.Windows.Forms.TextBox ContactPersonPositionTextBox;
         private System.Windows.Forms.Label ContactPersonPositionLabel;
@@ -441,7 +482,6 @@
         private System.Windows.Forms.TextBox ContactPersonContactNumberTextBox;
         private System.Windows.Forms.Label ContactPersonContactNumberLabel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox ExecutivePositionTextBox;
         private System.Windows.Forms.TextBox ExecutiveMobileNumberTextBox;
         private System.Windows.Forms.Label ExecutiveMobileNumberLabel;
         private System.Windows.Forms.TextBox ExecutiveTelephoneNumberTextBox;
@@ -449,5 +489,8 @@
         private System.Windows.Forms.Label ExecutivePositionLabel;
         private System.Windows.Forms.TextBox ExecutiveNameTextBox;
         private System.Windows.Forms.Label ExecutiveNameLabel;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.ComboBox ExecutivePositionComboBox;
     }
 }

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace Citicon.DataProcess.QuotationProcesses
+namespace Citicon.DataProcess
 {
     public sealed class ExportQuotationResult
     {

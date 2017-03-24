@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
-using Citicon.DataProcess.OtherChargeTypeProcesses;
-using CTPMO.Extensions;
+using Citicon.DataProcess;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Threading.Tasks;

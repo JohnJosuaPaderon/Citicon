@@ -5,7 +5,7 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Citicon.DataProcess.ExcessPipeChargeProcesses
+namespace Citicon.DataProcess
 {
     public sealed class InsertExcessPipeCharge
     {
