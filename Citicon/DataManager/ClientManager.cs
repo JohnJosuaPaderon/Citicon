@@ -73,13 +73,13 @@ namespace Citicon.DataManager
             using (var getClientList = new GetClientList())
             {
                 var clients = await getClientList.GetAsync();
-                if (clients != null)
-                {
-                    foreach (var item in clients)
-                    {
-                        ManageItem(item);
-                    }
-                }
+                //if (clients != null)
+                //{
+                //    foreach (var item in clients)
+                //    {
+                //        ManageItem(item);
+                //    }
+                //}
                 return clients;
             }
         }
