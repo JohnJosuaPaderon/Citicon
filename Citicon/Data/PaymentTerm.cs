@@ -1,58 +1,44 @@
 ﻿namespace Citicon.Inventory.Data
 {
-    public sealed class PaymentTerm : Sorschia.Data
+    public sealed class PaymentTerm
     {
-        private ulong id;
-        private string description;
-        private uint daycount;
-        public ulong Id
+        public ulong Id { get; set; }
+        public string Description { get; set; }
+        public uint DayCount { get; set; }
+
+        public static bool operator ==(PaymentTerm left, PaymentTerm right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(PaymentTerm left, PaymentTerm right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is PaymentTerm)
             {
-                id = value;
-                OnPropertyChanged("PaymentTerm.Id", value);
+                return (PaymentTerm)arg == this;
             }
+            return false;
         }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged("PaymentTerm.Description", value);
-            }
-        }
-        public uint DayCount
-        {
-            get { return daycount; }
-            set
-            {
-                daycount = value;
-                OnPropertyChanged("PaymentTerm.DayCount", value);
-            }
-        }
-        public static bool operator ==(PaymentTerm x, PaymentTerm y)
-        {
-            return
-                x?.description == y?.description &&
-                x?.daycount == y?.daycount;
-        }
-        public static bool operator !=(PaymentTerm x, PaymentTerm y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is PaymentTerm) ? (obj as PaymentTerm).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }

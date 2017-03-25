@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace Citicon.Payables.Data
 {
-    public sealed class Expense : Sorschia.Data
+    public sealed class Expense
     {
         static Expense()
         {
@@ -14,79 +14,44 @@ namespace Citicon.Payables.Data
         }
 
         public static Expense CashInBank { get; }
+        
+        public ulong Id { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
 
-        private ulong id;
-        private string code;
-        private string description;
-        public ulong Id
+        public static bool operator ==(Expense left, Expense right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(Expense left, Expense right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is Expense)
             {
-                if (id != value)
-                {
-                    id = value;
-                    OnPropertyChanged("Expense.Id", value);
-                }
+                return (Expense)arg == this;
             }
+            return false;
         }
-        public string Code
-        {
-            get { return code; }
-            set
-            {
-                if (code != value)
-                {
-                    code = value;
-                    OnPropertyChanged("Expense.Code", value);
-                }
-            }
-        }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                if (description != value)
-                {
-                    description = value;
-                    OnPropertyChanged("Expense.Description", value);
-                }
-            }
-        }
-        public static bool operator ==(Expense x, Expense y)
-        {
-            return x?.id == y?.id;
-                //x?.code == y?.code &&
-                //x?.description == y?.description;
-        }
-        public static bool operator !=(Expense x, Expense y)
-        {
-            return !(x == y);
-        }
-        public static Expense Salary
-        {
-            get
-            {
-                return new Expense
-                {
-                    code = ConfigurationManager.AppSettings["Expense.Salary.Code"],
-                    description = ConfigurationManager.AppSettings["Expense.Salary.Description"],
-                    id = ulong.Parse(ConfigurationManager.AppSettings["Expense.Salary.Id"])
-                };
-            }
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is Expense) ? (obj as Expense).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }

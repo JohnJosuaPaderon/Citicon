@@ -1,58 +1,44 @@
 ﻿namespace Citicon.Data
 {
-    public sealed class Branch : Sorschia.Data
+    public sealed class Branch
     {
-        private ulong id;
-        private string code;
-        private string description;
-        public ulong Id
+        public ulong Id { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+
+        public static bool operator ==(Branch left, Branch right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(Branch left, Branch right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is Branch)
             {
-                id = value;
-                OnPropertyChanged("Branch.Id", value);
+                return (Branch)arg == this;
             }
+            return false;
         }
-        public string Code
-        {
-            get { return code; }
-            set
-            {
-                code = value;
-                OnPropertyChanged("Branch.Code", value);
-            }
-        }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged("Branch.Description", value);
-            }
-        }
-        public static bool operator ==(Branch x, Branch y)
-        {
-            return
-                x?.code == y?.code &&
-                x?.description == y?.description;
-        }
-        public static bool operator !=(Branch x, Branch y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is Branch) ? (obj as Branch).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }

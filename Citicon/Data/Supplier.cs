@@ -1,78 +1,46 @@
 ﻿namespace Citicon.Data
 {
-    public sealed class Supplier : Sorschia.Data
+    public sealed class Supplier
     {
-        private ulong id;
-        private string code;
-        private string description;
-        private string address;
-        private string contactnumber;
-        public ulong Id
+        public ulong Id { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+        public string Address { get; set; }
+        public string ContactNumber { get; set; }
+
+        public static bool operator ==(Supplier left, Supplier right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(Supplier left, Supplier right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is Supplier)
             {
-                id = value;
-                OnPropertyChanged("Supplier.Id", value);
+                return (Supplier)arg == this;
             }
+            return false;
         }
-        public string Code
-        {
-            get { return code; }
-            set
-            {
-                code = value;
-                OnPropertyChanged("Supplier.Code", value);
-            }
-        }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged("Supplier.Description", value);
-            }
-        }
-        public string Address
-        {
-            get { return address; }
-            set
-            {
-                address = value;
-                OnPropertyChanged("Supplier.Address", value);
-            }
-        }
-        public string ContactNumber
-        {
-            get { return contactnumber; }
-            set
-            {
-                contactnumber = value;
-                OnPropertyChanged("Supplier.ContactNumber", value);
-            }
-        }
-        public static bool operator ==(Supplier x, Supplier y)
-        {
-            return
-                x?.code == y?.code &&
-                x?.description == y?.description;
-        }
-        public static bool operator !=(Supplier x, Supplier y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is Supplier) ? (obj as Supplier).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }

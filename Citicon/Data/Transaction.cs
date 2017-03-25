@@ -3,160 +3,54 @@ using System;
 
 namespace Citicon.Inventory.Data
 {
-    public sealed class Transaction : Sorschia.Data
+    public sealed class Transaction
     {
-        private ulong id;
-        private Item item;
-        private decimal laststockvalue;
-        private decimal removedstockvalue;
-        private string purpose;
-        private string requestedby;
-        private Branch branch;
-        private Company company;
-        private DateTime transactiondate;
-        private string releasedby;
-        private Vehicle truck;
-        private uint _SeriesNumber;
+        public ulong Id { get; set; }
+        public Item Item { get; set; }
+        public decimal LastStockValue { get; set; }
+        public decimal RemovedStockValue { get; set; }
+        public string Purpose { get; set; }
+        public string RequestedBy { get; set; }
+        public Branch Branch { get; set; }
+        public Company Company { get; set; }
+        public DateTime TransactionDate { get; set; }
+        public string ReleasedBy { get; set; }
+        public Vehicle Truck { get; set; }
+        public uint SeriesNumber { get; set; }
 
-        public ulong Id
+        public static bool operator ==(Transaction left, Transaction right)
         {
-            get { return id; }
-            set
-            {
-                id = value;
-                OnPropertyChanged("Transaction.Id", value);
-            }
-        }
-        public Item Item
-        {
-            get { return item; }
-            set
-            {
-                item = value;
-                OnPropertyChanged("Transaction.Item", value);
-            }
-        }
-        public decimal LastStockValue
-        {
-            get { return laststockvalue; }
-            set
-            {
-                laststockvalue = value;
-                OnPropertyChanged("Transaction.LastStockValue", value);
-            }
-        }
-        public decimal RemovedStockValue
-        {
-            get { return removedstockvalue; }
-            set
-            {
-                removedstockvalue = value;
-                OnPropertyChanged("Transaction.RemovedStockValue", value);
-            }
-        }
-        public string Purpose
-        {
-            get { return purpose; }
-            set
-            {
-                purpose = value;
-                OnPropertyChanged("Transaction.Purpose", value);
-            }
-        }
-        public string RequestedBy
-        {
-            get { return requestedby; }
-            set
-            {
-                requestedby = value;
-                OnPropertyChanged("Transaction.RequestedBy", value);
-            }
-        }
-        public Branch Branch
-        {
-            get { return branch; }
-            set
-            {
-                branch = value;
-                OnPropertyChanged("Transaction.Branch", value);
-            }
-        }
-        public Company Company
-        {
-            get { return company; }
-            set
-            {
-                company = value;
-                OnPropertyChanged("Transaction.Company", value);
-            }
-        }
-        public DateTime TransactionDate
-        {
-            get { return transactiondate; }
-            set
-            {
-                transactiondate = value;
-                OnPropertyChanged("Transaction.TransactionDate", value);
-            }
-        }
-        public string ReleasedBy
-        {
-            get { return releasedby; }
-            set
-            {
-                releasedby = value;
-                OnPropertyChanged("Transaction.ReleasedBy", value);
-            }
-        }
-        public Vehicle Truck
-        {
-            get { return truck; }
-            set
-            {
-                if (truck != value)
-                {
-                    truck = value;
-                    OnPropertyChanged("Transaction.Truck", value);
-                }
-            }
-        }
-        public uint SeriesNumber
-        {
-            get { return _SeriesNumber; }
-            set
-            {
-                if (_SeriesNumber != value)
-                {
-                    _SeriesNumber = value;
-                    OnPropertyChanged("Transaction.SeriesNumber", value);
-                }
-            }
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
         }
 
-        public static bool operator ==(Transaction x, Transaction y)
+        public static bool operator !=(Transaction left, Transaction right)
         {
-            return
-                x?.item == y?.item &&
-                x?.laststockvalue == y?.laststockvalue &&
-                x?.removedstockvalue == y?.removedstockvalue &&
-                x?.branch == y?.branch &&
-                x?.company == y?.company;
+            return !(left == right);
         }
-        public static bool operator !=(Transaction x, Transaction y)
+
+        public override bool Equals(object arg)
         {
-            return !(x == y);
+            if (arg is Transaction)
+            {
+                return (Transaction)arg == this;
+            }
+            return false;
         }
-        public override bool Equals(object obj)
-        {
-            return (obj is Transaction) ? (obj as Transaction).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return item.ToString();
+            return Item?.ToString();
         }
     }
 }

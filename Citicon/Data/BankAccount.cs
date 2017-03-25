@@ -1,120 +1,49 @@
 ﻿namespace Citicon.Data
 {
-    public sealed class BankAccount : Sorschia.Data
+    public sealed class BankAccount
     {
-        private ulong id;
-        private Bank bank;
-        private string code;
-        private string description;
-        private ulong chequenumberstart;
-        private ulong chequenumberend;
-        private ulong chequenumber;
-        public ulong Id
+        public ulong Id { get; set; }
+        public Bank Bank { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+        public ulong ChequeNumberStart { get; set; }
+        public ulong ChequeNumberEnd { get; set; }
+        public ulong ChequeNumber { get; set; }
+
+
+        public static bool operator ==(BankAccount left, BankAccount right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(BankAccount left, BankAccount right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is BankAccount)
             {
-                if (id != value)
-                {
-                    id = value;
-                    OnPropertyChanged("BankAccount.Id", value);
-                }
+                return (BankAccount)arg == this;
             }
+            return false;
         }
-        public Bank Bank
-        {
-            get { return bank; }
-            set
-            {
-                if (bank != value)
-                {
-                    bank = value;
-                    OnPropertyChanged("BankAccount.Bank", bank);
-                }
-            }
-        }
-        public string Code
-        {
-            get { return code; }
-            set
-            {
-                if (code != value)
-                {
-                    code = value;
-                    OnPropertyChanged("BankAccount.Code", value);
-                }
-            }
-        }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                if (description != value)
-                {
-                    description = value;
-                    OnPropertyChanged("BankAccount.Description", value);
-                }
-            }
-        }
-        public ulong ChequeNumberStart
-        {
-            get { return chequenumberstart; }
-            set
-            {
-                if (chequenumberstart != value)
-                {
-                    chequenumberstart = value;
-                    OnPropertyChanged("BankAccount.ChequeNumberStart", value);
-                }
-            }
-        }
-        public ulong ChequeNumberEnd
-        {
-            get { return chequenumberend; }
-            set
-            {
-                if (chequenumberend != value)
-                {
-                    chequenumberend = value;
-                    OnPropertyChanged("BankAccount.ChequeNumberEnd", value);
-                }
-            }
-        }
-        public ulong ChequeNumber
-        {
-            get { return chequenumber; }
-            set
-            {
-                if (chequenumber != value)
-                {
-                    chequenumber = value;
-                    OnPropertyChanged("BankAccount.ChequeNumber", value);
-                }
-            }
-        }
-        public static bool operator ==(BankAccount x, BankAccount y)
-        {
-            return
-                x?.bank == y?.bank &&
-                x?.code == y?.code &&
-                x?.description == y?.description;
-        }
-        public static bool operator !=(BankAccount x, BankAccount y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is BankAccount) ? (obj as BankAccount).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }

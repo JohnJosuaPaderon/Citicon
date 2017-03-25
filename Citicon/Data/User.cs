@@ -1,92 +1,17 @@
 ﻿namespace Citicon.Data
 {
-    public class User : Sorschia.Data
+    public class User
     {
         public static User CurrentUser;
-        private ulong id;
-        private string username;
-        private string password;
-        private bool active;
-        private bool admin;
-        private string displayname;
-        private Module module;
-        private bool _Inventory_OutgoingStocksOnly;
 
-        public ulong Id
-        {
-            get { return id; }
-            set
-            {
-                id = value;
-                OnPropertyChanged("User.Id", value);
-            }
-        }
-        public string Username
-        {
-            get { return username; }
-            set
-            {
-                username = value;
-                OnPropertyChanged("User.Username", value);
-            }
-        }
-        public string Password
-        {
-            get { return password; }
-            set
-            {
-                password = value;
-                OnPropertyChanged("User.Password", value);
-            }
-        }
-        public bool Active
-        {
-            get { return active; }
-            set
-            {
-                active = value;
-                OnPropertyChanged("User.Active", value);
-            }
-        }
-        public bool Admin
-        {
-            get { return admin; }
-            set
-            {
-                admin = value;
-                OnPropertyChanged("User.Admin", value);
-            }
-        }
-        public string DisplayName
-        {
-            get { return displayname; }
-            set
-            {
-                displayname = value;
-                OnPropertyChanged("User.DisplayName", value);
-            }
-        }
-        public Module Module
-        {
-            get { return module; }
-            set
-            {
-                module = value;
-                OnPropertyChanged("User.Module", value);
-            }
-        }
-        public bool Inventory_OutgoingStocksOnly
-        {
-            get { return _Inventory_OutgoingStocksOnly; }
-            set
-            {
-                if (_Inventory_OutgoingStocksOnly != value)
-                {
-                    _Inventory_OutgoingStocksOnly = value;
-                    OnPropertyChanged("User.Inventory_OutgoingStocksOnly", value);
-                }
-            }
-        }
+        public ulong Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public bool Active { get; set; }
+        public bool Admin { get; set; }
+        public string DisplayName { get; set; }
+        public Module Module { get; set; }
+        public bool Inventory_OutgoingStocksOnly { get; set; }
 
         public static bool operator ==(User left, User right)
         {
@@ -98,6 +23,7 @@
 
             return left.Id == right.Id;
         }
+
         public static bool operator !=(User left, User right)
         {
             return !(left == right);
@@ -111,6 +37,7 @@
             }
             return false;
         }
+
         public override int GetHashCode()
         {
             return Id.GetHashCode();
@@ -118,7 +45,7 @@
 
         public override string ToString()
         {
-            return displayname;
+            return DisplayName;
         }
     }
 }

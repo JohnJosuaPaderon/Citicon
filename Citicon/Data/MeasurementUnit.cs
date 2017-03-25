@@ -4,7 +4,7 @@ using System.Configuration;
 
 namespace Citicon.Inventory.Data
 {
-    public sealed class MeasurementUnit : Sorschia.Data
+    public sealed class MeasurementUnit
     {
         public static MeasurementUnit CubicMeter
         {
@@ -17,57 +17,43 @@ namespace Citicon.Inventory.Data
             }
         }
 
-        private ulong id;
-        private string description;
-        private string symbol;
-        public ulong Id
+        public ulong Id { get; set; }
+        public string Description { get; set; }
+        public string Symbol { get; set; }
+
+        public static bool operator ==(MeasurementUnit left, MeasurementUnit right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(MeasurementUnit left, MeasurementUnit right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is MeasurementUnit)
             {
-                id = value;
-                OnPropertyChanged("MeasurementUnit.Id", value);
+                return (MeasurementUnit)arg == this;
             }
+            return false;
         }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged("MeasurementUnit.Description", value);
-            }
-        }
-        public string Symbol
-        {
-            get { return symbol; }
-            set
-            {
-                symbol = value;
-                OnPropertyChanged("MeasurementUnit.Symbol", value);
-            }
-        }
-        public static bool operator ==(MeasurementUnit x, MeasurementUnit y)
-        {
-            return
-                x?.description == y?.description &&
-                x?.symbol == y?.symbol;
-        }
-        public static bool operator !=(MeasurementUnit x, MeasurementUnit y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is MeasurementUnit) ? (obj as MeasurementUnit).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }

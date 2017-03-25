@@ -1,47 +1,12 @@
 ﻿namespace Citicon.Data
 {
-    public sealed class Vehicle : Sorschia.Data
+    public sealed class Vehicle
     {
-        private ulong id;
-        private VehicleType type;
-        private string physicalnumber;
-        private string platenumber;
-        public ulong Id
-        {
-            get { return id; }
-            set
-            {
-                id = value;
-                OnPropertyChanged("Vehicle.Id", value);
-            }
-        }
-        public VehicleType Type
-        {
-            get { return type; }
-            set
-            {
-                type = value;
-                OnPropertyChanged("Vehicle.Type", value);
-            }
-        }
-        public string PhysicalNumber
-        {
-            get { return physicalnumber; }
-            set
-            {
-                physicalnumber = value;
-                OnPropertyChanged("Vehicle.PhysicalNumber", value);
-            }
-        }
-        public string PlateNumber
-        {
-            get { return platenumber; }
-            set
-            {
-                platenumber = value;
-                OnPropertyChanged("Vehicle.PlateNumber", value);
-            }
-        }
+        public ulong Id { get; set; }
+        public VehicleType Type { get; set; }
+        public string PhysicalNumber { get; set; }
+        public string PlateNumber { get; set; }
+
         public static bool operator ==(Vehicle left, Vehicle right)
         {
             if (ReferenceEquals(left, right))
@@ -50,8 +15,9 @@
             if ((object)left == null || (object)right == null)
                 return false;
 
-            return left.id == right.id;
+            return left.Id == right.Id;
         }
+
         public static bool operator !=(Vehicle left, Vehicle right)
         {
             return !(left == right);
@@ -65,13 +31,15 @@
             }
             return false;
         }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return $"{physicalnumber} / {platenumber}";
+            return $"{PhysicalNumber} / {PlateNumber}";
         }
     }
 }

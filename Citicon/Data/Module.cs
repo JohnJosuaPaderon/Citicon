@@ -2,7 +2,7 @@
 
 namespace Citicon.Data
 {
-    public sealed class Module : Sorschia.Data
+    public sealed class Module
     {
         public static Module CurrentModule
         {
@@ -10,63 +10,50 @@ namespace Citicon.Data
             {
                 return new Module
                 {
-                    code = ConfigurationManager.AppSettings["Module.Code"],
-                    description = ConfigurationManager.AppSettings["Module.Description"],
-                    id = ulong.Parse(ConfigurationManager.AppSettings["Module.Id"])
+                    Code = ConfigurationManager.AppSettings["Module.Code"],
+                    Description = ConfigurationManager.AppSettings["Module.Description"],
+                    Id = ulong.Parse(ConfigurationManager.AppSettings["Module.Id"])
                 };
             }
         }
-        private ulong id;
-        private string code;
-        private string description;
-        public ulong Id
+
+        public ulong Id { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+
+        public static bool operator ==(Module left, Module right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(Module left, Module right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is Module)
             {
-                id = value;
-                OnPropertyChanged("Module.Id", value);
+                return (Module)arg == this;
             }
+            return false;
         }
-        public string Code
-        {
-            get { return code; }
-            set
-            {
-                code = value;
-                OnPropertyChanged("Module.Code", value);
-            }
-        }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged("Module.Description", value);
-            }
-        }
-        public static bool operator ==(Module x, Module y)
-        {
-            return
-                x?.code == y?.code &&
-                x?.description == y?.description;
-        }
-        public static bool operator !=(Module x, Module y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is Module) ? (obj as Module).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }

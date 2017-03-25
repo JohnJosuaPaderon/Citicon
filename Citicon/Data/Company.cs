@@ -1,58 +1,44 @@
 ﻿namespace Citicon.Data
 {
-    public sealed class Company : Sorschia.Data
+    public sealed class Company
     {
-        private ulong id;
-        private string code;
-        private string description;
-        public ulong Id
+        public ulong Id { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+
+        public static bool operator ==(Company left, Company right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(Company left, Company right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is Company)
             {
-                id = value;
-                OnPropertyChanged("Company.Id", value);
+                return (Company)arg == this;
             }
+            return false;
         }
-        public string Code
-        {
-            get { return code; }
-            set
-            {
-                code = value;
-                OnPropertyChanged("Company.Code", value);
-            }
-        }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged("Company.Description", value);
-            }
-        }
-        public static bool operator ==(Company x, Company y)
-        {
-            return
-                x?.code == y?.code &&
-                x?.description == y?.description;
-        }
-        public static bool operator !=(Company x, Company y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is Company) ? (obj as Company).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
+            return Id.GetHashCode();
         }
+
         public override string ToString()
         {
-            return description;
+            return Description;
         }
     }
 }
