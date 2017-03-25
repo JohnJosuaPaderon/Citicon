@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetProjectListWithApprovedProjectDesignByClient : DataProcess
+    internal sealed class GetProjectListWithApprovedProjectDesignByClient : DataProcessBase
     {
         public GetProjectListWithApprovedProjectDesignByClient(Client client)
         {

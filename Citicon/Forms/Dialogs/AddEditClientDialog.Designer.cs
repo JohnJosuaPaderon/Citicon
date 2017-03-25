@@ -94,6 +94,7 @@
             this.LegitimateCheckBox.TabIndex = 0;
             this.LegitimateCheckBox.Text = "Legitimate";
             this.LegitimateCheckBox.UseVisualStyleBackColor = true;
+            this.LegitimateCheckBox.CheckedChanged += new System.EventHandler(this.LegitimateCheckBox_CheckedChanged);
             // 
             // TINTextBox
             // 
@@ -324,7 +325,7 @@
             this.ExecutivePositionComboBox.Location = new System.Drawing.Point(201, 41);
             this.ExecutivePositionComboBox.Name = "ExecutivePositionComboBox";
             this.ExecutivePositionComboBox.Size = new System.Drawing.Size(184, 25);
-            this.ExecutivePositionComboBox.TabIndex = 17;
+            this.ExecutivePositionComboBox.TabIndex = 1;
             this.ExecutivePositionComboBox.SelectedIndexChanged += new System.EventHandler(this.ExecutivePositionComboBox_SelectedIndexChanged);
             // 
             // ExecutiveMobileNumberTextBox

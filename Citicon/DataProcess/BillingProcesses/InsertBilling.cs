@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -8,25 +7,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class InsertBilling : IDisposable
+    public sealed class InsertBilling : DataProcessBase
     {
-        #region Constructor
         public InsertBilling(Billing billing)
         {
             Billing = billing;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
         private Billing Billing;
-        private MySqlConnectionHelper ConnectionHelper;
-        #endregion
 
-        #region Execution
         public async Task<Billing> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var transaction = await connection.BeginTransactionAsync())
                 {
@@ -117,13 +109,5 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        }
-        #endregion
     }
 }

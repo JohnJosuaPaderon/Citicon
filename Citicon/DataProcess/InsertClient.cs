@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class InsertClient : DataProcess
+    internal sealed class InsertClient : DataProcessBase
     {
         public InsertClient(Client client)
         {

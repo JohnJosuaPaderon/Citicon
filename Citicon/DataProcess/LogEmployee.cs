@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class LogEmployee : DataProcess
+    internal sealed class LogEmployee : DataProcessBase
     {
         public LogEmployee(EmployeeLogin loginInfo)
         {

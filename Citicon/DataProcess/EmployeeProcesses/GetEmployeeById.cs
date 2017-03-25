@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -9,20 +8,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetEmployeeById : IDisposable
+    public class GetEmployeeById : DataProcessBase
     {
         private long EmployeeId;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public GetEmployeeById(long employeeId)
         {
             EmployeeId = employeeId;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public async Task<Employee> GetAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetEmployeeById", connection))
                 {
@@ -55,11 +52,6 @@ namespace Citicon.DataProcess
                     return employee;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

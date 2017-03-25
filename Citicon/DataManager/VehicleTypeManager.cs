@@ -36,7 +36,7 @@ namespace Citicon.DataManager
             {
                 using (var getVehicleTypeById = new GetVehicleTypeById(vehicleTypeId))
                 {
-                    vehicleType = await getVehicleTypeById.GetAsync();
+                    vehicleType = await getVehicleTypeById.ExecuteAsync();
                     if (vehicleType != null)
                     {
                         VehicleTypes.Add(vehicleType);

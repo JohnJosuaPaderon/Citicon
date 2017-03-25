@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GeneratePayroll : DataProcess
+    internal sealed class GeneratePayroll : DataProcessBase
     {
         public GeneratePayroll(DateTimeRange rangeDate, Branch branch)
         {

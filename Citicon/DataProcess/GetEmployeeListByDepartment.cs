@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetEmployeeListByDepartment : DataProcess
+    internal sealed class GetEmployeeListByDepartment : DataProcessBase
     {
         public GetEmployeeListByDepartment(Department department)
         {

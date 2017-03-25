@@ -1,66 +1,22 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetOtherChargeTypeList : IDisposable
+    public sealed class GetOtherChargeTypeList : DataProcessBase
     {
-        #region Constructor
-        public GetOtherChargeTypeList()
+        private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
+            var command = Utility.CreateProcedureCommand("GetOtherChargeTypeList", connection);
+            return command;
         }
-        #endregion
 
-        #region Properties
-        private MySqlConnectionHelper ConnectionHelper;
-        #endregion
-
-        #region Execution
-        public async Task<IEnumerable<OtherChargeType>> ExecuteAsync()
+        public Task<IEnumerable<OtherChargeType>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
-            {
-                using (var command = new MySqlCommand("GetOtherChargeTypeList", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    List<OtherChargeType> otherChargeTypeList = null;
-                    try
-                    {
-                        using (var reader = await command.ExecuteReaderAsync())
-                        {
-                            if (reader.HasRows)
-                            {
-                                otherChargeTypeList = new List<OtherChargeType>();
-                                while (await reader.ReadAsync())
-                                {
-                                    otherChargeTypeList.Add(OtherChargeTypeManager.FromDbDataReader(reader));
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        otherChargeTypeList = null;
-                        throw;
-                    }
-                    return otherChargeTypeList;
-                }
-            }
+            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand, OtherChargeTypeManager.FromDbDataReader);
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        }
-        #endregion
     }
 }

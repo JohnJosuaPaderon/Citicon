@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,18 +8,11 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetPumpTypeList : IDisposable
+    public class GetPumpTypeList : DataProcessBase
     {
-        private MySqlConnectionHelper ConnectionHelper;
-
-        public GetPumpTypeList()
-        {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
-        }
-
         public async Task<IEnumerable<PumpType>> GetAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetPumpTypeList", connection))
                 {
@@ -53,11 +45,6 @@ namespace Citicon.DataProcess
                     return pumpTypes;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

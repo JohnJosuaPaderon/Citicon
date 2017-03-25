@@ -1,12 +1,11 @@
 ﻿using Citicon.Data;
-using CTPMO.Data;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class ValidateChequeRange : DataProcess
+    internal sealed class ValidateChequeRange : DataProcessBase
     {
         public ValidateChequeRange(BankAccount bankAccount, UInt32Range chequeNumberRange)
         {

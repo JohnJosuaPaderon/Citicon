@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class RegisterEmployeeLogin : DataProcess
+    internal sealed class RegisterEmployeeLogin : DataProcessBase
     {
         public RegisterEmployeeLogin(Employee employee)
         {

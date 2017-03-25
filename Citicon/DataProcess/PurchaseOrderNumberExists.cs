@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class PurchaseOrderNumberExists : DataProcess
+    internal sealed class PurchaseOrderNumberExists : DataProcessBase
     {
         public PurchaseOrderNumberExists(string purchaseOrderNumber)
         {

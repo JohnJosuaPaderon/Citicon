@@ -1,64 +1,34 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetTransitMixerVehicleList : IDisposable
+    public class GetTransitMixerVehicleList : DataProcessBase
     {
-        private MySqlConnectionHelper ConnectionHelper;
-
-        public GetTransitMixerVehicleList()
+        private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
+            var command = Utility.CreateProcedureCommand("GetTransitMixerVehicleList", connection);
+            return command;
         }
 
-        public async Task<IEnumerable<Vehicle>> GetAsync()
+        public Task<IEnumerable<Vehicle>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand, FromReaderAsync);
+        }
+
+        private async Task<Vehicle> FromReaderAsync(DbDataReader reader)
+        {
+            return new Vehicle
             {
-                using (var command = new MySqlCommand("GetTransitMixerVehicleList", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    List<Vehicle> vehicles = null;
-                    try
-                    {
-                        using (var reader = await command.ExecuteReaderAsync())
-                        {
-                            if (reader.HasRows)
-                            {
-                                vehicles = new List<Vehicle>();
-                                while (await reader.ReadAsync())
-                                {
-                                    vehicles.Add(new Vehicle
-                                    {
-                                        Id = reader.GetUInt64("Id"),
-                                        PhysicalNumber = reader.GetString("PhysicalNumber"),
-                                        PlateNumber = reader.GetString("PlateNumber"),
-                                        Type = await VehicleTypeManager.GetVehicleTypeByIdAsync(reader.GetUInt64("TypeId"))
-                                    });
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        vehicles = null;
-                        throw;
-                    }
-                    return vehicles;
-                }
-            }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
+                Id = reader.GetUInt64("Id"),
+                PhysicalNumber = reader.GetString("PhysicalNumber"),
+                PlateNumber = reader.GetString("PlateNumber"),
+                Type = await VehicleTypeManager.GetVehicleTypeByIdAsync(reader.GetUInt64("TypeId"))
+            };
         }
     }
 }

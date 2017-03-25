@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetChequeVoucherNumberDetails : DataProcess, IDisposable
+    internal sealed class GetChequeVoucherNumberDetails : DataProcessBase, IDisposable
     {
         public GetChequeVoucherNumberDetails(string chequeVoucherNumber)
         {

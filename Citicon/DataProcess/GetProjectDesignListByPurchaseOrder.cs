@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,22 +9,15 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetProjectDesignListByPurchaseOrder : IDisposable
+    public sealed class GetProjectDesignListByPurchaseOrder : DataProcessBase
     {
-        #region Constructor
         public GetProjectDesignListByPurchaseOrder(PurchaseOrder purchaseOrder)
         {
             PurchaseOrder = purchaseOrder ?? throw new ArgumentNullException(nameof(purchaseOrder));
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
         private PurchaseOrder PurchaseOrder;
-        private MySqlConnectionHelper ConnectionHelper;
-        #endregion
 
-        #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = new MySqlCommand("GetProjectDesignListByPurchaseOrderId", connection)
@@ -53,9 +45,7 @@ namespace Citicon.DataProcess
                 Strength = ProductStrengthManager.GetById(reader.GetInt64("StrengthId"))
             };
         }
-        #endregion
 
-        #region Executions
         internal async Task<List<ProjectDesign>> ExecuteAsync(MySqlConnection connection)
         {
             using (var command = CreateCommand(connection))
@@ -83,7 +73,7 @@ namespace Citicon.DataProcess
 
         public async Task<List<ProjectDesign>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 if (connection.State == ConnectionState.Open)
                 {
@@ -95,13 +85,5 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }

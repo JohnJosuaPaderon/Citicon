@@ -9,29 +9,28 @@ namespace Citicon.DataManager
 {
     public static class ClientManager
     {
-        private static List<Client> Clients = new List<Client>();
+        private static Dictionary<ulong, Client> Clients = new Dictionary<ulong, Client>();
 
         private static void ManageItem(Client client)
         {
-            if (Clients.Contains(client))
+            if (client != null)
             {
-                var index = Clients.IndexOf(client);
-                Clients[index] = client;
-            }
-            else
-            {
-                Clients.Add(client);
+                if (Clients.ContainsKey(client.Id))
+                {
+                    Clients[client.Id] = client;
+                }
+                else
+                {
+                    Clients.Add(client.Id, client);
+                }
             }
         }
 
         public static async Task<Client> GetByIdAsync(ulong clientId)
         {
-            foreach (var item in Clients)
+            if (Clients.ContainsKey(clientId))
             {
-                if (item.Id == clientId)
-                {
-                    return item;
-                }
+                return Clients[clientId];
             }
 
             using (var getClientById = new GetClientById(clientId))
@@ -178,13 +177,38 @@ namespace Citicon.DataManager
                 using (var process = new InsertClient(client))
                 {
                     client = await process.ExecuteAsync();
+                    ManageItem(client);
+                }
+            }
+
+            return client;
+        }
+
+        public static async Task<Client> UpdateAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new UpdateClient(client))
+                {
+                    client = await process.ExecuteAsync();
+                    ManageItem(client);
+                }
+            }
+
+            return client;
+        }
+
+        public static async Task<Client> DeleteAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new DeleteClient(client))
+                {
+                    client = await process.ExecuteAsync();
 
                     if (client != null)
                     {
-                        if (!Clients.Contains(client))
-                        {
-                            Clients.Add(client);
-                        }
+                        Clients.Remove(client.Id);
                     }
                 }
             }

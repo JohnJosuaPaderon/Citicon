@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -7,19 +6,17 @@ using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
-    public class SaveProjectDetails
+    public class SaveProjectDetails : DataProcessBase
     {
         ProjectDesign ProjectDesign;
-        MySqlConnectionHelper ConnectionHelper;
         public SaveProjectDetails(ProjectDesign projectDesign)
         {
             ProjectDesign = projectDesign;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public void Execute()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 using (var transaction = connection.BeginTransaction())
                 {

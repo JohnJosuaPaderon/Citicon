@@ -1,25 +1,22 @@
-﻿using CTPMO.Helpers;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
-    public class GetProductStrengthById
+    public class GetProductStrengthById : DataProcessBase
     {
         long Id;
-        MySqlConnectionHelper ConnectionHelper;
 
         public GetProductStrengthById(long id)
         {
             Id = id;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public ProductStrength Return()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 using (var command = new MySqlCommand("GetProductStrengthById", connection))
                 {

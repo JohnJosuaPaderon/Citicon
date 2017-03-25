@@ -1,5 +1,5 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
+using Citicon.Data.Converters;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,19 +9,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetProjectListByClient : IDisposable
+    public class GetProjectListByClient : DataProcessBase
     {
-        private MySqlConnectionHelper ConnectionHelper;
         private Client Client;
+
         public GetProjectListByClient(Client client)
         {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
             Client = client;
         }
 
         public async Task<IEnumerable<Project>> GetAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetProjectListByClientId", connection))
                 {
@@ -47,7 +46,7 @@ namespace Citicon.DataProcess
                                         Location = reader.GetString("Location"),
                                         Name = reader.GetString("Name"),
                                         TotalCost = reader.GetDecimal("TotalCost"),
-                                        Type = reader.GetString("Type")
+                                        Type = ProjectTypeConverter.FromString(reader.GetString("Type"))
                                     });
                                 }
                             }
@@ -61,11 +60,6 @@ namespace Citicon.DataProcess
                     return projects;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

@@ -91,6 +91,7 @@
             this.LegitimateCheckBox.TabIndex = 0;
             this.LegitimateCheckBox.Text = "Legitimate";
             this.LegitimateCheckBox.UseVisualStyleBackColor = true;
+            this.LegitimateCheckBox.CheckedChanged += new System.EventHandler(this.LegitimateCheckBox_CheckedChanged);
             // 
             // TINTextBox
             // 

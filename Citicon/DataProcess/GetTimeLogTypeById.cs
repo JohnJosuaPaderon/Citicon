@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetTimeLogTypeById : DataProcess
+    internal sealed class GetTimeLogTypeById : DataProcessBase
     {
         public GetTimeLogTypeById(ulong id)
         {

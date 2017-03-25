@@ -35,7 +35,7 @@ namespace Citicon.DataManager
         {
             using (var getUnpaidBillingListBySalesInvoice = new GetUnpaidBillingListBySalesInvoice(salesInvoice))
             {
-                return await getUnpaidBillingListBySalesInvoice.GetAsync();
+                return await getUnpaidBillingListBySalesInvoice.ExecuteAsync();
             }
         }
     }

@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,18 +8,11 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetClientListWithoutBillingSiNumber : IDisposable
+    public class GetClientListWithoutBillingSiNumber : DataProcessBase
     {
-        private MySqlConnectionHelper ConnectionHelper;
-
-        public GetClientListWithoutBillingSiNumber()
-        {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
-        }
-
         public async Task<IEnumerable<Client>> GetAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetClientListWithoutBillingSiNumber", connection))
                 {
@@ -54,11 +46,6 @@ namespace Citicon.DataProcess
                     return clients;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

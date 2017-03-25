@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.Data.Converters;
 using Citicon.DataProcess;
 using System;
 using System.Collections.Generic;
@@ -9,23 +10,25 @@ namespace Citicon.DataManager
 {
     public class ProjectManager
     {
-        private static List<Project> Projects;
+        private static Dictionary<ulong, Project> Projects;
 
         static ProjectManager()
         {
-            Projects = new List<Project>();
+            Projects = new Dictionary<ulong, Project>();
         }
 
         private static void ManageProject(Project project)
         {
-            if (!Projects.Contains(project))
+            if (project != null)
             {
-                Projects.Add(project);
-            }
-            else
-            {
-                var index = Projects.IndexOf(project);
-                Projects[index] = project;
+                if (!Projects.ContainsKey(project.Id))
+                {
+                    Projects.Add(project.Id, project);
+                }
+                else
+                {
+                    Projects[project.Id] = project;
+                }
             }
         }
 
@@ -41,18 +44,15 @@ namespace Citicon.DataManager
                 Location = reader.GetString("Location"),
                 Name = reader.GetString("Name"),
                 TotalCost = reader.GetDecimal("TotalCost"),
-                Type = reader.GetString("Type")
+                Type = ProjectTypeConverter.FromString(reader.GetString("Type"))
             };
         }
 
         public static async Task<Project> GetByIdAsync(ulong projectId)
         {
-            foreach (var item in Projects)
+            if (Projects.ContainsKey(projectId))
             {
-                if (item.Id == projectId)
-                {
-                    return item;
-                }
+                return Projects[projectId];
             }
 
             using (var getProjectById = new GetProjectById(projectId))
@@ -178,6 +178,62 @@ namespace Citicon.DataManager
             else
             {
                 return null;
+            }
+        }
+
+        public static async Task<Project> InsertAsync(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new InsertProject(project))
+                {
+                    project = await process.ExecuteAsync();
+                    ManageProject(project);
+                }
+            }
+
+            return project;
+        }
+
+        public static async Task<Project> UpdateAsync(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new UpdateProject(project))
+                {
+                    project = await process.ExecuteAsync();
+                    ManageProject(project);
+                }
+            }
+
+            return project;
+        }
+
+        public static async Task<Project> DeleteAsync(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new DeleteProject(project))
+                {
+                    project = await process.ExecuteAsync();
+                }
+            }
+
+            return project;
+        }
+
+        public static ValidationResult Validate(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new ValidateProject(project))
+                {
+                    return process.Execute();
+                }
+            }
+            else
+            {
+                return new ValidationResult(false, "Invalid project.");
             }
         }
     }

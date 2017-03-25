@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,22 +8,15 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetProjectListWithProjectDesignNoPurchaseOrderByClient : IDisposable
+    public sealed class GetProjectListWithProjectDesignNoPurchaseOrderByClient : DataProcessBase
     {
-        #region Constructor
         public GetProjectListWithProjectDesignNoPurchaseOrderByClient(Client client)
         {
             Client = client ?? throw new ArgumentNullException(nameof(client));
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
         private Client Client;
-        private MySqlConnectionHelper ConnectionHelper;
-        #endregion
 
-        #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = new MySqlCommand("GetProjectListWithProjectDesignNoPurchaseOrderByClientId", connection)
@@ -44,9 +36,7 @@ namespace Citicon.DataProcess
                 Name = reader.GetString("Name")
             };
         }
-        #endregion
-
-        #region Executions
+        
         internal async Task<List<Project>> ExecuteAsync(MySqlConnection connection)
         {
             using (var command = CreateCommand(connection))
@@ -74,7 +64,7 @@ namespace Citicon.DataProcess
 
         public async Task<List<Project>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 if (connection.State == ConnectionState.Open)
                 {
@@ -86,13 +76,5 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }

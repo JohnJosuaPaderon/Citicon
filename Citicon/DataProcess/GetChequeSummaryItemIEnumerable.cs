@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetChequeSummaryItemIEnumerable : DataProcess
+    internal sealed class GetChequeSummaryItemIEnumerable : DataProcessBase
     {
         public GetChequeSummaryItemIEnumerable(bool filterByRangeDate, DateTimeRange rangeDate, bool filterBySupplier, Supplier supplier, bool filterByBranch, Branch branch, bool filterByCompany, Company company)
         {

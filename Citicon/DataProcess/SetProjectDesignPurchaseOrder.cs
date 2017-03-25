@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class SetProjectDesignPurchaseOrder : IDisposable
+    public sealed class SetProjectDesignPurchaseOrder : DataProcessBase
     {
         public SetProjectDesignPurchaseOrder(PurchaseOrder purchaseOrder, List<ProjectDesign> projectDesignList)
         {
@@ -24,12 +23,10 @@ namespace Citicon.DataProcess
 
             PurchaseOrder = purchaseOrder ?? throw new ArgumentNullException(nameof(purchaseOrder));
             ProjectDesignList = projectDesignList;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         private List<ProjectDesign> ProjectDesignList;
         private PurchaseOrder PurchaseOrder;
-        private MySqlConnectionHelper ConnectionHelper;
 
         private MySqlCommand CreateCommand(ProjectDesign projectDesign, MySqlConnection connection, MySqlTransaction transaction)
         {
@@ -51,43 +48,21 @@ namespace Citicon.DataProcess
             }
         }
         
-        public async Task<List<ProjectDesign>> ExecuteAsync()
+        public async Task<List<ProjectDesign>> ExecuteAsync(MySqlConnection connection, MySqlTransaction transaction)
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            var projectDesignList = new List<ProjectDesign>();
+
+            foreach (ProjectDesign projectDesign in ProjectDesignList)
             {
-                if (connection.State == ConnectionState.Open)
-                {
-                    using (var transaction = await connection.BeginTransactionAsync())
-                    {
-                        try
-                        {
-                            var projectDesignList = new List<ProjectDesign>();
-
-                            foreach (ProjectDesign projectDesign in ProjectDesignList)
-                            {
-                                projectDesignList.Add(await ExecuteSingleAsync(projectDesign, connection, transaction));
-                            }
-
-                            transaction.Commit();
-                            return projectDesignList;
-                        }
-                        catch (Exception)
-                        {
-                            transaction.Rollback();
-                            throw;
-                        }
-                    }
-                }
-                else
-                {
-                    return null;
-                }
+                projectDesignList.Add(await ExecuteSingleAsync(projectDesign, connection, transaction));
             }
+            
+            return projectDesignList;
         }
 
-        public void Dispose()
+        public Task<List<ProjectDesign>> ExecuteAsync()
         {
-            ConnectionHelper = null;
+            return ProcessUtility.HandleExecuteAsync(ExecuteAsync);
         }
     }
 }

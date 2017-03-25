@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetAvailablePurchaseOrderProjectDesign : DataProcess
+    internal sealed class GetAvailablePurchaseOrderProjectDesign : DataProcessBase
     {
         public GetAvailablePurchaseOrderProjectDesign(ProjectDesign projectDesign)
         {

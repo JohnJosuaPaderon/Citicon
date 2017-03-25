@@ -1,61 +1,40 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
-using System.Data;
+using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetVehicleTypeById : IDisposable
+    public class GetVehicleTypeById : DataProcessBase
     {
         private ulong VehicleTypeId;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public GetVehicleTypeById(ulong vehicleTypeId)
         {
             VehicleTypeId = vehicleTypeId;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
-        public async Task<VehicleType> GetAsync()
+        private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            var command = Utility.CreateProcedureCommand("GetVehicleTypeById", connection);
+            command.Parameters.AddWithValue("@_VehicleTypeId", VehicleTypeId);
+
+            return command;
+        }
+
+        private VehicleType FromReader(DbDataReader reader)
+        {
+            return new VehicleType
             {
-                using (var command = new MySqlCommand("GetVehicleTypeById", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@_VehicleTypeId", VehicleTypeId);
-                    VehicleType vehicleType = null;
-                    try
-                    {
-                        using (var reader = await command.ExecuteReaderAsync())
-                        {
-                            if (reader.HasRows)
-                            {
-                                await reader.ReadAsync();
-                                vehicleType = new VehicleType
-                                {
-                                    Id = VehicleTypeId,
-                                    Code = reader.GetString("Code"),
-                                    Description = reader.GetString("Description")
-                                };
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        vehicleType = null;
-                        throw;
-                    }
-                    return vehicleType;
-                }
-            }
+                Id = VehicleTypeId,
+                Code = reader.GetString("Code"),
+                Description = reader.GetString("Description")
+            };
         }
 
-        public void Dispose()
+        public Task<VehicleType> ExecuteAsync()
         {
-            ConnectionHelper = null;
+            return ProcessUtility.HandleReadingAsync(CreateCommand, FromReader);
         }
     }
 }

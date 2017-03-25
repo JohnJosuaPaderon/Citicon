@@ -1,27 +1,13 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetLegitimateClientList : IDisposable
+    public sealed class GetLegitimateClientList : DataProcessBase
     {
-        #region Constructor
-        public GetLegitimateClientList()
-        {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
-        }
-        #endregion
-
-        #region Properties
-        MySqlConnectionHelper ConnectionHelper { get; set; }
-        #endregion
-
-        #region Helper Methods
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = new MySqlCommand("GetLegitimateClientList", connection)
@@ -30,12 +16,10 @@ namespace Citicon.DataProcess
             };
             return command;
         }
-        #endregion
 
-        #region Execute
         public async Task<IEnumerable<Client>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 if (connection.State == ConnectionState.Open)
                 {
@@ -81,13 +65,5 @@ namespace Citicon.DataProcess
                 return null;
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }

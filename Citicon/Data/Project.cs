@@ -10,7 +10,7 @@ namespace Citicon.Data
         private string _Location;
         private decimal _TotalCost;
         private bool _Completed;
-        private string _Type;
+        private ProjectType _Type;
         private decimal _InitialPayment;
         private double _InitialCement;
 
@@ -87,7 +87,7 @@ namespace Citicon.Data
                 }
             }
         }
-        public string Type
+        public ProjectType Type
         {
             get { return _Type; }
             set

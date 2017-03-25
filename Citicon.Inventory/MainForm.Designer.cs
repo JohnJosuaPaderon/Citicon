@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Header = new System.Windows.Forms.Panel();
             this.lblCiticonInventory = new System.Windows.Forms.Label();
@@ -65,9 +66,9 @@
             this.Header.Controls.Add(this.UserPane);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
-            this.Header.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Header.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1195, 84);
+            this.Header.Size = new System.Drawing.Size(1194, 84);
             this.Header.TabIndex = 0;
             // 
             // lblCiticonInventory
@@ -75,9 +76,8 @@
             this.lblCiticonInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCiticonInventory.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCiticonInventory.Location = new System.Drawing.Point(0, 0);
-            this.lblCiticonInventory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCiticonInventory.Name = "lblCiticonInventory";
-            this.lblCiticonInventory.Size = new System.Drawing.Size(704, 84);
+            this.lblCiticonInventory.Size = new System.Drawing.Size(703, 84);
             this.lblCiticonInventory.TabIndex = 1;
             this.lblCiticonInventory.Text = "Citicon Inventory";
             this.lblCiticonInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -88,8 +88,8 @@
             this.UserPane.Controls.Add(this.lblLogout);
             this.UserPane.Controls.Add(this.lblHelloUser);
             this.UserPane.Dock = System.Windows.Forms.DockStyle.Right;
-            this.UserPane.Location = new System.Drawing.Point(704, 0);
-            this.UserPane.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.UserPane.Location = new System.Drawing.Point(703, 0);
+            this.UserPane.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UserPane.Name = "UserPane";
             this.UserPane.Size = new System.Drawing.Size(491, 84);
             this.UserPane.TabIndex = 0;
@@ -99,7 +99,6 @@
             this.lblUserDisplayName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblUserDisplayName.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserDisplayName.Location = new System.Drawing.Point(0, 25);
-            this.lblUserDisplayName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUserDisplayName.Name = "lblUserDisplayName";
             this.lblUserDisplayName.Size = new System.Drawing.Size(491, 38);
             this.lblUserDisplayName.TabIndex = 3;
@@ -111,7 +110,6 @@
             this.lblLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblLogout.LinkColor = System.Drawing.Color.Black;
             this.lblLogout.Location = new System.Drawing.Point(0, 63);
-            this.lblLogout.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogout.Name = "lblLogout";
             this.lblLogout.Size = new System.Drawing.Size(491, 21);
             this.lblLogout.TabIndex = 1;
@@ -124,7 +122,6 @@
             // 
             this.lblHelloUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblHelloUser.Location = new System.Drawing.Point(0, 0);
-            this.lblHelloUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHelloUser.Name = "lblHelloUser";
             this.lblHelloUser.Size = new System.Drawing.Size(491, 25);
             this.lblHelloUser.TabIndex = 0;
@@ -136,10 +133,10 @@
             this.btnItems.BackColor = System.Drawing.Color.Red;
             this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItems.ForeColor = System.Drawing.Color.White;
-            this.btnItems.Location = new System.Drawing.Point(178, 89);
-            this.btnItems.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnItems.Location = new System.Drawing.Point(177, 89);
+            this.btnItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(164, 71);
+            this.btnItems.Size = new System.Drawing.Size(165, 70);
             this.btnItems.TabIndex = 6;
             this.btnItems.Text = "&Items";
             this.btnItems.UseVisualStyleBackColor = false;
@@ -151,9 +148,9 @@
             this.btnIncomingStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncomingStocks.ForeColor = System.Drawing.Color.White;
             this.btnIncomingStocks.Location = new System.Drawing.Point(347, 89);
-            this.btnIncomingStocks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnIncomingStocks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIncomingStocks.Name = "btnIncomingStocks";
-            this.btnIncomingStocks.Size = new System.Drawing.Size(164, 71);
+            this.btnIncomingStocks.Size = new System.Drawing.Size(165, 70);
             this.btnIncomingStocks.TabIndex = 7;
             this.btnIncomingStocks.Text = "I&ncoming Stocks";
             this.btnIncomingStocks.UseVisualStyleBackColor = false;
@@ -164,10 +161,10 @@
             this.btnOutgoingStocks.BackColor = System.Drawing.Color.Red;
             this.btnOutgoingStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOutgoingStocks.ForeColor = System.Drawing.Color.White;
-            this.btnOutgoingStocks.Location = new System.Drawing.Point(515, 89);
-            this.btnOutgoingStocks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnOutgoingStocks.Location = new System.Drawing.Point(516, 89);
+            this.btnOutgoingStocks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOutgoingStocks.Name = "btnOutgoingStocks";
-            this.btnOutgoingStocks.Size = new System.Drawing.Size(164, 71);
+            this.btnOutgoingStocks.Size = new System.Drawing.Size(165, 70);
             this.btnOutgoingStocks.TabIndex = 8;
             this.btnOutgoingStocks.Text = "&Outgoing Stocks";
             this.btnOutgoingStocks.UseVisualStyleBackColor = false;
@@ -178,10 +175,10 @@
             this.btnMaintenance.BackColor = System.Drawing.Color.Red;
             this.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaintenance.ForeColor = System.Drawing.Color.White;
-            this.btnMaintenance.Location = new System.Drawing.Point(853, 89);
-            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnMaintenance.Location = new System.Drawing.Point(852, 89);
+            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMaintenance.Name = "btnMaintenance";
-            this.btnMaintenance.Size = new System.Drawing.Size(164, 71);
+            this.btnMaintenance.Size = new System.Drawing.Size(165, 70);
             this.btnMaintenance.TabIndex = 9;
             this.btnMaintenance.Text = "&Maintenance";
             this.btnMaintenance.UseVisualStyleBackColor = false;
@@ -193,9 +190,9 @@
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.Color.White;
             this.btnReports.Location = new System.Drawing.Point(684, 89);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(164, 71);
+            this.btnReports.Size = new System.Drawing.Size(165, 70);
             this.btnReports.TabIndex = 10;
             this.btnReports.Text = "R&eports";
             this.btnReports.UseVisualStyleBackColor = false;
@@ -218,9 +215,9 @@
             this.dgvItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -236,7 +233,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -249,6 +246,8 @@
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItems.RowTemplate.Height = 30;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(1175, 396);
@@ -295,9 +294,9 @@
             this.btnViewTracking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewTracking.ForeColor = System.Drawing.Color.White;
             this.btnViewTracking.Location = new System.Drawing.Point(1021, 89);
-            this.btnViewTracking.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnViewTracking.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnViewTracking.Name = "btnViewTracking";
-            this.btnViewTracking.Size = new System.Drawing.Size(164, 71);
+            this.btnViewTracking.Size = new System.Drawing.Size(165, 70);
             this.btnViewTracking.TabIndex = 12;
             this.btnViewTracking.Text = "&View Tracking";
             this.btnViewTracking.UseVisualStyleBackColor = false;
@@ -309,9 +308,9 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(10, 89);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(164, 71);
+            this.btnRefresh.Size = new System.Drawing.Size(165, 70);
             this.btnRefresh.TabIndex = 13;
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -321,7 +320,6 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Location = new System.Drawing.Point(6, 167);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(57, 21);
             this.lblSearch.TabIndex = 14;
@@ -330,8 +328,8 @@
             // tbxSearch
             // 
             this.tbxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxSearch.Location = new System.Drawing.Point(67, 165);
-            this.tbxSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSearch.Location = new System.Drawing.Point(67, 166);
+            this.tbxSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(519, 29);
             this.tbxSearch.TabIndex = 15;
@@ -342,7 +340,6 @@
             this.lblMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMessage.AutoSize = true;
             this.lblMessage.Location = new System.Drawing.Point(950, 167);
-            this.lblMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(235, 21);
             this.lblMessage.TabIndex = 16;
@@ -354,7 +351,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1195, 595);
+            this.ClientSize = new System.Drawing.Size(1194, 595);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.lblSearch);
@@ -371,7 +368,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Inventory";

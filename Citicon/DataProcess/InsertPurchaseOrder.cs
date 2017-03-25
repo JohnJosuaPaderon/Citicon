@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class InsertPurchaseOrder : DataProcess
+    internal sealed class InsertPurchaseOrder : DataProcessBase
     {
         public InsertPurchaseOrder(PurchaseOrder purchaseOrder)
         {

@@ -1,22 +1,14 @@
-﻿using CTPMO.Helpers;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 
 namespace Citicon.DataProcess
 {
-    public class GetProductAggregateList
+    public class GetProductAggregateList : DataProcessBase
     {
-        MySqlConnectionHelper ConnectionHelper;
-
-        public GetProductAggregateList()
-        {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
-        }
-
         public IEnumerable<ProductAggregate> ExecuteReturn()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 using (var command = new MySqlCommand("GetProductAggregateList", connection))
                 {

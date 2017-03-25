@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientManagementForm));
             this.ClientDataGridView = new System.Windows.Forms.DataGridView();
             this.colClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +61,9 @@
             this.ClientDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.ClientDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -87,6 +88,8 @@
             this.ClientDataGridView.ReadOnly = true;
             this.ClientDataGridView.RowHeadersVisible = false;
             this.ClientDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.ClientDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ClientDataGridView.RowTemplate.Height = 40;
             this.ClientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ClientDataGridView.Size = new System.Drawing.Size(1060, 642);
@@ -96,7 +99,7 @@
             // colClient
             // 
             this.colClient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colClient.HeaderText = "Clients";
+            this.colClient.HeaderText = "CLIENT NAME";
             this.colClient.MinimumWidth = 100;
             this.colClient.Name = "colClient";
             this.colClient.ReadOnly = true;
@@ -219,7 +222,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ClientManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Client Management Form";
+            this.Text = "Clients";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ClientManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).EndInit();
@@ -231,7 +234,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ClientDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colClient;
         private Controls.ClientViewControl ClientView;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
@@ -239,5 +241,6 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button AddNewButton;
         private System.Windows.Forms.Button ViewProjectsButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colClient;
     }
 }

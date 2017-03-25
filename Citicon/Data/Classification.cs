@@ -2,7 +2,7 @@
 
 namespace Citicon.Inventory.Data
 {
-    public sealed class Classification : Sorschia.Data
+    public sealed class Classification
     {
         public struct Codes
         {
@@ -12,68 +12,40 @@ namespace Citicon.Inventory.Data
             }
             public static string Aggregate { get { return GetCode("Aggregate"); } }
         }
-        private ulong id;
-        private string code;
-        private string description;
-        private MeasurementUnit measurementunit;
-        public ulong Id
+
+        public ulong Id { get; set; }
+        public string Code { get; set; }
+        public string Description { get; set; }
+        public MeasurementUnit MeasurementUnit { get; set; }
+
+        public static bool operator ==(Classification left, Classification right)
         {
-            get { return id; }
-            set
+            if (ReferenceEquals(left, right))
+                return true;
+
+            if ((object)left == null || (object)right == null)
+                return false;
+
+            return left.Id == right.Id;
+        }
+
+        public static bool operator !=(Classification left, Classification right)
+        {
+            return !(left == right);
+        }
+
+        public override bool Equals(object arg)
+        {
+            if (arg is Classification)
             {
-                id = value;
-                OnPropertyChanged("Classification.Id", value);
+                return (Classification)arg == this;
             }
+            return false;
         }
-        public string Code
-        {
-            get { return code; }
-            set
-            {
-                code = value;
-                OnPropertyChanged("Classification.Code", value);
-            }
-        }
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged("Classification.Description", value);
-            }
-        }
-        public MeasurementUnit MeasurementUnit
-        {
-            get { return measurementunit; }
-            set
-            {
-                measurementunit = value;
-                OnPropertyChanged("Classification.MeasurementUnit", value);
-            }
-        }
-        public static bool operator ==(Classification x, Classification y)
-        {
-            return
-                x?.code == y?.code &&
-                x?.description == y?.description &&
-                x?.measurementunit == y?.measurementunit;
-        }
-        public static bool operator !=(Classification x, Classification y)
-        {
-            return !(x == y);
-        }
-        public override bool Equals(object obj)
-        {
-            return (obj is Classification) ? (obj as Classification).id == id : false;
-        }
+
         public override int GetHashCode()
         {
-            return id.GetHashCode();
-        }
-        public override string ToString()
-        {
-            return description;
+            return Id.GetHashCode();
         }
     }
 }

@@ -207,5 +207,46 @@ namespace Citicon.DataProcess
                 }
             }
         }
+
+        public Task<IEnumerable<TResult>> HandleReadingIEnumerableAsync<TResult>(Func<MySqlConnection, MySqlCommand> createCommand, Func<DbDataReader, TResult> fromReader)
+        {
+            return HandleExecuteAsync((c) =>
+            {
+                return HandleReadingIEnumerableAsync(createCommand(c), fromReader);
+            });
+        }
+
+        public Task<IEnumerable<TResult>> HandleReadingIEnumerableAsync<TResult>(Func<MySqlConnection, MySqlCommand> createCommand, Func<DbDataReader, Task<TResult>> fromReaderAsync)
+        {
+            return HandleExecuteAsync((c) =>
+            {
+                return HandleReadingIEnumerableAsync(createCommand(c), fromReaderAsync);
+            });
+        }
+
+        public Task<TResult> HandleReadingAsync<TResult>(Func<MySqlConnection, MySqlCommand> createCommand, Func<DbDataReader, TResult> fromReader)
+        {
+            return HandleExecuteAsync((c) =>
+            {
+                return HandleReadingAsync(createCommand(c), fromReader);
+            });
+        }
+
+        public TResult HandleReading<TResult>(Func<MySqlConnection, MySqlCommand> createCommand, Func<DbDataReader, TResult> fromReader)
+        {
+            return HandleExecute((c) =>
+            {
+                return HandleReading(createCommand(c), fromReader);
+            });
+        }
+
+        public Task<TResult> HandleReadingAsync<TResult>(Func<MySqlConnection, MySqlCommand> createCommand, Func<DbDataReader, Task<TResult>> fromReaderAsync)
+        {
+            return HandleExecuteAsync((c) =>
+            {
+                return HandleReadingAsync(createCommand(c), fromReaderAsync);
+            });
+        }
+
     }
 }

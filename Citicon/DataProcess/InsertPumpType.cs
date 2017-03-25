@@ -1,27 +1,24 @@
 ﻿using System;
 using Citicon.Data;
-using CTPMO.Helpers;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
 
-namespace Citicon.DataManager
+namespace Citicon.DataProcess
 {
-    public class InsertPumpType : IDisposable
+    public class InsertPumpType : DataProcessBase
     {
         private PumpType PumpType;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public InsertPumpType(PumpType pumpType)
         {
             PumpType = pumpType;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public async Task<PumpType> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var transaction = await connection.BeginTransactionAsync())
                 {
@@ -55,11 +52,6 @@ namespace Citicon.DataManager
                     }
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

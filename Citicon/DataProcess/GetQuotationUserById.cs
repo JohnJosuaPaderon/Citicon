@@ -1,32 +1,23 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
 using System.Data;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetQuotationUserById : IDisposable
+    public sealed class GetQuotationUserById : DataProcessBase
     {
-        #region Constructor
         public GetQuotationUserById(ulong id)
         {
             Id = id;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
         private ulong Id { get; }
-        private MySqlConnectionHelper ConnectionHelper { get; set; }
-        #endregion
 
-        #region Executes
         public async Task<QuotationUser> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetQuotationUserById", connection))
                 {
@@ -49,13 +40,5 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }

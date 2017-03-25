@@ -30,15 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CTPMO">
-      <HintPath>..\..\..\CTPMO v.1\CTPMO\bin\Debug\CTPMO.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Sorschia 1.0\Sorschia\bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
-    <Reference Include="Sorschia">
-      <HintPath>..\..\Sorschia 1.0\Sorschia\bin\Debug\Sorschia.dll</HintPath>
+    <Reference Include="Sorschia, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Sorschia.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -61,10 +59,6 @@
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager\AccessoryTypeManager.cs" />
-    <Compile Include="DataManager\AccountClassificationManager.cs" />
-    <Compile Include="DataManager\AccountManager.cs" />
-    <Compile Include="DataManager\AccountSubClassificationManager.cs" />
-    <Compile Include="DataManager\AccountTypeManager.cs" />
     <Compile Include="DataManager\BankAccountManager.cs" />
     <Compile Include="DataManager\BankManager.cs" />
     <Compile Include="DataManager\BillingManager.cs" />
@@ -78,7 +72,7 @@
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
-    <Compile Include="DataManager\InsertPumpType.cs" />
+    <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
     <Compile Include="DataManager\MeasurementUnitManager.cs" />
     <Compile Include="DataManager\ModuleManager.cs" />
@@ -107,7 +101,6 @@
     <Compile Include="DataManager\SupplierManager.cs" />
     <Compile Include="DataManager\TimeLogTypeManager.cs" />
     <Compile Include="DataManager\TransactionManager.cs" />
-    <Compile Include="DataManager\TruckManager.cs" />
     <Compile Include="DataManager\UserManager.cs" />
     <Compile Include="DataManager\VehicleManager.cs" />
     <Compile Include="DataManager\VehicleTypeManager.cs" />
@@ -125,7 +118,9 @@
     <Compile Include="DataProcess\ClientProcesses\GetClientMetaDataListWithQuotationForApproval.cs" />
     <Compile Include="DataProcess\ClientProcesses\GetLegitimateClientList.cs" />
     <Compile Include="DataProcess\DataProcess.cs" />
+    <Compile Include="DataProcess\DeleteClient.cs" />
     <Compile Include="DataProcess\DeleteEmployee.cs" />
+    <Compile Include="DataProcess\DeleteProject.cs" />
     <Compile Include="DataProcess\DeliveryProcesses\GetDeliveryListByClient.cs" />
     <Compile Include="DataProcess\DeliveryProcesses\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\DepartmentProcesses\GetDepartmentById.cs" />
@@ -161,11 +156,15 @@
     <Compile Include="DataProcess\GetSupplierList.cs" />
     <Compile Include="DataProcess\GetTimeLogTypeById.cs" />
     <Compile Include="DataProcess\InsertClient.cs" />
+    <Compile Include="DataProcess\InsertProject.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrderProjectDesign.cs" />
     <Compile Include="DataProcess\InsertPurchaseOrderTransaction.cs" />
     <Compile Include="DataProcess\PurchaseOrderNumberExists.cs" />
+    <Compile Include="DataProcess\UpdateClient.cs" />
+    <Compile Include="DataProcess\UpdateProject.cs" />
     <Compile Include="DataProcess\ValidateClient.cs" />
+    <Compile Include="DataProcess\ValidateProject.cs" />
     <Compile Include="DataProcess\ValidationResult.cs" />
     <Compile Include="DataProcess\_InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
@@ -224,10 +223,6 @@
     <Compile Include="DataProcess\ProjectProcesses\SaveProjectDetails.cs" />
     <Compile Include="DataProcess\PumpTypeProcesses\UpdatePumpType.cs" />
     <Compile Include="Data\AccessoryType.cs" />
-    <Compile Include="Data\Account.cs" />
-    <Compile Include="Data\AccountClassification.cs" />
-    <Compile Include="Data\AccountSubClassification.cs" />
-    <Compile Include="Data\AccountType.cs" />
     <Compile Include="Data\Bank.cs" />
     <Compile Include="Data\BankAccount.cs" />
     <Compile Include="Data\Billing.cs" />
@@ -237,6 +232,7 @@
     <Compile Include="Data\Classification.cs" />
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Company.cs" />
+    <Compile Include="Data\Converters\ProjectTypeConverter.cs" />
     <Compile Include="Data\DateTimeRange.cs" />
     <Compile Include="Data\Delivery.cs" />
     <Compile Include="Data\Department.cs" />
@@ -262,6 +258,7 @@
     <Compile Include="Data\ProjectBillingInfo.cs" />
     <Compile Include="Data\ProjectDesign.cs" />
     <Compile Include="Data\ProjectDesignMixType.cs" />
+    <Compile Include="Data\ProjectType.cs" />
     <Compile Include="Data\PumpcreteCharge.cs" />
     <Compile Include="Data\PumpSize.cs" />
     <Compile Include="Data\PumpType.cs" />
@@ -278,7 +275,7 @@
     <Compile Include="Data\TimeLog.cs" />
     <Compile Include="Data\TimeLogType.cs" />
     <Compile Include="Data\Transaction.cs" />
-    <Compile Include="Data\Truck.cs" />
+    <Compile Include="Data\UInt32Range.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
@@ -295,13 +292,43 @@
     <Compile Include="Forms\Controls\ClientViewControl.Designer.cs">
       <DependentUpon>ClientViewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\ProjectDesignViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ProjectDesignViewControl.Designer.cs">
+      <DependentUpon>ProjectDesignViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\ProjectViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\ProjectViewControl.Designer.cs">
+      <DependentUpon>ProjectViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\AddEditClientDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Dialogs\AddEditClientDialog.Designer.cs">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\AddEditProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditProjectDialog.Designer.cs">
+      <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\DataDialogMode.cs" />
+    <Compile Include="Forms\ProjectDesignManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectDesignManagementForm.Designer.cs">
+      <DependentUpon>ProjectDesignManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProjectManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProjectManagementForm.Designer.cs">
+      <DependentUpon>ProjectManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GSM\COM.cs" />
     <Compile Include="GSM\SMS.cs" />
     <Compile Include="MySqlUtility.cs" />
@@ -328,8 +355,23 @@
     <EmbeddedResource Include="Forms\Controls\ClientViewControl.resx">
       <DependentUpon>ClientViewControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ProjectDesignViewControl.resx">
+      <DependentUpon>ProjectDesignViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ProjectViewControl.resx">
+      <DependentUpon>ProjectViewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddEditProjectDialog.resx">
+      <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectDesignManagementForm.resx">
+      <DependentUpon>ProjectDesignManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProjectManagementForm.resx">
+      <DependentUpon>ProjectManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>

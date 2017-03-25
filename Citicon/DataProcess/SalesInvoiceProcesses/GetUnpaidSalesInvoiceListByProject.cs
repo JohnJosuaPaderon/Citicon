@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -8,20 +7,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetUnpaidSalesInvoiceListByProject : IDisposable
+    public class GetUnpaidSalesInvoiceListByProject : DataProcessBase
     {
         private Project Project;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public GetUnpaidSalesInvoiceListByProject(Project project)
         {
             Project = project;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public async Task<IEnumerable<SalesInvoice>> GetAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetUnpaidSalesInvoiceListByProjectId", connection))
                 {
@@ -54,11 +51,6 @@ namespace Citicon.DataProcess
                     return salesInvoices;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class InsertScheduledProjectDesign : DataProcess
+    internal sealed class InsertScheduledProjectDesign : DataProcessBase
     {
         public InsertScheduledProjectDesign(ScheduledProjectDesign scheduledDesign)
         {

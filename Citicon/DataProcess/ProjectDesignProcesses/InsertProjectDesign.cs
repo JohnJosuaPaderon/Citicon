@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -7,22 +6,15 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class InsertProjectDesign : IDisposable
+    public sealed class InsertProjectDesign : DataProcessBase
     {
-        #region Constructor
         public InsertProjectDesign(ProjectDesign projectDesign)
         {
             ProjectDesign = projectDesign;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
         private ProjectDesign ProjectDesign { get; }
-        private MySqlConnectionHelper ConnectionHelper { get; set; }
-        #endregion
 
-        #region Helper Methods
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
             var command = new MySqlCommand("InsertProjectDesign", connection, transaction)
@@ -40,9 +32,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_ForApproval", ProjectDesign.ForApproval);
             return command;
         }
-        #endregion
 
-        #region Execute
         public async Task<ProjectDesign> ExecuteAsync(MySqlConnection connection, MySqlTransaction transaction)
         {
             using (var command = CreateCommand(connection, transaction))
@@ -55,7 +45,7 @@ namespace Citicon.DataProcess
 
         public async Task<ProjectDesign> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 if (connection.State == ConnectionState.Open)
                 {
@@ -80,13 +70,5 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }

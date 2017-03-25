@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -8,20 +7,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class SaveEditedProduct : IDisposable
+    public class SaveEditedProduct : DataProcessBase
     {
-        private MySqlConnectionHelper ConnectionHelper;
         private ProjectDesign ProjectDesign;
 
         public SaveEditedProduct(ProjectDesign projectDesign)
         {
             ProjectDesign = projectDesign;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public async Task ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var transaction = await connection.BeginTransactionAsync())
                 {
@@ -50,11 +47,6 @@ namespace Citicon.DataProcess
                     }
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

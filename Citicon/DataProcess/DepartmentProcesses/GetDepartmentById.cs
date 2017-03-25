@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -7,20 +6,18 @@ using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
-    public class GetDepartmentById : IDisposable
+    public class GetDepartmentById : DataProcessBase
     {
         private long Id;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public GetDepartmentById(long id)
         {
             Id = id;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public Department Return()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 using (var command = new MySqlCommand("GetDepartmentById", connection))
                 {
@@ -50,11 +47,6 @@ namespace Citicon.DataProcess
                     return department;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

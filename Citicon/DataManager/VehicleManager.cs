@@ -35,7 +35,7 @@ namespace Citicon.DataManager
             {
                 using (var getVehicleById = new GetVehicleById(id))
                 {
-                    vehicle = await getVehicleById.GetAsync();
+                    vehicle = await getVehicleById.ExecuteAsync();
                     if (vehicle != null)
                     {
                         Vehicles.Add(vehicle);
@@ -49,7 +49,7 @@ namespace Citicon.DataManager
         {
             using (var getTransitMixerVehicleList = new GetTransitMixerVehicleList())
             {
-                return await getTransitMixerVehicleList.GetAsync();
+                return await getTransitMixerVehicleList.ExecuteAsync();
             }
         }
 

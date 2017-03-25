@@ -2,9 +2,9 @@
 
 namespace Citicon.DataProcess
 {
-    public abstract class DataProcess : IDisposable
+    public abstract class DataProcessBase : IDisposable
     {
-        public DataProcess()
+        public DataProcessBase()
         {
             var connectionString = Supports.ConnectionString;
             Utility = new MySqlUtility(connectionString);

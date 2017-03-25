@@ -1,68 +1,50 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Data.Common;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetUnpaidBillingListBySalesInvoice : IDisposable
+    public class GetUnpaidBillingListBySalesInvoice : DataProcessBase
     {
         private SalesInvoice SalesInvoice;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public GetUnpaidBillingListBySalesInvoice(SalesInvoice salesInvoice)
         {
             SalesInvoice = salesInvoice;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
-        public async Task<IEnumerable<Billing>> GetAsync()
+        private MySqlCommand CreateCommand(MySqlConnection connection)
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            var command = Utility.CreateProcedureCommand("GetUnpaidBillingListBySalesInvoiceNumber", connection);
+            command.Parameters.AddWithValue("@_SalesInvoiceNumber", SalesInvoice.Number);
+
+            return command;
+        }
+
+        public override void Dispose()
+        {
+            SalesInvoice = null;
+            base.Dispose();
+        }
+
+        public Task<IEnumerable<Billing>> ExecuteAsync()
+        {
+            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand, FromReader);
+        }
+
+        private Billing FromReader(DbDataReader reader)
+        {
+            return new Billing
             {
-                using (var command = new MySqlCommand("GetUnpaidBillingListBySalesInvoiceNumber", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@_SalesInvoiceNumber", SalesInvoice.Number);
-                    List<Billing> billings = null;
-                    try
-                    {
-                        using (var reader = await command.ExecuteReaderAsync())
-                        {
-                            if (reader.HasRows)
-                            {
-                                billings = new List<Billing>();
-                                while (await reader.ReadAsync())
-                                {
-                                    billings.Add(new Billing
-                                    {
-                                        Id = reader.GetUInt64("Id"),
-                                        AmountDue = reader.GetDecimal("AmountDue"),
-                                        BillingNo = reader.GetString("BillingNumber"),
-                                        AmountPaid = reader.GetDecimal("AmountPaid"),
-                                        SiNumber = SalesInvoice.Number,
-                                        Volume = reader.GetDecimal("Volume")
-                                    });
-                                }
-                            }
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        billings = null;
-                        throw;
-                    }
-                    return billings;
-                }
-            }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
+                Id = reader.GetUInt64("Id"),
+                AmountDue = reader.GetDecimal("AmountDue"),
+                BillingNo = reader.GetString("BillingNumber"),
+                AmountPaid = reader.GetDecimal("AmountPaid"),
+                SiNumber = SalesInvoice.Number,
+                Volume = reader.GetDecimal("Volume")
+            };
         }
     }
 }

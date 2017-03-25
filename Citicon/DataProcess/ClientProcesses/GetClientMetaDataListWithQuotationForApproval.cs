@@ -1,29 +1,16 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetClientMetaDataListWithQuotationForApproval : IDisposable
+    public sealed class GetClientMetaDataListWithQuotationForApproval : DataProcessBase
     {
-        #region Constructor
-        public GetClientMetaDataListWithQuotationForApproval()
-        {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
-        }
-        #endregion
-
-        #region Properties
-        private MySqlConnectionHelper ConnectionHelper;
-        #endregion
-
         public async Task<IEnumerable<Client>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetClientMetaDataListWithQuotationForApproval", connection))
                 {
@@ -50,13 +37,6 @@ namespace Citicon.DataProcess
                     return clients;
                 }
             }
-        } 
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
+        }
     }
 }

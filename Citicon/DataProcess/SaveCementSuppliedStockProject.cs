@@ -1,6 +1,6 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
 using Citicon.Inventory.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -9,22 +9,20 @@ using System.Threading.Tasks;
 
 namespace Citicon.Inventory.DataProcess
 {
-    public class SaveCementSuppliedStockProject : IDisposable
+    public class SaveCementSuppliedStockProject : DataProcessBase
     {
         private Stock Stock;
         private Project[] Projects;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public SaveCementSuppliedStockProject(Stock stock, Project[] projects)
         {
             Stock = stock;
             Projects = projects;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public async Task ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var transaction = await connection.BeginTransactionAsync())
                 {
@@ -55,11 +53,6 @@ namespace Citicon.Inventory.DataProcess
                 command.Parameters.AddWithValue("@_ProjectId", project.Id);
                 await command.ExecuteNonQueryAsync();
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

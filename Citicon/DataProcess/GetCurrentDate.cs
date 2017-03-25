@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetCurrentDate : DataProcess
+    internal sealed class GetCurrentDate : DataProcessBase
     {
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {

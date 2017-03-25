@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,25 +8,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetUnbilledDeliveryListByProject : IDisposable
+    public sealed class GetUnbilledDeliveryListByProject : DataProcessBase
     {
-        #region Constructor
         public GetUnbilledDeliveryListByProject(Project project)
         {
             Project = project;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
-        private MySqlConnectionHelper ConnectionHelper;
         private Project Project;
-        #endregion
 
-        #region Execution
         public async Task<IEnumerable<Delivery>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetUnbilledDeliveryListByProjectId", connection))
                 {
@@ -57,14 +49,5 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-            Project = null;
-        } 
-        #endregion
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetPayrollGroupList : DataProcess
+    internal sealed class GetPayrollGroupList : DataProcessBase
     {
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetPayrollGroupById : DataProcess
+    internal sealed class GetPayrollGroupById : DataProcessBase
     {
         public GetPayrollGroupById(uint payrollGroupId)
         {

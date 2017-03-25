@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Data;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -118,7 +117,7 @@ namespace Citicon.Payables
         {
             try
             {
-                var validate = await BankAccountManager.ValidateChequeRangeAsync(cmbxBankAccount.SelectedItem as BankAccount, new UInt32Range { Start = Convert.ToUInt32(nudRangeStart.Value), End = Convert.ToUInt32(nudRangeEnd.Value) });
+                var validate = await BankAccountManager.ValidateChequeRangeAsync(cmbxBankAccount.SelectedItem as BankAccount, new UInt32Range(Convert.ToUInt32(nudRangeStart.Value), Convert.ToUInt32(nudRangeEnd.Value)));
 
                 if (!validate)
                 {

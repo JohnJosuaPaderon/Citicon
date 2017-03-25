@@ -22,6 +22,7 @@ namespace Citicon.Forms
 
         private async Task GetClientListAsync()
         {
+            ClientDataGridView.Rows.Clear();
             var clients = await ClientManager.GetListAsync();
 
             if (clients != null && clients.Any())
@@ -80,29 +81,68 @@ namespace Citicon.Forms
             }
         }
 
-        private void AddNewButton_Click(object sender, EventArgs e)
+        private async void AddNewButton_Click(object sender, EventArgs e)
         {
             var dialog = new AddEditClientDialog();
             dialog.ShowDialog();
+            await GetClientListAsync();
         }
 
-        private void EditButton_Click(object sender, EventArgs e)
+        private async void EditButton_Click(object sender, EventArgs e)
         {
             if (ClientView.Client != null)
             {
                 var dialog = new AddEditClientDialog(ClientView.Client);
                 dialog.ShowDialog();
+                await GetClientListAsync();
             }
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private async void DeleteButton_Click(object sender, EventArgs e)
         {
+            var client = ClientView.Client;
 
+            if (client != null)
+            {
+                var result = MessageBox.Show("Do you really want to delete the selected client?", "Delete Client", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        client = await ClientManager.DeleteAsync(client);
+
+                        if (client != null)
+                        {
+                            for (int i = 0; i < ClientDataGridView.Rows.Count; i++)
+                            {
+                                var tempClient = ClientDataGridView.Rows[i].Cells[colClient.Name].Value as Client;
+
+                                if (tempClient == client)
+                                {
+                                    ClientDataGridView.Rows.RemoveAt(i);
+                                    break;
+                                }
+                            }
+
+                            MessageBox.Show("Client has been deleted successfully.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void ViewProjectsButton_Click(object sender, EventArgs e)
         {
-
+            if (ClientView.Client != null)
+            {
+                var form = new ProjectManagementForm(ClientView.Client);
+                form.ShowDialog();
+            }
         }
     }
 }

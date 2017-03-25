@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -7,25 +6,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class InsertQuotationUser : IDisposable
+    public sealed class InsertQuotationUser : DataProcessBase
     {
-        #region Constructor
         public InsertQuotationUser(QuotationUser quotationUser)
         {
             QuotationUser = quotationUser;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
         private QuotationUser QuotationUser { get; }
-        private MySqlConnectionHelper ConnectionHelper { get; set; }
-        #endregion
 
-        #region Executes
         public async Task<QuotationUser> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var transaction = await connection.BeginTransactionAsync())
                 {
@@ -60,13 +52,5 @@ namespace Citicon.DataProcess
                 return QuotationUser;
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }

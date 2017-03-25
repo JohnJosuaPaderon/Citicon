@@ -109,7 +109,7 @@ namespace Citicon.DataProcess
 
                 Word.Table table = Document.Tables[1];
 
-                bool isCementSupplied = Quotation.Project?.Type == "CEMENT SUPPLIED";
+                bool isCementSupplied = Quotation.Project?.Type == ProjectType.CementSupplied;
                 int increment = isCementSupplied ? 1 : 0;
 
                 if (isCementSupplied)

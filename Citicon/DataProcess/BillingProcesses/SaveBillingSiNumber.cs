@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,22 +8,20 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class SaveBillingSiNumber : IDisposable
+    public class SaveBillingSiNumber : DataProcessBase
     {
         private string SiNumber;
         private IEnumerable<Billing> Billings;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public SaveBillingSiNumber(string siNumber, IEnumerable<Billing> billings)
         {
             SiNumber = siNumber;
             Billings = billings;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public async Task ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var transaction = await connection.BeginTransactionAsync())
                 {
@@ -57,11 +54,11 @@ namespace Citicon.DataProcess
             }
         }
 
-        public void Dispose()
+        public override void Dispose()
         {
             SiNumber = null;
             Billings = null;
-            ConnectionHelper = null;
+            base.Dispose();
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
@@ -9,20 +7,8 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetClientListWithProjectDesignNoPurchaseOrder : IDisposable
+    public sealed class GetClientListWithProjectDesignNoPurchaseOrder : DataProcessBase
     {
-        #region Constructor
-        public GetClientListWithProjectDesignNoPurchaseOrder()
-        {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
-        }
-        #endregion
-
-        #region Properties
-        private MySqlConnectionHelper ConnectionHelper;
-        #endregion
-
-        #region Helpers
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = new MySqlCommand("GetClientListWithProjectDesignNoPurchaseOrderId", connection)
@@ -40,9 +26,7 @@ namespace Citicon.DataProcess
                 Id = reader.GetUInt64("Id")
             };
         }
-        #endregion
-
-        #region Executions
+        
         internal async Task<List<Client>> ExecuteAsync(MySqlConnection connection)
         {
             using (var command = CreateCommand(connection))
@@ -70,7 +54,7 @@ namespace Citicon.DataProcess
 
         public async Task<List<Client>> ExecuteAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 if (connection.State == ConnectionState.Open)
                 {
@@ -82,13 +66,5 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }

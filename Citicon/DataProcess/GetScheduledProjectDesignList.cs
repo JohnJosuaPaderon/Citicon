@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetScheduledProjectDesignList : DataProcess
+    internal sealed class GetScheduledProjectDesignList : DataProcessBase
     {
         public GetScheduledProjectDesignList(DateTime scheduledDate)
         {

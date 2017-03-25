@@ -1,5 +1,7 @@
 ﻿using Citicon.Data;
+using Citicon.DataManager;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Citicon.Forms.Dialogs
@@ -9,6 +11,7 @@ namespace Citicon.Forms.Dialogs
         public AddEditClientDialog()
         {
             InitializeComponent();
+            Client = new Client();
             Mode = DataDialogMode.Add;
         }
 
@@ -78,6 +81,70 @@ namespace Citicon.Forms.Dialogs
             ExecutiveMobileNumberTextBox.Text = Client?.PresidentMobileNumber;
         }
 
+        private async Task InsertAsync()
+        {
+            var validationResult = ClientManager.Validate(Client);
+
+            if (validationResult.Success)
+            {
+                try
+                {
+                    var client = await ClientManager.InsertAsync(Client);
+
+                    if (client != null)
+                    {
+                        Client = client;
+                        MessageBox.Show("Client successfully added.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Client not saved.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show(validationResult.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async Task UpdateAsync()
+        {
+            var validationResult = ClientManager.Validate(Client);
+
+            if (validationResult.Success)
+            {
+                try
+                {
+                    var client = await ClientManager.UpdateAsync(Client);
+
+                    if (client != null)
+                    {
+                        Client = client;
+                        MessageBox.Show("Client successfully modified.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Client not saved.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show(validationResult.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void AddEditClientDialog_Load(object sender, EventArgs e)
         {
             InitializeRequirement();
@@ -94,9 +161,20 @@ namespace Citicon.Forms.Dialogs
             }
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private async void SaveButton_Click(object sender, EventArgs e)
         {
-
+            switch (Mode)
+            {
+                case DataDialogMode.None:
+                    MessageBox.Show("No operations to execute.");
+                    break;
+                case DataDialogMode.Add:
+                    await InsertAsync();
+                    break;
+                case DataDialogMode.Edit:
+                    await UpdateAsync();
+                    break;
+            }
         }
 
         private void CompanyNameTextBox_TextChanged(object sender, EventArgs e)
@@ -167,7 +245,7 @@ namespace Citicon.Forms.Dialogs
         {
             if (Client != null)
             {
-                Client.ContactNumber = ContactPersonEmailAddressTextBox.Text;
+                Client.ContactNumber = ContactPersonContactNumberTextBox.Text;
             }
         }
 
@@ -200,6 +278,14 @@ namespace Citicon.Forms.Dialogs
             if (Client != null)
             {
                 Client.PresidentMobileNumber = ExecutiveMobileNumberTextBox.Text;
+            }
+        }
+
+        private void LegitimateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Client != null)
+            {
+                Client.Legitimate = LegitimateCheckBox.Checked;
             }
         }
     }

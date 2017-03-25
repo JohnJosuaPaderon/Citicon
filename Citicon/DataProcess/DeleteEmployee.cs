@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class DeleteEmployee : DataProcess, IDisposable
+    internal sealed class DeleteEmployee : DataProcessBase, IDisposable
     {
         public DeleteEmployee(Employee employee, string deletedBy)
         {

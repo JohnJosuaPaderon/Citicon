@@ -6,7 +6,7 @@ using System.Data.Common;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetSupplierList : DataProcess
+    internal sealed class GetSupplierList : DataProcessBase
     {
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {

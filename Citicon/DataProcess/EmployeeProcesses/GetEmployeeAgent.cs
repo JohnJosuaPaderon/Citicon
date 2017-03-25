@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,18 +8,11 @@ using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
-    public class GetEmployeeAgent : IDisposable
+    public class GetEmployeeAgent : DataProcessBase
     {
-        private MySqlConnectionHelper ConnectionHelper;
-
-        public GetEmployeeAgent()
-        {
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
-        }
-
         public IEnumerable<Employee> Return()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 using (var command = new MySqlCommand("GetEmployeeAgent", connection))
                 {
@@ -55,11 +47,6 @@ namespace Citicon.DataProcess
                     return employeeAgents;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

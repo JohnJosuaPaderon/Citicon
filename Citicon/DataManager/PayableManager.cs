@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.DataProcess;
 using Citicon.Inventory.Data;
 using Citicon.Inventory.DataManager;
 using Citicon.Payables.Data;
@@ -9,14 +10,13 @@ using Sorschia.Queries;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Drawing;
-using Citicon.DataProcess;
 
 namespace Citicon.Payables.DataManager
 {

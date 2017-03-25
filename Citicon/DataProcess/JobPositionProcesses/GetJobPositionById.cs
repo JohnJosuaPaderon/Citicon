@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -8,20 +7,18 @@ using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
-    public class GetJobPositionById : IDisposable
+    public class GetJobPositionById : DataProcessBase
     {
         private long Id;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public GetJobPositionById(long id)
         {
             Id = id;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public JobPosition Return()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 using (var command = new MySqlCommand("GetJobPositionById", connection))
                 {
@@ -52,11 +49,6 @@ namespace Citicon.DataProcess
                     return jobPosition;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

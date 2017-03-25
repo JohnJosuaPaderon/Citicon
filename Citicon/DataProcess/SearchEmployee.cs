@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class SearchEmployee : DataProcess
+    internal sealed class SearchEmployee : DataProcessBase
     {
         public SearchEmployee(string keyword)
         {

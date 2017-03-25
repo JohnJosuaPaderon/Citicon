@@ -1,5 +1,4 @@
-﻿using CTPMO.Data;
-using System;
+﻿using System;
 
 namespace Citicon.Data
 {

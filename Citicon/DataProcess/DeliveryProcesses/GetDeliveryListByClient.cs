@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,20 +8,18 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetDeliveryListByClient : IDisposable
+    public class GetDeliveryListByClient : DataProcessBase
     {
         private Client Client;
-        private MySqlConnectionHelper ConnectionHelper;
 
         public GetDeliveryListByClient(Client client)
         {
             Client = client;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public async Task <IEnumerable<Delivery>> GetAsync()
         {
-            using (var connection = await ConnectionHelper.EstablishConnectionAsync())
+            using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var command = new MySqlCommand("GetDeliveryListByClient", connection))
                 {
@@ -62,11 +59,6 @@ namespace Citicon.DataProcess
                     return deliveries;
                 }
             }
-        }
-
-        public void Dispose()
-        {
-            ConnectionHelper = null;
         }
     }
 }

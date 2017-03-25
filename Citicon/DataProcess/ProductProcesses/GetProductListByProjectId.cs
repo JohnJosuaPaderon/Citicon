@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -9,19 +8,17 @@ using System.Diagnostics;
 
 namespace Citicon.DataProcess
 {
-    public class GetProductListByProjectId
+    public class GetProductListByProjectId : DataProcessBase
     {
-        MySqlConnectionHelper ConnectionHelper;
         Project Project;
         public GetProductListByProjectId(Project project)
         {
             Project = project;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
 
         public IEnumerable<ProjectDesign> Return()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 using (var command = new MySqlCommand("GetProductListByProjectId", connection))
                 {

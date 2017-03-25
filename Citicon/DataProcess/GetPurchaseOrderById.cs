@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using CTPMO.Helpers;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
@@ -7,22 +6,15 @@ using System.Data.Common;
 
 namespace Citicon.DataProcess
 {
-    public sealed class GetPurchaseOrderById : IDisposable
+    public sealed class GetPurchaseOrderById : DataProcessBase
     {
-        #region Constructor
         public GetPurchaseOrderById(ulong purchaseOrderId)
         {
             PurchaseOrderId = purchaseOrderId == 0 ? throw new ArgumentException("Cannot be zero.", nameof(purchaseOrderId)) : purchaseOrderId;
-            ConnectionHelper = new MySqlConnectionHelper(Supports.ConnectionString);
         }
-        #endregion
 
-        #region Properties
         private ulong PurchaseOrderId;
-        private MySqlConnectionHelper ConnectionHelper;
-        #endregion
-
-        #region Helpers
+        
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = new MySqlCommand("GetPurchaseOrderById", connection)
@@ -42,9 +34,7 @@ namespace Citicon.DataProcess
                 //RunningBalance = reader.GetDecimal("RunningBalance")
             };
         }
-        #endregion
 
-        #region Executions
         internal PurchaseOrder Execute(MySqlConnection connection)
         {
             using (var command = CreateCommand(connection))
@@ -66,7 +56,7 @@ namespace Citicon.DataProcess
 
         public PurchaseOrder Execute()
         {
-            using (var connection = ConnectionHelper.EstablishConnection())
+            using (var connection = Utility.EstablishConnection())
             {
                 if (connection.State == ConnectionState.Open)
                 {
@@ -78,14 +68,6 @@ namespace Citicon.DataProcess
                 }
             }
         }
-        #endregion
-
-        #region IDisposable
-        public void Dispose()
-        {
-            ConnectionHelper = null;
-        } 
-        #endregion
     }
 }
     

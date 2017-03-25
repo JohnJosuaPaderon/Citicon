@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class GetBankAccountListByBank : DataProcess
+    internal sealed class GetBankAccountListByBank : DataProcessBase
     {
         public GetBankAccountListByBank(Bank bank)
         {

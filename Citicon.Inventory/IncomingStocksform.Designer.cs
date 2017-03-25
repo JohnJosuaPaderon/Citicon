@@ -137,7 +137,6 @@
             // 
             this.lblSearchItem.AutoSize = true;
             this.lblSearchItem.Location = new System.Drawing.Point(10, 84);
-            this.lblSearchItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchItem.Name = "lblSearchItem";
             this.lblSearchItem.Size = new System.Drawing.Size(92, 21);
             this.lblSearchItem.TabIndex = 11;
@@ -150,10 +149,10 @@
             this.tbxSearchItems.BackColor = System.Drawing.Color.White;
             this.tbxSearchItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSearchItems.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxSearchItems.Location = new System.Drawing.Point(14, 108);
-            this.tbxSearchItems.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSearchItems.Location = new System.Drawing.Point(14, 107);
+            this.tbxSearchItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxSearchItems.Name = "tbxSearchItems";
-            this.tbxSearchItems.Size = new System.Drawing.Size(954, 29);
+            this.tbxSearchItems.Size = new System.Drawing.Size(953, 29);
             this.tbxSearchItems.TabIndex = 12;
             this.tbxSearchItems.TextChanged += new System.EventHandler(this.TbxSearchItems_TextChanged);
             this.tbxSearchItems.Enter += new System.EventHandler(this.TbxSearchItems_Enter);
@@ -166,8 +165,8 @@
             this.btnSearchItems.FlatAppearance.BorderSize = 0;
             this.btnSearchItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchItems.ForeColor = System.Drawing.Color.White;
-            this.btnSearchItems.Location = new System.Drawing.Point(1346, 108);
-            this.btnSearchItems.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSearchItems.Location = new System.Drawing.Point(1346, 107);
+            this.btnSearchItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearchItems.Name = "btnSearchItems";
             this.btnSearchItems.Size = new System.Drawing.Size(102, 28);
             this.btnSearchItems.TabIndex = 36;
@@ -218,8 +217,8 @@
             this.dgvItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItems.EnableHeadersVisualStyles = false;
             this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvItems.Location = new System.Drawing.Point(14, 139);
-            this.dgvItems.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvItems.Location = new System.Drawing.Point(14, 140);
+            this.dgvItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
@@ -270,7 +269,6 @@
             this.lblSearchBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSearchBy.AutoSize = true;
             this.lblSearchBy.Location = new System.Drawing.Point(968, 83);
-            this.lblSearchBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchBy.Name = "lblSearchBy";
             this.lblSearchBy.Size = new System.Drawing.Size(78, 21);
             this.lblSearchBy.TabIndex = 38;
@@ -283,7 +281,7 @@
             this.cmbxSearchBy.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxSearchBy.FormattingEnabled = true;
             this.cmbxSearchBy.Location = new System.Drawing.Point(972, 107);
-            this.cmbxSearchBy.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxSearchBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxSearchBy.Name = "cmbxSearchBy";
             this.cmbxSearchBy.Size = new System.Drawing.Size(369, 29);
             this.cmbxSearchBy.TabIndex = 39;
@@ -293,7 +291,6 @@
             // 
             this.lblItemDescription.AutoSize = true;
             this.lblItemDescription.Location = new System.Drawing.Point(10, 143);
-            this.lblItemDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemDescription.Name = "lblItemDescription";
             this.lblItemDescription.Size = new System.Drawing.Size(124, 21);
             this.lblItemDescription.TabIndex = 40;
@@ -307,7 +304,7 @@
             this.tbxItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxItemDescription.Location = new System.Drawing.Point(14, 166);
-            this.tbxItemDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxItemDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxItemDescription.Name = "tbxItemDescription";
             this.tbxItemDescription.ReadOnly = true;
             this.tbxItemDescription.Size = new System.Drawing.Size(493, 29);
@@ -318,7 +315,6 @@
             this.lblItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemCode.AutoSize = true;
             this.lblItemCode.Location = new System.Drawing.Point(507, 143);
-            this.lblItemCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemCode.Name = "lblItemCode";
             this.lblItemCode.Size = new System.Drawing.Size(81, 21);
             this.lblItemCode.TabIndex = 46;
@@ -330,8 +326,8 @@
             this.tbxItemCode.BackColor = System.Drawing.Color.White;
             this.tbxItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxItemCode.Location = new System.Drawing.Point(511, 166);
-            this.tbxItemCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxItemCode.Location = new System.Drawing.Point(510, 166);
+            this.tbxItemCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxItemCode.Name = "tbxItemCode";
             this.tbxItemCode.ReadOnly = true;
             this.tbxItemCode.Size = new System.Drawing.Size(299, 29);
@@ -381,7 +377,7 @@
             this.dgvStocks.EnableHeadersVisualStyles = false;
             this.dgvStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvStocks.Location = new System.Drawing.Point(14, 220);
-            this.dgvStocks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvStocks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvStocks.MultiSelect = false;
             this.dgvStocks.Name = "dgvStocks";
             this.dgvStocks.ReadOnly = true;
@@ -442,8 +438,7 @@
             // lblPastStockRecords
             // 
             this.lblPastStockRecords.AutoSize = true;
-            this.lblPastStockRecords.Location = new System.Drawing.Point(10, 197);
-            this.lblPastStockRecords.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPastStockRecords.Location = new System.Drawing.Point(10, 196);
             this.lblPastStockRecords.Name = "lblPastStockRecords";
             this.lblPastStockRecords.Size = new System.Drawing.Size(139, 21);
             this.lblPastStockRecords.TabIndex = 51;
@@ -454,8 +449,8 @@
             this.dtpDeliveryDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDeliveryDate.CustomFormat = "MMM dd, yyyy";
             this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDeliveryDate.Location = new System.Drawing.Point(972, 244);
-            this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dtpDeliveryDate.Location = new System.Drawing.Point(972, 245);
+            this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.dtpDeliveryDate.Size = new System.Drawing.Size(237, 29);
             this.dtpDeliveryDate.TabIndex = 53;
@@ -468,7 +463,7 @@
             this.tbxItemStockValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemStockValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxItemStockValue.Location = new System.Drawing.Point(814, 166);
-            this.tbxItemStockValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxItemStockValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxItemStockValue.Name = "tbxItemStockValue";
             this.tbxItemStockValue.ReadOnly = true;
             this.tbxItemStockValue.Size = new System.Drawing.Size(154, 29);
@@ -479,7 +474,6 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(810, 143);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 59;
@@ -491,8 +485,8 @@
             this.cmbxPaymentTerms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxPaymentTerms.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxPaymentTerms.FormattingEnabled = true;
-            this.cmbxPaymentTerms.Location = new System.Drawing.Point(1213, 244);
-            this.cmbxPaymentTerms.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxPaymentTerms.Location = new System.Drawing.Point(1212, 245);
+            this.cmbxPaymentTerms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxPaymentTerms.Name = "cmbxPaymentTerms";
             this.cmbxPaymentTerms.Size = new System.Drawing.Size(235, 29);
             this.cmbxPaymentTerms.TabIndex = 63;
@@ -508,7 +502,7 @@
             this.cmbxVehicles.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxVehicles.FormattingEnabled = true;
             this.cmbxVehicles.Location = new System.Drawing.Point(1112, 166);
-            this.cmbxVehicles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxVehicles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxVehicles.Name = "cmbxVehicles";
             this.cmbxVehicles.Size = new System.Drawing.Size(201, 29);
             this.cmbxVehicles.TabIndex = 65;
@@ -519,7 +513,6 @@
             this.lblDeliveryDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDeliveryDate.AutoSize = true;
             this.lblDeliveryDate.Location = new System.Drawing.Point(968, 220);
-            this.lblDeliveryDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDeliveryDate.Name = "lblDeliveryDate";
             this.lblDeliveryDate.Size = new System.Drawing.Size(103, 21);
             this.lblDeliveryDate.TabIndex = 54;
@@ -529,8 +522,7 @@
             // 
             this.lblSiNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSiNumber.AutoSize = true;
-            this.lblSiNumber.Location = new System.Drawing.Point(1136, 274);
-            this.lblSiNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSiNumber.Location = new System.Drawing.Point(1137, 274);
             this.lblSiNumber.Name = "lblSiNumber";
             this.lblSiNumber.Size = new System.Drawing.Size(51, 21);
             this.lblSiNumber.TabIndex = 55;
@@ -541,7 +533,6 @@
             this.lblAddedStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddedStockValue.AutoSize = true;
             this.lblAddedStockValue.Location = new System.Drawing.Point(969, 329);
-            this.lblAddedStockValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddedStockValue.Name = "lblAddedStockValue";
             this.lblAddedStockValue.Size = new System.Drawing.Size(138, 21);
             this.lblAddedStockValue.TabIndex = 61;
@@ -552,7 +543,6 @@
             this.lblPaymentTerm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPaymentTerm.AutoSize = true;
             this.lblPaymentTerm.Location = new System.Drawing.Point(1209, 220);
-            this.lblPaymentTerm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentTerm.Name = "lblPaymentTerm";
             this.lblPaymentTerm.Size = new System.Drawing.Size(108, 21);
             this.lblPaymentTerm.TabIndex = 64;
@@ -563,7 +553,6 @@
             this.lblVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVehicle.AutoSize = true;
             this.lblVehicle.Location = new System.Drawing.Point(1108, 143);
-            this.lblVehicle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVehicle.Name = "lblVehicle";
             this.lblVehicle.Size = new System.Drawing.Size(59, 21);
             this.lblVehicle.TabIndex = 66;
@@ -575,14 +564,14 @@
             this.nudAddedStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudAddedStockValue.DecimalPlaces = 2;
             this.nudAddedStockValue.Location = new System.Drawing.Point(973, 353);
-            this.nudAddedStockValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudAddedStockValue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudAddedStockValue.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nudAddedStockValue.Name = "nudAddedStockValue";
-            this.nudAddedStockValue.Size = new System.Drawing.Size(236, 29);
+            this.nudAddedStockValue.Size = new System.Drawing.Size(237, 29);
             this.nudAddedStockValue.TabIndex = 67;
             this.nudAddedStockValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudAddedStockValue.ThousandsSeparator = true;
@@ -593,7 +582,6 @@
             this.lblUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUnitPrice.AutoSize = true;
             this.lblUnitPrice.Location = new System.Drawing.Point(1209, 329);
-            this.lblUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(77, 21);
             this.lblUnitPrice.TabIndex = 68;
@@ -603,8 +591,8 @@
             // 
             this.nudUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudUnitPrice.DecimalPlaces = 4;
-            this.nudUnitPrice.Location = new System.Drawing.Point(1213, 353);
-            this.nudUnitPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudUnitPrice.Location = new System.Drawing.Point(1212, 353);
+            this.nudUnitPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudUnitPrice.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -622,7 +610,6 @@
             this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompany.AutoSize = true;
             this.lblCompany.Location = new System.Drawing.Point(968, 153);
-            this.lblCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(77, 21);
             this.lblCompany.TabIndex = 73;
@@ -635,10 +622,10 @@
             this.cmbxCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxCompanies.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxCompanies.FormattingEnabled = true;
-            this.cmbxCompanies.Location = new System.Drawing.Point(972, 176);
-            this.cmbxCompanies.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxCompanies.Location = new System.Drawing.Point(972, 175);
+            this.cmbxCompanies.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxCompanies.Name = "cmbxCompanies";
-            this.cmbxCompanies.Size = new System.Drawing.Size(236, 29);
+            this.cmbxCompanies.Size = new System.Drawing.Size(235, 29);
             this.cmbxCompanies.TabIndex = 72;
             this.cmbxCompanies.Visible = false;
             this.cmbxCompanies.SelectedIndexChanged += new System.EventHandler(this.CmbxCompanies_SelectedIndexChanged);
@@ -649,8 +636,7 @@
             // 
             this.lblBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBranch.AutoSize = true;
-            this.lblBranch.Location = new System.Drawing.Point(970, 274);
-            this.lblBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBranch.Location = new System.Drawing.Point(969, 274);
             this.lblBranch.Name = "lblBranch";
             this.lblBranch.Size = new System.Drawing.Size(58, 21);
             this.lblBranch.TabIndex = 71;
@@ -662,8 +648,8 @@
             this.cmbxBranches.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxBranches.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxBranches.FormattingEnabled = true;
-            this.cmbxBranches.Location = new System.Drawing.Point(974, 297);
-            this.cmbxBranches.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxBranches.Location = new System.Drawing.Point(975, 296);
+            this.cmbxBranches.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxBranches.Name = "cmbxBranches";
             this.cmbxBranches.Size = new System.Drawing.Size(162, 29);
             this.cmbxBranches.TabIndex = 70;
@@ -676,7 +662,6 @@
             this.lblSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSupplier.AutoSize = true;
             this.lblSupplier.Location = new System.Drawing.Point(969, 508);
-            this.lblSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(68, 21);
             this.lblSupplier.TabIndex = 75;
@@ -690,7 +675,7 @@
             this.cmbxSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxSuppliers.FormattingEnabled = true;
             this.cmbxSuppliers.Location = new System.Drawing.Point(977, 530);
-            this.cmbxSuppliers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxSuppliers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbxSuppliers.Name = "cmbxSuppliers";
             this.cmbxSuppliers.Size = new System.Drawing.Size(476, 29);
             this.cmbxSuppliers.TabIndex = 74;
@@ -706,8 +691,8 @@
             this.tbxAcceptedBy.BackColor = System.Drawing.Color.White;
             this.tbxAcceptedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxAcceptedBy.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxAcceptedBy.Location = new System.Drawing.Point(977, 638);
-            this.tbxAcceptedBy.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxAcceptedBy.Location = new System.Drawing.Point(977, 637);
+            this.tbxAcceptedBy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxAcceptedBy.Name = "tbxAcceptedBy";
             this.tbxAcceptedBy.Size = new System.Drawing.Size(475, 29);
             this.tbxAcceptedBy.TabIndex = 77;
@@ -720,7 +705,6 @@
             this.lblAcceptedBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAcceptedBy.AutoSize = true;
             this.lblAcceptedBy.Location = new System.Drawing.Point(969, 616);
-            this.lblAcceptedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAcceptedBy.Name = "lblAcceptedBy";
             this.lblAcceptedBy.Size = new System.Drawing.Size(94, 21);
             this.lblAcceptedBy.TabIndex = 76;
@@ -734,7 +718,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(1135, 781);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 42);
             this.btnSave.TabIndex = 78;
@@ -750,7 +734,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(1242, 781);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 42);
             this.btnCancel.TabIndex = 79;
@@ -763,7 +747,6 @@
             this.lblRemarks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRemarks.AutoSize = true;
             this.lblRemarks.Location = new System.Drawing.Point(975, 670);
-            this.lblRemarks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(71, 21);
             this.lblRemarks.TabIndex = 80;
@@ -777,7 +760,7 @@
             this.tbxRemarks.BackColor = System.Drawing.Color.White;
             this.tbxRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxRemarks.Location = new System.Drawing.Point(977, 691);
-            this.tbxRemarks.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxRemarks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxRemarks.Name = "tbxRemarks";
             this.tbxRemarks.Size = new System.Drawing.Size(475, 29);
             this.tbxRemarks.TabIndex = 81;
@@ -789,7 +772,6 @@
             this.lblLength.AutoSize = true;
             this.lblLength.Enabled = false;
             this.lblLength.Location = new System.Drawing.Point(969, 560);
-            this.lblLength.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLength.Name = "lblLength";
             this.lblLength.Size = new System.Drawing.Size(58, 21);
             this.lblLength.TabIndex = 82;
@@ -802,7 +784,7 @@
             this.nudLength.DecimalPlaces = 2;
             this.nudLength.Enabled = false;
             this.nudLength.Location = new System.Drawing.Point(973, 584);
-            this.nudLength.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudLength.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -822,14 +804,14 @@
             this.nudWidth.DecimalPlaces = 2;
             this.nudWidth.Enabled = false;
             this.nudWidth.Location = new System.Drawing.Point(1140, 584);
-            this.nudWidth.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudWidth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudWidth.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nudWidth.Name = "nudWidth";
-            this.nudWidth.Size = new System.Drawing.Size(151, 29);
+            this.nudWidth.Size = new System.Drawing.Size(150, 29);
             this.nudWidth.TabIndex = 84;
             this.nudWidth.Tag = "MeasurementDescription";
             this.nudWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -842,7 +824,7 @@
             this.nudHeight.DecimalPlaces = 2;
             this.nudHeight.Enabled = false;
             this.nudHeight.Location = new System.Drawing.Point(1295, 584);
-            this.nudHeight.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudHeight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudHeight.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -861,8 +843,7 @@
             this.lblWidth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWidth.AutoSize = true;
             this.lblWidth.Enabled = false;
-            this.lblWidth.Location = new System.Drawing.Point(1136, 560);
-            this.lblWidth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWidth.Location = new System.Drawing.Point(1137, 560);
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(52, 21);
             this.lblWidth.TabIndex = 86;
@@ -876,7 +857,6 @@
             this.lblHeight.AutoSize = true;
             this.lblHeight.Enabled = false;
             this.lblHeight.Location = new System.Drawing.Point(1291, 562);
-            this.lblHeight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHeight.Name = "lblHeight";
             this.lblHeight.Size = new System.Drawing.Size(56, 21);
             this.lblHeight.TabIndex = 87;
@@ -891,7 +871,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.Location = new System.Drawing.Point(1350, 781);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(102, 42);
             this.btnClose.TabIndex = 88;
@@ -904,7 +884,6 @@
             this.lblDrNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDrNumber.AutoSize = true;
             this.lblDrNumber.Location = new System.Drawing.Point(1291, 274);
-            this.lblDrNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDrNumber.Name = "lblDrNumber";
             this.lblDrNumber.Size = new System.Drawing.Size(59, 21);
             this.lblDrNumber.TabIndex = 89;
@@ -913,23 +892,23 @@
             // nudSiNumber
             // 
             this.nudSiNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSiNumber.Location = new System.Drawing.Point(1140, 297);
-            this.nudSiNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudSiNumber.Location = new System.Drawing.Point(1140, 296);
+            this.nudSiNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudSiNumber.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nudSiNumber.Name = "nudSiNumber";
-            this.nudSiNumber.Size = new System.Drawing.Size(151, 29);
+            this.nudSiNumber.Size = new System.Drawing.Size(150, 29);
             this.nudSiNumber.TabIndex = 90;
             this.nudSiNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nudDrNumber
             // 
             this.nudDrNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudDrNumber.Location = new System.Drawing.Point(1295, 297);
-            this.nudDrNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudDrNumber.Location = new System.Drawing.Point(1295, 296);
+            this.nudDrNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudDrNumber.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -948,9 +927,9 @@
             this.btnEditSelectedUnitPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSelectedUnitPrice.ForeColor = System.Drawing.Color.White;
             this.btnEditSelectedUnitPrice.Location = new System.Drawing.Point(804, 783);
-            this.btnEditSelectedUnitPrice.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditSelectedUnitPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditSelectedUnitPrice.Name = "btnEditSelectedUnitPrice";
-            this.btnEditSelectedUnitPrice.Size = new System.Drawing.Size(164, 42);
+            this.btnEditSelectedUnitPrice.Size = new System.Drawing.Size(165, 42);
             this.btnEditSelectedUnitPrice.TabIndex = 92;
             this.btnEditSelectedUnitPrice.Text = "Edit  Selected";
             this.btnEditSelectedUnitPrice.UseVisualStyleBackColor = false;
@@ -960,8 +939,8 @@
             // 
             this.ckbxIncludeWithHoldingTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbxIncludeWithHoldingTax.AutoSize = true;
-            this.ckbxIncludeWithHoldingTax.Location = new System.Drawing.Point(971, 386);
-            this.ckbxIncludeWithHoldingTax.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ckbxIncludeWithHoldingTax.Location = new System.Drawing.Point(971, 385);
+            this.ckbxIncludeWithHoldingTax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ckbxIncludeWithHoldingTax.Name = "ckbxIncludeWithHoldingTax";
             this.ckbxIncludeWithHoldingTax.Size = new System.Drawing.Size(202, 25);
             this.ckbxIncludeWithHoldingTax.TabIndex = 93;
@@ -975,14 +954,14 @@
             this.nudWithHoldingTax.DecimalPlaces = 2;
             this.nudWithHoldingTax.Enabled = false;
             this.nudWithHoldingTax.Location = new System.Drawing.Point(973, 415);
-            this.nudWithHoldingTax.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudWithHoldingTax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudWithHoldingTax.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.nudWithHoldingTax.Name = "nudWithHoldingTax";
-            this.nudWithHoldingTax.Size = new System.Drawing.Size(236, 29);
+            this.nudWithHoldingTax.Size = new System.Drawing.Size(237, 29);
             this.nudWithHoldingTax.TabIndex = 94;
             this.nudWithHoldingTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudWithHoldingTax.ThousandsSeparator = true;
@@ -993,8 +972,8 @@
             // 
             this.nudAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudAmountDue.DecimalPlaces = 2;
-            this.nudAmountDue.Location = new System.Drawing.Point(1213, 415);
-            this.nudAmountDue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudAmountDue.Location = new System.Drawing.Point(1212, 415);
+            this.nudAmountDue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudAmountDue.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -1011,8 +990,7 @@
             // 
             this.lblAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAmountDue.AutoSize = true;
-            this.lblAmountDue.Location = new System.Drawing.Point(1213, 386);
-            this.lblAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAmountDue.Location = new System.Drawing.Point(1212, 385);
             this.lblAmountDue.Name = "lblAmountDue";
             this.lblAmountDue.Size = new System.Drawing.Size(98, 21);
             this.lblAmountDue.TabIndex = 96;
@@ -1023,7 +1001,6 @@
             this.lblVat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVat.AutoSize = true;
             this.lblVat.Location = new System.Drawing.Point(973, 448);
-            this.lblVat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVat.Name = "lblVat";
             this.lblVat.Size = new System.Drawing.Size(36, 21);
             this.lblVat.TabIndex = 98;
@@ -1034,14 +1011,14 @@
             this.nudVat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudVat.DecimalPlaces = 2;
             this.nudVat.Location = new System.Drawing.Point(973, 476);
-            this.nudVat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudVat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudVat.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.nudVat.Name = "nudVat";
-            this.nudVat.Size = new System.Drawing.Size(236, 29);
+            this.nudVat.Size = new System.Drawing.Size(237, 29);
             this.nudVat.TabIndex = 97;
             this.nudVat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudVat.ThousandsSeparator = true;
@@ -1051,8 +1028,7 @@
             // 
             this.lblTotalAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalAmountDue.AutoSize = true;
-            this.lblTotalAmountDue.Location = new System.Drawing.Point(1213, 448);
-            this.lblTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalAmountDue.Location = new System.Drawing.Point(1212, 448);
             this.lblTotalAmountDue.Name = "lblTotalAmountDue";
             this.lblTotalAmountDue.Size = new System.Drawing.Size(134, 21);
             this.lblTotalAmountDue.TabIndex = 100;
@@ -1062,8 +1038,8 @@
             // 
             this.nudTotalAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudTotalAmountDue.DecimalPlaces = 2;
-            this.nudTotalAmountDue.Location = new System.Drawing.Point(1213, 476);
-            this.nudTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudTotalAmountDue.Location = new System.Drawing.Point(1212, 476);
+            this.nudTotalAmountDue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudTotalAmountDue.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -1079,8 +1055,8 @@
             // 
             this.ckbxRetainData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbxRetainData.AutoSize = true;
-            this.ckbxRetainData.Location = new System.Drawing.Point(979, 791);
-            this.ckbxRetainData.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ckbxRetainData.Location = new System.Drawing.Point(978, 791);
+            this.ckbxRetainData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ckbxRetainData.Name = "ckbxRetainData";
             this.ckbxRetainData.Size = new System.Drawing.Size(109, 25);
             this.ckbxRetainData.TabIndex = 101;
@@ -1156,7 +1132,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "IncomingStocksform";
             this.Text = "Citicon Inventory | Incoming Stocks";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
