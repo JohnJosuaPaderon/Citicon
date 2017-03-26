@@ -72,6 +72,8 @@
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
+    <Compile Include="DataProcess\GetQuotationListByProject.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
     <Compile Include="DataManager\MeasurementUnitManager.cs" />
@@ -106,31 +108,31 @@
     <Compile Include="DataManager\VehicleTypeManager.cs" />
     <Compile Include="DataManager\DepartmentManager.cs" />
     <Compile Include="DataManager\EmployeeManager.cs" />
-    <Compile Include="DataProcess\AccessoryTypeProcesses\GetAccessoryTypeList.cs" />
-    <Compile Include="DataProcess\BillingProcesses\GetBillingListWithoutSiNumberByProject.cs" />
-    <Compile Include="DataProcess\BillingProcesses\InsertBilling.cs" />
-    <Compile Include="DataProcess\BillingStructureTypeProcesses\GetBillingStructureTypeList.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetClientById.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetClientList.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetClientListWithUnbilledDelivery.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetClientListWithoutBillingSiNumber.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetClientListWithUnpaidBillingSiNumber.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetClientMetaDataListWithQuotationForApproval.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetLegitimateClientList.cs" />
-    <Compile Include="DataProcess\DataProcess.cs" />
+    <Compile Include="DataProcess\GetAccessoryTypeList.cs" />
+    <Compile Include="DataProcess\GetBillingListWithoutSiNumberByProject.cs" />
+    <Compile Include="DataProcess\InsertBilling.cs" />
+    <Compile Include="DataProcess\GetBillingStructureTypeList.cs" />
+    <Compile Include="DataProcess\GetClientById.cs" />
+    <Compile Include="DataProcess\GetClientList.cs" />
+    <Compile Include="DataProcess\GetClientListWithUnbilledDelivery.cs" />
+    <Compile Include="DataProcess\GetClientListWithoutBillingSiNumber.cs" />
+    <Compile Include="DataProcess\GetClientListWithUnpaidBillingSiNumber.cs" />
+    <Compile Include="DataProcess\GetClientMetaDataListWithQuotationForApproval.cs" />
+    <Compile Include="DataProcess\GetLegitimateClientList.cs" />
+    <Compile Include="DataProcess\DataProcessBase.cs" />
     <Compile Include="DataProcess\DeleteClient.cs" />
     <Compile Include="DataProcess\DeleteEmployee.cs" />
     <Compile Include="DataProcess\DeleteProject.cs" />
-    <Compile Include="DataProcess\DeliveryProcesses\GetDeliveryListByClient.cs" />
-    <Compile Include="DataProcess\DeliveryProcesses\UpdateDeliveryBillingId.cs" />
-    <Compile Include="DataProcess\DepartmentProcesses\GetDepartmentById.cs" />
-    <Compile Include="DataProcess\EmployeeProcesses\GetEmployeeAgent.cs" />
-    <Compile Include="DataProcess\EmployeeProcesses\GetEmployeeById.cs" />
+    <Compile Include="DataProcess\GetDeliveryListByClient.cs" />
+    <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
+    <Compile Include="DataProcess\GetDepartmentById.cs" />
+    <Compile Include="DataProcess\GetEmployeeAgent.cs" />
+    <Compile Include="DataProcess\GetEmployeeById.cs" />
     <Compile Include="DataManager\JobPositionManager.cs" />
     <Compile Include="DataManager\ProductAggregateManager.cs" />
     <Compile Include="DataManager\ProductManager.cs" />
     <Compile Include="DataManager\ProductStrengthManager.cs" />
-    <Compile Include="DataProcess\ExcessPipeChargeProcesses\InsertExcessPipeCharge.cs" />
+    <Compile Include="DataProcess\InsertExcessPipeCharge.cs" />
     <Compile Include="DataProcess\GeneratePayroll.cs" />
     <Compile Include="DataProcess\GetApprovedProjectDesignListByProject.cs" />
     <Compile Include="DataProcess\GetApprovedProjectList.cs" />
@@ -171,57 +173,57 @@
     <Compile Include="DataProcess\InsertScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\InsertScheduledProjectDesignList.cs" />
     <Compile Include="DataProcess\InsertUser.cs" />
-    <Compile Include="DataProcess\JobPositionProcesses\GetJobPositionById.cs" />
+    <Compile Include="DataProcess\GetJobPositionById.cs" />
     <Compile Include="DataProcess\LogEmployee.cs" />
     <Compile Include="DataProcess\MySqlDataProcessUtility.cs" />
-    <Compile Include="DataProcess\OperationTimeFrameProcesses\InsertOperationTimeFrame.cs" />
-    <Compile Include="DataProcess\OtherChargeProcesses\InsertOtherCharge.cs" />
-    <Compile Include="DataProcess\OtherChargeTypeProcesses\GetOtherChargeTypeList.cs" />
-    <Compile Include="DataProcess\ProductAggregateProcesses\GetProductAggregateById.cs" />
-    <Compile Include="DataProcess\ProductAggregateProcesses\GetProductAggregateList.cs" />
-    <Compile Include="DataProcess\ProductProcesses\GetProductListByProjectId.cs" />
-    <Compile Include="DataProcess\ProductStrengthProcesses\GetProductStrengthById.cs" />
-    <Compile Include="DataProcess\ProductStrengthProcesses\GetProductStrengthList.cs" />
-    <Compile Include="DataProcess\ProjectBillingInfoProcesses\GetProjectBillingInfo.cs" />
-    <Compile Include="DataProcess\ProjectDesignProcesses\ApproveProjectDesign.cs" />
-    <Compile Include="DataProcess\ProjectDesignProcesses\GetProjectDesignListByProject.cs" />
-    <Compile Include="DataProcess\ProjectDesignProcesses\GetProjectDesignListForApproval.cs" />
-    <Compile Include="DataProcess\ProjectDesignProcesses\InsertProjectDesign.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\GetClientListWithQuotationForApprovalByClient.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\GetProjectById.cs" />
-    <Compile Include="DataProcess\ProjectDesignProcesses\GetProjectDesignById.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\GetProjectListByClient.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\GetProjectListWithoutBIllingSiNumberByClient.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\GetProjectListWithUnbilledDeliveryByClient.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\GetProjectListWithUnpaidBillingSiNumberByClient.cs" />
-    <Compile Include="DataProcess\PumpcreteChargeProcesses\InsertPumpcreteCharge.cs" />
-    <Compile Include="DataProcess\PumpSizeProcesses\GetPumpSizeList.cs" />
-    <Compile Include="DataProcess\PumpTypeProcesses\GetPumpTypeList.cs" />
-    <Compile Include="DataProcess\ClientProcesses\GetTallySheetClientListByDeliveryDate.cs" />
-    <Compile Include="DataProcess\DeliveryProcesses\GetTallySheetDeliveryListByClientAndDeliveryDate.cs" />
-    <Compile Include="DataProcess\DeliveryProcesses\GetTallySheetDeliveryListByProjectAndDeliveryDate.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\GetTallySheetProjectListByClientAndDeliveryDate.cs" />
-    <Compile Include="DataProcess\QuotationProcesses\ExportQuotation.cs" />
-    <Compile Include="DataProcess\QuotationProcesses\GetForApprovalQuotationMetaDataListByProject.cs" />
-    <Compile Include="DataProcess\QuotationProcesses\GetForFinalApprovalQuotationMetaDataList.cs" />
-    <Compile Include="DataProcess\QuotationProcesses\GetQuotationById.cs" />
-    <Compile Include="DataProcess\QuotationProcesses\UpdateQuotationStatus.cs" />
+    <Compile Include="DataProcess\InsertOperationTimeFrame.cs" />
+    <Compile Include="DataProcess\InsertOtherCharge.cs" />
+    <Compile Include="DataProcess\GetOtherChargeTypeList.cs" />
+    <Compile Include="DataProcess\GetProductAggregateById.cs" />
+    <Compile Include="DataProcess\GetProductAggregateList.cs" />
+    <Compile Include="DataProcess\GetProductListByProjectId.cs" />
+    <Compile Include="DataProcess\GetProductStrengthById.cs" />
+    <Compile Include="DataProcess\GetProductStrengthList.cs" />
+    <Compile Include="DataProcess\GetProjectBillingInfo.cs" />
+    <Compile Include="DataProcess\ApproveProjectDesign.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListByProject.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListForApproval.cs" />
+    <Compile Include="DataProcess\InsertProjectDesign.cs" />
+    <Compile Include="DataProcess\GetClientListWithQuotationForApprovalByClient.cs" />
+    <Compile Include="DataProcess\GetProjectById.cs" />
+    <Compile Include="DataProcess\GetProjectDesignById.cs" />
+    <Compile Include="DataProcess\GetProjectListByClient.cs" />
+    <Compile Include="DataProcess\GetProjectListWithoutBIllingSiNumberByClient.cs" />
+    <Compile Include="DataProcess\GetProjectListWithUnbilledDeliveryByClient.cs" />
+    <Compile Include="DataProcess\GetProjectListWithUnpaidBillingSiNumberByClient.cs" />
+    <Compile Include="DataProcess\InsertPumpcreteCharge.cs" />
+    <Compile Include="DataProcess\GetPumpSizeList.cs" />
+    <Compile Include="DataProcess\GetPumpTypeList.cs" />
+    <Compile Include="DataProcess\GetTallySheetClientListByDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetTallySheetDeliveryListByClientAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetTallySheetDeliveryListByProjectAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetTallySheetProjectListByClientAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\ExportQuotation.cs" />
+    <Compile Include="DataProcess\GetForApprovalQuotationMetaDataListByProject.cs" />
+    <Compile Include="DataProcess\GetForFinalApprovalQuotationMetaDataList.cs" />
+    <Compile Include="DataProcess\GetQuotationById.cs" />
+    <Compile Include="DataProcess\UpdateQuotationStatus.cs" />
     <Compile Include="DataProcess\RegisterEmployeeLogin.cs" />
     <Compile Include="DataProcess\SaveCementSuppliedStockProject.cs" />
     <Compile Include="DataProcess\ScheduledProjectDesignExists.cs" />
     <Compile Include="DataProcess\SearchEmployee.cs" />
     <Compile Include="DataProcess\SetProjectDesignPurchaseOrder.cs" />
     <Compile Include="DataProcess\ValidateChequeRange.cs" />
-    <Compile Include="DataProcess\VehicleProcesses\GetTransitMixerVehicleList.cs" />
-    <Compile Include="DataProcess\DeliveryProcesses\GetUnbilledDeliveryListByProject.cs" />
-    <Compile Include="DataProcess\BillingProcesses\GetUnpaidBillingListBySalesInvoice.cs" />
-    <Compile Include="DataProcess\SalesInvoiceProcesses\GetUnpaidSalesInvoiceListByProject.cs" />
-    <Compile Include="DataProcess\VehicleProcesses\GetVehicleById.cs" />
-    <Compile Include="DataProcess\VehicleProcesses\GetVehicleTypeById.cs" />
-    <Compile Include="DataProcess\BillingProcesses\SaveBillingSiNumber.cs" />
-    <Compile Include="DataProcess\ProductProcesses\SaveEditedProduct.cs" />
-    <Compile Include="DataProcess\ProjectProcesses\SaveProjectDetails.cs" />
-    <Compile Include="DataProcess\PumpTypeProcesses\UpdatePumpType.cs" />
+    <Compile Include="DataProcess\GetTransitMixerVehicleList.cs" />
+    <Compile Include="DataProcess\GetUnbilledDeliveryListByProject.cs" />
+    <Compile Include="DataProcess\GetUnpaidBillingListBySalesInvoice.cs" />
+    <Compile Include="DataProcess\GetUnpaidSalesInvoiceListByProject.cs" />
+    <Compile Include="DataProcess\GetVehicleById.cs" />
+    <Compile Include="DataProcess\GetVehicleTypeById.cs" />
+    <Compile Include="DataProcess\SaveBillingSiNumber.cs" />
+    <Compile Include="DataProcess\SaveEditedProduct.cs" />
+    <Compile Include="DataProcess\SaveProjectDetails.cs" />
+    <Compile Include="DataProcess\UpdatePumpType.cs" />
     <Compile Include="Data\AccessoryType.cs" />
     <Compile Include="Data\Bank.cs" />
     <Compile Include="Data\BankAccount.cs" />
@@ -304,6 +306,12 @@
     <Compile Include="Forms\Controls\ProjectViewControl.Designer.cs">
       <DependentUpon>ProjectViewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\QuotationViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\QuotationViewControl.Designer.cs">
+      <DependentUpon>QuotationViewControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\AddEditClientDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +336,12 @@
     </Compile>
     <Compile Include="Forms\ProjectManagementForm.Designer.cs">
       <DependentUpon>ProjectManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QuotationManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QuotationManagementForm.Designer.cs">
+      <DependentUpon>QuotationManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GSM\COM.cs" />
     <Compile Include="GSM\SMS.cs" />
@@ -361,6 +375,9 @@
     <EmbeddedResource Include="Forms\Controls\ProjectViewControl.resx">
       <DependentUpon>ProjectViewControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\QuotationViewControl.resx">
+      <DependentUpon>QuotationViewControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectManagementForm.resx">
       <DependentUpon>ProjectManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QuotationManagementForm.resx">
+      <DependentUpon>QuotationManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>

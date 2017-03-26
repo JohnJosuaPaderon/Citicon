@@ -132,7 +132,20 @@ namespace Citicon.Forms
 
         private void ViewDesignsButton_Click(object sender, EventArgs e)
         {
+            if (ProjectView.Project != null)
+            {
+                var form = new ProjectDesignManagementForm(ProjectView.Project);
+                form.ShowDialog();
+            }
+        }
 
+        private void ViewQuotationsButton_Click(object sender, EventArgs e)
+        {
+            if (ProjectView.Project != null)
+            {
+                var form = new QuotationManagementForm(ProjectView.Project);
+                form.ShowDialog();
+            }
         }
     }
 }

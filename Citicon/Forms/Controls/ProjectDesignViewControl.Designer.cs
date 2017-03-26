@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.ProjectDesignDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.CementFactorTextBox = new System.Windows.Forms.TextBox();
+            this.CementFactorLabel = new System.Windows.Forms.Label();
+            this.StrengthTextBox = new System.Windows.Forms.TextBox();
+            this.StrengthLabel = new System.Windows.Forms.Label();
+            this.AggregateTextBox = new System.Windows.Forms.TextBox();
+            this.AggregateLabel = new System.Windows.Forms.Label();
+            this.PSITextBox = new System.Windows.Forms.TextBox();
+            this.PSILabel = new System.Windows.Forms.Label();
+            this.MixTypeTextBox = new System.Windows.Forms.TextBox();
+            this.MixTypeLabel = new System.Windows.Forms.Label();
+            this.PricePerCubicMeterTextBox = new System.Windows.Forms.TextBox();
             this.PricePerCubicMeterLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.ProjectDesignDetailsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProjectDesignDetailsGroupBox
             // 
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.textBox6);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.label5);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.textBox5);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.label4);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.textBox4);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.label3);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.textBox3);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.label2);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.textBox2);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.label1);
-            this.ProjectDesignDetailsGroupBox.Controls.Add(this.textBox1);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.CementFactorTextBox);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.CementFactorLabel);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.StrengthTextBox);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.StrengthLabel);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.AggregateTextBox);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.AggregateLabel);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.PSITextBox);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.PSILabel);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.MixTypeTextBox);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.MixTypeLabel);
+            this.ProjectDesignDetailsGroupBox.Controls.Add(this.PricePerCubicMeterTextBox);
             this.ProjectDesignDetailsGroupBox.Controls.Add(this.PricePerCubicMeterLabel);
             this.ProjectDesignDetailsGroupBox.Location = new System.Drawing.Point(4, 4);
             this.ProjectDesignDetailsGroupBox.Name = "ProjectDesignDetailsGroupBox";
@@ -64,6 +64,105 @@
             this.ProjectDesignDetailsGroupBox.TabIndex = 0;
             this.ProjectDesignDetailsGroupBox.TabStop = false;
             this.ProjectDesignDetailsGroupBox.Text = "Design Details";
+            // 
+            // CementFactorTextBox
+            // 
+            this.CementFactorTextBox.BackColor = System.Drawing.Color.White;
+            this.CementFactorTextBox.Location = new System.Drawing.Point(9, 281);
+            this.CementFactorTextBox.Name = "CementFactorTextBox";
+            this.CementFactorTextBox.ReadOnly = true;
+            this.CementFactorTextBox.Size = new System.Drawing.Size(342, 25);
+            this.CementFactorTextBox.TabIndex = 11;
+            // 
+            // CementFactorLabel
+            // 
+            this.CementFactorLabel.AutoSize = true;
+            this.CementFactorLabel.Location = new System.Drawing.Point(6, 261);
+            this.CementFactorLabel.Name = "CementFactorLabel";
+            this.CementFactorLabel.Size = new System.Drawing.Size(92, 17);
+            this.CementFactorLabel.TabIndex = 10;
+            this.CementFactorLabel.Text = "Cement Factor";
+            // 
+            // StrengthTextBox
+            // 
+            this.StrengthTextBox.BackColor = System.Drawing.Color.White;
+            this.StrengthTextBox.Location = new System.Drawing.Point(9, 233);
+            this.StrengthTextBox.Name = "StrengthTextBox";
+            this.StrengthTextBox.ReadOnly = true;
+            this.StrengthTextBox.Size = new System.Drawing.Size(342, 25);
+            this.StrengthTextBox.TabIndex = 9;
+            // 
+            // StrengthLabel
+            // 
+            this.StrengthLabel.AutoSize = true;
+            this.StrengthLabel.Location = new System.Drawing.Point(6, 213);
+            this.StrengthLabel.Name = "StrengthLabel";
+            this.StrengthLabel.Size = new System.Drawing.Size(57, 17);
+            this.StrengthLabel.TabIndex = 8;
+            this.StrengthLabel.Text = "Strength";
+            // 
+            // AggregateTextBox
+            // 
+            this.AggregateTextBox.BackColor = System.Drawing.Color.White;
+            this.AggregateTextBox.Location = new System.Drawing.Point(9, 185);
+            this.AggregateTextBox.Name = "AggregateTextBox";
+            this.AggregateTextBox.ReadOnly = true;
+            this.AggregateTextBox.Size = new System.Drawing.Size(342, 25);
+            this.AggregateTextBox.TabIndex = 7;
+            // 
+            // AggregateLabel
+            // 
+            this.AggregateLabel.AutoSize = true;
+            this.AggregateLabel.Location = new System.Drawing.Point(6, 165);
+            this.AggregateLabel.Name = "AggregateLabel";
+            this.AggregateLabel.Size = new System.Drawing.Size(70, 17);
+            this.AggregateLabel.TabIndex = 6;
+            this.AggregateLabel.Text = "Aggregate";
+            // 
+            // PSITextBox
+            // 
+            this.PSITextBox.BackColor = System.Drawing.Color.White;
+            this.PSITextBox.Location = new System.Drawing.Point(9, 137);
+            this.PSITextBox.Name = "PSITextBox";
+            this.PSITextBox.ReadOnly = true;
+            this.PSITextBox.Size = new System.Drawing.Size(342, 25);
+            this.PSITextBox.TabIndex = 5;
+            // 
+            // PSILabel
+            // 
+            this.PSILabel.AutoSize = true;
+            this.PSILabel.Location = new System.Drawing.Point(6, 117);
+            this.PSILabel.Name = "PSILabel";
+            this.PSILabel.Size = new System.Drawing.Size(25, 17);
+            this.PSILabel.TabIndex = 4;
+            this.PSILabel.Text = "PSI";
+            // 
+            // MixTypeTextBox
+            // 
+            this.MixTypeTextBox.BackColor = System.Drawing.Color.White;
+            this.MixTypeTextBox.Location = new System.Drawing.Point(9, 89);
+            this.MixTypeTextBox.Name = "MixTypeTextBox";
+            this.MixTypeTextBox.ReadOnly = true;
+            this.MixTypeTextBox.Size = new System.Drawing.Size(342, 25);
+            this.MixTypeTextBox.TabIndex = 3;
+            // 
+            // MixTypeLabel
+            // 
+            this.MixTypeLabel.AutoSize = true;
+            this.MixTypeLabel.Location = new System.Drawing.Point(6, 69);
+            this.MixTypeLabel.Name = "MixTypeLabel";
+            this.MixTypeLabel.Size = new System.Drawing.Size(60, 17);
+            this.MixTypeLabel.TabIndex = 2;
+            this.MixTypeLabel.Text = "Mix Type";
+            // 
+            // PricePerCubicMeterTextBox
+            // 
+            this.PricePerCubicMeterTextBox.BackColor = System.Drawing.Color.White;
+            this.PricePerCubicMeterTextBox.Location = new System.Drawing.Point(9, 41);
+            this.PricePerCubicMeterTextBox.Name = "PricePerCubicMeterTextBox";
+            this.PricePerCubicMeterTextBox.ReadOnly = true;
+            this.PricePerCubicMeterTextBox.Size = new System.Drawing.Size(342, 25);
+            this.PricePerCubicMeterTextBox.TabIndex = 1;
             // 
             // PricePerCubicMeterLabel
             // 
@@ -73,105 +172,6 @@
             this.PricePerCubicMeterLabel.Size = new System.Drawing.Size(74, 17);
             this.PricePerCubicMeterLabel.TabIndex = 0;
             this.PricePerCubicMeterLabel.Text = "Price/Cu.M.";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(9, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(342, 25);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(9, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(342, 25);
-            this.textBox2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mix Type";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(9, 137);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(342, 25);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "PSI";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(9, 185);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(342, 25);
-            this.textBox4.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Aggregate";
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(9, 233);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(342, 25);
-            this.textBox5.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Strength";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(9, 281);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(342, 25);
-            this.textBox6.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 261);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 17);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Cement Factor";
             // 
             // ProjectDesignViewControl
             // 
@@ -193,17 +193,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox ProjectDesignDetailsGroupBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PricePerCubicMeterTextBox;
         private System.Windows.Forms.Label PricePerCubicMeterLabel;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox PSITextBox;
+        private System.Windows.Forms.Label PSILabel;
+        private System.Windows.Forms.TextBox MixTypeTextBox;
+        private System.Windows.Forms.Label MixTypeLabel;
+        private System.Windows.Forms.TextBox StrengthTextBox;
+        private System.Windows.Forms.Label StrengthLabel;
+        private System.Windows.Forms.TextBox AggregateTextBox;
+        private System.Windows.Forms.Label AggregateLabel;
+        private System.Windows.Forms.TextBox CementFactorTextBox;
+        private System.Windows.Forms.Label CementFactorLabel;
     }
 }

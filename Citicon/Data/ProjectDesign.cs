@@ -15,6 +15,7 @@ namespace Citicon.Data
         public decimal CementFactor { get; set; }
         public bool ForApproval { get; set; }
         public PurchaseOrder PurchaseOrder { get; set; }
+        public Quotation Quotation { get; set; }
 
         public static bool operator ==(ProjectDesign left, ProjectDesign right)
         {

@@ -219,6 +219,7 @@
             this.ViewQuotationsButton.TabIndex = 119;
             this.ViewQuotationsButton.Text = "VIEW QUOTATIONS";
             this.ViewQuotationsButton.UseVisualStyleBackColor = false;
+            this.ViewQuotationsButton.Click += new System.EventHandler(this.ViewQuotationsButton_Click);
             // 
             // ProjectManagementForm
             // 

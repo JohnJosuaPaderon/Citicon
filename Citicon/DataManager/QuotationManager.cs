@@ -39,6 +39,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<Quotation>> GetListByProjectAsync(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new GetQuotationListByProject(project))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static ExportQuotationResult ExportQuotation(ExportQuotation.QuotationReportTemplate template, string templatesDirectory, Quotation quotation, List<ProjectDesign> projectDesigns, string saveDirectory)
         {
             using (var process = new ExportQuotation(template, templatesDirectory, quotation, projectDesigns, saveDirectory))

@@ -28,7 +28,8 @@ namespace Citicon.DataManager
                 Project = await ProjectManager.GetByIdAsync(dataReader.GetUInt64("ProjectId")),
                 Psi = dataReader.GetDecimal("Psi"),
                 Strength = ProductStrengthManager.GetById(dataReader.GetInt64("StrengthId")),
-                PurchaseOrder = PurchaseOrderManager.GetById(dataReader.GetUInt64("PurchaseOrderId"))
+                PurchaseOrder = PurchaseOrderManager.GetById(dataReader.GetUInt64("PurchaseOrderId")),
+                Quotation = await QuotationManager.GetByIdAsync(dataReader.GetUInt64("QuotationId"))
             };
         }
 

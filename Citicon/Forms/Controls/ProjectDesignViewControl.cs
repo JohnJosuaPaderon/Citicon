@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Citicon.Data;
 using System.Windows.Forms;
 
 namespace Citicon.Forms.Controls
@@ -15,6 +8,28 @@ namespace Citicon.Forms.Controls
         public ProjectDesignViewControl()
         {
             InitializeComponent();
+        }
+
+        private ProjectDesign _ProjectDesign;
+
+        public ProjectDesign ProjectDesign
+        {
+            get { return _ProjectDesign; }
+            set
+            {
+                _ProjectDesign = value;
+                UpdateUI();
+            }
+        }
+
+        private void UpdateUI()
+        {
+            PricePerCubicMeterTextBox.Text = (ProjectDesign?.PricePerCubicMeter ?? 0).ToString("#,##0.00");
+            MixTypeTextBox.Text = ProjectDesign?.MixType.ToString();
+            PSITextBox.Text = (ProjectDesign?.Psi ?? 0).ToString("#,##0.0##");
+            AggregateTextBox.Text = ProjectDesign?.Aggregate.ToString();
+            StrengthTextBox.Text = ProjectDesign?.Strength.ToString();
+            CementFactorTextBox.Text = (ProjectDesign?.CementFactor ?? 0).ToString("#,##0.0##");
         }
     }
 }
