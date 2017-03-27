@@ -248,5 +248,15 @@ namespace Citicon.DataProcess
             });
         }
 
+        public Task<TResult> HandleExecuteScalarAsync<TResult>(Func<MySqlConnection, MySqlCommand> createCommand, Func<object, TResult> converter)
+        {
+            return HandleExecuteAsync(async c =>
+            {
+                using (var command = createCommand(c))
+                {
+                    return converter(await command.ExecuteScalarAsync());
+                }
+            });
+        }
     }
 }

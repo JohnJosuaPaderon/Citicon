@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditProjectDesignDialog));
             this.ProjectDesignDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.CementFactorNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.PSINumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.PricePerCubicMeterNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.StrengthComboBox = new System.Windows.Forms.ComboBox();
+            this.AggregateComboBox = new System.Windows.Forms.ComboBox();
+            this.MixTypeComboBox = new System.Windows.Forms.ComboBox();
             this.CementFactorLabel = new System.Windows.Forms.Label();
             this.StrengthLabel = new System.Windows.Forms.Label();
             this.AggregateLabel = new System.Windows.Forms.Label();
@@ -38,16 +44,10 @@
             this.PricePerCubicMeterLabel = new System.Windows.Forms.Label();
             this.CancelQuotationButton = new System.Windows.Forms.Button();
             this.SaveQuotationButton = new System.Windows.Forms.Button();
-            this.MixTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.AggregateComboBox = new System.Windows.Forms.ComboBox();
-            this.StrengthComboBox = new System.Windows.Forms.ComboBox();
-            this.PricePerCubicMeterNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.PSINumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.CementFactorNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ProjectDesignDetailsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PricePerCubicMeterNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PSINumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CementFactorNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PSINumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PricePerCubicMeterNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // ProjectDesignDetailsGroupBox
@@ -70,6 +70,84 @@
             this.ProjectDesignDetailsGroupBox.TabIndex = 0;
             this.ProjectDesignDetailsGroupBox.TabStop = false;
             this.ProjectDesignDetailsGroupBox.Text = "Design Details";
+            // 
+            // CementFactorNumericUpDown
+            // 
+            this.CementFactorNumericUpDown.DecimalPlaces = 3;
+            this.CementFactorNumericUpDown.Location = new System.Drawing.Point(9, 281);
+            this.CementFactorNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.CementFactorNumericUpDown.Name = "CementFactorNumericUpDown";
+            this.CementFactorNumericUpDown.Size = new System.Drawing.Size(342, 25);
+            this.CementFactorNumericUpDown.TabIndex = 5;
+            this.CementFactorNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CementFactorNumericUpDown.ThousandsSeparator = true;
+            this.CementFactorNumericUpDown.ValueChanged += new System.EventHandler(this.CementFactorNumericUpDown_ValueChanged);
+            // 
+            // PSINumericUpDown
+            // 
+            this.PSINumericUpDown.DecimalPlaces = 3;
+            this.PSINumericUpDown.Location = new System.Drawing.Point(9, 137);
+            this.PSINumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.PSINumericUpDown.Name = "PSINumericUpDown";
+            this.PSINumericUpDown.Size = new System.Drawing.Size(342, 25);
+            this.PSINumericUpDown.TabIndex = 2;
+            this.PSINumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.PSINumericUpDown.ThousandsSeparator = true;
+            this.PSINumericUpDown.ValueChanged += new System.EventHandler(this.PSINumericUpDown_ValueChanged);
+            // 
+            // PricePerCubicMeterNumericUpDown
+            // 
+            this.PricePerCubicMeterNumericUpDown.DecimalPlaces = 2;
+            this.PricePerCubicMeterNumericUpDown.Location = new System.Drawing.Point(9, 41);
+            this.PricePerCubicMeterNumericUpDown.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.PricePerCubicMeterNumericUpDown.Name = "PricePerCubicMeterNumericUpDown";
+            this.PricePerCubicMeterNumericUpDown.Size = new System.Drawing.Size(342, 25);
+            this.PricePerCubicMeterNumericUpDown.TabIndex = 0;
+            this.PricePerCubicMeterNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.PricePerCubicMeterNumericUpDown.ThousandsSeparator = true;
+            this.PricePerCubicMeterNumericUpDown.ValueChanged += new System.EventHandler(this.PricePerCubicMeterNumericUpDown_ValueChanged);
+            // 
+            // StrengthComboBox
+            // 
+            this.StrengthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StrengthComboBox.FormattingEnabled = true;
+            this.StrengthComboBox.Location = new System.Drawing.Point(9, 233);
+            this.StrengthComboBox.Name = "StrengthComboBox";
+            this.StrengthComboBox.Size = new System.Drawing.Size(342, 25);
+            this.StrengthComboBox.TabIndex = 4;
+            this.StrengthComboBox.SelectedIndexChanged += new System.EventHandler(this.StrengthComboBox_SelectedIndexChanged);
+            // 
+            // AggregateComboBox
+            // 
+            this.AggregateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AggregateComboBox.FormattingEnabled = true;
+            this.AggregateComboBox.Location = new System.Drawing.Point(9, 185);
+            this.AggregateComboBox.Name = "AggregateComboBox";
+            this.AggregateComboBox.Size = new System.Drawing.Size(342, 25);
+            this.AggregateComboBox.TabIndex = 3;
+            this.AggregateComboBox.SelectedIndexChanged += new System.EventHandler(this.AggregateComboBox_SelectedIndexChanged);
+            // 
+            // MixTypeComboBox
+            // 
+            this.MixTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MixTypeComboBox.FormattingEnabled = true;
+            this.MixTypeComboBox.Location = new System.Drawing.Point(9, 89);
+            this.MixTypeComboBox.Name = "MixTypeComboBox";
+            this.MixTypeComboBox.Size = new System.Drawing.Size(342, 25);
+            this.MixTypeComboBox.TabIndex = 1;
+            this.MixTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.MixTypeComboBox_SelectedIndexChanged);
             // 
             // CementFactorLabel
             // 
@@ -139,6 +217,7 @@
             this.CancelQuotationButton.TabIndex = 2;
             this.CancelQuotationButton.Text = "CANCEL";
             this.CancelQuotationButton.UseVisualStyleBackColor = false;
+            this.CancelQuotationButton.Click += new System.EventHandler(this.CancelQuotationButton_Click);
             // 
             // SaveQuotationButton
             // 
@@ -154,78 +233,7 @@
             this.SaveQuotationButton.TabIndex = 1;
             this.SaveQuotationButton.Text = "SAVE";
             this.SaveQuotationButton.UseVisualStyleBackColor = false;
-            // 
-            // MixTypeComboBox
-            // 
-            this.MixTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MixTypeComboBox.FormattingEnabled = true;
-            this.MixTypeComboBox.Location = new System.Drawing.Point(9, 89);
-            this.MixTypeComboBox.Name = "MixTypeComboBox";
-            this.MixTypeComboBox.Size = new System.Drawing.Size(342, 25);
-            this.MixTypeComboBox.TabIndex = 1;
-            // 
-            // AggregateComboBox
-            // 
-            this.AggregateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AggregateComboBox.FormattingEnabled = true;
-            this.AggregateComboBox.Location = new System.Drawing.Point(9, 185);
-            this.AggregateComboBox.Name = "AggregateComboBox";
-            this.AggregateComboBox.Size = new System.Drawing.Size(342, 25);
-            this.AggregateComboBox.TabIndex = 3;
-            // 
-            // StrengthComboBox
-            // 
-            this.StrengthComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.StrengthComboBox.FormattingEnabled = true;
-            this.StrengthComboBox.Location = new System.Drawing.Point(9, 233);
-            this.StrengthComboBox.Name = "StrengthComboBox";
-            this.StrengthComboBox.Size = new System.Drawing.Size(342, 25);
-            this.StrengthComboBox.TabIndex = 4;
-            // 
-            // PricePerCubicMeterNumericUpDown
-            // 
-            this.PricePerCubicMeterNumericUpDown.DecimalPlaces = 2;
-            this.PricePerCubicMeterNumericUpDown.Location = new System.Drawing.Point(9, 41);
-            this.PricePerCubicMeterNumericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.PricePerCubicMeterNumericUpDown.Name = "PricePerCubicMeterNumericUpDown";
-            this.PricePerCubicMeterNumericUpDown.Size = new System.Drawing.Size(342, 25);
-            this.PricePerCubicMeterNumericUpDown.TabIndex = 0;
-            this.PricePerCubicMeterNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.PricePerCubicMeterNumericUpDown.ThousandsSeparator = true;
-            // 
-            // PSINumericUpDown
-            // 
-            this.PSINumericUpDown.DecimalPlaces = 3;
-            this.PSINumericUpDown.Location = new System.Drawing.Point(9, 137);
-            this.PSINumericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.PSINumericUpDown.Name = "PSINumericUpDown";
-            this.PSINumericUpDown.Size = new System.Drawing.Size(342, 25);
-            this.PSINumericUpDown.TabIndex = 2;
-            this.PSINumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.PSINumericUpDown.ThousandsSeparator = true;
-            // 
-            // CementFactorNumericUpDown
-            // 
-            this.CementFactorNumericUpDown.DecimalPlaces = 3;
-            this.CementFactorNumericUpDown.Location = new System.Drawing.Point(9, 281);
-            this.CementFactorNumericUpDown.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.CementFactorNumericUpDown.Name = "CementFactorNumericUpDown";
-            this.CementFactorNumericUpDown.Size = new System.Drawing.Size(342, 25);
-            this.CementFactorNumericUpDown.TabIndex = 5;
-            this.CementFactorNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.CementFactorNumericUpDown.ThousandsSeparator = true;
+            this.SaveQuotationButton.Click += new System.EventHandler(this.SaveQuotationButton_Click);
             // 
             // AddEditProjectDesignDialog
             // 
@@ -246,9 +254,9 @@
             this.Load += new System.EventHandler(this.AddEditProjectDesignDialog_Load);
             this.ProjectDesignDetailsGroupBox.ResumeLayout(false);
             this.ProjectDesignDetailsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PricePerCubicMeterNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PSINumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CementFactorNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PSINumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PricePerCubicMeterNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }

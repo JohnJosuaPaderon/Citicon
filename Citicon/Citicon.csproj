@@ -72,6 +72,7 @@
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
+    <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="DataProcess\UpdateProject.cs" />
     <Compile Include="DataProcess\ValidateClient.cs" />
     <Compile Include="DataProcess\ValidateProject.cs" />
+    <Compile Include="DataProcess\ValidateProjectDesign.cs" />
     <Compile Include="DataProcess\ValidationResult.cs" />
     <Compile Include="DataProcess\_InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
@@ -235,6 +237,7 @@
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Company.cs" />
     <Compile Include="Data\Converters\ProjectTypeConverter.cs" />
+    <Compile Include="Data\Converters\QuotationTypeConverter.cs" />
     <Compile Include="Data\DateTimeRange.cs" />
     <Compile Include="Data\Delivery.cs" />
     <Compile Include="Data\Department.cs" />
@@ -269,6 +272,7 @@
     <Compile Include="Data\PurchaseOrderTransaction.cs" />
     <Compile Include="Data\Quotation.cs" />
     <Compile Include="Data\QuotationStatus.cs" />
+    <Compile Include="Data\QuotationType.cs" />
     <Compile Include="Data\QuotationUser.cs" />
     <Compile Include="Data\SalesInvoice.cs" />
     <Compile Include="Data\ScheduledProjectDesign.cs" />

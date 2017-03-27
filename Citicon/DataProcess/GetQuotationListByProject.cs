@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.Data.Converters;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -42,7 +43,9 @@ namespace Citicon.DataProcess
                 Id = reader.GetUInt64("Id"),
                 Project = Project,
                 QuotationNumber = reader.GetString("QuotationNumber"),
-                RevisionNumber = reader.GetUInt32("RevisionNumber")
+                RevisionNumber = reader.GetUInt32("RevisionNumber"),
+                Type = QuotationTypeConverter.Parse(reader.GetString("Type")),
+                Number = reader.GetUInt32("Number")
             };
         }
     }

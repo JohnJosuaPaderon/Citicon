@@ -119,7 +119,7 @@
             this.ClientTextBox.Location = new System.Drawing.Point(15, 83);
             this.ClientTextBox.Name = "ClientTextBox";
             this.ClientTextBox.ReadOnly = true;
-            this.ClientTextBox.Size = new System.Drawing.Size(431, 25);
+            this.ClientTextBox.Size = new System.Drawing.Size(512, 25);
             this.ClientTextBox.TabIndex = 5;
             // 
             // TypeLabel
@@ -139,6 +139,7 @@
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(171, 25);
             this.TypeComboBox.TabIndex = 7;
+            this.TypeComboBox.SelectedIndexChanged += new System.EventHandler(this.TypeComboBox_SelectedIndexChanged);
             // 
             // ProjectTextBox
             // 
@@ -146,7 +147,7 @@
             this.ProjectTextBox.Location = new System.Drawing.Point(15, 134);
             this.ProjectTextBox.Name = "ProjectTextBox";
             this.ProjectTextBox.ReadOnly = true;
-            this.ProjectTextBox.Size = new System.Drawing.Size(431, 25);
+            this.ProjectTextBox.Size = new System.Drawing.Size(512, 25);
             this.ProjectTextBox.TabIndex = 9;
             // 
             // ProjectLabel
@@ -161,7 +162,7 @@
             // ViewClientDetailsLinkLabel
             // 
             this.ViewClientDetailsLinkLabel.AutoSize = true;
-            this.ViewClientDetailsLinkLabel.Location = new System.Drawing.Point(451, 86);
+            this.ViewClientDetailsLinkLabel.Location = new System.Drawing.Point(449, 63);
             this.ViewClientDetailsLinkLabel.Name = "ViewClientDetailsLinkLabel";
             this.ViewClientDetailsLinkLabel.Size = new System.Drawing.Size(78, 17);
             this.ViewClientDetailsLinkLabel.TabIndex = 10;
@@ -171,7 +172,7 @@
             // ViewProjectDetailsLinkLabel
             // 
             this.ViewProjectDetailsLinkLabel.AutoSize = true;
-            this.ViewProjectDetailsLinkLabel.Location = new System.Drawing.Point(452, 137);
+            this.ViewProjectDetailsLinkLabel.Location = new System.Drawing.Point(449, 111);
             this.ViewProjectDetailsLinkLabel.Name = "ViewProjectDetailsLinkLabel";
             this.ViewProjectDetailsLinkLabel.Size = new System.Drawing.Size(78, 17);
             this.ViewProjectDetailsLinkLabel.TabIndex = 11;
@@ -352,6 +353,7 @@
             this.AddDesignButton.TabIndex = 119;
             this.AddDesignButton.Text = "ADD";
             this.AddDesignButton.UseVisualStyleBackColor = false;
+            this.AddDesignButton.Click += new System.EventHandler(this.AddDesignButton_Click);
             // 
             // RemoveAllDesignsButton
             // 
@@ -384,6 +386,7 @@
             this.CancelQuotationButton.TabIndex = 124;
             this.CancelQuotationButton.Text = "CANCEL";
             this.CancelQuotationButton.UseVisualStyleBackColor = false;
+            this.CancelQuotationButton.Click += new System.EventHandler(this.CancelQuotationButton_Click);
             // 
             // SaveQuotationButton
             // 
@@ -400,6 +403,7 @@
             this.SaveQuotationButton.TabIndex = 123;
             this.SaveQuotationButton.Text = "SAVE";
             this.SaveQuotationButton.UseVisualStyleBackColor = false;
+            this.SaveQuotationButton.Click += new System.EventHandler(this.SaveQuotationButton_Click);
             // 
             // AddReviseQuotationDialog
             // 

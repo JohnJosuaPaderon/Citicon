@@ -128,7 +128,7 @@
             this.QuotationDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.QuotationDataGridView.RowTemplate.Height = 40;
             this.QuotationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.QuotationDataGridView.Size = new System.Drawing.Size(1070, 529);
+            this.QuotationDataGridView.Size = new System.Drawing.Size(1070, 715);
             this.QuotationDataGridView.TabIndex = 115;
             this.QuotationDataGridView.SelectionChanged += new System.EventHandler(this.QuotationDataGridView_SelectionChanged);
             // 
@@ -142,7 +142,8 @@
             // 
             // QuotationView
             // 
-            this.QuotationView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.QuotationView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.QuotationView.BackColor = System.Drawing.Color.White;
             this.QuotationView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuotationView.ForeColor = System.Drawing.Color.Red;
@@ -150,7 +151,7 @@
             this.QuotationView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.QuotationView.Name = "QuotationView";
             this.QuotationView.Quotation = null;
-            this.QuotationView.Size = new System.Drawing.Size(385, 486);
+            this.QuotationView.Size = new System.Drawing.Size(385, 672);
             this.QuotationView.TabIndex = 116;
             // 
             // AddNewButton
@@ -168,6 +169,7 @@
             this.AddNewButton.TabIndex = 120;
             this.AddNewButton.Text = "ADD NEW";
             this.AddNewButton.UseVisualStyleBackColor = false;
+            this.AddNewButton.Click += new System.EventHandler(this.AddNewButton_Click);
             // 
             // ReviseButton
             // 
@@ -184,13 +186,14 @@
             this.ReviseButton.TabIndex = 121;
             this.ReviseButton.Text = "REVISE";
             this.ReviseButton.UseVisualStyleBackColor = false;
+            this.ReviseButton.Click += new System.EventHandler(this.ReviseButton_Click);
             // 
             // QuotationManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1485, 615);
+            this.ClientSize = new System.Drawing.Size(1485, 801);
             this.Controls.Add(this.ReviseButton);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.QuotationView);

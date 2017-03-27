@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -71,6 +72,22 @@ namespace Citicon.Forms
         private async void QuotationDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             await GetSelectedQuotationAsync();
+        }
+
+        private void AddNewButton_Click(object sender, EventArgs e)
+        {
+            if (Project != null)
+            {
+                var quotation = AddReviseQuotationDialog.AddQuotation(Project);
+            }
+        }
+
+        private void ReviseButton_Click(object sender, EventArgs e)
+        {
+            if (QuotationView.Quotation != null)
+            {
+                var quotation = AddReviseQuotationDialog.EditQuotation(QuotationView.Quotation);
+            }
         }
     }
 }

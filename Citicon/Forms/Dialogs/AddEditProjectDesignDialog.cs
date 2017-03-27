@@ -11,7 +11,6 @@ namespace Citicon.Forms.Dialogs
         private AddEditProjectDesignDialog()
         {
             InitializeComponent();
-            LoadMixTypes();
         }
 
         public static ProjectDesign ShowAddDialog(bool saveToDB)
@@ -19,7 +18,8 @@ namespace Citicon.Forms.Dialogs
             var dialog = new AddEditProjectDesignDialog()
             {
                 Mode = DataDialogMode.Add,
-                SaveToDB = saveToDB
+                SaveToDB = saveToDB,
+                ProjectDesign = new ProjectDesign()
             };
             dialog.ShowDialog();
 
@@ -83,7 +83,83 @@ namespace Citicon.Forms.Dialogs
 
         private void AddEditProjectDesignDialog_Load(object sender, EventArgs e)
         {
+            LoadMixTypes();
+            LoadAggregates();
+            LoadStrengths();
             UpdateUI();
+        }
+
+        private void CancelQuotationButton_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Do you really want to cancel?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                ProjectDesign = null;
+                Close();
+            }
+        }
+
+        private void SaveQuotationButton_Click(object sender, EventArgs e)
+        {
+            var result = ProjectDesignManager.Validate(ProjectDesign);
+
+            if (result.Success)
+            {
+                Close();
+            }
+            else
+            {
+                MessageBox.Show(result.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void PricePerCubicMeterNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (ProjectDesign != null)
+            {
+                ProjectDesign.PricePerCubicMeter = PricePerCubicMeterNumericUpDown.Value;
+            }
+        }
+
+        private void CementFactorNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (ProjectDesign != null)
+            {
+                ProjectDesign.CementFactor = CementFactorNumericUpDown.Value;
+            }
+        }
+
+        private void PSINumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (ProjectDesign != null)
+            {
+                ProjectDesign.Psi = PSINumericUpDown.Value;
+            }
+        }
+
+        private void AggregateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ProjectDesign != null)
+            {
+                ProjectDesign.Aggregate = AggregateComboBox.SelectedItem as ProductAggregate;
+            }
+        }
+
+        private void StrengthComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ProjectDesign != null)
+            {
+                ProjectDesign.Strength = StrengthComboBox.SelectedItem as ProductStrength;
+            }
+        }
+
+        private void MixTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ProjectDesign != null)
+            {
+                ProjectDesign.MixType = (ProjectDesignMixType)MixTypeComboBox.SelectedItem;
+            }
         }
     }
 }

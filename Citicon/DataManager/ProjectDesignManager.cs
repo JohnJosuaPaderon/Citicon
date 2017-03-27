@@ -150,5 +150,20 @@ namespace Citicon.DataManager
                 return null;
             }
         }
+
+        public static ValidationResult Validate(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new ValidateProjectDesign(projectDesign))
+                {
+                    return process.Execute();
+                }
+            }
+            else
+            {
+                return new ValidationResult(false, "Invalid design.");
+            }
+        }
     }
 }

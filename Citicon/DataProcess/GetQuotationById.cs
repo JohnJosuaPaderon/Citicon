@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.Data.Converters;
 using Citicon.DataManager;
 using MySql.Data.MySqlClient;
 using System.Data;
@@ -43,7 +44,9 @@ namespace Citicon.DataProcess
                                     QuotationNumber = reader.GetString("QuotationNumber"),
                                     RevisionNumber = reader.GetUInt32("RevisionNumber"),
                                     Status = QuotationStatusManager.Parse(reader.GetString("Status")),
-                                    Cost = 0
+                                    Cost = 0,
+                                    Type = QuotationTypeConverter.Parse(reader.GetString("Type")),
+                                    Number = reader.GetUInt32("Number")
                                 };
                             }
 

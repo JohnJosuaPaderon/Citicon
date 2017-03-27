@@ -61,5 +61,13 @@ namespace Citicon.DataManager
                 return process.Export();
             }
         }
+
+        public static async Task<uint> GenerateNumberByTypeAsync(QuotationType quotationType)
+        {
+            using (var process = new GenerateQuotationNumberByType(quotationType))
+            {
+                return await process.ExecuteAsync();
+            }
+        }
     }
 }
