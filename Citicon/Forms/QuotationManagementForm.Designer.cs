@@ -130,6 +130,7 @@
             this.QuotationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.QuotationDataGridView.Size = new System.Drawing.Size(1070, 529);
             this.QuotationDataGridView.TabIndex = 115;
+            this.QuotationDataGridView.SelectionChanged += new System.EventHandler(this.QuotationDataGridView_SelectionChanged);
             // 
             // QuotationColumn
             // 
@@ -141,12 +142,14 @@
             // 
             // QuotationView
             // 
+            this.QuotationView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.QuotationView.BackColor = System.Drawing.Color.White;
             this.QuotationView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.QuotationView.ForeColor = System.Drawing.Color.Red;
             this.QuotationView.Location = new System.Drawing.Point(1088, 116);
             this.QuotationView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.QuotationView.Name = "QuotationView";
+            this.QuotationView.Quotation = null;
             this.QuotationView.Size = new System.Drawing.Size(385, 486);
             this.QuotationView.TabIndex = 116;
             // 

@@ -31,6 +31,17 @@ namespace Citicon.Forms
             }
         }
 
+        private async Task GetSelectedQuotationAsync()
+        {
+            if (QuotationDataGridView.SelectedRows.Count == 1)
+            {
+                if (QuotationDataGridView.SelectedRows[0].Cells[QuotationColumn.Name].Value is Quotation quotation)
+                {
+                    QuotationView.Quotation = await QuotationManager.GetByIdAsync(quotation.Id);
+                }
+            }
+        }
+
         private void AddToUI(Quotation quotation)
         {
             if (quotation != null)
@@ -55,6 +66,11 @@ namespace Citicon.Forms
         {
             UpdateUI();
             await GetQuotationListAsync();
+        }
+
+        private async void QuotationDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            await GetSelectedQuotationAsync();
         }
     }
 }

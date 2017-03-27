@@ -17,12 +17,12 @@ namespace Citicon.Forms.Controls
         private async Task GetProjectDesignListAsync()
         {
             ProjectDesignDataGridView.Rows.Clear();
-            var projectDesigns = await ProjectDesignManager.
+            var projectDesigns = await ProjectDesignManager.GetListByQuotationAsync(Quotation);
         }
 
         private async void QuotationViewControl_QuotationChanged(object sender, EventArgs e)
         {
-            
+            await GetProjectDesignListAsync();
         }
 
         public event EventHandler QuotationChanged;
@@ -37,6 +37,7 @@ namespace Citicon.Forms.Controls
                 if (_Quotation != value)
                 {
                     _Quotation = value;
+                    UpdateUI();
                     OnQuotationChanged();
                 }
             }
@@ -45,6 +46,13 @@ namespace Citicon.Forms.Controls
         protected virtual void OnQuotationChanged()
         {
             QuotationChanged?.Invoke(this, new EventArgs());
+        }
+
+        private void UpdateUI()
+        {
+            QuotationNumberTextBox.Text = Quotation?.ToString();
+            QuotationDateTextBox.Text = Quotation?.QuotationDate.ToString("MMMM dd, yyyy");
+            StatusTextBox.Text = Quotation?.Status.ToString();
         }
     }
 }

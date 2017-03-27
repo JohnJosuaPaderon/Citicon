@@ -135,5 +135,20 @@ namespace Citicon.DataManager
                 return null;
             }
         }
+
+        public static async Task<IEnumerable<ProjectDesign>> GetListByQuotationAsync(Quotation quotation)
+        {
+            if (quotation != null)
+            {
+                using (var process = new GetProjectDesignListByQuotation(quotation))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

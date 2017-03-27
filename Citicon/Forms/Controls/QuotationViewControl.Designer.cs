@@ -33,13 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.QuotationDetailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.QuotationNumberLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.ViewInWordButton = new System.Windows.Forms.Button();
+            this.StatusTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.QuotationDateTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.QuotationNumberTextBox = new System.Windows.Forms.TextBox();
+            this.QuotationNumberLabel = new System.Windows.Forms.Label();
             this.ProjectDesignDataGridView = new System.Windows.Forms.DataGridView();
             this.ProjectDesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QuotationDetailsGroupBox.SuspendLayout();
@@ -49,11 +49,11 @@
             // QuotationDetailsGroupBox
             // 
             this.QuotationDetailsGroupBox.Controls.Add(this.ViewInWordButton);
-            this.QuotationDetailsGroupBox.Controls.Add(this.textBox3);
+            this.QuotationDetailsGroupBox.Controls.Add(this.StatusTextBox);
             this.QuotationDetailsGroupBox.Controls.Add(this.label2);
-            this.QuotationDetailsGroupBox.Controls.Add(this.textBox2);
+            this.QuotationDetailsGroupBox.Controls.Add(this.QuotationDateTextBox);
             this.QuotationDetailsGroupBox.Controls.Add(this.label1);
-            this.QuotationDetailsGroupBox.Controls.Add(this.textBox1);
+            this.QuotationDetailsGroupBox.Controls.Add(this.QuotationNumberTextBox);
             this.QuotationDetailsGroupBox.Controls.Add(this.QuotationNumberLabel);
             this.QuotationDetailsGroupBox.Location = new System.Drawing.Point(3, 3);
             this.QuotationDetailsGroupBox.Name = "QuotationDetailsGroupBox";
@@ -61,60 +61,6 @@
             this.QuotationDetailsGroupBox.TabIndex = 0;
             this.QuotationDetailsGroupBox.TabStop = false;
             this.QuotationDetailsGroupBox.Text = "Quotation Details";
-            // 
-            // QuotationNumberLabel
-            // 
-            this.QuotationNumberLabel.AutoSize = true;
-            this.QuotationNumberLabel.Location = new System.Drawing.Point(6, 21);
-            this.QuotationNumberLabel.Name = "QuotationNumberLabel";
-            this.QuotationNumberLabel.Size = new System.Drawing.Size(91, 17);
-            this.QuotationNumberLabel.TabIndex = 0;
-            this.QuotationNumberLabel.Text = "Quotation No.";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(9, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(364, 25);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(9, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(364, 25);
-            this.textBox2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Date";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(9, 137);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(364, 25);
-            this.textBox3.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Status";
             // 
             // ViewInWordButton
             // 
@@ -128,9 +74,63 @@
             this.ViewInWordButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ViewInWordButton.Name = "ViewInWordButton";
             this.ViewInWordButton.Size = new System.Drawing.Size(125, 35);
-            this.ViewInWordButton.TabIndex = 119;
+            this.ViewInWordButton.TabIndex = 3;
             this.ViewInWordButton.Text = "VIEW IN WORD";
             this.ViewInWordButton.UseVisualStyleBackColor = false;
+            // 
+            // StatusTextBox
+            // 
+            this.StatusTextBox.BackColor = System.Drawing.Color.White;
+            this.StatusTextBox.Location = new System.Drawing.Point(9, 137);
+            this.StatusTextBox.Name = "StatusTextBox";
+            this.StatusTextBox.ReadOnly = true;
+            this.StatusTextBox.Size = new System.Drawing.Size(364, 25);
+            this.StatusTextBox.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Status";
+            // 
+            // QuotationDateTextBox
+            // 
+            this.QuotationDateTextBox.BackColor = System.Drawing.Color.White;
+            this.QuotationDateTextBox.Location = new System.Drawing.Point(9, 89);
+            this.QuotationDateTextBox.Name = "QuotationDateTextBox";
+            this.QuotationDateTextBox.ReadOnly = true;
+            this.QuotationDateTextBox.Size = new System.Drawing.Size(364, 25);
+            this.QuotationDateTextBox.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Date";
+            // 
+            // QuotationNumberTextBox
+            // 
+            this.QuotationNumberTextBox.BackColor = System.Drawing.Color.White;
+            this.QuotationNumberTextBox.Location = new System.Drawing.Point(9, 41);
+            this.QuotationNumberTextBox.Name = "QuotationNumberTextBox";
+            this.QuotationNumberTextBox.ReadOnly = true;
+            this.QuotationNumberTextBox.Size = new System.Drawing.Size(364, 25);
+            this.QuotationNumberTextBox.TabIndex = 0;
+            // 
+            // QuotationNumberLabel
+            // 
+            this.QuotationNumberLabel.AutoSize = true;
+            this.QuotationNumberLabel.Location = new System.Drawing.Point(6, 21);
+            this.QuotationNumberLabel.Name = "QuotationNumberLabel";
+            this.QuotationNumberLabel.Size = new System.Drawing.Size(91, 17);
+            this.QuotationNumberLabel.TabIndex = 0;
+            this.QuotationNumberLabel.Text = "Quotation No.";
             // 
             // ProjectDesignDataGridView
             // 
@@ -180,7 +180,7 @@
             this.ProjectDesignDataGridView.RowTemplate.Height = 40;
             this.ProjectDesignDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ProjectDesignDataGridView.Size = new System.Drawing.Size(379, 186);
-            this.ProjectDesignDataGridView.TabIndex = 116;
+            this.ProjectDesignDataGridView.TabIndex = 4;
             // 
             // ProjectDesignColumn
             // 
@@ -213,10 +213,10 @@
 
         private System.Windows.Forms.GroupBox QuotationDetailsGroupBox;
         private System.Windows.Forms.Label QuotationNumberLabel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox QuotationNumberTextBox;
+        private System.Windows.Forms.TextBox QuotationDateTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox StatusTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ViewInWordButton;
         private System.Windows.Forms.DataGridView ProjectDesignDataGridView;

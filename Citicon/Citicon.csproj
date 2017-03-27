@@ -318,11 +318,23 @@
     <Compile Include="Forms\Dialogs\AddEditClientDialog.Designer.cs">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\AddEditProjectDesignDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditProjectDesignDialog.Designer.cs">
+      <DependentUpon>AddEditProjectDesignDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\AddEditProjectDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Dialogs\AddEditProjectDialog.Designer.cs">
       <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddReviseQuotationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddReviseQuotationDialog.Designer.cs">
+      <DependentUpon>AddReviseQuotationDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\DataDialogMode.cs" />
     <Compile Include="Forms\ProjectDesignManagementForm.cs">
@@ -381,8 +393,14 @@
     <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddEditProjectDesignDialog.resx">
+      <DependentUpon>AddEditProjectDesignDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditProjectDialog.resx">
       <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddReviseQuotationDialog.resx">
+      <DependentUpon>AddReviseQuotationDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectDesignManagementForm.resx">
       <DependentUpon>ProjectDesignManagementForm.cs</DependentUpon>

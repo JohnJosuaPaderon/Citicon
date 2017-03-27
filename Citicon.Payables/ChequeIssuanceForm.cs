@@ -188,7 +188,7 @@ namespace Citicon.Payables
             if (e.KeyCode == Keys.Enter) await setCheckVoucherNumber();
         }
 
-        private async void tbxCheckVoucherNumber_Leave(object sender, EventArgs e)
+        private void tbxCheckVoucherNumber_Leave(object sender, EventArgs e)
         {
             //await setCheckVoucherNumber();
         }
