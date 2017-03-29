@@ -34,6 +34,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Sorschia 1.0\Sorschia\bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sorschia, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Sorschia.dll</HintPath>
@@ -72,6 +75,7 @@
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
+    <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
@@ -125,6 +129,8 @@
     <Compile Include="DataProcess\DeleteEmployee.cs" />
     <Compile Include="DataProcess\DeleteProject.cs" />
     <Compile Include="DataProcess\GetDeliveryListByClient.cs" />
+    <Compile Include="DataProcess\InsertQuotation.cs" />
+    <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
     <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\GetDepartmentById.cs" />
     <Compile Include="DataProcess\GetEmployeeAgent.cs" />
@@ -166,6 +172,8 @@
     <Compile Include="DataProcess\PurchaseOrderNumberExists.cs" />
     <Compile Include="DataProcess\UpdateClient.cs" />
     <Compile Include="DataProcess\UpdateProject.cs" />
+    <Compile Include="DataProcess\UpdateProjectDesign.cs" />
+    <Compile Include="DataProcess\UpdateQuotation.cs" />
     <Compile Include="DataProcess\ValidateClient.cs" />
     <Compile Include="DataProcess\ValidateProject.cs" />
     <Compile Include="DataProcess\ValidateProjectDesign.cs" />
@@ -272,6 +280,7 @@
     <Compile Include="Data\PurchaseOrderTransaction.cs" />
     <Compile Include="Data\Quotation.cs" />
     <Compile Include="Data\QuotationStatus.cs" />
+    <Compile Include="Data\QuotationTransaction.cs" />
     <Compile Include="Data\QuotationType.cs" />
     <Compile Include="Data\QuotationUser.cs" />
     <Compile Include="Data\SalesInvoice.cs" />
@@ -457,7 +466,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

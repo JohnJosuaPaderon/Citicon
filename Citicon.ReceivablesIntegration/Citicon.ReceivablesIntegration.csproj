@@ -95,6 +95,7 @@
     <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Resources\left_arrow.jpg" />
   </ItemGroup>
   <ItemGroup>

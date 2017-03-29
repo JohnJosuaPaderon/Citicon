@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Threading.Tasks;
@@ -65,6 +66,19 @@ namespace Citicon.DataManager
             {
                 return await process.ExecuteAsync();
             }
+        }
+
+        public static async Task<ProjectDesign> InsertAsync(ProjectDesign projectDesign, MySqlConnection connection, MySqlTransaction transaction)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new InsertProjectDesign(projectDesign))
+                {
+                    projectDesign = await process.ExecuteAsync(connection, transaction);
+                }
+            }
+
+            return projectDesign;
         }
 
         public static async Task<IEnumerable<ProjectDesign>> GetListForApprovalAsync()
@@ -164,6 +178,32 @@ namespace Citicon.DataManager
             {
                 return new ValidationResult(false, "Invalid design.");
             }
+        }
+
+        public static async Task<ProjectDesign> DeleteAsync(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new DeleteProjectDesign(projectDesign))
+                {
+                    projectDesign = await process.ExecuteAsync();
+                }
+            }
+
+            return projectDesign;
+        }
+
+        public static async Task<ProjectDesign> UpdateAsync(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new UpdateProjectDesign(projectDesign))
+                {
+                    projectDesign = await process.ExecuteAsync();
+                }
+            }
+
+            return projectDesign;
         }
     }
 }

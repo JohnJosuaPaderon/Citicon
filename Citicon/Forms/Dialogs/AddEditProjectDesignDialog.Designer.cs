@@ -241,6 +241,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(385, 384);
+            this.ControlBox = false;
             this.Controls.Add(this.CancelQuotationButton);
             this.Controls.Add(this.SaveQuotationButton);
             this.Controls.Add(this.ProjectDesignDetailsGroupBox);
@@ -251,6 +252,7 @@
             this.Name = "AddEditProjectDesignDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add or Edit Project Design";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEditProjectDesignDialog_FormClosing);
             this.Load += new System.EventHandler(this.AddEditProjectDesignDialog_Load);
             this.ProjectDesignDetailsGroupBox.ResumeLayout(false);
             this.ProjectDesignDetailsGroupBox.PerformLayout();

@@ -103,6 +103,7 @@
             this.DateDateTimePicker.Name = "DateDateTimePicker";
             this.DateDateTimePicker.Size = new System.Drawing.Size(171, 25);
             this.DateDateTimePicker.TabIndex = 3;
+            this.DateDateTimePicker.ValueChanged += new System.EventHandler(this.DateDateTimePicker_ValueChanged);
             // 
             // ClientLabel
             // 
@@ -187,6 +188,7 @@
             this.AgentComboBox.Name = "AgentComboBox";
             this.AgentComboBox.Size = new System.Drawing.Size(348, 25);
             this.AgentComboBox.TabIndex = 13;
+            this.AgentComboBox.SelectedIndexChanged += new System.EventHandler(this.AgentComboBox_SelectedIndexChanged);
             // 
             // AgentLabel
             // 
@@ -212,6 +214,7 @@
             this.EngineerIDNumericUpDown.Name = "EngineerIDNumericUpDown";
             this.EngineerIDNumericUpDown.Size = new System.Drawing.Size(171, 25);
             this.EngineerIDNumericUpDown.TabIndex = 15;
+            this.EngineerIDNumericUpDown.ValueChanged += new System.EventHandler(this.EngineerIDNumericUpDown_ValueChanged);
             // 
             // AmountNumericUpDown
             // 
@@ -219,6 +222,7 @@
             this.AmountNumericUpDown.Name = "AmountNumericUpDown";
             this.AmountNumericUpDown.Size = new System.Drawing.Size(171, 25);
             this.AmountNumericUpDown.TabIndex = 17;
+            this.AmountNumericUpDown.ValueChanged += new System.EventHandler(this.AmountNumericUpDown_ValueChanged);
             // 
             // AmountLabel
             // 
@@ -296,6 +300,7 @@
             this.TermsRichTextBox.Size = new System.Drawing.Size(903, 482);
             this.TermsRichTextBox.TabIndex = 117;
             this.TermsRichTextBox.Text = "";
+            this.TermsRichTextBox.TextChanged += new System.EventHandler(this.TermsRichTextBox_TextChanged);
             // 
             // label8
             // 
@@ -321,6 +326,7 @@
             this.RemoveSelectedDesignButton.TabIndex = 121;
             this.RemoveSelectedDesignButton.Text = "REMOVE SELECTED";
             this.RemoveSelectedDesignButton.UseVisualStyleBackColor = false;
+            this.RemoveSelectedDesignButton.Click += new System.EventHandler(this.RemoveSelectedDesignButton_Click);
             // 
             // EditDesignButton
             // 
@@ -337,6 +343,7 @@
             this.EditDesignButton.TabIndex = 120;
             this.EditDesignButton.Text = "EDIT";
             this.EditDesignButton.UseVisualStyleBackColor = false;
+            this.EditDesignButton.Click += new System.EventHandler(this.EditDesignButton_Click);
             // 
             // AddDesignButton
             // 
@@ -370,6 +377,7 @@
             this.RemoveAllDesignsButton.TabIndex = 122;
             this.RemoveAllDesignsButton.Text = "REMOVE ALL";
             this.RemoveAllDesignsButton.UseVisualStyleBackColor = false;
+            this.RemoveAllDesignsButton.Click += new System.EventHandler(this.RemoveAllDesignsButton_Click);
             // 
             // CancelQuotationButton
             // 
@@ -411,6 +419,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1451, 720);
+            this.ControlBox = false;
             this.Controls.Add(this.CancelQuotationButton);
             this.Controls.Add(this.SaveQuotationButton);
             this.Controls.Add(this.RemoveAllDesignsButton);
@@ -445,6 +454,7 @@
             this.Name = "AddReviseQuotationDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add or Revise Quotation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddReviseQuotationDialog_FormClosing);
             this.Load += new System.EventHandler(this.AddReviseQuotationDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EngineerIDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNumericUpDown)).EndInit();

@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Newtonsoft.Json;
 using Sorschia.Queries;
 using System;
 using System.Configuration;
@@ -169,6 +170,12 @@ namespace Citicon
         public static string Decrypt(string text)
         {
             return Sorschia.Supports.Decrypt(CryptoKey, true, text);
+        }
+
+        public static T Clone<T>(T value)
+        {
+            var result = JsonConvert.SerializeObject(value);
+            return JsonConvert.DeserializeObject<T>(result);
         }
     }
 }

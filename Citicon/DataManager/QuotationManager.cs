@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -68,6 +69,45 @@ namespace Citicon.DataManager
             {
                 return await process.ExecuteAsync();
             }
+        }
+
+        public static async Task<Quotation> InsertAsync(MySqlConnection connection, MySqlTransaction transaction, Quotation quotation)
+        {
+            if (quotation != null)
+            {
+                using (var process = new InsertQuotation(quotation))
+                {
+                    quotation = await process.ExecuteAsync(connection, transaction);
+                }
+            }
+
+            return quotation;
+        }
+
+        public static async Task<QuotationTransaction> InsertTransactionAsync(QuotationTransaction quotationTransaction)
+        {
+            if (quotationTransaction != null)
+            {
+                using (var process = new InsertQuotationTransaction(quotationTransaction))
+                {
+                    quotationTransaction = await process.ExecuteAsync();
+                }
+            }
+
+            return quotationTransaction;
+        }
+
+        public static async Task<Quotation> UpdateAsync(Quotation quotation)
+        {
+            if (quotation != null)
+            {
+                using (var process = new UpdateQuotation(quotation))
+                {
+                    quotation = await process.ExecuteAsync();
+                }
+            }
+
+            return quotation;
         }
     }
 }

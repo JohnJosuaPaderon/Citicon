@@ -23,13 +23,14 @@ namespace Citicon.DataProcess
             };
             command.Parameters.Add(new MySqlParameter { ParameterName = "@_Id", Direction = ParameterDirection.Output });
             command.Parameters.AddWithValue("@_MixType", ProjectDesign.MixType.ToString());
-            command.Parameters.AddWithValue("@_ProjectId", ProjectDesign.Project.Id);
+            command.Parameters.AddWithValue("@_ProjectId", ProjectDesign.Project?.Id);
             command.Parameters.AddWithValue("@_Psi", ProjectDesign.Psi);
-            command.Parameters.AddWithValue("@_AggregateId", ProjectDesign.Aggregate.Id);
-            command.Parameters.AddWithValue("@_StrengthId", ProjectDesign.Strength.Id);
+            command.Parameters.AddWithValue("@_AggregateId", ProjectDesign.Aggregate?.Id);
+            command.Parameters.AddWithValue("@_StrengthId", ProjectDesign.Strength?.Id);
             command.Parameters.AddWithValue("@_PricePerCubicMeter", ProjectDesign.PricePerCubicMeter);
             command.Parameters.AddWithValue("@_CementFactor", ProjectDesign.CementFactor);
             command.Parameters.AddWithValue("@_ForApproval", ProjectDesign.ForApproval);
+            command.Parameters.AddWithValue("@_QuotationId", ProjectDesign.Quotation?.Id);
             return command;
         }
 

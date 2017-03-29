@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace Citicon.Forms.Dialogs
         private AddReviseQuotationDialog()
         {
             InitializeComponent();
+            DeletedProjectDesigns = new List<ProjectDesign>();
         }
 
         public static Quotation AddQuotation(Project project)
@@ -25,17 +27,22 @@ namespace Citicon.Forms.Dialogs
                 }
             };
             dialog.ShowDialog();
+            dialog.Dispose();
             return dialog.Quotation;
         }
 
         public static Quotation EditQuotation(Quotation quotation)
         {
+            var tempQuotation = Supports.Clone(quotation);
+            quotation.RevisionNumber++;
             var dialog = new AddReviseQuotationDialog()
             {
                 Mode = DataDialogMode.Edit,
-                Quotation = quotation ?? throw new ArgumentNullException(nameof(quotation))
+                Quotation = quotation ?? throw new ArgumentNullException(nameof(quotation)),
+                TempQuotation = tempQuotation
             };
             dialog.ShowDialog();
+            dialog.Dispose();
             return dialog.Quotation;
         }
 
@@ -48,7 +55,9 @@ namespace Citicon.Forms.Dialogs
         }
 
         private Quotation Quotation { get; set; }
+        private Quotation TempQuotation { get; set; }
         private DataDialogMode Mode { get; set; }
+        private List<ProjectDesign> DeletedProjectDesigns { get; }
 
         private void UpdateUI()
         {
@@ -130,14 +139,131 @@ namespace Citicon.Forms.Dialogs
             }
         }
 
-        private void SaveQuotationButton_Click(object sender, EventArgs e)
+        private async Task AddAsync(QuotationTransaction quotationTransaction)
         {
+            try
+            {
+                quotationTransaction = await QuotationManager.InsertTransactionAsync(quotationTransaction);
+                await DeleteProjectDesignsAsync();
 
+                if (quotationTransaction != null)
+                {
+                    MessageBox.Show("Quotation has been added successfully.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add quotation.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task ReviseAsync(QuotationTransaction quotationTransaction)
+        {
+            try
+            {
+                Quotation = await QuotationManager.UpdateAsync(quotationTransaction.Quotation);
+
+                foreach (var item in quotationTransaction.Designs)
+                {
+                    item.Project = Quotation.Project;
+                    item.Quotation = Quotation;
+                    await ProjectDesignManager.UpdateAsync(item);
+                }
+
+                await DeleteProjectDesignsAsync();
+
+                if (Quotation != null)
+                {
+                    MessageBox.Show("Quotation has been revised successfully.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to revise quotation.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task SaveQuotationAsync()
+        {
+            if (Quotation != null)
+            {
+                Quotation.Status = QuotationStatus.UnderNegotiation;
+                if (ProjectDesignDataGridView.Rows.Count > 0)
+                {
+                    var quotationTransaction = new QuotationTransaction(Quotation);
+
+                    foreach (DataGridViewRow row in ProjectDesignDataGridView.Rows)
+                    {
+                        quotationTransaction.Designs.Add(row.Cells[ProjectDesignColumn.Name].Value as ProjectDesign);
+                    }
+
+                    switch (Mode)
+                    {
+                        case DataDialogMode.None:
+                            MessageBox.Show("Nothing to be done.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            break;
+                        case DataDialogMode.Add:
+                            await AddAsync(quotationTransaction);
+                            break;
+                        case DataDialogMode.Edit:
+                            await ReviseAsync(quotationTransaction);
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Quotation should include atleast one design.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid quotation.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private async Task DeleteProjectDesignsAsync()
+        {
+            if (DeletedProjectDesigns.Count > 0)
+            {
+                foreach (var projectDesign in DeletedProjectDesigns)
+                {
+                    await ProjectDesignManager.DeleteAsync(projectDesign);
+                }
+            }
+        }
+
+        private async void SaveQuotationButton_Click(object sender, EventArgs e)
+        {
+            await SaveQuotationAsync();
         }
 
         private void CancelQuotationButton_Click(object sender, EventArgs e)
         {
+            var message = MessageBox.Show("Are you sure, do you want to cancel?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (message == DialogResult.Yes)
+            {
+                if (Mode == DataDialogMode.Add)
+                {
+                    Quotation = null;
+                }
+                else if (Mode == DataDialogMode.Edit)
+                {
+                    Quotation = Supports.Clone(TempQuotation);
+                }
+
+                Close();
+            }
         }
 
         private async void TypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -153,6 +279,91 @@ namespace Citicon.Forms.Dialogs
                 {
                     TypeComboBox.SelectedItem = Quotation.Type;
                 }
+            }
+        }
+
+        private void EditDesignButton_Click(object sender, EventArgs e)
+        {
+            if (ProjectDesignDataGridView.SelectedRows.Count == 1)
+            {
+                var projectDesign = ProjectDesignDataGridView.SelectedRows[0].Cells[ProjectDesignColumn.Name].Value as ProjectDesign;
+                AddEditProjectDesignDialog.ShowEditDialog(projectDesign, false);
+
+                ProjectDesignDataGridView.Rows[ProjectDesignDataGridView.SelectedRows[0].Index].Cells[ProjectDesignColumn.Name].Value = projectDesign;
+                ProjectDesignDataGridView.Refresh();
+            }
+        }
+
+        private void AddReviseQuotationDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void RemoveSelectedDesignButton_Click(object sender, EventArgs e)
+        {
+            if (ProjectDesignDataGridView.SelectedRows.Count == 1)
+            {
+                var row = ProjectDesignDataGridView.SelectedRows[0];
+
+                if (row.Cells[ProjectDesignColumn.Name].Value is ProjectDesign projectDesign && projectDesign.Id > 0)
+                {
+                    DeletedProjectDesigns.Add(projectDesign);
+                }
+
+                ProjectDesignDataGridView.Rows.Remove(row);
+            }
+        }
+
+        private void RemoveAllDesignsButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in ProjectDesignDataGridView.Rows)
+            {
+                if (row.Cells[ProjectDesignColumn.Name].Value is ProjectDesign projectDesign && projectDesign.Id > 0)
+                {
+                    DeletedProjectDesigns.Add(projectDesign);
+                }
+            }
+
+            ProjectDesignDataGridView.Rows.Clear();
+        }
+
+        private void EngineerIDNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (Quotation != null)
+            {
+                Quotation.EngineerId = (ulong)EngineerIDNumericUpDown.Value;
+            }
+        }
+
+        private void AmountNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (Quotation != null)
+            {
+                Quotation.EngineerAmount = AmountNumericUpDown.Value;
+            }
+        }
+
+        private void DateDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (Quotation != null)
+            {
+                Quotation.QuotationDate = DateDateTimePicker.Value;
+            }
+        }
+
+        private void AgentComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Quotation != null)
+            {
+                Quotation.Agent = (Employee)AgentComboBox.SelectedItem;
+            }
+        }
+
+        private void TermsRichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Quotation != null)
+            {
+                Quotation.NoteDetails = TermsRichTextBox.Rtf;
             }
         }
     }

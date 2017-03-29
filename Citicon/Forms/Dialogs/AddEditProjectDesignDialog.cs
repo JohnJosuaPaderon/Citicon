@@ -32,7 +32,8 @@ namespace Citicon.Forms.Dialogs
             {
                 Mode = DataDialogMode.Edit,
                 SaveToDB = saveToDB,
-                ProjectDesign = projectDesign
+                ProjectDesign = projectDesign,
+                TempProjectDesign = Supports.Clone(projectDesign)
             };
             dialog.ShowDialog();
 
@@ -42,6 +43,7 @@ namespace Citicon.Forms.Dialogs
         private DataDialogMode Mode { get; set; }
         private bool SaveToDB { get; set; }
         private ProjectDesign ProjectDesign { get; set; }
+        private ProjectDesign TempProjectDesign { get; set; }
 
         private void LoadMixTypes()
         {
@@ -95,7 +97,15 @@ namespace Citicon.Forms.Dialogs
 
             if (result == DialogResult.Yes)
             {
-                ProjectDesign = null;
+                if (Mode == DataDialogMode.Add)
+                {
+                    ProjectDesign = null;
+                }
+                else if (Mode == DataDialogMode.Edit)
+                {
+                    ProjectDesign = TempProjectDesign;
+                }
+
                 Close();
             }
         }
@@ -160,6 +170,10 @@ namespace Citicon.Forms.Dialogs
             {
                 ProjectDesign.MixType = (ProjectDesignMixType)MixTypeComboBox.SelectedItem;
             }
+        }
+
+        private void AddEditProjectDesignDialog_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
     }
 }

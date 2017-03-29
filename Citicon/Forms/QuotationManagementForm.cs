@@ -79,6 +79,7 @@ namespace Citicon.Forms
             if (Project != null)
             {
                 var quotation = AddReviseQuotationDialog.AddQuotation(Project);
+                AddToUI(quotation);
             }
         }
 
@@ -86,7 +87,11 @@ namespace Citicon.Forms
         {
             if (QuotationView.Quotation != null)
             {
-                var quotation = AddReviseQuotationDialog.EditQuotation(QuotationView.Quotation);
+                var quotation = AddReviseQuotationDialog.EditQuotation(Supports.Clone(QuotationView.Quotation));
+
+                 var selectedRow = QuotationDataGridView.SelectedRows[0];
+                selectedRow.Cells[QuotationColumn.Name].Value = quotation;
+                QuotationDataGridView.Refresh();
             }
         }
     }
