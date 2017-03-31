@@ -1,9 +1,5 @@
 ﻿using Citicon.Data;
-using Citicon.DataManager;
 using Citicon.DataProcess;
-using Citicon.Inventory.Data;
-using Citicon.Inventory.DataManager;
-using Citicon.Payables.Data;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -18,7 +14,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Citicon.Payables.DataManager
+namespace Citicon.DataManager
 {
     public sealed class PayableManager : DataManager<Payable>, IDataManager<Payable>
     {

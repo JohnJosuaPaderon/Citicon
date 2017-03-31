@@ -1,134 +1,16 @@
-﻿using System.ComponentModel;
-
-namespace Citicon.Data
+﻿namespace Citicon.Data
 {
-    public class Project : INotifyPropertyChanged
+    public class Project
     {
-        private ulong _Id;
-        private Client _Client;
-        private string _Name;
-        private string _Location;
-        private decimal _TotalCost;
-        private bool _Completed;
-        private ProjectType _Type;
-        private decimal _InitialPayment;
-        private double _InitialCement;
-
-
-        public ulong Id
-        {
-            get { return _Id; }
-            set
-            {
-                if (_Id != value)
-                {
-                    _Id = value;
-                    OnPropertyChanged(nameof(Id));
-                }
-            }
-        }
-        public Client Client
-        {
-            get { return _Client; }
-            set
-            {
-                if (_Client != value)
-                {
-                    _Client = value;
-                    OnPropertyChanged(nameof(Client));
-                }
-            }
-        }
-        public string Name
-        {
-            get { return _Name; }
-            set
-            {
-                if (_Name != value)
-                {
-                    _Name = value;
-                    OnPropertyChanged(nameof(Name));
-                }
-            }
-        }
-        public string Location
-        {
-            get { return _Location; }
-            set
-            {
-                if (_Location != value)
-                {
-                    _Location = value;
-                    OnPropertyChanged(nameof(Location));
-                }
-            }
-        }
-        public decimal TotalCost
-        {
-            get { return _TotalCost; }
-            set
-            {
-                if (_TotalCost != value)
-                {
-                    _TotalCost = value;
-                    OnPropertyChanged(nameof(TotalCost));
-                }
-            }
-        }
-        public bool Completed
-        {
-            get { return _Completed; }
-            set
-            {
-                if (_Completed != value)
-                {
-                    _Completed = value;
-                    OnPropertyChanged(nameof(Completed));
-                }
-            }
-        }
-        public ProjectType Type
-        {
-            get { return _Type; }
-            set
-            {
-                if (_Type != value)
-                {
-                    _Type = value;
-                    OnPropertyChanged(nameof(Type));
-                }
-            }
-        }
-        public decimal InitialPayment
-        {
-            get { return _InitialPayment; }
-            set
-            {
-                if (_InitialPayment != value)
-                {
-                    _InitialPayment = value;
-                    OnPropertyChanged(nameof(InitialPayment));
-                }
-            }
-        }
-        public double InitialCement
-        {
-            get { return _InitialCement; }
-            set
-            {
-                if (_InitialCement != value)
-                {
-                    _InitialCement = value;
-                    OnPropertyChanged(nameof(InitialCement));
-                }
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        public ulong Id { get; set; }
+        public Client Client { get; set; }
+        public string Name { get; set; }
+        public string Location { get; set; }
+        public decimal TotalCost { get; set; }
+        public bool Completed { get; set; }
+        public ProjectType Type { get; set; }
+        public decimal InitialPayment { get; set; }
+        public double InitialCement { get; set; }
 
         public static bool operator ==(Project left, Project right)
         {
@@ -159,7 +41,7 @@ namespace Citicon.Data
         }
         public override string ToString()
         {
-            return _Name;
+            return Name;
         }
     }
 }

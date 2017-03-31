@@ -1,8 +1,6 @@
-﻿using Citicon.Data;
-using Citicon.Payables.Data;
-using System;
+﻿using System;
 
-namespace Citicon.Inventory.Data
+namespace Citicon.Data
 {
     public sealed class Stock
     {

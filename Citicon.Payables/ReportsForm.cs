@@ -1,9 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using Citicon.Inventory.Data;
-using Citicon.Inventory.DataManager;
-using Citicon.Payables.Data;
-using Citicon.Payables.DataManager;
 using System;
 using System.Windows.Forms;
 

@@ -1,4 +1,4 @@
-﻿using Citicon.Inventory.Data;
+﻿using Citicon.Data;
 using System;
 using System.Windows.Forms;
 

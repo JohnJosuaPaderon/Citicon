@@ -1,8 +1,5 @@
 ﻿using Citicon.Data;
-using Citicon.DataManager;
-using Citicon.Inventory.Data;
-using Citicon.Inventory.DataProcess;
-using Citicon.Payables.DataManager;
+using Citicon.DataProcess;
 using MySql.Data.MySqlClient;
 using Sorschia;
 using Sorschia.Extensions;
@@ -17,7 +14,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace Citicon.Inventory.DataManager
+namespace Citicon.DataManager
 {
     public sealed class StockManager : DataManager<Stock>, IDataManager<Stock>
     {

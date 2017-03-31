@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace Citicon.Payables.Data
+namespace Citicon.Data
 {
     public sealed class Expense
     {

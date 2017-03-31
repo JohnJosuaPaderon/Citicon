@@ -1,12 +1,11 @@
 ﻿using Citicon.Data;
-using Citicon.Inventory.Data;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Citicon.Inventory.DataManager
+namespace Citicon.DataManager
 {
     public sealed class PaymentTermManager : DataManager<PaymentTerm>, IDataManager<PaymentTerm>
     {

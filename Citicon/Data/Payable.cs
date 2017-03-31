@@ -1,9 +1,7 @@
-﻿using Citicon.Data;
-using Citicon.Inventory.Data;
-using System;
+﻿using System;
 using System.Configuration;
 
-namespace Citicon.Payables.Data
+namespace Citicon.Data
 {
     public sealed class Payable
     {

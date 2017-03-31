@@ -1,10 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using Citicon.Payables.Data;
-using Citicon.Payables.DataManager;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -75,13 +72,13 @@ namespace Citicon.Payables
             }
         }
 
-        private async Task loadBanks()
+        private async Task LoadBanks()
         {
             tempBanks.Clear();
             banks = await bankManager.GetListAsync();
         }
 
-        private async Task loadBankAccounts()
+        private async Task LoadBankAccounts()
         {
             tempBankAccounts.Clear();
             bankAccounts = await bankAccountManager.GetListAsync();
@@ -110,12 +107,12 @@ namespace Citicon.Payables
         {
             tempBanks = new List<Bank>();
             tempBankAccounts = new List<BankAccount>();
-            await loadCheckVoucherNumbers();
-            await loadBanks();
-            await loadBankAccounts();
+            await LoadCheckVoucherNumbers();
+            await LoadBanks();
+            await LoadBankAccounts();
         }
 
-        private async Task loadCheckVoucherNumbers()
+        private async Task LoadCheckVoucherNumbers()
         {
             tbxCheckVoucherNumber.AutoCompleteCustomSource.Clear();
             checkVoucherNumbers = await payableManager.GetChequeVoucherNumberAsync(false);
@@ -126,7 +123,7 @@ namespace Citicon.Payables
             }
         }
 
-        private async Task setCheckVoucherNumber()
+        private async Task SetCheckVoucherNumber()
         {
             var x = tbxCheckVoucherNumber.Text.Trim();
             Color backColor = Color.White;
@@ -164,7 +161,7 @@ namespace Citicon.Payables
             tbxPayee.ForeColor = foreColor;
         }
 
-        private void clearCheckVoucherNumber()
+        private void ClearCheckVoucherNumber()
         {
             Color backColor = Color.White;
             Color foreColor = Color.Black;
@@ -180,12 +177,12 @@ namespace Citicon.Payables
 
         private void lblChangeCheckVoucherNumber_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            clearCheckVoucherNumber();
+            ClearCheckVoucherNumber();
         }
 
         private async void tbxCheckVoucherNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) await setCheckVoucherNumber();
+            if (e.KeyCode == Keys.Enter) await SetCheckVoucherNumber();
         }
 
         private void tbxCheckVoucherNumber_Leave(object sender, EventArgs e)
@@ -247,7 +244,7 @@ namespace Citicon.Payables
                     var bankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
                     bankAccount.ChequeNumber++;
                     bankAccountManager.Update(bankAccount);
-                    await loadCheckVoucherNumbers();
+                    await LoadCheckVoucherNumbers();
                     dgvPayables.Rows.Clear();
                     tbxCheckNumber.Text = "0000000";
                     tbxCheckVoucherNumber.Text = string.Empty;
@@ -257,7 +254,7 @@ namespace Citicon.Payables
                     //cmbxBankAccounts.Items.Clear();
                     tbxGrandTotal.Text = "0.00";
                     //await setCheckVoucherNumber();
-                    clearCheckVoucherNumber();
+                    ClearCheckVoucherNumber();
                     MessageBox.Show("Done!", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else MessageBox.Show("No Payables in the list!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);

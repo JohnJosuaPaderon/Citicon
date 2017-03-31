@@ -1,7 +1,9 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.DataProcess;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -149,6 +151,7 @@ namespace Citicon.Forms.Dialogs
                 if (quotationTransaction != null)
                 {
                     MessageBox.Show("Quotation has been added successfully.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ExportQuotationToExcel(quotationTransaction);
                     Close();
                 }
                 else
@@ -180,6 +183,7 @@ namespace Citicon.Forms.Dialogs
                 if (Quotation != null)
                 {
                     MessageBox.Show("Quotation has been revised successfully.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ExportQuotationToExcel(quotationTransaction);
                     Close();
                 }
                 else
@@ -191,6 +195,13 @@ namespace Citicon.Forms.Dialogs
             {
                 MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ExportQuotationToExcel(QuotationTransaction quotationTransaction)
+        {
+            QuotationManager.ExportQuotation(
+                quotationTransaction.Quotation.Type == QuotationType.Citicon ? ExportQuotation.QuotationReportTemplate.Citicon : ExportQuotation.QuotationReportTemplate.LexCiticoncrete,
+                ConfigurationManager.AppSettings["Quotation.TemplatesDirectory"], quotationTransaction.Quotation, quotationTransaction.Designs, ConfigurationManager.AppSettings["Quotation.SaveDirectory"]);
         }
 
         private async Task SaveQuotationAsync()
@@ -219,6 +230,7 @@ namespace Citicon.Forms.Dialogs
                             await ReviseAsync(quotationTransaction);
                             break;
                     }
+
                 }
                 else
                 {

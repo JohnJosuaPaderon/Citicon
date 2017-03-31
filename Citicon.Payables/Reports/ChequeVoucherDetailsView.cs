@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Citicon.Data;
+using Citicon.DataManager;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Citicon.Payables.DataManager;
-using Citicon.Payables.Data;
 
 namespace Citicon.Payables.Reports
 {

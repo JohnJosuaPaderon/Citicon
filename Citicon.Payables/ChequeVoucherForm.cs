@@ -1,9 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using Citicon.Inventory.Data;
-using Citicon.Inventory.DataManager;
-using Citicon.Payables.Data;
-using Citicon.Payables.DataManager;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -78,7 +74,7 @@ namespace Citicon.Payables
             Invoke(new Action(() => tbxExpenseSupplier.AutoCompleteCustomSource.Add(e.Description)));
         }
 
-        private async Task loadSuppliers()
+        private async Task LoadSuppliers()
         {
             tbxExpenseSupplier.AutoCompleteCustomSource.Clear();
             suppliers = await supplierManager.GetListAsync();
@@ -129,20 +125,20 @@ namespace Citicon.Payables
 
         private async void ChequeVoucherForm_Load(object sender, EventArgs e)
         {
-            await loadMrisSuggest();
-            await loadSuppliers();
-            loadExpenses();
-            loadCompanies();
-            loadBranches();
-            generateChequeVoucherNumber();
+            await LoadMrisSuggest();
+            await LoadSuppliers();
+            LoadExpenses();
+            LoadCompanies();
+            LoadBranches();
+            GenerateChequeVoucherNumber();
         }
 
-        private void generateChequeVoucherNumber()
+        private void GenerateChequeVoucherNumber()
         {
             tbxCheckVoucherNumber.Text = payableManager.GenerateChequeVoucherNumber();
         }
 
-        private void loadExpenses()
+        private void LoadExpenses()
         {
             var task = expenseManager.GetListAsync();
             task.ContinueWith(x =>
@@ -155,7 +151,7 @@ namespace Citicon.Payables
             });
         }
 
-        private void loadCompanies()
+        private void LoadCompanies()
         {
             var task = companyManager.GetListAsync();
             task.ContinueWith(x =>
@@ -168,7 +164,7 @@ namespace Citicon.Payables
             });
         }
 
-        private void loadBranches()
+        private void LoadBranches()
         {
             var task = branchManager.GetListAsync();
             task.ContinueWith(x =>
@@ -181,14 +177,14 @@ namespace Citicon.Payables
             });
         }
 
-        private async Task loadMrisSuggest()
+        private async Task LoadMrisSuggest()
         {
             tbxSearchMrisNumber.AutoCompleteCustomSource.Clear();
             var list = await stockManager.GetUnpaidMrisNumberListAsync();
             tbxSearchMrisNumber.AutoCompleteCustomSource.AddRange(list);
         }
 
-        private void countGrandTotal()
+        private void CountGrandTotal()
         {
             decimal total = 0;
             if (tcChequeVoucher.SelectedTab == tpVariableCost)
@@ -207,13 +203,11 @@ namespace Citicon.Payables
 
                 foreach (DataGridViewRow row in dgvExpenses.Rows)
                 {
-                    decimal debit;
-                    decimal credit;
 
                     var expense = row.Cells[colExpense.Name].Value as Expense;
 
-                    decimal.TryParse(row.Cells[colExpenseDebit.Name].Value.ToString().Replace(",", string.Empty), out debit);
-                    decimal.TryParse(row.Cells[colExpenseCredit.Name].Value.ToString().Replace(",", string.Empty), out credit);
+                    decimal.TryParse(row.Cells[colExpenseDebit.Name].Value.ToString().Replace(",", string.Empty), out decimal debit);
+                    decimal.TryParse(row.Cells[colExpenseCredit.Name].Value.ToString().Replace(",", string.Empty), out decimal credit);
                     
                     totalDebit += debit;
                     totalCredit += credit;
@@ -234,32 +228,32 @@ namespace Citicon.Payables
         {
             if (e.KeyCode == Keys.Enter)
             {
-                await getStocksByMrisNumber();
+                await GetStocksByMrisNumber();
             }
         }
 
-        private async Task getStocksByMrisNumber()
+        private async Task GetStocksByMrisNumber()
         {
             await stockManager.GetListByMrisNumberAsync(tbxSearchMrisNumber.Text.Trim());
-            countGrandTotal();
+            CountGrandTotal();
         }
 
         private async void btnSearchMrisNumber_Click(object sender, EventArgs e)
         {
-            await getStocksByMrisNumber();
+            await GetStocksByMrisNumber();
         }
 
         private void tcChequeVoucher_Selected(object sender, TabControlEventArgs e)
         {
-            countGrandTotal();
+            CountGrandTotal();
         }
 
-        private void clearActiveSupplier()
+        private void ClearActiveSupplier()
         {
             activeSupplier = null;
             tbxActiveSupplier.BackColor = Color.White;
             tbxActiveSupplier.Text = string.Empty;
-            countGrandTotal();
+            CountGrandTotal();
         }
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
@@ -269,9 +263,9 @@ namespace Citicon.Payables
                 var mrisNumber = ((Stock)row.Cells[colStocks.Name].Value).MrisNumber;
                 if (!tbxSearchMrisNumber.AutoCompleteCustomSource.Contains(mrisNumber)) tbxSearchMrisNumber.AutoCompleteCustomSource.Add(mrisNumber);
             }
-            countGrandTotal();
+            CountGrandTotal();
             dgvStocks.Rows.Clear();
-            clearActiveSupplier();
+            ClearActiveSupplier();
         }
 
         private void btnRemoveSameMrisNumber_Click(object sender, EventArgs e)
@@ -286,10 +280,10 @@ namespace Citicon.Payables
                         rowsToBeRemoved.Add(row);
                 foreach (var row in rowsToBeRemoved)
                 {
-                    if (dgvStocks.Rows.Count == 1) clearActiveSupplier();
+                    if (dgvStocks.Rows.Count == 1) ClearActiveSupplier();
                     dgvStocks.Rows.Remove(row);
                 }
-                countGrandTotal();
+                CountGrandTotal();
             }
         }
 
@@ -300,15 +294,15 @@ namespace Citicon.Payables
                 var row = dgvStocks.SelectedRows[0];
                 var mrisNumber = ((Stock)row.Cells[colStocks.Name].Value).MrisNumber;
                 if (!tbxSearchMrisNumber.AutoCompleteCustomSource.Contains(mrisNumber)) tbxSearchMrisNumber.AutoCompleteCustomSource.Add(mrisNumber);
-                if (dgvStocks.Rows.Count == 1) clearActiveSupplier();
+                if (dgvStocks.Rows.Count == 1) ClearActiveSupplier();
                 dgvStocks.Rows.Remove(row);
-                countGrandTotal();
+                CountGrandTotal();
             }
         }
 
         private async void btnExportCheque_Click(object sender, EventArgs e)
         {
-            generateChequeVoucherNumber();
+            GenerateChequeVoucherNumber();
 
             if (dgvExpenses.Rows.Count > 0 || dgvStocks.Rows.Count > 0)
             {
@@ -393,7 +387,7 @@ namespace Citicon.Payables
                     }
                     else
                     {
-                        displayError("Select an Account Payables Type!");
+                        DisplayError("Select an Account Payables Type!");
                         return;
                     }
                 }
@@ -454,17 +448,17 @@ namespace Citicon.Payables
 
                         payableManager.Add(cashInBankPayable);
 
-                        clearActiveExpenseSupplier();
+                        ClearActiveExpenseSupplier();
                         dgvExpenses.Rows.Clear();
                     }
                     else
                     {
-                        displayError("Debit and Credit is not balanced!");
+                        DisplayError("Debit and Credit is not balanced!");
                         return;
                     }
                 }
-                await loadMrisSuggest();
-                generateChequeVoucherNumber();
+                await LoadMrisSuggest();
+                GenerateChequeVoucherNumber();
                 if (addedSuccessfully)
                 {
                     rtbxRemarks.Text = string.Empty;
@@ -502,33 +496,33 @@ namespace Citicon.Payables
                                 VariableCost = false
                             });
                         }
-                        clearActiveSupplier();
+                        ClearActiveSupplier();
                         payableManager.ExportChequeVoucher(exportablePayables.ToArray(), accountPayableType);
                     }
                     catch (Exception ex)
                     {
-                        displayError(ex.Message);
+                        DisplayError(ex.Message);
                     }
                 }
             }
         }
 
-        private void displayError(string message)
+        private void DisplayError(string message)
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void clearActiveExpenseSupplier()
+        private void ClearActiveExpenseSupplier()
         {
             activeExpenseSupplier = null;
             tbxExpenseSupplier.ForeColor = Color.Black;
             tbxExpenseSupplier.BackColor = Color.White;
             tbxExpenseSupplier.Text = string.Empty;
             dgvExpenses.Rows.Clear();
-            countGrandTotal();
+            CountGrandTotal();
         }
 
-        private void setActiveExpenseSupplier()
+        private void SetActiveExpenseSupplier()
         {
             activeExpenseSupplier = suppliers.Where(x => x.Description == tbxExpenseSupplier.Text.Trim()).FirstOrDefault();
             if (activeExpenseSupplier != null)
@@ -536,22 +530,22 @@ namespace Citicon.Payables
                 tbxExpenseSupplier.ForeColor = Color.FromArgb(255, 192, 192);
                 tbxExpenseSupplier.BackColor = Color.FromArgb(40, 40, 40);
             }
-            else clearActiveExpenseSupplier();
+            else ClearActiveExpenseSupplier();
         }
 
         private void btnChangeExpenseSupplier_Click(object sender, EventArgs e)
         {
-            clearActiveExpenseSupplier();
+            ClearActiveExpenseSupplier();
         }
 
         private void tbxExpenseSupplier_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) setActiveExpenseSupplier();
+            if (e.KeyCode == Keys.Enter) SetActiveExpenseSupplier();
         }
 
         private void tbxExpenseSupplier_Leave(object sender, EventArgs e)
         {
-            setActiveExpenseSupplier();
+            SetActiveExpenseSupplier();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -595,17 +589,17 @@ namespace Citicon.Payables
         {
             if (cmbxExpensesExpense.SelectedItem == null)
             {
-                displayError("Select an expense first!");
+                DisplayError("Select an expense first!");
                 return;
             }
             else if (cmbxExpenseBranch.SelectedItem == null)
             {
-                displayError("Select a branch first!");
+                DisplayError("Select a branch first!");
                 return;
             }
             else if (cmbxExpenseCompany.SelectedItem == null)
             {
-                displayError("Select a company first!");
+                DisplayError("Select a company first!");
                 return;
             }
             DataGridViewRow row = new DataGridViewRow();
@@ -629,22 +623,22 @@ namespace Citicon.Payables
                 decimal x;
                 decimal.TryParse(cell.Value.ToString(), out x);
                 cell.Value = x.ToString("#,##0.00");
-                countGrandTotal();
+                CountGrandTotal();
             }
 
         }
 
         private void tbxExpenseTotalCredit_TextChanged(object sender, EventArgs e)
         {
-            countExpenseDiffence();
+            CountExpenseDiffence();
         }
 
         private void tbxExpenseTotalDebit_TextChanged(object sender, EventArgs e)
         {
-            countExpenseDiffence();
+            CountExpenseDiffence();
         }
 
-        private void countExpenseDiffence()
+        private void CountExpenseDiffence()
         {
             decimal debit;
             decimal credit;
@@ -681,7 +675,7 @@ namespace Citicon.Payables
             if (dgvExpenses.SelectedRows.Count > 0)
             {
                 dgvExpenses.Rows.Remove(dgvExpenses.SelectedRows[0]);
-                countGrandTotal();
+                CountGrandTotal();
             }
         }
     }

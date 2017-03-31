@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Citicon.Inventory.Data
+namespace Citicon.Data
 {
     public sealed class Classification
     {

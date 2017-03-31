@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using Citicon.Payables.Data;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -7,7 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
-namespace Citicon.Payables.DataManager
+namespace Citicon.DataManager
 {
     public sealed class ExpenseManager : DataManager<Expense>, IDataManager<Expense>
     {

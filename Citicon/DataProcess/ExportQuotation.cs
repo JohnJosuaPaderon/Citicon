@@ -115,7 +115,7 @@ namespace Citicon.DataProcess
                 if (isCementSupplied)
                 {
                     object remarksColumn = table.Columns[3];
-                    Word.Column curingTimeColumn = (Word.Column)table.Columns[4];
+                    Word.Column curingTimeColumn = table.Columns[4];
                     Word.Column strengthColumn = (Word.Column)table.Columns[1];
 
                     var col = table.Columns.Add(ref remarksColumn);

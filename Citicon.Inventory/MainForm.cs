@@ -1,6 +1,5 @@
 ﻿using Citicon.Data;
-using Citicon.Inventory.Data;
-using Citicon.Inventory.DataManager;
+using Citicon.DataManager;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;

@@ -76,6 +76,8 @@
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
+    <Compile Include="DataProcess\ExportExcelBase.cs" />
+    <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
@@ -258,6 +260,7 @@
     <Compile Include="Data\JobPosition.cs" />
     <Compile Include="Data\MeasurementUnit.cs" />
     <Compile Include="Data\Module.cs" />
+    <Compile Include="Data\MRISReport.cs" />
     <Compile Include="Data\OperationTimeFrame.cs" />
     <Compile Include="Data\OtherCharge.cs" />
     <Compile Include="Data\OtherChargeType.cs" />

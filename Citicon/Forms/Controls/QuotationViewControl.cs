@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +19,27 @@ namespace Citicon.Forms.Controls
         {
             ProjectDesignDataGridView.Rows.Clear();
             var projectDesigns = await ProjectDesignManager.GetListByQuotationAsync(Quotation);
+
+            if (projectDesigns != null && projectDesigns.Any())
+            {
+                foreach (var projectDesign in projectDesigns)
+                {
+                    AddToUI(projectDesign);
+                }
+            }
+        }
+
+        private void AddToUI(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign });
+                ProjectDesignDataGridView.Rows.Add(projectDesign);
+            }
         }
 
         private async void QuotationViewControl_QuotationChanged(object sender, EventArgs e)

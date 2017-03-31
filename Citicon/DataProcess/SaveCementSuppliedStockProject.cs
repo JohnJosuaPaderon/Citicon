@@ -1,13 +1,11 @@
 ﻿using Citicon.Data;
-using Citicon.DataProcess;
-using Citicon.Inventory.Data;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Citicon.Inventory.DataProcess
+namespace Citicon.DataProcess
 {
     public class SaveCementSuppliedStockProject : DataProcessBase
     {

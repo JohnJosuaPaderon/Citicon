@@ -1,7 +1,5 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using Citicon.Inventory.Data;
-using Citicon.Inventory.DataManager;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

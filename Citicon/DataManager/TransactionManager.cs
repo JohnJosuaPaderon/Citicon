@@ -1,6 +1,4 @@
 ﻿using Citicon.Data;
-using Citicon.DataManager;
-using Citicon.Inventory.Data;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -10,7 +8,8 @@ using System.Configuration;
 using System.IO;
 using System.Threading.Tasks;
 using Excel = Microsoft.Office.Interop.Excel;
-namespace Citicon.Inventory.DataManager
+
+namespace Citicon.DataManager
 {
     public sealed class TransactionManager : DataManager<Transaction>, IDataManager<Transaction>
     {

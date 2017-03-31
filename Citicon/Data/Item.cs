@@ -1,4 +1,4 @@
-﻿namespace Citicon.Inventory.Data
+﻿namespace Citicon.Data
 {
     public sealed class Item
     {

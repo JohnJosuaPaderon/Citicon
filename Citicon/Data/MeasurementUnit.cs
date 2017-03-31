@@ -1,8 +1,8 @@
-﻿using Citicon.Inventory.DataManager;
+﻿using Citicon.DataManager;
 using System;
 using System.Configuration;
 
-namespace Citicon.Inventory.Data
+namespace Citicon.Data
 {
     public sealed class MeasurementUnit
     {
