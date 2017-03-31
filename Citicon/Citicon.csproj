@@ -77,9 +77,15 @@
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\ExportExcelBase.cs" />
+    <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
+    <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
+    <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
+    <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
@@ -290,6 +296,8 @@
     <Compile Include="Data\ScheduledProjectDesign.cs" />
     <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
+    <Compile Include="Data\TallySheetItem.cs" />
+    <Compile Include="Data\TallySheetReport.cs" />
     <Compile Include="Data\TimeLog.cs" />
     <Compile Include="Data\TimeLogType.cs" />
     <Compile Include="Data\Transaction.cs" />
@@ -327,6 +335,12 @@
     </Compile>
     <Compile Include="Forms\Controls\QuotationViewControl.Designer.cs">
       <DependentUpon>QuotationViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DailyTallySheetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DailyTallySheetForm.Designer.cs">
+      <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\AddEditClientDialog.cs">
       <SubType>Form</SubType>
@@ -405,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\QuotationViewControl.resx">
       <DependentUpon>QuotationViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DailyTallySheetForm.resx">
+      <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>

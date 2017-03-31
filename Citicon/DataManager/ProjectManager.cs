@@ -236,5 +236,13 @@ namespace Citicon.DataManager
                 return new ValidationResult(false, "Invalid project.");
             }
         }
+        
+        public static async Task<IEnumerable<Project>> GetListByDeliveryDateAsync(DateTime deliveryDate)
+        {
+            using (var process = new GetProjectListByDeliveryDate(deliveryDate))
+            {
+                return await process.ExecuteAsync();
+            }
+        }
     }
 }

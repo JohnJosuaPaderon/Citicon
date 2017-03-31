@@ -101,5 +101,36 @@ namespace Citicon.DataManager
             var process = new UpdateDeliveryBillingId(delivery);
             await process.ExecuteAsync(connection, transaction);
         }
+
+        public static async Task<IEnumerable<Delivery>> GetListByProjectDesignAndDeliveryDateAsync(ProjectDesign projectDesign, DateTime deliveryDate)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new GetDeliveryListByProjectDesignAndDeliveryDate(projectDesign, deliveryDate))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<string> ExportDailyTallySheetAsync(TallySheetReport tallySheet)
+        {
+            if (tallySheet != null)
+            {
+                using (var process = new ExportTallySheet(tallySheet))
+                {
+                    await process.ExecuteAsync();
+                    return process.FilePath;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

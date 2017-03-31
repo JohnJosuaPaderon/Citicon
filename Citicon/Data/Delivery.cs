@@ -18,6 +18,8 @@ namespace Citicon.Data
         public decimal CommulativeVolume { get; set; }
         public string Remarks { get; set; }
         public decimal PricePerCubicMeter { get; set; }
+        public DateTime PlantLeave { get; set; }
+        public DateTime PlantArrive { get; set; }
 
         public static bool operator ==(Delivery left, Delivery right)
         {

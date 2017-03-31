@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Threading.Tasks;
@@ -204,6 +205,29 @@ namespace Citicon.DataManager
             }
 
             return projectDesign;
+        }
+
+        public static async Task<IEnumerable<ProjectDesign>> GetListByProjectAndDeliveryDateAsync(Project project, DateTime deliveryDate)
+        {
+            if (project != null)
+            {
+                using (var process = new GetProjectDesignListByProjectAndDeliveryDate(project, deliveryDate))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<IEnumerable<ProjectDesign>> GetListWithDeliveryAsync(DateTime deliveryDate)
+        {
+            using (var process = new GetProjectDesignListWithDelivery(deliveryDate))
+            {
+                return await process.ExecuteAsync();
+            }
         }
     }
 }

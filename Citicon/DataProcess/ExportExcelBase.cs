@@ -1,16 +1,43 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Citicon.DataProcess
 {
     public abstract class ExportExcelBase : IDisposable
     {
+        public ExportExcelBase()
+        {
+            PrintOption = ExportExcelPrintOption.None;
+        }
+
         protected Excel.Application Application;
         protected Excel.Workbooks Workbooks;
         protected Excel.Workbook Workbook;
         protected Excel.Sheets Sheets;
         protected Excel.Worksheet Worksheet;
+        public ExportExcelPrintOption PrintOption { get; set; }
+
+        public virtual void Execute()
+        {
+            switch (PrintOption)
+            {
+                case ExportExcelPrintOption.None:
+                    break;
+                case ExportExcelPrintOption.CurrentSheet:
+                    Worksheet?.PrintOutEx();
+                    break;
+                case ExportExcelPrintOption.Workbook:
+                    Workbook?.PrintOutEx();
+                    break;
+            }
+        }
+
+        public virtual Task ExecuteAsync()
+        {
+            return Task.Run(() => Execute());
+        }
 
         public virtual void Dispose()
         {
