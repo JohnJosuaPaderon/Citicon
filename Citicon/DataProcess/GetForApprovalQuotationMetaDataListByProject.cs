@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.Data.Converters;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data;
@@ -37,10 +38,11 @@ namespace Citicon.DataProcess
                                     quotations.Add(new Quotation()
                                     {
                                         Id = reader.GetUInt64("Id"),
-                                        QuotationNumber = reader.GetString("QuotationNumber"),
+                                        Number = reader.GetUInt32("Number"),
                                         QuotationDate = reader.GetDateTime("QuotationDate"),
                                         RevisionNumber = reader.GetUInt32("RevisionNumber"),
-                                        NoteDetails = reader.GetString("NoteDetails")
+                                        NoteDetails = reader.GetString("NoteDetails"),
+                                        Type = QuotationTypeConverter.Parse(reader.GetString("Type"))
                                     });
                                 }
                             }

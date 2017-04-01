@@ -2,6 +2,7 @@
 using Citicon.DataManager;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,9 +118,9 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                Debug.WriteLine(ex.Message);
             }
         }
 
