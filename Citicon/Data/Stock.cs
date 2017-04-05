@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Citicon.Data
 {
@@ -28,6 +29,72 @@ namespace Citicon.Data
         public decimal? WithHoldingTax { get; set; }
         public Client CementSuppliedClient { get; set; }
         public Project[] CementSuppliedProjects { get; set; }
+        public string SIDR
+        {
+            get
+            {
+                var sidrBuilder = new StringBuilder();
+
+                var hasSi = SiNumber > 0;
+                var hasDr = DrNumber > 0;
+
+                if (hasSi)
+                {
+                    sidrBuilder.AppendFormat("SI={0}", SiNumber);
+
+                    if (hasDr)
+                    {
+                        sidrBuilder.Append(",");
+                    }
+                }
+
+                if (hasDr)
+                {
+                    sidrBuilder.AppendFormat("DR={0}", DrNumber);
+                }
+
+                return sidrBuilder.ToString();
+            }
+        }
+        public string ReportDescription
+        {
+            get
+            {
+                if (Item != null)
+                {
+                    if (Item.MeasurementUnit == MeasurementUnit.CubicMeter)
+                    {
+                        return MeasurementDescription;
+                    }
+                    else
+                    {
+                        return Item.Description;
+                    } 
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+        public decimal TotalAmount
+        {
+            get { return AddedStockValue * UnitPrice; }
+        }
+        public decimal TotalVAT
+        {
+            get
+            {
+                if (IncludeWithHoldingTax && WithHoldingTax != 0)
+                {
+                    return (TotalAmount / WithHoldingTax ?? 1) * 0.12M;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
 
         public static bool operator ==(Stock left, Stock right)
         {

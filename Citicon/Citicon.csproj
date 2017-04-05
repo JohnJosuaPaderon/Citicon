@@ -61,6 +61,7 @@
     <Compile Include="AddUserForm.Designer.cs">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigurationBridge.cs" />
     <Compile Include="DataManager\AccessoryTypeManager.cs" />
     <Compile Include="DataManager\BankAccountManager.cs" />
     <Compile Include="DataManager\BankManager.cs" />

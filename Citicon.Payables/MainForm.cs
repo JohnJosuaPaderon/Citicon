@@ -3,6 +3,7 @@ using Citicon.DataManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
@@ -443,7 +444,25 @@ namespace Citicon.Payables
                     MessageBox.Show("Success!");
                     try
                     {
-                        stockManager.ExportMrisReport(exportableStocks.ToArray(), UsageTextBox.Text, ReceivedStoredByTextBox.Text, InspectedAcceptedByTextBox.Text, ApprovedByTextBox.Text);
+                        var exportMode = ConfigurationManager.AppSettings["MRISReportExportMode"];
+
+                        if (exportMode == "V2")
+                        {
+                            var mris = new MRISReport();
+
+                            mris.Stocks.AddRange(exportableStocks);
+                            mris.RefreshData();
+                            mris.Usage = UsageTextBox.Text;
+                            mris.ReceivedStoredBy = ReceivedStoredByTextBox.Text;
+                            mris.InspectedAcceptedBy = InspectedAcceptedByTextBox.Text;
+                            mris.ApprovedBy = ApprovedByTextBox.Text;
+
+                            stockManager.ExportMRIS(mris);
+                        }
+                        else
+                        {
+                            stockManager.ExportMrisReport(exportableStocks.ToArray(), UsageTextBox.Text, ReceivedStoredByTextBox.Text, InspectedAcceptedByTextBox.Text, ApprovedByTextBox.Text);
+                        }
                     }
                     catch (Exception ex)
                     {

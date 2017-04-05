@@ -263,6 +263,17 @@ namespace Citicon.DataManager
             else throw new FileNotFoundException("Template file for MRIS Reports was not found!", MrisReportTemplate);
         }
 
+        public void ExportMRIS(MRISReport mris)
+        {
+            if (mris != null)
+            {
+                using (var process = new ExportMRIS(mris))
+                {
+                    process.Execute();
+                }
+            }
+        }
+
         public Stock ExtractFromDictionary(Dictionary<string, object> dictionary)
         {
             if (dictionary != null)

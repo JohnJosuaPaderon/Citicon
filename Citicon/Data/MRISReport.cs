@@ -17,6 +17,23 @@ namespace Citicon.Data
         public string ApprovedBy { get; set; }
         public string MRISNumber { get; private set; }
         public Supplier Supplier { get; private set; }
-        public DateTime DeliveryDate { get; private set; }
+        public DateTime? DeliveryDate { get; private set; }
+
+        public void RefreshData()
+        {
+            foreach (var item in Stocks)
+            {
+                if (Supplier == null && DeliveryDate == null && MRISNumber == null)
+                {
+                    Supplier = item.Supplier;
+                    DeliveryDate = item.DeliveryDate;
+                    MRISNumber = item.MrisNumber;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
     }
 }
