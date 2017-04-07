@@ -77,6 +77,7 @@
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
+    <Compile Include="DataProcess\ExportChequeVoucher.cs" />
     <Compile Include="DataProcess\ExportExcelBase.cs" />
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
@@ -250,9 +251,11 @@
     <Compile Include="Data\BillingStructureType.cs" />
     <Compile Include="Data\Branch.cs" />
     <Compile Include="Data\ChequeSummaryItem.cs" />
+    <Compile Include="Data\ChequeVoucher.cs" />
     <Compile Include="Data\Classification.cs" />
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Company.cs" />
+    <Compile Include="Data\Converters\PayableTypeConverter.cs" />
     <Compile Include="Data\Converters\ProjectTypeConverter.cs" />
     <Compile Include="Data\Converters\QuotationTypeConverter.cs" />
     <Compile Include="Data\DateTimeRange.cs" />
@@ -272,6 +275,7 @@
     <Compile Include="Data\OtherCharge.cs" />
     <Compile Include="Data\OtherChargeType.cs" />
     <Compile Include="Data\Payable.cs" />
+    <Compile Include="Data\PayableType.cs" />
     <Compile Include="Data\PaymentTerm.cs" />
     <Compile Include="Data\Payroll.cs" />
     <Compile Include="Data\PayrollGroup.cs" />

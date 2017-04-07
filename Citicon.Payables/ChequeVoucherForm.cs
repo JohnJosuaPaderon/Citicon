@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.Data.Converters;
 using Citicon.DataManager;
 using System;
 using System.Collections.Generic;
@@ -131,6 +132,9 @@ namespace Citicon.Payables
             LoadCompanies();
             LoadBranches();
             GenerateChequeVoucherNumber();
+
+            cmbxVariableCostAccountType.Items.Add(PayableTypeConverter.ToDisplay(PayableType.Trade));
+            cmbxVariableCostAccountType.Items.Add(PayableTypeConverter.ToDisplay(PayableType.NonTrade));
         }
 
         private void GenerateChequeVoucherNumber()
@@ -497,7 +501,17 @@ namespace Citicon.Payables
                             });
                         }
                         ClearActiveSupplier();
-                        payableManager.ExportChequeVoucher(exportablePayables.ToArray(), accountPayableType);
+
+                        var exportOption = ConfigurationManager.AppSettings["ChequeVoucher.ExportOption"];
+
+                        if (exportOption == "V2")
+                        {
+
+                        }
+                        else
+                        {
+                            payableManager.ExportChequeVoucher(exportablePayables.ToArray(), accountPayableType);
+                        }
                     }
                     catch (Exception ex)
                     {

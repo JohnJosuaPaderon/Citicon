@@ -19,8 +19,7 @@ namespace Citicon.Data.Converters
 
         public static ProjectType FromString(string value)
         {
-            ProjectType result;
-            Enum.TryParse(value, out result);
+            Enum.TryParse(value, out ProjectType result);
 
             return result;
         }
