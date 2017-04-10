@@ -378,6 +378,21 @@ namespace Citicon.DataManager
             return null;
         }
 
+        public Task ExportChequeVoucherAsync(ChequeVoucher chequeVoucher)
+        {
+            if (chequeVoucher != null)
+            {
+                using (var process = new ExportChequeVoucher(chequeVoucher))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public string GenerateChequeVoucherNumber()
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _payables_generatechequevouchernumber();", System.Data.CommandType.Text))

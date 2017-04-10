@@ -11,9 +11,15 @@ namespace Citicon.Data
             {
                 Id = Convert.ToUInt64(ConfigurationManager.AppSettings["Expense[CashInBank].Id"])
             };
+
+            WithHoldingTax = new Expense()
+            {
+                Id = Convert.ToUInt64(ConfigurationManager.AppSettings["Expense[WithHoldingTax].Id"])
+            };
         }
 
         public static Expense CashInBank { get; }
+        public static Expense WithHoldingTax { get; }
         
         public ulong Id { get; set; }
         public string Code { get; set; }

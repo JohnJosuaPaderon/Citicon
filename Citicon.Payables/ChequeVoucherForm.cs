@@ -307,6 +307,7 @@ namespace Citicon.Payables
         private async void btnExportCheque_Click(object sender, EventArgs e)
         {
             GenerateChequeVoucherNumber();
+            var variableCost = true;
 
             if (dgvExpenses.Rows.Count > 0 || dgvStocks.Rows.Count > 0)
             {
@@ -316,6 +317,7 @@ namespace Citicon.Payables
                 var chequeVoucherNumber = tbxCheckVoucherNumber.Text.Trim();
                 if (tcChequeVoucher.SelectedTab == tpVariableCost)
                 {
+                    variableCost = true;
                     if (cmbxVariableCostAccountType.SelectedItem != null)
                     {
                         Branch withHoldingTax_Branch = null;
@@ -358,7 +360,8 @@ namespace Citicon.Payables
                                 Debit = stock.AddedStockValue * stock.UnitPrice,
                                 VariableCost = true,
                                 Remarks = rtbxRemarks.Text,
-                                AccountType = accountType
+                                AccountType = accountType,
+                                TransactionDate = DateTime.Now
                                 //Remarks = $"Payment for {stock.Item?.Description} as per SIDR No. {stock.SiNumber} dated {stock.DeliveryDate.ToString("MMM dd, yyyy")}."
                             };
                             stock.Paid = true;
@@ -397,6 +400,7 @@ namespace Citicon.Payables
                 }
                 else if (tcChequeVoucher.SelectedTab == tpExpenses)
                 {
+                    variableCost = false;
                     var _credit = decimal.Parse(tbxExpenseTotalCredit.Text.Replace(",", string.Empty));
                     var _debit = decimal.Parse(tbxExpenseTotalDebit.Text.Replace(",", string.Empty));
                     if (_credit == _debit)
@@ -430,7 +434,7 @@ namespace Citicon.Payables
                                 SalaryPeriodStart = default(DateTime),
                                 Stock = null,
                                 Supplier = activeExpenseSupplier,
-                                TransactionDate = default(DateTime),
+                                TransactionDate = DateTime.Now,
                                 VariableCost = false
                             };
 
@@ -506,7 +510,10 @@ namespace Citicon.Payables
 
                         if (exportOption == "V2")
                         {
-
+                            var chequeVoucher = new ChequeVoucher(variableCost, PayableTypeConverter.FromDisplay((string)cmbxVariableCostAccountType.SelectedItem));
+                            chequeVoucher.Payables.AddRange(exportablePayables);
+                            chequeVoucher.RefreshData();
+                            await payableManager.ExportChequeVoucherAsync(chequeVoucher);
                         }
                         else
                         {

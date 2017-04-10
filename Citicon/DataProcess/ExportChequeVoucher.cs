@@ -2,6 +2,7 @@
 using System;
 using System.Configuration;
 using System.Drawing;
+using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Citicon.DataProcess
@@ -11,20 +12,94 @@ namespace Citicon.DataProcess
         public ExportChequeVoucher(ChequeVoucher chequeVoucher)
         {
             ChequeVoucher = chequeVoucher ?? throw new ArgumentNullException(nameof(chequeVoucher));
+            Template = ConfigurationManager.AppSettings["ChequeVoucher.Template"];
+            SaveDirectory = ConfigurationManager.AppSettings["ChequeVoucher.SaveDirectory"];
+            RowCounter = 10;
         }
 
         private ChequeVoucher ChequeVoucher;
+        private Excel.Range Range;
         private string Template { get; set; }
         private string SaveDirectory { get; set; }
+        private int RowCounter;
 
         private void ExportVariable()
         {
+            if (!string.IsNullOrWhiteSpace(ChequeVoucher.VariableCostRemarks))
+            {
+                Range = Worksheet.Range[Worksheet.Cells[RowCounter, 1], Worksheet.Cells[RowCounter, 4]];
+                Range.Merge();
+                Range.Value = ChequeVoucher.VariableCostRemarks;
+                RowCounter++;
+            }
 
+            if (ChequeVoucher.MRISRemarks.Count > 0)
+            {
+                Range = Worksheet.Range[Worksheet.Cells[RowCounter, 1], Worksheet.Cells[RowCounter, 4]];
+                Range.Merge();
+                Range.Value = "MRIS";
+
+                foreach (var item in ChequeVoucher.MRISRemarks)
+                {
+                    RowCounter++;
+
+                    Range = Worksheet.Cells[RowCounter, 1];
+                    Range.Value = item.Key;
+
+                    Range = Worksheet.Range[Worksheet.Cells[RowCounter, 2], Worksheet.Cells[RowCounter, 4]];
+                    Range.Merge();
+                    Range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                    Range.NumberFormat = "#,##0.00";
+                    Range.Value = item.Value;
+                }
+            }
+
+            AppendAccountSummaryHeader();
+            AppendAccountSummary();
+        }
+
+        private void AppendAccountSummaryHeader()
+        {
+            RowCounter += 2;
+            Range = Worksheet.Range[Worksheet.Cells[RowCounter, 1], Worksheet.Cells[RowCounter, 2]];
+            Range.Merge();
+            Range.Font.Bold = true;
+            Range.Value = "ACCOUNTS";
+
+            Range = Worksheet.Range[Worksheet.Cells[RowCounter, 3], Worksheet.Cells[RowCounter, 4]];
+            Range.Merge();
+            Range.Font.Bold = true;
+            Range.Value = "AMOUNT";
         }
 
         private void ExportExpense()
         {
+            if (!string.IsNullOrWhiteSpace(ChequeVoucher.ExpenseRemarks))
+            {
+                Range = Worksheet.Range[Worksheet.Cells[RowCounter, 1], Worksheet.Cells[RowCounter, 4]];
+                Range.Merge();
+                Range.Font.Bold = true;
+                Range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                Range.Value = ChequeVoucher.ExpenseRemarks;
+            }
 
+            AppendAccountSummaryHeader();
+            AppendAccountSummary();
+        }
+
+        private void AppendAccountSummary()
+        {
+            foreach (var payable in ChequeVoucher.Payables)
+            {
+                RowCounter++;
+                Range = Worksheet.Range[Worksheet.Cells[RowCounter, 1], Worksheet.Cells[RowCounter, 2]];
+                Range.Merge();
+                Range.Value = payable.Description;
+
+                Range = Worksheet.Cells[RowCounter, 3];
+                Range.NumberFormat = "#,##0.00;(#,##0.00)";
+                Range.Value = payable.Value;
+            }
         }
 
         private void ExportInitial()
@@ -33,6 +108,11 @@ namespace Citicon.DataProcess
             SetCellValue(GetLocation("ChequeVoucherNumber"), ChequeVoucher.ChequeVoucherNumber);
             SetCellValue(GetLocation("Payee"), ChequeVoucher.Payee?.ToString());
             SetCellValue(GetLocation("AmountInWord"), Sorschia.Supports.CurrencyToWords(ChequeVoucher.GrandTotal));
+            SetCellValue(GetLocation("Amount"), ChequeVoucher.GrandTotal);
+            SetCellValue(GetLocation("RecordedBy"), GetDefault("RecordedBy"));
+            SetCellValue(GetLocation("PreparedBy"), GetDefault("PreparedBy"));
+            SetCellValue(GetLocation("CheckedBy"), GetDefault("CheckedBy"));
+            SetCellValue(GetLocation("ApprovedBy"), GetDefault("ApprovedBy"));
         }
 
         private void SetCellValue(Point excelPoint, object value)
@@ -106,6 +186,10 @@ namespace Citicon.DataProcess
             Application = new Excel.Application();
             Workbooks = Application.Workbooks;
             Workbook = Workbooks.Open(Template);
+            Sheets = Workbook.Sheets;
+            Worksheet = Sheets[1];
+
+            ExportInitial();
 
             if (ChequeVoucher.VariableCost)
             {
@@ -116,6 +200,13 @@ namespace Citicon.DataProcess
                 ExportExpense();
             }
 
+            if (!Directory.Exists(SaveDirectory))
+            {
+                Directory.CreateDirectory(SaveDirectory);
+            }
+
+            var filePath = Path.Combine(SaveDirectory, string.Format("{0}_{1:yyMMdd-hhmmss}.xlsx", ChequeVoucher.ChequeVoucherNumber, DateTime.Now));
+            Workbook.SaveAs(filePath);
             base.Execute();
         }
     }

@@ -26,7 +26,7 @@ namespace Citicon.Data
         public DateTime ChequeDate { get; set; }
         public decimal Value
         {
-            get { return Credit != 0 ? Credit : Debit; }
+            get { return Credit != 0 ? -1 * Credit : Debit; }
         }
 
         public static string InputTax => ConfigurationManager.AppSettings["Payable.Description.InputTax"];
