@@ -55,11 +55,20 @@
     <Compile Include="Forms\SemiMonthlyPayrollForm.Designer.cs">
       <DependentUpon>SemiMonthlyPayrollForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimeLogViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TimeLogViewForm.Designer.cs">
+      <DependentUpon>TimeLogViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\SemiMonthlyPayrollForm.resx">
       <DependentUpon>SemiMonthlyPayrollForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeLogViewForm.resx">
+      <DependentUpon>TimeLogViewForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

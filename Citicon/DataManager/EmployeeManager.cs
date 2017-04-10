@@ -10,9 +10,11 @@ namespace Citicon.DataManager
         static EmployeeManager()
         {
             Employees = new Dictionary<long, Employee>();
+            EmployeeLogins = new Dictionary<ulong, EmployeeLogin>();
         }
 
         private static Dictionary<long, Employee> Employees;
+        private static Dictionary<ulong, EmployeeLogin> EmployeeLogins;
 
         public static async Task<Employee> DeleteAsync(Employee employee, string deletedBy)
         {
@@ -71,6 +73,35 @@ namespace Citicon.DataManager
             return await process.ExecuteAsync();
         }
 
+        public static async Task<EmployeeLogin> GetEmployeeLoginByIdAsync(ulong employeeLoginId)
+        {
+            if (employeeLoginId > 0)
+            {
+                if (EmployeeLogins.ContainsKey(employeeLoginId))
+                {
+                    return EmployeeLogins[employeeLoginId];
+                }
+                else
+                {
+                    using (var process = new GetEmployeeLoginById(employeeLoginId))
+                    {
+                        var employeeLogin = await process.ExecuteAsync();
+
+                        if (employeeLogin != null)
+                        {
+                            EmployeeLogins.Add(employeeLoginId, employeeLogin);
+                        }
+
+                        return employeeLogin;
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<TimeLog> LogEmployeeAsync(EmployeeLogin loginInfo)
         {
             if (loginInfo != null)
@@ -110,6 +141,49 @@ namespace Citicon.DataManager
             {
                 return null;
             }
+        }
+
+        public static Task<IEnumerable<Employee>> GetListWithTimeLogAsync(Branch branch, DateTimeRange timeRange)
+        {
+            if (branch != null && timeRange != null)
+            {
+                using (var process = new GetEmployeeListWithTimeLog(branch, timeRange))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static Task<IEnumerable<TimeLog>> GetTimeLogListAsync(Employee employee, DateTimeRange timeRange)
+        {
+            if (employee != null && timeRange != null)
+            {
+                using (var process = new GetTimeLogListByEmployee(employee, timeRange))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async static Task<TimeLog> UpdateTimeLogAsync(TimeLog timeLog)
+        {
+            if (timeLog != null)
+            {
+                using (var process = new UpdateTimeLog(timeLog))
+                {
+                    timeLog = await process.ExecuteAsync();
+                }
+            }
+
+            return timeLog;
         }
     }
 }

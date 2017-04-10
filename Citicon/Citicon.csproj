@@ -84,11 +84,14 @@
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
+    <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
+    <Compile Include="DataProcess\GetTimeLogListByEmployee.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
     <Compile Include="DataManager\MeasurementUnitManager.cs" />
@@ -184,6 +187,7 @@
     <Compile Include="DataProcess\UpdateProject.cs" />
     <Compile Include="DataProcess\UpdateProjectDesign.cs" />
     <Compile Include="DataProcess\UpdateQuotation.cs" />
+    <Compile Include="DataProcess\UpdateTimeLog.cs" />
     <Compile Include="DataProcess\ValidateClient.cs" />
     <Compile Include="DataProcess\ValidateProject.cs" />
     <Compile Include="DataProcess\ValidateProjectDesign.cs" />
