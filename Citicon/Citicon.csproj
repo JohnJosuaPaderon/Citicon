@@ -77,6 +77,7 @@
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
+    <Compile Include="DataProcess\DeleteTimeLog.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
     <Compile Include="DataProcess\ExportExcelBase.cs" />
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />

@@ -191,6 +191,33 @@ namespace Citicon.PayrollIntegration.Forms
             }
         }
 
+        private async Task DeleteSelectedTimeLogAsync()
+        {
+            var result = MessageBox.Show("Are you sure, do you really want to delete the selected time log?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    var timeLog = await EmployeeManager.DeleteTimeLogAsync(SelectedTimeLog);
+
+                    if (timeLog != null)
+                    {
+                        TimeLogDataGridView.Rows.Remove(TimeLogDataGridView.SelectedRows[0]);
+                        MessageBox.Show("Deleted successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete time log.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
         private async void SaveTimeLogChangesButton_Click(object sender, EventArgs e)
         {
             if (SelectedTimeLog != null)
@@ -199,6 +226,14 @@ namespace Citicon.PayrollIntegration.Forms
                 SelectedTimeLog.Logout = TimeLogDetails_LogoutDateTimePicker.Value;
 
                 await UpdateSelectedTimeLogAsync();
+            }
+        }
+
+        private async void DeleteTimeLogButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedTimeLog != null)
+            {
+                await DeleteSelectedTimeLogAsync(); 
             }
         }
     }

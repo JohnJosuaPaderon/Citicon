@@ -40,13 +40,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeLogViewForm));
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
+            this.EmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeRangeLabel = new System.Windows.Forms.Label();
             this.TimeRangeStartDdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeRangeToLabel = new System.Windows.Forms.Label();
             this.TimeRangeEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.BranchLabel = new System.Windows.Forms.Label();
             this.BranchComboBox = new System.Windows.Forms.ComboBox();
-            this.EmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchButton = new System.Windows.Forms.Button();
             this.TimeLogDataGridView = new System.Windows.Forms.DataGridView();
             this.TimeLogColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,11 +55,13 @@
             this.TimeLog_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLog_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLogDetailsGroupBox = new System.Windows.Forms.GroupBox();
-            this.TimeLogDetails_LoginLabel = new System.Windows.Forms.Label();
-            this.TimeLogDetails_LoginDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.SaveTimeLogChangesButton = new System.Windows.Forms.Button();
             this.TimeLogDetails_LogoutDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeLogDetails_LogoutLabel = new System.Windows.Forms.Label();
-            this.SaveTimeLogChangesButton = new System.Windows.Forms.Button();
+            this.TimeLogDetails_LoginDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.TimeLogDetails_LoginLabel = new System.Windows.Forms.Label();
+            this.DeleteTimeLogButton = new System.Windows.Forms.Button();
+            this.InsertTimeLogButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLogDataGridView)).BeginInit();
             this.TimeLogDetailsGroupBox.SuspendLayout();
@@ -115,6 +117,14 @@
             this.EmployeeDataGridView.TabIndex = 105;
             this.EmployeeDataGridView.SelectionChanged += new System.EventHandler(this.EmployeeDataGridView_SelectionChanged);
             // 
+            // EmployeeColumn
+            // 
+            this.EmployeeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EmployeeColumn.HeaderText = "EMPLOYEES";
+            this.EmployeeColumn.MinimumWidth = 100;
+            this.EmployeeColumn.Name = "EmployeeColumn";
+            this.EmployeeColumn.ReadOnly = true;
+            // 
             // TimeRangeLabel
             // 
             this.TimeRangeLabel.AutoSize = true;
@@ -168,14 +178,6 @@
             this.BranchComboBox.Name = "BranchComboBox";
             this.BranchComboBox.Size = new System.Drawing.Size(220, 25);
             this.BranchComboBox.TabIndex = 111;
-            // 
-            // EmployeeColumn
-            // 
-            this.EmployeeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.EmployeeColumn.HeaderText = "EMPLOYEES";
-            this.EmployeeColumn.MinimumWidth = 100;
-            this.EmployeeColumn.Name = "EmployeeColumn";
-            this.EmployeeColumn.ReadOnly = true;
             // 
             // SearchButton
             // 
@@ -295,35 +297,34 @@
             // TimeLogDetailsGroupBox
             // 
             this.TimeLogDetailsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TimeLogDetailsGroupBox.Controls.Add(this.DeleteTimeLogButton);
             this.TimeLogDetailsGroupBox.Controls.Add(this.SaveTimeLogChangesButton);
             this.TimeLogDetailsGroupBox.Controls.Add(this.TimeLogDetails_LogoutDateTimePicker);
             this.TimeLogDetailsGroupBox.Controls.Add(this.TimeLogDetails_LogoutLabel);
             this.TimeLogDetailsGroupBox.Controls.Add(this.TimeLogDetails_LoginDateTimePicker);
             this.TimeLogDetailsGroupBox.Controls.Add(this.TimeLogDetails_LoginLabel);
-            this.TimeLogDetailsGroupBox.Location = new System.Drawing.Point(1183, 109);
+            this.TimeLogDetailsGroupBox.Location = new System.Drawing.Point(1183, 150);
             this.TimeLogDetailsGroupBox.Name = "TimeLogDetailsGroupBox";
             this.TimeLogDetailsGroupBox.Size = new System.Drawing.Size(335, 164);
             this.TimeLogDetailsGroupBox.TabIndex = 115;
             this.TimeLogDetailsGroupBox.TabStop = false;
             this.TimeLogDetailsGroupBox.Text = "Time Log Details";
             // 
-            // TimeLogDetails_LoginLabel
+            // SaveTimeLogChangesButton
             // 
-            this.TimeLogDetails_LoginLabel.AutoSize = true;
-            this.TimeLogDetails_LoginLabel.Location = new System.Drawing.Point(6, 21);
-            this.TimeLogDetails_LoginLabel.Name = "TimeLogDetails_LoginLabel";
-            this.TimeLogDetails_LoginLabel.Size = new System.Drawing.Size(40, 17);
-            this.TimeLogDetails_LoginLabel.TabIndex = 107;
-            this.TimeLogDetails_LoginLabel.Text = "Login";
-            // 
-            // TimeLogDetails_LoginDateTimePicker
-            // 
-            this.TimeLogDetails_LoginDateTimePicker.CustomFormat = "MMMM dd, yyyy hh:mm:ss tt";
-            this.TimeLogDetails_LoginDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TimeLogDetails_LoginDateTimePicker.Location = new System.Drawing.Point(9, 41);
-            this.TimeLogDetails_LoginDateTimePicker.Name = "TimeLogDetails_LoginDateTimePicker";
-            this.TimeLogDetails_LoginDateTimePicker.Size = new System.Drawing.Size(319, 25);
-            this.TimeLogDetails_LoginDateTimePicker.TabIndex = 108;
+            this.SaveTimeLogChangesButton.BackColor = System.Drawing.Color.Red;
+            this.SaveTimeLogChangesButton.FlatAppearance.BorderSize = 0;
+            this.SaveTimeLogChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveTimeLogChangesButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveTimeLogChangesButton.ForeColor = System.Drawing.Color.White;
+            this.SaveTimeLogChangesButton.Location = new System.Drawing.Point(203, 120);
+            this.SaveTimeLogChangesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.SaveTimeLogChangesButton.Name = "SaveTimeLogChangesButton";
+            this.SaveTimeLogChangesButton.Size = new System.Drawing.Size(125, 35);
+            this.SaveTimeLogChangesButton.TabIndex = 114;
+            this.SaveTimeLogChangesButton.Text = "SAVE CHANGES";
+            this.SaveTimeLogChangesButton.UseVisualStyleBackColor = false;
+            this.SaveTimeLogChangesButton.Click += new System.EventHandler(this.SaveTimeLogChangesButton_Click);
             // 
             // TimeLogDetails_LogoutDateTimePicker
             // 
@@ -343,21 +344,55 @@
             this.TimeLogDetails_LogoutLabel.TabIndex = 109;
             this.TimeLogDetails_LogoutLabel.Text = "Logout";
             // 
-            // SaveTimeLogChangesButton
+            // TimeLogDetails_LoginDateTimePicker
             // 
-            this.SaveTimeLogChangesButton.BackColor = System.Drawing.Color.Red;
-            this.SaveTimeLogChangesButton.FlatAppearance.BorderSize = 0;
-            this.SaveTimeLogChangesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveTimeLogChangesButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveTimeLogChangesButton.ForeColor = System.Drawing.Color.White;
-            this.SaveTimeLogChangesButton.Location = new System.Drawing.Point(203, 120);
-            this.SaveTimeLogChangesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.SaveTimeLogChangesButton.Name = "SaveTimeLogChangesButton";
-            this.SaveTimeLogChangesButton.Size = new System.Drawing.Size(125, 35);
-            this.SaveTimeLogChangesButton.TabIndex = 114;
-            this.SaveTimeLogChangesButton.Text = "SAVE CHANGES";
-            this.SaveTimeLogChangesButton.UseVisualStyleBackColor = false;
-            this.SaveTimeLogChangesButton.Click += new System.EventHandler(this.SaveTimeLogChangesButton_Click);
+            this.TimeLogDetails_LoginDateTimePicker.CustomFormat = "MMMM dd, yyyy hh:mm:ss tt";
+            this.TimeLogDetails_LoginDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimeLogDetails_LoginDateTimePicker.Location = new System.Drawing.Point(9, 41);
+            this.TimeLogDetails_LoginDateTimePicker.Name = "TimeLogDetails_LoginDateTimePicker";
+            this.TimeLogDetails_LoginDateTimePicker.Size = new System.Drawing.Size(319, 25);
+            this.TimeLogDetails_LoginDateTimePicker.TabIndex = 108;
+            // 
+            // TimeLogDetails_LoginLabel
+            // 
+            this.TimeLogDetails_LoginLabel.AutoSize = true;
+            this.TimeLogDetails_LoginLabel.Location = new System.Drawing.Point(6, 21);
+            this.TimeLogDetails_LoginLabel.Name = "TimeLogDetails_LoginLabel";
+            this.TimeLogDetails_LoginLabel.Size = new System.Drawing.Size(40, 17);
+            this.TimeLogDetails_LoginLabel.TabIndex = 107;
+            this.TimeLogDetails_LoginLabel.Text = "Login";
+            // 
+            // DeleteTimeLogButton
+            // 
+            this.DeleteTimeLogButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteTimeLogButton.FlatAppearance.BorderSize = 0;
+            this.DeleteTimeLogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteTimeLogButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteTimeLogButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteTimeLogButton.Location = new System.Drawing.Point(95, 120);
+            this.DeleteTimeLogButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DeleteTimeLogButton.Name = "DeleteTimeLogButton";
+            this.DeleteTimeLogButton.Size = new System.Drawing.Size(100, 35);
+            this.DeleteTimeLogButton.TabIndex = 115;
+            this.DeleteTimeLogButton.Text = "DELETE";
+            this.DeleteTimeLogButton.UseVisualStyleBackColor = false;
+            this.DeleteTimeLogButton.Click += new System.EventHandler(this.DeleteTimeLogButton_Click);
+            // 
+            // InsertTimeLogButton
+            // 
+            this.InsertTimeLogButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.InsertTimeLogButton.BackColor = System.Drawing.Color.Red;
+            this.InsertTimeLogButton.FlatAppearance.BorderSize = 0;
+            this.InsertTimeLogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InsertTimeLogButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsertTimeLogButton.ForeColor = System.Drawing.Color.White;
+            this.InsertTimeLogButton.Location = new System.Drawing.Point(1183, 109);
+            this.InsertTimeLogButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.InsertTimeLogButton.Name = "InsertTimeLogButton";
+            this.InsertTimeLogButton.Size = new System.Drawing.Size(150, 35);
+            this.InsertTimeLogButton.TabIndex = 116;
+            this.InsertTimeLogButton.Text = "INSERT TIME LOG";
+            this.InsertTimeLogButton.UseVisualStyleBackColor = false;
             // 
             // TimeLogViewForm
             // 
@@ -365,6 +400,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1530, 754);
+            this.Controls.Add(this.InsertTimeLogButton);
             this.Controls.Add(this.TimeLogDetailsGroupBox);
             this.Controls.Add(this.TimeLogDataGridView);
             this.Controls.Add(this.SearchButton);
@@ -415,5 +451,7 @@
         private System.Windows.Forms.DateTimePicker TimeLogDetails_LogoutDateTimePicker;
         private System.Windows.Forms.Label TimeLogDetails_LogoutLabel;
         private System.Windows.Forms.Button SaveTimeLogChangesButton;
+        private System.Windows.Forms.Button DeleteTimeLogButton;
+        private System.Windows.Forms.Button InsertTimeLogButton;
     }
 }

@@ -185,5 +185,18 @@ namespace Citicon.DataManager
 
             return timeLog;
         }
+
+        public static async Task<TimeLog> DeleteTimeLogAsync(TimeLog timeLog)
+        {
+            if (timeLog != null)
+            {
+                using (var process = new DeleteTimeLog(timeLog))
+                {
+                    timeLog = await process.ExecuteAsync();
+                }
+            }
+
+            return timeLog;
+        }
     }
 }
