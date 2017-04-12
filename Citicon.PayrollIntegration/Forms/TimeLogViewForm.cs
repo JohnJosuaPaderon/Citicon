@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -234,6 +235,17 @@ namespace Citicon.PayrollIntegration.Forms
             if (SelectedTimeLog != null)
             {
                 await DeleteSelectedTimeLogAsync(); 
+            }
+        }
+
+        private void InsertTimeLogButton_Click(object sender, EventArgs e)
+        {
+            if (EmployeeDataGridView.SelectedRows.Count == 1)
+            {
+                var employee = EmployeeDataGridView.SelectedRows[0].Cells[EmployeeColumn.Name].Value as Employee;
+                var form = new AddTimeLogDialog(employee);
+                form.ShowDialog();
+                form = null;
             }
         }
     }

@@ -67,6 +67,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<EmployeeLogin> GetEmployeeLoginAsync(Employee employee)
+        {
+            if (employee != null)
+            {
+                using (var process = new GetEmployeeLogin(employee))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<EmployeeLogin> GetEmployeeLoginByCode(uint loginCode)
         {
             var process = new GetEmployeeLoginByCode(loginCode);
@@ -191,6 +206,19 @@ namespace Citicon.DataManager
             if (timeLog != null)
             {
                 using (var process = new DeleteTimeLog(timeLog))
+                {
+                    timeLog = await process.ExecuteAsync();
+                }
+            }
+
+            return timeLog;
+        }
+
+        public static async Task<TimeLog> InsertTimeLogAsync(TimeLog timeLog)
+        {
+            if (timeLog != null)
+            {
+                using (var process = new InsertTimeLog(timeLog))
                 {
                     timeLog = await process.ExecuteAsync();
                 }

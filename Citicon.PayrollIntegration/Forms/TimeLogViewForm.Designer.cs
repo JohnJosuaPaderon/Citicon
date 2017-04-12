@@ -55,12 +55,12 @@
             this.TimeLog_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLog_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLogDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.DeleteTimeLogButton = new System.Windows.Forms.Button();
             this.SaveTimeLogChangesButton = new System.Windows.Forms.Button();
             this.TimeLogDetails_LogoutDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeLogDetails_LogoutLabel = new System.Windows.Forms.Label();
             this.TimeLogDetails_LoginDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeLogDetails_LoginLabel = new System.Windows.Forms.Label();
-            this.DeleteTimeLogButton = new System.Windows.Forms.Button();
             this.InsertTimeLogButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLogDataGridView)).BeginInit();
@@ -310,6 +310,22 @@
             this.TimeLogDetailsGroupBox.TabStop = false;
             this.TimeLogDetailsGroupBox.Text = "Time Log Details";
             // 
+            // DeleteTimeLogButton
+            // 
+            this.DeleteTimeLogButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteTimeLogButton.FlatAppearance.BorderSize = 0;
+            this.DeleteTimeLogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteTimeLogButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteTimeLogButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteTimeLogButton.Location = new System.Drawing.Point(95, 120);
+            this.DeleteTimeLogButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DeleteTimeLogButton.Name = "DeleteTimeLogButton";
+            this.DeleteTimeLogButton.Size = new System.Drawing.Size(100, 35);
+            this.DeleteTimeLogButton.TabIndex = 115;
+            this.DeleteTimeLogButton.Text = "DELETE";
+            this.DeleteTimeLogButton.UseVisualStyleBackColor = false;
+            this.DeleteTimeLogButton.Click += new System.EventHandler(this.DeleteTimeLogButton_Click);
+            // 
             // SaveTimeLogChangesButton
             // 
             this.SaveTimeLogChangesButton.BackColor = System.Drawing.Color.Red;
@@ -362,22 +378,6 @@
             this.TimeLogDetails_LoginLabel.TabIndex = 107;
             this.TimeLogDetails_LoginLabel.Text = "Login";
             // 
-            // DeleteTimeLogButton
-            // 
-            this.DeleteTimeLogButton.BackColor = System.Drawing.Color.Red;
-            this.DeleteTimeLogButton.FlatAppearance.BorderSize = 0;
-            this.DeleteTimeLogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteTimeLogButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteTimeLogButton.ForeColor = System.Drawing.Color.White;
-            this.DeleteTimeLogButton.Location = new System.Drawing.Point(95, 120);
-            this.DeleteTimeLogButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.DeleteTimeLogButton.Name = "DeleteTimeLogButton";
-            this.DeleteTimeLogButton.Size = new System.Drawing.Size(100, 35);
-            this.DeleteTimeLogButton.TabIndex = 115;
-            this.DeleteTimeLogButton.Text = "DELETE";
-            this.DeleteTimeLogButton.UseVisualStyleBackColor = false;
-            this.DeleteTimeLogButton.Click += new System.EventHandler(this.DeleteTimeLogButton_Click);
-            // 
             // InsertTimeLogButton
             // 
             this.InsertTimeLogButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -393,6 +393,7 @@
             this.InsertTimeLogButton.TabIndex = 116;
             this.InsertTimeLogButton.Text = "INSERT TIME LOG";
             this.InsertTimeLogButton.UseVisualStyleBackColor = false;
+            this.InsertTimeLogButton.Click += new System.EventHandler(this.InsertTimeLogButton_Click);
             // 
             // TimeLogViewForm
             // 

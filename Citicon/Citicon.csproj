@@ -86,6 +86,7 @@
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
+    <Compile Include="DataProcess\GetEmployeeLogin.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="DataProcess\GetDeliveryListByClient.cs" />
     <Compile Include="DataProcess\InsertQuotation.cs" />
     <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
+    <Compile Include="DataProcess\InsertTimeLog.cs" />
     <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\GetDepartmentById.cs" />
     <Compile Include="DataProcess\GetEmployeeAgent.cs" />
@@ -376,6 +378,12 @@
     <Compile Include="Forms\Dialogs\AddReviseQuotationDialog.Designer.cs">
       <DependentUpon>AddReviseQuotationDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\AddTimeLogDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddTimeLogDialog.Designer.cs">
+      <DependentUpon>AddTimeLogDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\DataDialogMode.cs" />
     <Compile Include="Forms\ProjectDesignManagementForm.cs">
       <SubType>Form</SubType>
@@ -444,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddReviseQuotationDialog.resx">
       <DependentUpon>AddReviseQuotationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddTimeLogDialog.resx">
+      <DependentUpon>AddTimeLogDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectDesignManagementForm.resx">
       <DependentUpon>ProjectDesignManagementForm.cs</DependentUpon>
