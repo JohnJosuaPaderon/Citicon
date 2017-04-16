@@ -50,8 +50,9 @@
             this.HolidayDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.HolidayDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.HolidayDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.HolidayDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.HolidayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.HolidayDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.HolidayDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -92,7 +93,7 @@
             this.HolidayDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.HolidayDataGridView.RowTemplate.Height = 40;
             this.HolidayDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.HolidayDataGridView.Size = new System.Drawing.Size(470, 601);
+            this.HolidayDataGridView.Size = new System.Drawing.Size(538, 601);
             this.HolidayDataGridView.TabIndex = 106;
             // 
             // HolidayColumn
@@ -143,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(858, 764);
+            this.ClientSize = new System.Drawing.Size(562, 764);
             this.Controls.Add(this.HolidayFilterComboBox);
             this.Controls.Add(this.HolidayDataGridView);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,7 +154,6 @@
             this.Name = "HolidayManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Holidays";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.HolidayManagementForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.HolidayDataGridView)).EndInit();
             this.ResumeLayout(false);
