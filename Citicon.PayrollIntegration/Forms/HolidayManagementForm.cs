@@ -34,6 +34,8 @@ namespace Citicon.PayrollIntegration.Forms
 
         private async Task GetHolidayListAsync()
         {
+            HolidayDataGridView.Rows.Clear();
+
             if (HolidayFilterComboBox.SelectedItem is HolidaySearchFilter searchFilter)
             {
                 try
@@ -54,7 +56,7 @@ namespace Citicon.PayrollIntegration.Forms
                 }
             }
         }
-
+        
         private void AddToUI(Holiday holiday)
         {
             if (holiday != null)

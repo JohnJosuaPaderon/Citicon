@@ -32,7 +32,7 @@ namespace Citicon.DataProcess
         {
             return new HolidayType()
             {
-                Id = reader.GetUInt64("Id"),
+                Id = HolidayTypeId,
                 Description = reader.GetString("Description")
             };
         }
