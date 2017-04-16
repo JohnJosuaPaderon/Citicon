@@ -59,7 +59,7 @@
             // 
             // LoginDateTimePicker
             // 
-            this.LoginDateTimePicker.CustomFormat = "MMMM dd, yyyy hh:mm:ss tt";
+            this.LoginDateTimePicker.CustomFormat = "MMMM dd, yyyy HH:mm:ss";
             this.LoginDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.LoginDateTimePicker.Location = new System.Drawing.Point(15, 97);
             this.LoginDateTimePicker.Name = "LoginDateTimePicker";
@@ -68,7 +68,7 @@
             // 
             // LogoutDateTimePicker
             // 
-            this.LogoutDateTimePicker.CustomFormat = "MMMM dd, yyyy hh:mm:ss tt";
+            this.LogoutDateTimePicker.CustomFormat = "MMMM dd, yyyy HH:mm:ss";
             this.LogoutDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.LogoutDateTimePicker.Location = new System.Drawing.Point(15, 155);
             this.LogoutDateTimePicker.Name = "LogoutDateTimePicker";

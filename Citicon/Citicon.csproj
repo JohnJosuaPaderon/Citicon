@@ -76,6 +76,8 @@
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
+    <Compile Include="DataManager\HolidayManager.cs" />
+    <Compile Include="DataManager\HolidayTypeManager.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
@@ -88,6 +90,9 @@
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
+    <Compile Include="DataProcess\GetHolidayList.cs" />
+    <Compile Include="DataProcess\GetHolidayTypeById.cs" />
+    <Compile Include="DataProcess\GetHolidayTypeList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
@@ -273,6 +278,9 @@
     <Compile Include="Data\EmployeePayroll.cs" />
     <Compile Include="Data\ExcessPipeCharge.cs" />
     <Compile Include="Data\Expense.cs" />
+    <Compile Include="Data\Holiday.cs" />
+    <Compile Include="Data\HolidaySearchFilter.cs" />
+    <Compile Include="Data\HolidayType.cs" />
     <Compile Include="Data\Item.cs" />
     <Compile Include="Data\JobPosition.cs" />
     <Compile Include="Data\MeasurementUnit.cs" />

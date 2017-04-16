@@ -49,11 +49,6 @@
             this.BranchComboBox = new System.Windows.Forms.ComboBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.TimeLogDataGridView = new System.Windows.Forms.DataGridView();
-            this.TimeLogColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_LoginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_LogoutColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLogDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.DeleteTimeLogButton = new System.Windows.Forms.Button();
             this.SaveTimeLogChangesButton = new System.Windows.Forms.Button();
@@ -62,6 +57,11 @@
             this.TimeLogDetails_LoginDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeLogDetails_LoginLabel = new System.Windows.Forms.Label();
             this.InsertTimeLogButton = new System.Windows.Forms.Button();
+            this.TimeLogColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_LoginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_LogoutColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLogDataGridView)).BeginInit();
             this.TimeLogDetailsGroupBox.SuspendLayout();
@@ -250,50 +250,6 @@
             this.TimeLogDataGridView.TabIndex = 114;
             this.TimeLogDataGridView.SelectionChanged += new System.EventHandler(this.TimeLogDataGridView_SelectionChanged);
             // 
-            // TimeLogColumn
-            // 
-            this.TimeLogColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TimeLogColumn.HeaderText = "Time Log";
-            this.TimeLogColumn.MinimumWidth = 100;
-            this.TimeLogColumn.Name = "TimeLogColumn";
-            this.TimeLogColumn.ReadOnly = true;
-            this.TimeLogColumn.Visible = false;
-            // 
-            // TimeLog_LoginColumn
-            // 
-            this.TimeLog_LoginColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Format = "MMMM dd, yyyy hh:mm:ss tt";
-            this.TimeLog_LoginColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.TimeLog_LoginColumn.HeaderText = "LOGIN";
-            this.TimeLog_LoginColumn.Name = "TimeLog_LoginColumn";
-            this.TimeLog_LoginColumn.ReadOnly = true;
-            this.TimeLog_LoginColumn.Width = 70;
-            // 
-            // TimeLog_LogoutColumn
-            // 
-            this.TimeLog_LogoutColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Format = "MMMM dd, yyyy hh:mm:ss tt";
-            this.TimeLog_LogoutColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.TimeLog_LogoutColumn.HeaderText = "LOGOUT";
-            this.TimeLog_LogoutColumn.Name = "TimeLog_LogoutColumn";
-            this.TimeLog_LogoutColumn.ReadOnly = true;
-            this.TimeLog_LogoutColumn.Width = 83;
-            // 
-            // TimeLog_TypeColumn
-            // 
-            this.TimeLog_TypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TimeLog_TypeColumn.HeaderText = "TYPE";
-            this.TimeLog_TypeColumn.Name = "TimeLog_TypeColumn";
-            this.TimeLog_TypeColumn.ReadOnly = true;
-            this.TimeLog_TypeColumn.Width = 60;
-            // 
-            // TimeLog_ExtraColumn
-            // 
-            this.TimeLog_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TimeLog_ExtraColumn.HeaderText = "";
-            this.TimeLog_ExtraColumn.Name = "TimeLog_ExtraColumn";
-            this.TimeLog_ExtraColumn.ReadOnly = true;
-            // 
             // TimeLogDetailsGroupBox
             // 
             this.TimeLogDetailsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -344,7 +300,7 @@
             // 
             // TimeLogDetails_LogoutDateTimePicker
             // 
-            this.TimeLogDetails_LogoutDateTimePicker.CustomFormat = "MMMM dd, yyyy hh:mm:ss tt";
+            this.TimeLogDetails_LogoutDateTimePicker.CustomFormat = "MMMM dd, yyyy HH:mm:ss";
             this.TimeLogDetails_LogoutDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimeLogDetails_LogoutDateTimePicker.Location = new System.Drawing.Point(9, 89);
             this.TimeLogDetails_LogoutDateTimePicker.Name = "TimeLogDetails_LogoutDateTimePicker";
@@ -362,7 +318,7 @@
             // 
             // TimeLogDetails_LoginDateTimePicker
             // 
-            this.TimeLogDetails_LoginDateTimePicker.CustomFormat = "MMMM dd, yyyy hh:mm:ss tt";
+            this.TimeLogDetails_LoginDateTimePicker.CustomFormat = "MMMM dd, yyyy HH:mm:ss";
             this.TimeLogDetails_LoginDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimeLogDetails_LoginDateTimePicker.Location = new System.Drawing.Point(9, 41);
             this.TimeLogDetails_LoginDateTimePicker.Name = "TimeLogDetails_LoginDateTimePicker";
@@ -394,6 +350,50 @@
             this.InsertTimeLogButton.Text = "INSERT TIME LOG";
             this.InsertTimeLogButton.UseVisualStyleBackColor = false;
             this.InsertTimeLogButton.Click += new System.EventHandler(this.InsertTimeLogButton_Click);
+            // 
+            // TimeLogColumn
+            // 
+            this.TimeLogColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TimeLogColumn.HeaderText = "Time Log";
+            this.TimeLogColumn.MinimumWidth = 100;
+            this.TimeLogColumn.Name = "TimeLogColumn";
+            this.TimeLogColumn.ReadOnly = true;
+            this.TimeLogColumn.Visible = false;
+            // 
+            // TimeLog_LoginColumn
+            // 
+            this.TimeLog_LoginColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle7.Format = "MMMM dd, yyyy HH:mm:ss";
+            this.TimeLog_LoginColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.TimeLog_LoginColumn.HeaderText = "LOGIN";
+            this.TimeLog_LoginColumn.Name = "TimeLog_LoginColumn";
+            this.TimeLog_LoginColumn.ReadOnly = true;
+            this.TimeLog_LoginColumn.Width = 70;
+            // 
+            // TimeLog_LogoutColumn
+            // 
+            this.TimeLog_LogoutColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle8.Format = "MMMM dd, yyyy HH:mm:ss";
+            this.TimeLog_LogoutColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.TimeLog_LogoutColumn.HeaderText = "LOGOUT";
+            this.TimeLog_LogoutColumn.Name = "TimeLog_LogoutColumn";
+            this.TimeLog_LogoutColumn.ReadOnly = true;
+            this.TimeLog_LogoutColumn.Width = 83;
+            // 
+            // TimeLog_TypeColumn
+            // 
+            this.TimeLog_TypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TimeLog_TypeColumn.HeaderText = "TYPE";
+            this.TimeLog_TypeColumn.Name = "TimeLog_TypeColumn";
+            this.TimeLog_TypeColumn.ReadOnly = true;
+            this.TimeLog_TypeColumn.Width = 60;
+            // 
+            // TimeLog_ExtraColumn
+            // 
+            this.TimeLog_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TimeLog_ExtraColumn.HeaderText = "";
+            this.TimeLog_ExtraColumn.Name = "TimeLog_ExtraColumn";
+            this.TimeLog_ExtraColumn.ReadOnly = true;
             // 
             // TimeLogViewForm
             // 
@@ -441,11 +441,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeColumn;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.DataGridView TimeLogDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLogColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_LoginColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_LogoutColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_TypeColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_ExtraColumn;
         private System.Windows.Forms.GroupBox TimeLogDetailsGroupBox;
         private System.Windows.Forms.Label TimeLogDetails_LoginLabel;
         private System.Windows.Forms.DateTimePicker TimeLogDetails_LoginDateTimePicker;
@@ -454,5 +449,10 @@
         private System.Windows.Forms.Button SaveTimeLogChangesButton;
         private System.Windows.Forms.Button DeleteTimeLogButton;
         private System.Windows.Forms.Button InsertTimeLogButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLogColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_LoginColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_LogoutColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_TypeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_ExtraColumn;
     }
 }
