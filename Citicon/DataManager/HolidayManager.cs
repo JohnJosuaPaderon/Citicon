@@ -16,5 +16,20 @@ namespace Citicon.DataManager
                 return process.ExecuteAsync();
             }
         }
+
+        public Task<Holiday> InsertAsync(Holiday holiday)
+        {
+            if (holiday != null)
+            {
+                using (var process = new InsertHoliday(holiday))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

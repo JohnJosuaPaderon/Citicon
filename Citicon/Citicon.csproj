@@ -99,6 +99,7 @@
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
     <Compile Include="DataProcess\GetTimeLogListByEmployee.cs" />
+    <Compile Include="DataProcess\InsertHoliday.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
     <Compile Include="DataManager\MeasurementUnitManager.cs" />
