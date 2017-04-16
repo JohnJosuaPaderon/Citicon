@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -70,6 +71,62 @@ namespace Citicon.PayrollIntegration.Forms
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = holiday.Type });
                 HolidayDataGridView.Rows.Add(row);
             }
+        }
+
+        private async Task DeleteAsync()
+        {
+            if (HolidayDataGridView.SelectedRows.Count == 1)
+            {
+                var row = HolidayDataGridView.SelectedRows[0];
+                var dialogResult = MessageBox.Show("Do you really want to delete the selected holiday?", Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        var holiday = await HolidayManager.DeleteAsync(row.Cells[HolidayColumn.Name].Value as Holiday);
+
+                        if (holiday != null)
+                        {
+                            HolidayDataGridView.Rows.Remove(row);
+                            MessageBox.Show("Successfully deleted.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    } 
+                }
+            }
+        }
+
+        private void CloseFormButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private async void AddNewButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new AddEditHolidayDialog();
+            dialog.ShowDialog();
+            dialog = null;
+            await GetHolidayListAsync();
+        }
+
+        private async void EditButton_Click(object sender, EventArgs e)
+        {
+            if (HolidayDataGridView.SelectedRows.Count == 1)
+            {
+                var dialog = new AddEditHolidayDialog(HolidayDataGridView.SelectedRows[0].Cells[HolidayColumn.Name].Value as Holiday);
+                dialog.ShowDialog();
+                dialog = null;
+                await GetHolidayListAsync();
+            }
+        }
+
+        private async void DeleteButton_Click(object sender, EventArgs e)
+        {
+            await DeleteAsync();
         }
     }
 }

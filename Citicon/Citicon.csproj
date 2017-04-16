@@ -78,6 +78,7 @@
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataManager\HolidayManager.cs" />
     <Compile Include="DataManager\HolidayTypeManager.cs" />
+    <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
@@ -193,6 +194,7 @@
     <Compile Include="DataProcess\InsertPurchaseOrderTransaction.cs" />
     <Compile Include="DataProcess\PurchaseOrderNumberExists.cs" />
     <Compile Include="DataProcess\UpdateClient.cs" />
+    <Compile Include="DataProcess\UpdateHoliday.cs" />
     <Compile Include="DataProcess\UpdateProject.cs" />
     <Compile Include="DataProcess\UpdateProjectDesign.cs" />
     <Compile Include="DataProcess\UpdateQuotation.cs" />
@@ -369,6 +371,12 @@
     <Compile Include="Forms\Dialogs\AddEditClientDialog.Designer.cs">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\AddEditHolidayDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditHolidayDialog.Designer.cs">
+      <DependentUpon>AddEditHolidayDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\AddEditProjectDesignDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -452,6 +460,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddEditHolidayDialog.resx">
+      <DependentUpon>AddEditHolidayDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditProjectDesignDialog.resx">
       <DependentUpon>AddEditProjectDesignDialog.cs</DependentUpon>

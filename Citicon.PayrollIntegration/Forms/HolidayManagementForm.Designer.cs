@@ -40,6 +40,10 @@
             this.Holiday_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Holiday_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HolidayFilterComboBox = new System.Windows.Forms.ComboBox();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.AddNewButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.CloseFormButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.HolidayDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +97,7 @@
             this.HolidayDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.HolidayDataGridView.RowTemplate.Height = 40;
             this.HolidayDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.HolidayDataGridView.Size = new System.Drawing.Size(538, 601);
+            this.HolidayDataGridView.Size = new System.Drawing.Size(538, 668);
             this.HolidayDataGridView.TabIndex = 106;
             // 
             // HolidayColumn
@@ -139,12 +143,83 @@
             this.HolidayFilterComboBox.TabIndex = 107;
             this.HolidayFilterComboBox.SelectedIndexChanged += new System.EventHandler(this.HolidayFilterComboBox_SelectedIndexChanged);
             // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.BackColor = System.Drawing.Color.Red;
+            this.EditButton.FlatAppearance.BorderSize = 0;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditButton.ForeColor = System.Drawing.Color.White;
+            this.EditButton.Location = new System.Drawing.Point(159, 717);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(125, 35);
+            this.EditButton.TabIndex = 123;
+            this.EditButton.Text = "EDIT SELECTED";
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // AddNewButton
+            // 
+            this.AddNewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddNewButton.BackColor = System.Drawing.Color.Red;
+            this.AddNewButton.FlatAppearance.BorderSize = 0;
+            this.AddNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNewButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewButton.ForeColor = System.Drawing.Color.White;
+            this.AddNewButton.Location = new System.Drawing.Point(51, 717);
+            this.AddNewButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.AddNewButton.Name = "AddNewButton";
+            this.AddNewButton.Size = new System.Drawing.Size(100, 35);
+            this.AddNewButton.TabIndex = 122;
+            this.AddNewButton.Text = "ADD NEW";
+            this.AddNewButton.UseVisualStyleBackColor = false;
+            this.AddNewButton.Click += new System.EventHandler(this.AddNewButton_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteButton.FlatAppearance.BorderSize = 0;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
+            this.DeleteButton.Location = new System.Drawing.Point(292, 717);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(150, 35);
+            this.DeleteButton.TabIndex = 124;
+            this.DeleteButton.Text = "DELETE SELECTED";
+            this.DeleteButton.UseVisualStyleBackColor = false;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // CloseFormButton
+            // 
+            this.CloseFormButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseFormButton.BackColor = System.Drawing.Color.White;
+            this.CloseFormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CloseFormButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseFormButton.ForeColor = System.Drawing.Color.Red;
+            this.CloseFormButton.Location = new System.Drawing.Point(450, 717);
+            this.CloseFormButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.CloseFormButton.Name = "CloseFormButton";
+            this.CloseFormButton.Size = new System.Drawing.Size(100, 35);
+            this.CloseFormButton.TabIndex = 125;
+            this.CloseFormButton.Text = "CLOSE";
+            this.CloseFormButton.UseVisualStyleBackColor = false;
+            this.CloseFormButton.Click += new System.EventHandler(this.CloseFormButton_Click);
+            // 
             // HolidayManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(562, 764);
+            this.Controls.Add(this.CloseFormButton);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.HolidayFilterComboBox);
             this.Controls.Add(this.HolidayDataGridView);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,5 +243,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Holiday_TypeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Holiday_ExtraColumn;
         private System.Windows.Forms.ComboBox HolidayFilterComboBox;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button AddNewButton;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button CloseFormButton;
     }
 }

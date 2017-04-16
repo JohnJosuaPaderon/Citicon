@@ -31,5 +31,35 @@ namespace Citicon.DataManager
                 return null;
             }
         }
+
+        public Task<Holiday> DeleteAsync(Holiday holiday)
+        {
+            if (holiday != null)
+            {
+                using (var process = new DeleteHoliday(holiday))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public Task<Holiday> UpdateAsync(Holiday holiday)
+        {
+            if (holiday != null)
+            {
+                using (var process = new UpdateHoliday(holiday))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
