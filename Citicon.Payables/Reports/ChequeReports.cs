@@ -25,7 +25,12 @@ namespace Citicon.Payables.Reports
             try
             {
                 dgvCheques.Rows.Clear();
-                var summaryItemIEnumerable = await ChequeSummaryItemManager.GetFilterIEnumerableAsync(ReportFilter.FilterByRangeDate, ReportFilter.RangeDate, ReportFilter.FilterBySupplier, ReportFilter.Supplier, ReportFilter.FilterByBranch, ReportFilter.Branch, ReportFilter.FilterByCompany, ReportFilter.Company);
+                var summaryItemIEnumerable = await ChequeSummaryItemManager.GetFilterIEnumerableAsync(
+                    ReportFilter.FilterByRangeDate, ReportFilter.RangeDate,
+                    ReportFilter.FilterBySupplier, ReportFilter.Supplier,
+                    ReportFilter.FilterByBranch, ReportFilter.Branch,
+                    ReportFilter.FilterByCompany, ReportFilter.Company,
+                    ReportFilter.FilterByTransactionDate, ReportFilter.TransactionDate);
 
                 if (summaryItemIEnumerable != null)
                 {
@@ -40,6 +45,7 @@ namespace Citicon.Payables.Reports
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.ChequeNumbber });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.ChequeDate });
+                        row.Cells.Add(new DataGridViewTextBoxCell { Value = item.TransactionDate });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Supplier });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.BankAccount?.Bank });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.BankAccount });

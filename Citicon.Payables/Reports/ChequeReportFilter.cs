@@ -22,6 +22,7 @@ namespace Citicon.Payables.Reports
         private bool _FilterBySupplier;
         private bool _FilterByBranch;
         private bool _FilterByCompany;
+        private bool _FilterByTransactionDate;
 
         public bool FilterByRangeDate
         {
@@ -67,7 +68,7 @@ namespace Citicon.Payables.Reports
         public bool FilterByCompany
         {
             get { return _FilterByCompany; }
-            set
+            private set
             {
                 if (_FilterByCompany != value)
                 {
@@ -78,7 +79,22 @@ namespace Citicon.Payables.Reports
             }
         }
 
+        public bool FilterByTransactionDate
+        {
+            get { return _FilterByTransactionDate; }
+            private set
+            {
+                if (_FilterByTransactionDate != value)
+                {
+                    _FilterByTransactionDate = value;
+                    pnlTransactionDate.Enabled = value;
+                    OnHasFiltered();
+                }
+            }
+        }
+
         public DateTimeRange RangeDate { get; private set; }
+        public DateTimeRange TransactionDate { get; private set; }
         public Supplier Supplier { get; private set; }
         public Branch Branch { get; private set; }
         public Company Company { get; private set; }
@@ -155,7 +171,7 @@ namespace Citicon.Payables.Reports
 
         private void OnHasFiltered()
         {
-            var filtered = ckbxRangeDate.Checked || ckbxSupplier.Checked || FilterByBranchCheckBox.Checked || FilterByCompanyCheckBox.Checked;
+            var filtered = ckbxRangeDate.Checked || ckbxSupplier.Checked || FilterByBranchCheckBox.Checked || FilterByCompanyCheckBox.Checked || FilterByChequeTransactionDateCheckBox.Checked;
             HasFiltered?.Invoke(filtered);
         }
 
@@ -177,6 +193,21 @@ namespace Citicon.Payables.Reports
         private void FilterByCompanyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Company = FilterByCompanyComboBox.SelectedItem as Company;
+        }
+
+        private void FilterByChequeTransactionDate_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterByTransactionDate = FilterByChequeTransactionDateCheckBox.Checked;
+        }
+
+        private void dtpTransactionDate_Start_ValueChanged(object sender, EventArgs e)
+        {
+            TransactionDate = new DateTimeRange(dtpTransactionDate_Start.Value, dtpTransactionDate_End.Value);
+        }
+
+        private void dtpTransactionDate_End_ValueChanged(object sender, EventArgs e)
+        {
+            TransactionDate = new DateTimeRange(dtpTransactionDate_Start.Value, dtpTransactionDate_End.Value);
         }
     }
 }

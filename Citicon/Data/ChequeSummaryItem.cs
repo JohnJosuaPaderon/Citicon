@@ -9,5 +9,6 @@ namespace Citicon.Data
         public Supplier Supplier { get; set; }
         public decimal TotalAmount { get; set; }
         public BankAccount BankAccount { get; set; }
+        public DateTime TransactionDate { get; set; }
     }
 }

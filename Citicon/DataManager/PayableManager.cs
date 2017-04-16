@@ -71,6 +71,7 @@ namespace Citicon.DataManager
                 query.AddParameter("@_CreatedBy", User.CurrentUser?.DisplayName);
                 query.AddParameter("@_TransactionDate", data.TransactionDate);
                 query.AddParameter("@_AccountType", data.AccountType);
+                query.AddParameter("@_ChequeTransactionDate", data.ChequeTransactionDate);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
                 if (query.AffectedRows == 1)
@@ -635,6 +636,7 @@ namespace Citicon.DataManager
                 query.AddParameter("@_ModifiedBy", User.CurrentUser?.DisplayName);
                 query.AddParameter("@_TransactionDate", data.TransactionDate);
                 query.AddParameter("@_ChequeDate", data.ChequeDate);
+                query.AddParameter("@_ChequeTransactionDate", data.ChequeTransactionDate);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
                 if (query.AffectedRows == 1) OnUpdated(data);

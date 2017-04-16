@@ -9,7 +9,12 @@ namespace Citicon.DataProcess
 {
     internal sealed class GetChequeSummaryItemIEnumerable : DataProcessBase
     {
-        public GetChequeSummaryItemIEnumerable(bool filterByRangeDate, DateTimeRange rangeDate, bool filterBySupplier, Supplier supplier, bool filterByBranch, Branch branch, bool filterByCompany, Company company)
+        public GetChequeSummaryItemIEnumerable(
+            bool filterByRangeDate, DateTimeRange rangeDate,
+            bool filterBySupplier, Supplier supplier, 
+            bool filterByBranch, Branch branch, 
+            bool filterByCompany, Company company, 
+            bool filterByTransactionDateRange, DateTimeRange transactionDateRange)
         {
             FilterByRangeDate = filterByRangeDate;
             FilterBySupplier = filterBySupplier;
@@ -19,6 +24,8 @@ namespace Citicon.DataProcess
             Branch = branch;
             FilterByCompany = filterByCompany;
             Company = company;
+            FilterByTransactionDateRange = filterByTransactionDateRange;
+            TransactionDateRange = transactionDateRange;
             SupplierManager = new SupplierManager();
             BankAccountManager = new BankAccountManager();
         }
@@ -31,6 +38,8 @@ namespace Citicon.DataProcess
         private Branch Branch;
         private bool FilterByCompany;
         private Company Company;
+        private bool FilterByTransactionDateRange;
+        private DateTimeRange TransactionDateRange;
         private SupplierManager SupplierManager;
         private BankAccountManager BankAccountManager;
 
@@ -46,8 +55,23 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_BranchId", Branch?.Id);
             command.Parameters.AddWithValue("@_FilterByCompanyId", FilterByCompany);
             command.Parameters.AddWithValue("@_CompanyId", Company?.Id);
+            command.Parameters.AddWithValue("@_FilterByTransactionDateRange", FilterByTransactionDateRange);
+            command.Parameters.AddWithValue("@_TransactionDateRangeStart", TransactionDateRange.Start);
+            command.Parameters.AddWithValue("@_TransactionDateRangeEnd", TransactionDateRange.End);
 
             return command;
+        }
+
+        public override void Dispose()
+        {
+            RangeDate = null;
+            Supplier = null;
+            Branch = null;
+            Company = null;
+            TransactionDateRange = null;
+            SupplierManager = null;
+            BankAccountManager = null;
+            base.Dispose();
         }
 
         private async Task<ChequeSummaryItem> FromReaderAsync(DbDataReader reader)
@@ -58,7 +82,8 @@ namespace Citicon.DataProcess
                 ChequeNumbber = reader.GetString("ChequeNumber"),
                 Supplier = await SupplierManager.GetByIdAsync(reader.GetUInt64("SupplierId")),
                 TotalAmount = reader.GetDecimal("TotalAmount"),
-                BankAccount = await BankAccountManager.GetByIdAsync(reader.GetUInt64("BankAccountId"))
+                BankAccount = await BankAccountManager.GetByIdAsync(reader.GetUInt64("BankAccountId")),
+                TransactionDate = reader.GetDateTime("TransactionDate")
             };
         }
 
