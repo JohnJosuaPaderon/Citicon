@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Extensions;
 using Citicon.Forms.Dialogs;
 using System;
 using System.Linq;
@@ -146,6 +147,7 @@ namespace Citicon.PayrollIntegration.Forms
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = timeLog.Login });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = timeLog.Logout });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = timeLog.Type });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = timeLog.Difference?.ToWord() });
 
                 TimeLogDataGridView.Rows.Add(row);
             }

@@ -58,16 +58,19 @@
             this.lblTransactionsTransactionDateStart = new System.Windows.Forms.Label();
             this.dtpTransactionsTransactionDateStart = new System.Windows.Forms.DateTimePicker();
             this.tpReports_Cheques = new System.Windows.Forms.TabPage();
-            this.ChequeReports = new Citicon.Payables.Reports.ChequeReports();
             this.tpReports_ChequeVoucherDetailsView = new System.Windows.Forms.TabPage();
-            this.chequeVoucherDetailsView1 = new Citicon.Payables.Reports.ChequeVoucherDetailsView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnExportCheque = new System.Windows.Forms.Button();
+            this.ChequeDailyReportTabPage = new System.Windows.Forms.TabPage();
+            this.ChequeReports = new Citicon.Payables.Reports.ChequeReports();
+            this.chequeVoucherDetailsView1 = new Citicon.Payables.Reports.ChequeVoucherDetailsView();
+            this.DailyChequeReport = new Citicon.Forms.Controls.DailyChequeReport();
             this.tcReports.SuspendLayout();
             this.tpTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
             this.tpReports_Cheques.SuspendLayout();
             this.tpReports_ChequeVoucherDetailsView.SuspendLayout();
+            this.ChequeDailyReportTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblChequeVoucher
@@ -78,7 +81,7 @@
             this.lblChequeVoucher.Location = new System.Drawing.Point(0, 0);
             this.lblChequeVoucher.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChequeVoucher.Name = "lblChequeVoucher";
-            this.lblChequeVoucher.Size = new System.Drawing.Size(1312, 84);
+            this.lblChequeVoucher.Size = new System.Drawing.Size(1192, 84);
             this.lblChequeVoucher.TabIndex = 15;
             this.lblChequeVoucher.Text = "Reports";
             this.lblChequeVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -89,6 +92,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tcReports.Controls.Add(this.tpTransactions);
+            this.tcReports.Controls.Add(this.ChequeDailyReportTabPage);
             this.tcReports.Controls.Add(this.tpReports_Cheques);
             this.tcReports.Controls.Add(this.tpReports_ChequeVoucherDetailsView);
             this.tcReports.Location = new System.Drawing.Point(10, 87);
@@ -96,7 +100,7 @@
             this.tcReports.Name = "tcReports";
             this.tcReports.Padding = new System.Drawing.Point(20, 10);
             this.tcReports.SelectedIndex = 0;
-            this.tcReports.Size = new System.Drawing.Size(1292, 482);
+            this.tcReports.Size = new System.Drawing.Size(1172, 618);
             this.tcReports.TabIndex = 16;
             // 
             // tpTransactions
@@ -290,7 +294,7 @@
             this.dgvTransactions.ReadOnly = true;
             this.dgvTransactions.RowHeadersVisible = false;
             this.dgvTransactions.RowTemplate.Height = 30;
-            this.dgvTransactions.Size = new System.Drawing.Size(1262, 254);
+            this.dgvTransactions.Size = new System.Drawing.Size(1262, 246);
             this.dgvTransactions.TabIndex = 81;
             // 
             // colTransactionsPayable
@@ -433,21 +437,6 @@
             this.tpReports_Cheques.Text = "Cheques";
             this.tpReports_Cheques.UseVisualStyleBackColor = true;
             // 
-            // ChequeReports
-            // 
-            this.ChequeReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ChequeReports.BackColor = System.Drawing.Color.White;
-            this.ChequeReports.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChequeReports.ForeColor = System.Drawing.Color.Red;
-            this.ChequeReports.Location = new System.Drawing.Point(7, 8);
-            this.ChequeReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ChequeReports.Name = "ChequeReports";
-            this.ChequeReports.Size = new System.Drawing.Size(1270, 418);
-            this.ChequeReports.TabIndex = 0;
-            this.ChequeReports.Load += new System.EventHandler(this.ChequeReports_Load);
-            // 
             // tpReports_ChequeVoucherDetailsView
             // 
             this.tpReports_ChequeVoucherDetailsView.Controls.Add(this.chequeVoucherDetailsView1);
@@ -459,22 +448,13 @@
             this.tpReports_ChequeVoucherDetailsView.Text = "Cheque Voucher Details";
             this.tpReports_ChequeVoucherDetailsView.UseVisualStyleBackColor = true;
             // 
-            // chequeVoucherDetailsView1
-            // 
-            this.chequeVoucherDetailsView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chequeVoucherDetailsView1.Location = new System.Drawing.Point(3, 3);
-            this.chequeVoucherDetailsView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.chequeVoucherDetailsView1.Name = "chequeVoucherDetailsView1";
-            this.chequeVoucherDetailsView1.Size = new System.Drawing.Size(1278, 428);
-            this.chequeVoucherDetailsView1.TabIndex = 0;
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(1202, 575);
+            this.btnClose.Location = new System.Drawing.Point(1082, 711);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 50);
@@ -490,7 +470,7 @@
             this.btnExportCheque.FlatAppearance.BorderSize = 0;
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
-            this.btnExportCheque.Location = new System.Drawing.Point(1048, 575);
+            this.btnExportCheque.Location = new System.Drawing.Point(928, 711);
             this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnExportCheque.Name = "btnExportCheque";
             this.btnExportCheque.Size = new System.Drawing.Size(150, 50);
@@ -498,12 +478,63 @@
             this.btnExportCheque.Text = "&Print Report";
             this.btnExportCheque.UseVisualStyleBackColor = false;
             // 
+            // ChequeDailyReportTabPage
+            // 
+            this.ChequeDailyReportTabPage.Controls.Add(this.DailyChequeReport);
+            this.ChequeDailyReportTabPage.Location = new System.Drawing.Point(4, 44);
+            this.ChequeDailyReportTabPage.Name = "ChequeDailyReportTabPage";
+            this.ChequeDailyReportTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ChequeDailyReportTabPage.Size = new System.Drawing.Size(1164, 570);
+            this.ChequeDailyReportTabPage.TabIndex = 3;
+            this.ChequeDailyReportTabPage.Text = "Cheque Daily Report";
+            this.ChequeDailyReportTabPage.UseVisualStyleBackColor = true;
+            // 
+            // ChequeReports
+            // 
+            this.ChequeReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChequeReports.BackColor = System.Drawing.Color.White;
+            this.ChequeReports.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChequeReports.ForeColor = System.Drawing.Color.Red;
+            this.ChequeReports.Location = new System.Drawing.Point(7, 8);
+            this.ChequeReports.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ChequeReports.Name = "ChequeReports";
+            this.ChequeReports.Size = new System.Drawing.Size(1270, 418);
+            this.ChequeReports.TabIndex = 0;
+            this.ChequeReports.Load += new System.EventHandler(this.ChequeReports_Load);
+            // 
+            // chequeVoucherDetailsView1
+            // 
+            this.chequeVoucherDetailsView1.BackColor = System.Drawing.Color.White;
+            this.chequeVoucherDetailsView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chequeVoucherDetailsView1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chequeVoucherDetailsView1.Location = new System.Drawing.Point(3, 3);
+            this.chequeVoucherDetailsView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chequeVoucherDetailsView1.Name = "chequeVoucherDetailsView1";
+            this.chequeVoucherDetailsView1.Size = new System.Drawing.Size(1278, 436);
+            this.chequeVoucherDetailsView1.TabIndex = 0;
+            // 
+            // DailyChequeReport
+            // 
+            this.DailyChequeReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DailyChequeReport.BackColor = System.Drawing.Color.White;
+            this.DailyChequeReport.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DailyChequeReport.ForeColor = System.Drawing.Color.Red;
+            this.DailyChequeReport.Location = new System.Drawing.Point(6, 7);
+            this.DailyChequeReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DailyChequeReport.Name = "DailyChequeReport";
+            this.DailyChequeReport.Size = new System.Drawing.Size(1152, 556);
+            this.DailyChequeReport.TabIndex = 0;
+            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1312, 637);
+            this.ClientSize = new System.Drawing.Size(1192, 773);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnExportCheque);
             this.Controls.Add(this.tcReports);
@@ -524,6 +555,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
             this.tpReports_Cheques.ResumeLayout(false);
             this.tpReports_ChequeVoucherDetailsView.ResumeLayout(false);
+            this.ChequeDailyReportTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -562,5 +594,7 @@
         private Reports.ChequeReports ChequeReports;
         private System.Windows.Forms.TabPage tpReports_ChequeVoucherDetailsView;
         private Reports.ChequeVoucherDetailsView chequeVoucherDetailsView1;
+        private System.Windows.Forms.TabPage ChequeDailyReportTabPage;
+        private Forms.Controls.DailyChequeReport DailyChequeReport;
     }
 }

@@ -28,6 +28,7 @@ namespace Citicon.DataProcess
             TransactionDateRange = transactionDateRange;
             SupplierManager = new SupplierManager();
             BankAccountManager = new BankAccountManager();
+            CompanyManager = new CompanyManager();
         }
 
         private bool FilterByRangeDate;
@@ -42,6 +43,7 @@ namespace Citicon.DataProcess
         private DateTimeRange TransactionDateRange;
         private SupplierManager SupplierManager;
         private BankAccountManager BankAccountManager;
+        private CompanyManager CompanyManager;
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
@@ -71,6 +73,7 @@ namespace Citicon.DataProcess
             TransactionDateRange = null;
             SupplierManager = null;
             BankAccountManager = null;
+            CompanyManager = null;
             base.Dispose();
         }
 
@@ -82,8 +85,9 @@ namespace Citicon.DataProcess
                 ChequeNumbber = reader.GetString("ChequeNumber"),
                 Supplier = await SupplierManager.GetByIdAsync(reader.GetUInt64("SupplierId")),
                 TotalAmount = reader.GetDecimal("TotalAmount"),
-                BankAccount = await BankAccountManager.GetByIdAsync(reader.GetUInt64("BankAccountId")),
-                TransactionDate = reader.GetDateTime("TransactionDate")
+                BankAccount = BankAccountManager.GetById(reader.GetUInt64("BankAccountId")),
+                TransactionDate = reader.GetDateTime("TransactionDate"),
+                Company = await CompanyManager.GetByIdAsync(reader.GetUInt64("CompanyId"))
             };
         }
 

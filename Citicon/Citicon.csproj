@@ -87,6 +87,7 @@
     <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
+    <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
@@ -329,6 +330,7 @@
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
+    <Compile Include="Extensions\TimeSpanExtension.cs" />
     <Compile Include="Forms\ClientManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +342,12 @@
     </Compile>
     <Compile Include="Forms\Controls\ClientViewControl.Designer.cs">
       <DependentUpon>ClientViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\DailyChequeReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\DailyChequeReport.Designer.cs">
+      <DependentUpon>DailyChequeReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Controls\ProjectDesignViewControl.cs">
       <SubType>UserControl</SubType>
@@ -445,6 +453,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\ClientViewControl.resx">
       <DependentUpon>ClientViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\DailyChequeReport.resx">
+      <DependentUpon>DailyChequeReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\ProjectDesignViewControl.resx">
       <DependentUpon>ProjectDesignViewControl.cs</DependentUpon>

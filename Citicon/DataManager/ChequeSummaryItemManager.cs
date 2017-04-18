@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -16,6 +17,14 @@ namespace Citicon.DataManager
         {
             var process = new GetChequeSummaryItemIEnumerable(filterByDateRange, dateRange, filterBySupplier, supplier, filterByBranch, branch, filterByCompany, company, filterByTransactionDateRange, transactionDateRange);
             return await process.ExecuteAsync();
+        }
+
+        public Task<IEnumerable<ChequeSummaryItem>> GetDailyReportChequeListAsync(DateTime transactionDate)
+        {
+            using (var process = new GetDailyReportChequeList(transactionDate))
+            {
+                return process.ExecuteAsync();
+            }
         }
     }
 }

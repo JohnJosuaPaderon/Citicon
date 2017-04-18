@@ -61,6 +61,7 @@
             this.TimeLog_LoginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLog_LogoutColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLog_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_WorkedHoursColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLog_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLogDataGridView)).BeginInit();
@@ -225,6 +226,7 @@
             this.TimeLog_LoginColumn,
             this.TimeLog_LogoutColumn,
             this.TimeLog_TypeColumn,
+            this.TimeLog_WorkedHoursColumn,
             this.TimeLog_ExtraColumn});
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
@@ -388,6 +390,14 @@
             this.TimeLog_TypeColumn.ReadOnly = true;
             this.TimeLog_TypeColumn.Width = 60;
             // 
+            // TimeLog_WorkedHoursColumn
+            // 
+            this.TimeLog_WorkedHoursColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TimeLog_WorkedHoursColumn.HeaderText = "HOURS WORKED";
+            this.TimeLog_WorkedHoursColumn.Name = "TimeLog_WorkedHoursColumn";
+            this.TimeLog_WorkedHoursColumn.ReadOnly = true;
+            this.TimeLog_WorkedHoursColumn.Width = 122;
+            // 
             // TimeLog_ExtraColumn
             // 
             this.TimeLog_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -453,6 +463,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_LoginColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_LogoutColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_TypeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_WorkedHoursColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_ExtraColumn;
     }
 }

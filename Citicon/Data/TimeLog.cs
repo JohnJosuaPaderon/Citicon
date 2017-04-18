@@ -9,6 +9,7 @@ namespace Citicon.Data
         public DateTime? Login { get; set; }
         public DateTime? Logout { get; set; }
         public TimeLogType Type { get; set; }
+        public TimeSpan? Difference => Logout - Login;
 
         public static bool operator ==(TimeLog left, TimeLog right)
         {
