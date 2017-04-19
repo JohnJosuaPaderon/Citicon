@@ -7,9 +7,7 @@ namespace Citicon
 {
     public sealed class MySqlUtility : RelationalDatabaseUtility
     {
-        public MySqlUtility(string connectionString) : base(connectionString)
-        {
-        }
+        public MySqlUtility(string connectionString) : base(connectionString) { }
 
         public MySqlParameter CreateInOutParameter(string parameterName, object value)
         {
