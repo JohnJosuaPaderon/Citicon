@@ -1,6 +1,6 @@
 ﻿namespace Citicon.Data
 {
-    public sealed class Vehicle
+    public class Vehicle
     {
         public ulong Id { get; set; }
         public VehicleType Type { get; set; }

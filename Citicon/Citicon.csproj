@@ -78,6 +78,7 @@
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataManager\HolidayManager.cs" />
     <Compile Include="DataManager\HolidayTypeManager.cs" />
+    <Compile Include="DataManager\TransitMixerManager.cs" />
     <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
@@ -101,6 +102,8 @@
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
     <Compile Include="DataProcess\GetTimeLogListByEmployee.cs" />
+    <Compile Include="DataProcess\GetTransitMixerList.cs" />
+    <Compile Include="DataProcess\InsertDelivery.cs" />
     <Compile Include="DataProcess\InsertHoliday.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
@@ -325,6 +328,7 @@
     <Compile Include="Data\TimeLog.cs" />
     <Compile Include="Data\TimeLogType.cs" />
     <Compile Include="Data\Transaction.cs" />
+    <Compile Include="Data\TransitMixer.cs" />
     <Compile Include="Data\UInt32Range.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\Vehicle.cs" />
@@ -372,6 +376,12 @@
     </Compile>
     <Compile Include="Forms\Controls\QuotationViewControl.Designer.cs">
       <DependentUpon>QuotationViewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\TransitMixerManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\TransitMixerManagement.Designer.cs">
+      <DependentUpon>TransitMixerManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DailyTallySheetForm.cs">
       <SubType>Form</SubType>
@@ -434,6 +444,12 @@
     <Compile Include="Forms\QuotationManagementForm.Designer.cs">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TransitMixerManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TransitMixerManagementForm.Designer.cs">
+      <DependentUpon>TransitMixerManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GSM\COM.cs" />
     <Compile Include="GSM\SMS.cs" />
     <Compile Include="MySqlUtility.cs" />
@@ -480,6 +496,9 @@
     <EmbeddedResource Include="Forms\Controls\QuotationViewControl.resx">
       <DependentUpon>QuotationViewControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\TransitMixerManagement.resx">
+      <DependentUpon>TransitMixerManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DailyTallySheetForm.resx">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,6 +528,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuotationManagementForm.resx">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TransitMixerManagementForm.resx">
+      <DependentUpon>TransitMixerManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

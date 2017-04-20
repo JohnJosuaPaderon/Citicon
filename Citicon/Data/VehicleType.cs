@@ -2,6 +2,17 @@
 {
     public sealed class VehicleType
     {
+        static VehicleType()
+        {
+            TransitMixer = new VehicleType()
+            {
+                Code = "002",
+                Description = "TRANSIT MIXER"
+            };
+        }
+
+        public static VehicleType TransitMixer { get; }
+
         public ulong Id { get; set; }
         public string Code { get; set; }
         public string Description { get; set; }
