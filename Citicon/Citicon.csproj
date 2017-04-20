@@ -349,6 +349,12 @@
     <Compile Include="Forms\Controls\DailyChequeReport.Designer.cs">
       <DependentUpon>DailyChequeReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\DeliveryManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\DeliveryManagement.Designer.cs">
+      <DependentUpon>DeliveryManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Controls\ProjectDesignViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -432,6 +438,11 @@
     <Compile Include="GSM\SMS.cs" />
     <Compile Include="MySqlUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RelationalDatabaseUtility.cs" />
     <Compile Include="Reports\ExporterBase.cs" />
     <Compile Include="Reports\ExportPayroll.cs" />
@@ -456,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\DailyChequeReport.resx">
       <DependentUpon>DailyChequeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\DeliveryManagement.resx">
+      <DependentUpon>DeliveryManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\ProjectDesignViewControl.resx">
       <DependentUpon>ProjectDesignViewControl.cs</DependentUpon>
@@ -495,6 +509,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuotationManagementForm.resx">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UserSettingsForm.resx">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
@@ -541,6 +559,12 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh-16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

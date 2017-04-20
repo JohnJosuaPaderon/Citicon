@@ -21,9 +21,11 @@ namespace Citicon.Forms.Controls
 
         private async Task LoadAsync()
         {
+            ChequeDataGridView.Rows.Clear();
+
             try
             {
-                ChequeSummaryList = await ChequeSummaryItemManager.GetDailyReportChequeListAsync(TransactionDateTimePicker.Value);
+                ChequeSummaryList = await ChequeSummaryItemManager.GetFilterIEnumerableAsync(false, null, false, null, false, null, false, null, true, new DateTimeRange(TransactionDateTimePicker.Value, TransactionDateTimePicker.Value));
 
                 if (ChequeSummaryList != null && ChequeSummaryList.Any())
                 {
