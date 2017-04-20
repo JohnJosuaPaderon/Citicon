@@ -90,6 +90,7 @@
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetDriverList.cs" />
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
@@ -413,6 +414,12 @@
     <Compile Include="Forms\Dialogs\AddEditProjectDialog.Designer.cs">
       <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\AddEditTransitMixerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditTransitMixerDialog.Designer.cs">
+      <DependentUpon>AddEditTransitMixerDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\AddReviseQuotationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditProjectDialog.resx">
       <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddEditTransitMixerDialog.resx">
+      <DependentUpon>AddEditTransitMixerDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddReviseQuotationDialog.resx">
       <DependentUpon>AddReviseQuotationDialog.cs</DependentUpon>

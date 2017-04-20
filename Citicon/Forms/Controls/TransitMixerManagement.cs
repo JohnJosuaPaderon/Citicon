@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Citicon.DataManager;
 using Citicon.Data;
+using Citicon.Forms.Dialogs;
 
 namespace Citicon.Forms.Controls
 {
@@ -40,7 +41,7 @@ namespace Citicon.Forms.Controls
 
         }
 
-        private async Task GetListAsync()
+        private async Task LoadListAsync()
         {
             TransitMixerDataGridView.Rows.Clear();
 
@@ -106,7 +107,7 @@ namespace Citicon.Forms.Controls
 
         private async void TransitMixerManagement_Load(object sender, EventArgs e)
         {
-            await GetListAsync();
+            await LoadListAsync();
         }
 
         private void TransitMixerDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -118,6 +119,30 @@ namespace Citicon.Forms.Controls
             else
             {
                 SelectedTransitMixer = null;
+            }
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void AddNewButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new AddEditTransitMixerDialog();
+            dialog.ShowDialog();
+            dialog = null;
+            await LoadListAsync();
+        }
+
+        private async void EditButton_Click(object sender, EventArgs e)
+        {
+            if (SelectedTransitMixer != null)
+            {
+                var dialog = new AddEditTransitMixerDialog(SelectedTransitMixer);
+                dialog.ShowDialog();
+                dialog = null;
+                await LoadListAsync(); 
             }
         }
     }

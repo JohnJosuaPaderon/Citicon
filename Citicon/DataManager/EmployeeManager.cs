@@ -117,6 +117,14 @@ namespace Citicon.DataManager
             }
         }
 
+        public static Task<IEnumerable<Employee>> GetDriverListAsync()
+        {
+            using (var process = new GetDriverList())
+            {
+                return process.ExecuteAsync();
+            }
+        }
+
         public static async Task<TimeLog> LogEmployeeAsync(EmployeeLogin loginInfo)
         {
             if (loginInfo != null)
