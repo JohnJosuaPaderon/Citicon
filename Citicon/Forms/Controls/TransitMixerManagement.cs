@@ -36,6 +36,7 @@ namespace Citicon.Forms.Controls
         {
             PlateNumberTextBox.Text = SelectedTransitMixer?.PlateNumber;
             VolumeCapacityTextBox.Text = (SelectedTransitMixer?.VolumeCapacity ?? 0).ToString("#,##0.00");
+            PhysicalNumberTextBox.Text = SelectedTransitMixer?.PhysicalNumber;
 
         }
 
@@ -90,7 +91,10 @@ namespace Citicon.Forms.Controls
             if (transitMixer != null)
             {
                 var row = new DataGridViewRow();
+                row.Height = 30;
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = transitMixer });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = transitMixer.PlateNumber });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = transitMixer.VolumeCapacity });
 
                 return row;
             }
@@ -110,6 +114,10 @@ namespace Citicon.Forms.Controls
             if (TransitMixerDataGridView.SelectedRows.Count == 1)
             {
                 SelectedTransitMixer = TransitMixerDataGridView.SelectedRows[0].Cells[TransitMixer_Column.Name].Value as TransitMixer;
+            }
+            else
+            {
+                SelectedTransitMixer = null;
             }
         }
     }
