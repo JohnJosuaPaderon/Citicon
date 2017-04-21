@@ -80,6 +80,8 @@ namespace Citicon.Forms.Dialogs
         {
             PhysicalNumberTextBox.Text = TransitMixer?.PhysicalNumber;
             PlateNumberTextBox.Text = TransitMixer?.PlateNumber;
+            VolumeCapacityNumericUpDown.Value = Convert.ToDecimal(TransitMixer?.VolumeCapacity ?? 0);
+            DefaultDriverComboBox.SelectedItem = TransitMixer?.DefaultDriver;
         }
 
         private async Task SaveAsync()

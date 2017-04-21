@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.DataManager;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -16,10 +17,10 @@ namespace Citicon.DataProcess
 
         public Task<IEnumerable<TransitMixer>> ExecuteAsync()
         {
-            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand, FromReader);
+            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand, FromReaderAsync);
         }
 
-        private TransitMixer FromReader(DbDataReader reader)
+        private async Task<TransitMixer> FromReaderAsync(DbDataReader reader)
         {
             return new TransitMixer()
             {
@@ -27,7 +28,8 @@ namespace Citicon.DataProcess
                 PhysicalNumber = reader.GetString("PhysicalNumber"),
                 PlateNumber = reader.GetString("PlateNumber"),
                 Type = VehicleType.TransitMixer,
-                VolumeCapacity = reader.GetDouble("VolumeCapacity")
+                VolumeCapacity = reader.GetDouble("VolumeCapacity"),
+                DefaultDriver = await EmployeeManager.GetByIdAsync(reader.GetInt64("DefaultDriverId"))
             };
         }
     }
