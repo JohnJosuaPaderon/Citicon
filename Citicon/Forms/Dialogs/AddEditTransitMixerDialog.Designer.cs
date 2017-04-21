@@ -57,6 +57,7 @@
             this.PhysicalNumberTextBox.Name = "PhysicalNumberTextBox";
             this.PhysicalNumberTextBox.Size = new System.Drawing.Size(303, 25);
             this.PhysicalNumberTextBox.TabIndex = 1;
+            this.PhysicalNumberTextBox.TextChanged += new System.EventHandler(this.PhysicalNumberTextBox_TextChanged);
             // 
             // PlateNumberTextBox
             // 
@@ -64,6 +65,7 @@
             this.PlateNumberTextBox.Name = "PlateNumberTextBox";
             this.PlateNumberTextBox.Size = new System.Drawing.Size(303, 25);
             this.PlateNumberTextBox.TabIndex = 3;
+            this.PlateNumberTextBox.TextChanged += new System.EventHandler(this.PlateNumberTextBox_TextChanged);
             // 
             // PlateNumberLabel
             // 
@@ -92,6 +94,7 @@
             this.VolumeCapacityNumericUpDown.TabIndex = 5;
             this.VolumeCapacityNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.VolumeCapacityNumericUpDown.ThousandsSeparator = true;
+            this.VolumeCapacityNumericUpDown.ValueChanged += new System.EventHandler(this.VolumeCapacityNumericUpDown_ValueChanged);
             // 
             // CancelOperationButton
             // 
@@ -122,6 +125,7 @@
             this.SaveButton.TabIndex = 122;
             this.SaveButton.Text = "SAVE";
             this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // DefaultDriverCheckBox
             // 
@@ -134,6 +138,7 @@
             this.DefaultDriverCheckBox.TabIndex = 124;
             this.DefaultDriverCheckBox.Text = "Default Driver";
             this.DefaultDriverCheckBox.UseVisualStyleBackColor = true;
+            this.DefaultDriverCheckBox.CheckedChanged += new System.EventHandler(this.DefaultDriverCheckBox_CheckedChanged);
             // 
             // DefaultDriverComboBox
             // 
@@ -143,6 +148,7 @@
             this.DefaultDriverComboBox.Name = "DefaultDriverComboBox";
             this.DefaultDriverComboBox.Size = new System.Drawing.Size(303, 25);
             this.DefaultDriverComboBox.TabIndex = 125;
+            this.DefaultDriverComboBox.SelectedIndexChanged += new System.EventHandler(this.DefaultDriverComboBox_SelectedIndexChanged);
             // 
             // AddEditTransitMixerDialog
             // 

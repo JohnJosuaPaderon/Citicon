@@ -82,6 +82,7 @@
     <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
+    <Compile Include="DataProcess\DeleteTransitMixer.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
     <Compile Include="DataProcess\ExportExcelBase.cs" />
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="DataProcess\InsertQuotation.cs" />
     <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
     <Compile Include="DataProcess\InsertTimeLog.cs" />
+    <Compile Include="DataProcess\InsertTransitMixer.cs" />
     <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\GetDepartmentById.cs" />
     <Compile Include="DataProcess\GetEmployeeAgent.cs" />
@@ -204,6 +206,7 @@
     <Compile Include="DataProcess\UpdateProjectDesign.cs" />
     <Compile Include="DataProcess\UpdateQuotation.cs" />
     <Compile Include="DataProcess\UpdateTimeLog.cs" />
+    <Compile Include="DataProcess\UpdateTransitMixer.cs" />
     <Compile Include="DataProcess\ValidateClient.cs" />
     <Compile Include="DataProcess\ValidateProject.cs" />
     <Compile Include="DataProcess\ValidateProjectDesign.cs" />
