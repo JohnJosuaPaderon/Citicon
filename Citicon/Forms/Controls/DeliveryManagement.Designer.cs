@@ -28,84 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DeliveryReceiptNumberLabel = new System.Windows.Forms.Label();
+            this.DeliveryReceiptNumberTextBox = new System.Windows.Forms.TextBox();
             this.ProjectGroupBox = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnConfirmDelivery = new System.Windows.Forms.Button();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Project_LocationTextBox = new System.Windows.Forms.TextBox();
+            this.Project_LocationLabel = new System.Windows.Forms.Label();
+            this.Project_NameTextBox = new System.Windows.Forms.TextBox();
+            this.Project_NameLabel = new System.Windows.Forms.Label();
+            this.Project_Client_AddressTextBox = new System.Windows.Forms.TextBox();
+            this.Project_Client_AddressLabel = new System.Windows.Forms.Label();
+            this.Project_ClientTextBox = new System.Windows.Forms.TextBox();
+            this.Project_ClientLabel = new System.Windows.Forms.Label();
+            this.DesignGroupBox = new System.Windows.Forms.GroupBox();
+            this.Design_CementFactorTextBox = new System.Windows.Forms.TextBox();
+            this.Design_CementFactorLabel = new System.Windows.Forms.Label();
+            this.Design_StrengthTextBox = new System.Windows.Forms.TextBox();
+            this.Design_StrengthLabel = new System.Windows.Forms.Label();
+            this.Design_AggregateTextBox = new System.Windows.Forms.TextBox();
+            this.Design_AggregateLabel = new System.Windows.Forms.Label();
+            this.Design_InitialVolumeTextBox = new System.Windows.Forms.TextBox();
+            this.Design_InitialVolumeLabel = new System.Windows.Forms.Label();
+            this.Design_PsiTextBox = new System.Windows.Forms.TextBox();
+            this.Design_PsiLabel = new System.Windows.Forms.Label();
+            this.Design_MixTypeTextBox = new System.Windows.Forms.TextBox();
+            this.Design_MixTypeLabel = new System.Windows.Forms.Label();
+            this.DeliveryGroupBox = new System.Windows.Forms.GroupBox();
+            this.Delivery_TransitMixerTextBox = new System.Windows.Forms.ComboBox();
+            this.Delivery_TransitMixerLabel = new System.Windows.Forms.Label();
+            this.Delivery_DriverComboBox = new System.Windows.Forms.ComboBox();
+            this.Delivery_DriverLabel = new System.Windows.Forms.Label();
+            this.Delivery_PlantComboBox = new System.Windows.Forms.ComboBox();
+            this.Delivery_PlantLabel = new System.Windows.Forms.Label();
+            this.Delivery_RouteComboBox = new System.Windows.Forms.ComboBox();
+            this.Delivery_RouteLabel = new System.Windows.Forms.Label();
+            this.Delivery_DeliveredVolumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Delivery_DeliveredVolumeLabel = new System.Windows.Forms.Label();
+            this.CancelDeliveryButton = new System.Windows.Forms.Button();
+            this.SaveDeliveryButton = new System.Windows.Forms.Button();
+            this.PurchaseOrderTextBox = new System.Windows.Forms.TextBox();
+            this.PurchaseOrderLabel = new System.Windows.Forms.Label();
+            this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
             this.ProjectGroupBox.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.DesignGroupBox.SuspendLayout();
+            this.DeliveryGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // DeliveryReceiptNumberLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DR No.";
+            this.DeliveryReceiptNumberLabel.AutoSize = true;
+            this.DeliveryReceiptNumberLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryReceiptNumberLabel.Location = new System.Drawing.Point(3, 6);
+            this.DeliveryReceiptNumberLabel.Name = "DeliveryReceiptNumberLabel";
+            this.DeliveryReceiptNumberLabel.Size = new System.Drawing.Size(101, 37);
+            this.DeliveryReceiptNumberLabel.TabIndex = 0;
+            this.DeliveryReceiptNumberLabel.Text = "DR No.";
             // 
-            // textBox1
+            // DeliveryReceiptNumberTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(110, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(278, 43);
-            this.textBox1.TabIndex = 1;
+            this.DeliveryReceiptNumberTextBox.BackColor = System.Drawing.Color.White;
+            this.DeliveryReceiptNumberTextBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryReceiptNumberTextBox.Location = new System.Drawing.Point(110, 3);
+            this.DeliveryReceiptNumberTextBox.Name = "DeliveryReceiptNumberTextBox";
+            this.DeliveryReceiptNumberTextBox.ReadOnly = true;
+            this.DeliveryReceiptNumberTextBox.Size = new System.Drawing.Size(278, 43);
+            this.DeliveryReceiptNumberTextBox.TabIndex = 1;
             // 
             // ProjectGroupBox
             // 
             this.ProjectGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProjectGroupBox.Controls.Add(this.textBox4);
-            this.ProjectGroupBox.Controls.Add(this.label4);
-            this.ProjectGroupBox.Controls.Add(this.textBox5);
-            this.ProjectGroupBox.Controls.Add(this.label5);
-            this.ProjectGroupBox.Controls.Add(this.textBox3);
-            this.ProjectGroupBox.Controls.Add(this.label3);
-            this.ProjectGroupBox.Controls.Add(this.textBox2);
-            this.ProjectGroupBox.Controls.Add(this.label2);
+            this.ProjectGroupBox.Controls.Add(this.Project_LocationTextBox);
+            this.ProjectGroupBox.Controls.Add(this.Project_LocationLabel);
+            this.ProjectGroupBox.Controls.Add(this.Project_NameTextBox);
+            this.ProjectGroupBox.Controls.Add(this.Project_NameLabel);
+            this.ProjectGroupBox.Controls.Add(this.Project_Client_AddressTextBox);
+            this.ProjectGroupBox.Controls.Add(this.Project_Client_AddressLabel);
+            this.ProjectGroupBox.Controls.Add(this.Project_ClientTextBox);
+            this.ProjectGroupBox.Controls.Add(this.Project_ClientLabel);
             this.ProjectGroupBox.Location = new System.Drawing.Point(10, 52);
             this.ProjectGroupBox.Name = "ProjectGroupBox";
             this.ProjectGroupBox.Size = new System.Drawing.Size(866, 125);
@@ -113,402 +113,402 @@
             this.ProjectGroupBox.TabStop = false;
             this.ProjectGroupBox.Text = "PROJECT DETAILS";
             // 
-            // textBox4
+            // Project_LocationTextBox
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(428, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(413, 25);
-            this.textBox4.TabIndex = 7;
+            this.Project_LocationTextBox.BackColor = System.Drawing.Color.White;
+            this.Project_LocationTextBox.Location = new System.Drawing.Point(428, 89);
+            this.Project_LocationTextBox.Name = "Project_LocationTextBox";
+            this.Project_LocationTextBox.ReadOnly = true;
+            this.Project_LocationTextBox.Size = new System.Drawing.Size(413, 25);
+            this.Project_LocationTextBox.TabIndex = 7;
             // 
-            // label4
+            // Project_LocationLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(425, 69);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Location";
+            this.Project_LocationLabel.AutoSize = true;
+            this.Project_LocationLabel.Location = new System.Drawing.Point(425, 69);
+            this.Project_LocationLabel.Name = "Project_LocationLabel";
+            this.Project_LocationLabel.Size = new System.Drawing.Size(57, 17);
+            this.Project_LocationLabel.TabIndex = 6;
+            this.Project_LocationLabel.Text = "Location";
             // 
-            // textBox5
+            // Project_NameTextBox
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(9, 89);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(413, 25);
-            this.textBox5.TabIndex = 5;
+            this.Project_NameTextBox.BackColor = System.Drawing.Color.White;
+            this.Project_NameTextBox.Location = new System.Drawing.Point(9, 89);
+            this.Project_NameTextBox.Name = "Project_NameTextBox";
+            this.Project_NameTextBox.ReadOnly = true;
+            this.Project_NameTextBox.Size = new System.Drawing.Size(413, 25);
+            this.Project_NameTextBox.TabIndex = 5;
             // 
-            // label5
+            // Project_NameLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Project Name";
+            this.Project_NameLabel.AutoSize = true;
+            this.Project_NameLabel.Location = new System.Drawing.Point(6, 69);
+            this.Project_NameLabel.Name = "Project_NameLabel";
+            this.Project_NameLabel.Size = new System.Drawing.Size(87, 17);
+            this.Project_NameLabel.TabIndex = 4;
+            this.Project_NameLabel.Text = "Project Name";
             // 
-            // textBox3
+            // Project_Client_AddressTextBox
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(428, 41);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(413, 25);
-            this.textBox3.TabIndex = 3;
+            this.Project_Client_AddressTextBox.BackColor = System.Drawing.Color.White;
+            this.Project_Client_AddressTextBox.Location = new System.Drawing.Point(428, 41);
+            this.Project_Client_AddressTextBox.Name = "Project_Client_AddressTextBox";
+            this.Project_Client_AddressTextBox.ReadOnly = true;
+            this.Project_Client_AddressTextBox.Size = new System.Drawing.Size(413, 25);
+            this.Project_Client_AddressTextBox.TabIndex = 3;
             // 
-            // label3
+            // Project_Client_AddressLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(425, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Address";
+            this.Project_Client_AddressLabel.AutoSize = true;
+            this.Project_Client_AddressLabel.Location = new System.Drawing.Point(425, 21);
+            this.Project_Client_AddressLabel.Name = "Project_Client_AddressLabel";
+            this.Project_Client_AddressLabel.Size = new System.Drawing.Size(56, 17);
+            this.Project_Client_AddressLabel.TabIndex = 2;
+            this.Project_Client_AddressLabel.Text = "Address";
             // 
-            // textBox2
+            // Project_ClientTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(9, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(413, 25);
-            this.textBox2.TabIndex = 1;
+            this.Project_ClientTextBox.BackColor = System.Drawing.Color.White;
+            this.Project_ClientTextBox.Location = new System.Drawing.Point(9, 41);
+            this.Project_ClientTextBox.Name = "Project_ClientTextBox";
+            this.Project_ClientTextBox.ReadOnly = true;
+            this.Project_ClientTextBox.Size = new System.Drawing.Size(413, 25);
+            this.Project_ClientTextBox.TabIndex = 1;
             // 
-            // label2
+            // Project_ClientLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Client";
+            this.Project_ClientLabel.AutoSize = true;
+            this.Project_ClientLabel.Location = new System.Drawing.Point(6, 21);
+            this.Project_ClientLabel.Name = "Project_ClientLabel";
+            this.Project_ClientLabel.Size = new System.Drawing.Size(40, 17);
+            this.Project_ClientLabel.TabIndex = 0;
+            this.Project_ClientLabel.Text = "Client";
             // 
-            // groupBox1
+            // DesignGroupBox
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DesignGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(10, 183);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(866, 126);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "DESIGN DETAILS";
+            this.DesignGroupBox.Controls.Add(this.Design_CementFactorTextBox);
+            this.DesignGroupBox.Controls.Add(this.Design_CementFactorLabel);
+            this.DesignGroupBox.Controls.Add(this.Design_StrengthTextBox);
+            this.DesignGroupBox.Controls.Add(this.Design_StrengthLabel);
+            this.DesignGroupBox.Controls.Add(this.Design_AggregateTextBox);
+            this.DesignGroupBox.Controls.Add(this.Design_AggregateLabel);
+            this.DesignGroupBox.Controls.Add(this.Design_InitialVolumeTextBox);
+            this.DesignGroupBox.Controls.Add(this.Design_InitialVolumeLabel);
+            this.DesignGroupBox.Controls.Add(this.Design_PsiTextBox);
+            this.DesignGroupBox.Controls.Add(this.Design_PsiLabel);
+            this.DesignGroupBox.Controls.Add(this.Design_MixTypeTextBox);
+            this.DesignGroupBox.Controls.Add(this.Design_MixTypeLabel);
+            this.DesignGroupBox.Location = new System.Drawing.Point(10, 183);
+            this.DesignGroupBox.Name = "DesignGroupBox";
+            this.DesignGroupBox.Size = new System.Drawing.Size(866, 126);
+            this.DesignGroupBox.TabIndex = 3;
+            this.DesignGroupBox.TabStop = false;
+            this.DesignGroupBox.Text = "DESIGN DETAILS";
             // 
-            // textBox9
+            // Design_CementFactorTextBox
             // 
-            this.textBox9.BackColor = System.Drawing.Color.White;
-            this.textBox9.Location = new System.Drawing.Point(495, 89);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(237, 25);
-            this.textBox9.TabIndex = 18;
+            this.Design_CementFactorTextBox.BackColor = System.Drawing.Color.White;
+            this.Design_CementFactorTextBox.Location = new System.Drawing.Point(495, 89);
+            this.Design_CementFactorTextBox.Name = "Design_CementFactorTextBox";
+            this.Design_CementFactorTextBox.ReadOnly = true;
+            this.Design_CementFactorTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Design_CementFactorTextBox.TabIndex = 18;
             // 
-            // label9
+            // Design_CementFactorLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(492, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 17);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Cement Factor";
+            this.Design_CementFactorLabel.AutoSize = true;
+            this.Design_CementFactorLabel.Location = new System.Drawing.Point(492, 69);
+            this.Design_CementFactorLabel.Name = "Design_CementFactorLabel";
+            this.Design_CementFactorLabel.Size = new System.Drawing.Size(92, 17);
+            this.Design_CementFactorLabel.TabIndex = 17;
+            this.Design_CementFactorLabel.Text = "Cement Factor";
             // 
-            // textBox10
+            // Design_StrengthTextBox
             // 
-            this.textBox10.BackColor = System.Drawing.Color.White;
-            this.textBox10.Location = new System.Drawing.Point(252, 89);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(237, 25);
-            this.textBox10.TabIndex = 16;
+            this.Design_StrengthTextBox.BackColor = System.Drawing.Color.White;
+            this.Design_StrengthTextBox.Location = new System.Drawing.Point(252, 89);
+            this.Design_StrengthTextBox.Name = "Design_StrengthTextBox";
+            this.Design_StrengthTextBox.ReadOnly = true;
+            this.Design_StrengthTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Design_StrengthTextBox.TabIndex = 16;
             // 
-            // label10
+            // Design_StrengthLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(249, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 17);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Design Strength";
+            this.Design_StrengthLabel.AutoSize = true;
+            this.Design_StrengthLabel.Location = new System.Drawing.Point(249, 69);
+            this.Design_StrengthLabel.Name = "Design_StrengthLabel";
+            this.Design_StrengthLabel.Size = new System.Drawing.Size(101, 17);
+            this.Design_StrengthLabel.TabIndex = 15;
+            this.Design_StrengthLabel.Text = "Design Strength";
             // 
-            // textBox11
+            // Design_AggregateTextBox
             // 
-            this.textBox11.BackColor = System.Drawing.Color.White;
-            this.textBox11.Location = new System.Drawing.Point(9, 89);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(237, 25);
-            this.textBox11.TabIndex = 14;
+            this.Design_AggregateTextBox.BackColor = System.Drawing.Color.White;
+            this.Design_AggregateTextBox.Location = new System.Drawing.Point(9, 89);
+            this.Design_AggregateTextBox.Name = "Design_AggregateTextBox";
+            this.Design_AggregateTextBox.ReadOnly = true;
+            this.Design_AggregateTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Design_AggregateTextBox.TabIndex = 14;
             // 
-            // label11
+            // Design_AggregateLabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 69);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 17);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Aggregate";
+            this.Design_AggregateLabel.AutoSize = true;
+            this.Design_AggregateLabel.Location = new System.Drawing.Point(6, 69);
+            this.Design_AggregateLabel.Name = "Design_AggregateLabel";
+            this.Design_AggregateLabel.Size = new System.Drawing.Size(70, 17);
+            this.Design_AggregateLabel.TabIndex = 13;
+            this.Design_AggregateLabel.Text = "Aggregate";
             // 
-            // textBox8
+            // Design_InitialVolumeTextBox
             // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(495, 41);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(237, 25);
-            this.textBox8.TabIndex = 12;
+            this.Design_InitialVolumeTextBox.BackColor = System.Drawing.Color.White;
+            this.Design_InitialVolumeTextBox.Location = new System.Drawing.Point(495, 41);
+            this.Design_InitialVolumeTextBox.Name = "Design_InitialVolumeTextBox";
+            this.Design_InitialVolumeTextBox.ReadOnly = true;
+            this.Design_InitialVolumeTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Design_InitialVolumeTextBox.TabIndex = 12;
             // 
-            // label8
+            // Design_InitialVolumeLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(492, 21);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Initial Volume";
+            this.Design_InitialVolumeLabel.AutoSize = true;
+            this.Design_InitialVolumeLabel.Location = new System.Drawing.Point(492, 21);
+            this.Design_InitialVolumeLabel.Name = "Design_InitialVolumeLabel";
+            this.Design_InitialVolumeLabel.Size = new System.Drawing.Size(85, 17);
+            this.Design_InitialVolumeLabel.TabIndex = 11;
+            this.Design_InitialVolumeLabel.Text = "Initial Volume";
             // 
-            // textBox7
+            // Design_PsiTextBox
             // 
-            this.textBox7.BackColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(252, 41);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(237, 25);
-            this.textBox7.TabIndex = 10;
+            this.Design_PsiTextBox.BackColor = System.Drawing.Color.White;
+            this.Design_PsiTextBox.Location = new System.Drawing.Point(252, 41);
+            this.Design_PsiTextBox.Name = "Design_PsiTextBox";
+            this.Design_PsiTextBox.ReadOnly = true;
+            this.Design_PsiTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Design_PsiTextBox.TabIndex = 10;
             // 
-            // label7
+            // Design_PsiLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(249, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 17);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "PSI";
+            this.Design_PsiLabel.AutoSize = true;
+            this.Design_PsiLabel.Location = new System.Drawing.Point(249, 21);
+            this.Design_PsiLabel.Name = "Design_PsiLabel";
+            this.Design_PsiLabel.Size = new System.Drawing.Size(25, 17);
+            this.Design_PsiLabel.TabIndex = 9;
+            this.Design_PsiLabel.Text = "PSI";
             // 
-            // textBox6
+            // Design_MixTypeTextBox
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(9, 41);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(237, 25);
-            this.textBox6.TabIndex = 8;
+            this.Design_MixTypeTextBox.BackColor = System.Drawing.Color.White;
+            this.Design_MixTypeTextBox.Location = new System.Drawing.Point(9, 41);
+            this.Design_MixTypeTextBox.Name = "Design_MixTypeTextBox";
+            this.Design_MixTypeTextBox.ReadOnly = true;
+            this.Design_MixTypeTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Design_MixTypeTextBox.TabIndex = 8;
             // 
-            // label6
+            // Design_MixTypeLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 17);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Mix Type";
+            this.Design_MixTypeLabel.AutoSize = true;
+            this.Design_MixTypeLabel.Location = new System.Drawing.Point(6, 21);
+            this.Design_MixTypeLabel.Name = "Design_MixTypeLabel";
+            this.Design_MixTypeLabel.Size = new System.Drawing.Size(60, 17);
+            this.Design_MixTypeLabel.TabIndex = 1;
+            this.Design_MixTypeLabel.Text = "Mix Type";
             // 
-            // groupBox2
+            // DeliveryGroupBox
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.DeliveryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.numericUpDown1);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Location = new System.Drawing.Point(10, 315);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(866, 124);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "DELIVERY DETAILS";
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_TransitMixerTextBox);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_TransitMixerLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_DriverComboBox);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_DriverLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantComboBox);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_RouteComboBox);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_RouteLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveredVolumeNumericUpDown);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveredVolumeLabel);
+            this.DeliveryGroupBox.Location = new System.Drawing.Point(10, 315);
+            this.DeliveryGroupBox.Name = "DeliveryGroupBox";
+            this.DeliveryGroupBox.Size = new System.Drawing.Size(866, 124);
+            this.DeliveryGroupBox.TabIndex = 4;
+            this.DeliveryGroupBox.TabStop = false;
+            this.DeliveryGroupBox.Text = "DELIVERY DETAILS";
             // 
-            // comboBox4
+            // Delivery_TransitMixerTextBox
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(495, 89);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(237, 25);
-            this.comboBox4.TabIndex = 28;
+            this.Delivery_TransitMixerTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Delivery_TransitMixerTextBox.FormattingEnabled = true;
+            this.Delivery_TransitMixerTextBox.Location = new System.Drawing.Point(495, 89);
+            this.Delivery_TransitMixerTextBox.Name = "Delivery_TransitMixerTextBox";
+            this.Delivery_TransitMixerTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_TransitMixerTextBox.TabIndex = 28;
             // 
-            // label16
+            // Delivery_TransitMixerLabel
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(492, 69);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 17);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "Transit Mixer";
+            this.Delivery_TransitMixerLabel.AutoSize = true;
+            this.Delivery_TransitMixerLabel.Location = new System.Drawing.Point(492, 69);
+            this.Delivery_TransitMixerLabel.Name = "Delivery_TransitMixerLabel";
+            this.Delivery_TransitMixerLabel.Size = new System.Drawing.Size(83, 17);
+            this.Delivery_TransitMixerLabel.TabIndex = 27;
+            this.Delivery_TransitMixerLabel.Text = "Transit Mixer";
             // 
-            // comboBox3
+            // Delivery_DriverComboBox
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(9, 89);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(480, 25);
-            this.comboBox3.TabIndex = 26;
+            this.Delivery_DriverComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Delivery_DriverComboBox.FormattingEnabled = true;
+            this.Delivery_DriverComboBox.Location = new System.Drawing.Point(9, 89);
+            this.Delivery_DriverComboBox.Name = "Delivery_DriverComboBox";
+            this.Delivery_DriverComboBox.Size = new System.Drawing.Size(480, 25);
+            this.Delivery_DriverComboBox.TabIndex = 26;
             // 
-            // label15
+            // Delivery_DriverLabel
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 69);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 17);
-            this.label15.TabIndex = 25;
-            this.label15.Text = "Driver";
+            this.Delivery_DriverLabel.AutoSize = true;
+            this.Delivery_DriverLabel.Location = new System.Drawing.Point(6, 69);
+            this.Delivery_DriverLabel.Name = "Delivery_DriverLabel";
+            this.Delivery_DriverLabel.Size = new System.Drawing.Size(43, 17);
+            this.Delivery_DriverLabel.TabIndex = 25;
+            this.Delivery_DriverLabel.Text = "Driver";
             // 
-            // comboBox2
+            // Delivery_PlantComboBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(495, 40);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(237, 25);
-            this.comboBox2.TabIndex = 24;
+            this.Delivery_PlantComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Delivery_PlantComboBox.FormattingEnabled = true;
+            this.Delivery_PlantComboBox.Location = new System.Drawing.Point(495, 40);
+            this.Delivery_PlantComboBox.Name = "Delivery_PlantComboBox";
+            this.Delivery_PlantComboBox.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_PlantComboBox.TabIndex = 24;
             // 
-            // label14
+            // Delivery_PlantLabel
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(492, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(36, 17);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "Plant";
+            this.Delivery_PlantLabel.AutoSize = true;
+            this.Delivery_PlantLabel.Location = new System.Drawing.Point(492, 20);
+            this.Delivery_PlantLabel.Name = "Delivery_PlantLabel";
+            this.Delivery_PlantLabel.Size = new System.Drawing.Size(36, 17);
+            this.Delivery_PlantLabel.TabIndex = 23;
+            this.Delivery_PlantLabel.Text = "Plant";
             // 
-            // comboBox1
+            // Delivery_RouteComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(252, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(237, 25);
-            this.comboBox1.TabIndex = 22;
+            this.Delivery_RouteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Delivery_RouteComboBox.FormattingEnabled = true;
+            this.Delivery_RouteComboBox.Location = new System.Drawing.Point(252, 41);
+            this.Delivery_RouteComboBox.Name = "Delivery_RouteComboBox";
+            this.Delivery_RouteComboBox.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_RouteComboBox.TabIndex = 22;
             // 
-            // label13
+            // Delivery_RouteLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(249, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(42, 17);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Route";
+            this.Delivery_RouteLabel.AutoSize = true;
+            this.Delivery_RouteLabel.Location = new System.Drawing.Point(249, 21);
+            this.Delivery_RouteLabel.Name = "Delivery_RouteLabel";
+            this.Delivery_RouteLabel.Size = new System.Drawing.Size(42, 17);
+            this.Delivery_RouteLabel.TabIndex = 21;
+            this.Delivery_RouteLabel.Text = "Route";
             // 
-            // numericUpDown1
+            // Delivery_DeliveredVolumeNumericUpDown
             // 
-            this.numericUpDown1.DecimalPlaces = 3;
-            this.numericUpDown1.Location = new System.Drawing.Point(9, 41);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(237, 25);
-            this.numericUpDown1.TabIndex = 20;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.ThousandsSeparator = true;
+            this.Delivery_DeliveredVolumeNumericUpDown.DecimalPlaces = 3;
+            this.Delivery_DeliveredVolumeNumericUpDown.Location = new System.Drawing.Point(9, 41);
+            this.Delivery_DeliveredVolumeNumericUpDown.Name = "Delivery_DeliveredVolumeNumericUpDown";
+            this.Delivery_DeliveredVolumeNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_DeliveredVolumeNumericUpDown.TabIndex = 20;
+            this.Delivery_DeliveredVolumeNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Delivery_DeliveredVolumeNumericUpDown.ThousandsSeparator = true;
             // 
-            // label12
+            // Delivery_DeliveredVolumeLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(110, 17);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Delivered Volume";
+            this.Delivery_DeliveredVolumeLabel.AutoSize = true;
+            this.Delivery_DeliveredVolumeLabel.Location = new System.Drawing.Point(6, 21);
+            this.Delivery_DeliveredVolumeLabel.Name = "Delivery_DeliveredVolumeLabel";
+            this.Delivery_DeliveredVolumeLabel.Size = new System.Drawing.Size(110, 17);
+            this.Delivery_DeliveredVolumeLabel.TabIndex = 19;
+            this.Delivery_DeliveredVolumeLabel.Text = "Delivered Volume";
             // 
-            // btnCancel
+            // CancelDeliveryButton
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(776, 445);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 50);
-            this.btnCancel.TabIndex = 114;
-            this.btnCancel.Text = "CANCEL";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.CancelDeliveryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CancelDeliveryButton.BackColor = System.Drawing.Color.White;
+            this.CancelDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelDeliveryButton.ForeColor = System.Drawing.Color.Red;
+            this.CancelDeliveryButton.Location = new System.Drawing.Point(776, 445);
+            this.CancelDeliveryButton.Name = "CancelDeliveryButton";
+            this.CancelDeliveryButton.Size = new System.Drawing.Size(100, 50);
+            this.CancelDeliveryButton.TabIndex = 114;
+            this.CancelDeliveryButton.Text = "CANCEL";
+            this.CancelDeliveryButton.UseVisualStyleBackColor = false;
+            this.CancelDeliveryButton.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnConfirmDelivery
+            // SaveDeliveryButton
             // 
-            this.btnConfirmDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirmDelivery.BackColor = System.Drawing.Color.Red;
-            this.btnConfirmDelivery.FlatAppearance.BorderSize = 0;
-            this.btnConfirmDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmDelivery.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmDelivery.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmDelivery.Location = new System.Drawing.Point(645, 445);
-            this.btnConfirmDelivery.Name = "btnConfirmDelivery";
-            this.btnConfirmDelivery.Size = new System.Drawing.Size(125, 50);
-            this.btnConfirmDelivery.TabIndex = 113;
-            this.btnConfirmDelivery.Text = "SAVE DELIVERY";
-            this.btnConfirmDelivery.UseVisualStyleBackColor = false;
+            this.SaveDeliveryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveDeliveryButton.BackColor = System.Drawing.Color.Red;
+            this.SaveDeliveryButton.FlatAppearance.BorderSize = 0;
+            this.SaveDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveDeliveryButton.ForeColor = System.Drawing.Color.White;
+            this.SaveDeliveryButton.Location = new System.Drawing.Point(645, 445);
+            this.SaveDeliveryButton.Name = "SaveDeliveryButton";
+            this.SaveDeliveryButton.Size = new System.Drawing.Size(125, 50);
+            this.SaveDeliveryButton.TabIndex = 113;
+            this.SaveDeliveryButton.Text = "SAVE DELIVERY";
+            this.SaveDeliveryButton.UseVisualStyleBackColor = false;
             // 
-            // textBox12
+            // PurchaseOrderTextBox
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.BackColor = System.Drawing.Color.White;
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(610, 3);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(266, 43);
-            this.textBox12.TabIndex = 117;
+            this.PurchaseOrderTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PurchaseOrderTextBox.BackColor = System.Drawing.Color.White;
+            this.PurchaseOrderTextBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PurchaseOrderTextBox.Location = new System.Drawing.Point(610, 3);
+            this.PurchaseOrderTextBox.Name = "PurchaseOrderTextBox";
+            this.PurchaseOrderTextBox.ReadOnly = true;
+            this.PurchaseOrderTextBox.Size = new System.Drawing.Size(266, 43);
+            this.PurchaseOrderTextBox.TabIndex = 117;
             // 
-            // label17
+            // PurchaseOrderLabel
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(491, 6);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 37);
-            this.label17.TabIndex = 116;
-            this.label17.Text = "P.O. No.";
+            this.PurchaseOrderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PurchaseOrderLabel.AutoSize = true;
+            this.PurchaseOrderLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PurchaseOrderLabel.Location = new System.Drawing.Point(491, 6);
+            this.PurchaseOrderLabel.Name = "PurchaseOrderLabel";
+            this.PurchaseOrderLabel.Size = new System.Drawing.Size(113, 37);
+            this.PurchaseOrderLabel.TabIndex = 116;
+            this.PurchaseOrderLabel.Text = "P.O. No.";
             // 
-            // button1
+            // DeliveryReceiptRefreshButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Citicon.Properties.Resources.Refresh_16;
-            this.button1.Location = new System.Drawing.Point(394, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 43);
-            this.button1.TabIndex = 115;
-            this.button1.UseVisualStyleBackColor = false;
+            this.DeliveryReceiptRefreshButton.BackColor = System.Drawing.Color.Red;
+            this.DeliveryReceiptRefreshButton.FlatAppearance.BorderSize = 0;
+            this.DeliveryReceiptRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeliveryReceiptRefreshButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryReceiptRefreshButton.ForeColor = System.Drawing.Color.White;
+            this.DeliveryReceiptRefreshButton.Image = global::Citicon.Properties.Resources.Refresh_16;
+            this.DeliveryReceiptRefreshButton.Location = new System.Drawing.Point(394, 3);
+            this.DeliveryReceiptRefreshButton.Name = "DeliveryReceiptRefreshButton";
+            this.DeliveryReceiptRefreshButton.Size = new System.Drawing.Size(43, 43);
+            this.DeliveryReceiptRefreshButton.TabIndex = 115;
+            this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
             // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.textBox12);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirmDelivery);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.PurchaseOrderTextBox);
+            this.Controls.Add(this.PurchaseOrderLabel);
+            this.Controls.Add(this.DeliveryReceiptRefreshButton);
+            this.Controls.Add(this.CancelDeliveryButton);
+            this.Controls.Add(this.SaveDeliveryButton);
+            this.Controls.Add(this.DeliveryGroupBox);
+            this.Controls.Add(this.DesignGroupBox);
             this.Controls.Add(this.ProjectGroupBox);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DeliveryReceiptNumberTextBox);
+            this.Controls.Add(this.DeliveryReceiptNumberLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -517,11 +517,11 @@
             this.Load += new System.EventHandler(this.DeliveryManagement_Load);
             this.ProjectGroupBox.ResumeLayout(false);
             this.ProjectGroupBox.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.DesignGroupBox.ResumeLayout(false);
+            this.DesignGroupBox.PerformLayout();
+            this.DeliveryGroupBox.ResumeLayout(false);
+            this.DeliveryGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,45 +529,45 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label DeliveryReceiptNumberLabel;
+        private System.Windows.Forms.TextBox DeliveryReceiptNumberTextBox;
         private System.Windows.Forms.GroupBox ProjectGroupBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnConfirmDelivery;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label Project_ClientLabel;
+        private System.Windows.Forms.TextBox Project_ClientTextBox;
+        private System.Windows.Forms.TextBox Project_Client_AddressTextBox;
+        private System.Windows.Forms.Label Project_Client_AddressLabel;
+        private System.Windows.Forms.TextBox Project_LocationTextBox;
+        private System.Windows.Forms.Label Project_LocationLabel;
+        private System.Windows.Forms.TextBox Project_NameTextBox;
+        private System.Windows.Forms.Label Project_NameLabel;
+        private System.Windows.Forms.GroupBox DesignGroupBox;
+        private System.Windows.Forms.Label Design_MixTypeLabel;
+        private System.Windows.Forms.TextBox Design_MixTypeTextBox;
+        private System.Windows.Forms.TextBox Design_PsiTextBox;
+        private System.Windows.Forms.Label Design_PsiLabel;
+        private System.Windows.Forms.TextBox Design_InitialVolumeTextBox;
+        private System.Windows.Forms.Label Design_InitialVolumeLabel;
+        private System.Windows.Forms.TextBox Design_CementFactorTextBox;
+        private System.Windows.Forms.Label Design_CementFactorLabel;
+        private System.Windows.Forms.TextBox Design_StrengthTextBox;
+        private System.Windows.Forms.Label Design_StrengthLabel;
+        private System.Windows.Forms.TextBox Design_AggregateTextBox;
+        private System.Windows.Forms.Label Design_AggregateLabel;
+        private System.Windows.Forms.GroupBox DeliveryGroupBox;
+        private System.Windows.Forms.Label Delivery_DeliveredVolumeLabel;
+        private System.Windows.Forms.NumericUpDown Delivery_DeliveredVolumeNumericUpDown;
+        private System.Windows.Forms.Label Delivery_RouteLabel;
+        private System.Windows.Forms.ComboBox Delivery_RouteComboBox;
+        private System.Windows.Forms.ComboBox Delivery_PlantComboBox;
+        private System.Windows.Forms.Label Delivery_PlantLabel;
+        private System.Windows.Forms.Label Delivery_DriverLabel;
+        private System.Windows.Forms.ComboBox Delivery_DriverComboBox;
+        private System.Windows.Forms.ComboBox Delivery_TransitMixerTextBox;
+        private System.Windows.Forms.Label Delivery_TransitMixerLabel;
+        private System.Windows.Forms.Button CancelDeliveryButton;
+        private System.Windows.Forms.Button SaveDeliveryButton;
+        private System.Windows.Forms.Button DeliveryReceiptRefreshButton;
+        private System.Windows.Forms.TextBox PurchaseOrderTextBox;
+        private System.Windows.Forms.Label PurchaseOrderLabel;
     }
 }

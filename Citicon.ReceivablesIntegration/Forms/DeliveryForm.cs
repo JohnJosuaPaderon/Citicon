@@ -136,7 +136,7 @@ namespace Citicon.ReceivablesIntegration.Forms
             {
                 if (dgvScheduledProjectDesign.SelectedRows[0].Cells[colScheduledProjectDesign.Name].Value is ScheduledProjectDesign scheduledProjectDesign)
                 {
-                    var form = new DeliveryManagementForm();
+                    var form = new DeliveryManagementForm(scheduledProjectDesign.Design);
                     form.ShowDialog();
                     form = null;
                     //var personnelIds = new List<int>();

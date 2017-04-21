@@ -73,6 +73,7 @@
     <Compile Include="DataManager\ClientManager.cs" />
     <Compile Include="DataManager\CompanyManager.cs" />
     <Compile Include="DataManager\DeliveryManager.cs" />
+    <Compile Include="DataManager\DeliveryRouteManager.cs" />
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetDeliveryRouteList.cs" />
     <Compile Include="DataProcess\GetDriverList.cs" />
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
@@ -283,6 +285,7 @@
     <Compile Include="Data\Converters\QuotationTypeConverter.cs" />
     <Compile Include="Data\DateTimeRange.cs" />
     <Compile Include="Data\Delivery.cs" />
+    <Compile Include="Data\DeliveryRoute.cs" />
     <Compile Include="Data\Department.cs" />
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
