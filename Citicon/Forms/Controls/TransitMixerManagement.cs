@@ -122,9 +122,33 @@ namespace Citicon.Forms.Controls
             }
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private async void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (SelectedTransitMixer != null)
+            {
+                var dialogResult = MessageBox.Show("Do you really want to delete the selected Transaction Mixer?", "Delete Transit Mixer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (dialogResult == DialogResult.Yes)
+                {
+                    try
+                    {
+                        var transitMixer = await TransitMixerManager.DeleteAsync(SelectedTransitMixer);
+
+                        if (transitMixer != null)
+                        {
+                            MessageBox.Show("Successfully deleted.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
 
         private async void AddNewButton_Click(object sender, EventArgs e)

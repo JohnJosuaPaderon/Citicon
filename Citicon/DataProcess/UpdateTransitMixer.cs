@@ -16,7 +16,7 @@ namespace Citicon.DataProcess
 
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
-            var command = Utility.CreateProcedureCommand("InsertTransitMixer", connection, transaction);
+            var command = Utility.CreateProcedureCommand("UpdateTransitMixer", connection, transaction);
             command.Parameters.AddWithValue("@_Id", TransitMixer.Id);
             command.Parameters.AddWithValue("@_PhysicalNumber", TransitMixer.PhysicalNumber);
             command.Parameters.AddWithValue("@_PlateNumber", TransitMixer.PlateNumber);
