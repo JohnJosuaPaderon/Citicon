@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TransitMixerDataGridView = new System.Windows.Forms.DataGridView();
             this.DetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.PlateNumberLabel = new System.Windows.Forms.Label();
@@ -48,6 +48,8 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddNewButton = new System.Windows.Forms.Button();
+            this.DefaultDriverTextBox = new System.Windows.Forms.TextBox();
+            this.DefaultDriverLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TransitMixerDataGridView)).BeginInit();
             this.DetailsGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -57,8 +59,8 @@
             this.TransitMixerDataGridView.AllowUserToAddRows = false;
             this.TransitMixerDataGridView.AllowUserToDeleteRows = false;
             this.TransitMixerDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TransitMixerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TransitMixerDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.TransitMixerDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,14 +69,14 @@
             this.TransitMixerDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TransitMixerDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.TransitMixerDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.TransitMixerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TransitMixerDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.TransitMixerDataGridView.ColumnHeadersHeight = 60;
             this.TransitMixerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.TransitMixerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -82,14 +84,14 @@
             this.TransitMixer_PlateNumberColumn,
             this.TransitMixer_VolumeCapacityColumn,
             this.TransitMixer_ExtraColumn});
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.TransitMixerDataGridView.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.TransitMixerDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.TransitMixerDataGridView.EnableHeadersVisualStyles = false;
             this.TransitMixerDataGridView.GridColor = System.Drawing.Color.Red;
             this.TransitMixerDataGridView.Location = new System.Drawing.Point(3, 3);
@@ -98,8 +100,8 @@
             this.TransitMixerDataGridView.ReadOnly = true;
             this.TransitMixerDataGridView.RowHeadersVisible = false;
             this.TransitMixerDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            this.TransitMixerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.TransitMixerDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.TransitMixerDataGridView.RowTemplate.Height = 40;
             this.TransitMixerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TransitMixerDataGridView.Size = new System.Drawing.Size(555, 517);
@@ -109,6 +111,8 @@
             // DetailsGroupBox
             // 
             this.DetailsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DetailsGroupBox.Controls.Add(this.DefaultDriverTextBox);
+            this.DetailsGroupBox.Controls.Add(this.DefaultDriverLabel);
             this.DetailsGroupBox.Controls.Add(this.PhysicalNumberTextBox);
             this.DetailsGroupBox.Controls.Add(this.PhysicalNumberLabel);
             this.DetailsGroupBox.Controls.Add(this.VolumeCapacityTextBox);
@@ -117,7 +121,7 @@
             this.DetailsGroupBox.Controls.Add(this.PlateNumberLabel);
             this.DetailsGroupBox.Location = new System.Drawing.Point(565, 44);
             this.DetailsGroupBox.Name = "DetailsGroupBox";
-            this.DetailsGroupBox.Size = new System.Drawing.Size(368, 172);
+            this.DetailsGroupBox.Size = new System.Drawing.Size(368, 219);
             this.DetailsGroupBox.TabIndex = 117;
             this.DetailsGroupBox.TabStop = false;
             this.DetailsGroupBox.Text = "DETAILS";
@@ -197,8 +201,8 @@
             // TransitMixer_VolumeCapacityColumn
             // 
             this.TransitMixer_VolumeCapacityColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle28.Format = "#,##0.0##";
-            this.TransitMixer_VolumeCapacityColumn.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle3.Format = "#,##0.0##";
+            this.TransitMixer_VolumeCapacityColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.TransitMixer_VolumeCapacityColumn.HeaderText = "VOL. CAPACITY";
             this.TransitMixer_VolumeCapacityColumn.MinimumWidth = 150;
             this.TransitMixer_VolumeCapacityColumn.Name = "TransitMixer_VolumeCapacityColumn";
@@ -263,6 +267,24 @@
             this.AddNewButton.UseVisualStyleBackColor = false;
             this.AddNewButton.Click += new System.EventHandler(this.AddNewButton_Click);
             // 
+            // DefaultDriverTextBox
+            // 
+            this.DefaultDriverTextBox.BackColor = System.Drawing.Color.White;
+            this.DefaultDriverTextBox.Location = new System.Drawing.Point(9, 185);
+            this.DefaultDriverTextBox.Name = "DefaultDriverTextBox";
+            this.DefaultDriverTextBox.ReadOnly = true;
+            this.DefaultDriverTextBox.Size = new System.Drawing.Size(353, 25);
+            this.DefaultDriverTextBox.TabIndex = 7;
+            // 
+            // DefaultDriverLabel
+            // 
+            this.DefaultDriverLabel.AutoSize = true;
+            this.DefaultDriverLabel.Location = new System.Drawing.Point(6, 165);
+            this.DefaultDriverLabel.Name = "DefaultDriverLabel";
+            this.DefaultDriverLabel.Size = new System.Drawing.Size(88, 17);
+            this.DefaultDriverLabel.TabIndex = 6;
+            this.DefaultDriverLabel.Text = "Default Driver";
+            // 
             // TransitMixerManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -303,5 +325,7 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button AddNewButton;
+        private System.Windows.Forms.TextBox DefaultDriverTextBox;
+        private System.Windows.Forms.Label DefaultDriverLabel;
     }
 }

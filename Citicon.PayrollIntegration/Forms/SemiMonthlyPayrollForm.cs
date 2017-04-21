@@ -73,7 +73,7 @@ namespace Citicon.PayrollIntegration.Forms
                     foreach (DataGridViewRow row in dgvPayrollItems.Rows)
                     {
                         payroll.Items.Add(((EmployeePayroll)row.Cells[colPayrollItem.Name].Value));
-                    }
+                    }   
 
                     try
                     {

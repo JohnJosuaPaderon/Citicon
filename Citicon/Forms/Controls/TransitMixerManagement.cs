@@ -38,7 +38,7 @@ namespace Citicon.Forms.Controls
             PlateNumberTextBox.Text = SelectedTransitMixer?.PlateNumber;
             VolumeCapacityTextBox.Text = (SelectedTransitMixer?.VolumeCapacity ?? 0).ToString("#,##0.00");
             PhysicalNumberTextBox.Text = SelectedTransitMixer?.PhysicalNumber;
-
+            DefaultDriverTextBox.Text = SelectedTransitMixer?.DefaultDriver?.ToString() ?? "Default not set.";
         }
 
         private async Task LoadListAsync()
@@ -137,6 +137,7 @@ namespace Citicon.Forms.Controls
                         if (transitMixer != null)
                         {
                             MessageBox.Show("Successfully deleted.");
+                            await LoadListAsync();
                         }
                         else
                         {
