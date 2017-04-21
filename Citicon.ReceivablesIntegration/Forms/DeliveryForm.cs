@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms;
 using Citicon_ManagementSystem;
 using System;
 using System.Collections.Generic;
@@ -135,26 +136,29 @@ namespace Citicon.ReceivablesIntegration.Forms
             {
                 if (dgvScheduledProjectDesign.SelectedRows[0].Cells[colScheduledProjectDesign.Name].Value is ScheduledProjectDesign scheduledProjectDesign)
                 {
-                    var personnelIds = new List<int>();
-
-                    foreach (DataGridViewRow row in dgvPersonnel.Rows)
-                    {
-                        if ((bool)row.Cells[colPersonnel_Selected.Name].Value)
-                        {
-                            var personnel = (Employee)row.Cells[colPersonnel.Name].Value;
-
-                            personnelIds.Add((int)personnel.Id);
-                        }
-                    }
-
-                    frmConfirm_Delivery.projectId = (int)scheduledProjectDesign.Design.Project.Id;
-                    frmConfirm_Delivery.clientId = (int)scheduledProjectDesign.Design.Project.Client.Id;
-                    frmConfirm_Delivery.projectDesignId = (int)scheduledProjectDesign.Design.Id;
-                    frmConfirm_Delivery.pricePerCubic = (double)scheduledProjectDesign.Design.PricePerCubicMeter;
-                    frmConfirm_Delivery.personnelList = personnelIds;
-
-                    var form = new frmConfirm_Delivery(scheduledProjectDesign.Design);
+                    var form = new DeliveryManagementForm();
                     form.ShowDialog();
+                    form = null;
+                    //var personnelIds = new List<int>();
+
+                    //foreach (DataGridViewRow row in dgvPersonnel.Rows)
+                    //{
+                    //    if ((bool)row.Cells[colPersonnel_Selected.Name].Value)
+                    //    {
+                    //        var personnel = (Employee)row.Cells[colPersonnel.Name].Value;
+
+                    //        personnelIds.Add((int)personnel.Id);
+                    //    }
+                    //}
+
+                    //frmConfirm_Delivery.projectId = (int)scheduledProjectDesign.Design.Project.Id;
+                    //frmConfirm_Delivery.clientId = (int)scheduledProjectDesign.Design.Project.Client.Id;
+                    //frmConfirm_Delivery.projectDesignId = (int)scheduledProjectDesign.Design.Id;
+                    //frmConfirm_Delivery.pricePerCubic = (double)scheduledProjectDesign.Design.PricePerCubicMeter;
+                    //frmConfirm_Delivery.personnelList = personnelIds;
+
+                    //var form = new frmConfirm_Delivery(scheduledProjectDesign.Design);
+                    //form.ShowDialog();
                 }
                 else
                 {

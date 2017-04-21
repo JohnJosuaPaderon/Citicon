@@ -393,6 +393,12 @@
     <Compile Include="Forms\DailyTallySheetForm.Designer.cs">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeliveryManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeliveryManagementForm.Designer.cs">
+      <DependentUpon>DeliveryManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\AddEditClientDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -511,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DailyTallySheetForm.resx">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeliveryManagementForm.resx">
+      <DependentUpon>DeliveryManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>

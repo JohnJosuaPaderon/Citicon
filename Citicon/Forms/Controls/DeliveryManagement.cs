@@ -28,5 +28,10 @@ namespace Citicon.Forms.Controls
                 CloseDialogRequested?.Invoke(this, new EventArgs());
             }
         }
+
+        private void DeliveryManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
