@@ -89,6 +89,11 @@
             // 
             this.VolumeCapacityNumericUpDown.DecimalPlaces = 3;
             this.VolumeCapacityNumericUpDown.Location = new System.Drawing.Point(15, 125);
+            this.VolumeCapacityNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.VolumeCapacityNumericUpDown.Name = "VolumeCapacityNumericUpDown";
             this.VolumeCapacityNumericUpDown.Size = new System.Drawing.Size(303, 25);
             this.VolumeCapacityNumericUpDown.TabIndex = 5;
