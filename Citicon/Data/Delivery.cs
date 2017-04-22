@@ -13,13 +13,14 @@ namespace Citicon.Data
         public DateTime DeliveryDate { get; set; }
         public Vehicle TransitMixer { get; set; }
         public Employee Driver { get; set; }
-        public DateTimeRange PlantTrip { get; set; }
         public decimal Volume { get; set; }
         public decimal CommulativeVolume { get; set; }
         public string Remarks { get; set; }
         public decimal PricePerCubicMeter { get; set; }
-        public DateTime PlantLeave { get; set; }
-        public DateTime PlantArrive { get; set; }
+        public DateTime? PlantLeave { get; set; }
+        public DateTime? PlantArrive { get; set; }
+        public Branch Branch { get; set; }
+        public DeliveryRoute Route { get; set; }
 
         public static bool operator ==(Delivery left, Delivery right)
         {

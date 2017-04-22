@@ -43,7 +43,8 @@ namespace Citicon.DataProcess
                                         Driver = await EmployeeManager.GetByIdAsync(reader.GetInt64("DriverId")),
                                         Id = reader.GetUInt64("Id"),
                                         Load = reader.GetString("Load"),
-                                        PlantTrip = new DateTimeRange(reader.GetDateTime("PlantLeave"), reader.GetDateTime("PlantArrived")),
+                                        PlantArrive = reader.GetNullableDateTime("PlantArrive"),
+                                        PlantLeave = reader.GetNullableDateTime("PlantLeave"),
                                         //Project
                                         PricePerCubicMeter = reader.GetDecimal("PricePerCubicMeter")
                                     });

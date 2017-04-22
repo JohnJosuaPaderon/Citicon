@@ -13,10 +13,12 @@ namespace Citicon.Forms.Controls
         {
             InitializeComponent();
             RouteManager = new DeliveryRouteManager();
+            TransitMixerManager = new TransitMixerManager();
         }
 
         public event EventHandler CloseDialogRequested;
         private DeliveryRouteManager RouteManager;
+        private TransitMixerManager TransitMixerManager;
 
         private ProjectDesign _ProjectDesign;
 
@@ -63,6 +65,44 @@ namespace Citicon.Forms.Controls
             }
         }
 
+        private async Task GetDriverListAsync()
+        {
+            Delivery_DriverComboBox.Items.Clear();
+
+            try
+            {
+                var drivers = await EmployeeManager.GetDriverListAsync();
+
+                if (drivers != null && drivers.Any())
+                {
+                    Delivery_DriverComboBox.Items.AddRange(drivers.ToArray());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async Task GetTransitMixerListAsync()
+        {
+            Delivery_TransitMixerTextBox.Items.Clear();
+
+            try
+            {
+                var transitMixers = await TransitMixerManager.GetListAsync();
+
+                if (transitMixers != null && transitMixers.Any())
+                {
+                    Delivery_TransitMixerTextBox.Items.AddRange(transitMixers.ToArray());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);long a = 1_000;
+            }
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             var dialogResult = MessageBox.Show("Do you really want to cancel delivery?", "Delivery", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -76,6 +116,13 @@ namespace Citicon.Forms.Controls
         private async void DeliveryManagement_Load(object sender, EventArgs e)
         {
             await GetDeliveryRouteListAsync();
+            await GetDriverListAsync();
+            await GetTransitMixerListAsync();
+        }
+
+        private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

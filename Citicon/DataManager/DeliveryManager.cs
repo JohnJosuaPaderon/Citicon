@@ -53,7 +53,8 @@ namespace Citicon.DataManager
                 Driver = await EmployeeManager.GetByIdAsync(dataReader.GetInt64("Driver")),
                 Id = dataReader.GetUInt64("Id"),
                 Load = dataReader.GetString("Load"),
-                PlantTrip = new DateTimeRange(dataReader.GetDateTime("PlantLeave"), dataReader.GetDateTime("PlantArrived")),
+                PlantLeave = dataReader.GetNullableDateTime("PlantLeave"),
+                PlantArrive = dataReader.GetNullableDateTime("PlantArrived"),
                 Project = await ProjectManager.GetByIdAsync(dataReader.GetUInt64("ProjectId")),
                 ProjectDesign = await ProjectDesignManager.GetByIdAsync(dataReader.GetUInt64("ProjectDesignId")),
                 Remarks = dataReader.GetString("Remarks"),
@@ -131,6 +132,19 @@ namespace Citicon.DataManager
             {
                 return null;
             }
+        }
+
+        public static async Task<Delivery> InsertAsync(Delivery delivery)
+        {
+            if (delivery != null)
+            {
+                using (var process = new InsertDelivery(delivery))
+                {
+                    delivery = await process.ExecuteAsync();
+                }
+            }
+
+            return delivery;
         }
     }
 }

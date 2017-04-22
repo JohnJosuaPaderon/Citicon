@@ -363,6 +363,7 @@
             this.Delivery_DriverComboBox.Name = "Delivery_DriverComboBox";
             this.Delivery_DriverComboBox.Size = new System.Drawing.Size(480, 25);
             this.Delivery_DriverComboBox.TabIndex = 26;
+            this.Delivery_DriverComboBox.SelectedIndexChanged += new System.EventHandler(this.Delivery_DriverComboBox_SelectedIndexChanged);
             // 
             // Delivery_DriverLabel
             // 
