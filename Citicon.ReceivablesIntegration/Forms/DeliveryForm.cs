@@ -1,9 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
 using Citicon.Forms;
-using Citicon_ManagementSystem;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
