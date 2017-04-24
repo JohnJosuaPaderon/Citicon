@@ -50,7 +50,7 @@ namespace Citicon.DataProcess
                                         PlantLeave = reader.GetNullableDateTime("PlantLeave"),
                                         Project = Project,
                                         ProjectDesign = null,
-                                        TransitMixer = await VehicleManager.GetByVehicleIdAsync(reader.GetUInt64("TransitMixer")),
+                                        TransitMixer = TransitMixer.FromBase(await VehicleManager.GetByVehicleIdAsync(reader.GetUInt64("TransitMixer"))),
                                         Volume = reader.GetDecimal("Volume"),
                                         Remarks = reader.GetString("Remarks")
                                     });

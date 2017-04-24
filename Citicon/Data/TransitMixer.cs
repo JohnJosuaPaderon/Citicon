@@ -9,5 +9,25 @@
         {
             return PhysicalNumber;
         }
+
+        public static TransitMixer FromBase(Vehicle vehicle)
+        {
+            if (vehicle != null)
+            {
+                return new TransitMixer()
+                {
+                    Id = vehicle.Id,
+                   Type = vehicle.Type,
+                   DefaultDriver = null,
+                   PhysicalNumber = vehicle.PhysicalNumber,
+                   PlateNumber = vehicle.PlateNumber,
+                   VolumeCapacity = 0
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

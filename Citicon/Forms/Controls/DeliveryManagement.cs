@@ -14,11 +14,16 @@ namespace Citicon.Forms.Controls
             InitializeComponent();
             RouteManager = new DeliveryRouteManager();
             TransitMixerManager = new TransitMixerManager();
+            BranchManager = new BranchManager();
         }
 
         public event EventHandler CloseDialogRequested;
         private DeliveryRouteManager RouteManager;
+        private BranchManager BranchManager;
         private TransitMixerManager TransitMixerManager;
+
+        private ulong LatestDeliveryReceiptNumber { get; set; }
+        public Delivery Delivery { get; private set; }
 
         private ProjectDesign _ProjectDesign;
 
@@ -84,9 +89,33 @@ namespace Citicon.Forms.Controls
             }
         }
 
+        private async Task GetBranchListAsync()
+        {
+            Delivery_PlantComboBox.Items.Clear();
+
+            try
+            {
+                var branches = await BranchManager.GetListAsync();
+
+                if (branches != null && branches.Any())
+                {
+                    Delivery_PlantComboBox.Items.AddRange(branches.ToArray());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async Task GetLatestDeliveryReceiptNumberAsync()
+        {
+
+        }
+
         private async Task GetTransitMixerListAsync()
         {
-            Delivery_TransitMixerTextBox.Items.Clear();
+            Delivery_TransitMixerComboBox.Items.Clear();
 
             try
             {
@@ -94,7 +123,7 @@ namespace Citicon.Forms.Controls
 
                 if (transitMixers != null && transitMixers.Any())
                 {
-                    Delivery_TransitMixerTextBox.Items.AddRange(transitMixers.ToArray());
+                    Delivery_TransitMixerComboBox.Items.AddRange(transitMixers.ToArray());
                 }
             }
             catch (Exception ex)
@@ -118,11 +147,113 @@ namespace Citicon.Forms.Controls
             await GetDeliveryRouteListAsync();
             await GetDriverListAsync();
             await GetTransitMixerListAsync();
+            await GetBranchListAsync();
         }
 
         private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var driver = Delivery_DriverComboBox.SelectedItem as Employee;
+            if (Delivery.Driver != driver)
+            {
+                Delivery.Driver = driver;
+            }
+        }
 
+        private async void DeliveryReceiptRefreshButton_Click(object sender, EventArgs e)
+        {
+            await GetLatestDeliveryReceiptNumberAsync();
+        }
+
+        private void Delivery_DeliveryDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Delivery_DeliveryDateCheckBox.Checked)
+            {
+                Delivery_DeliveryDateCheckBox.Text = "Delivery Date (Auto)";
+                Delivery_DeliveryDateTimePicker.Enabled = false;
+                Delivery_DeliveryDateTimePicker.Value = DateTime.Now;
+            }
+            else
+            {
+                Delivery_DeliveryDateCheckBox.Text = "Delivery Date (Manual)";
+                Delivery_DeliveryDateTimePicker.Enabled = true;
+            }
+        }
+
+        private void SaveDeliveryButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Delivery_DeliveryDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (Delivery.DeliveryDate != Delivery_DeliveryDateTimePicker.Value)
+            {
+                if (Delivery.DeliveryDate.Year != Delivery_DeliveryDateTimePicker.Value.Year)
+                {
+                    await GetLatestDeliveryReceiptNumberAsync();
+                }
+
+                Delivery.DeliveryDate = Delivery_DeliveryDateTimePicker.Value;
+            }
+        }
+
+        private void Delivery_DeliveredVolumeNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (Delivery.Volume != Delivery_DeliveredVolumeNumericUpDown.Value)
+            {
+                Delivery.Volume = Delivery_DeliveredVolumeNumericUpDown.Value;
+            }
+        }
+
+        private void Delivery_RouteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var route = Delivery_RouteComboBox.SelectedItem as DeliveryRoute;
+            if (Delivery.Route != route)
+            {
+                Delivery.Route = route;
+            }
+        }
+
+        private void Delivery_PlantComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var branch = Delivery_PlantComboBox.SelectedItem as Branch;
+            if (Delivery.Branch != branch)
+            {
+                Delivery.Branch = branch;
+            }
+        }
+
+        private void Delivery_TransitMixerComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var transitMixer = Delivery_TransitMixerComboBox.SelectedItem as TransitMixer;
+            if (Delivery.TransitMixer != transitMixer)
+            {
+                Delivery.TransitMixer = transitMixer;
+            }
+        }
+
+        private void Delivery_AdmixtureTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (Delivery.Admixture != Delivery_AdmixtureTextBox.Text)
+            {
+                Delivery.Admixture = Delivery_AdmixtureTextBox.Text;
+            }
+        }
+
+        private void Delivery_AdmixtureQuantityNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (Delivery.AdmixtureQuantity != Delivery_AdmixtureQuantityNumericUpDown.Value)
+            {
+                Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityNumericUpDown.Value;
+            }
+        }
+
+        private void Delivery_PlantLeaveDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (Delivery.PlantLeave != Delivery_PlantLeaveDateTimePicker.Value)
+            {
+                Delivery.PlantLeave = Delivery_PlantLeaveDateTimePicker.Value;
+            }
         }
     }
 }

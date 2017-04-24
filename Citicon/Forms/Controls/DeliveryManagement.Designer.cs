@@ -53,7 +53,15 @@
             this.Design_MixTypeTextBox = new System.Windows.Forms.TextBox();
             this.Design_MixTypeLabel = new System.Windows.Forms.Label();
             this.DeliveryGroupBox = new System.Windows.Forms.GroupBox();
-            this.Delivery_TransitMixerTextBox = new System.Windows.Forms.ComboBox();
+            this.Delivery_PlantLeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Delivery_PlantLeaveLabel = new System.Windows.Forms.Label();
+            this.Delivery_AdmixtureQuantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Delivery_AdmixtureQuantityLabel = new System.Windows.Forms.Label();
+            this.Delivery_AdmixtureTextBox = new System.Windows.Forms.TextBox();
+            this.Delivery_AdmixtureLabel = new System.Windows.Forms.Label();
+            this.Delivery_DeliveryDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Delivery_DeliveryDateCheckBox = new System.Windows.Forms.CheckBox();
+            this.Delivery_TransitMixerComboBox = new System.Windows.Forms.ComboBox();
             this.Delivery_TransitMixerLabel = new System.Windows.Forms.Label();
             this.Delivery_DriverComboBox = new System.Windows.Forms.ComboBox();
             this.Delivery_DriverLabel = new System.Windows.Forms.Label();
@@ -71,6 +79,7 @@
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -320,7 +329,15 @@
             // 
             this.DeliveryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeliveryGroupBox.Controls.Add(this.Delivery_TransitMixerTextBox);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantLeaveDateTimePicker);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantLeaveLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureQuantityNumericUpDown);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureQuantityLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureTextBox);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveryDateTimePicker);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveryDateCheckBox);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_TransitMixerComboBox);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_TransitMixerLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_DriverComboBox);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_DriverLabel);
@@ -332,19 +349,97 @@
             this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveredVolumeLabel);
             this.DeliveryGroupBox.Location = new System.Drawing.Point(10, 315);
             this.DeliveryGroupBox.Name = "DeliveryGroupBox";
-            this.DeliveryGroupBox.Size = new System.Drawing.Size(866, 124);
+            this.DeliveryGroupBox.Size = new System.Drawing.Size(866, 233);
             this.DeliveryGroupBox.TabIndex = 4;
             this.DeliveryGroupBox.TabStop = false;
             this.DeliveryGroupBox.Text = "DELIVERY DETAILS";
             // 
-            // Delivery_TransitMixerTextBox
+            // Delivery_PlantLeaveDateTimePicker
             // 
-            this.Delivery_TransitMixerTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Delivery_TransitMixerTextBox.FormattingEnabled = true;
-            this.Delivery_TransitMixerTextBox.Location = new System.Drawing.Point(495, 89);
-            this.Delivery_TransitMixerTextBox.Name = "Delivery_TransitMixerTextBox";
-            this.Delivery_TransitMixerTextBox.Size = new System.Drawing.Size(237, 25);
-            this.Delivery_TransitMixerTextBox.TabIndex = 28;
+            this.Delivery_PlantLeaveDateTimePicker.CustomFormat = "MMM dd, yyyy hh:mm tt";
+            this.Delivery_PlantLeaveDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Delivery_PlantLeaveDateTimePicker.Location = new System.Drawing.Point(9, 196);
+            this.Delivery_PlantLeaveDateTimePicker.Name = "Delivery_PlantLeaveDateTimePicker";
+            this.Delivery_PlantLeaveDateTimePicker.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_PlantLeaveDateTimePicker.TabIndex = 36;
+            this.Delivery_PlantLeaveDateTimePicker.ValueChanged += new System.EventHandler(this.Delivery_PlantLeaveDateTimePicker_ValueChanged);
+            // 
+            // Delivery_PlantLeaveLabel
+            // 
+            this.Delivery_PlantLeaveLabel.AutoSize = true;
+            this.Delivery_PlantLeaveLabel.Location = new System.Drawing.Point(6, 176);
+            this.Delivery_PlantLeaveLabel.Name = "Delivery_PlantLeaveLabel";
+            this.Delivery_PlantLeaveLabel.Size = new System.Drawing.Size(73, 17);
+            this.Delivery_PlantLeaveLabel.TabIndex = 35;
+            this.Delivery_PlantLeaveLabel.Text = "Plant Leave";
+            // 
+            // Delivery_AdmixtureQuantityNumericUpDown
+            // 
+            this.Delivery_AdmixtureQuantityNumericUpDown.DecimalPlaces = 3;
+            this.Delivery_AdmixtureQuantityNumericUpDown.Location = new System.Drawing.Point(495, 148);
+            this.Delivery_AdmixtureQuantityNumericUpDown.Name = "Delivery_AdmixtureQuantityNumericUpDown";
+            this.Delivery_AdmixtureQuantityNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_AdmixtureQuantityNumericUpDown.TabIndex = 34;
+            this.Delivery_AdmixtureQuantityNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Delivery_AdmixtureQuantityNumericUpDown.ThousandsSeparator = true;
+            this.Delivery_AdmixtureQuantityNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_AdmixtureQuantityNumericUpDown_ValueChanged);
+            // 
+            // Delivery_AdmixtureQuantityLabel
+            // 
+            this.Delivery_AdmixtureQuantityLabel.AutoSize = true;
+            this.Delivery_AdmixtureQuantityLabel.Location = new System.Drawing.Point(492, 121);
+            this.Delivery_AdmixtureQuantityLabel.Name = "Delivery_AdmixtureQuantityLabel";
+            this.Delivery_AdmixtureQuantityLabel.Size = new System.Drawing.Size(119, 17);
+            this.Delivery_AdmixtureQuantityLabel.TabIndex = 33;
+            this.Delivery_AdmixtureQuantityLabel.Text = "Admixture Quantity";
+            // 
+            // Delivery_AdmixtureTextBox
+            // 
+            this.Delivery_AdmixtureTextBox.Location = new System.Drawing.Point(252, 148);
+            this.Delivery_AdmixtureTextBox.Name = "Delivery_AdmixtureTextBox";
+            this.Delivery_AdmixtureTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_AdmixtureTextBox.TabIndex = 32;
+            this.Delivery_AdmixtureTextBox.TextChanged += new System.EventHandler(this.Delivery_AdmixtureTextBox_TextChanged);
+            // 
+            // Delivery_AdmixtureLabel
+            // 
+            this.Delivery_AdmixtureLabel.AutoSize = true;
+            this.Delivery_AdmixtureLabel.Location = new System.Drawing.Point(249, 121);
+            this.Delivery_AdmixtureLabel.Name = "Delivery_AdmixtureLabel";
+            this.Delivery_AdmixtureLabel.Size = new System.Drawing.Size(67, 17);
+            this.Delivery_AdmixtureLabel.TabIndex = 31;
+            this.Delivery_AdmixtureLabel.Text = "Admixture";
+            // 
+            // Delivery_DeliveryDateTimePicker
+            // 
+            this.Delivery_DeliveryDateTimePicker.CustomFormat = "MMM dd, yyyy hh:mm tt";
+            this.Delivery_DeliveryDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Delivery_DeliveryDateTimePicker.Location = new System.Drawing.Point(9, 148);
+            this.Delivery_DeliveryDateTimePicker.Name = "Delivery_DeliveryDateTimePicker";
+            this.Delivery_DeliveryDateTimePicker.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_DeliveryDateTimePicker.TabIndex = 30;
+            this.Delivery_DeliveryDateTimePicker.ValueChanged += new System.EventHandler(this.Delivery_DeliveryDateTimePicker_ValueChanged);
+            // 
+            // Delivery_DeliveryDateCheckBox
+            // 
+            this.Delivery_DeliveryDateCheckBox.AutoSize = true;
+            this.Delivery_DeliveryDateCheckBox.Location = new System.Drawing.Point(9, 120);
+            this.Delivery_DeliveryDateCheckBox.Name = "Delivery_DeliveryDateCheckBox";
+            this.Delivery_DeliveryDateCheckBox.Size = new System.Drawing.Size(159, 21);
+            this.Delivery_DeliveryDateCheckBox.TabIndex = 29;
+            this.Delivery_DeliveryDateCheckBox.Text = "Delivery Date (Manual)";
+            this.Delivery_DeliveryDateCheckBox.UseVisualStyleBackColor = true;
+            this.Delivery_DeliveryDateCheckBox.CheckedChanged += new System.EventHandler(this.Delivery_DeliveryDateCheckBox_CheckedChanged);
+            // 
+            // Delivery_TransitMixerComboBox
+            // 
+            this.Delivery_TransitMixerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Delivery_TransitMixerComboBox.FormattingEnabled = true;
+            this.Delivery_TransitMixerComboBox.Location = new System.Drawing.Point(495, 89);
+            this.Delivery_TransitMixerComboBox.Name = "Delivery_TransitMixerComboBox";
+            this.Delivery_TransitMixerComboBox.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_TransitMixerComboBox.TabIndex = 28;
+            this.Delivery_TransitMixerComboBox.SelectedIndexChanged += new System.EventHandler(this.Delivery_TransitMixerComboBox_SelectedIndexChanged);
             // 
             // Delivery_TransitMixerLabel
             // 
@@ -382,6 +477,7 @@
             this.Delivery_PlantComboBox.Name = "Delivery_PlantComboBox";
             this.Delivery_PlantComboBox.Size = new System.Drawing.Size(237, 25);
             this.Delivery_PlantComboBox.TabIndex = 24;
+            this.Delivery_PlantComboBox.SelectedIndexChanged += new System.EventHandler(this.Delivery_PlantComboBox_SelectedIndexChanged);
             // 
             // Delivery_PlantLabel
             // 
@@ -400,6 +496,7 @@
             this.Delivery_RouteComboBox.Name = "Delivery_RouteComboBox";
             this.Delivery_RouteComboBox.Size = new System.Drawing.Size(237, 25);
             this.Delivery_RouteComboBox.TabIndex = 22;
+            this.Delivery_RouteComboBox.SelectedIndexChanged += new System.EventHandler(this.Delivery_RouteComboBox_SelectedIndexChanged);
             // 
             // Delivery_RouteLabel
             // 
@@ -419,6 +516,7 @@
             this.Delivery_DeliveredVolumeNumericUpDown.TabIndex = 20;
             this.Delivery_DeliveredVolumeNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Delivery_DeliveredVolumeNumericUpDown.ThousandsSeparator = true;
+            this.Delivery_DeliveredVolumeNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_DeliveredVolumeNumericUpDown_ValueChanged);
             // 
             // Delivery_DeliveredVolumeLabel
             // 
@@ -436,7 +534,7 @@
             this.CancelDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelDeliveryButton.ForeColor = System.Drawing.Color.Red;
-            this.CancelDeliveryButton.Location = new System.Drawing.Point(776, 445);
+            this.CancelDeliveryButton.Location = new System.Drawing.Point(776, 554);
             this.CancelDeliveryButton.Name = "CancelDeliveryButton";
             this.CancelDeliveryButton.Size = new System.Drawing.Size(100, 50);
             this.CancelDeliveryButton.TabIndex = 114;
@@ -452,12 +550,13 @@
             this.SaveDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveDeliveryButton.ForeColor = System.Drawing.Color.White;
-            this.SaveDeliveryButton.Location = new System.Drawing.Point(645, 445);
+            this.SaveDeliveryButton.Location = new System.Drawing.Point(645, 554);
             this.SaveDeliveryButton.Name = "SaveDeliveryButton";
             this.SaveDeliveryButton.Size = new System.Drawing.Size(125, 50);
             this.SaveDeliveryButton.TabIndex = 113;
             this.SaveDeliveryButton.Text = "SAVE DELIVERY";
             this.SaveDeliveryButton.UseVisualStyleBackColor = false;
+            this.SaveDeliveryButton.Click += new System.EventHandler(this.SaveDeliveryButton_Click);
             // 
             // PurchaseOrderTextBox
             // 
@@ -494,6 +593,7 @@
             this.DeliveryReceiptRefreshButton.Size = new System.Drawing.Size(43, 43);
             this.DeliveryReceiptRefreshButton.TabIndex = 115;
             this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
+            this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
             // 
             // DeliveryManagement
             // 
@@ -514,7 +614,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DeliveryManagement";
-            this.Size = new System.Drawing.Size(885, 503);
+            this.Size = new System.Drawing.Size(885, 613);
             this.Load += new System.EventHandler(this.DeliveryManagement_Load);
             this.ProjectGroupBox.ResumeLayout(false);
             this.ProjectGroupBox.PerformLayout();
@@ -522,6 +622,7 @@
             this.DesignGroupBox.PerformLayout();
             this.DeliveryGroupBox.ResumeLayout(false);
             this.DeliveryGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -563,12 +664,20 @@
         private System.Windows.Forms.Label Delivery_PlantLabel;
         private System.Windows.Forms.Label Delivery_DriverLabel;
         private System.Windows.Forms.ComboBox Delivery_DriverComboBox;
-        private System.Windows.Forms.ComboBox Delivery_TransitMixerTextBox;
+        private System.Windows.Forms.ComboBox Delivery_TransitMixerComboBox;
         private System.Windows.Forms.Label Delivery_TransitMixerLabel;
         private System.Windows.Forms.Button CancelDeliveryButton;
         private System.Windows.Forms.Button SaveDeliveryButton;
         private System.Windows.Forms.Button DeliveryReceiptRefreshButton;
         private System.Windows.Forms.TextBox PurchaseOrderTextBox;
         private System.Windows.Forms.Label PurchaseOrderLabel;
+        private System.Windows.Forms.CheckBox Delivery_DeliveryDateCheckBox;
+        private System.Windows.Forms.DateTimePicker Delivery_DeliveryDateTimePicker;
+        private System.Windows.Forms.Label Delivery_AdmixtureLabel;
+        private System.Windows.Forms.TextBox Delivery_AdmixtureTextBox;
+        private System.Windows.Forms.Label Delivery_AdmixtureQuantityLabel;
+        private System.Windows.Forms.NumericUpDown Delivery_AdmixtureQuantityNumericUpDown;
+        private System.Windows.Forms.DateTimePicker Delivery_PlantLeaveDateTimePicker;
+        private System.Windows.Forms.Label Delivery_PlantLeaveLabel;
     }
 }

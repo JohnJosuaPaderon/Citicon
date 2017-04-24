@@ -47,7 +47,7 @@ namespace Citicon.DataProcess
                 ProjectDesign = ProjectDesign,
                 DeliveryReceiptNumber = reader.GetUInt64("DeliveryReceiptNumber"),
                 Load = reader.GetString("Load"),
-                TransitMixer = await VehicleManager.GetByVehicleIdAsync(reader.GetUInt64("TransitMixerId")),
+                TransitMixer = TransitMixer.FromBase(await VehicleManager.GetByVehicleIdAsync(reader.GetUInt64("TransitMixerId"))),
                 Driver = await EmployeeManager.GetByIdAsync(reader.GetInt64("DriverId")),
                 PlantLeave = reader.GetDateTime("PlantLeave"),
                 PlantArrive = reader.GetDateTime("PlantArrive"),

@@ -11,7 +11,7 @@ namespace Citicon.Data
         public ulong DeliveryReceiptNumber { get; set; }
         public string Load { get; set; }
         public DateTime DeliveryDate { get; set; }
-        public Vehicle TransitMixer { get; set; }
+        public TransitMixer TransitMixer { get; set; }
         public Employee Driver { get; set; }
         public decimal Volume { get; set; }
         public decimal CommulativeVolume { get; set; }
@@ -21,6 +21,8 @@ namespace Citicon.Data
         public DateTime? PlantArrive { get; set; }
         public Branch Branch { get; set; }
         public DeliveryRoute Route { get; set; }
+        public string Admixture { get; set; }
+        public decimal AdmixtureQuantity { get; set; }
 
         public static bool operator ==(Delivery left, Delivery right)
         {
