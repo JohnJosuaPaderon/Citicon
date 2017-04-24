@@ -37,6 +37,23 @@ namespace Citicon.Forms.Controls
             }
         }
 
+        private PurchaseOrder _PurchaseOrder;
+
+        public PurchaseOrder PurchaseOrder
+        {
+            get { return _PurchaseOrder; }
+            set
+            {
+                _PurchaseOrder = value;
+                OnPurchaseOrder();
+            }
+        }
+
+        private void OnPurchaseOrder()
+        {
+            PurchaseOrderTextBox.Text = PurchaseOrder?.Number ?? "<No P.O.>";
+        }
+
         private void OnProjectDesignChanged()
         {
             Project_ClientTextBox.Text = ProjectDesign?.Project?.Client?.CompanyName;
@@ -110,7 +127,17 @@ namespace Citicon.Forms.Controls
 
         private async Task GetLatestDeliveryReceiptNumberAsync()
         {
+            DeliveryReceiptNumberTextBox.Text = string.Empty;
 
+            try
+            {
+                Delivery.DeliveryReceiptNumber = await DeliveryManager.GetLatestDeliveryReceiptNumberAsync(Delivery.DeliveryDate);
+                DeliveryReceiptNumberTextBox.Text = string.Format("{0:yy}-{1:000000}", Delivery.DeliveryDate, Delivery.DeliveryReceiptNumber);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async Task GetTransitMixerListAsync()
@@ -132,6 +159,23 @@ namespace Citicon.Forms.Controls
             }
         }
 
+        private async Task GetPurchaseOrderAsync()
+        {
+            try
+            {
+                var purchaseOrderProjectDesign = await PurchaseOrderProjectDesignManager.GetAvailableAsync(ProjectDesign);
+
+                if (purchaseOrderProjectDesign != null)
+                {
+                    PurchaseOrder = purchaseOrderProjectDesign.PurchaseOrder;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             var dialogResult = MessageBox.Show("Do you really want to cancel delivery?", "Delivery", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -148,6 +192,7 @@ namespace Citicon.Forms.Controls
             await GetDriverListAsync();
             await GetTransitMixerListAsync();
             await GetBranchListAsync();
+            await GetPurchaseOrderAsync();
         }
 
         private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -188,12 +233,12 @@ namespace Citicon.Forms.Controls
         {
             if (Delivery.DeliveryDate != Delivery_DeliveryDateTimePicker.Value)
             {
+                Delivery.DeliveryDate = Delivery_DeliveryDateTimePicker.Value;
+
                 if (Delivery.DeliveryDate.Year != Delivery_DeliveryDateTimePicker.Value.Year)
                 {
                     await GetLatestDeliveryReceiptNumberAsync();
                 }
-
-                Delivery.DeliveryDate = Delivery_DeliveryDateTimePicker.Value;
             }
         }
 
