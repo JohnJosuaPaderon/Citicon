@@ -195,6 +195,8 @@ namespace Citicon.Forms.Controls
         {
             Delivery = new Delivery();
             Delivery_DeliveryDateTimePicker.Value = DateTime.Now;
+            Delivery.Project = ProjectDesign.Project;
+            Delivery.ProjectDesign = ProjectDesign;
             await GetDeliveryRouteListAsync();
             await GetDriverListAsync();
             await GetTransitMixerListAsync();
