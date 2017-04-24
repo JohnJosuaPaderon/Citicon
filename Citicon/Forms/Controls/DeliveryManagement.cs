@@ -182,17 +182,25 @@ namespace Citicon.Forms.Controls
 
             if (dialogResult == DialogResult.Yes)
             {
-                CloseDialogRequested?.Invoke(this, new EventArgs());
+                OnCloseDialogRequested();
             }
+        }
+
+        private void OnCloseDialogRequested()
+        {
+            CloseDialogRequested?.Invoke(this, new EventArgs());
         }
 
         private async void DeliveryManagement_Load(object sender, EventArgs e)
         {
+            Delivery = new Delivery();
+            Delivery_DeliveryDateTimePicker.Value = DateTime.Now;
             await GetDeliveryRouteListAsync();
             await GetDriverListAsync();
             await GetTransitMixerListAsync();
             await GetBranchListAsync();
             await GetPurchaseOrderAsync();
+            await GetLatestDeliveryReceiptNumberAsync();
         }
 
         private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -224,9 +232,26 @@ namespace Citicon.Forms.Controls
             }
         }
 
-        private void SaveDeliveryButton_Click(object sender, EventArgs e)
+        private async void SaveDeliveryButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var delivery = await DeliveryManager.InsertAsync(Delivery);
 
+                if (delivery != null)
+                {
+                    MessageBox.Show("Successfully delivered.");
+                    OnCloseDialogRequested();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to deliver.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void Delivery_DeliveryDateTimePicker_ValueChanged(object sender, EventArgs e)
