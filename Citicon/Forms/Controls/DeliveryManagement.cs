@@ -203,9 +203,22 @@ namespace Citicon.Forms.Controls
             await GetBranchListAsync();
             await GetPurchaseOrderAsync();
             await GetLatestDeliveryReceiptNumberAsync();
+            SetDeliveryAdmixture();
+            SetDeliveryAdmixtureQuantity();
+            SetDeliveryDeliveredVolume();
+            await SetDeliveryDeliveryDateAsync();
+            SetDeliveryDriver();
+            SetDeliveryPlantLeave();
+            SetDeliveryRoute();
+            SetDeliveryTransitMixer();
         }
 
         private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetDeliveryDriver();
+        }
+
+        private void SetDeliveryDriver()
         {
             var driver = Delivery_DriverComboBox.SelectedItem as Employee;
             if (Delivery.Driver != driver)
@@ -258,6 +271,11 @@ namespace Citicon.Forms.Controls
 
         private async void Delivery_DeliveryDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
+            await SetDeliveryDeliveryDateAsync();
+        }
+
+        private async Task SetDeliveryDeliveryDateAsync()
+        {
             if (Delivery.DeliveryDate != Delivery_DeliveryDateTimePicker.Value)
             {
                 Delivery.DeliveryDate = Delivery_DeliveryDateTimePicker.Value;
@@ -271,6 +289,11 @@ namespace Citicon.Forms.Controls
 
         private void Delivery_DeliveredVolumeNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            SetDeliveryDeliveredVolume();
+        }
+
+        private void SetDeliveryDeliveredVolume()
+        {
             if (Delivery.Volume != Delivery_DeliveredVolumeNumericUpDown.Value)
             {
                 Delivery.Volume = Delivery_DeliveredVolumeNumericUpDown.Value;
@@ -278,6 +301,11 @@ namespace Citicon.Forms.Controls
         }
 
         private void Delivery_RouteComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetDeliveryRoute();
+        }
+
+        private void SetDeliveryRoute()
         {
             var route = Delivery_RouteComboBox.SelectedItem as DeliveryRoute;
             if (Delivery.Route != route)
@@ -297,6 +325,11 @@ namespace Citicon.Forms.Controls
 
         private void Delivery_TransitMixerComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SetDeliveryTransitMixer();
+        }
+
+        private void SetDeliveryTransitMixer()
+        {
             var transitMixer = Delivery_TransitMixerComboBox.SelectedItem as TransitMixer;
             if (Delivery.TransitMixer != transitMixer)
             {
@@ -306,6 +339,11 @@ namespace Citicon.Forms.Controls
 
         private void Delivery_AdmixtureTextBox_TextChanged(object sender, EventArgs e)
         {
+            SetDeliveryAdmixture();
+        }
+
+        private void SetDeliveryAdmixture()
+        {
             if (Delivery.Admixture != Delivery_AdmixtureTextBox.Text)
             {
                 Delivery.Admixture = Delivery_AdmixtureTextBox.Text;
@@ -314,6 +352,11 @@ namespace Citicon.Forms.Controls
 
         private void Delivery_AdmixtureQuantityNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
+            SetDeliveryAdmixtureQuantity();
+        }
+
+        private void SetDeliveryAdmixtureQuantity()
+        {
             if (Delivery.AdmixtureQuantity != Delivery_AdmixtureQuantityNumericUpDown.Value)
             {
                 Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityNumericUpDown.Value;
@@ -321,6 +364,11 @@ namespace Citicon.Forms.Controls
         }
 
         private void Delivery_PlantLeaveDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            SetDeliveryPlantLeave();
+        }
+
+        private void SetDeliveryPlantLeave()
         {
             if (Delivery.PlantLeave != Delivery_PlantLeaveDateTimePicker.Value)
             {
