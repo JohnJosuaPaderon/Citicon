@@ -39,44 +39,6 @@ namespace Citicon.ReceivablesIntegration.Forms
             }
         }
 
-        private async Task GetPersonnelAsync()
-        {
-            dgvPersonnel.Rows.Clear();
-
-            try
-            {
-                var personnel = await EmployeeManager.GetListByDepartmentAsync(Department.Operation);
-
-                if (personnel != null)
-                {
-                    foreach (var item in personnel)
-                    {
-                        AddPersonnel(item);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void AddPersonnel(Employee personnel)
-        {
-            if (personnel != null)
-            {
-                var row = new DataGridViewRow()
-                {
-                    Height = 30
-                };
-                row.Cells.Add(new DataGridViewCheckBoxCell { Value = false });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = personnel });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = personnel.Position });
-
-                dgvPersonnel.Rows.Add(row);
-            }
-        }
-
         private void AddScheduledProjectDesign(ScheduledProjectDesign scheduledProjectDesign)
         {
             if (scheduledProjectDesign != null)
@@ -173,7 +135,6 @@ namespace Citicon.ReceivablesIntegration.Forms
         private async void DeliveryForm_Load(object sender, EventArgs e)
         {
             await GetScheduledListAsync();
-            await GetPersonnelAsync();
         }
 
         private async void BtnConfirmDelivery_Click(object sender, EventArgs e)

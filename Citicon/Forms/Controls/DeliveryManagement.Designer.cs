@@ -76,11 +76,17 @@
             this.PurchaseOrderTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrderLabel = new System.Windows.Forms.Label();
             this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
+            this.Delivery_LoadNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Delivery_LoadLabel = new System.Windows.Forms.Label();
+            this.Delivery_MaxSlumpNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Delivery_MaxSlumpLabel = new System.Windows.Forms.Label();
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // DeliveryReceiptNumberLabel
@@ -329,6 +335,10 @@
             // 
             this.DeliveryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_MaxSlumpNumericUpDown);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_MaxSlumpLabel);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_LoadNumericUpDown);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_LoadLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantLeaveDateTimePicker);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantLeaveLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureQuantityNumericUpDown);
@@ -377,6 +387,11 @@
             // 
             this.Delivery_AdmixtureQuantityNumericUpDown.DecimalPlaces = 3;
             this.Delivery_AdmixtureQuantityNumericUpDown.Location = new System.Drawing.Point(495, 148);
+            this.Delivery_AdmixtureQuantityNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Delivery_AdmixtureQuantityNumericUpDown.Name = "Delivery_AdmixtureQuantityNumericUpDown";
             this.Delivery_AdmixtureQuantityNumericUpDown.Size = new System.Drawing.Size(237, 25);
             this.Delivery_AdmixtureQuantityNumericUpDown.TabIndex = 34;
@@ -511,6 +526,11 @@
             // 
             this.Delivery_DeliveredVolumeNumericUpDown.DecimalPlaces = 3;
             this.Delivery_DeliveredVolumeNumericUpDown.Location = new System.Drawing.Point(9, 41);
+            this.Delivery_DeliveredVolumeNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.Delivery_DeliveredVolumeNumericUpDown.Name = "Delivery_DeliveredVolumeNumericUpDown";
             this.Delivery_DeliveredVolumeNumericUpDown.Size = new System.Drawing.Size(237, 25);
             this.Delivery_DeliveredVolumeNumericUpDown.TabIndex = 20;
@@ -595,6 +615,55 @@
             this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
             this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
             // 
+            // Delivery_LoadNumericUpDown
+            // 
+            this.Delivery_LoadNumericUpDown.Location = new System.Drawing.Point(252, 196);
+            this.Delivery_LoadNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.Delivery_LoadNumericUpDown.Name = "Delivery_LoadNumericUpDown";
+            this.Delivery_LoadNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_LoadNumericUpDown.TabIndex = 38;
+            this.Delivery_LoadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Delivery_LoadNumericUpDown.ThousandsSeparator = true;
+            this.Delivery_LoadNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_LoadNumericUpDown_ValueChanged);
+            // 
+            // Delivery_LoadLabel
+            // 
+            this.Delivery_LoadLabel.AutoSize = true;
+            this.Delivery_LoadLabel.Location = new System.Drawing.Point(249, 176);
+            this.Delivery_LoadLabel.Name = "Delivery_LoadLabel";
+            this.Delivery_LoadLabel.Size = new System.Drawing.Size(37, 17);
+            this.Delivery_LoadLabel.TabIndex = 37;
+            this.Delivery_LoadLabel.Text = "Load";
+            // 
+            // Delivery_MaxSlumpNumericUpDown
+            // 
+            this.Delivery_MaxSlumpNumericUpDown.DecimalPlaces = 3;
+            this.Delivery_MaxSlumpNumericUpDown.Location = new System.Drawing.Point(495, 196);
+            this.Delivery_MaxSlumpNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.Delivery_MaxSlumpNumericUpDown.Name = "Delivery_MaxSlumpNumericUpDown";
+            this.Delivery_MaxSlumpNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_MaxSlumpNumericUpDown.TabIndex = 40;
+            this.Delivery_MaxSlumpNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Delivery_MaxSlumpNumericUpDown.ThousandsSeparator = true;
+            this.Delivery_MaxSlumpNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_MaxSlumpNumericUpDown_ValueChanged);
+            // 
+            // Delivery_MaxSlumpLabel
+            // 
+            this.Delivery_MaxSlumpLabel.AutoSize = true;
+            this.Delivery_MaxSlumpLabel.Location = new System.Drawing.Point(492, 176);
+            this.Delivery_MaxSlumpLabel.Name = "Delivery_MaxSlumpLabel";
+            this.Delivery_MaxSlumpLabel.Size = new System.Drawing.Size(73, 17);
+            this.Delivery_MaxSlumpLabel.TabIndex = 39;
+            this.Delivery_MaxSlumpLabel.Text = "Max Slump";
+            // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -624,6 +693,8 @@
             this.DeliveryGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,5 +750,9 @@
         private System.Windows.Forms.NumericUpDown Delivery_AdmixtureQuantityNumericUpDown;
         private System.Windows.Forms.DateTimePicker Delivery_PlantLeaveDateTimePicker;
         private System.Windows.Forms.Label Delivery_PlantLeaveLabel;
+        private System.Windows.Forms.NumericUpDown Delivery_LoadNumericUpDown;
+        private System.Windows.Forms.Label Delivery_LoadLabel;
+        private System.Windows.Forms.NumericUpDown Delivery_MaxSlumpNumericUpDown;
+        private System.Windows.Forms.Label Delivery_MaxSlumpLabel;
     }
 }

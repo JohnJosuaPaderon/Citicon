@@ -43,7 +43,9 @@
             this.DeliveryManagement.Location = new System.Drawing.Point(12, 13);
             this.DeliveryManagement.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DeliveryManagement.Name = "DeliveryManagement";
-            this.DeliveryManagement.Size = new System.Drawing.Size(876, 504);
+            this.DeliveryManagement.ProjectDesign = null;
+            this.DeliveryManagement.PurchaseOrder = null;
+            this.DeliveryManagement.Size = new System.Drawing.Size(876, 609);
             this.DeliveryManagement.TabIndex = 0;
             this.DeliveryManagement.CloseDialogRequested += new System.EventHandler(this.DeliveryManagement_CloseDialogRequested);
             // 
@@ -52,7 +54,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 530);
+            this.ClientSize = new System.Drawing.Size(900, 635);
             this.Controls.Add(this.DeliveryManagement);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;

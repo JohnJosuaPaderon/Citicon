@@ -23,6 +23,7 @@ namespace Citicon.Data
         public DeliveryRoute Route { get; set; }
         public string Admixture { get; set; }
         public decimal AdmixtureQuantity { get; set; }
+        public decimal MaxSlump { get; set; }
 
         public static bool operator ==(Delivery left, Delivery right)
         {

@@ -32,6 +32,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_TransitMixerId", Delivery.TransitMixer?.Id);
             command.Parameters.AddWithValue("@_BranchId", Delivery.Branch?.Id);
             command.Parameters.AddWithValue("@_DriverId", Delivery.Driver?.Id);
+            command.Parameters.AddWithValue("@_MaxSlump", Delivery.MaxSlump);
 
             return command;
         }

@@ -211,6 +211,8 @@ namespace Citicon.Forms.Controls
             SetDeliveryPlantLeave();
             SetDeliveryRoute();
             SetDeliveryTransitMixer();
+            SetDeliveryLoad();
+            SetDeliveryMaxSlump();
         }
 
         private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -373,6 +375,33 @@ namespace Citicon.Forms.Controls
             if (Delivery.PlantLeave != Delivery_PlantLeaveDateTimePicker.Value)
             {
                 Delivery.PlantLeave = Delivery_PlantLeaveDateTimePicker.Value;
+            }
+        }
+
+        private void Delivery_LoadNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            SetDeliveryLoad();
+        }
+
+        private void SetDeliveryLoad()
+        {
+            var load = Delivery_LoadNumericUpDown.Value.ToString("00");
+            if (Delivery.Load != load)
+            {
+                Delivery.Load = load;
+            }
+        }
+
+        private void Delivery_MaxSlumpNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            SetDeliveryMaxSlump();
+        }
+
+        private void SetDeliveryMaxSlump()
+        {
+            if (Delivery.MaxSlump != Delivery_MaxSlumpNumericUpDown.Value)
+            {
+                Delivery.MaxSlump = Delivery_MaxSlumpNumericUpDown.Value;
             }
         }
     }
