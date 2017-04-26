@@ -7,6 +7,8 @@ namespace Citicon.DataManager
 {
     public sealed class TransitMixerManager
     {
+        private static Dictionary<ulong, TransitMixer> Dictionary { get; } = new Dictionary<ulong, TransitMixer>();
+
         public Task<IEnumerable<TransitMixer>> GetListAsync()
         {
             using (var process = new GetTransitMixerList())
@@ -52,6 +54,35 @@ namespace Citicon.DataManager
             }
 
             return transitMixer;
+        }
+
+        public async Task<TransitMixer> GetByIdAsync(ulong transitMixerId)
+        {
+            if (transitMixerId > 0)
+            {
+                if (Dictionary.ContainsKey(transitMixerId))
+                {
+                    return Dictionary[transitMixerId];
+                }
+                else
+                {
+                    using (var process = new GetTransitMixerById(transitMixerId))
+                    {
+                        var transitMixer = await process.ExecuteAsync();
+
+                        if (transitMixer != null)
+                        {
+                            Dictionary.Add(transitMixerId, transitMixer);
+                        }
+
+                        return transitMixer;
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

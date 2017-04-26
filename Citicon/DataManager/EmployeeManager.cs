@@ -125,6 +125,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static Task<IEnumerable<Employee>> GetTripReportDriverListAsync(DateTimeRange range)
+        {
+            if (range != null)
+            {
+                using (var process = new GetTripReportDriverList(range))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<TimeLog> LogEmployeeAsync(EmployeeLogin loginInfo)
         {
             if (loginInfo != null)
