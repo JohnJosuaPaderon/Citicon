@@ -2,10 +2,12 @@
 using Newtonsoft.Json;
 using Sorschia.Queries;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace Citicon
 {
@@ -176,6 +178,18 @@ namespace Citicon
         {
             var result = JsonConvert.SerializeObject(value);
             return JsonConvert.DeserializeObject<T>(result);
+        }
+
+        public static DateTime GetDateTimeMean(IEnumerable<DateTime> dateTimes)
+        {
+            if (dateTimes.Any())
+            {
+                return new DateTime();
+            }
+            else
+            {
+                return default(DateTime);
+            }
         }
     }
 }

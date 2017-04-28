@@ -44,6 +44,7 @@ namespace Citicon.Reports
                 ColumnIndex = GetCellColumnIndex(key),
                 RowIndex = GetCellRowIndex(key)
             };
+
             return cell;
         }
 
