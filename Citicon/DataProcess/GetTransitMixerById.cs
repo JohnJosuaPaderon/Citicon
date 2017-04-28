@@ -37,7 +37,7 @@ namespace Citicon.DataProcess
                 DefaultDriver = await EmployeeManager.GetByIdAsync(reader.GetInt64("DefaultDriverId")),
                 PhysicalNumber = reader.GetString("PhysicalNumber"),
                 PlateNumber = reader.GetString("PlateNumber"),
-                Type = await VehicleTypeManager.GetVehicleTypeByIdAsync(reader.GetUInt64("TypeId")),
+                Type = VehicleType.TransitMixer,
                 VolumeCapacity =reader.GetDouble("VolumeCapacity")
             };
         }

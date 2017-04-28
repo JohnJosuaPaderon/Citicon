@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DriverTripReportForm));
@@ -45,7 +47,16 @@
             this.RangeEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.LoadButton = new System.Windows.Forms.Button();
             this.DeliveryDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ProjectDesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_DeliveryDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_DeliveryReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_TransitMixerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_Project_LocationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_RouteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_Route_RateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DriverDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -98,6 +109,7 @@
             this.DriverDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DriverDataGridView.Size = new System.Drawing.Size(542, 482);
             this.DriverDataGridView.TabIndex = 125;
+            this.DriverDataGridView.SelectionChanged += new System.EventHandler(this.DriverDataGridView_SelectionChanged);
             // 
             // DriverColumn
             // 
@@ -184,15 +196,24 @@
             this.DeliveryDataGridView.ColumnHeadersHeight = 60;
             this.DeliveryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DeliveryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            this.DeliveryColumn,
+            this.Delivery_ProjectDesignColumn,
+            this.Delivery_DeliveryDateColumn,
+            this.Delivery_ProjectColumn,
+            this.Delivery_DeliveryReceiptNumber,
+            this.Delivery_TransitMixerColumn,
+            this.Delivery_Project_LocationColumn,
+            this.Delivery_RouteColumn,
+            this.Delivery_Route_RateColumn,
+            this.Delivery_ExtraColumn});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.DeliveryDataGridView.EnableHeadersVisualStyles = false;
             this.DeliveryDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.DeliveryDataGridView.Location = new System.Drawing.Point(560, 61);
@@ -201,19 +222,95 @@
             this.DeliveryDataGridView.ReadOnly = true;
             this.DeliveryDataGridView.RowHeadersVisible = false;
             this.DeliveryDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DeliveryDataGridView.RowTemplate.Height = 40;
             this.DeliveryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DeliveryDataGridView.Size = new System.Drawing.Size(711, 482);
             this.DeliveryDataGridView.TabIndex = 131;
             // 
-            // dataGridViewTextBoxColumn1
+            // DeliveryColumn
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.HeaderText = "DRIVERS";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.DeliveryColumn.HeaderText = "DELIVERY";
+            this.DeliveryColumn.Name = "DeliveryColumn";
+            this.DeliveryColumn.ReadOnly = true;
+            this.DeliveryColumn.Visible = false;
+            this.DeliveryColumn.Width = 87;
+            // 
+            // Delivery_ProjectDesignColumn
+            // 
+            this.Delivery_ProjectDesignColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_ProjectDesignColumn.HeaderText = "DELIVERIES";
+            this.Delivery_ProjectDesignColumn.Name = "Delivery_ProjectDesignColumn";
+            this.Delivery_ProjectDesignColumn.ReadOnly = true;
+            this.Delivery_ProjectDesignColumn.Width = 97;
+            // 
+            // Delivery_DeliveryDateColumn
+            // 
+            this.Delivery_DeliveryDateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle7.Format = "MMM dd, yyyy";
+            this.Delivery_DeliveryDateColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Delivery_DeliveryDateColumn.HeaderText = "DELIVERY DATE";
+            this.Delivery_DeliveryDateColumn.Name = "Delivery_DeliveryDateColumn";
+            this.Delivery_DeliveryDateColumn.ReadOnly = true;
+            this.Delivery_DeliveryDateColumn.Width = 111;
+            // 
+            // Delivery_ProjectColumn
+            // 
+            this.Delivery_ProjectColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_ProjectColumn.HeaderText = "PROJECT";
+            this.Delivery_ProjectColumn.Name = "Delivery_ProjectColumn";
+            this.Delivery_ProjectColumn.ReadOnly = true;
+            this.Delivery_ProjectColumn.Width = 84;
+            // 
+            // Delivery_DeliveryReceiptNumber
+            // 
+            this.Delivery_DeliveryReceiptNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_DeliveryReceiptNumber.HeaderText = "DR. NO.";
+            this.Delivery_DeliveryReceiptNumber.Name = "Delivery_DeliveryReceiptNumber";
+            this.Delivery_DeliveryReceiptNumber.ReadOnly = true;
+            this.Delivery_DeliveryReceiptNumber.Width = 73;
+            // 
+            // Delivery_TransitMixerColumn
+            // 
+            this.Delivery_TransitMixerColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_TransitMixerColumn.HeaderText = "TM NO.";
+            this.Delivery_TransitMixerColumn.Name = "Delivery_TransitMixerColumn";
+            this.Delivery_TransitMixerColumn.ReadOnly = true;
+            this.Delivery_TransitMixerColumn.Width = 72;
+            // 
+            // Delivery_Project_LocationColumn
+            // 
+            this.Delivery_Project_LocationColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_Project_LocationColumn.HeaderText = "LOCATION";
+            this.Delivery_Project_LocationColumn.Name = "Delivery_Project_LocationColumn";
+            this.Delivery_Project_LocationColumn.ReadOnly = true;
+            this.Delivery_Project_LocationColumn.Width = 93;
+            // 
+            // Delivery_RouteColumn
+            // 
+            this.Delivery_RouteColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_RouteColumn.HeaderText = "ROUTE";
+            this.Delivery_RouteColumn.Name = "Delivery_RouteColumn";
+            this.Delivery_RouteColumn.ReadOnly = true;
+            this.Delivery_RouteColumn.Width = 73;
+            // 
+            // Delivery_Route_RateColumn
+            // 
+            this.Delivery_Route_RateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle8.Format = "#,##0.00";
+            this.Delivery_Route_RateColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Delivery_Route_RateColumn.HeaderText = "PRICE/TRIP";
+            this.Delivery_Route_RateColumn.Name = "Delivery_Route_RateColumn";
+            this.Delivery_Route_RateColumn.ReadOnly = true;
+            this.Delivery_Route_RateColumn.Width = 95;
+            // 
+            // Delivery_ExtraColumn
+            // 
+            this.Delivery_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Delivery_ExtraColumn.HeaderText = "";
+            this.Delivery_ExtraColumn.Name = "Delivery_ExtraColumn";
+            this.Delivery_ExtraColumn.ReadOnly = true;
             // 
             // DriverTripReportForm
             // 
@@ -254,6 +351,15 @@
         private System.Windows.Forms.DateTimePicker RangeEndDateTimePicker;
         private System.Windows.Forms.Button LoadButton;
         private System.Windows.Forms.DataGridView DeliveryDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ProjectDesignColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_DeliveryDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ProjectColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_DeliveryReceiptNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_TransitMixerColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_Project_LocationColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_RouteColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_Route_RateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ExtraColumn;
     }
 }

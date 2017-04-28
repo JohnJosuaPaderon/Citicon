@@ -86,7 +86,7 @@ namespace Citicon.DataManager
 
         public Task<Branch> GetByIdAsync(ulong id)
         {
-            return Task.Factory.StartNew(() => GetById(id));
+            return Task.Run(() => GetById(id));
         }
 
         public Branch[] GetList()

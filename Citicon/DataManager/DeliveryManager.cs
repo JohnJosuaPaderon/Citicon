@@ -154,5 +154,20 @@ namespace Citicon.DataManager
                 return process.ExecuteAsync();
             }
         }
+
+        public static Task<IEnumerable<Delivery>> GetTripReportDeliveryListByDriverAsync(DateTimeRange range, Employee driver)
+        {
+            if (range != null && driver != null)
+            {
+                using (var process = new GetTripReportDeliveryListByDriver(range, driver))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
