@@ -12,9 +12,6 @@ namespace Citicon.Data
             TripReportItem = tripReportItem ?? throw new ArgumentNullException(nameof(tripReportItem));
         }
 
-        private DateTime _MeanDeliveryDate;
-        private bool MeanDeliveryDateRefreshRequired;
-
         public TripReportItem TripReportItem { get; }
 
         private Dictionary<ulong, Delivery> Dictionary { get; } = new Dictionary<ulong, Delivery>();
@@ -27,12 +24,14 @@ namespace Citicon.Data
         {
             get
             {
-                if (MeanDeliveryDateRefreshRequired)
+                if (Dictionary.Any())
                 {
-
+                    return Dictionary.Values.ElementAt(0).DeliveryDate;
                 }
-
-                return _MeanDeliveryDate;
+                else
+                {
+                    return default(DateTime);
+                }
             }
         }
 

@@ -184,7 +184,20 @@ namespace Citicon
         {
             if (dateTimes.Any())
             {
-                return new DateTime();
+                DateTime mean = default(DateTime);
+                Dictionary<DateTime, int> meanCandidates = new Dictionary<DateTime, int>();
+                foreach (var dateTime in dateTimes)
+                {
+                    var dateTimeDate = dateTime.Date;
+                    if (!meanCandidates.ContainsKey(dateTimeDate))
+                    {
+                        meanCandidates.Add(dateTimeDate, 0);
+                    }
+
+                    meanCandidates[dateTimeDate]++;
+                }
+
+                return mean;
             }
             else
             {
