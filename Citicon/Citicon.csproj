@@ -344,11 +344,22 @@
     <Compile Include="Data\TimeLogType.cs" />
     <Compile Include="Data\Transaction.cs" />
     <Compile Include="Data\TransitMixer.cs" />
+    <Compile Include="Data\TripReport.cs" />
+    <Compile Include="Data\TripReportClient.cs" />
+    <Compile Include="Data\TripReportClientCollection.cs" />
+    <Compile Include="Data\TripReportDate.cs" />
+    <Compile Include="Data\TripReportDateCollection.cs" />
+    <Compile Include="Data\TripReportDeliveryCollection.cs" />
+    <Compile Include="Data\TripReportDriver.cs" />
+    <Compile Include="Data\TripReportDriverCollection.cs" />
+    <Compile Include="Data\TripReportRoute.cs" />
+    <Compile Include="Data\TripReportRouteCollection.cs" />
     <Compile Include="Data\UInt32Range.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
+    <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\TimeSpanExtension.cs" />
     <Compile Include="Forms\ClientManagementForm.cs">
       <SubType>Form</SubType>

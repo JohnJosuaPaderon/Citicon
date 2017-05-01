@@ -1,6 +1,9 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Extensions;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +16,8 @@ namespace Citicon.Forms
         {
             InitializeComponent();
         }
+
+        public IEnumerable<Delivery> Deliveries { get; private set; }
 
         private async Task GetDriverListAsync()
         {
@@ -52,11 +57,11 @@ namespace Citicon.Forms
 
                 try
                 {
-                    var deliveries = await DeliveryManager.GetTripReportDeliveryListByDriverAsync(range, driver);
+                    Deliveries = await DeliveryManager.GetTripReportDeliveryListByDriverAsync(range, driver);
 
-                    if (deliveries != null && deliveries.Any())
+                    if (Deliveries != null && Deliveries.Any())
                     {
-                        foreach (var delivery in deliveries)
+                        foreach (var delivery in Deliveries)
                         {
                             AddToUI(delivery);
                         }
