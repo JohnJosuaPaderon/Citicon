@@ -359,7 +359,6 @@
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
-    <Compile Include="Extensions\IEnumerableExtensions.cs" />
     <Compile Include="Extensions\TimeSpanExtension.cs" />
     <Compile Include="Forms\ClientManagementForm.cs">
       <SubType>Form</SubType>

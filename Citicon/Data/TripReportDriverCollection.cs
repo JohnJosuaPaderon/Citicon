@@ -32,12 +32,19 @@ namespace Citicon.Data
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            Dictionary.Clear();
         }
 
         public bool Contains(TripReportDriver item)
         {
-            throw new NotImplementedException();
+            if (item != null)
+            {
+                return Dictionary.ContainsKey(item.Driver);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public void CopyTo(TripReportDriver[] array, int arrayIndex)
