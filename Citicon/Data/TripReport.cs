@@ -10,7 +10,7 @@ namespace Citicon.Data
         {
             if (deliveries != null && deliveries.Any())
             {
-                var tripReports = new TripReport(new DateTimeRange(default(DateTime), default(DateTime)));
+                var tripReports = new TripReport(new DateTimeRange(default(DateTime), default(DateTime)), TripReportMode.All);
 
                 foreach (var delivery in deliveries)
                 {
@@ -42,12 +42,65 @@ namespace Citicon.Data
             }
         }
 
-        private TripReport(DateTimeRange deliveryDateRange)
+        public static TripReport Extract(DateTimeRange deliveryDateRange, IEnumerable<Delivery> deliveries)
+        {
+            if (deliveryDateRange != null && deliveries != null && deliveries.Any())
+            {
+                var tripReports = new TripReport(deliveryDateRange, TripReportMode.All);
+
+                foreach (var delivery in deliveries)
+                {
+                    tripReports
+                        .Drivers[delivery.Driver]
+                        .TripDates[delivery.DeliveryDate.Date]
+                        .Clients[delivery.Project.Client]
+                        .Routes[delivery.Route]
+                        .Deliveries.Add(delivery);
+                }
+
+                return tripReports;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static TripReport ExtractDriver(DateTimeRange deliveryDateRange, Employee driver, IEnumerable<Delivery> deliveries)
+        {
+            if (deliveryDateRange != null && driver != null && deliveries != null && deliveries.Any())
+            {
+                var tripReports = new TripReport(deliveryDateRange, TripReportMode.All);
+
+                foreach (var delivery in deliveries)
+                {
+                    if (delivery.Driver == driver)
+                    {
+                        tripReports
+                        .Drivers[driver]
+                        .TripDates[delivery.DeliveryDate.Date]
+                        .Clients[delivery.Project.Client]
+                        .Routes[delivery.Route]
+                        .Deliveries.Add(delivery);
+                    }
+                }
+
+                return tripReports;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private TripReport(DateTimeRange deliveryDateRange, TripReportMode mode)
         {
             DeliveryDateRange = deliveryDateRange ?? throw new ArgumentNullException(nameof(deliveryDateRange));
             Drivers = new TripReportDriverCollection(this);
+            Mode = mode;
         }
 
+        public TripReportMode Mode { get; }
         public DateTimeRange DeliveryDateRange { get; }
         public TripReportDriverCollection Drivers { get; }
     }

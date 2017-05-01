@@ -352,6 +352,7 @@
     <Compile Include="Data\TripReportDeliveryCollection.cs" />
     <Compile Include="Data\TripReportDriver.cs" />
     <Compile Include="Data\TripReportDriverCollection.cs" />
+    <Compile Include="Data\TripReportMode.cs" />
     <Compile Include="Data\TripReportRoute.cs" />
     <Compile Include="Data\TripReportRouteCollection.cs" />
     <Compile Include="Data\UInt32Range.cs" />
