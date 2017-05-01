@@ -344,8 +344,6 @@
     <Compile Include="Data\TimeLogType.cs" />
     <Compile Include="Data\Transaction.cs" />
     <Compile Include="Data\TransitMixer.cs" />
-    <Compile Include="Data\TripReportItem.cs" />
-    <Compile Include="Data\TripReportItemDeliveryCollection.cs" />
     <Compile Include="Data\UInt32Range.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\Vehicle.cs" />
