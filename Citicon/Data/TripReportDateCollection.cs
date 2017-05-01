@@ -15,6 +15,21 @@ namespace Citicon.Data
 
         private Dictionary<DateTime, TripReportDate> Dictionary { get; }
 
+        public TripReportDate this[DateTime deliveryDate]
+        {
+            get
+            {
+                deliveryDate = deliveryDate.Date;
+
+                if (!Dictionary.ContainsKey(deliveryDate))
+                {
+                    Dictionary.Add(deliveryDate.Date, new TripReportDate(deliveryDate));
+                }
+
+                return Dictionary[deliveryDate];
+            }
+        }
+
         public int Count => Dictionary.Count;
 
         public bool IsReadOnly => false;

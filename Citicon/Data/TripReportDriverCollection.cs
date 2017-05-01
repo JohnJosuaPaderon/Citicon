@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Citicon.Data
 {
@@ -17,6 +14,26 @@ namespace Citicon.Data
 
         public TripReport TripReport { get; }
         private Dictionary<Employee, TripReportDriver> Dictionary { get; }
+
+        public TripReportDriver this[Employee driver]
+        {
+            get
+            {
+                if (driver != null)
+                {
+                    if (!Dictionary.ContainsKey(driver))
+                    {
+                        Dictionary.Add(driver, new TripReportDriver(driver));
+                    }
+
+                    return Dictionary[driver];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
 
         public int Count => Dictionary.Count;
 
@@ -49,22 +66,29 @@ namespace Citicon.Data
 
         public void CopyTo(TripReportDriver[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            Dictionary.Values.CopyTo(array, arrayIndex);
         }
 
         public IEnumerator<TripReportDriver> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return Dictionary.Values.GetEnumerator();
         }
 
         public bool Remove(TripReportDriver item)
         {
-            throw new NotImplementedException();
+            if (item != null && Dictionary.ContainsKey(item.Driver))
+            {
+                return Dictionary.Remove(item.Driver);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }
