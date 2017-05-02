@@ -29,8 +29,7 @@ namespace Citicon.Data
                     tripReports
                         .Drivers[delivery.Driver]
                         .TripDates[deliveryDate]
-                        .Clients[delivery.Project.Client]
-                        .Routes[delivery.Route]
+                        .Projects[delivery.Project]
                         .Deliveries.Add(delivery);
                 }
 
@@ -53,8 +52,7 @@ namespace Citicon.Data
                     tripReports
                         .Drivers[delivery.Driver]
                         .TripDates[delivery.DeliveryDate.Date]
-                        .Clients[delivery.Project.Client]
-                        .Routes[delivery.Route]
+                        .Projects[delivery.Project]
                         .Deliveries.Add(delivery);
                 }
 
@@ -70,7 +68,7 @@ namespace Citicon.Data
         {
             if (deliveryDateRange != null && driver != null && deliveries != null && deliveries.Any())
             {
-                var tripReports = new TripReport(deliveryDateRange, TripReportMode.All);
+                var tripReports = new TripReport(deliveryDateRange, TripReportMode.Driver);
 
                 foreach (var delivery in deliveries)
                 {
@@ -79,8 +77,7 @@ namespace Citicon.Data
                         tripReports
                         .Drivers[driver]
                         .TripDates[delivery.DeliveryDate.Date]
-                        .Clients[delivery.Project.Client]
-                        .Routes[delivery.Route]
+                        .Projects[delivery.Project]
                         .Deliveries.Add(delivery);
                     }
                 }

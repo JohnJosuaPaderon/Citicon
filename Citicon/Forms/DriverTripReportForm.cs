@@ -99,6 +99,52 @@ namespace Citicon.Forms
             }
         }
 
+        private void ExportTripReport(TripReportMode mode)
+        {
+            if (Deliveries != null && Deliveries.Any())
+            {
+                Employee driver = null;
+                if (mode == TripReportMode.Driver && DriverDataGridView.SelectedRows[0].Cells[DriverColumn.Name].Value is Employee tempDriver && Deliveries.Any(d => d.Driver == tempDriver))
+                {
+                    tempDriver = driver;
+                }
+                else
+                {
+                    MessageBox.Show("No driver.");
+                    return;
+                }
+
+                TripReport tripReport = null;
+                var deliveryDateRange = new DateTimeRange(RangeStartDateTimePicker.Value, RangeEndDateTimePicker.Value);
+
+                switch (mode)
+                {
+                    case TripReportMode.NotSet:
+                        MessageBox.Show("Exporting information is not set.");
+                        break;
+                    case TripReportMode.All:
+                        tripReport = TripReport.Extract(deliveryDateRange, Deliveries);
+                        break;
+                    case TripReportMode.Driver:
+                        tripReport = TripReport.ExtractDriver(deliveryDateRange, driver, Deliveries);
+                        break;
+                }
+
+                if (tripReport != null)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Nothing to export.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No deliveries.");
+            }
+        }
+
         private void AddToUI(Employee driver)
         {
             if (driver != null)
@@ -125,6 +171,16 @@ namespace Citicon.Forms
         private async void DriverDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             await GetDeliveryListAsync();
+        }
+
+        private void ExportDriverButton_Click(object sender, EventArgs e)
+        {
+            ExportTripReport(TripReportMode.Driver);
+        }
+
+        private void ExportAllButton_Click(object sender, EventArgs e)
+        {
+            ExportTripReport(TripReportMode.All);
         }
     }
 }

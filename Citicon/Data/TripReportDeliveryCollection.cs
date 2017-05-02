@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Citicon.Data
 {
     public sealed class TripReportDeliveryCollection : ICollection<Delivery>
     {
-        public TripReportDeliveryCollection(TripReportRoute tripRoute)
+        public TripReportDeliveryCollection(TripReportProject tripProject)
         {
-            TripRoute = tripRoute ?? throw new ArgumentNullException(nameof(tripRoute));
+            TripProject = tripProject ?? throw new ArgumentNullException(nameof(tripProject));
             Dictionary = new Dictionary<ulong, Delivery>();
         }
 
-        public TripReportRoute TripRoute { get; }
+        public TripReportProject TripProject { get; }
         private Dictionary<ulong, Delivery> Dictionary { get; }
 
         public int Count => Dictionary.Count;
@@ -21,9 +23,37 @@ namespace Citicon.Data
 
         public void Add(Delivery item)
         {
-            if (item != null && !Dictionary.ContainsKey(item.Id) && item.Route == TripRoute.Route)
+            if (item != null && !Dictionary.ContainsKey(item.Id))
             {
                 Dictionary.Add(item.Id, item);
+            }
+        }
+
+        public string DeliveryReceiptNumberAggregate
+        {
+            get
+            {
+                if (Dictionary.Any())
+                {
+                    var stringBuilder = new StringBuilder();
+                    var array = Dictionary.Values.ToArray();
+
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        stringBuilder.Append(array[i].DeliveryReceiptNumber.ToString("000000"));
+
+                        if (i < array.Length - 1)
+                        {
+                            stringBuilder.Append(", ");
+                        }
+                    }
+
+                    return stringBuilder.ToString();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 

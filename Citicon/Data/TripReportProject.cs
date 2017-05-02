@@ -2,18 +2,18 @@
 
 namespace Citicon.Data
 {
-    public class TripReportRoute
+    public class TripReportProject
     {
-        public TripReportRoute(DeliveryRoute route)
+        public TripReportProject(Project project)
         {
-            Route = route ?? throw new ArgumentNullException(nameof(route));
+            Project = project ?? throw new ArgumentNullException(nameof(project));
             Deliveries = new TripReportDeliveryCollection(this);
         }
 
-        public DeliveryRoute Route { get; }
+        public Project Project { get; }
         public TripReportDeliveryCollection Deliveries { get; }
 
-        public static bool operator ==(TripReportRoute left, TripReportRoute right)
+        public static bool operator ==(TripReportProject left, TripReportProject right)
         {
             if (ReferenceEquals(left, right))
                 return true;
@@ -21,26 +21,26 @@ namespace Citicon.Data
             if ((object)left == null || (object)right == null)
                 return false;
 
-            return left.Route == right.Route;
+            return left.Project == right.Project;
         }
 
-        public static bool operator !=(TripReportRoute left, TripReportRoute right)
+        public static bool operator !=(TripReportProject left, TripReportProject right)
         {
             return !(left == right);
         }
 
         public override bool Equals(object arg)
         {
-            if (arg is TripReportRoute)
+            if (arg is TripReportProject)
             {
-                return (TripReportRoute)arg == this;
+                return (TripReportProject)arg == this;
             }
             return false;
         }
 
         public override int GetHashCode()
         {
-            return Route.GetHashCode();
+            return Project.GetHashCode();
         }
     }
 }

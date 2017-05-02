@@ -4,29 +4,29 @@ using System.Collections.Generic;
 
 namespace Citicon.Data
 {
-    public sealed class TripReportClientCollection : ICollection<TripReportClient>
+    public sealed class TripReportProjectCollection : ICollection<TripReportProject>
     {
-        public TripReportClientCollection(TripReportDate tripDate)
+        public TripReportProjectCollection(TripReportDate tripDate)
         {
             TripDate = tripDate ?? throw new ArgumentNullException(nameof(tripDate));
-            Dictionary = new Dictionary<Client, TripReportClient>();
+            Dictionary = new Dictionary<Project, TripReportProject>();
         }
 
         public TripReportDate TripDate { get; }
-        private Dictionary<Client, TripReportClient> Dictionary { get; }
+        private Dictionary<Project, TripReportProject> Dictionary { get; }
 
-        public TripReportClient this[Client client]
+        public TripReportProject this[Project project]
         {
             get
             {
-                if (client != null)
+                if (project != null)
                 {
-                    if (!Dictionary.ContainsKey(client))
+                    if (!Dictionary.ContainsKey(project))
                     {
-                        Dictionary.Add(client, new TripReportClient(client));
+                        Dictionary.Add(project, new TripReportProject(project));
                     }
 
-                    return Dictionary[client];
+                    return Dictionary[project];
                 }
                 else
                 {
@@ -39,11 +39,11 @@ namespace Citicon.Data
 
         public bool IsReadOnly => false;
 
-        public void Add(TripReportClient item)
+        public void Add(TripReportProject item)
         {
-            if (item != null && !Dictionary.ContainsKey(item.Client))
+            if (item != null && !Dictionary.ContainsKey(item.Project))
             {
-                Dictionary.Add(item.Client, item);
+                Dictionary.Add(item.Project, item);
             }
         }
 
@@ -52,11 +52,11 @@ namespace Citicon.Data
             Dictionary.Clear();
         }
 
-        public bool Contains(TripReportClient item)
+        public bool Contains(TripReportProject item)
         {
             if (item != null)
             {
-                return Dictionary.ContainsKey(item.Client);
+                return Dictionary.ContainsKey(item.Project);
             }
             else
             {
@@ -64,21 +64,21 @@ namespace Citicon.Data
             }
         }
 
-        public void CopyTo(TripReportClient[] array, int arrayIndex)
+        public void CopyTo(TripReportProject[] array, int arrayIndex)
         {
             Dictionary.Values.CopyTo(array, arrayIndex);
         }
 
-        public IEnumerator<TripReportClient> GetEnumerator()
+        public IEnumerator<TripReportProject> GetEnumerator()
         {
             return Dictionary.Values.GetEnumerator();
         }
 
-        public bool Remove(TripReportClient item)
+        public bool Remove(TripReportProject item)
         {
-            if (item != null && Dictionary.ContainsKey(item.Client))
+            if (item != null && Dictionary.ContainsKey(item.Project))
             {
-                return Dictionary.Remove(item.Client);
+                return Dictionary.Remove(item.Project);
             }
             else
             {

@@ -328,6 +328,7 @@
             this.ExportDriverButton.TabIndex = 132;
             this.ExportDriverButton.Text = "EXPORT BY DRIVER";
             this.ExportDriverButton.UseVisualStyleBackColor = false;
+            this.ExportDriverButton.Click += new System.EventHandler(this.ExportDriverButton_Click);
             // 
             // ExportAllButton
             // 
@@ -343,6 +344,7 @@
             this.ExportAllButton.TabIndex = 133;
             this.ExportAllButton.Text = "EXPORT ALL";
             this.ExportAllButton.UseVisualStyleBackColor = false;
+            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
             // 
             // DriverTripReportForm
             // 

@@ -7,11 +7,11 @@ namespace Citicon.Data
         public TripReportDate(DateTime deliveryDate)
         {
             DeliveryDate = deliveryDate.Date;
-            Clients = new TripReportClientCollection(this);
+            Projects = new TripReportProjectCollection(this);
         }
 
         public DateTime DeliveryDate { get; }
-        public TripReportClientCollection Clients { get; }
+        public TripReportProjectCollection Projects { get; }
 
         public static bool operator ==(TripReportDate left, TripReportDate right)
         {
