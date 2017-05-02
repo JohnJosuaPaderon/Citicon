@@ -83,6 +83,7 @@
     <Compile Include="DataManager\HolidayManager.cs" />
     <Compile Include="DataManager\HolidayTypeManager.cs" />
     <Compile Include="DataManager\TransitMixerManager.cs" />
+    <Compile Include="DataManager\TripReportManager.cs" />
     <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteTimeLog.cs" />

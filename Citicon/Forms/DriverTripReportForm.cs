@@ -15,9 +15,11 @@ namespace Citicon.Forms
         public DriverTripReportForm()
         {
             InitializeComponent();
+            TripReportManager = new TripReportManager();
         }
 
         public IEnumerable<Delivery> Deliveries { get; private set; }
+        private TripReportManager TripReportManager { get; }
 
         private async Task GetDriverListAsync()
         {
@@ -99,7 +101,7 @@ namespace Citicon.Forms
             }
         }
 
-        private void ExportTripReport(TripReportMode mode)
+        private async Task ExportTripReport(TripReportMode mode)
         {
             if (Deliveries != null && Deliveries.Any())
             {
@@ -127,16 +129,8 @@ namespace Citicon.Forms
                         break;
                     case TripReportMode.Driver:
                         tripReport = TripReport.ExtractDriver(deliveryDateRange, driver, Deliveries);
+                        await TripReportManager.ExportDriverTripReportAsync(tripReport);
                         break;
-                }
-
-                if (tripReport != null)
-                {
-
-                }
-                else
-                {
-                    MessageBox.Show("Nothing to export.");
                 }
             }
             else
