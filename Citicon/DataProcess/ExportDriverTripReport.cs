@@ -62,30 +62,53 @@ namespace Citicon.DataProcess
                             {
                                 var tripDateRowStartIndex = rowIndex;
 
-                                range = Worksheet.Cells[tripDateRowStartIndex, 0];
+                                range = Worksheet.Cells[tripDateRowStartIndex, 1];
                                 range.Value = tripDate.DeliveryDate;
                                 range.NumberFormat = "M//d//yy";
 
-                                foreach (var tripClient in tripDate.Projects)
+                                foreach (var tripProject in tripDate.Projects)
                                 {
-                                    var tripClientRowStartIndex = rowIndex;
+                                    var tripProjectRowStartIndex = rowIndex;
 
-                                    foreach (var tripRoute in tripClient.Deliveries)
-                                    {
-                                        var tripRouteRowStartIndex = rowIndex;
+                                    range = Worksheet.Cells[tripProjectRowStartIndex, 2];
+                                    range.Value = tripProject.Project?.Name;
 
-                                        
+                                    range = Worksheet.Cells[tripProjectRowStartIndex, 3];
+                                    range.Value = tripProject.Deliveries.DeliveryReceiptNumberAggregate;
 
-                                        var tripRouteRowEndIndex = rowIndex;
-                                    }
+                                    range = Worksheet.Cells[tripProjectRowStartIndex, 4];
+                                    range.Value = tripProject.Deliveries.TransitMixer?.PhysicalNumber;
 
-                                    var tripClientRowEndIndex = rowIndex;
+                                    range = Worksheet.Cells[tripProjectRowStartIndex, 5];
+                                    range.Value = tripProject.Project?.Location;
+
+                                    range = Worksheet.Cells[tripProjectRowStartIndex, 6];
+                                    range.Value = tripProject.Deliveries.PricePerTrip;
+                                    range.NumberFormat = "#,##0.00";
+
+                                    range = Worksheet.Cells[tripProjectRowStartIndex, 7];
+                                    range.Value = tripProject.Deliveries.TripCount;
+
+                                    range = Worksheet.Cells[tripProjectRowStartIndex, 8];
+                                    range.Value = tripProject.Deliveries.TotalAmount;
+                                    range.NumberFormat = "#,##0.00";
+
+                                    rowIndex++;
+
+                                    var tripProjectRowEndIndex = rowIndex;
                                 }
 
                                 var tripDateRowEndIndex = rowIndex;
                             }
                         }
                     }
+
+                    if (!Directory.Exists(SaveLocation))
+                    {
+                        Directory.CreateDirectory(SaveLocation);
+                    }
+
+                    Workbook.SaveAs(Path.Combine(SaveLocation, string.Format("{0:yyyyMMddhhmm.xlsx", DateTime.Now)));
 
                     Application.DisplayAlerts = false;
                     Sheets[1].Delete();

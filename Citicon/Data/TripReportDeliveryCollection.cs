@@ -57,6 +57,46 @@ namespace Citicon.Data
             }
         }
 
+        public TransitMixer TransitMixer
+        {
+            get
+            {
+                if (Dictionary.Any())
+                {
+                    return Dictionary.First().Value.TransitMixer;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        public decimal PricePerTrip
+        {
+            get
+            {
+                if (Dictionary.Any())
+                {
+                    return Dictionary.First().Value.Route.Rate;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
+        public int TripCount
+        {
+            get { return Dictionary.Count; }
+        }
+
+        public decimal TotalAmount
+        {
+            get { return PricePerTrip * TripCount; }
+        }
+
         public void Clear()
         {
             Dictionary.Clear();
