@@ -92,7 +92,7 @@ namespace Citicon.Forms
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.ProjectDesign });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.DeliveryDate });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.DeliveryReceiptNumber });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.DeliveryReceiptNumberDisplay });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.TransitMixer });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project?.Location });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Route });
@@ -101,14 +101,14 @@ namespace Citicon.Forms
             }
         }
 
-        private async Task ExportTripReport(TripReportMode mode)
+        private async Task ExportTripReportAsync(TripReportMode mode)
         {
             if (Deliveries != null && Deliveries.Any())
             {
                 Employee driver = null;
                 if (mode == TripReportMode.Driver && DriverDataGridView.SelectedRows[0].Cells[DriverColumn.Name].Value is Employee tempDriver && Deliveries.Any(d => d.Driver == tempDriver))
                 {
-                    tempDriver = driver;
+                    driver = tempDriver;
                 }
                 else
                 {
@@ -167,14 +167,14 @@ namespace Citicon.Forms
             await GetDeliveryListAsync();
         }
 
-        private void ExportDriverButton_Click(object sender, EventArgs e)
+        private async void ExportDriverButton_Click(object sender, EventArgs e)
         {
-            ExportTripReport(TripReportMode.Driver);
+            await ExportTripReportAsync(TripReportMode.Driver);
         }
 
-        private void ExportAllButton_Click(object sender, EventArgs e)
+        private async void ExportAllButton_Click(object sender, EventArgs e)
         {
-            ExportTripReport(TripReportMode.All);
+            await ExportTripReportAsync(TripReportMode.All);
         }
     }
 }

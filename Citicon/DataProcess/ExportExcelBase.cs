@@ -39,6 +39,19 @@ namespace Citicon.DataProcess
             return Task.Run(() => Execute());
         }
 
+        protected void ApplyBorder(Excel.Range range, Excel.XlBordersIndex borderIndex, Excel.XlLineStyle lineStyle)
+        {
+            range.Borders[borderIndex].LineStyle = lineStyle;
+        }
+
+        protected void ApplyBorder(Excel.Range range, Excel.XlLineStyle lineStyle)
+        {
+            ApplyBorder(range, Excel.XlBordersIndex.xlEdgeTop, lineStyle);
+            ApplyBorder(range, Excel.XlBordersIndex.xlEdgeBottom, lineStyle);
+            ApplyBorder(range, Excel.XlBordersIndex.xlEdgeLeft, lineStyle);
+            ApplyBorder(range, Excel.XlBordersIndex.xlEdgeRight, lineStyle);
+        }
+
         public virtual void Dispose()
         {
             if (Worksheet != null)

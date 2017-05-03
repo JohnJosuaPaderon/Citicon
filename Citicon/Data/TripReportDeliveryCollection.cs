@@ -40,7 +40,7 @@ namespace Citicon.Data
 
                     for (int i = 0; i < array.Length; i++)
                     {
-                        stringBuilder.Append(array[i].DeliveryReceiptNumber.ToString("000000"));
+                        stringBuilder.Append(array[i].DeliveryReceiptNumberDisplay);
 
                         if (i < array.Length - 1)
                         {

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 
@@ -178,6 +179,17 @@ namespace Citicon
         {
             var result = JsonConvert.SerializeObject(value);
             return JsonConvert.DeserializeObject<T>(result);
+        }
+
+        public static int ExcelColorConverter(string hex)
+        {
+            var colorConverter = new ColorConverter();
+            return ExcelColorConverter(colorConverter.ConvertFromString(hex));
+        }
+
+        public static int ExcelColorConverter(object color)
+        {
+            return ColorTranslator.ToOle((Color)color);
         }
 
         public static DateTime GetDateTimeMean(IEnumerable<DateTime> dateTimes)

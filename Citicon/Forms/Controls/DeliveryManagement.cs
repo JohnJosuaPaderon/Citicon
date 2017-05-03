@@ -132,7 +132,7 @@ namespace Citicon.Forms.Controls
             try
             {
                 Delivery.DeliveryReceiptNumber = await DeliveryManager.GetLatestDeliveryReceiptNumberAsync(Delivery.DeliveryDate);
-                DeliveryReceiptNumberTextBox.Text = string.Format("{0:yy}-{1:000000}", Delivery.DeliveryDate, Delivery.DeliveryReceiptNumber);
+                DeliveryReceiptNumberTextBox.Text = Delivery.DeliveryReceiptNumberDisplay;
             }
             catch (Exception ex)
             {

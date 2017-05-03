@@ -53,6 +53,10 @@
             this.Design_MixTypeTextBox = new System.Windows.Forms.TextBox();
             this.Design_MixTypeLabel = new System.Windows.Forms.Label();
             this.DeliveryGroupBox = new System.Windows.Forms.GroupBox();
+            this.Delivery_MaxSlumpNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Delivery_MaxSlumpLabel = new System.Windows.Forms.Label();
+            this.Delivery_LoadNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Delivery_LoadLabel = new System.Windows.Forms.Label();
             this.Delivery_PlantLeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Delivery_PlantLeaveLabel = new System.Windows.Forms.Label();
             this.Delivery_AdmixtureQuantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -76,17 +80,13 @@
             this.PurchaseOrderTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrderLabel = new System.Windows.Forms.Label();
             this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
-            this.Delivery_LoadNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Delivery_LoadLabel = new System.Windows.Forms.Label();
-            this.Delivery_MaxSlumpNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.Delivery_MaxSlumpLabel = new System.Windows.Forms.Label();
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // DeliveryReceiptNumberLabel
@@ -123,7 +123,7 @@
             this.ProjectGroupBox.Controls.Add(this.Project_ClientLabel);
             this.ProjectGroupBox.Location = new System.Drawing.Point(10, 52);
             this.ProjectGroupBox.Name = "ProjectGroupBox";
-            this.ProjectGroupBox.Size = new System.Drawing.Size(866, 125);
+            this.ProjectGroupBox.Size = new System.Drawing.Size(850, 125);
             this.ProjectGroupBox.TabIndex = 2;
             this.ProjectGroupBox.TabStop = false;
             this.ProjectGroupBox.Text = "PROJECT DETAILS";
@@ -218,7 +218,7 @@
             this.DesignGroupBox.Controls.Add(this.Design_MixTypeLabel);
             this.DesignGroupBox.Location = new System.Drawing.Point(10, 183);
             this.DesignGroupBox.Name = "DesignGroupBox";
-            this.DesignGroupBox.Size = new System.Drawing.Size(866, 126);
+            this.DesignGroupBox.Size = new System.Drawing.Size(850, 126);
             this.DesignGroupBox.TabIndex = 3;
             this.DesignGroupBox.TabStop = false;
             this.DesignGroupBox.Text = "DESIGN DETAILS";
@@ -359,10 +359,59 @@
             this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveredVolumeLabel);
             this.DeliveryGroupBox.Location = new System.Drawing.Point(10, 315);
             this.DeliveryGroupBox.Name = "DeliveryGroupBox";
-            this.DeliveryGroupBox.Size = new System.Drawing.Size(866, 233);
+            this.DeliveryGroupBox.Size = new System.Drawing.Size(850, 233);
             this.DeliveryGroupBox.TabIndex = 4;
             this.DeliveryGroupBox.TabStop = false;
             this.DeliveryGroupBox.Text = "DELIVERY DETAILS";
+            // 
+            // Delivery_MaxSlumpNumericUpDown
+            // 
+            this.Delivery_MaxSlumpNumericUpDown.DecimalPlaces = 3;
+            this.Delivery_MaxSlumpNumericUpDown.Location = new System.Drawing.Point(495, 196);
+            this.Delivery_MaxSlumpNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.Delivery_MaxSlumpNumericUpDown.Name = "Delivery_MaxSlumpNumericUpDown";
+            this.Delivery_MaxSlumpNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_MaxSlumpNumericUpDown.TabIndex = 40;
+            this.Delivery_MaxSlumpNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Delivery_MaxSlumpNumericUpDown.ThousandsSeparator = true;
+            this.Delivery_MaxSlumpNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_MaxSlumpNumericUpDown_ValueChanged);
+            // 
+            // Delivery_MaxSlumpLabel
+            // 
+            this.Delivery_MaxSlumpLabel.AutoSize = true;
+            this.Delivery_MaxSlumpLabel.Location = new System.Drawing.Point(492, 176);
+            this.Delivery_MaxSlumpLabel.Name = "Delivery_MaxSlumpLabel";
+            this.Delivery_MaxSlumpLabel.Size = new System.Drawing.Size(73, 17);
+            this.Delivery_MaxSlumpLabel.TabIndex = 39;
+            this.Delivery_MaxSlumpLabel.Text = "Max Slump";
+            // 
+            // Delivery_LoadNumericUpDown
+            // 
+            this.Delivery_LoadNumericUpDown.Location = new System.Drawing.Point(252, 196);
+            this.Delivery_LoadNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.Delivery_LoadNumericUpDown.Name = "Delivery_LoadNumericUpDown";
+            this.Delivery_LoadNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_LoadNumericUpDown.TabIndex = 38;
+            this.Delivery_LoadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Delivery_LoadNumericUpDown.ThousandsSeparator = true;
+            this.Delivery_LoadNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_LoadNumericUpDown_ValueChanged);
+            // 
+            // Delivery_LoadLabel
+            // 
+            this.Delivery_LoadLabel.AutoSize = true;
+            this.Delivery_LoadLabel.Location = new System.Drawing.Point(249, 176);
+            this.Delivery_LoadLabel.Name = "Delivery_LoadLabel";
+            this.Delivery_LoadLabel.Size = new System.Drawing.Size(37, 17);
+            this.Delivery_LoadLabel.TabIndex = 37;
+            this.Delivery_LoadLabel.Text = "Load";
             // 
             // Delivery_PlantLeaveDateTimePicker
             // 
@@ -554,7 +603,7 @@
             this.CancelDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelDeliveryButton.ForeColor = System.Drawing.Color.Red;
-            this.CancelDeliveryButton.Location = new System.Drawing.Point(776, 554);
+            this.CancelDeliveryButton.Location = new System.Drawing.Point(760, 554);
             this.CancelDeliveryButton.Name = "CancelDeliveryButton";
             this.CancelDeliveryButton.Size = new System.Drawing.Size(100, 50);
             this.CancelDeliveryButton.TabIndex = 114;
@@ -570,7 +619,7 @@
             this.SaveDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveDeliveryButton.ForeColor = System.Drawing.Color.White;
-            this.SaveDeliveryButton.Location = new System.Drawing.Point(645, 554);
+            this.SaveDeliveryButton.Location = new System.Drawing.Point(629, 554);
             this.SaveDeliveryButton.Name = "SaveDeliveryButton";
             this.SaveDeliveryButton.Size = new System.Drawing.Size(125, 50);
             this.SaveDeliveryButton.TabIndex = 113;
@@ -583,7 +632,7 @@
             this.PurchaseOrderTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PurchaseOrderTextBox.BackColor = System.Drawing.Color.White;
             this.PurchaseOrderTextBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseOrderTextBox.Location = new System.Drawing.Point(610, 3);
+            this.PurchaseOrderTextBox.Location = new System.Drawing.Point(594, 3);
             this.PurchaseOrderTextBox.Name = "PurchaseOrderTextBox";
             this.PurchaseOrderTextBox.ReadOnly = true;
             this.PurchaseOrderTextBox.Size = new System.Drawing.Size(266, 43);
@@ -594,7 +643,7 @@
             this.PurchaseOrderLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PurchaseOrderLabel.AutoSize = true;
             this.PurchaseOrderLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseOrderLabel.Location = new System.Drawing.Point(491, 6);
+            this.PurchaseOrderLabel.Location = new System.Drawing.Point(475, 6);
             this.PurchaseOrderLabel.Name = "PurchaseOrderLabel";
             this.PurchaseOrderLabel.Size = new System.Drawing.Size(113, 37);
             this.PurchaseOrderLabel.TabIndex = 116;
@@ -615,55 +664,6 @@
             this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
             this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
             // 
-            // Delivery_LoadNumericUpDown
-            // 
-            this.Delivery_LoadNumericUpDown.Location = new System.Drawing.Point(252, 196);
-            this.Delivery_LoadNumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.Delivery_LoadNumericUpDown.Name = "Delivery_LoadNumericUpDown";
-            this.Delivery_LoadNumericUpDown.Size = new System.Drawing.Size(237, 25);
-            this.Delivery_LoadNumericUpDown.TabIndex = 38;
-            this.Delivery_LoadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Delivery_LoadNumericUpDown.ThousandsSeparator = true;
-            this.Delivery_LoadNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_LoadNumericUpDown_ValueChanged);
-            // 
-            // Delivery_LoadLabel
-            // 
-            this.Delivery_LoadLabel.AutoSize = true;
-            this.Delivery_LoadLabel.Location = new System.Drawing.Point(249, 176);
-            this.Delivery_LoadLabel.Name = "Delivery_LoadLabel";
-            this.Delivery_LoadLabel.Size = new System.Drawing.Size(37, 17);
-            this.Delivery_LoadLabel.TabIndex = 37;
-            this.Delivery_LoadLabel.Text = "Load";
-            // 
-            // Delivery_MaxSlumpNumericUpDown
-            // 
-            this.Delivery_MaxSlumpNumericUpDown.DecimalPlaces = 3;
-            this.Delivery_MaxSlumpNumericUpDown.Location = new System.Drawing.Point(495, 196);
-            this.Delivery_MaxSlumpNumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.Delivery_MaxSlumpNumericUpDown.Name = "Delivery_MaxSlumpNumericUpDown";
-            this.Delivery_MaxSlumpNumericUpDown.Size = new System.Drawing.Size(237, 25);
-            this.Delivery_MaxSlumpNumericUpDown.TabIndex = 40;
-            this.Delivery_MaxSlumpNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Delivery_MaxSlumpNumericUpDown.ThousandsSeparator = true;
-            this.Delivery_MaxSlumpNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_MaxSlumpNumericUpDown_ValueChanged);
-            // 
-            // Delivery_MaxSlumpLabel
-            // 
-            this.Delivery_MaxSlumpLabel.AutoSize = true;
-            this.Delivery_MaxSlumpLabel.Location = new System.Drawing.Point(492, 176);
-            this.Delivery_MaxSlumpLabel.Name = "Delivery_MaxSlumpLabel";
-            this.Delivery_MaxSlumpLabel.Size = new System.Drawing.Size(73, 17);
-            this.Delivery_MaxSlumpLabel.TabIndex = 39;
-            this.Delivery_MaxSlumpLabel.Text = "Max Slump";
-            // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -683,7 +683,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DeliveryManagement";
-            this.Size = new System.Drawing.Size(885, 613);
+            this.Size = new System.Drawing.Size(869, 613);
             this.Load += new System.EventHandler(this.DeliveryManagement_Load);
             this.ProjectGroupBox.ResumeLayout(false);
             this.ProjectGroupBox.PerformLayout();
@@ -691,10 +691,10 @@
             this.DesignGroupBox.PerformLayout();
             this.DeliveryGroupBox.ResumeLayout(false);
             this.DeliveryGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

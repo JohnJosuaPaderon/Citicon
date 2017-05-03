@@ -9,6 +9,7 @@ namespace Citicon.Data
         public TripReportDateCollection(TripReportDriver tripDriver)
         {
             TripDriver = tripDriver ?? throw new ArgumentNullException(nameof(tripDriver));
+            Dictionary = new Dictionary<DateTime, TripReportDate>();
         }
 
         public TripReportDriver TripDriver { get; }

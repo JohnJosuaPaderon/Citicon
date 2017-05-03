@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using System;
 using System.Configuration;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -48,19 +49,21 @@ namespace Citicon.DataProcess
                         {
                             Sheets.Copy(Missing.Value, Sheets[1]);
                             Worksheet = Sheets[Sheets.Count];
+                            Worksheet.Name = driver.Driver.Id.ToString("000000");
 
                             var rowIndex = 4;
 
                             Worksheet.Cells[1, 1] = driver.Driver?.ToString();
                             Worksheet.Cells[2, 1] = TripReport.DeliveryDateRange.ToString();
 
+                            var alternate = false;
                             foreach (var tripDate in driver.TripDates)
                             {
                                 var tripDateRowStartIndex = rowIndex;
 
                                 range = Worksheet.Cells[tripDateRowStartIndex, 1];
                                 range.Value = tripDate.DeliveryDate;
-                                range.NumberFormat = "M//d//yy";
+                                range.NumberFormat = "MMM. dd, yyyy";
 
                                 foreach (var tripProject in tripDate.Projects)
                                 {
@@ -89,12 +92,19 @@ namespace Citicon.DataProcess
                                     range.Value = tripProject.Deliveries.TotalAmount;
                                     range.NumberFormat = "#,##0.00";
 
-                                    rowIndex++;
-
                                     var tripProjectRowEndIndex = rowIndex;
+                                    rowIndex++;
                                 }
 
-                                var tripDateRowEndIndex = rowIndex;
+                                var tripDateRowEndIndex = rowIndex - 1;
+
+                                if (alternate)
+                                {
+                                    range = Worksheet.Range[Worksheet.Cells[tripDateRowStartIndex, 1], Worksheet.Cells[tripDateRowEndIndex, 8]];
+                                    range.Interior.Color = Supports.ExcelColorConverter("#FFEFEFEF");
+                                }
+                                alternate = !alternate;
+                                //ApplyBorder(range, Excel.XlLineStyle.xlContinuous);
                             }
                         }
                     }
@@ -104,11 +114,11 @@ namespace Citicon.DataProcess
                         Directory.CreateDirectory(SaveLocation);
                     }
 
-                    Workbook.SaveAs(Path.Combine(SaveLocation, string.Format("{0:yyyyMMddhhmm.xlsx", DateTime.Now)));
-
                     Application.DisplayAlerts = false;
                     Sheets[1].Delete();
                     Application.DisplayAlerts = true;
+
+                    Workbook.SaveAs(Path.Combine(SaveLocation, string.Format("{0:yyyyMMddhhmm}.xlsx", DateTime.Now)));
                     base.Execute();
                 } 
             }

@@ -24,6 +24,13 @@ namespace Citicon.Data
         public string Admixture { get; set; }
         public decimal AdmixtureQuantity { get; set; }
         public decimal MaxSlump { get; set; }
+        public string DeliveryReceiptNumberDisplay
+        {
+            get
+            {
+                return string.Format("{0:yy}-{1}", DeliveryDate, DeliveryReceiptNumber);
+            }
+        }
 
         public static bool operator ==(Delivery left, Delivery right)
         {

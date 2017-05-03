@@ -316,6 +316,7 @@
             // 
             // ExportDriverButton
             // 
+            this.ExportDriverButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ExportDriverButton.BackColor = System.Drawing.Color.Red;
             this.ExportDriverButton.FlatAppearance.BorderSize = 0;
             this.ExportDriverButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -332,6 +333,7 @@
             // 
             // ExportAllButton
             // 
+            this.ExportAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ExportAllButton.BackColor = System.Drawing.Color.Red;
             this.ExportAllButton.FlatAppearance.BorderSize = 0;
             this.ExportAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
