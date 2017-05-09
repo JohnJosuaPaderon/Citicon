@@ -50,6 +50,8 @@ namespace Citicon.ReceivablesIntegration.Forms
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.Project });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.Quotation?.Agent });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.PurchaseOrder });
 
                 dgvScheduledProjectDesign.Rows.Add(row);
             }

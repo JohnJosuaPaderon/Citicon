@@ -1,7 +1,6 @@
 ﻿using Citicon.Data;
 using System;
 using System.Configuration;
-using System.Drawing;
 using System.IO;
 using System.Reflection;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -103,8 +102,8 @@ namespace Citicon.DataProcess
                                     range = Worksheet.Range[Worksheet.Cells[tripDateRowStartIndex, 1], Worksheet.Cells[tripDateRowEndIndex, 8]];
                                     range.Interior.Color = Supports.ExcelColorConverter("#FFEFEFEF");
                                 }
+
                                 alternate = !alternate;
-                                //ApplyBorder(range, Excel.XlLineStyle.xlContinuous);
                             }
                         }
                     }
