@@ -231,6 +231,7 @@
             this.Design_CementFactorTextBox.ReadOnly = true;
             this.Design_CementFactorTextBox.Size = new System.Drawing.Size(237, 25);
             this.Design_CementFactorTextBox.TabIndex = 18;
+            this.Design_CementFactorTextBox.Visible = false;
             // 
             // Design_CementFactorLabel
             // 
@@ -240,6 +241,7 @@
             this.Design_CementFactorLabel.Size = new System.Drawing.Size(92, 17);
             this.Design_CementFactorLabel.TabIndex = 17;
             this.Design_CementFactorLabel.Text = "Cement Factor";
+            this.Design_CementFactorLabel.Visible = false;
             // 
             // Design_StrengthTextBox
             // 
