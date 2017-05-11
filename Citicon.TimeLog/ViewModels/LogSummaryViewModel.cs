@@ -118,6 +118,11 @@ namespace Citicon.TimeLog.ViewModels
             }
         }
 
+        private void SendMessage(Data.TimeLog log)
+        {
+            
+        }
+
         public async Task LogEmployeeAsync(EmployeeLogin loginInfo)
         {
             DisplayTimer.Stop();
@@ -144,6 +149,7 @@ namespace Citicon.TimeLog.ViewModels
                         }
 
                         SaveImage(timeLog);
+                        SendMessage(timeLog);
                     }
                 }
                 catch (Exception ex)
