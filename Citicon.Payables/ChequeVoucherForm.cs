@@ -340,7 +340,8 @@ namespace Citicon.Payables
 
                             if (stock.IncludeWithHoldingTax)
                             {
-                                withHoldingTax_Value += (((stock.UnitPrice * stock.AddedStockValue) / stock.WithHoldingTax ?? 1) * 0.12M);
+                                var withHoldingTaxValue = stock.WithHoldingTax ?? 1;
+                                withHoldingTax_Value += (((stock.UnitPrice * stock.AddedStockValue) / ((withHoldingTaxValue != 0) ? withHoldingTaxValue : 1)) * 0.12M);
                             }
 
                             var payable = new Payable

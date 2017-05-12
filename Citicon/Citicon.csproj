@@ -90,6 +90,7 @@
     <Compile Include="DataProcess\DeleteTransitMixer.cs" />
     <Compile Include="DataProcess\ExportAllTripReport.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
+    <Compile Include="DataProcess\ExportDeliveryReceipt.cs" />
     <Compile Include="DataProcess\ExportDriverTripReport.cs" />
     <Compile Include="DataProcess\ExportExcelBase.cs" />
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />

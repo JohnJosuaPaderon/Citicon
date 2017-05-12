@@ -169,5 +169,16 @@ namespace Citicon.DataManager
                 return null;
             }
         }
+
+        public static async Task ExportDeliveryReceiptAsync(Delivery delivery)
+        {
+            if (delivery != null)
+            {
+                using (var process = new ExportDeliveryReceipt(delivery))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
     }
 }

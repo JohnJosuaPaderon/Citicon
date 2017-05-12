@@ -254,10 +254,10 @@ namespace Citicon.Forms.Controls
             try
             {
                 var delivery = await DeliveryManager.InsertAsync(Delivery);
-
                 if (delivery != null)
                 {
                     MessageBox.Show("Successfully delivered.");
+                    await DeliveryManager.ExportDeliveryReceiptAsync(delivery);
                     OnCloseDialogRequested();
                 }
                 else
