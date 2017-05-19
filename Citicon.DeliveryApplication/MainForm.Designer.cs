@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DeliveryButton = new System.Windows.Forms.Button();
             this.TallySheetButton = new System.Windows.Forms.Button();
+            this.DeliveryButton = new System.Windows.Forms.Button();
+            this.EngineerButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.EngineerButton);
             this.panel1.Controls.Add(this.TallySheetButton);
             this.panel1.Controls.Add(this.DeliveryButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -46,6 +48,21 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel1.Size = new System.Drawing.Size(985, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // TallySheetButton
+            // 
+            this.TallySheetButton.BackColor = System.Drawing.Color.Red;
+            this.TallySheetButton.FlatAppearance.BorderSize = 0;
+            this.TallySheetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TallySheetButton.ForeColor = System.Drawing.Color.White;
+            this.TallySheetButton.Location = new System.Drawing.Point(119, 5);
+            this.TallySheetButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.TallySheetButton.Name = "TallySheetButton";
+            this.TallySheetButton.Size = new System.Drawing.Size(100, 50);
+            this.TallySheetButton.TabIndex = 1;
+            this.TallySheetButton.Text = "Tally Sheet";
+            this.TallySheetButton.UseVisualStyleBackColor = false;
+            this.TallySheetButton.Click += new System.EventHandler(this.TallySheetButton_Click);
             // 
             // DeliveryButton
             // 
@@ -62,20 +79,20 @@
             this.DeliveryButton.UseVisualStyleBackColor = false;
             this.DeliveryButton.Click += new System.EventHandler(this.DeliveryButton_Click);
             // 
-            // TallySheetButton
+            // EngineerButton
             // 
-            this.TallySheetButton.BackColor = System.Drawing.Color.Red;
-            this.TallySheetButton.FlatAppearance.BorderSize = 0;
-            this.TallySheetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TallySheetButton.ForeColor = System.Drawing.Color.White;
-            this.TallySheetButton.Location = new System.Drawing.Point(119, 5);
-            this.TallySheetButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.TallySheetButton.Name = "TallySheetButton";
-            this.TallySheetButton.Size = new System.Drawing.Size(100, 50);
-            this.TallySheetButton.TabIndex = 1;
-            this.TallySheetButton.Text = "Tally Sheet";
-            this.TallySheetButton.UseVisualStyleBackColor = false;
-            this.TallySheetButton.Click += new System.EventHandler(this.TallySheetButton_Click);
+            this.EngineerButton.BackColor = System.Drawing.Color.Red;
+            this.EngineerButton.FlatAppearance.BorderSize = 0;
+            this.EngineerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EngineerButton.ForeColor = System.Drawing.Color.White;
+            this.EngineerButton.Location = new System.Drawing.Point(229, 5);
+            this.EngineerButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.EngineerButton.Name = "EngineerButton";
+            this.EngineerButton.Size = new System.Drawing.Size(100, 50);
+            this.EngineerButton.TabIndex = 2;
+            this.EngineerButton.Text = "Create Design";
+            this.EngineerButton.UseVisualStyleBackColor = false;
+            this.EngineerButton.Click += new System.EventHandler(this.EngineerButton_Click);
             // 
             // MainForm
             // 
@@ -104,5 +121,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button DeliveryButton;
         private System.Windows.Forms.Button TallySheetButton;
+        private System.Windows.Forms.Button EngineerButton;
     }
 }

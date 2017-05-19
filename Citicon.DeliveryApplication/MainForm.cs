@@ -31,6 +31,16 @@ namespace Citicon.DeliveryApplication
             }
         }
 
+        private EngineerDeliveryCreationForm EngineerDeliveryCreationForm
+        {
+            get
+            {
+                var form = new EngineerDeliveryCreationForm();
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void DeliveryButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DeliveryForm);
@@ -56,6 +66,11 @@ namespace Citicon.DeliveryApplication
 
                 form.Show();
             }
+        }
+
+        private void EngineerButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(EngineerDeliveryCreationForm);
         }
     }
 }
