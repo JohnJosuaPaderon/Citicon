@@ -478,6 +478,12 @@
     <Compile Include="Forms\EngineerDeliveryCreationForm.Designer.cs">
       <DependentUpon>EngineerDeliveryCreationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LegitimateProjectDesignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LegitimateProjectDesignForm.Designer.cs">
+      <DependentUpon>LegitimateProjectDesignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -589,6 +595,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EngineerDeliveryCreationForm.resx">
       <DependentUpon>EngineerDeliveryCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LegitimateProjectDesignForm.resx">
+      <DependentUpon>LegitimateProjectDesignForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

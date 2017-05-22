@@ -31,11 +31,11 @@ namespace Citicon.DeliveryApplication
             }
         }
 
-        private EngineerDeliveryCreationForm EngineerDeliveryCreationForm
+        private LegitimateProjectDesignForm LegitimateProjectDesignForm
         {
             get
             {
-                var form = new EngineerDeliveryCreationForm();
+                var form = new LegitimateProjectDesignForm() { MdiParent = this };
                 form.FormClosed += (s, e) => form = null;
                 return form;
             }
@@ -70,7 +70,7 @@ namespace Citicon.DeliveryApplication
 
         private void EngineerButton_Click(object sender, EventArgs e)
         {
-            OpenMdiChild(EngineerDeliveryCreationForm);
+            OpenMdiChild(LegitimateProjectDesignForm);
         }
     }
 }
