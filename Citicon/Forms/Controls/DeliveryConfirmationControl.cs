@@ -16,5 +16,10 @@ namespace Citicon.Forms.Controls
         {
             InitializeComponent();
         }
+
+        private void DeliveryConfirmationControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
