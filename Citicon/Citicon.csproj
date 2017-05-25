@@ -381,6 +381,12 @@
     <Compile Include="Forms\Controls\DailyChequeReport.Designer.cs">
       <DependentUpon>DailyChequeReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\DeliveryConfirmationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\DeliveryConfirmationControl.Designer.cs">
+      <DependentUpon>DeliveryConfirmationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Controls\DeliveryManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -416,6 +422,12 @@
     </Compile>
     <Compile Include="Forms\DailyTallySheetForm.Designer.cs">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeliveryConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeliveryConfirmationForm.Designer.cs">
+      <DependentUpon>DeliveryConfirmationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DeliveryManagementForm.cs">
       <SubType>Form</SubType>
@@ -547,6 +559,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\DailyChequeReport.resx">
       <DependentUpon>DailyChequeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\DeliveryConfirmationControl.resx">
+      <DependentUpon>DeliveryConfirmationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\DeliveryManagement.resx">
       <DependentUpon>DeliveryManagement.cs</DependentUpon>
