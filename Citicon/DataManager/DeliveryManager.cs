@@ -43,6 +43,14 @@ namespace Citicon.DataManager
             }
         }
 
+        public static Task<IEnumerable<Delivery>> GetUnbilledDeliveryListAsync()
+        {
+            using (var process = new GetUnbilledDeliveryList())
+            {
+                return process.ExecuteAsync();
+            }
+        }
+
         public static async Task<Delivery> FromDbDataReader(DbDataReader dataReader)
         {
             return new Delivery()

@@ -119,6 +119,7 @@
     <Compile Include="DataProcess\GetTransitMixerList.cs" />
     <Compile Include="DataProcess\GetTripReportDeliveryListByDriver.cs" />
     <Compile Include="DataProcess\GetTripReportDriverList.cs" />
+    <Compile Include="DataProcess\GetUnbilledDeliveryList.cs" />
     <Compile Include="DataProcess\InsertDelivery.cs" />
     <Compile Include="DataProcess\InsertHoliday.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
@@ -580,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DailyTallySheetForm.resx">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeliveryConfirmationForm.resx">
+      <DependentUpon>DeliveryConfirmationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeliveryManagementForm.resx">
       <DependentUpon>DeliveryManagementForm.cs</DependentUpon>

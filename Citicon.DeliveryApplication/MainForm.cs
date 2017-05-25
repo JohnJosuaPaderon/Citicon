@@ -41,6 +41,16 @@ namespace Citicon.DeliveryApplication
             }
         }
 
+        private DeliveryConfirmationForm DeliveryConfirmationForm
+        {
+            get
+            {
+                var form = new DeliveryConfirmationForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void DeliveryButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DeliveryForm);
@@ -71,6 +81,11 @@ namespace Citicon.DeliveryApplication
         private void EngineerButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(LegitimateProjectDesignForm);
+        }
+
+        private void DeliveryConfirmationButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(DeliveryConfirmationForm);
         }
     }
 }
