@@ -47,6 +47,11 @@ namespace Citicon.Forms.Controls
             PlantLeaveTextBox.Text = value?.PlantLeave?.ToString("MMM, d, yyyy");
             LoadTextBox.Text = value?.Load;
             MaxSlumpTextBox.Text = value?.MaxSlump.ToString("#,##0.00");
+            ProjectArriveCheckBox.Checked = false;
+            PlantArriveCheckBox.Checked = false;
+            StartUnloadingCheckBox.Checked = false;
+            FinishedUnloadingCheckBox.Checked = false;
+            EstimatedStayCheckBox.Checked = false;
         }
 
         private async void DeliveryConfirmationControl_Load(object sender, EventArgs e)
