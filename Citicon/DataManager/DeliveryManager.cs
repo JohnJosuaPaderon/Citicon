@@ -25,6 +25,19 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<Delivery> ConfirmDeliveryAsync(Delivery delivery)
+        {
+            if (delivery != null)
+            {
+                using (var process = new ConfirmDelivery(delivery))
+                {
+                    delivery = await process.ExecuteAsync();
+                }
+            }
+
+            return delivery;
+        }
+
         public static async Task<IEnumerable<Delivery>> GetUnbilledListByProject(Project project)
         {
             using (var process = new GetUnbilledDeliveryListByProject(project))

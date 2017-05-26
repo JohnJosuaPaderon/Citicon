@@ -36,7 +36,7 @@ namespace Citicon.Forms.Controls
             Design_InitialVolumeTextBox.Text = value?.ProjectDesign?.InitialVolume.ToString("#,##0.00");
             Design_AggregateTextBox.Text = value?.ProjectDesign?.Aggregate?.ToString();
             Design_StrengthTextBox.Text = value?.ProjectDesign?.Strength?.ToString();
-            DeliveryDateTextBox.Text = value?.DeliveryDate.ToString("#,##0.00");
+            DeliveryDateTextBox.Text = value?.DeliveryDate.ToString("MMM d, yyyy");
             DeliveredVolumeTextBox.Text = value?.Volume.ToString("#,##0.00");
             RouteTextBox.Text = value?.Route?.ToString();
             PlantTextBox.Text = value?.Branch?.ToString();
@@ -44,7 +44,7 @@ namespace Citicon.Forms.Controls
             TransitMixerTextBox.Text = value?.TransitMixer?.ToString();
             AdmixtureTextBox.Text = value?.Admixture;
             AdmixtureQuantityTextBox.Text = value?.AdmixtureQuantity.ToString("#,##0.00");
-            PlantLeaveTextBox.Text = value?.PlantLeave?.ToString("MMM, d, yyyy");
+            PlantLeaveTextBox.Text = value?.PlantLeave?.ToString("MMM d, yyyy");
             LoadTextBox.Text = value?.Load;
             MaxSlumpTextBox.Text = value?.MaxSlump.ToString("#,##0.00");
             ProjectArriveCheckBox.Checked = false;
@@ -103,9 +103,29 @@ namespace Citicon.Forms.Controls
             }
         }
 
-        private void ConfirmDeliveryButton_Click(object sender, EventArgs e)
+        private async void ConfirmDeliveryButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (CurrentDelivery != null)
+                {
+                    var delivery = await DeliveryManager.ConfirmDeliveryAsync(CurrentDelivery);
 
+                    if (delivery != null)
+                    {
+                        await GetUnbilledDeliveryListAsync();
+                        MessageBox.Show("Delivery has been confirmed successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to confirm delivery.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SetCurrentDeliveryProperty(Action method)
@@ -122,6 +142,13 @@ namespace Citicon.Forms.Controls
             {
                 CurrentDelivery.ProjectArrive = ProjectArriveCheckBox.Checked ? new DateTime?(ProjectArriveDateTimePicker.Value) : null;
             });
+
+            ProjectArriveDateTimePicker.Enabled = ProjectArriveCheckBox.Checked;
+
+            if (CurrentDelivery?.ProjectArrive == null)
+            {
+                ProjectArriveDateTimePicker.Value = DateTime.Now;
+            }
         }
 
         private void SetCurrentDeliveryPlantArrive()
@@ -130,6 +157,13 @@ namespace Citicon.Forms.Controls
             {
                 CurrentDelivery.PlantArrive = PlantArriveCheckBox.Checked ? new DateTime?(PlantArriveDateTimePicker.Value) : null;
             });
+
+            PlantArriveDateTimePicker.Enabled = PlantArriveCheckBox.Checked;
+
+            if (CurrentDelivery?.PlantArrive == null)
+            {
+                PlantArriveDateTimePicker.Value = DateTime.Now;
+            }
         }
 
         private void SetCurrentDeliveryStartUnloading()
@@ -138,6 +172,13 @@ namespace Citicon.Forms.Controls
             {
                 CurrentDelivery.StartUnloading = StartUnloadingCheckBox.Checked ? new DateTime?(StartUnloadingDateTimePicker.Value) : null;
             });
+
+            StartUnloadingDateTimePicker.Enabled = StartUnloadingCheckBox.Checked;
+
+            if (CurrentDelivery?.StartUnloading == null)
+            {
+                StartUnloadingDateTimePicker.Value = DateTime.Now;
+            }
         }
 
         private void SetCurrentDeliveryFinishedUnloading()
@@ -146,6 +187,13 @@ namespace Citicon.Forms.Controls
             {
                 CurrentDelivery.FinishedUnloading = FinishedUnloadingCheckBox.Checked ? new DateTime?(FinishedUnloadingDateTimePicker.Value) : null;
             });
+
+            FinishedUnloadingDateTimePicker.Enabled = FinishedUnloadingCheckBox.Checked;
+
+            if (CurrentDelivery?.FinishedUnloading == null)
+            {
+                FinishedUnloadingDateTimePicker.Value = DateTime.Now;
+            }
         }
 
         private void SetCurrentDeliveryEstimatedStay()
@@ -154,6 +202,13 @@ namespace Citicon.Forms.Controls
             {
                 CurrentDelivery.EstimatedStay = EstimatedStayCheckBox.Checked ? new DateTime?(EstimatedStayDateTimePicker.Value) : null;
             });
+
+            EstimatedStayDateTimePicker.Enabled = EstimatedStayCheckBox.Checked;
+
+            if (CurrentDelivery?.EstimatedStay == null)
+            {
+                EstimatedStayDateTimePicker.Value = DateTime.Now;
+            }
         }
 
         private void ProjectArriveCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -177,6 +232,31 @@ namespace Citicon.Forms.Controls
         }
 
         private void EstimatedStayCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCurrentDeliveryEstimatedStay();
+        }
+
+        private void ProjectArriveDateTimePicker_Leave(object sender, EventArgs e)
+        {
+            SetCurrentDeliveryProjectArrive();
+        }
+
+        private void PlantArriveDateTimePicker_Leave(object sender, EventArgs e)
+        {
+            SetCurrentDeliveryPlantArrive();
+        }
+
+        private void StartUnloadingDateTimePicker_Leave(object sender, EventArgs e)
+        {
+            SetCurrentDeliveryStartUnloading();
+        }
+
+        private void FinishedUnloadingDateTimePicker_Leave(object sender, EventArgs e)
+        {
+            SetCurrentDeliveryFinishedUnloading();
+        }
+
+        private void EstimatedStayDateTimePicker_Leave(object sender, EventArgs e)
         {
             SetCurrentDeliveryEstimatedStay();
         }
