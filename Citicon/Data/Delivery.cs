@@ -19,6 +19,10 @@ namespace Citicon.Data
         public decimal PricePerCubicMeter { get; set; }
         public DateTime? PlantLeave { get; set; }
         public DateTime? PlantArrive { get; set; }
+        public DateTime? ProjectArrive { get; set; }
+        public DateTime? StartUnloading { get; set; }
+        public DateTime? FinishedUnloading { get; set; }
+        public DateTime? EstimatedStay { get; set; }
         public Branch Branch { get; set; }
         public DeliveryRoute Route { get; set; }
         public string Admixture { get; set; }
