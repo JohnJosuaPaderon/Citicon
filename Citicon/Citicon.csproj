@@ -368,6 +368,12 @@
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
     <Compile Include="Extensions\TimeSpanExtension.cs" />
+    <Compile Include="Forms\BillingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillingForm.Designer.cs">
+      <DependentUpon>BillingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ClientManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -555,6 +561,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BillingForm.resx">
+      <DependentUpon>BillingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientManagementForm.resx">
       <DependentUpon>ClientManagementForm.cs</DependentUpon>
