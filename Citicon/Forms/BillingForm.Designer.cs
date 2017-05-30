@@ -246,7 +246,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -323,7 +323,7 @@
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -337,7 +337,7 @@
             this.dgvProjects.ReadOnly = true;
             this.dgvProjects.RowHeadersVisible = false;
             this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjects.Size = new System.Drawing.Size(575, 308);
+            this.dgvProjects.Size = new System.Drawing.Size(575, 338);
             this.dgvProjects.TabIndex = 3;
             this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged);
             // 
@@ -373,7 +373,7 @@
             this.tcBillingDefinition.Name = "tcBillingDefinition";
             this.tcBillingDefinition.Padding = new System.Drawing.Point(20, 10);
             this.tcBillingDefinition.SelectedIndex = 0;
-            this.tcBillingDefinition.Size = new System.Drawing.Size(808, 577);
+            this.tcBillingDefinition.Size = new System.Drawing.Size(808, 607);
             this.tcBillingDefinition.TabIndex = 4;
             // 
             // tpBilling_Deliveries
@@ -383,7 +383,7 @@
             this.tpBilling_Deliveries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpBilling_Deliveries.Name = "tpBilling_Deliveries";
             this.tpBilling_Deliveries.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpBilling_Deliveries.Size = new System.Drawing.Size(800, 533);
+            this.tpBilling_Deliveries.Size = new System.Drawing.Size(800, 563);
             this.tpBilling_Deliveries.TabIndex = 0;
             this.tpBilling_Deliveries.Text = "Deliveries";
             this.tpBilling_Deliveries.UseVisualStyleBackColor = true;
@@ -439,7 +439,7 @@
             this.dgvDeliveries.Name = "dgvDeliveries";
             this.dgvDeliveries.RowHeadersVisible = false;
             this.dgvDeliveries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeliveries.Size = new System.Drawing.Size(792, 532);
+            this.dgvDeliveries.Size = new System.Drawing.Size(792, 531);
             this.dgvDeliveries.TabIndex = 2;
             // 
             // colDelivery_Included
@@ -516,11 +516,11 @@
             // 
             this.tpBilling_PumpCreteCharges.Controls.Add(this.pnlPumpCreteCharges);
             this.tpBilling_PumpCreteCharges.Controls.Add(this.ckbxIncludePumpCreteCharges);
-            this.tpBilling_PumpCreteCharges.Location = new System.Drawing.Point(4, 44);
+            this.tpBilling_PumpCreteCharges.Location = new System.Drawing.Point(4, 40);
             this.tpBilling_PumpCreteCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpBilling_PumpCreteCharges.Name = "tpBilling_PumpCreteCharges";
             this.tpBilling_PumpCreteCharges.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpBilling_PumpCreteCharges.Size = new System.Drawing.Size(701, 481);
+            this.tpBilling_PumpCreteCharges.Size = new System.Drawing.Size(800, 563);
             this.tpBilling_PumpCreteCharges.TabIndex = 1;
             this.tpBilling_PumpCreteCharges.Text = "Pumpcrete Charges";
             this.tpBilling_PumpCreteCharges.UseVisualStyleBackColor = true;
@@ -552,7 +552,7 @@
             this.pnlPumpCreteCharges.Location = new System.Drawing.Point(5, 30);
             this.pnlPumpCreteCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlPumpCreteCharges.Name = "pnlPumpCreteCharges";
-            this.pnlPumpCreteCharges.Size = new System.Drawing.Size(693, 455);
+            this.pnlPumpCreteCharges.Size = new System.Drawing.Size(792, 529);
             this.pnlPumpCreteCharges.TabIndex = 1;
             // 
             // tbxPumpcrete_Remarks
@@ -577,7 +577,7 @@
             // 
             this.btnPumpcrete_Cancel.BackColor = System.Drawing.Color.White;
             this.btnPumpcrete_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPumpcrete_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPumpcrete_Cancel.ForeColor = System.Drawing.Color.Red;
             this.btnPumpcrete_Cancel.Location = new System.Drawing.Point(405, 216);
             this.btnPumpcrete_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPumpcrete_Cancel.Name = "btnPumpcrete_Cancel";
@@ -605,7 +605,7 @@
             // 
             // btnPumpcrete_Add
             // 
-            this.btnPumpcrete_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPumpcrete_Add.BackColor = System.Drawing.Color.Red;
             this.btnPumpcrete_Add.FlatAppearance.BorderSize = 0;
             this.btnPumpcrete_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPumpcrete_Add.ForeColor = System.Drawing.Color.White;
@@ -677,12 +677,12 @@
             // btnPumpcrete_RemoveSelected
             // 
             this.btnPumpcrete_RemoveSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPumpcrete_RemoveSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPumpcrete_RemoveSelected.BackColor = System.Drawing.Color.Red;
             this.btnPumpcrete_RemoveSelected.Enabled = false;
             this.btnPumpcrete_RemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnPumpcrete_RemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPumpcrete_RemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnPumpcrete_RemoveSelected.Location = new System.Drawing.Point(472, 412);
+            this.btnPumpcrete_RemoveSelected.Location = new System.Drawing.Point(571, 486);
             this.btnPumpcrete_RemoveSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPumpcrete_RemoveSelected.Name = "btnPumpcrete_RemoveSelected";
             this.btnPumpcrete_RemoveSelected.Size = new System.Drawing.Size(117, 40);
@@ -694,12 +694,12 @@
             // btnPumpcrete_RemoveAll
             // 
             this.btnPumpcrete_RemoveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPumpcrete_RemoveAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPumpcrete_RemoveAll.BackColor = System.Drawing.Color.Red;
             this.btnPumpcrete_RemoveAll.Enabled = false;
             this.btnPumpcrete_RemoveAll.FlatAppearance.BorderSize = 0;
             this.btnPumpcrete_RemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPumpcrete_RemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnPumpcrete_RemoveAll.Location = new System.Drawing.Point(593, 412);
+            this.btnPumpcrete_RemoveAll.Location = new System.Drawing.Point(692, 486);
             this.btnPumpcrete_RemoveAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPumpcrete_RemoveAll.Name = "btnPumpcrete_RemoveAll";
             this.btnPumpcrete_RemoveAll.Size = new System.Drawing.Size(97, 40);
@@ -715,8 +715,8 @@
             this.dgvPumpcreteCharges.AllowUserToResizeRows = false;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
             this.dgvPumpcreteCharges.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPumpcreteCharges.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -726,9 +726,9 @@
             this.dgvPumpcreteCharges.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvPumpcreteCharges.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -753,7 +753,7 @@
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPumpcreteCharges.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvPumpcreteCharges.EnableHeadersVisualStyles = false;
-            this.dgvPumpcreteCharges.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvPumpcreteCharges.GridColor = System.Drawing.Color.Red;
             this.dgvPumpcreteCharges.Location = new System.Drawing.Point(5, 261);
             this.dgvPumpcreteCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPumpcreteCharges.MultiSelect = false;
@@ -761,7 +761,7 @@
             this.dgvPumpcreteCharges.ReadOnly = true;
             this.dgvPumpcreteCharges.RowHeadersVisible = false;
             this.dgvPumpcreteCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPumpcreteCharges.Size = new System.Drawing.Size(685, 146);
+            this.dgvPumpcreteCharges.Size = new System.Drawing.Size(784, 220);
             this.dgvPumpcreteCharges.TabIndex = 25;
             this.dgvPumpcreteCharges.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvPumpcreteCharges_RowsAdded);
             this.dgvPumpcreteCharges.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvPumpcreteCharges_RowsRemoved);
@@ -968,11 +968,11 @@
             // 
             this.tpExcessCharge.Controls.Add(this.pnlExcessPipeCharges);
             this.tpExcessCharge.Controls.Add(this.ckbxIncludeExcessPipeCharges);
-            this.tpExcessCharge.Location = new System.Drawing.Point(4, 44);
+            this.tpExcessCharge.Location = new System.Drawing.Point(4, 40);
             this.tpExcessCharge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpExcessCharge.Name = "tpExcessCharge";
             this.tpExcessCharge.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpExcessCharge.Size = new System.Drawing.Size(701, 481);
+            this.tpExcessCharge.Size = new System.Drawing.Size(800, 563);
             this.tpExcessCharge.TabIndex = 3;
             this.tpExcessCharge.Text = "Excess Pipes Charges";
             this.tpExcessCharge.UseVisualStyleBackColor = true;
@@ -1000,18 +1000,18 @@
             this.pnlExcessPipeCharges.Location = new System.Drawing.Point(5, 30);
             this.pnlExcessPipeCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlExcessPipeCharges.Name = "pnlExcessPipeCharges";
-            this.pnlExcessPipeCharges.Size = new System.Drawing.Size(693, 474);
+            this.pnlExcessPipeCharges.Size = new System.Drawing.Size(792, 529);
             this.pnlExcessPipeCharges.TabIndex = 2;
             // 
             // btnExcessPipe_RemoveSelected
             // 
             this.btnExcessPipe_RemoveSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcessPipe_RemoveSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnExcessPipe_RemoveSelected.BackColor = System.Drawing.Color.Red;
             this.btnExcessPipe_RemoveSelected.Enabled = false;
             this.btnExcessPipe_RemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnExcessPipe_RemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcessPipe_RemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnExcessPipe_RemoveSelected.Location = new System.Drawing.Point(472, 431);
+            this.btnExcessPipe_RemoveSelected.Location = new System.Drawing.Point(571, 485);
             this.btnExcessPipe_RemoveSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcessPipe_RemoveSelected.Name = "btnExcessPipe_RemoveSelected";
             this.btnExcessPipe_RemoveSelected.Size = new System.Drawing.Size(117, 40);
@@ -1023,12 +1023,12 @@
             // btnExcessPipe_RemoveAll
             // 
             this.btnExcessPipe_RemoveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcessPipe_RemoveAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnExcessPipe_RemoveAll.BackColor = System.Drawing.Color.Red;
             this.btnExcessPipe_RemoveAll.Enabled = false;
             this.btnExcessPipe_RemoveAll.FlatAppearance.BorderSize = 0;
             this.btnExcessPipe_RemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcessPipe_RemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnExcessPipe_RemoveAll.Location = new System.Drawing.Point(593, 431);
+            this.btnExcessPipe_RemoveAll.Location = new System.Drawing.Point(692, 485);
             this.btnExcessPipe_RemoveAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcessPipe_RemoveAll.Name = "btnExcessPipe_RemoveAll";
             this.btnExcessPipe_RemoveAll.Size = new System.Drawing.Size(97, 40);
@@ -1044,8 +1044,8 @@
             this.dgvExcessPipeCharges.AllowUserToResizeRows = false;
             dataGridViewCellStyle21.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
             this.dgvExcessPipeCharges.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvExcessPipeCharges.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1055,9 +1055,9 @@
             this.dgvExcessPipeCharges.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvExcessPipeCharges.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1075,13 +1075,13 @@
             dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvExcessPipeCharges.DefaultCellStyle = dataGridViewCellStyle28;
             this.dgvExcessPipeCharges.EnableHeadersVisualStyles = false;
-            this.dgvExcessPipeCharges.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvExcessPipeCharges.GridColor = System.Drawing.Color.Red;
             this.dgvExcessPipeCharges.Location = new System.Drawing.Point(5, 217);
             this.dgvExcessPipeCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvExcessPipeCharges.MultiSelect = false;
@@ -1089,7 +1089,7 @@
             this.dgvExcessPipeCharges.ReadOnly = true;
             this.dgvExcessPipeCharges.RowHeadersVisible = false;
             this.dgvExcessPipeCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExcessPipeCharges.Size = new System.Drawing.Size(685, 210);
+            this.dgvExcessPipeCharges.Size = new System.Drawing.Size(784, 264);
             this.dgvExcessPipeCharges.TabIndex = 41;
             this.dgvExcessPipeCharges.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvExcessPipeCharges_RowsAdded);
             this.dgvExcessPipeCharges.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvExcessPipeCharges_RowsRemoved);
@@ -1175,7 +1175,7 @@
             // 
             this.btnExcessPipe_Cancel.BackColor = System.Drawing.Color.White;
             this.btnExcessPipe_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcessPipe_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnExcessPipe_Cancel.ForeColor = System.Drawing.Color.Red;
             this.btnExcessPipe_Cancel.Location = new System.Drawing.Point(405, 172);
             this.btnExcessPipe_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExcessPipe_Cancel.Name = "btnExcessPipe_Cancel";
@@ -1187,7 +1187,7 @@
             // 
             // btnExcessPipe_Add
             // 
-            this.btnExcessPipe_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnExcessPipe_Add.BackColor = System.Drawing.Color.Red;
             this.btnExcessPipe_Add.FlatAppearance.BorderSize = 0;
             this.btnExcessPipe_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcessPipe_Add.ForeColor = System.Drawing.Color.White;
@@ -1368,11 +1368,11 @@
             // 
             this.tpBilling_OtherCharges.Controls.Add(this.pnlOtherCharges);
             this.tpBilling_OtherCharges.Controls.Add(this.ckbxIncludeOtherCharges);
-            this.tpBilling_OtherCharges.Location = new System.Drawing.Point(4, 44);
+            this.tpBilling_OtherCharges.Location = new System.Drawing.Point(4, 40);
             this.tpBilling_OtherCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpBilling_OtherCharges.Name = "tpBilling_OtherCharges";
             this.tpBilling_OtherCharges.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpBilling_OtherCharges.Size = new System.Drawing.Size(701, 481);
+            this.tpBilling_OtherCharges.Size = new System.Drawing.Size(800, 563);
             this.tpBilling_OtherCharges.TabIndex = 2;
             this.tpBilling_OtherCharges.Text = "Other Charges";
             this.tpBilling_OtherCharges.UseVisualStyleBackColor = true;
@@ -1399,17 +1399,17 @@
             this.pnlOtherCharges.Location = new System.Drawing.Point(5, 30);
             this.pnlOtherCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlOtherCharges.Name = "pnlOtherCharges";
-            this.pnlOtherCharges.Size = new System.Drawing.Size(693, 474);
+            this.pnlOtherCharges.Size = new System.Drawing.Size(792, 529);
             this.pnlOtherCharges.TabIndex = 2;
             // 
             // btnOther_RemoveSelected
             // 
             this.btnOther_RemoveSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOther_RemoveSelected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOther_RemoveSelected.BackColor = System.Drawing.Color.Red;
             this.btnOther_RemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnOther_RemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOther_RemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnOther_RemoveSelected.Location = new System.Drawing.Point(472, 431);
+            this.btnOther_RemoveSelected.Location = new System.Drawing.Point(571, 486);
             this.btnOther_RemoveSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOther_RemoveSelected.Name = "btnOther_RemoveSelected";
             this.btnOther_RemoveSelected.Size = new System.Drawing.Size(117, 40);
@@ -1421,11 +1421,11 @@
             // btnOther_RemoveAll
             // 
             this.btnOther_RemoveAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOther_RemoveAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOther_RemoveAll.BackColor = System.Drawing.Color.Red;
             this.btnOther_RemoveAll.FlatAppearance.BorderSize = 0;
             this.btnOther_RemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOther_RemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnOther_RemoveAll.Location = new System.Drawing.Point(593, 431);
+            this.btnOther_RemoveAll.Location = new System.Drawing.Point(692, 486);
             this.btnOther_RemoveAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOther_RemoveAll.Name = "btnOther_RemoveAll";
             this.btnOther_RemoveAll.Size = new System.Drawing.Size(97, 40);
@@ -1441,8 +1441,8 @@
             this.dgvOtherCharges.AllowUserToResizeRows = false;
             dataGridViewCellStyle29.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle29.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
             this.dgvOtherCharges.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvOtherCharges.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1452,9 +1452,9 @@
             this.dgvOtherCharges.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvOtherCharges.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -1471,13 +1471,13 @@
             dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvOtherCharges.DefaultCellStyle = dataGridViewCellStyle34;
             this.dgvOtherCharges.EnableHeadersVisualStyles = false;
-            this.dgvOtherCharges.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dgvOtherCharges.GridColor = System.Drawing.Color.Red;
             this.dgvOtherCharges.Location = new System.Drawing.Point(5, 110);
             this.dgvOtherCharges.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvOtherCharges.MultiSelect = false;
@@ -1485,7 +1485,7 @@
             this.dgvOtherCharges.ReadOnly = true;
             this.dgvOtherCharges.RowHeadersVisible = false;
             this.dgvOtherCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOtherCharges.Size = new System.Drawing.Size(685, 317);
+            this.dgvOtherCharges.Size = new System.Drawing.Size(784, 372);
             this.dgvOtherCharges.TabIndex = 31;
             this.dgvOtherCharges.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvOtherCharges_RowsAdded);
             this.dgvOtherCharges.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvOtherCharges_RowsRemoved);
@@ -1580,7 +1580,7 @@
             // 
             this.btnOther_Cancel.BackColor = System.Drawing.Color.White;
             this.btnOther_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOther_Cancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOther_Cancel.ForeColor = System.Drawing.Color.Red;
             this.btnOther_Cancel.Location = new System.Drawing.Point(518, 65);
             this.btnOther_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOther_Cancel.Name = "btnOther_Cancel";
@@ -1592,7 +1592,7 @@
             // 
             // btnOther_Add
             // 
-            this.btnOther_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnOther_Add.BackColor = System.Drawing.Color.Red;
             this.btnOther_Add.FlatAppearance.BorderSize = 0;
             this.btnOther_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOther_Add.ForeColor = System.Drawing.Color.White;
@@ -1695,7 +1695,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(1322, 654);
+            this.btnCancel.Location = new System.Drawing.Point(1322, 684);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(78, 40);
@@ -1711,7 +1711,7 @@
             this.btnSaveBilling.FlatAppearance.BorderSize = 0;
             this.btnSaveBilling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveBilling.ForeColor = System.Drawing.Color.White;
-            this.btnSaveBilling.Location = new System.Drawing.Point(1220, 654);
+            this.btnSaveBilling.Location = new System.Drawing.Point(1220, 684);
             this.btnSaveBilling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveBilling.Name = "btnSaveBilling";
             this.btnSaveBilling.Size = new System.Drawing.Size(97, 40);
@@ -1724,7 +1724,7 @@
             // 
             this.lblStructureType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblStructureType.AutoSize = true;
-            this.lblStructureType.Location = new System.Drawing.Point(9, 640);
+            this.lblStructureType.Location = new System.Drawing.Point(9, 670);
             this.lblStructureType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStructureType.Name = "lblStructureType";
             this.lblStructureType.Size = new System.Drawing.Size(91, 17);
@@ -1737,7 +1737,7 @@
             this.cmbxStructureType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxStructureType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbxStructureType.FormattingEnabled = true;
-            this.cmbxStructureType.Location = new System.Drawing.Point(12, 659);
+            this.cmbxStructureType.Location = new System.Drawing.Point(12, 689);
             this.cmbxStructureType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxStructureType.Name = "cmbxStructureType";
             this.cmbxStructureType.Size = new System.Drawing.Size(178, 29);
@@ -1755,7 +1755,7 @@
             this.gbxSignatories.Controls.Add(this.tbxSignatories_CheckBy);
             this.gbxSignatories.Controls.Add(this.tbxSignatories_PreparedBy);
             this.gbxSignatories.Controls.Add(this.lblSignatories_PreparedBy);
-            this.gbxSignatories.Location = new System.Drawing.Point(394, 620);
+            this.gbxSignatories.Location = new System.Drawing.Point(394, 650);
             this.gbxSignatories.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbxSignatories.Name = "gbxSignatories";
             this.gbxSignatories.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -1840,7 +1840,7 @@
             // 
             this.lblBillingDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBillingDate.AutoSize = true;
-            this.lblBillingDate.Location = new System.Drawing.Point(191, 640);
+            this.lblBillingDate.Location = new System.Drawing.Point(191, 670);
             this.lblBillingDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBillingDate.Name = "lblBillingDate";
             this.lblBillingDate.Size = new System.Drawing.Size(73, 17);
@@ -1852,7 +1852,7 @@
             this.dtpBillingDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dtpBillingDate.CustomFormat = "MMMM dd, yyyy";
             this.dtpBillingDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBillingDate.Location = new System.Drawing.Point(194, 659);
+            this.dtpBillingDate.Location = new System.Drawing.Point(194, 689);
             this.dtpBillingDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpBillingDate.Name = "dtpBillingDate";
             this.dtpBillingDate.Size = new System.Drawing.Size(196, 25);
@@ -1863,7 +1863,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1409, 705);
+            this.ClientSize = new System.Drawing.Size(1409, 735);
             this.Controls.Add(this.dtpBillingDate);
             this.Controls.Add(this.lblBillingDate);
             this.Controls.Add(this.gbxSignatories);
