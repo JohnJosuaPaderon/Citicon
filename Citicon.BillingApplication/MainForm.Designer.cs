@@ -69,6 +69,7 @@
             this.PurchaseOrderButton.TabIndex = 3;
             this.PurchaseOrderButton.Text = "PURCHASE ORDER";
             this.PurchaseOrderButton.UseVisualStyleBackColor = false;
+            this.PurchaseOrderButton.Click += new System.EventHandler(this.PurchaseOrderButton_Click);
             // 
             // PaymentButton
             // 
@@ -84,6 +85,7 @@
             this.PaymentButton.TabIndex = 2;
             this.PaymentButton.Text = "PAYMENT";
             this.PaymentButton.UseVisualStyleBackColor = false;
+            this.PaymentButton.Click += new System.EventHandler(this.PaymentButton_Click);
             // 
             // SalesInvoiceButton
             // 
@@ -99,6 +101,7 @@
             this.SalesInvoiceButton.TabIndex = 1;
             this.SalesInvoiceButton.Text = "SALES INVOICE";
             this.SalesInvoiceButton.UseVisualStyleBackColor = false;
+            this.SalesInvoiceButton.Click += new System.EventHandler(this.SalesInvoiceButton_Click);
             // 
             // BillingButton
             // 
@@ -130,6 +133,7 @@
             this.UserSettingsButton.TabIndex = 4;
             this.UserSettingsButton.Text = "USER SETTINGS";
             this.UserSettingsButton.UseVisualStyleBackColor = false;
+            this.UserSettingsButton.Click += new System.EventHandler(this.UserSettingsButton_Click);
             // 
             // TallySheetButton
             // 
@@ -145,6 +149,7 @@
             this.TallySheetButton.TabIndex = 5;
             this.TallySheetButton.Text = "TALLY SHEET";
             this.TallySheetButton.UseVisualStyleBackColor = false;
+            this.TallySheetButton.Click += new System.EventHandler(this.TallySheetButton_Click);
             // 
             // MainForm
             // 
