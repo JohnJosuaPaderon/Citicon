@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Citicon.PayrollIntegration")]
-[assembly: AssemblyCopyright("Copyright © John Josua R. Paderon 2017")]
+[assembly: AssemblyCopyright("Copyright © 2017 John Josua R. Paderon")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
