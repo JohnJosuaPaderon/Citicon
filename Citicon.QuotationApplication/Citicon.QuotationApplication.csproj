@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Citicon\Citicon.csproj">
+      <Project>{CEC456EF-E300-48B1-9FC5-EC6E6EC46DF0}</Project>
+      <Name>Citicon</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
