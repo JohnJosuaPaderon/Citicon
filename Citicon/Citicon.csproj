@@ -72,6 +72,7 @@
     <Compile Include="DataManager\BankAccountManager.cs" />
     <Compile Include="DataManager\BankManager.cs" />
     <Compile Include="DataManager\BillingManager.cs" />
+    <Compile Include="DataManager\BillingPaymentManager.cs" />
     <Compile Include="DataManager\BillingStructureTypeManager.cs" />
     <Compile Include="DataManager\BranchManager.cs" />
     <Compile Include="DataManager\ChequeSummaryItemManager.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
     <Compile Include="DataProcess\InsertTimeLog.cs" />
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
+    <Compile Include="DataProcess\SavePayment.cs" />
     <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\GetDepartmentById.cs" />
     <Compile Include="DataProcess\GetEmployeeAgent.cs" />
@@ -290,6 +292,8 @@
     <Compile Include="Data\Bank.cs" />
     <Compile Include="Data\BankAccount.cs" />
     <Compile Include="Data\Billing.cs" />
+    <Compile Include="Data\BillingPayment.cs" />
+    <Compile Include="Data\BillingPaymentType.cs" />
     <Compile Include="Data\BillingStructureType.cs" />
     <Compile Include="Data\Branch.cs" />
     <Compile Include="Data\ChequeSummaryItem.cs" />
@@ -373,6 +377,18 @@
     </Compile>
     <Compile Include="Forms\BillingForm.Designer.cs">
       <DependentUpon>BillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BillingPaymentConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillingPaymentConfirmationForm.Designer.cs">
+      <DependentUpon>BillingPaymentConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BillingPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BillingPaymentForm.Designer.cs">
+      <DependentUpon>BillingPaymentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ClientManagementForm.cs">
       <SubType>Form</SubType>
@@ -531,6 +547,12 @@
     <Compile Include="Forms\QuotationManagementForm.Designer.cs">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SalesInvoiceAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesInvoiceAssignmentForm.Designer.cs">
+      <DependentUpon>SalesInvoiceAssignmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TransitMixerManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -564,6 +586,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BillingForm.resx">
       <DependentUpon>BillingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BillingPaymentConfirmationForm.resx">
+      <DependentUpon>BillingPaymentConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BillingPaymentForm.resx">
+      <DependentUpon>BillingPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientManagementForm.resx">
       <DependentUpon>ClientManagementForm.cs</DependentUpon>
@@ -642,6 +670,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuotationManagementForm.resx">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesInvoiceAssignmentForm.resx">
+      <DependentUpon>SalesInvoiceAssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TransitMixerManagementForm.resx">
       <DependentUpon>TransitMixerManagementForm.cs</DependentUpon>
