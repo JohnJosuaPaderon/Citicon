@@ -12,7 +12,7 @@ namespace Citicon.Data
                 {
                     Code = ConfigurationManager.AppSettings["Module.Code"],
                     Description = ConfigurationManager.AppSettings["Module.Description"],
-                    Id = ulong.Parse(ConfigurationManager.AppSettings["Module.Id"])
+                    Id = ulong.Parse(ConfigurationManager.AppSettings["Module.Id"] ?? "0")
                 };
             }
         }
