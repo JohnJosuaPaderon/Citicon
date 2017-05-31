@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:Citicon.TimeLog.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:viewModels="clr-namespace:Citicon.TimeLog.ViewModels"
-             mc:Ignorable="d" Unloaded="UserControl_Unloaded">
+             mc:Ignorable="d" Unloaded="UserControl_Unloaded"
+             Padding="0" Margin="0">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -27,13 +28,18 @@
             </materialDesign:Card>
         </DockPanel>
     </materialDesign:Card>-->
-    <Grid Margin="{StaticResource ControlMargin}" VerticalAlignment="Center">
-        <Grid.ColumnDefinitions>
+    <Grid Background="#B900">
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="{StaticResource GridSpacing}"/>
             <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Text="{Binding Employee}" FontSize="35" FontWeight="Bold" TextDecorations="Underline" Foreground="#FFFF"/>
-        <TextBlock Grid.Column="2" Text="{Binding Message}" FontSize="35" Foreground="#BFFF"/>
+        </Grid.ColumnDefinitions>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="{DynamicResource GridSpacing}"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Employee}" HorizontalAlignment="Center" FontSize="100" FontWeight="Bold" TextDecorations="Underline" Foreground="#FFFF" Margin="0,20,0,0"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Message}" FontFamily="Arial Black" HorizontalAlignment="Center" FontSize="100" FontWeight="Bold" Foreground="#FFFF" Margin="0,0,0,15"/>
     </Grid>
 </UserControl>
