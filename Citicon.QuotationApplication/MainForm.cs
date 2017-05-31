@@ -21,6 +21,16 @@ namespace Citicon.QuotationApplication
             }
         }
 
+        public UserSettingsForm UserSettingsForm
+        {
+            get
+            {
+                var form = new UserSettingsForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void OpenMdiChild(Form form)
         {
             if (ActiveMdiChild != null && ActiveMdiChild.GetType() == form.GetType())
@@ -46,6 +56,11 @@ namespace Citicon.QuotationApplication
         private void MainForm_Load(object sender, EventArgs e)
         {
             OpenMdiChild(ClientManagementForm);
+        }
+
+        private void UserSettingsButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(UserSettingsForm);
         }
     }
 }
