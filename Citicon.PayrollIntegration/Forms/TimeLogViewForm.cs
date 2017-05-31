@@ -43,6 +43,7 @@ namespace Citicon.PayrollIntegration.Forms
         private async void TimeLogViewForm_Load(object sender, EventArgs e)
         {
             await GetBranchListAsync();
+            await GetEmployeePositionListAsync();
         }
 
         private async Task GetBranchListAsync()
@@ -64,28 +65,46 @@ namespace Citicon.PayrollIntegration.Forms
             }
         }
 
+        private async Task GetEmployeePositionListAsync()
+        {
+            EmployeePositionComboBox.Items.Clear();
+
+            try
+            {
+                var positionList = await JobPositionManager.GetListAsync();
+
+                if (positionList != null && positionList.Any())
+                {
+                    EmployeePositionComboBox.Items.AddRange(positionList.ToArray());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private async Task GetEmployeeListAsync()
         {
-            if (BranchComboBox.SelectedItem is Branch branch)
+            var branch = BranchComboBox.SelectedItem as Branch;
+            var employeePosition = EmployeePositionComboBox.SelectedItem as JobPosition;
+            EmployeeDataGridView.Rows.Clear();
+
+            try
             {
-                EmployeeDataGridView.Rows.Clear();
+                var employees = await EmployeeManager.GetListWithTimeLogAsync(FilterByBranchCheckBox.Checked, branch, FilterByEmployeePositionCheckBox.Checked, employeePosition, new DateTimeRange(TimeRangeStartDdateTimePicker.Value, TimeRangeEndDateTimePicker.Value));
 
-                try
+                if (employees != null && employees.Any())
                 {
-                    var employees = await EmployeeManager.GetListWithTimeLogAsync(branch, new DateTimeRange(TimeRangeStartDdateTimePicker.Value, TimeRangeEndDateTimePicker.Value));
-
-                    if (employees != null && employees.Any())
+                    foreach (var employee in employees)
                     {
-                        foreach (var employee in employees)
-                        {
-                            AddToUI(employee);
-                        }
+                        AddToUI(employee);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -249,6 +268,16 @@ namespace Citicon.PayrollIntegration.Forms
                 form.ShowDialog();
                 form = null;
             }
+        }
+
+        private void FilterByBranchCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            BranchComboBox.Enabled = FilterByBranchCheckBox.Checked;
+        }
+
+        private void FilterByEmployeePositionCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            EmployeePositionComboBox.Enabled = FilterByEmployeePositionCheckBox.Checked;
         }
     }
 }

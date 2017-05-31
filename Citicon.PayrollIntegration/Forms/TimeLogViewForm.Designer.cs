@@ -45,10 +45,15 @@
             this.TimeRangeStartDdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeRangeToLabel = new System.Windows.Forms.Label();
             this.TimeRangeEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.BranchLabel = new System.Windows.Forms.Label();
             this.BranchComboBox = new System.Windows.Forms.ComboBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.TimeLogDataGridView = new System.Windows.Forms.DataGridView();
+            this.TimeLogColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_LoginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_LogoutColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_WorkedHoursColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeLog_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeLogDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.DeleteTimeLogButton = new System.Windows.Forms.Button();
             this.SaveTimeLogChangesButton = new System.Windows.Forms.Button();
@@ -57,12 +62,9 @@
             this.TimeLogDetails_LoginDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeLogDetails_LoginLabel = new System.Windows.Forms.Label();
             this.InsertTimeLogButton = new System.Windows.Forms.Button();
-            this.TimeLogColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_LoginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_LogoutColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_TypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_WorkedHoursColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TimeLog_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeePositionComboBox = new System.Windows.Forms.ComboBox();
+            this.FilterByBranchCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByEmployeePositionCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLogDataGridView)).BeginInit();
             this.TimeLogDetailsGroupBox.SuspendLayout();
@@ -104,7 +106,7 @@
             this.EmployeeDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmployeeDataGridView.EnableHeadersVisualStyles = false;
             this.EmployeeDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.EmployeeDataGridView.Location = new System.Drawing.Point(12, 109);
+            this.EmployeeDataGridView.Location = new System.Drawing.Point(12, 119);
             this.EmployeeDataGridView.MultiSelect = false;
             this.EmployeeDataGridView.Name = "EmployeeDataGridView";
             this.EmployeeDataGridView.ReadOnly = true;
@@ -114,7 +116,7 @@
             this.EmployeeDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.EmployeeDataGridView.RowTemplate.Height = 40;
             this.EmployeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeeDataGridView.Size = new System.Drawing.Size(470, 632);
+            this.EmployeeDataGridView.Size = new System.Drawing.Size(470, 622);
             this.EmployeeDataGridView.TabIndex = 105;
             this.EmployeeDataGridView.SelectionChanged += new System.EventHandler(this.EmployeeDataGridView_SelectionChanged);
             // 
@@ -162,20 +164,12 @@
             this.TimeRangeEndDateTimePicker.Size = new System.Drawing.Size(220, 25);
             this.TimeRangeEndDateTimePicker.TabIndex = 109;
             // 
-            // BranchLabel
-            // 
-            this.BranchLabel.AutoSize = true;
-            this.BranchLabel.Location = new System.Drawing.Point(12, 57);
-            this.BranchLabel.Name = "BranchLabel";
-            this.BranchLabel.Size = new System.Drawing.Size(47, 17);
-            this.BranchLabel.TabIndex = 110;
-            this.BranchLabel.Text = "Branch";
-            // 
             // BranchComboBox
             // 
             this.BranchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BranchComboBox.Enabled = false;
             this.BranchComboBox.FormattingEnabled = true;
-            this.BranchComboBox.Location = new System.Drawing.Point(15, 78);
+            this.BranchComboBox.Location = new System.Drawing.Point(15, 88);
             this.BranchComboBox.Name = "BranchComboBox";
             this.BranchComboBox.Size = new System.Drawing.Size(220, 25);
             this.BranchComboBox.TabIndex = 111;
@@ -187,7 +181,7 @@
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(382, 68);
+            this.SearchButton.Location = new System.Drawing.Point(488, 78);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(100, 35);
@@ -238,7 +232,7 @@
             this.TimeLogDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
             this.TimeLogDataGridView.EnableHeadersVisualStyles = false;
             this.TimeLogDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.TimeLogDataGridView.Location = new System.Drawing.Point(488, 109);
+            this.TimeLogDataGridView.Location = new System.Drawing.Point(488, 119);
             this.TimeLogDataGridView.MultiSelect = false;
             this.TimeLogDataGridView.Name = "TimeLogDataGridView";
             this.TimeLogDataGridView.ReadOnly = true;
@@ -248,9 +242,61 @@
             this.TimeLogDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.TimeLogDataGridView.RowTemplate.Height = 40;
             this.TimeLogDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TimeLogDataGridView.Size = new System.Drawing.Size(689, 632);
+            this.TimeLogDataGridView.Size = new System.Drawing.Size(689, 622);
             this.TimeLogDataGridView.TabIndex = 114;
             this.TimeLogDataGridView.SelectionChanged += new System.EventHandler(this.TimeLogDataGridView_SelectionChanged);
+            // 
+            // TimeLogColumn
+            // 
+            this.TimeLogColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TimeLogColumn.HeaderText = "Time Log";
+            this.TimeLogColumn.MinimumWidth = 100;
+            this.TimeLogColumn.Name = "TimeLogColumn";
+            this.TimeLogColumn.ReadOnly = true;
+            this.TimeLogColumn.Visible = false;
+            // 
+            // TimeLog_LoginColumn
+            // 
+            this.TimeLog_LoginColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle7.Format = "MMMM dd, yyyy HH:mm:ss";
+            this.TimeLog_LoginColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.TimeLog_LoginColumn.HeaderText = "LOGIN";
+            this.TimeLog_LoginColumn.Name = "TimeLog_LoginColumn";
+            this.TimeLog_LoginColumn.ReadOnly = true;
+            this.TimeLog_LoginColumn.Width = 70;
+            // 
+            // TimeLog_LogoutColumn
+            // 
+            this.TimeLog_LogoutColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle8.Format = "MMMM dd, yyyy HH:mm:ss";
+            this.TimeLog_LogoutColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.TimeLog_LogoutColumn.HeaderText = "LOGOUT";
+            this.TimeLog_LogoutColumn.Name = "TimeLog_LogoutColumn";
+            this.TimeLog_LogoutColumn.ReadOnly = true;
+            this.TimeLog_LogoutColumn.Width = 83;
+            // 
+            // TimeLog_TypeColumn
+            // 
+            this.TimeLog_TypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TimeLog_TypeColumn.HeaderText = "TYPE";
+            this.TimeLog_TypeColumn.Name = "TimeLog_TypeColumn";
+            this.TimeLog_TypeColumn.ReadOnly = true;
+            this.TimeLog_TypeColumn.Width = 60;
+            // 
+            // TimeLog_WorkedHoursColumn
+            // 
+            this.TimeLog_WorkedHoursColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.TimeLog_WorkedHoursColumn.HeaderText = "HOURS WORKED";
+            this.TimeLog_WorkedHoursColumn.Name = "TimeLog_WorkedHoursColumn";
+            this.TimeLog_WorkedHoursColumn.ReadOnly = true;
+            this.TimeLog_WorkedHoursColumn.Width = 122;
+            // 
+            // TimeLog_ExtraColumn
+            // 
+            this.TimeLog_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TimeLog_ExtraColumn.HeaderText = "";
+            this.TimeLog_ExtraColumn.Name = "TimeLog_ExtraColumn";
+            this.TimeLog_ExtraColumn.ReadOnly = true;
             // 
             // TimeLogDetailsGroupBox
             // 
@@ -353,57 +399,37 @@
             this.InsertTimeLogButton.UseVisualStyleBackColor = false;
             this.InsertTimeLogButton.Click += new System.EventHandler(this.InsertTimeLogButton_Click);
             // 
-            // TimeLogColumn
+            // EmployeePositionComboBox
             // 
-            this.TimeLogColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TimeLogColumn.HeaderText = "Time Log";
-            this.TimeLogColumn.MinimumWidth = 100;
-            this.TimeLogColumn.Name = "TimeLogColumn";
-            this.TimeLogColumn.ReadOnly = true;
-            this.TimeLogColumn.Visible = false;
+            this.EmployeePositionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EmployeePositionComboBox.Enabled = false;
+            this.EmployeePositionComboBox.FormattingEnabled = true;
+            this.EmployeePositionComboBox.Location = new System.Drawing.Point(241, 88);
+            this.EmployeePositionComboBox.Name = "EmployeePositionComboBox";
+            this.EmployeePositionComboBox.Size = new System.Drawing.Size(240, 25);
+            this.EmployeePositionComboBox.TabIndex = 118;
             // 
-            // TimeLog_LoginColumn
+            // FilterByBranchCheckBox
             // 
-            this.TimeLog_LoginColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Format = "MMMM dd, yyyy HH:mm:ss";
-            this.TimeLog_LoginColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.TimeLog_LoginColumn.HeaderText = "LOGIN";
-            this.TimeLog_LoginColumn.Name = "TimeLog_LoginColumn";
-            this.TimeLog_LoginColumn.ReadOnly = true;
-            this.TimeLog_LoginColumn.Width = 70;
+            this.FilterByBranchCheckBox.AutoSize = true;
+            this.FilterByBranchCheckBox.Location = new System.Drawing.Point(15, 61);
+            this.FilterByBranchCheckBox.Name = "FilterByBranchCheckBox";
+            this.FilterByBranchCheckBox.Size = new System.Drawing.Size(66, 21);
+            this.FilterByBranchCheckBox.TabIndex = 119;
+            this.FilterByBranchCheckBox.Text = "Branch";
+            this.FilterByBranchCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByBranchCheckBox.CheckedChanged += new System.EventHandler(this.FilterByBranchCheckBox_CheckedChanged);
             // 
-            // TimeLog_LogoutColumn
+            // FilterByEmployeePositionCheckBox
             // 
-            this.TimeLog_LogoutColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Format = "MMMM dd, yyyy HH:mm:ss";
-            this.TimeLog_LogoutColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.TimeLog_LogoutColumn.HeaderText = "LOGOUT";
-            this.TimeLog_LogoutColumn.Name = "TimeLog_LogoutColumn";
-            this.TimeLog_LogoutColumn.ReadOnly = true;
-            this.TimeLog_LogoutColumn.Width = 83;
-            // 
-            // TimeLog_TypeColumn
-            // 
-            this.TimeLog_TypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TimeLog_TypeColumn.HeaderText = "TYPE";
-            this.TimeLog_TypeColumn.Name = "TimeLog_TypeColumn";
-            this.TimeLog_TypeColumn.ReadOnly = true;
-            this.TimeLog_TypeColumn.Width = 60;
-            // 
-            // TimeLog_WorkedHoursColumn
-            // 
-            this.TimeLog_WorkedHoursColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TimeLog_WorkedHoursColumn.HeaderText = "HOURS WORKED";
-            this.TimeLog_WorkedHoursColumn.Name = "TimeLog_WorkedHoursColumn";
-            this.TimeLog_WorkedHoursColumn.ReadOnly = true;
-            this.TimeLog_WorkedHoursColumn.Width = 122;
-            // 
-            // TimeLog_ExtraColumn
-            // 
-            this.TimeLog_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TimeLog_ExtraColumn.HeaderText = "";
-            this.TimeLog_ExtraColumn.Name = "TimeLog_ExtraColumn";
-            this.TimeLog_ExtraColumn.ReadOnly = true;
+            this.FilterByEmployeePositionCheckBox.AutoSize = true;
+            this.FilterByEmployeePositionCheckBox.Location = new System.Drawing.Point(241, 61);
+            this.FilterByEmployeePositionCheckBox.Name = "FilterByEmployeePositionCheckBox";
+            this.FilterByEmployeePositionCheckBox.Size = new System.Drawing.Size(134, 21);
+            this.FilterByEmployeePositionCheckBox.TabIndex = 120;
+            this.FilterByEmployeePositionCheckBox.Text = "Employee Position";
+            this.FilterByEmployeePositionCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByEmployeePositionCheckBox.CheckedChanged += new System.EventHandler(this.FilterByEmployeePositionCheckBox_CheckedChanged);
             // 
             // TimeLogViewForm
             // 
@@ -411,12 +437,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1530, 754);
+            this.Controls.Add(this.FilterByEmployeePositionCheckBox);
+            this.Controls.Add(this.FilterByBranchCheckBox);
+            this.Controls.Add(this.EmployeePositionComboBox);
             this.Controls.Add(this.InsertTimeLogButton);
             this.Controls.Add(this.TimeLogDetailsGroupBox);
             this.Controls.Add(this.TimeLogDataGridView);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.BranchComboBox);
-            this.Controls.Add(this.BranchLabel);
             this.Controls.Add(this.TimeRangeEndDateTimePicker);
             this.Controls.Add(this.TimeRangeToLabel);
             this.Controls.Add(this.TimeRangeStartDdateTimePicker);
@@ -446,7 +474,6 @@
         private System.Windows.Forms.DateTimePicker TimeRangeStartDdateTimePicker;
         private System.Windows.Forms.Label TimeRangeToLabel;
         private System.Windows.Forms.DateTimePicker TimeRangeEndDateTimePicker;
-        private System.Windows.Forms.Label BranchLabel;
         private System.Windows.Forms.ComboBox BranchComboBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeColumn;
         private System.Windows.Forms.Button SearchButton;
@@ -465,5 +492,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_TypeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_WorkedHoursColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeLog_ExtraColumn;
+        private System.Windows.Forms.ComboBox EmployeePositionComboBox;
+        private System.Windows.Forms.CheckBox FilterByBranchCheckBox;
+        private System.Windows.Forms.CheckBox FilterByEmployeePositionCheckBox;
     }
 }
