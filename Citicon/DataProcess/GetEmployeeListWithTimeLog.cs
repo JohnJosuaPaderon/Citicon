@@ -10,21 +10,30 @@ namespace Citicon.DataProcess
 {
     internal sealed class GetEmployeeListWithTimeLog : DataProcessBase
     {
-        public GetEmployeeListWithTimeLog(Branch branch, DateTimeRange timeRange)
+        public GetEmployeeListWithTimeLog(bool filterByBranch, Branch branch, bool filterByEmployeePosition, JobPosition employeePosition, DateTimeRange timeRange)
         {
-            Branch = branch ?? throw new ArgumentNullException(nameof(branch));
+            FilterByBranch = filterByBranch;
+            Branch = branch;
+            FilterByEmployeePosition = filterByEmployeePosition;
+            EmployeePosition = employeePosition;
             TimeRange = timeRange ?? throw new ArgumentNullException(nameof(timeRange));
             PositionManager = new JobPositionManager();
         }
 
         private JobPositionManager PositionManager;
+        private bool FilterByBranch;
+        private bool FilterByEmployeePosition;
         private Branch Branch;
+        private JobPosition EmployeePosition;
         private DateTimeRange TimeRange;
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = Utility.CreateProcedureCommand("GetEmployeeListWithTimeLog", connection);
-            command.Parameters.AddWithValue("@_BranchId", Branch.Id);
+            command.Parameters.AddWithValue("@_FilterByBranch", FilterByBranch);
+            command.Parameters.AddWithValue("@_BranchId", Branch?.Id);
+            command.Parameters.AddWithValue("@_FilterByEmployeePosition", FilterByEmployeePosition);
+            command.Parameters.AddWithValue("@_EmployeePositionId", EmployeePosition?.Id);
             command.Parameters.AddWithValue("@_TimeRangeStart", TimeRange.Start);
             command.Parameters.AddWithValue("@_TimeRangeEnd", TimeRange.End);
 
