@@ -101,20 +101,23 @@ namespace Citicon.TimeLog.ViewModels
 
         private void SaveImage(Data.TimeLog timeLog)
         {
-            var logInfoDate = timeLog.Logout == null ? timeLog.Login : timeLog.Logout;
-            var directory = Path.Combine(ConfigurationManager.AppSettings["TimeLog.ImagesDirectory"], logInfoDate?.ToString("yyyy"), logInfoDate?.ToString("MM-MMMM"), logInfoDate?.ToString("dd-ddd"));
-
-            if (!Directory.Exists(directory))
+            if (EmployeeAvatar != null)
             {
-                Directory.CreateDirectory(directory);
-            }
+                var logInfoDate = timeLog.Logout == null ? timeLog.Login : timeLog.Logout;
+                var directory = Path.Combine(ConfigurationManager.AppSettings["TimeLog.ImagesDirectory"], logInfoDate?.ToString("yyyy"), logInfoDate?.ToString("MM-MMMM"), logInfoDate?.ToString("dd-ddd"));
 
-            var filePath = Path.Combine(directory, string.Format("[{0}] {1}.jpg", timeLog.EmployeeLogin.Employee.ToString(), logInfoDate?.ToString("HH_mm_ss")));
-            using (var fileStream = new FileStream(filePath, FileMode.Create))
-            {
-                var encoder = new PngBitmapEncoder();
-                encoder.Frames.Add(BitmapFrame.Create((BitmapSource)EmployeeAvatar));
-                encoder.Save(fileStream);
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                var filePath = Path.Combine(directory, string.Format("[{0}] {1}.jpg", timeLog.EmployeeLogin.Employee.ToString(), logInfoDate?.ToString("HH_mm_ss")));
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    var encoder = new PngBitmapEncoder();
+                    encoder.Frames.Add(BitmapFrame.Create((BitmapSource)EmployeeAvatar));
+                    encoder.Save(fileStream);
+                }
             }
         }
 
@@ -141,11 +144,11 @@ namespace Citicon.TimeLog.ViewModels
 
                         if (timeLog.Logout == null)
                         {
-                            Message = string.Format("Logged-in @ {0}", timeLog.Login?.ToString("hh:mm tt"));
+                            Message = "--IN--"; //string.Format("Logged-in @ {0}", timeLog.Login?.ToString("hh:mm tt"));
                         }
                         else
                         {
-                            Message = string.Format("Logged-out @ {0}", timeLog.Logout?.ToString("hh:mm tt"));
+                            Message = "--OUT--"; //string.Format("Logged-out @ {0}", timeLog.Logout?.ToString("hh:mm tt"));
                         }
 
                         SaveImage(timeLog);
