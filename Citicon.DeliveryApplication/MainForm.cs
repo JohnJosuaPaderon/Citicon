@@ -51,6 +51,16 @@ namespace Citicon.DeliveryApplication
             }
         }
 
+        private UserSettingsForm UserSettingsForm
+        {
+            get
+            {
+                var form = new UserSettingsForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void DeliveryButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DeliveryForm);
@@ -86,6 +96,11 @@ namespace Citicon.DeliveryApplication
         private void DeliveryConfirmationButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DeliveryConfirmationForm);
+        }
+
+        private void UserSettingsButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(UserSettingsForm);
         }
     }
 }
