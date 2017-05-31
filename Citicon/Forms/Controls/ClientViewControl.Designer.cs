@@ -84,12 +84,12 @@
             // LegitimateCheckBox
             // 
             this.LegitimateCheckBox.AutoSize = true;
-            this.LegitimateCheckBox.Location = new System.Drawing.Point(297, 14);
+            this.LegitimateCheckBox.Location = new System.Drawing.Point(316, 14);
             this.LegitimateCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LegitimateCheckBox.Name = "LegitimateCheckBox";
-            this.LegitimateCheckBox.Size = new System.Drawing.Size(87, 21);
+            this.LegitimateCheckBox.Size = new System.Drawing.Size(68, 21);
             this.LegitimateCheckBox.TabIndex = 0;
-            this.LegitimateCheckBox.Text = "Legitimate";
+            this.LegitimateCheckBox.Text = "Special";
             this.LegitimateCheckBox.UseVisualStyleBackColor = true;
             this.LegitimateCheckBox.CheckedChanged += new System.EventHandler(this.LegitimateCheckBox_CheckedChanged);
             // 
