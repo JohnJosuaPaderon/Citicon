@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Citicon.DataManager
 {
@@ -30,6 +31,14 @@ namespace Citicon.DataManager
                     }
                     return jobPosition;
                 }
+            }
+        }
+
+        public static Task<IEnumerable<JobPosition>> GetListAsync()
+        {
+            using (var process = new GetJobPositionList())
+            {
+                return process.ExecuteAsync();
             }
         }
     }

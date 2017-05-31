@@ -181,11 +181,11 @@ namespace Citicon.DataManager
             }
         }
 
-        public static Task<IEnumerable<Employee>> GetListWithTimeLogAsync(Branch branch, DateTimeRange timeRange)
+        public static Task<IEnumerable<Employee>> GetListWithTimeLogAsync(bool filterByBranch, Branch branch, bool filterByEmployeePosition, JobPosition employeePosition, DateTimeRange timeRange)
         {
-            if (branch != null && timeRange != null)
+            if (timeRange != null)
             {
-                using (var process = new GetEmployeeListWithTimeLog(branch, timeRange))
+                using (var process = new GetEmployeeListWithTimeLog(filterByBranch, branch, filterByEmployeePosition, employeePosition, timeRange))
                 {
                     return process.ExecuteAsync();
                 }
