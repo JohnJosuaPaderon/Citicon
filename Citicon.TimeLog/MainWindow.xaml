@@ -29,18 +29,23 @@
             </Grid.ColumnDefinitions>-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="113"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,0,10">
+                <!--<Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBox Grid.Row="0" Text="{Binding CurrentDate,StringFormat='hh:mm tt'}" IsReadOnly="True" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0" MaxLength="8" Background="Black" Foreground="White" FontFamily="Assets/Fonts/#Digital-7 Mono" FontSize="200" Padding="0" Height="225" Width="800" Margin="0 140 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <PasswordBox x:Name="EmployeeLoginCode" PreviewKeyDown="EmployeeLoginCode_PreviewKeyDown" Padding="0" LostFocus="EmployeeLoginCode_LostFocus" Grid.Row="2" Password="******" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="1" MaxLength="6" Foreground="{StaticResource AccentColorBrush}" FontSize="80" Height="120" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionBrush="Red" Background="#9FFF"/>
+                </Grid.RowDefinitions>-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CurrentDate,StringFormat='hh:mm tt'}" IsReadOnly="True" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0" MaxLength="8" Background="Black" Foreground="White" FontFamily="Assets/Fonts/#Digital-7 Mono" FontSize="200" Padding="0" Height="225" Width="800" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <PasswordBox Grid.Column="2" x:Name="EmployeeLoginCode" PreviewKeyDown="EmployeeLoginCode_PreviewKeyDown" Padding="0" LostFocus="EmployeeLoginCode_LostFocus" Grid.Row="2" Password="******" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="1" MaxLength="6" Foreground="{StaticResource AccentColorBrush}" FontSize="80" Height="120" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionBrush="Red" Background="#9FFF"/>
             </Grid>
-            <views:LogSummaryView x:Name="LogSummaryView" Grid.Row="1" Grid.Column="2"/>
+            <views:LogSummaryView x:Name="LogSummaryView" Grid.Row="1" Grid.Column="0"/>
         </Grid>
     </DockPanel>
 </mahApps:MetroWindow>
