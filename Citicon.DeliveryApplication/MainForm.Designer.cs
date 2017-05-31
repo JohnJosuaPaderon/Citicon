@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DeliveryConfirmationButton = new System.Windows.Forms.Button();
             this.EngineerButton = new System.Windows.Forms.Button();
             this.TallySheetButton = new System.Windows.Forms.Button();
             this.DeliveryButton = new System.Windows.Forms.Button();
@@ -42,7 +41,6 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.UserSettingsButton);
-            this.panel1.Controls.Add(this.DeliveryConfirmationButton);
             this.panel1.Controls.Add(this.EngineerButton);
             this.panel1.Controls.Add(this.TallySheetButton);
             this.panel1.Controls.Add(this.DeliveryButton);
@@ -52,22 +50,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel1.Size = new System.Drawing.Size(985, 60);
             this.panel1.TabIndex = 0;
-            // 
-            // DeliveryConfirmationButton
-            // 
-            this.DeliveryConfirmationButton.BackColor = System.Drawing.Color.Red;
-            this.DeliveryConfirmationButton.FlatAppearance.BorderSize = 0;
-            this.DeliveryConfirmationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeliveryConfirmationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeliveryConfirmationButton.ForeColor = System.Drawing.Color.White;
-            this.DeliveryConfirmationButton.Location = new System.Drawing.Point(414, 5);
-            this.DeliveryConfirmationButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.DeliveryConfirmationButton.Name = "DeliveryConfirmationButton";
-            this.DeliveryConfirmationButton.Size = new System.Drawing.Size(150, 50);
-            this.DeliveryConfirmationButton.TabIndex = 3;
-            this.DeliveryConfirmationButton.Text = "CONFIRM DELIVERY";
-            this.DeliveryConfirmationButton.UseVisualStyleBackColor = false;
-            this.DeliveryConfirmationButton.Click += new System.EventHandler(this.DeliveryConfirmationButton_Click);
             // 
             // EngineerButton
             // 
@@ -124,7 +106,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(574, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(414, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -161,7 +143,6 @@
         private System.Windows.Forms.Button DeliveryButton;
         private System.Windows.Forms.Button TallySheetButton;
         private System.Windows.Forms.Button EngineerButton;
-        private System.Windows.Forms.Button DeliveryConfirmationButton;
         private System.Windows.Forms.Button UserSettingsButton;
     }
 }
