@@ -18,6 +18,7 @@ namespace Citicon.DataProcess
         protected Excel.Sheets Sheets;
         protected Excel.Worksheet Worksheet;
         public ExportExcelPrintOption PrintOption { get; set; }
+        protected uint PrintCopies { get; set; } = 1;
 
         public virtual void Execute()
         {
@@ -29,7 +30,7 @@ namespace Citicon.DataProcess
                     Worksheet?.PrintOutEx();
                     break;
                 case ExportExcelPrintOption.Workbook:
-                    Workbook?.PrintOutEx();
+                    Workbook?.PrintOutEx(Copies: PrintCopies);
                     break;
             }
         }

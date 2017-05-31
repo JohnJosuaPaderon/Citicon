@@ -15,6 +15,9 @@ namespace Citicon.DataProcess
             Template = ConfigurationManager.AppSettings["ChequeVoucher.Template"];
             SaveDirectory = ConfigurationManager.AppSettings["ChequeVoucher.SaveDirectory"];
             RowCounter = 10;
+            uint.TryParse(ConfigurationManager.AppSettings["ChequeVoucher.PrintCopies"], out uint printCopies);
+
+            PrintCopies = printCopies > 0 ? printCopies : 1;
         }
 
         private ChequeVoucher ChequeVoucher;
