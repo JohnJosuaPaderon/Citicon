@@ -97,7 +97,7 @@ namespace Citicon.BillingApplication
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            InitializeSecurity();
+            //InitializeSecurity();
         }
 
         private void BillingButton_Click(object sender, EventArgs e)
