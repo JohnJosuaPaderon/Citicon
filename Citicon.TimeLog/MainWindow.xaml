@@ -8,7 +8,7 @@
                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                      xmlns:views="clr-namespace:Citicon.TimeLog.Views"
                      mc:Ignorable="d"
-                     Title="Citicon - Time Keeping" WindowState="Maximized" ShowCloseButton="False" ShowMaxRestoreButton="False" ShowMinButton="False" WindowStyle="None" TitlebarHeight="0" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing" Height="768" Width="1366">
+                     Title="Citicon - Time Keeping" WindowState="Maximized" ShowCloseButton="False" ShowMaxRestoreButton="False" ShowMinButton="False" WindowStyle="None" TitlebarHeight="0" Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing" Height="768" Width="1024">
     <mahApps:MetroWindow.Background>
         <ImageBrush ImageSource="Assets/Images/background.jpg"/>
     </mahApps:MetroWindow.Background>
@@ -31,18 +31,18 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,0,10">
+            <Grid Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Margin="5,0,5,10">
                 <!--<Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="20"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CurrentDate,StringFormat='hh:mm tt'}" IsReadOnly="True" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0" MaxLength="8" Background="Black" Foreground="White" FontFamily="Assets/Fonts/#Digital-7 Mono" FontSize="200" Padding="0" Height="225" Width="800" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CurrentDate,StringFormat='hh:mm tt'}" IsReadOnly="True" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="0" MaxLength="8" Background="Black" Foreground="White" FontFamily="Assets/Fonts/#Digital-7 Mono" FontSize="175" Padding="10" Height="225" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <PasswordBox Grid.Column="2" x:Name="EmployeeLoginCode" PreviewKeyDown="EmployeeLoginCode_PreviewKeyDown" Padding="0" LostFocus="EmployeeLoginCode_LostFocus" Grid.Row="2" Password="******" materialDesign:TextFieldAssist.DecorationVisibility="Collapsed" BorderThickness="1" MaxLength="6" Foreground="{StaticResource AccentColorBrush}" FontSize="80" Height="120" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionBrush="Red" Background="#9FFF"/>
             </Grid>
             <views:LogSummaryView x:Name="LogSummaryView" Grid.Row="1" Grid.Column="0"/>
