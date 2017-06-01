@@ -30,6 +30,7 @@ namespace Citicon.Data
 
             return left.Id == right.Id;
         }
+
         public static bool operator !=(Quotation left, Quotation right)
         {
             return !(left == right);
