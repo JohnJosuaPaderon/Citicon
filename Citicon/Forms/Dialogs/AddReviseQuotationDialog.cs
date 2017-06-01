@@ -145,6 +145,7 @@ namespace Citicon.Forms.Dialogs
         {
             try
             {
+                await GenerateQuotationNumberByTypeAsync();
                 quotationTransaction = await QuotationManager.InsertTransactionAsync(quotationTransaction);
                 await DeleteProjectDesignsAsync();
 
