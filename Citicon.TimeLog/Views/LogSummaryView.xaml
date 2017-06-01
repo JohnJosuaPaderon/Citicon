@@ -39,7 +39,7 @@
             <RowDefinition Height="{DynamicResource GridSpacing}"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Employee}" HorizontalAlignment="Center" FontSize="100" FontWeight="Bold" TextDecorations="Underline" Foreground="#FFFF" Margin="0,20,0,0"/>
-        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Message}" FontFamily="Arial Black" HorizontalAlignment="Center" FontSize="100" FontWeight="Bold" Foreground="#FFFF" Margin="0,0,0,15"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="{Binding Employee}" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" TextDecorations="Underline" Foreground="#FFFF" Margin="0,20,0,0"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding Message}" FontFamily="Arial Black" HorizontalAlignment="Center" FontSize="70" FontWeight="Bold" Foreground="#FFFF" Margin="0,0,0,15"/>
     </Grid>
 </UserControl>
