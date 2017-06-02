@@ -116,7 +116,7 @@ namespace Citicon.DataProcess
                 {
                     object remarksColumn = table.Columns[3];
                     Word.Column curingTimeColumn = table.Columns[4];
-                    Word.Column strengthColumn = (Word.Column)table.Columns[1];
+                    Word.Column strengthColumn = table.Columns[1];
 
                     var col = table.Columns.Add(ref remarksColumn);
                     col.Cells[1].Range.Text = "C.F.";
