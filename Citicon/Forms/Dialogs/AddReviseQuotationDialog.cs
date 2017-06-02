@@ -200,9 +200,16 @@ namespace Citicon.Forms.Dialogs
 
         private void ExportQuotationToExcel(QuotationTransaction quotationTransaction)
         {
-            QuotationManager.ExportQuotation(
+            try
+            {
+                QuotationManager.ExportQuotation(
                 quotationTransaction.Quotation.Type == QuotationType.Citicon ? ExportQuotation.QuotationReportTemplate.Citicon : ExportQuotation.QuotationReportTemplate.LexCiticoncrete,
                 ConfigurationManager.AppSettings["Quotation.TemplatesDirectory"], quotationTransaction.Quotation, quotationTransaction.Designs, ConfigurationManager.AppSettings["Quotation.SaveDirectory"]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async Task SaveQuotationAsync()
