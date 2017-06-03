@@ -344,6 +344,7 @@
     <Compile Include="Data\PurchaseOrderProjectDesign.cs" />
     <Compile Include="Data\PurchaseOrderTransaction.cs" />
     <Compile Include="Data\Quotation.cs" />
+    <Compile Include="Data\QuotationRevisionHistoryItem.cs" />
     <Compile Include="Data\QuotationStatus.cs" />
     <Compile Include="Data\QuotationTransaction.cs" />
     <Compile Include="Data\QuotationType.cs" />
