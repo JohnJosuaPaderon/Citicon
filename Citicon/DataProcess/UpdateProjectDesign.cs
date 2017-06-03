@@ -7,12 +7,14 @@ namespace Citicon.DataProcess
 {
     internal sealed class UpdateProjectDesign : DataProcessBase
     {
-        public UpdateProjectDesign(ProjectDesign projectDesign)
+        public UpdateProjectDesign(ProjectDesign projectDesign, bool includeToRevisedQuotation)
         {
             ProjectDesign = projectDesign ?? throw new ArgumentNullException(nameof(projectDesign));
+            IncludeToRevisedQuotation = includeToRevisedQuotation;
         }
 
         private ProjectDesign ProjectDesign;
+        private bool IncludeToRevisedQuotation;
 
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {

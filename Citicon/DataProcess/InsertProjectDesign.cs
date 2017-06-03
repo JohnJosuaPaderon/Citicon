@@ -8,12 +8,14 @@ namespace Citicon.DataProcess
 {
     public sealed class InsertProjectDesign : DataProcessBase
     {
-        public InsertProjectDesign(ProjectDesign projectDesign)
+        public InsertProjectDesign(ProjectDesign projectDesign, bool includeToRevisedQuotation)
         {
             ProjectDesign = projectDesign;
+            IncludeToRevisedQuotation = includeToRevisedQuotation;
         }
 
         private ProjectDesign ProjectDesign { get; }
+        private bool IncludeToRevisedQuotation;
 
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
@@ -31,6 +33,8 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_CementFactor", ProjectDesign.CementFactor);
             command.Parameters.AddWithValue("@_ForApproval", ProjectDesign.ForApproval);
             command.Parameters.AddWithValue("@_QuotationId", ProjectDesign.Quotation?.Id);
+            command.Parameters.AddWithValue("@_IncludeToRevisedQuotation", IncludeToRevisedQuotation);
+
             return command;
         }
 
