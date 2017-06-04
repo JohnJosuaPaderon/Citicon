@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Inventory", "Citicon.Inventory\Citicon.Inventory.csproj", "{F0AB7BD6-170B-4684-A2A8-B92135553FED}"
 EndProject
@@ -49,6 +49,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.QuotationApplication", "Citicon.QuotationApplication\Citicon.QuotationApplication.csproj", "{380B66CE-DCD2-431E-923B-BE7EC9FCE364}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.BillingApplication", "Citicon.BillingApplication\Citicon.BillingApplication.csproj", "{A75244BF-E5B9-4BA7-931C-CECDBDC47D6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.HumanResourceApplication", "Citicon.HumanResourceApplication\Citicon.HumanResourceApplication.csproj", "{7A9395F8-451E-4A3B-B27D-24E511B14EAE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -128,6 +130,10 @@ Global
 		{A75244BF-E5B9-4BA7-931C-CECDBDC47D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A75244BF-E5B9-4BA7-931C-CECDBDC47D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A75244BF-E5B9-4BA7-931C-CECDBDC47D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A9395F8-451E-4A3B-B27D-24E511B14EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A9395F8-451E-4A3B-B27D-24E511B14EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A9395F8-451E-4A3B-B27D-24E511B14EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A9395F8-451E-4A3B-B27D-24E511B14EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
