@@ -61,19 +61,19 @@ namespace Citicon.DataManager
             }
         }
 
-        public static async Task<ProjectDesign> InsertAsync(ProjectDesign projectDesign)
+        public static async Task<ProjectDesign> InsertAsync(ProjectDesign projectDesign, bool includeToRevisedQuotation = false)
         {
-            using (var process = new InsertProjectDesign(projectDesign))
+            using (var process = new InsertProjectDesign(projectDesign, includeToRevisedQuotation))
             {
                 return await process.ExecuteAsync();
             }
         }
 
-        public static async Task<ProjectDesign> InsertAsync(ProjectDesign projectDesign, MySqlConnection connection, MySqlTransaction transaction)
+        public static async Task<ProjectDesign> InsertAsync(ProjectDesign projectDesign, MySqlConnection connection, MySqlTransaction transaction, bool includeToRevisedQuotation = false)
         {
             if (projectDesign != null)
             {
-                using (var process = new InsertProjectDesign(projectDesign))
+                using (var process = new InsertProjectDesign(projectDesign, includeToRevisedQuotation))
                 {
                     projectDesign = await process.ExecuteAsync(connection, transaction);
                 }
@@ -181,11 +181,11 @@ namespace Citicon.DataManager
             }
         }
 
-        public static async Task<ProjectDesign> DeleteAsync(ProjectDesign projectDesign)
+        public static async Task<ProjectDesign> DeleteAsync(ProjectDesign projectDesign, bool includeToRevisedQuotation = false)
         {
             if (projectDesign != null)
             {
-                using (var process = new DeleteProjectDesign(projectDesign))
+                using (var process = new DeleteProjectDesign(projectDesign, includeToRevisedQuotation))
                 {
                     projectDesign = await process.ExecuteAsync();
                 }
@@ -194,11 +194,11 @@ namespace Citicon.DataManager
             return projectDesign;
         }
 
-        public static async Task<ProjectDesign> UpdateAsync(ProjectDesign projectDesign)
+        public static async Task<ProjectDesign> UpdateAsync(ProjectDesign projectDesign, bool includeToRevisedQuotation = false)
         {
             if (projectDesign != null)
             {
-                using (var process = new UpdateProjectDesign(projectDesign))
+                using (var process = new UpdateProjectDesign(projectDesign, includeToRevisedQuotation))
                 {
                     projectDesign = await process.ExecuteAsync();
                 }
