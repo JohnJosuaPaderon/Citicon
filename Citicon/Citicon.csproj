@@ -374,6 +374,12 @@
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
     <Compile Include="Extensions\TimeSpanExtension.cs" />
+    <Compile Include="Forms\AddEditEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditEmployeeForm.Designer.cs">
+      <DependentUpon>AddEditEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BillingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +403,12 @@
     </Compile>
     <Compile Include="Forms\ClientManagementForm.Designer.cs">
       <DependentUpon>ClientManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\AddEditEmployeeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\AddEditEmployeeControl.Designer.cs">
+      <DependentUpon>AddEditEmployeeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Controls\ClientViewControl.cs">
       <SubType>UserControl</SubType>
@@ -586,6 +598,9 @@
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditEmployeeForm.resx">
+      <DependentUpon>AddEditEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BillingForm.resx">
       <DependentUpon>BillingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -597,6 +612,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientManagementForm.resx">
       <DependentUpon>ClientManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\AddEditEmployeeControl.resx">
+      <DependentUpon>AddEditEmployeeControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\ClientViewControl.resx">
       <DependentUpon>ClientViewControl.cs</DependentUpon>
