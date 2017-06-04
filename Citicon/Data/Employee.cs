@@ -17,6 +17,9 @@ namespace Citicon.Data
                 Position = value;
             }
         }
+        public Branch Branch { get; set; }
+        public Company Company { get; set; }
+        public PayrollType PayrollType { get; set; }
 
         public static bool operator ==(Employee left, Employee right)
         {
