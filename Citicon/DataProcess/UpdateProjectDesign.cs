@@ -29,6 +29,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_CementFactor", ProjectDesign.CementFactor);
             command.Parameters.AddWithValue("@_ForApproval", ProjectDesign.ForApproval);
             command.Parameters.AddWithValue("@_QuotationId", ProjectDesign.Quotation?.Id);
+            command.Parameters.AddWithValue("@_IncludeToRevisedQuotation", IncludeToRevisedQuotation);
             return command;
         }
 
