@@ -155,7 +155,7 @@ namespace Citicon.Forms.Controls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);long a = 1_000;
+                MessageBox.Show(ex.Message);
             }
         }
 
