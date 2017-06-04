@@ -176,7 +176,7 @@ namespace Citicon.Forms.Dialogs
                 {
                     item.Project = Quotation.Project;
                     item.Quotation = Quotation;
-                    await ProjectDesignManager.UpdateAsync(item);
+                    await ProjectDesignManager.UpdateAsync(item, true);
                 }
 
                 await DeleteProjectDesignsAsync();
@@ -257,7 +257,7 @@ namespace Citicon.Forms.Dialogs
             {
                 foreach (var projectDesign in DeletedProjectDesigns)
                 {
-                    await ProjectDesignManager.DeleteAsync(projectDesign);
+                    await ProjectDesignManager.DeleteAsync(projectDesign, true);
                 }
             }
         }
