@@ -23,13 +23,14 @@ namespace Citicon.Data
         public PayrollType PayrollType { get; set; }
         public DateTime BirthDate { get; set; }
         public CivilStatus CivilStatus { get; set; }
+        public DateTime EmploymentDate { get; set; }
         public string TIN { get; set; }
         public string Address { get; set; }
         public string TelephoneNumber { get; set; }
         public string MobileNumber { get; set; }
         public string EmailAddress { get; set; }
         public string EmergencyContactPerson { get; set; }
-        public string EmergenctContactPersonNumber { get; set; }
+        public string EmergencyContactPersonNumber { get; set; }
         public EmploymentStatus EmploymentStatus { get; set; }
         public string SSSNumber { get; set; }
         public DateTime R1ADate { get; set; }
