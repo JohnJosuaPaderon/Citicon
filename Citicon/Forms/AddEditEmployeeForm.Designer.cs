@@ -29,28 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditEmployeeForm));
-            this.addEditEmployeeControl1 = new Citicon.Forms.Controls.AddEditEmployeeControl();
+            this.AddEditEmployeeControl = new Citicon.Forms.Controls.AddEditEmployeeControl();
             this.SuspendLayout();
             // 
-            // addEditEmployeeControl1
+            // AddEditEmployeeControl
             // 
-            this.addEditEmployeeControl1.BackColor = System.Drawing.Color.White;
-            this.addEditEmployeeControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addEditEmployeeControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEditEmployeeControl1.ForeColor = System.Drawing.Color.Red;
-            this.addEditEmployeeControl1.Location = new System.Drawing.Point(0, 0);
-            this.addEditEmployeeControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.addEditEmployeeControl1.Name = "addEditEmployeeControl1";
-            this.addEditEmployeeControl1.Size = new System.Drawing.Size(660, 450);
-            this.addEditEmployeeControl1.TabIndex = 0;
+            this.AddEditEmployeeControl.BackColor = System.Drawing.Color.White;
+            this.AddEditEmployeeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddEditEmployeeControl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddEditEmployeeControl.ForeColor = System.Drawing.Color.Red;
+            this.AddEditEmployeeControl.Location = new System.Drawing.Point(0, 0);
+            this.AddEditEmployeeControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddEditEmployeeControl.Name = "AddEditEmployeeControl";
+            this.AddEditEmployeeControl.Size = new System.Drawing.Size(778, 641);
+            this.AddEditEmployeeControl.TabIndex = 0;
+            this.AddEditEmployeeControl.FormCancelRequested += new System.EventHandler(this.AddEditEmployeeControl_FormCancelRequested);
             // 
             // AddEditEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(660, 450);
-            this.Controls.Add(this.addEditEmployeeControl1);
+            this.ClientSize = new System.Drawing.Size(778, 641);
+            this.Controls.Add(this.AddEditEmployeeControl);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -64,6 +65,6 @@
 
         #endregion
 
-        private Controls.AddEditEmployeeControl addEditEmployeeControl1;
+        private Controls.AddEditEmployeeControl AddEditEmployeeControl;
     }
 }
