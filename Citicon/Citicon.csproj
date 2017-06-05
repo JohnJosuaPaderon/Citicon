@@ -299,6 +299,7 @@
     <Compile Include="Data\Branch.cs" />
     <Compile Include="Data\ChequeSummaryItem.cs" />
     <Compile Include="Data\ChequeVoucher.cs" />
+    <Compile Include="Data\CivilStatus.cs" />
     <Compile Include="Data\Classification.cs" />
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Company.cs" />
@@ -312,6 +313,7 @@
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
     <Compile Include="Data\EmployeePayroll.cs" />
+    <Compile Include="Data\EmploymentStatus.cs" />
     <Compile Include="Data\ExcessPipeCharge.cs" />
     <Compile Include="Data\Expense.cs" />
     <Compile Include="Data\Holiday.cs" />
