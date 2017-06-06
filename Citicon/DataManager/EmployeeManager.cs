@@ -298,5 +298,13 @@ namespace Citicon.DataManager
                 return process.ExecuteAsync();
             }
         }
+
+        public static Task<IEnumerable<Employee>> GetMinifiedListAsync()
+        {
+            using (var process = new GetMinifiedEmployeeList())
+            {
+                return process.ExecuteAsync();
+            }
+        }
     }
 }
