@@ -146,7 +146,7 @@
             this.CancelFormButton.Location = new System.Drawing.Point(657, 562);
             this.CancelFormButton.Name = "CancelFormButton";
             this.CancelFormButton.Size = new System.Drawing.Size(100, 50);
-            this.CancelFormButton.TabIndex = 116;
+            this.CancelFormButton.TabIndex = 2;
             this.CancelFormButton.Text = "CANCEL";
             this.CancelFormButton.UseVisualStyleBackColor = false;
             this.CancelFormButton.Click += new System.EventHandler(this.CancelFormButton_Click);
@@ -162,9 +162,10 @@
             this.SaveButton.Location = new System.Drawing.Point(551, 562);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 50);
-            this.SaveButton.TabIndex = 115;
+            this.SaveButton.TabIndex = 1;
             this.SaveButton.Text = "SAVE";
             this.SaveButton.UseVisualStyleBackColor = false;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // EmployeeTabControl
             // 
@@ -178,7 +179,7 @@
             this.EmployeeTabControl.Padding = new System.Drawing.Point(20, 15);
             this.EmployeeTabControl.SelectedIndex = 0;
             this.EmployeeTabControl.Size = new System.Drawing.Size(754, 556);
-            this.EmployeeTabControl.TabIndex = 117;
+            this.EmployeeTabControl.TabIndex = 0;
             // 
             // PersonalInformationTabPage
             // 
@@ -249,7 +250,7 @@
             this.PagIbigRtnDependentCountLabel.Location = new System.Drawing.Point(486, 440);
             this.PagIbigRtnDependentCountLabel.Name = "PagIbigRtnDependentCountLabel";
             this.PagIbigRtnDependentCountLabel.Size = new System.Drawing.Size(119, 17);
-            this.PagIbigRtnDependentCountLabel.TabIndex = 51;
+            this.PagIbigRtnDependentCountLabel.TabIndex = 50;
             this.PagIbigRtnDependentCountLabel.Text = "No. of Dependents";
             // 
             // PagIbigRtnDependentNumberNumericUpDown
@@ -257,7 +258,7 @@
             this.PagIbigRtnDependentNumberNumericUpDown.Location = new System.Drawing.Point(489, 460);
             this.PagIbigRtnDependentNumberNumericUpDown.Name = "PagIbigRtnDependentNumberNumericUpDown";
             this.PagIbigRtnDependentNumberNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.PagIbigRtnDependentNumberNumericUpDown.TabIndex = 50;
+            this.PagIbigRtnDependentNumberNumericUpDown.TabIndex = 51;
             // 
             // PagIbigRtnRegistrationDateTimePicker
             // 
@@ -383,7 +384,7 @@
             this.EmergencyContactPersonNumberLabel.Location = new System.Drawing.Point(486, 294);
             this.EmergencyContactPersonNumberLabel.Name = "EmergencyContactPersonNumberLabel";
             this.EmergencyContactPersonNumberLabel.Size = new System.Drawing.Size(77, 17);
-            this.EmergencyContactPersonNumberLabel.TabIndex = 35;
+            this.EmergencyContactPersonNumberLabel.TabIndex = 34;
             this.EmergencyContactPersonNumberLabel.Text = "Contact No.";
             // 
             // EmergencyContactPersonNumberTextBox
@@ -391,7 +392,7 @@
             this.EmergencyContactPersonNumberTextBox.Location = new System.Drawing.Point(489, 314);
             this.EmergencyContactPersonNumberTextBox.Name = "EmergencyContactPersonNumberTextBox";
             this.EmergencyContactPersonNumberTextBox.Size = new System.Drawing.Size(234, 25);
-            this.EmergencyContactPersonNumberTextBox.TabIndex = 34;
+            this.EmergencyContactPersonNumberTextBox.TabIndex = 35;
             // 
             // EmergencyContactPersonTextBox
             // 
@@ -462,7 +463,7 @@
             this.TinTextBox.Location = new System.Drawing.Point(489, 72);
             this.TinTextBox.Name = "TinTextBox";
             this.TinTextBox.Size = new System.Drawing.Size(234, 25);
-            this.TinTextBox.TabIndex = 25;
+            this.TinTextBox.TabIndex = 11;
             // 
             // TinLabel
             // 
@@ -470,7 +471,7 @@
             this.TinLabel.Location = new System.Drawing.Point(486, 51);
             this.TinLabel.Name = "TinLabel";
             this.TinLabel.Size = new System.Drawing.Size(28, 17);
-            this.TinLabel.TabIndex = 24;
+            this.TinLabel.TabIndex = 10;
             this.TinLabel.Text = "TIN";
             // 
             // CivilStatusComboBox
@@ -480,7 +481,7 @@
             this.CivilStatusComboBox.Location = new System.Drawing.Point(249, 72);
             this.CivilStatusComboBox.Name = "CivilStatusComboBox";
             this.CivilStatusComboBox.Size = new System.Drawing.Size(234, 25);
-            this.CivilStatusComboBox.TabIndex = 23;
+            this.CivilStatusComboBox.TabIndex = 9;
             // 
             // CivilStatusLabel
             // 
@@ -488,7 +489,7 @@
             this.CivilStatusLabel.Location = new System.Drawing.Point(246, 52);
             this.CivilStatusLabel.Name = "CivilStatusLabel";
             this.CivilStatusLabel.Size = new System.Drawing.Size(70, 17);
-            this.CivilStatusLabel.TabIndex = 22;
+            this.CivilStatusLabel.TabIndex = 8;
             this.CivilStatusLabel.Text = "Civil Status";
             // 
             // BirthDateTimePicker
@@ -498,7 +499,7 @@
             this.BirthDateTimePicker.Location = new System.Drawing.Point(9, 72);
             this.BirthDateTimePicker.Name = "BirthDateTimePicker";
             this.BirthDateTimePicker.Size = new System.Drawing.Size(234, 25);
-            this.BirthDateTimePicker.TabIndex = 21;
+            this.BirthDateTimePicker.TabIndex = 7;
             // 
             // BirthDateLabel
             // 
@@ -506,7 +507,7 @@
             this.BirthDateLabel.Location = new System.Drawing.Point(6, 52);
             this.BirthDateLabel.Name = "BirthDateLabel";
             this.BirthDateLabel.Size = new System.Drawing.Size(65, 17);
-            this.BirthDateLabel.TabIndex = 20;
+            this.BirthDateLabel.TabIndex = 6;
             this.BirthDateLabel.Text = "Birth Date";
             // 
             // AddressTextBox
@@ -514,7 +515,7 @@
             this.AddressTextBox.Location = new System.Drawing.Point(9, 217);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(714, 25);
-            this.AddressTextBox.TabIndex = 19;
+            this.AddressTextBox.TabIndex = 25;
             // 
             // AddressLabel
             // 
@@ -522,7 +523,7 @@
             this.AddressLabel.Location = new System.Drawing.Point(6, 196);
             this.AddressLabel.Name = "AddressLabel";
             this.AddressLabel.Size = new System.Drawing.Size(56, 17);
-            this.AddressLabel.TabIndex = 18;
+            this.AddressLabel.TabIndex = 24;
             this.AddressLabel.Text = "Address";
             // 
             // PayrollTypeComboBox
@@ -532,7 +533,7 @@
             this.PayrollTypeComboBox.Location = new System.Drawing.Point(489, 168);
             this.PayrollTypeComboBox.Name = "PayrollTypeComboBox";
             this.PayrollTypeComboBox.Size = new System.Drawing.Size(234, 25);
-            this.PayrollTypeComboBox.TabIndex = 17;
+            this.PayrollTypeComboBox.TabIndex = 23;
             // 
             // PayrollTypeLabel
             // 
@@ -540,7 +541,7 @@
             this.PayrollTypeLabel.Location = new System.Drawing.Point(486, 148);
             this.PayrollTypeLabel.Name = "PayrollTypeLabel";
             this.PayrollTypeLabel.Size = new System.Drawing.Size(78, 17);
-            this.PayrollTypeLabel.TabIndex = 16;
+            this.PayrollTypeLabel.TabIndex = 22;
             this.PayrollTypeLabel.Text = "Payroll Type";
             // 
             // CompanyComboBox
@@ -550,7 +551,7 @@
             this.CompanyComboBox.Location = new System.Drawing.Point(249, 168);
             this.CompanyComboBox.Name = "CompanyComboBox";
             this.CompanyComboBox.Size = new System.Drawing.Size(234, 25);
-            this.CompanyComboBox.TabIndex = 15;
+            this.CompanyComboBox.TabIndex = 21;
             // 
             // CompanyLabel
             // 
@@ -558,7 +559,7 @@
             this.CompanyLabel.Location = new System.Drawing.Point(246, 148);
             this.CompanyLabel.Name = "CompanyLabel";
             this.CompanyLabel.Size = new System.Drawing.Size(63, 17);
-            this.CompanyLabel.TabIndex = 14;
+            this.CompanyLabel.TabIndex = 20;
             this.CompanyLabel.Text = "Company";
             // 
             // BranchComboBox
@@ -568,7 +569,7 @@
             this.BranchComboBox.Location = new System.Drawing.Point(9, 168);
             this.BranchComboBox.Name = "BranchComboBox";
             this.BranchComboBox.Size = new System.Drawing.Size(234, 25);
-            this.BranchComboBox.TabIndex = 13;
+            this.BranchComboBox.TabIndex = 19;
             // 
             // BranchLabel
             // 
@@ -576,7 +577,7 @@
             this.BranchLabel.Location = new System.Drawing.Point(6, 148);
             this.BranchLabel.Name = "BranchLabel";
             this.BranchLabel.Size = new System.Drawing.Size(47, 17);
-            this.BranchLabel.TabIndex = 12;
+            this.BranchLabel.TabIndex = 18;
             this.BranchLabel.Text = "Branch";
             // 
             // EmploymentStatusComboBox
@@ -586,7 +587,7 @@
             this.EmploymentStatusComboBox.Location = new System.Drawing.Point(489, 120);
             this.EmploymentStatusComboBox.Name = "EmploymentStatusComboBox";
             this.EmploymentStatusComboBox.Size = new System.Drawing.Size(234, 25);
-            this.EmploymentStatusComboBox.TabIndex = 11;
+            this.EmploymentStatusComboBox.TabIndex = 17;
             // 
             // EmploymentStatusLabel
             // 
@@ -594,7 +595,7 @@
             this.EmploymentStatusLabel.Location = new System.Drawing.Point(486, 100);
             this.EmploymentStatusLabel.Name = "EmploymentStatusLabel";
             this.EmploymentStatusLabel.Size = new System.Drawing.Size(119, 17);
-            this.EmploymentStatusLabel.TabIndex = 10;
+            this.EmploymentStatusLabel.TabIndex = 16;
             this.EmploymentStatusLabel.Text = "Employment Status";
             // 
             // EmploymentDateTimePicker
@@ -604,7 +605,7 @@
             this.EmploymentDateTimePicker.Location = new System.Drawing.Point(249, 120);
             this.EmploymentDateTimePicker.Name = "EmploymentDateTimePicker";
             this.EmploymentDateTimePicker.Size = new System.Drawing.Size(234, 25);
-            this.EmploymentDateTimePicker.TabIndex = 9;
+            this.EmploymentDateTimePicker.TabIndex = 15;
             // 
             // EmploymentDateLabel
             // 
@@ -612,7 +613,7 @@
             this.EmploymentDateLabel.Location = new System.Drawing.Point(246, 100);
             this.EmploymentDateLabel.Name = "EmploymentDateLabel";
             this.EmploymentDateLabel.Size = new System.Drawing.Size(127, 17);
-            this.EmploymentDateLabel.TabIndex = 8;
+            this.EmploymentDateLabel.TabIndex = 14;
             this.EmploymentDateLabel.Text = "Date of Employment";
             // 
             // PositionComboBox
@@ -622,7 +623,7 @@
             this.PositionComboBox.Location = new System.Drawing.Point(9, 120);
             this.PositionComboBox.Name = "PositionComboBox";
             this.PositionComboBox.Size = new System.Drawing.Size(234, 25);
-            this.PositionComboBox.TabIndex = 7;
+            this.PositionComboBox.TabIndex = 13;
             // 
             // PositionLabel
             // 
@@ -630,7 +631,7 @@
             this.PositionLabel.Location = new System.Drawing.Point(6, 100);
             this.PositionLabel.Name = "PositionLabel";
             this.PositionLabel.Size = new System.Drawing.Size(54, 17);
-            this.PositionLabel.TabIndex = 6;
+            this.PositionLabel.TabIndex = 12;
             this.PositionLabel.Text = "Position";
             // 
             // MiddleNameTextBox
@@ -728,7 +729,7 @@
             0});
             this.PhilHealthDeductionNumericUpDown.Name = "PhilHealthDeductionNumericUpDown";
             this.PhilHealthDeductionNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.PhilHealthDeductionNumericUpDown.TabIndex = 75;
+            this.PhilHealthDeductionNumericUpDown.TabIndex = 11;
             this.PhilHealthDeductionNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.PhilHealthDeductionNumericUpDown.ThousandsSeparator = true;
             // 
@@ -738,7 +739,7 @@
             this.PhilHealthDeductionLabel.Location = new System.Drawing.Point(486, 69);
             this.PhilHealthDeductionLabel.Name = "PhilHealthDeductionLabel";
             this.PhilHealthDeductionLabel.Size = new System.Drawing.Size(65, 17);
-            this.PhilHealthDeductionLabel.TabIndex = 74;
+            this.PhilHealthDeductionLabel.TabIndex = 10;
             this.PhilHealthDeductionLabel.Text = "PhilHealth";
             // 
             // PagIbigDeductionNumericUpDown
@@ -752,7 +753,7 @@
             0});
             this.PagIbigDeductionNumericUpDown.Name = "PagIbigDeductionNumericUpDown";
             this.PagIbigDeductionNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.PagIbigDeductionNumericUpDown.TabIndex = 73;
+            this.PagIbigDeductionNumericUpDown.TabIndex = 9;
             this.PagIbigDeductionNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.PagIbigDeductionNumericUpDown.ThousandsSeparator = true;
             // 
@@ -762,7 +763,7 @@
             this.PagIbigDeductionLabel.Location = new System.Drawing.Point(246, 69);
             this.PagIbigDeductionLabel.Name = "PagIbigDeductionLabel";
             this.PagIbigDeductionLabel.Size = new System.Drawing.Size(57, 17);
-            this.PagIbigDeductionLabel.TabIndex = 72;
+            this.PagIbigDeductionLabel.TabIndex = 8;
             this.PagIbigDeductionLabel.Text = "Pag-IBIG";
             // 
             // WithHoldingTaxNumericUpDown
@@ -776,7 +777,7 @@
             0});
             this.WithHoldingTaxNumericUpDown.Name = "WithHoldingTaxNumericUpDown";
             this.WithHoldingTaxNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.WithHoldingTaxNumericUpDown.TabIndex = 71;
+            this.WithHoldingTaxNumericUpDown.TabIndex = 7;
             this.WithHoldingTaxNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.WithHoldingTaxNumericUpDown.ThousandsSeparator = true;
             // 
@@ -786,7 +787,7 @@
             this.WithholdingTaxLabel.Location = new System.Drawing.Point(6, 69);
             this.WithholdingTaxLabel.Name = "WithholdingTaxLabel";
             this.WithholdingTaxLabel.Size = new System.Drawing.Size(101, 17);
-            this.WithholdingTaxLabel.TabIndex = 70;
+            this.WithholdingTaxLabel.TabIndex = 6;
             this.WithholdingTaxLabel.Text = "Withholding Tax";
             // 
             // SssEcDeductionNumericUpDown
@@ -800,7 +801,7 @@
             0});
             this.SssEcDeductionNumericUpDown.Name = "SssEcDeductionNumericUpDown";
             this.SssEcDeductionNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.SssEcDeductionNumericUpDown.TabIndex = 69;
+            this.SssEcDeductionNumericUpDown.TabIndex = 5;
             this.SssEcDeductionNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SssEcDeductionNumericUpDown.ThousandsSeparator = true;
             // 
@@ -810,7 +811,7 @@
             this.SssEcDeductionLabel.Location = new System.Drawing.Point(486, 21);
             this.SssEcDeductionLabel.Name = "SssEcDeductionLabel";
             this.SssEcDeductionLabel.Size = new System.Drawing.Size(115, 17);
-            this.SssEcDeductionLabel.TabIndex = 68;
+            this.SssEcDeductionLabel.TabIndex = 4;
             this.SssEcDeductionLabel.Text = "SSS EC (Employer)";
             // 
             // SssErDeductionNumericUpDown
@@ -824,7 +825,7 @@
             0});
             this.SssErDeductionNumericUpDown.Name = "SssErDeductionNumericUpDown";
             this.SssErDeductionNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.SssErDeductionNumericUpDown.TabIndex = 67;
+            this.SssErDeductionNumericUpDown.TabIndex = 3;
             this.SssErDeductionNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SssErDeductionNumericUpDown.ThousandsSeparator = true;
             // 
@@ -834,7 +835,7 @@
             this.SssErDeductionLabel.Location = new System.Drawing.Point(246, 21);
             this.SssErDeductionLabel.Name = "SssErDeductionLabel";
             this.SssErDeductionLabel.Size = new System.Drawing.Size(115, 17);
-            this.SssErDeductionLabel.TabIndex = 66;
+            this.SssErDeductionLabel.TabIndex = 2;
             this.SssErDeductionLabel.Text = "SSS ER (Employer)";
             // 
             // SssDeductionNumericUpDown
@@ -848,7 +849,7 @@
             0});
             this.SssDeductionNumericUpDown.Name = "SssDeductionNumericUpDown";
             this.SssDeductionNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.SssDeductionNumericUpDown.TabIndex = 65;
+            this.SssDeductionNumericUpDown.TabIndex = 1;
             this.SssDeductionNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SssDeductionNumericUpDown.ThousandsSeparator = true;
             // 
@@ -858,7 +859,7 @@
             this.SssDeductionLabel.Location = new System.Drawing.Point(6, 21);
             this.SssDeductionLabel.Name = "SssDeductionLabel";
             this.SssDeductionLabel.Size = new System.Drawing.Size(29, 17);
-            this.SssDeductionLabel.TabIndex = 64;
+            this.SssDeductionLabel.TabIndex = 0;
             this.SssDeductionLabel.Text = "SSS";
             // 
             // EarningsGroupBox
@@ -891,7 +892,7 @@
             0});
             this.OtAllowanceNumericUpDown.Name = "OtAllowanceNumericUpDown";
             this.OtAllowanceNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.OtAllowanceNumericUpDown.TabIndex = 63;
+            this.OtAllowanceNumericUpDown.TabIndex = 7;
             this.OtAllowanceNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.OtAllowanceNumericUpDown.ThousandsSeparator = true;
             // 
@@ -901,7 +902,7 @@
             this.OtAllowanceLabel.Location = new System.Drawing.Point(246, 69);
             this.OtAllowanceLabel.Name = "OtAllowanceLabel";
             this.OtAllowanceLabel.Size = new System.Drawing.Size(86, 17);
-            this.OtAllowanceLabel.TabIndex = 62;
+            this.OtAllowanceLabel.TabIndex = 6;
             this.OtAllowanceLabel.Text = "OT Allowance";
             // 
             // AllowanceNumericUpDown
@@ -915,7 +916,7 @@
             0});
             this.AllowanceNumericUpDown.Name = "AllowanceNumericUpDown";
             this.AllowanceNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.AllowanceNumericUpDown.TabIndex = 61;
+            this.AllowanceNumericUpDown.TabIndex = 5;
             this.AllowanceNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.AllowanceNumericUpDown.ThousandsSeparator = true;
             // 
@@ -925,7 +926,7 @@
             this.AllowanceLabel.Location = new System.Drawing.Point(6, 69);
             this.AllowanceLabel.Name = "AllowanceLabel";
             this.AllowanceLabel.Size = new System.Drawing.Size(66, 17);
-            this.AllowanceLabel.TabIndex = 60;
+            this.AllowanceLabel.TabIndex = 4;
             this.AllowanceLabel.Text = "Allowance";
             // 
             // DailyRateNumericUpDown
@@ -939,7 +940,7 @@
             0});
             this.DailyRateNumericUpDown.Name = "DailyRateNumericUpDown";
             this.DailyRateNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.DailyRateNumericUpDown.TabIndex = 59;
+            this.DailyRateNumericUpDown.TabIndex = 3;
             this.DailyRateNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DailyRateNumericUpDown.ThousandsSeparator = true;
             // 
@@ -949,7 +950,7 @@
             this.DailyRateLabel.Location = new System.Drawing.Point(246, 21);
             this.DailyRateLabel.Name = "DailyRateLabel";
             this.DailyRateLabel.Size = new System.Drawing.Size(66, 17);
-            this.DailyRateLabel.TabIndex = 58;
+            this.DailyRateLabel.TabIndex = 2;
             this.DailyRateLabel.Text = "Daily Rate";
             // 
             // BasicPayNumericUpDown
@@ -963,7 +964,7 @@
             0});
             this.BasicPayNumericUpDown.Name = "BasicPayNumericUpDown";
             this.BasicPayNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.BasicPayNumericUpDown.TabIndex = 57;
+            this.BasicPayNumericUpDown.TabIndex = 1;
             this.BasicPayNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.BasicPayNumericUpDown.ThousandsSeparator = true;
             // 
@@ -973,7 +974,7 @@
             this.BasicPayLabel.Location = new System.Drawing.Point(6, 21);
             this.BasicPayLabel.Name = "BasicPayLabel";
             this.BasicPayLabel.Size = new System.Drawing.Size(61, 17);
-            this.BasicPayLabel.TabIndex = 56;
+            this.BasicPayLabel.TabIndex = 0;
             this.BasicPayLabel.Text = "Basic Pay";
             // 
             // LeavesAndAbsencesGroupBox
@@ -998,7 +999,7 @@
             this.AbsencesNumericUpDown.Location = new System.Drawing.Point(489, 41);
             this.AbsencesNumericUpDown.Name = "AbsencesNumericUpDown";
             this.AbsencesNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.AbsencesNumericUpDown.TabIndex = 55;
+            this.AbsencesNumericUpDown.TabIndex = 5;
             this.AbsencesNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // AbsencesLabel
@@ -1007,7 +1008,7 @@
             this.AbsencesLabel.Location = new System.Drawing.Point(486, 21);
             this.AbsencesLabel.Name = "AbsencesLabel";
             this.AbsencesLabel.Size = new System.Drawing.Size(63, 17);
-            this.AbsencesLabel.TabIndex = 54;
+            this.AbsencesLabel.TabIndex = 4;
             this.AbsencesLabel.Text = "Absences";
             // 
             // SickLeaveNumericUpDown
@@ -1016,7 +1017,7 @@
             this.SickLeaveNumericUpDown.Location = new System.Drawing.Point(249, 41);
             this.SickLeaveNumericUpDown.Name = "SickLeaveNumericUpDown";
             this.SickLeaveNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.SickLeaveNumericUpDown.TabIndex = 53;
+            this.SickLeaveNumericUpDown.TabIndex = 3;
             this.SickLeaveNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.SickLeaveNumericUpDown.ThousandsSeparator = true;
             // 
@@ -1026,7 +1027,7 @@
             this.SickLeaveLabel.Location = new System.Drawing.Point(246, 21);
             this.SickLeaveLabel.Name = "SickLeaveLabel";
             this.SickLeaveLabel.Size = new System.Drawing.Size(140, 17);
-            this.SickLeaveLabel.TabIndex = 52;
+            this.SickLeaveLabel.TabIndex = 2;
             this.SickLeaveLabel.Text = "Sick Leave (Remaining)";
             // 
             // VacationLeaveNumericUpDown
@@ -1035,7 +1036,7 @@
             this.VacationLeaveNumericUpDown.Location = new System.Drawing.Point(9, 41);
             this.VacationLeaveNumericUpDown.Name = "VacationLeaveNumericUpDown";
             this.VacationLeaveNumericUpDown.Size = new System.Drawing.Size(234, 25);
-            this.VacationLeaveNumericUpDown.TabIndex = 51;
+            this.VacationLeaveNumericUpDown.TabIndex = 1;
             this.VacationLeaveNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.VacationLeaveNumericUpDown.ThousandsSeparator = true;
             // 
@@ -1045,7 +1046,7 @@
             this.VacationLeaveLabel.Location = new System.Drawing.Point(6, 21);
             this.VacationLeaveLabel.Name = "VacationLeaveLabel";
             this.VacationLeaveLabel.Size = new System.Drawing.Size(167, 17);
-            this.VacationLeaveLabel.TabIndex = 1;
+            this.VacationLeaveLabel.TabIndex = 0;
             this.VacationLeaveLabel.Text = "Vacation Leave (Remaining)";
             // 
             // AddEditEmployeeControl
@@ -1061,6 +1062,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddEditEmployeeControl";
             this.Size = new System.Drawing.Size(764, 615);
+            this.Load += new System.EventHandler(this.AddEditEmployeeControl_Load);
             this.EmployeeTabControl.ResumeLayout(false);
             this.PersonalInformationTabPage.ResumeLayout(false);
             this.PersonalInformationTabPage.PerformLayout();
