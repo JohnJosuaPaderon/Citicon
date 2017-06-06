@@ -3,6 +3,7 @@
     public enum PayrollType
     {
         Weekly,
-        SemiMonthly
+        SemiMonthly,
+        Driver
     }
 }
