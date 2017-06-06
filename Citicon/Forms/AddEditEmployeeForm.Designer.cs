@@ -36,10 +36,12 @@
             // 
             this.AddEditEmployeeControl.BackColor = System.Drawing.Color.White;
             this.AddEditEmployeeControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AddEditEmployeeControl.Employee = null;
             this.AddEditEmployeeControl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddEditEmployeeControl.ForeColor = System.Drawing.Color.Red;
             this.AddEditEmployeeControl.Location = new System.Drawing.Point(0, 0);
             this.AddEditEmployeeControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AddEditEmployeeControl.Mode = Citicon.Forms.Dialogs.DataDialogMode.None;
             this.AddEditEmployeeControl.Name = "AddEditEmployeeControl";
             this.AddEditEmployeeControl.Size = new System.Drawing.Size(778, 641);
             this.AddEditEmployeeControl.TabIndex = 0;
@@ -59,6 +61,7 @@
             this.Name = "AddEditEmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Edit Employee";
+            this.Load += new System.EventHandler(this.AddEditEmployeeForm_Load);
             this.ResumeLayout(false);
 
         }
