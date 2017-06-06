@@ -76,16 +76,19 @@
     <Compile Include="DataManager\BillingStructureTypeManager.cs" />
     <Compile Include="DataManager\BranchManager.cs" />
     <Compile Include="DataManager\ChequeSummaryItemManager.cs" />
+    <Compile Include="DataManager\CivilStatusManager.cs" />
     <Compile Include="DataManager\ClassificationManager.cs" />
     <Compile Include="DataManager\ClientManager.cs" />
     <Compile Include="DataManager\CompanyManager.cs" />
     <Compile Include="DataManager\DeliveryManager.cs" />
     <Compile Include="DataManager\DeliveryRouteManager.cs" />
+    <Compile Include="DataManager\EmploymentStatusManager.cs" />
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataManager\HolidayManager.cs" />
     <Compile Include="DataManager\HolidayTypeManager.cs" />
+    <Compile Include="DataManager\PayrollTypeManager.cs" />
     <Compile Include="DataManager\TransitMixerManager.cs" />
     <Compile Include="DataManager\TripReportManager.cs" />
     <Compile Include="DataProcess\ConfirmDelivery.cs" />
@@ -93,6 +96,7 @@
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
     <Compile Include="DataProcess\DeleteTransitMixer.cs" />
+    <Compile Include="DataProcess\EmployeeExists.cs" />
     <Compile Include="DataProcess\ExportAllTripReport.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
     <Compile Include="DataProcess\ExportDeliveryReceipt.cs" />
@@ -115,6 +119,7 @@
     <Compile Include="DataProcess\GetHolidayTypeList.cs" />
     <Compile Include="DataProcess\GetJobPositionList.cs" />
     <Compile Include="DataProcess\GetLatestDeliveryReceiptNumber.cs" />
+    <Compile Include="DataProcess\GetMinifiedEmployeeList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
@@ -127,6 +132,7 @@
     <Compile Include="DataProcess\GetTripReportDriverList.cs" />
     <Compile Include="DataProcess\GetUnbilledDeliveryList.cs" />
     <Compile Include="DataProcess\InsertDelivery.cs" />
+    <Compile Include="DataProcess\InsertEmployee.cs" />
     <Compile Include="DataProcess\InsertHoliday.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
@@ -223,6 +229,7 @@
     <Compile Include="DataProcess\InsertPurchaseOrderTransaction.cs" />
     <Compile Include="DataProcess\PurchaseOrderNumberExists.cs" />
     <Compile Include="DataProcess\UpdateClient.cs" />
+    <Compile Include="DataProcess\UpdateEmployee.cs" />
     <Compile Include="DataProcess\UpdateHoliday.cs" />
     <Compile Include="DataProcess\UpdateProject.cs" />
     <Compile Include="DataProcess\UpdateProjectDesign.cs" />
