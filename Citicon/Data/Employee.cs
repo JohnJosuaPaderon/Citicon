@@ -38,7 +38,7 @@ namespace Citicon.Data
         public string PhilHealthNumber { get; set; }
         public DateTime PhilHealthRegistrationDate { get; set; }
         public string PagIbigRTN { get; set; }
-        public DateTime PagIbigRTNRegistrationDate { get; set; }
+        public DateTime PagIbigRegistrationDate { get; set; }
         public uint PagIbigRTNDependentNumber { get; set; }
         public decimal VacationLeave { get; set; }
         public decimal SickLeave { get; set; }
