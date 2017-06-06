@@ -249,5 +249,54 @@ namespace Citicon.DataManager
 
             return timeLog;
         }
+
+        public static async Task<Employee> InsertAsync(Employee employee)
+        {
+            if (employee == null) return null;
+
+            using (var process = new InsertEmployee(employee))
+            {
+                employee = await process.ExecuteAsync();
+
+                if (employee != null && !Employees.ContainsKey(employee.Id))
+                {
+                    Employees.Add(employee.Id, employee);
+                }
+
+                return employee;
+            }
+        }
+
+        public static async Task<Employee> UpdateAsync(Employee employee)
+        {
+            if (employee == null) return null;
+
+            using (var process = new UpdateEmployee(employee))
+            {
+                employee = await process.ExecuteAsync();
+
+                if (employee != null)
+                {
+                    if (Employees.ContainsKey(employee.Id))
+                    {
+                        Employees[employee.Id] = employee;
+                    }
+                    else
+                    {
+                        Employees.Add(employee.Id, employee);
+                    }
+                }
+
+                return employee;
+            }
+        }
+
+        public static Task<bool> EmployeeExistsAsync(string firstName, string middleName, string lastName)
+        {
+            using (var process = new EmployeeExists(firstName, middleName, lastName))
+            {
+                return process.ExecuteAsync();
+            }
+        }
     }
 }
