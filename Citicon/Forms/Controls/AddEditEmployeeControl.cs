@@ -363,6 +363,7 @@ namespace Citicon.Forms.Controls
             await LoadBranchListAsync();
             await LoadCompanyListAsync();
             LoadPayrollTypeList();
+            UpdateUI(Employee);
         }
     }
 }
