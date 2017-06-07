@@ -30,14 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.HomeButton = new System.Windows.Forms.Button();
             this.UserSettingsButton = new System.Windows.Forms.Button();
+            this.HomeButton = new System.Windows.Forms.Button();
+            this.DeliverySchedulerButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.DeliverySchedulerButton);
             this.panel1.Controls.Add(this.UserSettingsButton);
             this.panel1.Controls.Add(this.HomeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -46,6 +48,22 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel1.Size = new System.Drawing.Size(863, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // UserSettingsButton
+            // 
+            this.UserSettingsButton.BackColor = System.Drawing.Color.Red;
+            this.UserSettingsButton.FlatAppearance.BorderSize = 0;
+            this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
+            this.UserSettingsButton.Location = new System.Drawing.Point(279, 5);
+            this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.UserSettingsButton.Name = "UserSettingsButton";
+            this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
+            this.UserSettingsButton.TabIndex = 6;
+            this.UserSettingsButton.Text = "USER SETTINGS";
+            this.UserSettingsButton.UseVisualStyleBackColor = false;
+            this.UserSettingsButton.Click += new System.EventHandler(this.UserSettingsButton_Click);
             // 
             // HomeButton
             // 
@@ -63,21 +81,21 @@
             this.HomeButton.UseVisualStyleBackColor = false;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
-            // UserSettingsButton
+            // DeliverySchedulerButton
             // 
-            this.UserSettingsButton.BackColor = System.Drawing.Color.Red;
-            this.UserSettingsButton.FlatAppearance.BorderSize = 0;
-            this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(144, 5);
-            this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.UserSettingsButton.Name = "UserSettingsButton";
-            this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
-            this.UserSettingsButton.TabIndex = 6;
-            this.UserSettingsButton.Text = "USER SETTINGS";
-            this.UserSettingsButton.UseVisualStyleBackColor = false;
-            this.UserSettingsButton.Click += new System.EventHandler(this.UserSettingsButton_Click);
+            this.DeliverySchedulerButton.BackColor = System.Drawing.Color.Red;
+            this.DeliverySchedulerButton.FlatAppearance.BorderSize = 0;
+            this.DeliverySchedulerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeliverySchedulerButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliverySchedulerButton.ForeColor = System.Drawing.Color.White;
+            this.DeliverySchedulerButton.Location = new System.Drawing.Point(144, 5);
+            this.DeliverySchedulerButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.DeliverySchedulerButton.Name = "DeliverySchedulerButton";
+            this.DeliverySchedulerButton.Size = new System.Drawing.Size(125, 50);
+            this.DeliverySchedulerButton.TabIndex = 7;
+            this.DeliverySchedulerButton.Text = "DELIVERY SCHEDULER";
+            this.DeliverySchedulerButton.UseVisualStyleBackColor = false;
+            this.DeliverySchedulerButton.Click += new System.EventHandler(this.DeliverySchedulerButton_Click);
             // 
             // MainForm
             // 
@@ -107,6 +125,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button HomeButton;
         private System.Windows.Forms.Button UserSettingsButton;
+        private System.Windows.Forms.Button DeliverySchedulerButton;
     }
 }
 

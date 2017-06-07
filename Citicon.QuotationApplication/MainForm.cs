@@ -1,4 +1,5 @@
 ﻿using Citicon.Forms;
+using Citicon.ReceivablesIntegration.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -26,6 +27,16 @@ namespace Citicon.QuotationApplication
             get
             {
                 var form = new UserSettingsForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
+        private DeliverySchedulerForm DeliverySchedulerForm
+        {
+            get
+            {
+                var form = new DeliverySchedulerForm() { MdiParent = this };
                 form.FormClosed += (s, e) => form = null;
                 return form;
             }
@@ -61,6 +72,11 @@ namespace Citicon.QuotationApplication
         private void UserSettingsButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(UserSettingsForm);
+        }
+
+        private void DeliverySchedulerButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(DeliverySchedulerForm);
         }
     }
 }
