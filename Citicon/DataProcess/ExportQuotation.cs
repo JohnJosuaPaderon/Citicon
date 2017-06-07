@@ -168,6 +168,7 @@ namespace Citicon.DataProcess
                 }
 
                 Document.SaveAs2(FilePath);
+                Document.PrintOut();
 
                 return new ExportQuotationResult(FilePath, "Quotation successfully saved!", true);
             }

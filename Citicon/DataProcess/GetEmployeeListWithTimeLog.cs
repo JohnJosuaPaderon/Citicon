@@ -10,12 +10,14 @@ namespace Citicon.DataProcess
 {
     internal sealed class GetEmployeeListWithTimeLog : DataProcessBase
     {
-        public GetEmployeeListWithTimeLog(bool filterByBranch, Branch branch, bool filterByEmployeePosition, JobPosition employeePosition, DateTimeRange timeRange)
+        public GetEmployeeListWithTimeLog(bool filterByBranch, Branch branch, bool filterByEmployeePosition, JobPosition employeePosition, bool filterByPayrollType, PayrollType payrollType, DateTimeRange timeRange)
         {
             FilterByBranch = filterByBranch;
             Branch = branch;
             FilterByEmployeePosition = filterByEmployeePosition;
             EmployeePosition = employeePosition;
+            FilterByPayrollType = filterByPayrollType;
+            PayrollType = payrollType;
             TimeRange = timeRange ?? throw new ArgumentNullException(nameof(timeRange));
             PositionManager = new JobPositionManager();
         }
@@ -23,9 +25,11 @@ namespace Citicon.DataProcess
         private JobPositionManager PositionManager;
         private bool FilterByBranch;
         private bool FilterByEmployeePosition;
+        private bool FilterByPayrollType;
         private Branch Branch;
         private JobPosition EmployeePosition;
         private DateTimeRange TimeRange;
+        private PayrollType PayrollType;
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
@@ -34,6 +38,8 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_BranchId", Branch?.Id);
             command.Parameters.AddWithValue("@_FilterByEmployeePosition", FilterByEmployeePosition);
             command.Parameters.AddWithValue("@_EmployeePositionId", EmployeePosition?.Id);
+            command.Parameters.AddWithValue("@_FilterByPayrollType", FilterByPayrollType);
+            command.Parameters.AddWithValue("@_PayrollType", PayrollType.ToString());
             command.Parameters.AddWithValue("@_TimeRangeStart", TimeRange.Start);
             command.Parameters.AddWithValue("@_TimeRangeEnd", TimeRange.End);
 
