@@ -73,6 +73,16 @@ namespace Citicon.BillingApplication
             }
         }
 
+        private DeliveryConfirmationForm DeliveryConfirmationForm
+        {
+            get
+            {
+                var form = new DeliveryConfirmationForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void InitializeSecurity()
         {
             UserSettingsButton.Enabled = User.CurrentUser.Admin;
@@ -128,6 +138,11 @@ namespace Citicon.BillingApplication
         private void UserSettingsButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(UserSettingsForm);
+        }
+
+        private void DeliveryConfirmationButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(DeliveryConfirmationForm);
         }
     }
 }
