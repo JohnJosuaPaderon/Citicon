@@ -1,9 +1,12 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.DataProcess;
 using System;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Citicon.Forms.Controls
 {
@@ -75,6 +78,47 @@ namespace Citicon.Forms.Controls
             QuotationNumberTextBox.Text = Quotation?.ToString();
             QuotationDateTextBox.Text = Quotation?.QuotationDate.ToString("MMMM dd, yyyy");
             StatusTextBox.Text = Quotation?.Status.ToString();
+
+            PrintButton.Enabled = Quotation?.Status == QuotationStatus.Approved;
+        }
+
+        private void PrintButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var result = QuotationManager.ExportQuotation(Quotation?.Type == QuotationType.Citicon ? ExportQuotation.QuotationReportTemplate.Citicon : ExportQuotation.QuotationReportTemplate.LexCiticoncrete,
+                ConfigurationManager.AppSettings["Quotation.TemplatesDirectory"], Quotation, GetProjectDesigns(), ConfigurationManager.AppSettings["Quotation.SaveDirectory"]);
+
+                if (result.Success)
+                {
+                    MessageBox.Show("Printing the quotation.");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to print quotation.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private List<ProjectDesign> GetProjectDesigns()
+        {
+            if (ProjectDesignDataGridView.Rows.Count > 0)
+            {
+                var projectDesigns = new List<ProjectDesign>();
+
+                foreach (DataGridViewRow row in ProjectDesignDataGridView.Rows)
+                {
+                    projectDesigns.Add(row.Cells[ProjectDesignColumn.Name].Value as ProjectDesign);
+                }
+
+                return projectDesigns;
+            }
+
+            return null;
         }
     }
 }
