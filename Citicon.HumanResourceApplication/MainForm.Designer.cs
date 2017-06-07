@@ -34,10 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
-            this.EmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Employee_BranchColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Employee_PayrollTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Employee_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EarningsAndDeductionInformationTabPage = new System.Windows.Forms.TabPage();
             this.DeductionsGroupBox = new System.Windows.Forms.GroupBox();
             this.PhilHealthDeductionTextBox = new System.Windows.Forms.TextBox();
@@ -120,6 +116,10 @@
             this.EmployeeTabControl = new System.Windows.Forms.TabControl();
             this.EditButton = new System.Windows.Forms.Button();
             this.AddNewButton = new System.Windows.Forms.Button();
+            this.EmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Employee_BranchColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Employee_PayrollTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Employee_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             this.EarningsAndDeductionInformationTabPage.SuspendLayout();
             this.DeductionsGroupBox.SuspendLayout();
@@ -182,39 +182,6 @@
             this.EmployeeDataGridView.Size = new System.Drawing.Size(1020, 751);
             this.EmployeeDataGridView.TabIndex = 105;
             this.EmployeeDataGridView.SelectionChanged += new System.EventHandler(this.EmployeeDataGridView_SelectionChanged);
-            // 
-            // EmployeeColumn
-            // 
-            this.EmployeeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EmployeeColumn.HeaderText = "CLIENT NAME";
-            this.EmployeeColumn.MinimumWidth = 250;
-            this.EmployeeColumn.Name = "EmployeeColumn";
-            this.EmployeeColumn.ReadOnly = true;
-            this.EmployeeColumn.Width = 250;
-            // 
-            // Employee_BranchColumn
-            // 
-            this.Employee_BranchColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Employee_BranchColumn.HeaderText = "PLANT";
-            this.Employee_BranchColumn.MinimumWidth = 100;
-            this.Employee_BranchColumn.Name = "Employee_BranchColumn";
-            this.Employee_BranchColumn.ReadOnly = true;
-            // 
-            // Employee_PayrollTypeColumn
-            // 
-            this.Employee_PayrollTypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Employee_PayrollTypeColumn.HeaderText = "PAYROLL TYPE";
-            this.Employee_PayrollTypeColumn.MinimumWidth = 100;
-            this.Employee_PayrollTypeColumn.Name = "Employee_PayrollTypeColumn";
-            this.Employee_PayrollTypeColumn.ReadOnly = true;
-            this.Employee_PayrollTypeColumn.Width = 104;
-            // 
-            // Employee_ExtraColumn
-            // 
-            this.Employee_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Employee_ExtraColumn.HeaderText = "";
-            this.Employee_ExtraColumn.Name = "Employee_ExtraColumn";
-            this.Employee_ExtraColumn.ReadOnly = true;
             // 
             // EarningsAndDeductionInformationTabPage
             // 
@@ -1060,6 +1027,39 @@
             this.AddNewButton.UseVisualStyleBackColor = false;
             this.AddNewButton.Click += new System.EventHandler(this.AddNewButton_Click);
             // 
+            // EmployeeColumn
+            // 
+            this.EmployeeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.EmployeeColumn.HeaderText = "EMPLOYEE NAME";
+            this.EmployeeColumn.MinimumWidth = 250;
+            this.EmployeeColumn.Name = "EmployeeColumn";
+            this.EmployeeColumn.ReadOnly = true;
+            this.EmployeeColumn.Width = 250;
+            // 
+            // Employee_BranchColumn
+            // 
+            this.Employee_BranchColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Employee_BranchColumn.HeaderText = "PLANT";
+            this.Employee_BranchColumn.MinimumWidth = 100;
+            this.Employee_BranchColumn.Name = "Employee_BranchColumn";
+            this.Employee_BranchColumn.ReadOnly = true;
+            // 
+            // Employee_PayrollTypeColumn
+            // 
+            this.Employee_PayrollTypeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Employee_PayrollTypeColumn.HeaderText = "PAYROLL TYPE";
+            this.Employee_PayrollTypeColumn.MinimumWidth = 100;
+            this.Employee_PayrollTypeColumn.Name = "Employee_PayrollTypeColumn";
+            this.Employee_PayrollTypeColumn.ReadOnly = true;
+            this.Employee_PayrollTypeColumn.Width = 104;
+            // 
+            // Employee_ExtraColumn
+            // 
+            this.Employee_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Employee_ExtraColumn.HeaderText = "";
+            this.Employee_ExtraColumn.Name = "Employee_ExtraColumn";
+            this.Employee_ExtraColumn.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1177,12 +1177,12 @@
         private System.Windows.Forms.Label PhilHealthDeductionLabel;
         private System.Windows.Forms.TextBox PagIbigDeductionTextBox;
         private System.Windows.Forms.Label PagIbigDeductionLabel;
+        private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button AddNewButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee_BranchColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee_PayrollTypeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee_ExtraColumn;
-        private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.Button AddNewButton;
     }
 }
 
