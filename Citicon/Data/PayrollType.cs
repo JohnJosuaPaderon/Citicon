@@ -4,6 +4,7 @@
     {
         Weekly,
         SemiMonthly,
-        Driver
+        Driver,
+        SubContractual
     }
 }
