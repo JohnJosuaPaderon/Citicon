@@ -181,11 +181,11 @@ namespace Citicon.DataManager
             }
         }
 
-        public static Task<IEnumerable<Employee>> GetListWithTimeLogAsync(bool filterByBranch, Branch branch, bool filterByEmployeePosition, JobPosition employeePosition, DateTimeRange timeRange)
+        public static Task<IEnumerable<Employee>> GetListWithTimeLogAsync(bool filterByBranch, Branch branch, bool filterByEmployeePosition, JobPosition employeePosition, bool filterByPayrollType, PayrollType payrollType, DateTimeRange timeRange)
         {
             if (timeRange != null)
             {
-                using (var process = new GetEmployeeListWithTimeLog(filterByBranch, branch, filterByEmployeePosition, employeePosition, timeRange))
+                using (var process = new GetEmployeeListWithTimeLog(filterByBranch, branch, filterByEmployeePosition, employeePosition, filterByPayrollType, payrollType, timeRange))
                 {
                     return process.ExecuteAsync();
                 }
