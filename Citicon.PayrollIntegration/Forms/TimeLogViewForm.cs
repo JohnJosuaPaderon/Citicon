@@ -44,6 +44,7 @@ namespace Citicon.PayrollIntegration.Forms
         {
             await GetBranchListAsync();
             await GetEmployeePositionListAsync();
+            LoadPayrollTypeList();
         }
 
         private async Task GetBranchListAsync()
@@ -84,6 +85,13 @@ namespace Citicon.PayrollIntegration.Forms
             }
         }
 
+        private void LoadPayrollTypeList()
+        {
+            PayrollTypeComboBox.Items.Clear();
+
+            PayrollTypeComboBox.Items.AddRange(new object[] { PayrollType.SemiMonthly, PayrollType.Weekly, PayrollType.Driver, PayrollType.SubContractual });
+        }
+
         private async Task GetEmployeeListAsync()
         {
             var branch = BranchComboBox.SelectedItem as Branch;
@@ -92,7 +100,7 @@ namespace Citicon.PayrollIntegration.Forms
 
             try
             {
-                var employees = await EmployeeManager.GetListWithTimeLogAsync(FilterByBranchCheckBox.Checked, branch, FilterByEmployeePositionCheckBox.Checked, employeePosition, new DateTimeRange(TimeRangeStartDdateTimePicker.Value, TimeRangeEndDateTimePicker.Value));
+                var employees = await EmployeeManager.GetListWithTimeLogAsync(FilterByBranchCheckBox.Checked, branch, FilterByEmployeePositionCheckBox.Checked, employeePosition, FilterByPayrollTypeCheckBox.Checked, (PayrollType)PayrollTypeComboBox.SelectedItem, new DateTimeRange(TimeRangeStartDdateTimePicker.Value, TimeRangeEndDateTimePicker.Value));
 
                 if (employees != null && employees.Any())
                 {
@@ -278,6 +286,11 @@ namespace Citicon.PayrollIntegration.Forms
         private void FilterByEmployeePositionCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             EmployeePositionComboBox.Enabled = FilterByEmployeePositionCheckBox.Checked;
+        }
+
+        private void FilterByPayrollTypeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            PayrollTypeComboBox.Enabled = FilterByPayrollTypeCheckBox.Checked;
         }
     }
 }

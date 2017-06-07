@@ -65,6 +65,8 @@
             this.EmployeePositionComboBox = new System.Windows.Forms.ComboBox();
             this.FilterByBranchCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterByEmployeePositionCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByPayrollTypeCheckBox = new System.Windows.Forms.CheckBox();
+            this.PayrollTypeComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLogDataGridView)).BeginInit();
             this.TimeLogDetailsGroupBox.SuspendLayout();
@@ -181,7 +183,7 @@
             this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(488, 78);
+            this.SearchButton.Location = new System.Drawing.Point(734, 78);
             this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(100, 35);
@@ -431,12 +433,35 @@
             this.FilterByEmployeePositionCheckBox.UseVisualStyleBackColor = true;
             this.FilterByEmployeePositionCheckBox.CheckedChanged += new System.EventHandler(this.FilterByEmployeePositionCheckBox_CheckedChanged);
             // 
+            // FilterByPayrollTypeCheckBox
+            // 
+            this.FilterByPayrollTypeCheckBox.AutoSize = true;
+            this.FilterByPayrollTypeCheckBox.Location = new System.Drawing.Point(487, 61);
+            this.FilterByPayrollTypeCheckBox.Name = "FilterByPayrollTypeCheckBox";
+            this.FilterByPayrollTypeCheckBox.Size = new System.Drawing.Size(97, 21);
+            this.FilterByPayrollTypeCheckBox.TabIndex = 122;
+            this.FilterByPayrollTypeCheckBox.Text = "Payroll Type";
+            this.FilterByPayrollTypeCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByPayrollTypeCheckBox.CheckedChanged += new System.EventHandler(this.FilterByPayrollTypeCheckBox_CheckedChanged);
+            // 
+            // PayrollTypeComboBox
+            // 
+            this.PayrollTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PayrollTypeComboBox.Enabled = false;
+            this.PayrollTypeComboBox.FormattingEnabled = true;
+            this.PayrollTypeComboBox.Location = new System.Drawing.Point(487, 88);
+            this.PayrollTypeComboBox.Name = "PayrollTypeComboBox";
+            this.PayrollTypeComboBox.Size = new System.Drawing.Size(240, 25);
+            this.PayrollTypeComboBox.TabIndex = 121;
+            // 
             // TimeLogViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1530, 754);
+            this.Controls.Add(this.FilterByPayrollTypeCheckBox);
+            this.Controls.Add(this.PayrollTypeComboBox);
             this.Controls.Add(this.FilterByEmployeePositionCheckBox);
             this.Controls.Add(this.FilterByBranchCheckBox);
             this.Controls.Add(this.EmployeePositionComboBox);
@@ -495,5 +520,7 @@
         private System.Windows.Forms.ComboBox EmployeePositionComboBox;
         private System.Windows.Forms.CheckBox FilterByBranchCheckBox;
         private System.Windows.Forms.CheckBox FilterByEmployeePositionCheckBox;
+        private System.Windows.Forms.CheckBox FilterByPayrollTypeCheckBox;
+        private System.Windows.Forms.ComboBox PayrollTypeComboBox;
     }
 }
