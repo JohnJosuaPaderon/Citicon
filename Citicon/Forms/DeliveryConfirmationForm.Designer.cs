@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryConfirmationForm));
-            this.deliveryConfirmationControl1 = new Citicon.Forms.Controls.DeliveryConfirmationControl();
+            this.DeliveryConfirmation = new Citicon.Forms.Controls.DeliveryConfirmationControl();
             this.SuspendLayout();
             // 
-            // deliveryConfirmationControl1
+            // DeliveryConfirmation
             // 
-            this.deliveryConfirmationControl1.BackColor = System.Drawing.Color.White;
-            this.deliveryConfirmationControl1.CurrentDelivery = null;
-            this.deliveryConfirmationControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.deliveryConfirmationControl1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deliveryConfirmationControl1.ForeColor = System.Drawing.Color.Red;
-            this.deliveryConfirmationControl1.Location = new System.Drawing.Point(0, 0);
-            this.deliveryConfirmationControl1.Name = "deliveryConfirmationControl1";
-            this.deliveryConfirmationControl1.Size = new System.Drawing.Size(1258, 777);
-            this.deliveryConfirmationControl1.TabIndex = 0;
+            this.DeliveryConfirmation.BackColor = System.Drawing.Color.White;
+            this.DeliveryConfirmation.CurrentDelivery = null;
+            this.DeliveryConfirmation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DeliveryConfirmation.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryConfirmation.ForeColor = System.Drawing.Color.Red;
+            this.DeliveryConfirmation.Location = new System.Drawing.Point(0, 0);
+            this.DeliveryConfirmation.Name = "DeliveryConfirmation";
+            this.DeliveryConfirmation.Size = new System.Drawing.Size(1241, 823);
+            this.DeliveryConfirmation.TabIndex = 0;
             // 
             // DeliveryConfirmationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1258, 777);
-            this.Controls.Add(this.deliveryConfirmationControl1);
+            this.ClientSize = new System.Drawing.Size(1241, 823);
+            this.Controls.Add(this.DeliveryConfirmation);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -65,6 +65,6 @@
 
         #endregion
 
-        private Controls.DeliveryConfirmationControl deliveryConfirmationControl1;
+        private Controls.DeliveryConfirmationControl DeliveryConfirmation;
     }
 }
