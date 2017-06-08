@@ -89,8 +89,11 @@ namespace Citicon.Forms.Controls
                 {
                     Height = 30
                 };
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project?.Client });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.PlantLeave });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.DeliveryReceiptNumberDisplay });
                 DeliveryDataGridView.Rows.Add(row);
             }
         }
@@ -259,6 +262,31 @@ namespace Citicon.Forms.Controls
         private void EstimatedStayDateTimePicker_Leave(object sender, EventArgs e)
         {
             SetCurrentDeliveryEstimatedStay();
+        }
+
+        private void SearchDeliveryReceiptNumberTextBox_TextChanged(object sender, EventArgs e)
+        {
+            SearchDeliveryReceiptNumberTimer.Start();
+        }
+
+        private void SearchDeliveryReceiptNumberTimer_Tick(object sender, EventArgs e)
+        {
+            SearchDeliveryReceiptNumberTimer.Stop();
+            SearchDeliveryReceiptNumber();
+        }
+
+        private void SearchDeliveryReceiptNumber()
+        {
+            if (string.IsNullOrWhiteSpace(SearchDeliveryReceiptNumberTextBox.Text)) return;
+            var key = SearchDeliveryReceiptNumberTextBox.Text.Trim();
+
+            foreach (DataGridViewRow row in DeliveryDataGridView.Rows)
+            {
+                if (row.Cells[Delivery_DeliveryReceiptNumberColumn.Name].Value as string == key)
+                {
+                    row.Selected = true;
+                }
+            }
         }
     }
 }
