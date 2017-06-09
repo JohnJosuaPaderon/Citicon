@@ -211,7 +211,7 @@
             this.lblMaintenance.Location = new System.Drawing.Point(0, 0);
             this.lblMaintenance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMaintenance.Name = "lblMaintenance";
-            this.lblMaintenance.Size = new System.Drawing.Size(1207, 84);
+            this.lblMaintenance.Size = new System.Drawing.Size(939, 68);
             this.lblMaintenance.TabIndex = 0;
             this.lblMaintenance.Text = "Maintenance";
             this.lblMaintenance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -230,12 +230,12 @@
             this.tcMaintenance.Controls.Add(this.tpVehicles);
             this.tcMaintenance.Controls.Add(this.tpVehicleTypes);
             this.tcMaintenance.Controls.Add(this.tpSiDrCancellation);
-            this.tcMaintenance.Location = new System.Drawing.Point(10, 87);
-            this.tcMaintenance.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tcMaintenance.Location = new System.Drawing.Point(8, 70);
+            this.tcMaintenance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tcMaintenance.Name = "tcMaintenance";
-            this.tcMaintenance.Padding = new System.Drawing.Point(15, 15);
+            this.tcMaintenance.Padding = new System.Drawing.Point(10, 10);
             this.tcMaintenance.SelectedIndex = 0;
-            this.tcMaintenance.Size = new System.Drawing.Size(1187, 486);
+            this.tcMaintenance.Size = new System.Drawing.Size(923, 391);
             this.tcMaintenance.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tcMaintenance.TabIndex = 1;
             // 
@@ -252,11 +252,11 @@
             this.tpCompanies.Controls.Add(this.btnNewCompany);
             this.tpCompanies.Controls.Add(this.dgvCompanies);
             this.tpCompanies.ForeColor = System.Drawing.Color.Red;
-            this.tpCompanies.Location = new System.Drawing.Point(4, 54);
-            this.tpCompanies.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpCompanies.Location = new System.Drawing.Point(4, 40);
+            this.tpCompanies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpCompanies.Name = "tpCompanies";
-            this.tpCompanies.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpCompanies.Size = new System.Drawing.Size(1179, 428);
+            this.tpCompanies.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpCompanies.Size = new System.Drawing.Size(915, 349);
             this.tpCompanies.TabIndex = 1;
             this.tpCompanies.Text = "Companies";
             // 
@@ -266,10 +266,10 @@
             this.btnCancelCompany.FlatAppearance.BorderSize = 0;
             this.btnCancelCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelCompany.ForeColor = System.Drawing.Color.White;
-            this.btnCancelCompany.Location = new System.Drawing.Point(893, 157);
-            this.btnCancelCompany.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelCompany.Location = new System.Drawing.Point(698, 131);
+            this.btnCancelCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelCompany.Name = "btnCancelCompany";
-            this.btnCancelCompany.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelCompany.Size = new System.Drawing.Size(79, 34);
             this.btnCancelCompany.TabIndex = 32;
             this.btnCancelCompany.Text = "&Cancel";
             this.btnCancelCompany.UseVisualStyleBackColor = false;
@@ -281,10 +281,10 @@
             this.btnSaveCompany.FlatAppearance.BorderSize = 0;
             this.btnSaveCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveCompany.ForeColor = System.Drawing.Color.White;
-            this.btnSaveCompany.Location = new System.Drawing.Point(785, 157);
-            this.btnSaveCompany.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveCompany.Location = new System.Drawing.Point(614, 131);
+            this.btnSaveCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveCompany.Name = "btnSaveCompany";
-            this.btnSaveCompany.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveCompany.Size = new System.Drawing.Size(79, 34);
             this.btnSaveCompany.TabIndex = 31;
             this.btnSaveCompany.Text = "&Save";
             this.btnSaveCompany.UseVisualStyleBackColor = false;
@@ -296,10 +296,10 @@
             this.btnRemoveCompany.FlatAppearance.BorderSize = 0;
             this.btnRemoveCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveCompany.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveCompany.Location = new System.Drawing.Point(678, 157);
-            this.btnRemoveCompany.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveCompany.Location = new System.Drawing.Point(530, 131);
+            this.btnRemoveCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveCompany.Name = "btnRemoveCompany";
-            this.btnRemoveCompany.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveCompany.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveCompany.TabIndex = 30;
             this.btnRemoveCompany.Text = "&Remove";
             this.btnRemoveCompany.UseVisualStyleBackColor = false;
@@ -310,20 +310,20 @@
             this.tbxCompanyCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxCompanyCode.Enabled = false;
-            this.tbxCompanyCode.Location = new System.Drawing.Point(662, 124);
-            this.tbxCompanyCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxCompanyCode.Location = new System.Drawing.Point(518, 102);
+            this.tbxCompanyCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxCompanyCode.MaxLength = 9;
             this.tbxCompanyCode.Name = "tbxCompanyCode";
-            this.tbxCompanyCode.Size = new System.Drawing.Size(333, 29);
+            this.tbxCompanyCode.Size = new System.Drawing.Size(259, 25);
             this.tbxCompanyCode.TabIndex = 29;
             // 
             // lblCompanyCode
             // 
             this.lblCompanyCode.AutoSize = true;
-            this.lblCompanyCode.Location = new System.Drawing.Point(658, 101);
+            this.lblCompanyCode.Location = new System.Drawing.Point(515, 84);
             this.lblCompanyCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompanyCode.Name = "lblCompanyCode";
-            this.lblCompanyCode.Size = new System.Drawing.Size(46, 21);
+            this.lblCompanyCode.Size = new System.Drawing.Size(39, 17);
             this.lblCompanyCode.TabIndex = 28;
             this.lblCompanyCode.Text = "Code";
             // 
@@ -332,20 +332,20 @@
             this.tbxCompanyDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxCompanyDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxCompanyDescription.Enabled = false;
-            this.tbxCompanyDescription.Location = new System.Drawing.Point(662, 71);
-            this.tbxCompanyDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxCompanyDescription.Location = new System.Drawing.Point(518, 59);
+            this.tbxCompanyDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxCompanyDescription.MaxLength = 75;
             this.tbxCompanyDescription.Name = "tbxCompanyDescription";
-            this.tbxCompanyDescription.Size = new System.Drawing.Size(333, 29);
+            this.tbxCompanyDescription.Size = new System.Drawing.Size(259, 25);
             this.tbxCompanyDescription.TabIndex = 25;
             // 
             // lblCompanyDescription
             // 
             this.lblCompanyDescription.AutoSize = true;
-            this.lblCompanyDescription.Location = new System.Drawing.Point(658, 47);
+            this.lblCompanyDescription.Location = new System.Drawing.Point(515, 40);
             this.lblCompanyDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompanyDescription.Name = "lblCompanyDescription";
-            this.lblCompanyDescription.Size = new System.Drawing.Size(52, 21);
+            this.lblCompanyDescription.Size = new System.Drawing.Size(43, 17);
             this.lblCompanyDescription.TabIndex = 24;
             this.lblCompanyDescription.Text = "Name";
             // 
@@ -355,10 +355,10 @@
             this.btnEditCompany.FlatAppearance.BorderSize = 0;
             this.btnEditCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditCompany.ForeColor = System.Drawing.Color.White;
-            this.btnEditCompany.Location = new System.Drawing.Point(769, 3);
-            this.btnEditCompany.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditCompany.Location = new System.Drawing.Point(598, 4);
+            this.btnEditCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditCompany.Name = "btnEditCompany";
-            this.btnEditCompany.Size = new System.Drawing.Size(102, 42);
+            this.btnEditCompany.Size = new System.Drawing.Size(79, 34);
             this.btnEditCompany.TabIndex = 22;
             this.btnEditCompany.Text = "&Edit";
             this.btnEditCompany.UseVisualStyleBackColor = false;
@@ -370,10 +370,10 @@
             this.btnNewCompany.FlatAppearance.BorderSize = 0;
             this.btnNewCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewCompany.ForeColor = System.Drawing.Color.White;
-            this.btnNewCompany.Location = new System.Drawing.Point(662, 3);
-            this.btnNewCompany.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewCompany.Location = new System.Drawing.Point(515, 4);
+            this.btnNewCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewCompany.Name = "btnNewCompany";
-            this.btnNewCompany.Size = new System.Drawing.Size(102, 42);
+            this.btnNewCompany.Size = new System.Drawing.Size(79, 34);
             this.btnNewCompany.TabIndex = 21;
             this.btnNewCompany.Text = "&New";
             this.btnNewCompany.UseVisualStyleBackColor = false;
@@ -393,7 +393,7 @@
             this.dgvCompanies.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -406,7 +406,7 @@
             this.colCompanyCode});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -415,15 +415,15 @@
             this.dgvCompanies.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvCompanies.EnableHeadersVisualStyles = false;
             this.dgvCompanies.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvCompanies.Location = new System.Drawing.Point(2, 3);
-            this.dgvCompanies.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvCompanies.Location = new System.Drawing.Point(2, 2);
+            this.dgvCompanies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvCompanies.MultiSelect = false;
             this.dgvCompanies.Name = "dgvCompanies";
             this.dgvCompanies.ReadOnly = true;
             this.dgvCompanies.RowHeadersVisible = false;
             this.dgvCompanies.RowTemplate.Height = 30;
             this.dgvCompanies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompanies.Size = new System.Drawing.Size(655, 422);
+            this.dgvCompanies.Size = new System.Drawing.Size(509, 345);
             this.dgvCompanies.TabIndex = 13;
             this.dgvCompanies.SelectionChanged += new System.EventHandler(this.DgvCompanies_SelectionChanged);
             // 
@@ -440,7 +440,7 @@
             this.colCompanyCode.HeaderText = "Code";
             this.colCompanyCode.Name = "colCompanyCode";
             this.colCompanyCode.ReadOnly = true;
-            this.colCompanyCode.Width = 70;
+            this.colCompanyCode.Width = 63;
             // 
             // tpBranches
             // 
@@ -455,11 +455,11 @@
             this.tpBranches.Controls.Add(this.btnNewBranches);
             this.tpBranches.Controls.Add(this.dgvBranches);
             this.tpBranches.ForeColor = System.Drawing.Color.Red;
-            this.tpBranches.Location = new System.Drawing.Point(4, 54);
-            this.tpBranches.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpBranches.Location = new System.Drawing.Point(4, 40);
+            this.tpBranches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpBranches.Name = "tpBranches";
-            this.tpBranches.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpBranches.Size = new System.Drawing.Size(1179, 428);
+            this.tpBranches.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBranches.Size = new System.Drawing.Size(915, 349);
             this.tpBranches.TabIndex = 0;
             this.tpBranches.Text = "Branches";
             // 
@@ -469,10 +469,10 @@
             this.btnCancelBranch.FlatAppearance.BorderSize = 0;
             this.btnCancelBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelBranch.ForeColor = System.Drawing.Color.White;
-            this.btnCancelBranch.Location = new System.Drawing.Point(893, 157);
-            this.btnCancelBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelBranch.Location = new System.Drawing.Point(698, 131);
+            this.btnCancelBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelBranch.Name = "btnCancelBranch";
-            this.btnCancelBranch.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelBranch.Size = new System.Drawing.Size(79, 34);
             this.btnCancelBranch.TabIndex = 21;
             this.btnCancelBranch.Text = "&Cancel";
             this.btnCancelBranch.UseVisualStyleBackColor = false;
@@ -483,20 +483,20 @@
             this.tbxBranchCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxBranchCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxBranchCode.Enabled = false;
-            this.tbxBranchCode.Location = new System.Drawing.Point(662, 124);
-            this.tbxBranchCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxBranchCode.Location = new System.Drawing.Point(518, 102);
+            this.tbxBranchCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxBranchCode.MaxLength = 9;
             this.tbxBranchCode.Name = "tbxBranchCode";
-            this.tbxBranchCode.Size = new System.Drawing.Size(333, 29);
+            this.tbxBranchCode.Size = new System.Drawing.Size(259, 25);
             this.tbxBranchCode.TabIndex = 20;
             // 
             // lblBranchCode
             // 
             this.lblBranchCode.AutoSize = true;
-            this.lblBranchCode.Location = new System.Drawing.Point(658, 101);
+            this.lblBranchCode.Location = new System.Drawing.Point(515, 84);
             this.lblBranchCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBranchCode.Name = "lblBranchCode";
-            this.lblBranchCode.Size = new System.Drawing.Size(46, 21);
+            this.lblBranchCode.Size = new System.Drawing.Size(39, 17);
             this.lblBranchCode.TabIndex = 19;
             this.lblBranchCode.Text = "Code";
             // 
@@ -506,10 +506,10 @@
             this.btnSaveBranch.FlatAppearance.BorderSize = 0;
             this.btnSaveBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveBranch.ForeColor = System.Drawing.Color.White;
-            this.btnSaveBranch.Location = new System.Drawing.Point(785, 157);
-            this.btnSaveBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveBranch.Location = new System.Drawing.Point(614, 131);
+            this.btnSaveBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveBranch.Name = "btnSaveBranch";
-            this.btnSaveBranch.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveBranch.Size = new System.Drawing.Size(79, 34);
             this.btnSaveBranch.TabIndex = 17;
             this.btnSaveBranch.Text = "&Save";
             this.btnSaveBranch.UseVisualStyleBackColor = false;
@@ -520,20 +520,20 @@
             this.tbxBranchDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxBranchDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxBranchDescription.Enabled = false;
-            this.tbxBranchDescription.Location = new System.Drawing.Point(662, 71);
-            this.tbxBranchDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxBranchDescription.Location = new System.Drawing.Point(518, 59);
+            this.tbxBranchDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxBranchDescription.MaxLength = 75;
             this.tbxBranchDescription.Name = "tbxBranchDescription";
-            this.tbxBranchDescription.Size = new System.Drawing.Size(333, 29);
+            this.tbxBranchDescription.Size = new System.Drawing.Size(259, 25);
             this.tbxBranchDescription.TabIndex = 16;
             // 
             // lblBranchDescription
             // 
             this.lblBranchDescription.AutoSize = true;
-            this.lblBranchDescription.Location = new System.Drawing.Point(658, 47);
+            this.lblBranchDescription.Location = new System.Drawing.Point(515, 40);
             this.lblBranchDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBranchDescription.Name = "lblBranchDescription";
-            this.lblBranchDescription.Size = new System.Drawing.Size(52, 21);
+            this.lblBranchDescription.Size = new System.Drawing.Size(43, 17);
             this.lblBranchDescription.TabIndex = 15;
             this.lblBranchDescription.Text = "Name";
             // 
@@ -543,10 +543,10 @@
             this.btnRemoveBranch.FlatAppearance.BorderSize = 0;
             this.btnRemoveBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveBranch.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveBranch.Location = new System.Drawing.Point(678, 157);
-            this.btnRemoveBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveBranch.Location = new System.Drawing.Point(530, 131);
+            this.btnRemoveBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveBranch.Name = "btnRemoveBranch";
-            this.btnRemoveBranch.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveBranch.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveBranch.TabIndex = 14;
             this.btnRemoveBranch.Text = "&Remove";
             this.btnRemoveBranch.UseVisualStyleBackColor = false;
@@ -558,10 +558,10 @@
             this.btnEditBranch.FlatAppearance.BorderSize = 0;
             this.btnEditBranch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditBranch.ForeColor = System.Drawing.Color.White;
-            this.btnEditBranch.Location = new System.Drawing.Point(769, 3);
-            this.btnEditBranch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditBranch.Location = new System.Drawing.Point(598, 4);
+            this.btnEditBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditBranch.Name = "btnEditBranch";
-            this.btnEditBranch.Size = new System.Drawing.Size(102, 42);
+            this.btnEditBranch.Size = new System.Drawing.Size(79, 34);
             this.btnEditBranch.TabIndex = 13;
             this.btnEditBranch.Text = "&Edit";
             this.btnEditBranch.UseVisualStyleBackColor = false;
@@ -573,10 +573,10 @@
             this.btnNewBranches.FlatAppearance.BorderSize = 0;
             this.btnNewBranches.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewBranches.ForeColor = System.Drawing.Color.White;
-            this.btnNewBranches.Location = new System.Drawing.Point(662, 3);
-            this.btnNewBranches.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewBranches.Location = new System.Drawing.Point(515, 4);
+            this.btnNewBranches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewBranches.Name = "btnNewBranches";
-            this.btnNewBranches.Size = new System.Drawing.Size(102, 42);
+            this.btnNewBranches.Size = new System.Drawing.Size(79, 34);
             this.btnNewBranches.TabIndex = 11;
             this.btnNewBranches.Text = "&New";
             this.btnNewBranches.UseVisualStyleBackColor = false;
@@ -596,7 +596,7 @@
             this.dgvBranches.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -609,7 +609,7 @@
             this.colBranchCode});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
@@ -618,15 +618,15 @@
             this.dgvBranches.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvBranches.EnableHeadersVisualStyles = false;
             this.dgvBranches.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvBranches.Location = new System.Drawing.Point(2, 3);
-            this.dgvBranches.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvBranches.Location = new System.Drawing.Point(2, 2);
+            this.dgvBranches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvBranches.MultiSelect = false;
             this.dgvBranches.Name = "dgvBranches";
             this.dgvBranches.ReadOnly = true;
             this.dgvBranches.RowHeadersVisible = false;
             this.dgvBranches.RowTemplate.Height = 30;
             this.dgvBranches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBranches.Size = new System.Drawing.Size(655, 422);
+            this.dgvBranches.Size = new System.Drawing.Size(509, 345);
             this.dgvBranches.TabIndex = 12;
             this.dgvBranches.SelectionChanged += new System.EventHandler(this.DgvBranches_SelectionChanged);
             // 
@@ -643,7 +643,7 @@
             this.colBranchCode.HeaderText = "Code";
             this.colBranchCode.Name = "colBranchCode";
             this.colBranchCode.ReadOnly = true;
-            this.colBranchCode.Width = 70;
+            this.colBranchCode.Width = 63;
             // 
             // tpClassifications
             // 
@@ -660,11 +660,11 @@
             this.tpClassifications.Controls.Add(this.btnNewClassification);
             this.tpClassifications.Controls.Add(this.dgvClassifications);
             this.tpClassifications.ForeColor = System.Drawing.Color.Red;
-            this.tpClassifications.Location = new System.Drawing.Point(4, 54);
-            this.tpClassifications.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpClassifications.Location = new System.Drawing.Point(4, 40);
+            this.tpClassifications.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpClassifications.Name = "tpClassifications";
-            this.tpClassifications.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpClassifications.Size = new System.Drawing.Size(1179, 428);
+            this.tpClassifications.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpClassifications.Size = new System.Drawing.Size(915, 349);
             this.tpClassifications.TabIndex = 2;
             this.tpClassifications.Text = "Account Descriptions";
             // 
@@ -674,10 +674,10 @@
             this.cmbxClassificationMeasurementUnit.Enabled = false;
             this.cmbxClassificationMeasurementUnit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxClassificationMeasurementUnit.FormattingEnabled = true;
-            this.cmbxClassificationMeasurementUnit.Location = new System.Drawing.Point(662, 178);
-            this.cmbxClassificationMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxClassificationMeasurementUnit.Location = new System.Drawing.Point(518, 146);
+            this.cmbxClassificationMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxClassificationMeasurementUnit.Name = "cmbxClassificationMeasurementUnit";
-            this.cmbxClassificationMeasurementUnit.Size = new System.Drawing.Size(334, 29);
+            this.cmbxClassificationMeasurementUnit.Size = new System.Drawing.Size(261, 25);
             this.cmbxClassificationMeasurementUnit.TabIndex = 37;
             this.cmbxClassificationMeasurementUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
             this.cmbxClassificationMeasurementUnit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
@@ -685,10 +685,10 @@
             // lblClassificationMeasurementUnit
             // 
             this.lblClassificationMeasurementUnit.AutoSize = true;
-            this.lblClassificationMeasurementUnit.Location = new System.Drawing.Point(658, 155);
+            this.lblClassificationMeasurementUnit.Location = new System.Drawing.Point(515, 127);
             this.lblClassificationMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClassificationMeasurementUnit.Name = "lblClassificationMeasurementUnit";
-            this.lblClassificationMeasurementUnit.Size = new System.Drawing.Size(139, 21);
+            this.lblClassificationMeasurementUnit.Size = new System.Drawing.Size(115, 17);
             this.lblClassificationMeasurementUnit.TabIndex = 36;
             this.lblClassificationMeasurementUnit.Text = "Measurement Unit";
             // 
@@ -698,10 +698,10 @@
             this.btnCancelClassification.FlatAppearance.BorderSize = 0;
             this.btnCancelClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelClassification.ForeColor = System.Drawing.Color.White;
-            this.btnCancelClassification.Location = new System.Drawing.Point(893, 211);
-            this.btnCancelClassification.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelClassification.Location = new System.Drawing.Point(700, 175);
+            this.btnCancelClassification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelClassification.Name = "btnCancelClassification";
-            this.btnCancelClassification.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelClassification.Size = new System.Drawing.Size(79, 34);
             this.btnCancelClassification.TabIndex = 35;
             this.btnCancelClassification.Text = "&Cancel";
             this.btnCancelClassification.UseVisualStyleBackColor = false;
@@ -713,10 +713,10 @@
             this.btnSaveClassification.FlatAppearance.BorderSize = 0;
             this.btnSaveClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveClassification.ForeColor = System.Drawing.Color.White;
-            this.btnSaveClassification.Location = new System.Drawing.Point(785, 211);
-            this.btnSaveClassification.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveClassification.Location = new System.Drawing.Point(616, 175);
+            this.btnSaveClassification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveClassification.Name = "btnSaveClassification";
-            this.btnSaveClassification.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveClassification.Size = new System.Drawing.Size(79, 34);
             this.btnSaveClassification.TabIndex = 34;
             this.btnSaveClassification.Text = "&Save";
             this.btnSaveClassification.UseVisualStyleBackColor = false;
@@ -728,10 +728,10 @@
             this.btnRemoveClassification.FlatAppearance.BorderSize = 0;
             this.btnRemoveClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveClassification.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveClassification.Location = new System.Drawing.Point(678, 211);
-            this.btnRemoveClassification.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveClassification.Location = new System.Drawing.Point(532, 175);
+            this.btnRemoveClassification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveClassification.Name = "btnRemoveClassification";
-            this.btnRemoveClassification.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveClassification.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveClassification.TabIndex = 33;
             this.btnRemoveClassification.Text = "&Remove";
             this.btnRemoveClassification.UseVisualStyleBackColor = false;
@@ -742,20 +742,20 @@
             this.tbxClassificationCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxClassificationCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxClassificationCode.Enabled = false;
-            this.tbxClassificationCode.Location = new System.Drawing.Point(662, 124);
-            this.tbxClassificationCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxClassificationCode.Location = new System.Drawing.Point(518, 102);
+            this.tbxClassificationCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxClassificationCode.MaxLength = 9;
             this.tbxClassificationCode.Name = "tbxClassificationCode";
-            this.tbxClassificationCode.Size = new System.Drawing.Size(333, 29);
+            this.tbxClassificationCode.Size = new System.Drawing.Size(259, 25);
             this.tbxClassificationCode.TabIndex = 29;
             // 
             // lblClassificationCode
             // 
             this.lblClassificationCode.AutoSize = true;
-            this.lblClassificationCode.Location = new System.Drawing.Point(658, 101);
+            this.lblClassificationCode.Location = new System.Drawing.Point(515, 84);
             this.lblClassificationCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClassificationCode.Name = "lblClassificationCode";
-            this.lblClassificationCode.Size = new System.Drawing.Size(46, 21);
+            this.lblClassificationCode.Size = new System.Drawing.Size(39, 17);
             this.lblClassificationCode.TabIndex = 28;
             this.lblClassificationCode.Text = "Code";
             // 
@@ -764,20 +764,20 @@
             this.tbxClassificationDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxClassificationDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxClassificationDescription.Enabled = false;
-            this.tbxClassificationDescription.Location = new System.Drawing.Point(662, 71);
-            this.tbxClassificationDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxClassificationDescription.Location = new System.Drawing.Point(518, 59);
+            this.tbxClassificationDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxClassificationDescription.MaxLength = 75;
             this.tbxClassificationDescription.Name = "tbxClassificationDescription";
-            this.tbxClassificationDescription.Size = new System.Drawing.Size(333, 29);
+            this.tbxClassificationDescription.Size = new System.Drawing.Size(259, 25);
             this.tbxClassificationDescription.TabIndex = 25;
             // 
             // lblClassificationDescription
             // 
             this.lblClassificationDescription.AutoSize = true;
-            this.lblClassificationDescription.Location = new System.Drawing.Point(658, 47);
+            this.lblClassificationDescription.Location = new System.Drawing.Point(515, 40);
             this.lblClassificationDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClassificationDescription.Name = "lblClassificationDescription";
-            this.lblClassificationDescription.Size = new System.Drawing.Size(52, 21);
+            this.lblClassificationDescription.Size = new System.Drawing.Size(43, 17);
             this.lblClassificationDescription.TabIndex = 24;
             this.lblClassificationDescription.Text = "Name";
             // 
@@ -787,10 +787,10 @@
             this.btnEditClassification.FlatAppearance.BorderSize = 0;
             this.btnEditClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditClassification.ForeColor = System.Drawing.Color.White;
-            this.btnEditClassification.Location = new System.Drawing.Point(769, 3);
-            this.btnEditClassification.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditClassification.Location = new System.Drawing.Point(598, 4);
+            this.btnEditClassification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditClassification.Name = "btnEditClassification";
-            this.btnEditClassification.Size = new System.Drawing.Size(102, 42);
+            this.btnEditClassification.Size = new System.Drawing.Size(79, 34);
             this.btnEditClassification.TabIndex = 22;
             this.btnEditClassification.Text = "&Edit";
             this.btnEditClassification.UseVisualStyleBackColor = false;
@@ -802,10 +802,10 @@
             this.btnNewClassification.FlatAppearance.BorderSize = 0;
             this.btnNewClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewClassification.ForeColor = System.Drawing.Color.White;
-            this.btnNewClassification.Location = new System.Drawing.Point(662, 3);
-            this.btnNewClassification.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewClassification.Location = new System.Drawing.Point(515, 4);
+            this.btnNewClassification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewClassification.Name = "btnNewClassification";
-            this.btnNewClassification.Size = new System.Drawing.Size(102, 42);
+            this.btnNewClassification.Size = new System.Drawing.Size(79, 34);
             this.btnNewClassification.TabIndex = 21;
             this.btnNewClassification.Text = "&New";
             this.btnNewClassification.UseVisualStyleBackColor = false;
@@ -825,7 +825,7 @@
             this.dgvClassifications.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -839,7 +839,7 @@
             this.colClassificationMeasurementUnit});
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
@@ -848,15 +848,15 @@
             this.dgvClassifications.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvClassifications.EnableHeadersVisualStyles = false;
             this.dgvClassifications.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvClassifications.Location = new System.Drawing.Point(2, 3);
-            this.dgvClassifications.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvClassifications.Location = new System.Drawing.Point(2, 2);
+            this.dgvClassifications.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvClassifications.MultiSelect = false;
             this.dgvClassifications.Name = "dgvClassifications";
             this.dgvClassifications.ReadOnly = true;
             this.dgvClassifications.RowHeadersVisible = false;
             this.dgvClassifications.RowTemplate.Height = 30;
             this.dgvClassifications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClassifications.Size = new System.Drawing.Size(655, 422);
+            this.dgvClassifications.Size = new System.Drawing.Size(509, 345);
             this.dgvClassifications.TabIndex = 13;
             this.dgvClassifications.SelectionChanged += new System.EventHandler(this.DgvClassifications_SelectionChanged);
             // 
@@ -873,7 +873,7 @@
             this.colClassificationCode.HeaderText = "Code";
             this.colClassificationCode.Name = "colClassificationCode";
             this.colClassificationCode.ReadOnly = true;
-            this.colClassificationCode.Width = 70;
+            this.colClassificationCode.Width = 63;
             // 
             // colClassificationMeasurementUnit
             // 
@@ -881,7 +881,7 @@
             this.colClassificationMeasurementUnit.HeaderText = "Measurement Unit";
             this.colClassificationMeasurementUnit.Name = "colClassificationMeasurementUnit";
             this.colClassificationMeasurementUnit.ReadOnly = true;
-            this.colClassificationMeasurementUnit.Width = 149;
+            this.colClassificationMeasurementUnit.Width = 127;
             // 
             // tpMeasurementUnits
             // 
@@ -896,11 +896,11 @@
             this.tpMeasurementUnits.Controls.Add(this.btnNewMeasurementUnit);
             this.tpMeasurementUnits.Controls.Add(this.dgvMeasurementUnits);
             this.tpMeasurementUnits.ForeColor = System.Drawing.Color.Red;
-            this.tpMeasurementUnits.Location = new System.Drawing.Point(4, 54);
-            this.tpMeasurementUnits.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpMeasurementUnits.Location = new System.Drawing.Point(4, 40);
+            this.tpMeasurementUnits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpMeasurementUnits.Name = "tpMeasurementUnits";
-            this.tpMeasurementUnits.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpMeasurementUnits.Size = new System.Drawing.Size(1179, 428);
+            this.tpMeasurementUnits.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpMeasurementUnits.Size = new System.Drawing.Size(915, 349);
             this.tpMeasurementUnits.TabIndex = 4;
             this.tpMeasurementUnits.Text = "Measurement Units";
             // 
@@ -910,10 +910,10 @@
             this.btnCancelMeasurementUnit.FlatAppearance.BorderSize = 0;
             this.btnCancelMeasurementUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelMeasurementUnit.ForeColor = System.Drawing.Color.White;
-            this.btnCancelMeasurementUnit.Location = new System.Drawing.Point(893, 157);
-            this.btnCancelMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelMeasurementUnit.Location = new System.Drawing.Point(698, 131);
+            this.btnCancelMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelMeasurementUnit.Name = "btnCancelMeasurementUnit";
-            this.btnCancelMeasurementUnit.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelMeasurementUnit.Size = new System.Drawing.Size(79, 34);
             this.btnCancelMeasurementUnit.TabIndex = 31;
             this.btnCancelMeasurementUnit.Text = "&Cancel";
             this.btnCancelMeasurementUnit.UseVisualStyleBackColor = false;
@@ -923,20 +923,20 @@
             // 
             this.tbxMeasurementUnitSymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxMeasurementUnitSymbol.Enabled = false;
-            this.tbxMeasurementUnitSymbol.Location = new System.Drawing.Point(662, 124);
-            this.tbxMeasurementUnitSymbol.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxMeasurementUnitSymbol.Location = new System.Drawing.Point(518, 102);
+            this.tbxMeasurementUnitSymbol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxMeasurementUnitSymbol.MaxLength = 9;
             this.tbxMeasurementUnitSymbol.Name = "tbxMeasurementUnitSymbol";
-            this.tbxMeasurementUnitSymbol.Size = new System.Drawing.Size(333, 29);
+            this.tbxMeasurementUnitSymbol.Size = new System.Drawing.Size(259, 25);
             this.tbxMeasurementUnitSymbol.TabIndex = 30;
             // 
             // lblMeasurementUnitSymbol
             // 
             this.lblMeasurementUnitSymbol.AutoSize = true;
-            this.lblMeasurementUnitSymbol.Location = new System.Drawing.Point(658, 101);
+            this.lblMeasurementUnitSymbol.Location = new System.Drawing.Point(515, 84);
             this.lblMeasurementUnitSymbol.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMeasurementUnitSymbol.Name = "lblMeasurementUnitSymbol";
-            this.lblMeasurementUnitSymbol.Size = new System.Drawing.Size(63, 21);
+            this.lblMeasurementUnitSymbol.Size = new System.Drawing.Size(51, 17);
             this.lblMeasurementUnitSymbol.TabIndex = 29;
             this.lblMeasurementUnitSymbol.Text = "Symbol";
             // 
@@ -946,10 +946,10 @@
             this.btnSaveMeasurementUnit.FlatAppearance.BorderSize = 0;
             this.btnSaveMeasurementUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveMeasurementUnit.ForeColor = System.Drawing.Color.White;
-            this.btnSaveMeasurementUnit.Location = new System.Drawing.Point(785, 157);
-            this.btnSaveMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveMeasurementUnit.Location = new System.Drawing.Point(614, 131);
+            this.btnSaveMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveMeasurementUnit.Name = "btnSaveMeasurementUnit";
-            this.btnSaveMeasurementUnit.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveMeasurementUnit.Size = new System.Drawing.Size(79, 34);
             this.btnSaveMeasurementUnit.TabIndex = 28;
             this.btnSaveMeasurementUnit.Text = "&Save";
             this.btnSaveMeasurementUnit.UseVisualStyleBackColor = false;
@@ -960,20 +960,20 @@
             this.tbxMeasurementUnitDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxMeasurementUnitDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxMeasurementUnitDescription.Enabled = false;
-            this.tbxMeasurementUnitDescription.Location = new System.Drawing.Point(662, 71);
-            this.tbxMeasurementUnitDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxMeasurementUnitDescription.Location = new System.Drawing.Point(518, 59);
+            this.tbxMeasurementUnitDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxMeasurementUnitDescription.MaxLength = 75;
             this.tbxMeasurementUnitDescription.Name = "tbxMeasurementUnitDescription";
-            this.tbxMeasurementUnitDescription.Size = new System.Drawing.Size(333, 29);
+            this.tbxMeasurementUnitDescription.Size = new System.Drawing.Size(259, 25);
             this.tbxMeasurementUnitDescription.TabIndex = 27;
             // 
             // lblMeasurementUnitDescription
             // 
             this.lblMeasurementUnitDescription.AutoSize = true;
-            this.lblMeasurementUnitDescription.Location = new System.Drawing.Point(658, 47);
+            this.lblMeasurementUnitDescription.Location = new System.Drawing.Point(515, 40);
             this.lblMeasurementUnitDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMeasurementUnitDescription.Name = "lblMeasurementUnitDescription";
-            this.lblMeasurementUnitDescription.Size = new System.Drawing.Size(52, 21);
+            this.lblMeasurementUnitDescription.Size = new System.Drawing.Size(43, 17);
             this.lblMeasurementUnitDescription.TabIndex = 26;
             this.lblMeasurementUnitDescription.Text = "Name";
             // 
@@ -983,10 +983,10 @@
             this.btnRemoveMeasurementUnit.FlatAppearance.BorderSize = 0;
             this.btnRemoveMeasurementUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveMeasurementUnit.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveMeasurementUnit.Location = new System.Drawing.Point(678, 157);
-            this.btnRemoveMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveMeasurementUnit.Location = new System.Drawing.Point(530, 131);
+            this.btnRemoveMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveMeasurementUnit.Name = "btnRemoveMeasurementUnit";
-            this.btnRemoveMeasurementUnit.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveMeasurementUnit.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveMeasurementUnit.TabIndex = 25;
             this.btnRemoveMeasurementUnit.Text = "&Remove";
             this.btnRemoveMeasurementUnit.UseVisualStyleBackColor = false;
@@ -998,10 +998,10 @@
             this.btnEditMeasurementUnit.FlatAppearance.BorderSize = 0;
             this.btnEditMeasurementUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditMeasurementUnit.ForeColor = System.Drawing.Color.White;
-            this.btnEditMeasurementUnit.Location = new System.Drawing.Point(769, 3);
-            this.btnEditMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditMeasurementUnit.Location = new System.Drawing.Point(598, 4);
+            this.btnEditMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditMeasurementUnit.Name = "btnEditMeasurementUnit";
-            this.btnEditMeasurementUnit.Size = new System.Drawing.Size(102, 42);
+            this.btnEditMeasurementUnit.Size = new System.Drawing.Size(79, 34);
             this.btnEditMeasurementUnit.TabIndex = 24;
             this.btnEditMeasurementUnit.Text = "&Edit";
             this.btnEditMeasurementUnit.UseVisualStyleBackColor = false;
@@ -1013,10 +1013,10 @@
             this.btnNewMeasurementUnit.FlatAppearance.BorderSize = 0;
             this.btnNewMeasurementUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewMeasurementUnit.ForeColor = System.Drawing.Color.White;
-            this.btnNewMeasurementUnit.Location = new System.Drawing.Point(662, 3);
-            this.btnNewMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewMeasurementUnit.Location = new System.Drawing.Point(515, 4);
+            this.btnNewMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewMeasurementUnit.Name = "btnNewMeasurementUnit";
-            this.btnNewMeasurementUnit.Size = new System.Drawing.Size(102, 42);
+            this.btnNewMeasurementUnit.Size = new System.Drawing.Size(79, 34);
             this.btnNewMeasurementUnit.TabIndex = 22;
             this.btnNewMeasurementUnit.Text = "&New";
             this.btnNewMeasurementUnit.UseVisualStyleBackColor = false;
@@ -1036,7 +1036,7 @@
             this.dgvMeasurementUnits.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1049,7 +1049,7 @@
             this.colMeasurementUnitSymbol});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
@@ -1058,15 +1058,15 @@
             this.dgvMeasurementUnits.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvMeasurementUnits.EnableHeadersVisualStyles = false;
             this.dgvMeasurementUnits.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvMeasurementUnits.Location = new System.Drawing.Point(2, 3);
-            this.dgvMeasurementUnits.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvMeasurementUnits.Location = new System.Drawing.Point(2, 2);
+            this.dgvMeasurementUnits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvMeasurementUnits.MultiSelect = false;
             this.dgvMeasurementUnits.Name = "dgvMeasurementUnits";
             this.dgvMeasurementUnits.ReadOnly = true;
             this.dgvMeasurementUnits.RowHeadersVisible = false;
             this.dgvMeasurementUnits.RowTemplate.Height = 30;
             this.dgvMeasurementUnits.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMeasurementUnits.Size = new System.Drawing.Size(655, 422);
+            this.dgvMeasurementUnits.Size = new System.Drawing.Size(509, 345);
             this.dgvMeasurementUnits.TabIndex = 23;
             this.dgvMeasurementUnits.SelectionChanged += new System.EventHandler(this.DgvMeasurementUnits_SelectionChanged);
             // 
@@ -1083,7 +1083,7 @@
             this.colMeasurementUnitSymbol.HeaderText = "Symbol";
             this.colMeasurementUnitSymbol.Name = "colMeasurementUnitSymbol";
             this.colMeasurementUnitSymbol.ReadOnly = true;
-            this.colMeasurementUnitSymbol.Width = 87;
+            this.colMeasurementUnitSymbol.Width = 75;
             // 
             // tpPaymentTerms
             // 
@@ -1098,26 +1098,26 @@
             this.tpPaymentTerms.Controls.Add(this.btnNewPaymentTerm);
             this.tpPaymentTerms.Controls.Add(this.dgvPaymentTerms);
             this.tpPaymentTerms.ForeColor = System.Drawing.Color.Red;
-            this.tpPaymentTerms.Location = new System.Drawing.Point(4, 54);
-            this.tpPaymentTerms.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpPaymentTerms.Location = new System.Drawing.Point(4, 40);
+            this.tpPaymentTerms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpPaymentTerms.Name = "tpPaymentTerms";
-            this.tpPaymentTerms.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpPaymentTerms.Size = new System.Drawing.Size(1179, 428);
+            this.tpPaymentTerms.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpPaymentTerms.Size = new System.Drawing.Size(915, 349);
             this.tpPaymentTerms.TabIndex = 5;
             this.tpPaymentTerms.Text = "Payment Terms";
             // 
             // nudPaymentTermDayCount
             // 
             this.nudPaymentTermDayCount.Enabled = false;
-            this.nudPaymentTermDayCount.Location = new System.Drawing.Point(662, 124);
-            this.nudPaymentTermDayCount.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudPaymentTermDayCount.Location = new System.Drawing.Point(518, 102);
+            this.nudPaymentTermDayCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudPaymentTermDayCount.Maximum = new decimal(new int[] {
             365,
             0,
             0,
             0});
             this.nudPaymentTermDayCount.Name = "nudPaymentTermDayCount";
-            this.nudPaymentTermDayCount.Size = new System.Drawing.Size(333, 29);
+            this.nudPaymentTermDayCount.Size = new System.Drawing.Size(259, 25);
             this.nudPaymentTermDayCount.TabIndex = 42;
             // 
             // btnCancelPaymentTerm
@@ -1126,10 +1126,10 @@
             this.btnCancelPaymentTerm.FlatAppearance.BorderSize = 0;
             this.btnCancelPaymentTerm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelPaymentTerm.ForeColor = System.Drawing.Color.White;
-            this.btnCancelPaymentTerm.Location = new System.Drawing.Point(893, 157);
-            this.btnCancelPaymentTerm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelPaymentTerm.Location = new System.Drawing.Point(698, 131);
+            this.btnCancelPaymentTerm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelPaymentTerm.Name = "btnCancelPaymentTerm";
-            this.btnCancelPaymentTerm.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelPaymentTerm.Size = new System.Drawing.Size(79, 34);
             this.btnCancelPaymentTerm.TabIndex = 41;
             this.btnCancelPaymentTerm.Text = "&Cancel";
             this.btnCancelPaymentTerm.UseVisualStyleBackColor = false;
@@ -1138,10 +1138,10 @@
             // lblPaymentTermDayCount
             // 
             this.lblPaymentTermDayCount.AutoSize = true;
-            this.lblPaymentTermDayCount.Location = new System.Drawing.Point(658, 101);
+            this.lblPaymentTermDayCount.Location = new System.Drawing.Point(515, 84);
             this.lblPaymentTermDayCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentTermDayCount.Name = "lblPaymentTermDayCount";
-            this.lblPaymentTermDayCount.Size = new System.Drawing.Size(83, 21);
+            this.lblPaymentTermDayCount.Size = new System.Drawing.Size(68, 17);
             this.lblPaymentTermDayCount.TabIndex = 39;
             this.lblPaymentTermDayCount.Text = "Day Count";
             // 
@@ -1151,10 +1151,10 @@
             this.btnSavePaymentTerm.FlatAppearance.BorderSize = 0;
             this.btnSavePaymentTerm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSavePaymentTerm.ForeColor = System.Drawing.Color.White;
-            this.btnSavePaymentTerm.Location = new System.Drawing.Point(785, 157);
-            this.btnSavePaymentTerm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSavePaymentTerm.Location = new System.Drawing.Point(614, 131);
+            this.btnSavePaymentTerm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSavePaymentTerm.Name = "btnSavePaymentTerm";
-            this.btnSavePaymentTerm.Size = new System.Drawing.Size(102, 42);
+            this.btnSavePaymentTerm.Size = new System.Drawing.Size(79, 34);
             this.btnSavePaymentTerm.TabIndex = 38;
             this.btnSavePaymentTerm.Text = "&Save";
             this.btnSavePaymentTerm.UseVisualStyleBackColor = false;
@@ -1165,20 +1165,20 @@
             this.tbxPaymentTermDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPaymentTermDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxPaymentTermDescription.Enabled = false;
-            this.tbxPaymentTermDescription.Location = new System.Drawing.Point(662, 71);
-            this.tbxPaymentTermDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxPaymentTermDescription.Location = new System.Drawing.Point(518, 59);
+            this.tbxPaymentTermDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxPaymentTermDescription.MaxLength = 75;
             this.tbxPaymentTermDescription.Name = "tbxPaymentTermDescription";
-            this.tbxPaymentTermDescription.Size = new System.Drawing.Size(333, 29);
+            this.tbxPaymentTermDescription.Size = new System.Drawing.Size(259, 25);
             this.tbxPaymentTermDescription.TabIndex = 37;
             // 
             // lblPaymentTermDescription
             // 
             this.lblPaymentTermDescription.AutoSize = true;
-            this.lblPaymentTermDescription.Location = new System.Drawing.Point(658, 47);
+            this.lblPaymentTermDescription.Location = new System.Drawing.Point(515, 40);
             this.lblPaymentTermDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentTermDescription.Name = "lblPaymentTermDescription";
-            this.lblPaymentTermDescription.Size = new System.Drawing.Size(52, 21);
+            this.lblPaymentTermDescription.Size = new System.Drawing.Size(43, 17);
             this.lblPaymentTermDescription.TabIndex = 36;
             this.lblPaymentTermDescription.Text = "Name";
             // 
@@ -1188,10 +1188,10 @@
             this.btnRemovePaymentTerm.FlatAppearance.BorderSize = 0;
             this.btnRemovePaymentTerm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemovePaymentTerm.ForeColor = System.Drawing.Color.White;
-            this.btnRemovePaymentTerm.Location = new System.Drawing.Point(678, 157);
-            this.btnRemovePaymentTerm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemovePaymentTerm.Location = new System.Drawing.Point(530, 131);
+            this.btnRemovePaymentTerm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemovePaymentTerm.Name = "btnRemovePaymentTerm";
-            this.btnRemovePaymentTerm.Size = new System.Drawing.Size(102, 42);
+            this.btnRemovePaymentTerm.Size = new System.Drawing.Size(79, 34);
             this.btnRemovePaymentTerm.TabIndex = 35;
             this.btnRemovePaymentTerm.Text = "&Remove";
             this.btnRemovePaymentTerm.UseVisualStyleBackColor = false;
@@ -1203,10 +1203,10 @@
             this.btnEditPaymentTerm.FlatAppearance.BorderSize = 0;
             this.btnEditPaymentTerm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditPaymentTerm.ForeColor = System.Drawing.Color.White;
-            this.btnEditPaymentTerm.Location = new System.Drawing.Point(769, 3);
-            this.btnEditPaymentTerm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditPaymentTerm.Location = new System.Drawing.Point(598, 4);
+            this.btnEditPaymentTerm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditPaymentTerm.Name = "btnEditPaymentTerm";
-            this.btnEditPaymentTerm.Size = new System.Drawing.Size(102, 42);
+            this.btnEditPaymentTerm.Size = new System.Drawing.Size(79, 34);
             this.btnEditPaymentTerm.TabIndex = 34;
             this.btnEditPaymentTerm.Text = "&Edit";
             this.btnEditPaymentTerm.UseVisualStyleBackColor = false;
@@ -1218,10 +1218,10 @@
             this.btnNewPaymentTerm.FlatAppearance.BorderSize = 0;
             this.btnNewPaymentTerm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewPaymentTerm.ForeColor = System.Drawing.Color.White;
-            this.btnNewPaymentTerm.Location = new System.Drawing.Point(662, 3);
-            this.btnNewPaymentTerm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewPaymentTerm.Location = new System.Drawing.Point(515, 4);
+            this.btnNewPaymentTerm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewPaymentTerm.Name = "btnNewPaymentTerm";
-            this.btnNewPaymentTerm.Size = new System.Drawing.Size(102, 42);
+            this.btnNewPaymentTerm.Size = new System.Drawing.Size(79, 34);
             this.btnNewPaymentTerm.TabIndex = 32;
             this.btnNewPaymentTerm.Text = "&New";
             this.btnNewPaymentTerm.UseVisualStyleBackColor = false;
@@ -1241,7 +1241,7 @@
             this.dgvPaymentTerms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1254,7 +1254,7 @@
             this.colPaymentTermDayCount});
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
@@ -1263,15 +1263,15 @@
             this.dgvPaymentTerms.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvPaymentTerms.EnableHeadersVisualStyles = false;
             this.dgvPaymentTerms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvPaymentTerms.Location = new System.Drawing.Point(2, 3);
-            this.dgvPaymentTerms.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvPaymentTerms.Location = new System.Drawing.Point(2, 2);
+            this.dgvPaymentTerms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPaymentTerms.MultiSelect = false;
             this.dgvPaymentTerms.Name = "dgvPaymentTerms";
             this.dgvPaymentTerms.ReadOnly = true;
             this.dgvPaymentTerms.RowHeadersVisible = false;
             this.dgvPaymentTerms.RowTemplate.Height = 30;
             this.dgvPaymentTerms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaymentTerms.Size = new System.Drawing.Size(655, 422);
+            this.dgvPaymentTerms.Size = new System.Drawing.Size(509, 345);
             this.dgvPaymentTerms.TabIndex = 33;
             this.dgvPaymentTerms.SelectionChanged += new System.EventHandler(this.DgvPaymentTerms_SelectionChanged);
             // 
@@ -1288,7 +1288,7 @@
             this.colPaymentTermDayCount.HeaderText = "Day Count";
             this.colPaymentTermDayCount.Name = "colPaymentTermDayCount";
             this.colPaymentTermDayCount.ReadOnly = true;
-            this.colPaymentTermDayCount.Width = 98;
+            this.colPaymentTermDayCount.Width = 85;
             // 
             // tpSuppliers
             // 
@@ -1307,11 +1307,11 @@
             this.tpSuppliers.Controls.Add(this.btnNewSupplier);
             this.tpSuppliers.Controls.Add(this.dgvSuppliers);
             this.tpSuppliers.ForeColor = System.Drawing.Color.Red;
-            this.tpSuppliers.Location = new System.Drawing.Point(4, 54);
-            this.tpSuppliers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpSuppliers.Location = new System.Drawing.Point(4, 40);
+            this.tpSuppliers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpSuppliers.Name = "tpSuppliers";
-            this.tpSuppliers.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpSuppliers.Size = new System.Drawing.Size(1179, 428);
+            this.tpSuppliers.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpSuppliers.Size = new System.Drawing.Size(915, 349);
             this.tpSuppliers.TabIndex = 6;
             this.tpSuppliers.Text = "Suppliers";
             // 
@@ -1321,10 +1321,10 @@
             this.btnCancelSupplier.FlatAppearance.BorderSize = 0;
             this.btnCancelSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnCancelSupplier.Location = new System.Drawing.Point(893, 292);
-            this.btnCancelSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelSupplier.Location = new System.Drawing.Point(698, 241);
+            this.btnCancelSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelSupplier.Name = "btnCancelSupplier";
-            this.btnCancelSupplier.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelSupplier.Size = new System.Drawing.Size(79, 34);
             this.btnCancelSupplier.TabIndex = 48;
             this.btnCancelSupplier.Text = "&Cancel";
             this.btnCancelSupplier.UseVisualStyleBackColor = false;
@@ -1336,10 +1336,10 @@
             this.btnSaveSupplier.FlatAppearance.BorderSize = 0;
             this.btnSaveSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnSaveSupplier.Location = new System.Drawing.Point(785, 292);
-            this.btnSaveSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveSupplier.Location = new System.Drawing.Point(614, 241);
+            this.btnSaveSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveSupplier.Name = "btnSaveSupplier";
-            this.btnSaveSupplier.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveSupplier.Size = new System.Drawing.Size(79, 34);
             this.btnSaveSupplier.TabIndex = 47;
             this.btnSaveSupplier.Text = "&Save";
             this.btnSaveSupplier.UseVisualStyleBackColor = false;
@@ -1351,10 +1351,10 @@
             this.btnRemoveSupplier.FlatAppearance.BorderSize = 0;
             this.btnRemoveSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSupplier.Location = new System.Drawing.Point(678, 292);
-            this.btnRemoveSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveSupplier.Location = new System.Drawing.Point(530, 241);
+            this.btnRemoveSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveSupplier.Name = "btnRemoveSupplier";
-            this.btnRemoveSupplier.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveSupplier.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveSupplier.TabIndex = 46;
             this.btnRemoveSupplier.Text = "&Remove";
             this.btnRemoveSupplier.UseVisualStyleBackColor = false;
@@ -1365,20 +1365,20 @@
             this.tbxSupplierContactNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSupplierContactNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxSupplierContactNumber.Enabled = false;
-            this.tbxSupplierContactNumber.Location = new System.Drawing.Point(662, 260);
-            this.tbxSupplierContactNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSupplierContactNumber.Location = new System.Drawing.Point(518, 212);
+            this.tbxSupplierContactNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxSupplierContactNumber.MaxLength = 75;
             this.tbxSupplierContactNumber.Name = "tbxSupplierContactNumber";
-            this.tbxSupplierContactNumber.Size = new System.Drawing.Size(333, 29);
+            this.tbxSupplierContactNumber.Size = new System.Drawing.Size(259, 25);
             this.tbxSupplierContactNumber.TabIndex = 45;
             // 
             // lblSupplierContactNumber
             // 
             this.lblSupplierContactNumber.AutoSize = true;
-            this.lblSupplierContactNumber.Location = new System.Drawing.Point(658, 236);
+            this.lblSupplierContactNumber.Location = new System.Drawing.Point(515, 193);
             this.lblSupplierContactNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplierContactNumber.Name = "lblSupplierContactNumber";
-            this.lblSupplierContactNumber.Size = new System.Drawing.Size(91, 21);
+            this.lblSupplierContactNumber.Size = new System.Drawing.Size(77, 17);
             this.lblSupplierContactNumber.TabIndex = 44;
             this.lblSupplierContactNumber.Text = "Contact No.";
             // 
@@ -1387,21 +1387,21 @@
             this.tbxSupplierAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSupplierAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxSupplierAddress.Enabled = false;
-            this.tbxSupplierAddress.Location = new System.Drawing.Point(662, 178);
-            this.tbxSupplierAddress.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSupplierAddress.Location = new System.Drawing.Point(518, 146);
+            this.tbxSupplierAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxSupplierAddress.MaxLength = 75;
             this.tbxSupplierAddress.Multiline = true;
             this.tbxSupplierAddress.Name = "tbxSupplierAddress";
-            this.tbxSupplierAddress.Size = new System.Drawing.Size(333, 56);
+            this.tbxSupplierAddress.Size = new System.Drawing.Size(259, 46);
             this.tbxSupplierAddress.TabIndex = 43;
             // 
             // lblSupplierAddress
             // 
             this.lblSupplierAddress.AutoSize = true;
-            this.lblSupplierAddress.Location = new System.Drawing.Point(658, 155);
+            this.lblSupplierAddress.Location = new System.Drawing.Point(515, 127);
             this.lblSupplierAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplierAddress.Name = "lblSupplierAddress";
-            this.lblSupplierAddress.Size = new System.Drawing.Size(66, 21);
+            this.lblSupplierAddress.Size = new System.Drawing.Size(56, 17);
             this.lblSupplierAddress.TabIndex = 42;
             this.lblSupplierAddress.Text = "Address";
             // 
@@ -1410,20 +1410,20 @@
             this.tbxSupplierCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSupplierCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxSupplierCode.Enabled = false;
-            this.tbxSupplierCode.Location = new System.Drawing.Point(662, 124);
-            this.tbxSupplierCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSupplierCode.Location = new System.Drawing.Point(518, 102);
+            this.tbxSupplierCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxSupplierCode.MaxLength = 9;
             this.tbxSupplierCode.Name = "tbxSupplierCode";
-            this.tbxSupplierCode.Size = new System.Drawing.Size(333, 29);
+            this.tbxSupplierCode.Size = new System.Drawing.Size(259, 25);
             this.tbxSupplierCode.TabIndex = 41;
             // 
             // lblSupplierCode
             // 
             this.lblSupplierCode.AutoSize = true;
-            this.lblSupplierCode.Location = new System.Drawing.Point(658, 101);
+            this.lblSupplierCode.Location = new System.Drawing.Point(515, 84);
             this.lblSupplierCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplierCode.Name = "lblSupplierCode";
-            this.lblSupplierCode.Size = new System.Drawing.Size(46, 21);
+            this.lblSupplierCode.Size = new System.Drawing.Size(39, 17);
             this.lblSupplierCode.TabIndex = 40;
             this.lblSupplierCode.Text = "Code";
             // 
@@ -1432,20 +1432,20 @@
             this.tbxSupplierDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSupplierDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxSupplierDescription.Enabled = false;
-            this.tbxSupplierDescription.Location = new System.Drawing.Point(662, 71);
-            this.tbxSupplierDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSupplierDescription.Location = new System.Drawing.Point(518, 59);
+            this.tbxSupplierDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxSupplierDescription.MaxLength = 75;
             this.tbxSupplierDescription.Name = "tbxSupplierDescription";
-            this.tbxSupplierDescription.Size = new System.Drawing.Size(333, 29);
+            this.tbxSupplierDescription.Size = new System.Drawing.Size(259, 25);
             this.tbxSupplierDescription.TabIndex = 39;
             // 
             // lblSupplierDescription
             // 
             this.lblSupplierDescription.AutoSize = true;
-            this.lblSupplierDescription.Location = new System.Drawing.Point(658, 47);
+            this.lblSupplierDescription.Location = new System.Drawing.Point(515, 40);
             this.lblSupplierDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSupplierDescription.Name = "lblSupplierDescription";
-            this.lblSupplierDescription.Size = new System.Drawing.Size(52, 21);
+            this.lblSupplierDescription.Size = new System.Drawing.Size(43, 17);
             this.lblSupplierDescription.TabIndex = 38;
             this.lblSupplierDescription.Text = "Name";
             // 
@@ -1455,10 +1455,10 @@
             this.btnEditSupplier.FlatAppearance.BorderSize = 0;
             this.btnEditSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnEditSupplier.Location = new System.Drawing.Point(769, 3);
-            this.btnEditSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditSupplier.Location = new System.Drawing.Point(598, 4);
+            this.btnEditSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditSupplier.Name = "btnEditSupplier";
-            this.btnEditSupplier.Size = new System.Drawing.Size(102, 42);
+            this.btnEditSupplier.Size = new System.Drawing.Size(79, 34);
             this.btnEditSupplier.TabIndex = 36;
             this.btnEditSupplier.Text = "&Edit";
             this.btnEditSupplier.UseVisualStyleBackColor = false;
@@ -1470,10 +1470,10 @@
             this.btnNewSupplier.FlatAppearance.BorderSize = 0;
             this.btnNewSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewSupplier.ForeColor = System.Drawing.Color.White;
-            this.btnNewSupplier.Location = new System.Drawing.Point(662, 3);
-            this.btnNewSupplier.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewSupplier.Location = new System.Drawing.Point(515, 4);
+            this.btnNewSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewSupplier.Name = "btnNewSupplier";
-            this.btnNewSupplier.Size = new System.Drawing.Size(102, 42);
+            this.btnNewSupplier.Size = new System.Drawing.Size(79, 34);
             this.btnNewSupplier.TabIndex = 35;
             this.btnNewSupplier.Text = "&New";
             this.btnNewSupplier.UseVisualStyleBackColor = false;
@@ -1493,7 +1493,7 @@
             this.dgvSuppliers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1508,7 +1508,7 @@
             this.colSupplierContactNumber});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
@@ -1517,15 +1517,15 @@
             this.dgvSuppliers.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvSuppliers.EnableHeadersVisualStyles = false;
             this.dgvSuppliers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvSuppliers.Location = new System.Drawing.Point(2, 3);
-            this.dgvSuppliers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvSuppliers.Location = new System.Drawing.Point(2, 2);
+            this.dgvSuppliers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvSuppliers.MultiSelect = false;
             this.dgvSuppliers.Name = "dgvSuppliers";
             this.dgvSuppliers.ReadOnly = true;
             this.dgvSuppliers.RowHeadersVisible = false;
             this.dgvSuppliers.RowTemplate.Height = 30;
             this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSuppliers.Size = new System.Drawing.Size(655, 422);
+            this.dgvSuppliers.Size = new System.Drawing.Size(509, 345);
             this.dgvSuppliers.TabIndex = 34;
             this.dgvSuppliers.SelectionChanged += new System.EventHandler(this.DgvSuppliers_SelectionChanged);
             // 
@@ -1535,7 +1535,7 @@
             this.colSupplier.HeaderText = "Supplier";
             this.colSupplier.Name = "colSupplier";
             this.colSupplier.ReadOnly = true;
-            this.colSupplier.Width = 92;
+            this.colSupplier.Width = 80;
             // 
             // colSupplierCode
             // 
@@ -1543,7 +1543,7 @@
             this.colSupplierCode.HeaderText = "Code";
             this.colSupplierCode.Name = "colSupplierCode";
             this.colSupplierCode.ReadOnly = true;
-            this.colSupplierCode.Width = 70;
+            this.colSupplierCode.Width = 63;
             // 
             // colSupplierAddress
             // 
@@ -1551,7 +1551,7 @@
             this.colSupplierAddress.HeaderText = "Address";
             this.colSupplierAddress.Name = "colSupplierAddress";
             this.colSupplierAddress.ReadOnly = true;
-            this.colSupplierAddress.Width = 90;
+            this.colSupplierAddress.Width = 80;
             // 
             // colSupplierContactNumber
             // 
@@ -1559,7 +1559,7 @@
             this.colSupplierContactNumber.HeaderText = "Contact No.";
             this.colSupplierContactNumber.Name = "colSupplierContactNumber";
             this.colSupplierContactNumber.ReadOnly = true;
-            this.colSupplierContactNumber.Width = 105;
+            this.colSupplierContactNumber.Width = 93;
             // 
             // tpVehicles
             // 
@@ -1576,11 +1576,11 @@
             this.tpVehicles.Controls.Add(this.btnNewVehicle);
             this.tpVehicles.Controls.Add(this.dgvVehicles);
             this.tpVehicles.ForeColor = System.Drawing.Color.Red;
-            this.tpVehicles.Location = new System.Drawing.Point(4, 54);
-            this.tpVehicles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpVehicles.Location = new System.Drawing.Point(4, 40);
+            this.tpVehicles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpVehicles.Name = "tpVehicles";
-            this.tpVehicles.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpVehicles.Size = new System.Drawing.Size(1179, 428);
+            this.tpVehicles.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpVehicles.Size = new System.Drawing.Size(915, 349);
             this.tpVehicles.TabIndex = 7;
             this.tpVehicles.Text = "Vehicles";
             this.tpVehicles.Click += new System.EventHandler(this.TpVehicles_Click);
@@ -1591,10 +1591,10 @@
             this.btnCancelVehicle.FlatAppearance.BorderSize = 0;
             this.btnCancelVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnCancelVehicle.Location = new System.Drawing.Point(893, 217);
-            this.btnCancelVehicle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelVehicle.Location = new System.Drawing.Point(700, 180);
+            this.btnCancelVehicle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelVehicle.Name = "btnCancelVehicle";
-            this.btnCancelVehicle.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelVehicle.Size = new System.Drawing.Size(79, 34);
             this.btnCancelVehicle.TabIndex = 52;
             this.btnCancelVehicle.Text = "&Cancel";
             this.btnCancelVehicle.UseVisualStyleBackColor = false;
@@ -1606,10 +1606,10 @@
             this.btnSaveVehicle.FlatAppearance.BorderSize = 0;
             this.btnSaveVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnSaveVehicle.Location = new System.Drawing.Point(785, 217);
-            this.btnSaveVehicle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveVehicle.Location = new System.Drawing.Point(616, 180);
+            this.btnSaveVehicle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveVehicle.Name = "btnSaveVehicle";
-            this.btnSaveVehicle.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveVehicle.Size = new System.Drawing.Size(79, 34);
             this.btnSaveVehicle.TabIndex = 51;
             this.btnSaveVehicle.Text = "&Save";
             this.btnSaveVehicle.UseVisualStyleBackColor = false;
@@ -1621,10 +1621,10 @@
             this.btnRemoveVehicle.FlatAppearance.BorderSize = 0;
             this.btnRemoveVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveVehicle.Location = new System.Drawing.Point(678, 217);
-            this.btnRemoveVehicle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveVehicle.Location = new System.Drawing.Point(532, 180);
+            this.btnRemoveVehicle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveVehicle.Name = "btnRemoveVehicle";
-            this.btnRemoveVehicle.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveVehicle.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveVehicle.TabIndex = 50;
             this.btnRemoveVehicle.Text = "&Remove";
             this.btnRemoveVehicle.UseVisualStyleBackColor = false;
@@ -1636,10 +1636,10 @@
             this.cmbxVehicleVehicleType.Enabled = false;
             this.cmbxVehicleVehicleType.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxVehicleVehicleType.FormattingEnabled = true;
-            this.cmbxVehicleVehicleType.Location = new System.Drawing.Point(662, 184);
-            this.cmbxVehicleVehicleType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxVehicleVehicleType.Location = new System.Drawing.Point(518, 151);
+            this.cmbxVehicleVehicleType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxVehicleVehicleType.Name = "cmbxVehicleVehicleType";
-            this.cmbxVehicleVehicleType.Size = new System.Drawing.Size(334, 29);
+            this.cmbxVehicleVehicleType.Size = new System.Drawing.Size(261, 25);
             this.cmbxVehicleVehicleType.TabIndex = 49;
             this.cmbxVehicleVehicleType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
             this.cmbxVehicleVehicleType.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
@@ -1647,10 +1647,10 @@
             // lblVehicleVehicleType
             // 
             this.lblVehicleVehicleType.AutoSize = true;
-            this.lblVehicleVehicleType.Location = new System.Drawing.Point(658, 160);
+            this.lblVehicleVehicleType.Location = new System.Drawing.Point(515, 132);
             this.lblVehicleVehicleType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVehicleVehicleType.Name = "lblVehicleVehicleType";
-            this.lblVehicleVehicleType.Size = new System.Drawing.Size(42, 21);
+            this.lblVehicleVehicleType.Size = new System.Drawing.Size(35, 17);
             this.lblVehicleVehicleType.TabIndex = 48;
             this.lblVehicleVehicleType.Text = "Type";
             // 
@@ -1659,20 +1659,20 @@
             this.tbxVehiclePlateNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxVehiclePlateNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxVehiclePlateNumber.Enabled = false;
-            this.tbxVehiclePlateNumber.Location = new System.Drawing.Point(662, 124);
-            this.tbxVehiclePlateNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxVehiclePlateNumber.Location = new System.Drawing.Point(518, 102);
+            this.tbxVehiclePlateNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxVehiclePlateNumber.MaxLength = 75;
             this.tbxVehiclePlateNumber.Name = "tbxVehiclePlateNumber";
-            this.tbxVehiclePlateNumber.Size = new System.Drawing.Size(333, 29);
+            this.tbxVehiclePlateNumber.Size = new System.Drawing.Size(259, 25);
             this.tbxVehiclePlateNumber.TabIndex = 47;
             // 
             // lblVehiclePlateNumber
             // 
             this.lblVehiclePlateNumber.AutoSize = true;
-            this.lblVehiclePlateNumber.Location = new System.Drawing.Point(658, 101);
+            this.lblVehiclePlateNumber.Location = new System.Drawing.Point(515, 84);
             this.lblVehiclePlateNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVehiclePlateNumber.Name = "lblVehiclePlateNumber";
-            this.lblVehiclePlateNumber.Size = new System.Drawing.Size(72, 21);
+            this.lblVehiclePlateNumber.Size = new System.Drawing.Size(61, 17);
             this.lblVehiclePlateNumber.TabIndex = 46;
             this.lblVehiclePlateNumber.Text = "Plate No.";
             // 
@@ -1681,20 +1681,20 @@
             this.tbxVehiclePhysicalNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxVehiclePhysicalNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxVehiclePhysicalNumber.Enabled = false;
-            this.tbxVehiclePhysicalNumber.Location = new System.Drawing.Point(662, 71);
-            this.tbxVehiclePhysicalNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxVehiclePhysicalNumber.Location = new System.Drawing.Point(518, 59);
+            this.tbxVehiclePhysicalNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxVehiclePhysicalNumber.MaxLength = 75;
             this.tbxVehiclePhysicalNumber.Name = "tbxVehiclePhysicalNumber";
-            this.tbxVehiclePhysicalNumber.Size = new System.Drawing.Size(333, 29);
+            this.tbxVehiclePhysicalNumber.Size = new System.Drawing.Size(259, 25);
             this.tbxVehiclePhysicalNumber.TabIndex = 45;
             // 
             // lblVehiclePhysicalNumber
             // 
             this.lblVehiclePhysicalNumber.AutoSize = true;
-            this.lblVehiclePhysicalNumber.Location = new System.Drawing.Point(658, 47);
+            this.lblVehiclePhysicalNumber.Location = new System.Drawing.Point(515, 40);
             this.lblVehiclePhysicalNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVehiclePhysicalNumber.Name = "lblVehiclePhysicalNumber";
-            this.lblVehiclePhysicalNumber.Size = new System.Drawing.Size(94, 21);
+            this.lblVehiclePhysicalNumber.Size = new System.Drawing.Size(78, 17);
             this.lblVehiclePhysicalNumber.TabIndex = 44;
             this.lblVehiclePhysicalNumber.Text = "Physical No.";
             // 
@@ -1704,10 +1704,10 @@
             this.btnEditVehicle.FlatAppearance.BorderSize = 0;
             this.btnEditVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnEditVehicle.Location = new System.Drawing.Point(769, 3);
-            this.btnEditVehicle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditVehicle.Location = new System.Drawing.Point(598, 4);
+            this.btnEditVehicle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditVehicle.Name = "btnEditVehicle";
-            this.btnEditVehicle.Size = new System.Drawing.Size(102, 42);
+            this.btnEditVehicle.Size = new System.Drawing.Size(79, 34);
             this.btnEditVehicle.TabIndex = 43;
             this.btnEditVehicle.Text = "&Edit";
             this.btnEditVehicle.UseVisualStyleBackColor = false;
@@ -1719,10 +1719,10 @@
             this.btnNewVehicle.FlatAppearance.BorderSize = 0;
             this.btnNewVehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewVehicle.ForeColor = System.Drawing.Color.White;
-            this.btnNewVehicle.Location = new System.Drawing.Point(662, 3);
-            this.btnNewVehicle.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewVehicle.Location = new System.Drawing.Point(515, 4);
+            this.btnNewVehicle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewVehicle.Name = "btnNewVehicle";
-            this.btnNewVehicle.Size = new System.Drawing.Size(102, 42);
+            this.btnNewVehicle.Size = new System.Drawing.Size(79, 34);
             this.btnNewVehicle.TabIndex = 42;
             this.btnNewVehicle.Text = "&New";
             this.btnNewVehicle.UseVisualStyleBackColor = false;
@@ -1742,7 +1742,7 @@
             this.dgvVehicles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1755,7 +1755,7 @@
             this.colVehicleVehicleType});
             dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White;
@@ -1764,15 +1764,15 @@
             this.dgvVehicles.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvVehicles.EnableHeadersVisualStyles = false;
             this.dgvVehicles.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvVehicles.Location = new System.Drawing.Point(2, 3);
-            this.dgvVehicles.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvVehicles.Location = new System.Drawing.Point(2, 2);
+            this.dgvVehicles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvVehicles.MultiSelect = false;
             this.dgvVehicles.Name = "dgvVehicles";
             this.dgvVehicles.ReadOnly = true;
             this.dgvVehicles.RowHeadersVisible = false;
             this.dgvVehicles.RowTemplate.Height = 30;
             this.dgvVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehicles.Size = new System.Drawing.Size(655, 422);
+            this.dgvVehicles.Size = new System.Drawing.Size(509, 345);
             this.dgvVehicles.TabIndex = 14;
             this.dgvVehicles.SelectionChanged += new System.EventHandler(this.DgvVehicles_SelectionChanged);
             // 
@@ -1789,7 +1789,7 @@
             this.colVehicleVehicleType.HeaderText = "Vehicle Type";
             this.colVehicleVehicleType.Name = "colVehicleVehicleType";
             this.colVehicleVehicleType.ReadOnly = true;
-            this.colVehicleVehicleType.Width = 109;
+            this.colVehicleVehicleType.Width = 95;
             // 
             // tpVehicleTypes
             // 
@@ -1804,11 +1804,11 @@
             this.tpVehicleTypes.Controls.Add(this.btnNewVehicleType);
             this.tpVehicleTypes.Controls.Add(this.dgvVehicleTypes);
             this.tpVehicleTypes.ForeColor = System.Drawing.Color.Red;
-            this.tpVehicleTypes.Location = new System.Drawing.Point(4, 54);
-            this.tpVehicleTypes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpVehicleTypes.Location = new System.Drawing.Point(4, 40);
+            this.tpVehicleTypes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpVehicleTypes.Name = "tpVehicleTypes";
-            this.tpVehicleTypes.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpVehicleTypes.Size = new System.Drawing.Size(1179, 428);
+            this.tpVehicleTypes.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpVehicleTypes.Size = new System.Drawing.Size(915, 349);
             this.tpVehicleTypes.TabIndex = 8;
             this.tpVehicleTypes.Text = "Vehicle Types";
             // 
@@ -1818,10 +1818,10 @@
             this.btnCancelVehicleType.FlatAppearance.BorderSize = 0;
             this.btnCancelVehicleType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelVehicleType.ForeColor = System.Drawing.Color.White;
-            this.btnCancelVehicleType.Location = new System.Drawing.Point(893, 157);
-            this.btnCancelVehicleType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelVehicleType.Location = new System.Drawing.Point(698, 131);
+            this.btnCancelVehicleType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelVehicleType.Name = "btnCancelVehicleType";
-            this.btnCancelVehicleType.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelVehicleType.Size = new System.Drawing.Size(79, 34);
             this.btnCancelVehicleType.TabIndex = 42;
             this.btnCancelVehicleType.Text = "&Cancel";
             this.btnCancelVehicleType.UseVisualStyleBackColor = false;
@@ -1833,10 +1833,10 @@
             this.btnSaveVehicleType.FlatAppearance.BorderSize = 0;
             this.btnSaveVehicleType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveVehicleType.ForeColor = System.Drawing.Color.White;
-            this.btnSaveVehicleType.Location = new System.Drawing.Point(785, 157);
-            this.btnSaveVehicleType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveVehicleType.Location = new System.Drawing.Point(614, 131);
+            this.btnSaveVehicleType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveVehicleType.Name = "btnSaveVehicleType";
-            this.btnSaveVehicleType.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveVehicleType.Size = new System.Drawing.Size(79, 34);
             this.btnSaveVehicleType.TabIndex = 41;
             this.btnSaveVehicleType.Text = "&Save";
             this.btnSaveVehicleType.UseVisualStyleBackColor = false;
@@ -1848,10 +1848,10 @@
             this.btnRemoveVehicleType.FlatAppearance.BorderSize = 0;
             this.btnRemoveVehicleType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveVehicleType.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveVehicleType.Location = new System.Drawing.Point(678, 157);
-            this.btnRemoveVehicleType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveVehicleType.Location = new System.Drawing.Point(530, 131);
+            this.btnRemoveVehicleType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveVehicleType.Name = "btnRemoveVehicleType";
-            this.btnRemoveVehicleType.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveVehicleType.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveVehicleType.TabIndex = 40;
             this.btnRemoveVehicleType.Text = "&Remove";
             this.btnRemoveVehicleType.UseVisualStyleBackColor = false;
@@ -1862,20 +1862,20 @@
             this.tbxVehicleTypeCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxVehicleTypeCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxVehicleTypeCode.Enabled = false;
-            this.tbxVehicleTypeCode.Location = new System.Drawing.Point(662, 124);
-            this.tbxVehicleTypeCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxVehicleTypeCode.Location = new System.Drawing.Point(518, 102);
+            this.tbxVehicleTypeCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxVehicleTypeCode.MaxLength = 9;
             this.tbxVehicleTypeCode.Name = "tbxVehicleTypeCode";
-            this.tbxVehicleTypeCode.Size = new System.Drawing.Size(333, 29);
+            this.tbxVehicleTypeCode.Size = new System.Drawing.Size(259, 25);
             this.tbxVehicleTypeCode.TabIndex = 39;
             // 
             // lblVehicleTypeCode
             // 
             this.lblVehicleTypeCode.AutoSize = true;
-            this.lblVehicleTypeCode.Location = new System.Drawing.Point(658, 101);
+            this.lblVehicleTypeCode.Location = new System.Drawing.Point(515, 84);
             this.lblVehicleTypeCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVehicleTypeCode.Name = "lblVehicleTypeCode";
-            this.lblVehicleTypeCode.Size = new System.Drawing.Size(46, 21);
+            this.lblVehicleTypeCode.Size = new System.Drawing.Size(39, 17);
             this.lblVehicleTypeCode.TabIndex = 38;
             this.lblVehicleTypeCode.Text = "Code";
             // 
@@ -1884,20 +1884,20 @@
             this.tbxVehicleTypeDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxVehicleTypeDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxVehicleTypeDescription.Enabled = false;
-            this.tbxVehicleTypeDescription.Location = new System.Drawing.Point(662, 71);
-            this.tbxVehicleTypeDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxVehicleTypeDescription.Location = new System.Drawing.Point(518, 59);
+            this.tbxVehicleTypeDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxVehicleTypeDescription.MaxLength = 75;
             this.tbxVehicleTypeDescription.Name = "tbxVehicleTypeDescription";
-            this.tbxVehicleTypeDescription.Size = new System.Drawing.Size(333, 29);
+            this.tbxVehicleTypeDescription.Size = new System.Drawing.Size(259, 25);
             this.tbxVehicleTypeDescription.TabIndex = 37;
             // 
             // lblVehicleTypeDescription
             // 
             this.lblVehicleTypeDescription.AutoSize = true;
-            this.lblVehicleTypeDescription.Location = new System.Drawing.Point(658, 47);
+            this.lblVehicleTypeDescription.Location = new System.Drawing.Point(515, 40);
             this.lblVehicleTypeDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVehicleTypeDescription.Name = "lblVehicleTypeDescription";
-            this.lblVehicleTypeDescription.Size = new System.Drawing.Size(52, 21);
+            this.lblVehicleTypeDescription.Size = new System.Drawing.Size(43, 17);
             this.lblVehicleTypeDescription.TabIndex = 36;
             this.lblVehicleTypeDescription.Text = "Name";
             // 
@@ -1907,10 +1907,10 @@
             this.btnEditVehicleType.FlatAppearance.BorderSize = 0;
             this.btnEditVehicleType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditVehicleType.ForeColor = System.Drawing.Color.White;
-            this.btnEditVehicleType.Location = new System.Drawing.Point(769, 3);
-            this.btnEditVehicleType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditVehicleType.Location = new System.Drawing.Point(598, 4);
+            this.btnEditVehicleType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditVehicleType.Name = "btnEditVehicleType";
-            this.btnEditVehicleType.Size = new System.Drawing.Size(102, 42);
+            this.btnEditVehicleType.Size = new System.Drawing.Size(79, 34);
             this.btnEditVehicleType.TabIndex = 35;
             this.btnEditVehicleType.Text = "&Edit";
             this.btnEditVehicleType.UseVisualStyleBackColor = false;
@@ -1922,10 +1922,10 @@
             this.btnNewVehicleType.FlatAppearance.BorderSize = 0;
             this.btnNewVehicleType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewVehicleType.ForeColor = System.Drawing.Color.White;
-            this.btnNewVehicleType.Location = new System.Drawing.Point(662, 3);
-            this.btnNewVehicleType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewVehicleType.Location = new System.Drawing.Point(515, 4);
+            this.btnNewVehicleType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewVehicleType.Name = "btnNewVehicleType";
-            this.btnNewVehicleType.Size = new System.Drawing.Size(102, 42);
+            this.btnNewVehicleType.Size = new System.Drawing.Size(79, 34);
             this.btnNewVehicleType.TabIndex = 34;
             this.btnNewVehicleType.Text = "&New";
             this.btnNewVehicleType.UseVisualStyleBackColor = false;
@@ -1945,7 +1945,7 @@
             this.dgvVehicleTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1958,7 +1958,7 @@
             this.colVehicleTypeCode});
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
@@ -1967,15 +1967,15 @@
             this.dgvVehicleTypes.Dock = System.Windows.Forms.DockStyle.Left;
             this.dgvVehicleTypes.EnableHeadersVisualStyles = false;
             this.dgvVehicleTypes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvVehicleTypes.Location = new System.Drawing.Point(2, 3);
-            this.dgvVehicleTypes.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvVehicleTypes.Location = new System.Drawing.Point(2, 2);
+            this.dgvVehicleTypes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvVehicleTypes.MultiSelect = false;
             this.dgvVehicleTypes.Name = "dgvVehicleTypes";
             this.dgvVehicleTypes.ReadOnly = true;
             this.dgvVehicleTypes.RowHeadersVisible = false;
             this.dgvVehicleTypes.RowTemplate.Height = 30;
             this.dgvVehicleTypes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehicleTypes.Size = new System.Drawing.Size(655, 422);
+            this.dgvVehicleTypes.Size = new System.Drawing.Size(509, 345);
             this.dgvVehicleTypes.TabIndex = 33;
             this.dgvVehicleTypes.SelectionChanged += new System.EventHandler(this.DgvVehicleTypes_SelectionChanged);
             // 
@@ -1992,7 +1992,7 @@
             this.colVehicleTypeCode.HeaderText = "Code";
             this.colVehicleTypeCode.Name = "colVehicleTypeCode";
             this.colVehicleTypeCode.ReadOnly = true;
-            this.colVehicleTypeCode.Width = 70;
+            this.colVehicleTypeCode.Width = 63;
             // 
             // tpSiDrCancellation
             // 
@@ -2003,11 +2003,11 @@
             this.tpSiDrCancellation.Controls.Add(this.tbxSiDrCancellation_SiNumber);
             this.tpSiDrCancellation.Controls.Add(this.lblSiDrCancellation_SiNumber);
             this.tpSiDrCancellation.ForeColor = System.Drawing.Color.Red;
-            this.tpSiDrCancellation.Location = new System.Drawing.Point(4, 54);
-            this.tpSiDrCancellation.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tpSiDrCancellation.Location = new System.Drawing.Point(4, 40);
+            this.tpSiDrCancellation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpSiDrCancellation.Name = "tpSiDrCancellation";
-            this.tpSiDrCancellation.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tpSiDrCancellation.Size = new System.Drawing.Size(1179, 428);
+            this.tpSiDrCancellation.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpSiDrCancellation.Size = new System.Drawing.Size(915, 347);
             this.tpSiDrCancellation.TabIndex = 9;
             this.tpSiDrCancellation.Text = "S.I./D.R. Cancellation";
             // 
@@ -2017,10 +2017,10 @@
             this.btnSiDrCancellation_CancelCementDr.FlatAppearance.BorderSize = 0;
             this.btnSiDrCancellation_CancelCementDr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiDrCancellation_CancelCementDr.ForeColor = System.Drawing.Color.White;
-            this.btnSiDrCancellation_CancelCementDr.Location = new System.Drawing.Point(275, 160);
-            this.btnSiDrCancellation_CancelCementDr.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSiDrCancellation_CancelCementDr.Location = new System.Drawing.Point(214, 130);
+            this.btnSiDrCancellation_CancelCementDr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSiDrCancellation_CancelCementDr.Name = "btnSiDrCancellation_CancelCementDr";
-            this.btnSiDrCancellation_CancelCementDr.Size = new System.Drawing.Size(143, 42);
+            this.btnSiDrCancellation_CancelCementDr.Size = new System.Drawing.Size(111, 34);
             this.btnSiDrCancellation_CancelCementDr.TabIndex = 43;
             this.btnSiDrCancellation_CancelCementDr.Text = "Cancel Cement";
             this.btnSiDrCancellation_CancelCementDr.UseVisualStyleBackColor = false;
@@ -2030,20 +2030,20 @@
             this.tbxSiDrCancellation_DrNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSiDrCancellation_DrNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxSiDrCancellation_DrNumber.Enabled = false;
-            this.tbxSiDrCancellation_DrNumber.Location = new System.Drawing.Point(9, 127);
-            this.tbxSiDrCancellation_DrNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSiDrCancellation_DrNumber.Location = new System.Drawing.Point(7, 103);
+            this.tbxSiDrCancellation_DrNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxSiDrCancellation_DrNumber.MaxLength = 75;
             this.tbxSiDrCancellation_DrNumber.Name = "tbxSiDrCancellation_DrNumber";
-            this.tbxSiDrCancellation_DrNumber.Size = new System.Drawing.Size(409, 29);
+            this.tbxSiDrCancellation_DrNumber.Size = new System.Drawing.Size(319, 25);
             this.tbxSiDrCancellation_DrNumber.TabIndex = 42;
             // 
             // lblSiDrCancellation_DrNumber
             // 
             this.lblSiDrCancellation_DrNumber.AutoSize = true;
-            this.lblSiDrCancellation_DrNumber.Location = new System.Drawing.Point(5, 103);
+            this.lblSiDrCancellation_DrNumber.Location = new System.Drawing.Point(4, 83);
             this.lblSiDrCancellation_DrNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSiDrCancellation_DrNumber.Name = "lblSiDrCancellation_DrNumber";
-            this.lblSiDrCancellation_DrNumber.Size = new System.Drawing.Size(65, 21);
+            this.lblSiDrCancellation_DrNumber.Size = new System.Drawing.Size(56, 17);
             this.lblSiDrCancellation_DrNumber.TabIndex = 41;
             this.lblSiDrCancellation_DrNumber.Text = "D.R. No.";
             // 
@@ -2053,10 +2053,10 @@
             this.btnSiDrCancellation_CancelCementSi.FlatAppearance.BorderSize = 0;
             this.btnSiDrCancellation_CancelCementSi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiDrCancellation_CancelCementSi.ForeColor = System.Drawing.Color.White;
-            this.btnSiDrCancellation_CancelCementSi.Location = new System.Drawing.Point(275, 59);
-            this.btnSiDrCancellation_CancelCementSi.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSiDrCancellation_CancelCementSi.Location = new System.Drawing.Point(214, 48);
+            this.btnSiDrCancellation_CancelCementSi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSiDrCancellation_CancelCementSi.Name = "btnSiDrCancellation_CancelCementSi";
-            this.btnSiDrCancellation_CancelCementSi.Size = new System.Drawing.Size(143, 42);
+            this.btnSiDrCancellation_CancelCementSi.Size = new System.Drawing.Size(111, 34);
             this.btnSiDrCancellation_CancelCementSi.TabIndex = 40;
             this.btnSiDrCancellation_CancelCementSi.Text = "Cancel Cement";
             this.btnSiDrCancellation_CancelCementSi.UseVisualStyleBackColor = false;
@@ -2066,20 +2066,20 @@
             this.tbxSiDrCancellation_SiNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSiDrCancellation_SiNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxSiDrCancellation_SiNumber.Enabled = false;
-            this.tbxSiDrCancellation_SiNumber.Location = new System.Drawing.Point(9, 26);
-            this.tbxSiDrCancellation_SiNumber.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSiDrCancellation_SiNumber.Location = new System.Drawing.Point(7, 21);
+            this.tbxSiDrCancellation_SiNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxSiDrCancellation_SiNumber.MaxLength = 75;
             this.tbxSiDrCancellation_SiNumber.Name = "tbxSiDrCancellation_SiNumber";
-            this.tbxSiDrCancellation_SiNumber.Size = new System.Drawing.Size(409, 29);
+            this.tbxSiDrCancellation_SiNumber.Size = new System.Drawing.Size(319, 25);
             this.tbxSiDrCancellation_SiNumber.TabIndex = 39;
             // 
             // lblSiDrCancellation_SiNumber
             // 
             this.lblSiDrCancellation_SiNumber.AutoSize = true;
-            this.lblSiDrCancellation_SiNumber.Location = new System.Drawing.Point(5, 3);
+            this.lblSiDrCancellation_SiNumber.Location = new System.Drawing.Point(4, 2);
             this.lblSiDrCancellation_SiNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSiDrCancellation_SiNumber.Name = "lblSiDrCancellation_SiNumber";
-            this.lblSiDrCancellation_SiNumber.Size = new System.Drawing.Size(57, 21);
+            this.lblSiDrCancellation_SiNumber.Size = new System.Drawing.Size(49, 17);
             this.lblSiDrCancellation_SiNumber.TabIndex = 38;
             this.lblSiDrCancellation_SiNumber.Text = "S.I. No.";
             // 
@@ -2111,10 +2111,10 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1095, 578);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnClose.Location = new System.Drawing.Point(849, 465);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(102, 42);
+            this.btnClose.Size = new System.Drawing.Size(79, 34);
             this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -2127,10 +2127,10 @@
             this.btnUserSettings.FlatAppearance.BorderSize = 0;
             this.btnUserSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserSettings.ForeColor = System.Drawing.Color.White;
-            this.btnUserSettings.Location = new System.Drawing.Point(10, 578);
-            this.btnUserSettings.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnUserSettings.Location = new System.Drawing.Point(11, 465);
+            this.btnUserSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUserSettings.Name = "btnUserSettings";
-            this.btnUserSettings.Size = new System.Drawing.Size(123, 42);
+            this.btnUserSettings.Size = new System.Drawing.Size(96, 34);
             this.btnUserSettings.TabIndex = 11;
             this.btnUserSettings.Text = "User Settings";
             this.btnUserSettings.UseVisualStyleBackColor = false;
@@ -2138,20 +2138,20 @@
             // 
             // MaintenanceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1207, 630);
+            this.ClientSize = new System.Drawing.Size(939, 510);
             this.Controls.Add(this.btnUserSettings);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tcMaintenance);
             this.Controls.Add(this.lblMaintenance);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MaintenanceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Inventory | Maintenance";

@@ -68,9 +68,8 @@
             this.lblInventoryItems.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblInventoryItems.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInventoryItems.Location = new System.Drawing.Point(0, 0);
-            this.lblInventoryItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInventoryItems.Name = "lblInventoryItems";
-            this.lblInventoryItems.Size = new System.Drawing.Size(1430, 84);
+            this.lblInventoryItems.Size = new System.Drawing.Size(1007, 68);
             this.lblInventoryItems.TabIndex = 9;
             this.lblInventoryItems.Text = "Inventory Items";
             this.lblInventoryItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -91,9 +90,9 @@
             this.dgvItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -107,7 +106,7 @@
             this.colItemsStockValue});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -115,15 +114,15 @@
             this.dgvItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItems.EnableHeadersVisualStyles = false;
             this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvItems.Location = new System.Drawing.Point(10, 119);
-            this.dgvItems.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.dgvItems.Location = new System.Drawing.Point(7, 99);
+            this.dgvItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
             this.dgvItems.RowTemplate.Height = 30;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(982, 475);
+            this.dgvItems.Size = new System.Drawing.Size(653, 379);
             this.dgvItems.TabIndex = 12;
             this.dgvItems.SelectionChanged += new System.EventHandler(this.DgvItems_SelectionChanged);
             // 
@@ -140,7 +139,7 @@
             this.colItemCode.HeaderText = "Code";
             this.colItemCode.Name = "colItemCode";
             this.colItemCode.ReadOnly = true;
-            this.colItemCode.Width = 70;
+            this.colItemCode.Width = 63;
             // 
             // colItemsClassification
             // 
@@ -148,7 +147,7 @@
             this.colItemsClassification.HeaderText = "Account Descriptions";
             this.colItemsClassification.Name = "colItemsClassification";
             this.colItemsClassification.ReadOnly = true;
-            this.colItemsClassification.Width = 164;
+            this.colItemsClassification.Width = 140;
             // 
             // colItemsStockValue
             // 
@@ -156,16 +155,16 @@
             this.colItemsStockValue.HeaderText = "Stock Value";
             this.colItemsStockValue.Name = "colItemsStockValue";
             this.colItemsStockValue.ReadOnly = true;
-            this.colItemsStockValue.Width = 104;
+            this.colItemsStockValue.Width = 90;
             // 
             // lblItemDescription
             // 
             this.lblItemDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemDescription.AutoSize = true;
-            this.lblItemDescription.Location = new System.Drawing.Point(992, 239);
+            this.lblItemDescription.Location = new System.Drawing.Point(664, 198);
             this.lblItemDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemDescription.Name = "lblItemDescription";
-            this.lblItemDescription.Size = new System.Drawing.Size(89, 21);
+            this.lblItemDescription.Size = new System.Drawing.Size(74, 17);
             this.lblItemDescription.TabIndex = 13;
             this.lblItemDescription.Text = "Description";
             // 
@@ -175,10 +174,10 @@
             this.btnNewItem.BackColor = System.Drawing.Color.Red;
             this.btnNewItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewItem.ForeColor = System.Drawing.Color.White;
-            this.btnNewItem.Location = new System.Drawing.Point(997, 87);
-            this.btnNewItem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnNewItem.Location = new System.Drawing.Point(667, 70);
+            this.btnNewItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewItem.Name = "btnNewItem";
-            this.btnNewItem.Size = new System.Drawing.Size(102, 42);
+            this.btnNewItem.Size = new System.Drawing.Size(79, 34);
             this.btnNewItem.TabIndex = 0;
             this.btnNewItem.Text = "&New";
             this.btnNewItem.UseVisualStyleBackColor = false;
@@ -190,10 +189,10 @@
             this.btnEditItem.BackColor = System.Drawing.Color.Red;
             this.btnEditItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditItem.ForeColor = System.Drawing.Color.White;
-            this.btnEditItem.Location = new System.Drawing.Point(1104, 87);
-            this.btnEditItem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnEditItem.Location = new System.Drawing.Point(751, 70);
+            this.btnEditItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditItem.Name = "btnEditItem";
-            this.btnEditItem.Size = new System.Drawing.Size(102, 42);
+            this.btnEditItem.Size = new System.Drawing.Size(79, 34);
             this.btnEditItem.TabIndex = 1;
             this.btnEditItem.Text = "&Edit";
             this.btnEditItem.UseVisualStyleBackColor = false;
@@ -203,10 +202,10 @@
             // 
             this.lblItemClassification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemClassification.AutoSize = true;
-            this.lblItemClassification.Location = new System.Drawing.Point(992, 131);
+            this.lblItemClassification.Location = new System.Drawing.Point(664, 106);
             this.lblItemClassification.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemClassification.Name = "lblItemClassification";
-            this.lblItemClassification.Size = new System.Drawing.Size(149, 21);
+            this.lblItemClassification.Size = new System.Drawing.Size(124, 17);
             this.lblItemClassification.TabIndex = 38;
             this.lblItemClassification.Text = "Account Description";
             // 
@@ -217,10 +216,10 @@
             this.cmbxItemClassification.Enabled = false;
             this.cmbxItemClassification.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxItemClassification.FormattingEnabled = true;
-            this.cmbxItemClassification.Location = new System.Drawing.Point(997, 155);
-            this.cmbxItemClassification.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxItemClassification.Location = new System.Drawing.Point(667, 125);
+            this.cmbxItemClassification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxItemClassification.Name = "cmbxItemClassification";
-            this.cmbxItemClassification.Size = new System.Drawing.Size(425, 29);
+            this.cmbxItemClassification.Size = new System.Drawing.Size(331, 25);
             this.cmbxItemClassification.TabIndex = 2;
             this.cmbxItemClassification.SelectedIndexChanged += new System.EventHandler(this.CmbxItemClassification_SelectedIndexChanged);
             this.cmbxItemClassification.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
@@ -230,10 +229,10 @@
             // 
             this.lblItemStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemStockValue.AutoSize = true;
-            this.lblItemStockValue.Location = new System.Drawing.Point(992, 346);
+            this.lblItemStockValue.Location = new System.Drawing.Point(664, 290);
             this.lblItemStockValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemStockValue.Name = "lblItemStockValue";
-            this.lblItemStockValue.Size = new System.Drawing.Size(131, 21);
+            this.lblItemStockValue.Size = new System.Drawing.Size(108, 17);
             this.lblItemStockValue.TabIndex = 44;
             this.lblItemStockValue.Text = "Initial Stock Value";
             // 
@@ -241,15 +240,15 @@
             // 
             this.nudItemStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudItemStockValue.Enabled = false;
-            this.nudItemStockValue.Location = new System.Drawing.Point(997, 370);
-            this.nudItemStockValue.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.nudItemStockValue.Location = new System.Drawing.Point(667, 309);
+            this.nudItemStockValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudItemStockValue.Maximum = new decimal(new int[] {
             1316134911,
             2328,
             0,
             0});
             this.nudItemStockValue.Name = "nudItemStockValue";
-            this.nudItemStockValue.Size = new System.Drawing.Size(424, 29);
+            this.nudItemStockValue.Size = new System.Drawing.Size(330, 25);
             this.nudItemStockValue.TabIndex = 7;
             // 
             // tbxItemCode
@@ -258,21 +257,21 @@
             this.tbxItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxItemCode.Enabled = false;
-            this.tbxItemCode.Location = new System.Drawing.Point(997, 316);
-            this.tbxItemCode.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxItemCode.Location = new System.Drawing.Point(667, 263);
+            this.tbxItemCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxItemCode.MaxLength = 39;
             this.tbxItemCode.Name = "tbxItemCode";
-            this.tbxItemCode.Size = new System.Drawing.Size(423, 29);
+            this.tbxItemCode.Size = new System.Drawing.Size(329, 25);
             this.tbxItemCode.TabIndex = 6;
             // 
             // lblItemCode
             // 
             this.lblItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemCode.AutoSize = true;
-            this.lblItemCode.Location = new System.Drawing.Point(992, 292);
+            this.lblItemCode.Location = new System.Drawing.Point(664, 244);
             this.lblItemCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemCode.Name = "lblItemCode";
-            this.lblItemCode.Size = new System.Drawing.Size(46, 21);
+            this.lblItemCode.Size = new System.Drawing.Size(39, 17);
             this.lblItemCode.TabIndex = 46;
             this.lblItemCode.Text = "Code";
             // 
@@ -282,10 +281,10 @@
             this.btnCancelItem.BackColor = System.Drawing.Color.Red;
             this.btnCancelItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelItem.ForeColor = System.Drawing.Color.White;
-            this.btnCancelItem.Location = new System.Drawing.Point(1211, 432);
-            this.btnCancelItem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnCancelItem.Location = new System.Drawing.Point(834, 363);
+            this.btnCancelItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelItem.Name = "btnCancelItem";
-            this.btnCancelItem.Size = new System.Drawing.Size(102, 42);
+            this.btnCancelItem.Size = new System.Drawing.Size(79, 34);
             this.btnCancelItem.TabIndex = 10;
             this.btnCancelItem.Text = "&Cancel";
             this.btnCancelItem.UseVisualStyleBackColor = false;
@@ -297,10 +296,10 @@
             this.btnSaveItem.BackColor = System.Drawing.Color.Red;
             this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveItem.ForeColor = System.Drawing.Color.White;
-            this.btnSaveItem.Location = new System.Drawing.Point(1104, 432);
-            this.btnSaveItem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnSaveItem.Location = new System.Drawing.Point(751, 363);
+            this.btnSaveItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveItem.Name = "btnSaveItem";
-            this.btnSaveItem.Size = new System.Drawing.Size(102, 42);
+            this.btnSaveItem.Size = new System.Drawing.Size(79, 34);
             this.btnSaveItem.TabIndex = 9;
             this.btnSaveItem.Text = "&Save";
             this.btnSaveItem.UseVisualStyleBackColor = false;
@@ -312,10 +311,10 @@
             this.btnRemoveItem.BackColor = System.Drawing.Color.Red;
             this.btnRemoveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveItem.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveItem.Location = new System.Drawing.Point(997, 432);
-            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnRemoveItem.Location = new System.Drawing.Point(667, 363);
+            this.btnRemoveItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(102, 42);
+            this.btnRemoveItem.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveItem.TabIndex = 8;
             this.btnRemoveItem.Text = "&Remove";
             this.btnRemoveItem.UseVisualStyleBackColor = false;
@@ -329,10 +328,10 @@
             this.tbxItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxItemDescription.Enabled = false;
-            this.tbxItemDescription.Location = new System.Drawing.Point(997, 262);
-            this.tbxItemDescription.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxItemDescription.Location = new System.Drawing.Point(667, 217);
+            this.tbxItemDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxItemDescription.Name = "tbxItemDescription";
-            this.tbxItemDescription.Size = new System.Drawing.Size(424, 29);
+            this.tbxItemDescription.Size = new System.Drawing.Size(330, 25);
             this.tbxItemDescription.TabIndex = 5;
             // 
             // cmbxMeasurementUnit
@@ -342,10 +341,10 @@
             this.cmbxMeasurementUnit.Enabled = false;
             this.cmbxMeasurementUnit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxMeasurementUnit.FormattingEnabled = true;
-            this.cmbxMeasurementUnit.Location = new System.Drawing.Point(997, 208);
-            this.cmbxMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cmbxMeasurementUnit.Location = new System.Drawing.Point(667, 171);
+            this.cmbxMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxMeasurementUnit.Name = "cmbxMeasurementUnit";
-            this.cmbxMeasurementUnit.Size = new System.Drawing.Size(425, 29);
+            this.cmbxMeasurementUnit.Size = new System.Drawing.Size(331, 25);
             this.cmbxMeasurementUnit.TabIndex = 4;
             this.cmbxMeasurementUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
             this.cmbxMeasurementUnit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
@@ -354,10 +353,10 @@
             // 
             this.lblMeasurementUnit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMeasurementUnit.AutoSize = true;
-            this.lblMeasurementUnit.Location = new System.Drawing.Point(992, 185);
+            this.lblMeasurementUnit.Location = new System.Drawing.Point(664, 152);
             this.lblMeasurementUnit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMeasurementUnit.Name = "lblMeasurementUnit";
-            this.lblMeasurementUnit.Size = new System.Drawing.Size(139, 21);
+            this.lblMeasurementUnit.Size = new System.Drawing.Size(115, 17);
             this.lblMeasurementUnit.TabIndex = 53;
             this.lblMeasurementUnit.Text = "Measurement Unit";
             // 
@@ -365,10 +364,10 @@
             // 
             this.ckbxCementSupplied.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbxCementSupplied.AutoSize = true;
-            this.ckbxCementSupplied.Location = new System.Drawing.Point(992, 402);
-            this.ckbxCementSupplied.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ckbxCementSupplied.Location = new System.Drawing.Point(667, 338);
+            this.ckbxCementSupplied.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ckbxCementSupplied.Name = "ckbxCementSupplied";
-            this.ckbxCementSupplied.Size = new System.Drawing.Size(148, 25);
+            this.ckbxCementSupplied.Size = new System.Drawing.Size(126, 21);
             this.ckbxCementSupplied.TabIndex = 54;
             this.ckbxCementSupplied.Text = "Cement Supplied";
             this.ckbxCementSupplied.UseVisualStyleBackColor = true;
@@ -379,10 +378,10 @@
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(1318, 432);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnClose.Location = new System.Drawing.Point(917, 363);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(102, 42);
+            this.btnClose.Size = new System.Drawing.Size(79, 34);
             this.btnClose.TabIndex = 89;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -392,20 +391,20 @@
             // 
             this.lblMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(5, 596);
+            this.lblMessage.Location = new System.Drawing.Point(4, 480);
             this.lblMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(118, 21);
+            this.lblMessage.Size = new System.Drawing.Size(96, 17);
             this.lblMessage.TabIndex = 90;
             this.lblMessage.Text = "Inventory Items";
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(6, 88);
+            this.lblSearch.Location = new System.Drawing.Point(4, 72);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(57, 21);
+            this.lblSearch.Size = new System.Drawing.Size(47, 17);
             this.lblSearch.TabIndex = 91;
             this.lblSearch.Text = "Search";
             // 
@@ -417,10 +416,10 @@
             this.tbxSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSearch.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxSearch.Location = new System.Drawing.Point(67, 87);
-            this.tbxSearch.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbxSearch.Location = new System.Drawing.Point(55, 70);
+            this.tbxSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxSearch.Name = "tbxSearch";
-            this.tbxSearch.Size = new System.Drawing.Size(925, 29);
+            this.tbxSearch.Size = new System.Drawing.Size(605, 25);
             this.tbxSearch.TabIndex = 92;
             this.tbxSearch.TextChanged += new System.EventHandler(this.TbxSearch_TextChanged);
             // 
@@ -430,10 +429,10 @@
             this.btnViewPriceHistory.BackColor = System.Drawing.Color.Red;
             this.btnViewPriceHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewPriceHistory.ForeColor = System.Drawing.Color.White;
-            this.btnViewPriceHistory.Location = new System.Drawing.Point(1255, 87);
-            this.btnViewPriceHistory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnViewPriceHistory.Location = new System.Drawing.Point(868, 70);
+            this.btnViewPriceHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnViewPriceHistory.Name = "btnViewPriceHistory";
-            this.btnViewPriceHistory.Size = new System.Drawing.Size(165, 42);
+            this.btnViewPriceHistory.Size = new System.Drawing.Size(128, 34);
             this.btnViewPriceHistory.TabIndex = 93;
             this.btnViewPriceHistory.Text = "&View Price History";
             this.btnViewPriceHistory.UseVisualStyleBackColor = false;
@@ -441,10 +440,10 @@
             // 
             // ItemManagerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1430, 625);
+            this.ClientSize = new System.Drawing.Size(1007, 506);
             this.Controls.Add(this.btnViewPriceHistory);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.lblSearch);
@@ -468,12 +467,12 @@
             this.Controls.Add(this.lblItemDescription);
             this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.lblInventoryItems);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ItemManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Inventory | Items Management";

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Citicon.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace Citicon.Inventory.MainApplication
@@ -13,7 +14,7 @@ namespace Citicon.Inventory.MainApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LoginForm(new MainForm()));
         }
     }
 }

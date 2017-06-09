@@ -55,7 +55,7 @@
             this.dgvPriceHistory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -68,7 +68,7 @@
             this.colPrice});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -76,15 +76,15 @@
             this.dgvPriceHistory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPriceHistory.EnableHeadersVisualStyles = false;
             this.dgvPriceHistory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvPriceHistory.Location = new System.Drawing.Point(18, 19);
-            this.dgvPriceHistory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvPriceHistory.Location = new System.Drawing.Point(14, 15);
+            this.dgvPriceHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvPriceHistory.MultiSelect = false;
             this.dgvPriceHistory.Name = "dgvPriceHistory";
             this.dgvPriceHistory.ReadOnly = true;
             this.dgvPriceHistory.RowHeadersVisible = false;
             this.dgvPriceHistory.RowTemplate.Height = 30;
             this.dgvPriceHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPriceHistory.Size = new System.Drawing.Size(1039, 765);
+            this.dgvPriceHistory.Size = new System.Drawing.Size(808, 619);
             this.dgvPriceHistory.TabIndex = 13;
             // 
             // colDate
@@ -93,7 +93,7 @@
             this.colDate.HeaderText = "Date";
             this.colDate.Name = "colDate";
             this.colDate.ReadOnly = true;
-            this.colDate.Width = 66;
+            this.colDate.Width = 59;
             // 
             // colPrice
             // 
@@ -101,19 +101,19 @@
             this.colPrice.HeaderText = "Price";
             this.colPrice.Name = "colPrice";
             this.colPrice.ReadOnly = true;
-            this.colPrice.Width = 68;
+            this.colPrice.Width = 60;
             // 
             // PriceHistoryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1075, 799);
+            this.ClientSize = new System.Drawing.Size(836, 602);
             this.Controls.Add(this.dgvPriceHistory);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PriceHistoryForm";
             this.Text = "PriceHistoryForm";
             this.Load += new System.EventHandler(this.PriceHistoryForm_Load);
