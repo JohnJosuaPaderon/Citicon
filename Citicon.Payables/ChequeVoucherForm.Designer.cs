@@ -105,7 +105,7 @@
             this.lblChequeVoucher.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChequeVoucher.Location = new System.Drawing.Point(0, 0);
             this.lblChequeVoucher.Name = "lblChequeVoucher";
-            this.lblChequeVoucher.Size = new System.Drawing.Size(967, 68);
+            this.lblChequeVoucher.Size = new System.Drawing.Size(1174, 68);
             this.lblChequeVoucher.TabIndex = 14;
             this.lblChequeVoucher.Text = "Cheque Voucher";
             this.lblChequeVoucher.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,7 +123,7 @@
             this.tcChequeVoucher.Name = "tcChequeVoucher";
             this.tcChequeVoucher.Padding = new System.Drawing.Point(30, 15);
             this.tcChequeVoucher.SelectedIndex = 0;
-            this.tcChequeVoucher.Size = new System.Drawing.Size(952, 423);
+            this.tcChequeVoucher.Size = new System.Drawing.Size(1159, 446);
             this.tcChequeVoucher.TabIndex = 15;
             this.tcChequeVoucher.Selected += new System.Windows.Forms.TabControlEventHandler(this.tcChequeVoucher_Selected);
             // 
@@ -427,7 +427,7 @@
             this.tpExpenses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpExpenses.Name = "tpExpenses";
             this.tpExpenses.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpExpenses.Size = new System.Drawing.Size(944, 369);
+            this.tpExpenses.Size = new System.Drawing.Size(1151, 392);
             this.tpExpenses.TabIndex = 1;
             this.tpExpenses.Text = "Expenses";
             this.tpExpenses.UseVisualStyleBackColor = true;
@@ -457,7 +457,7 @@
             this.tbxExpenseTotalDebit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseTotalDebit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseTotalDebit.ForeColor = System.Drawing.Color.White;
-            this.tbxExpenseTotalDebit.Location = new System.Drawing.Point(359, 332);
+            this.tbxExpenseTotalDebit.Location = new System.Drawing.Point(566, 355);
             this.tbxExpenseTotalDebit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxExpenseTotalDebit.Name = "tbxExpenseTotalDebit";
             this.tbxExpenseTotalDebit.ReadOnly = true;
@@ -477,7 +477,7 @@
             this.tbxExpenseTotalCredit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseTotalCredit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseTotalCredit.ForeColor = System.Drawing.Color.White;
-            this.tbxExpenseTotalCredit.Location = new System.Drawing.Point(554, 332);
+            this.tbxExpenseTotalCredit.Location = new System.Drawing.Point(761, 355);
             this.tbxExpenseTotalCredit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxExpenseTotalCredit.Name = "tbxExpenseTotalCredit";
             this.tbxExpenseTotalCredit.ReadOnly = true;
@@ -497,7 +497,7 @@
             this.tbxExpenseDifference.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseDifference.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseDifference.ForeColor = System.Drawing.Color.White;
-            this.tbxExpenseDifference.Location = new System.Drawing.Point(748, 332);
+            this.tbxExpenseDifference.Location = new System.Drawing.Point(955, 355);
             this.tbxExpenseDifference.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxExpenseDifference.Name = "tbxExpenseDifference";
             this.tbxExpenseDifference.ReadOnly = true;
@@ -511,7 +511,7 @@
             // 
             this.lblExpenseTotalDebit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExpenseTotalDebit.AutoSize = true;
-            this.lblExpenseTotalDebit.Location = new System.Drawing.Point(356, 313);
+            this.lblExpenseTotalDebit.Location = new System.Drawing.Point(563, 336);
             this.lblExpenseTotalDebit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpenseTotalDebit.Name = "lblExpenseTotalDebit";
             this.lblExpenseTotalDebit.Size = new System.Drawing.Size(71, 17);
@@ -522,7 +522,7 @@
             // 
             this.lblExpenseDifference.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExpenseDifference.AutoSize = true;
-            this.lblExpenseDifference.Location = new System.Drawing.Point(745, 313);
+            this.lblExpenseDifference.Location = new System.Drawing.Point(952, 336);
             this.lblExpenseDifference.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpenseDifference.Name = "lblExpenseDifference";
             this.lblExpenseDifference.Size = new System.Drawing.Size(67, 17);
@@ -533,7 +533,7 @@
             // 
             this.lblExpenseTotalCredit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExpenseTotalCredit.AutoSize = true;
-            this.lblExpenseTotalCredit.Location = new System.Drawing.Point(551, 313);
+            this.lblExpenseTotalCredit.Location = new System.Drawing.Point(758, 336);
             this.lblExpenseTotalCredit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExpenseTotalCredit.Name = "lblExpenseTotalCredit";
             this.lblExpenseTotalCredit.Size = new System.Drawing.Size(75, 17);
@@ -694,7 +694,7 @@
             this.dgvExpenses.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvExpenses.RowTemplate.Height = 40;
             this.dgvExpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExpenses.Size = new System.Drawing.Size(930, 162);
+            this.dgvExpenses.Size = new System.Drawing.Size(1137, 185);
             this.dgvExpenses.TabIndex = 101;
             this.dgvExpenses.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenses_CellValueChanged);
             // 
@@ -793,7 +793,7 @@
             this.lblGrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGrandTotal.AutoSize = true;
             this.lblGrandTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrandTotal.Location = new System.Drawing.Point(348, 495);
+            this.lblGrandTotal.Location = new System.Drawing.Point(555, 518);
             this.lblGrandTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(119, 30);
@@ -809,7 +809,7 @@
             this.tbxGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxGrandTotal.ForeColor = System.Drawing.Color.Lime;
-            this.tbxGrandTotal.Location = new System.Drawing.Point(353, 527);
+            this.tbxGrandTotal.Location = new System.Drawing.Point(560, 550);
             this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
             this.tbxGrandTotal.Size = new System.Drawing.Size(340, 35);
@@ -824,7 +824,7 @@
             this.btnExportCheque.FlatAppearance.BorderSize = 0;
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
-            this.btnExportCheque.Location = new System.Drawing.Point(697, 522);
+            this.btnExportCheque.Location = new System.Drawing.Point(904, 545);
             this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExportCheque.Name = "btnExportCheque";
             this.btnExportCheque.Size = new System.Drawing.Size(159, 40);
@@ -842,7 +842,7 @@
             this.tbxCheckVoucherNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxCheckVoucherNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCheckVoucherNumber.ForeColor = System.Drawing.Color.Yellow;
-            this.tbxCheckVoucherNumber.Location = new System.Drawing.Point(7, 527);
+            this.tbxCheckVoucherNumber.Location = new System.Drawing.Point(7, 550);
             this.tbxCheckVoucherNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbxCheckVoucherNumber.Name = "tbxCheckVoucherNumber";
             this.tbxCheckVoucherNumber.Size = new System.Drawing.Size(236, 35);
@@ -855,7 +855,7 @@
             this.lblCheckVoucherNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCheckVoucherNumber.AutoSize = true;
             this.lblCheckVoucherNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckVoucherNumber.Location = new System.Drawing.Point(6, 495);
+            this.lblCheckVoucherNumber.Location = new System.Drawing.Point(6, 518);
             this.lblCheckVoucherNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCheckVoucherNumber.Name = "lblCheckVoucherNumber";
             this.lblCheckVoucherNumber.Size = new System.Drawing.Size(190, 30);
@@ -868,7 +868,7 @@
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
-            this.btnClose.Location = new System.Drawing.Point(860, 522);
+            this.btnClose.Location = new System.Drawing.Point(1067, 545);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 40);
@@ -882,7 +882,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(967, 573);
+            this.ClientSize = new System.Drawing.Size(1174, 596);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblCheckVoucherNumber);
             this.Controls.Add(this.tbxCheckVoucherNumber);
