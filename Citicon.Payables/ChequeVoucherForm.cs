@@ -700,5 +700,10 @@ namespace Citicon.Payables
                 CountGrandTotal();
             }
         }
+
+        private void lblExpenseRemarks_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

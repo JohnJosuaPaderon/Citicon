@@ -123,18 +123,17 @@
             this.Header.Controls.Add(this.UserPane);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
-            this.Header.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(1597, 80);
+            this.Header.Size = new System.Drawing.Size(1192, 68);
             this.Header.TabIndex = 1;
             // 
             // lblCiticonPayables
             // 
             this.lblCiticonPayables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCiticonPayables.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCiticonPayables.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCiticonPayables.Location = new System.Drawing.Point(0, 0);
             this.lblCiticonPayables.Name = "lblCiticonPayables";
-            this.lblCiticonPayables.Size = new System.Drawing.Size(1160, 80);
+            this.lblCiticonPayables.Size = new System.Drawing.Size(810, 68);
             this.lblCiticonPayables.TabIndex = 1;
             this.lblCiticonPayables.Text = "Citicon Payables";
             this.lblCiticonPayables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,19 +144,18 @@
             this.UserPane.Controls.Add(this.lblLogout);
             this.UserPane.Controls.Add(this.lblHelloUser);
             this.UserPane.Dock = System.Windows.Forms.DockStyle.Right;
-            this.UserPane.Location = new System.Drawing.Point(1160, 0);
-            this.UserPane.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.UserPane.Location = new System.Drawing.Point(810, 0);
             this.UserPane.Name = "UserPane";
-            this.UserPane.Size = new System.Drawing.Size(437, 80);
+            this.UserPane.Size = new System.Drawing.Size(382, 68);
             this.UserPane.TabIndex = 0;
             // 
             // lblUserDisplayName
             // 
             this.lblUserDisplayName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblUserDisplayName.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserDisplayName.Location = new System.Drawing.Point(0, 28);
+            this.lblUserDisplayName.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserDisplayName.Location = new System.Drawing.Point(0, 24);
             this.lblUserDisplayName.Name = "lblUserDisplayName";
-            this.lblUserDisplayName.Size = new System.Drawing.Size(437, 28);
+            this.lblUserDisplayName.Size = new System.Drawing.Size(382, 24);
             this.lblUserDisplayName.TabIndex = 3;
             this.lblUserDisplayName.Text = "USER\'S DISPLAY NAME";
             this.lblUserDisplayName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -166,9 +164,9 @@
             // 
             this.lblLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblLogout.LinkColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(0, 56);
+            this.lblLogout.Location = new System.Drawing.Point(0, 48);
             this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(437, 24);
+            this.lblLogout.Size = new System.Drawing.Size(382, 20);
             this.lblLogout.TabIndex = 1;
             this.lblLogout.TabStop = true;
             this.lblLogout.Text = "Log out";
@@ -180,7 +178,7 @@
             this.lblHelloUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblHelloUser.Location = new System.Drawing.Point(0, 0);
             this.lblHelloUser.Name = "lblHelloUser";
-            this.lblHelloUser.Size = new System.Drawing.Size(437, 28);
+            this.lblHelloUser.Size = new System.Drawing.Size(382, 24);
             this.lblHelloUser.TabIndex = 0;
             this.lblHelloUser.Text = "HELLO";
             this.lblHelloUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -190,10 +188,10 @@
             this.btnRefresh.BackColor = System.Drawing.Color.Red;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(11, 86);
+            this.btnRefresh.Location = new System.Drawing.Point(10, 73);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(145, 68);
+            this.btnRefresh.Size = new System.Drawing.Size(127, 58);
             this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -215,13 +213,13 @@
             this.dgvUnpaidStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUnpaidStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUnpaidStocks.ColumnHeadersHeight = 60;
+            this.dgvUnpaidStocks.ColumnHeadersHeight = 45;
             this.dgvUnpaidStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUnpaidStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colStock,
@@ -235,7 +233,7 @@
             this.dgvUnpaidStocks.ContextMenuStrip = this.UnpaidStocksMenu;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -243,7 +241,7 @@
             this.dgvUnpaidStocks.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvUnpaidStocks.EnableHeadersVisualStyles = false;
             this.dgvUnpaidStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvUnpaidStocks.Location = new System.Drawing.Point(11, 293);
+            this.dgvUnpaidStocks.Location = new System.Drawing.Point(10, 249);
             this.dgvUnpaidStocks.Margin = new System.Windows.Forms.Padding(2);
             this.dgvUnpaidStocks.MultiSelect = false;
             this.dgvUnpaidStocks.Name = "dgvUnpaidStocks";
@@ -252,7 +250,7 @@
             this.dgvUnpaidStocks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUnpaidStocks.RowTemplate.Height = 40;
             this.dgvUnpaidStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUnpaidStocks.Size = new System.Drawing.Size(1064, 222);
+            this.dgvUnpaidStocks.Size = new System.Drawing.Size(733, 189);
             this.dgvUnpaidStocks.TabIndex = 72;
             this.dgvUnpaidStocks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUnpaidStocks_CellContentClick);
             this.dgvUnpaidStocks.SelectionChanged += new System.EventHandler(this.dgvUnpaidStocks_SelectionChanged);
@@ -263,7 +261,7 @@
             this.colStock.HeaderText = "Unpaid Stocks";
             this.colStock.Name = "colStock";
             this.colStock.ReadOnly = true;
-            this.colStock.Width = 116;
+            this.colStock.Width = 105;
             // 
             // colStockSiNumber
             // 
@@ -271,7 +269,7 @@
             this.colStockSiNumber.HeaderText = "SI No.";
             this.colStockSiNumber.Name = "colStockSiNumber";
             this.colStockSiNumber.ReadOnly = true;
-            this.colStockSiNumber.Width = 67;
+            this.colStockSiNumber.Width = 62;
             // 
             // colStockDrNumber
             // 
@@ -279,7 +277,7 @@
             this.colStockDrNumber.HeaderText = "DR No.";
             this.colStockDrNumber.Name = "colStockDrNumber";
             this.colStockDrNumber.ReadOnly = true;
-            this.colStockDrNumber.Width = 74;
+            this.colStockDrNumber.Width = 68;
             // 
             // colStockSupplier
             // 
@@ -287,7 +285,7 @@
             this.colStockSupplier.HeaderText = "Supplier";
             this.colStockSupplier.Name = "colStockSupplier";
             this.colStockSupplier.ReadOnly = true;
-            this.colStockSupplier.Width = 88;
+            this.colStockSupplier.Width = 80;
             // 
             // colStockBranch
             // 
@@ -295,7 +293,7 @@
             this.colStockBranch.HeaderText = "Volume";
             this.colStockBranch.Name = "colStockBranch";
             this.colStockBranch.ReadOnly = true;
-            this.colStockBranch.Width = 83;
+            this.colStockBranch.Width = 75;
             // 
             // colStockDeliveryDate
             // 
@@ -303,7 +301,6 @@
             this.colStockDeliveryDate.HeaderText = "Delivery Date";
             this.colStockDeliveryDate.Name = "colStockDeliveryDate";
             this.colStockDeliveryDate.ReadOnly = true;
-            this.colStockDeliveryDate.Width = 113;
             // 
             // colStockTotalAmount
             // 
@@ -313,7 +310,6 @@
             this.colStockTotalAmount.HeaderText = "Total Amount";
             this.colStockTotalAmount.Name = "colStockTotalAmount";
             this.colStockTotalAmount.ReadOnly = true;
-            this.colStockTotalAmount.Width = 113;
             // 
             // colStockRemainingDayCount
             // 
@@ -324,7 +320,7 @@
             this.colStockRemainingDayCount.MinimumWidth = 100;
             this.colStockRemainingDayCount.Name = "colStockRemainingDayCount";
             this.colStockRemainingDayCount.ReadOnly = true;
-            this.colStockRemainingDayCount.Width = 128;
+            this.colStockRemainingDayCount.Width = 114;
             // 
             // UnpaidStocksMenu
             // 
@@ -359,20 +355,20 @@
             this.dgvMrisNumberIssuanceQueue.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMrisNumberIssuanceQueue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvMrisNumberIssuanceQueue.ColumnHeadersHeight = 60;
+            this.dgvMrisNumberIssuanceQueue.ColumnHeadersHeight = 45;
             this.dgvMrisNumberIssuanceQueue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMrisNumberIssuanceQueue.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMrisNumberIssuanceQueue,
             this.colMrisIssuanceQueueTotalAmount});
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
@@ -380,7 +376,7 @@
             this.dgvMrisNumberIssuanceQueue.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMrisNumberIssuanceQueue.EnableHeadersVisualStyles = false;
             this.dgvMrisNumberIssuanceQueue.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvMrisNumberIssuanceQueue.Location = new System.Drawing.Point(1138, 191);
+            this.dgvMrisNumberIssuanceQueue.Location = new System.Drawing.Point(799, 135);
             this.dgvMrisNumberIssuanceQueue.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMrisNumberIssuanceQueue.MultiSelect = false;
             this.dgvMrisNumberIssuanceQueue.Name = "dgvMrisNumberIssuanceQueue";
@@ -389,7 +385,7 @@
             this.dgvMrisNumberIssuanceQueue.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMrisNumberIssuanceQueue.RowTemplate.Height = 40;
             this.dgvMrisNumberIssuanceQueue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMrisNumberIssuanceQueue.Size = new System.Drawing.Size(450, 257);
+            this.dgvMrisNumberIssuanceQueue.Size = new System.Drawing.Size(382, 218);
             this.dgvMrisNumberIssuanceQueue.TabIndex = 75;
             // 
             // colMrisNumberIssuanceQueue
@@ -406,16 +402,15 @@
             this.colMrisIssuanceQueueTotalAmount.HeaderText = "Total Amount";
             this.colMrisIssuanceQueueTotalAmount.Name = "colMrisIssuanceQueueTotalAmount";
             this.colMrisIssuanceQueueTotalAmount.ReadOnly = true;
-            this.colMrisIssuanceQueueTotalAmount.Width = 113;
             // 
             // lblActiveSupplier
             // 
             this.lblActiveSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblActiveSupplier.AutoSize = true;
-            this.lblActiveSupplier.Location = new System.Drawing.Point(1138, 557);
+            this.lblActiveSupplier.Location = new System.Drawing.Point(796, 476);
             this.lblActiveSupplier.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActiveSupplier.Name = "lblActiveSupplier";
-            this.lblActiveSupplier.Size = new System.Drawing.Size(109, 20);
+            this.lblActiveSupplier.Size = new System.Drawing.Size(94, 17);
             this.lblActiveSupplier.TabIndex = 76;
             this.lblActiveSupplier.Text = "Active Supplier";
             // 
@@ -425,11 +420,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxActiveSupplier.BackColor = System.Drawing.Color.White;
             this.tbxActiveSupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxActiveSupplier.Location = new System.Drawing.Point(1142, 579);
+            this.tbxActiveSupplier.Location = new System.Drawing.Point(798, 495);
             this.tbxActiveSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.tbxActiveSupplier.Name = "tbxActiveSupplier";
             this.tbxActiveSupplier.ReadOnly = true;
-            this.tbxActiveSupplier.Size = new System.Drawing.Size(447, 27);
+            this.tbxActiveSupplier.Size = new System.Drawing.Size(383, 25);
             this.tbxActiveSupplier.TabIndex = 77;
             // 
             // btnSave
@@ -439,10 +434,10 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1498, 630);
+            this.btnSave.Location = new System.Drawing.Point(1101, 533);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 50);
+            this.btnSave.Size = new System.Drawing.Size(80, 43);
             this.btnSave.TabIndex = 91;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -454,13 +449,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxActiveMrisNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.tbxActiveMrisNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxActiveMrisNumber.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxActiveMrisNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxActiveMrisNumber.ForeColor = System.Drawing.Color.Lime;
-            this.tbxActiveMrisNumber.Location = new System.Drawing.Point(1142, 630);
+            this.tbxActiveMrisNumber.Location = new System.Drawing.Point(798, 541);
             this.tbxActiveMrisNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxActiveMrisNumber.Name = "tbxActiveMrisNumber";
             this.tbxActiveMrisNumber.ReadOnly = true;
-            this.tbxActiveMrisNumber.Size = new System.Drawing.Size(352, 50);
+            this.tbxActiveMrisNumber.Size = new System.Drawing.Size(299, 35);
             this.tbxActiveMrisNumber.TabIndex = 92;
             this.tbxActiveMrisNumber.Text = "20160416-1";
             this.tbxActiveMrisNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -469,10 +464,10 @@
             // 
             this.lblActiveMrisNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblActiveMrisNumber.AutoSize = true;
-            this.lblActiveMrisNumber.Location = new System.Drawing.Point(1138, 608);
+            this.lblActiveMrisNumber.Location = new System.Drawing.Point(796, 522);
             this.lblActiveMrisNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblActiveMrisNumber.Name = "lblActiveMrisNumber";
-            this.lblActiveMrisNumber.Size = new System.Drawing.Size(70, 20);
+            this.lblActiveMrisNumber.Size = new System.Drawing.Size(63, 17);
             this.lblActiveMrisNumber.TabIndex = 93;
             this.lblActiveMrisNumber.Text = "MRIS No.";
             // 
@@ -482,10 +477,10 @@
             this.lblGenerateMrisNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGenerateMrisNumber.AutoSize = true;
             this.lblGenerateMrisNumber.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblGenerateMrisNumber.Location = new System.Drawing.Point(1651, 619);
+            this.lblGenerateMrisNumber.Location = new System.Drawing.Point(1445, 526);
             this.lblGenerateMrisNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGenerateMrisNumber.Name = "lblGenerateMrisNumber";
-            this.lblGenerateMrisNumber.Size = new System.Drawing.Size(183, 20);
+            this.lblGenerateMrisNumber.Size = new System.Drawing.Size(164, 17);
             this.lblGenerateMrisNumber.TabIndex = 94;
             this.lblGenerateMrisNumber.TabStop = true;
             this.lblGenerateMrisNumber.Text = "Generate Lastest MRIS No.";
@@ -496,10 +491,10 @@
             this.btnChequeVoucher.BackColor = System.Drawing.Color.Red;
             this.btnChequeVoucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChequeVoucher.ForeColor = System.Drawing.Color.White;
-            this.btnChequeVoucher.Location = new System.Drawing.Point(161, 86);
+            this.btnChequeVoucher.Location = new System.Drawing.Point(141, 73);
             this.btnChequeVoucher.Margin = new System.Windows.Forms.Padding(2);
             this.btnChequeVoucher.Name = "btnChequeVoucher";
-            this.btnChequeVoucher.Size = new System.Drawing.Size(145, 68);
+            this.btnChequeVoucher.Size = new System.Drawing.Size(127, 58);
             this.btnChequeVoucher.TabIndex = 95;
             this.btnChequeVoucher.Text = "&Cheque Voucher";
             this.btnChequeVoucher.UseVisualStyleBackColor = false;
@@ -510,10 +505,10 @@
             this.btnMaintenanceForm.BackColor = System.Drawing.Color.Red;
             this.btnMaintenanceForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaintenanceForm.ForeColor = System.Drawing.Color.White;
-            this.btnMaintenanceForm.Location = new System.Drawing.Point(461, 86);
+            this.btnMaintenanceForm.Location = new System.Drawing.Point(403, 73);
             this.btnMaintenanceForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaintenanceForm.Name = "btnMaintenanceForm";
-            this.btnMaintenanceForm.Size = new System.Drawing.Size(145, 68);
+            this.btnMaintenanceForm.Size = new System.Drawing.Size(127, 58);
             this.btnMaintenanceForm.TabIndex = 96;
             this.btnMaintenanceForm.Text = "&Maintenance";
             this.btnMaintenanceForm.UseVisualStyleBackColor = false;
@@ -524,10 +519,10 @@
             this.btnChequeIssuance.BackColor = System.Drawing.Color.Red;
             this.btnChequeIssuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChequeIssuance.ForeColor = System.Drawing.Color.White;
-            this.btnChequeIssuance.Location = new System.Drawing.Point(311, 86);
+            this.btnChequeIssuance.Location = new System.Drawing.Point(272, 73);
             this.btnChequeIssuance.Margin = new System.Windows.Forms.Padding(2);
             this.btnChequeIssuance.Name = "btnChequeIssuance";
-            this.btnChequeIssuance.Size = new System.Drawing.Size(145, 68);
+            this.btnChequeIssuance.Size = new System.Drawing.Size(127, 58);
             this.btnChequeIssuance.TabIndex = 97;
             this.btnChequeIssuance.Text = "C&heque Issuance";
             this.btnChequeIssuance.UseVisualStyleBackColor = false;
@@ -538,10 +533,10 @@
             this.btnReports.BackColor = System.Drawing.Color.Red;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.Color.White;
-            this.btnReports.Location = new System.Drawing.Point(610, 86);
+            this.btnReports.Location = new System.Drawing.Point(534, 73);
             this.btnReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(145, 68);
+            this.btnReports.Size = new System.Drawing.Size(127, 58);
             this.btnReports.TabIndex = 98;
             this.btnReports.Text = "R&eports";
             this.btnReports.UseVisualStyleBackColor = false;
@@ -551,10 +546,10 @@
             // 
             this.UsageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.UsageLabel.AutoSize = true;
-            this.UsageLabel.Location = new System.Drawing.Point(15, 579);
+            this.UsageLabel.Location = new System.Drawing.Point(13, 492);
             this.UsageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.UsageLabel.Name = "UsageLabel";
-            this.UsageLabel.Size = new System.Drawing.Size(50, 20);
+            this.UsageLabel.Size = new System.Drawing.Size(45, 17);
             this.UsageLabel.TabIndex = 99;
             this.UsageLabel.Text = "Usage";
             // 
@@ -563,20 +558,20 @@
             this.UsageTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.UsageTextBox.BackColor = System.Drawing.Color.White;
             this.UsageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UsageTextBox.Location = new System.Drawing.Point(19, 601);
+            this.UsageTextBox.Location = new System.Drawing.Point(17, 511);
             this.UsageTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsageTextBox.Name = "UsageTextBox";
-            this.UsageTextBox.Size = new System.Drawing.Size(328, 27);
+            this.UsageTextBox.Size = new System.Drawing.Size(287, 25);
             this.UsageTextBox.TabIndex = 100;
             // 
             // ReceivedStoredByLabel
             // 
             this.ReceivedStoredByLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ReceivedStoredByLabel.AutoSize = true;
-            this.ReceivedStoredByLabel.Location = new System.Drawing.Point(351, 579);
+            this.ReceivedStoredByLabel.Location = new System.Drawing.Point(307, 492);
             this.ReceivedStoredByLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ReceivedStoredByLabel.Name = "ReceivedStoredByLabel";
-            this.ReceivedStoredByLabel.Size = new System.Drawing.Size(166, 20);
+            this.ReceivedStoredByLabel.Size = new System.Drawing.Size(147, 17);
             this.ReceivedStoredByLabel.TabIndex = 101;
             this.ReceivedStoredByLabel.Text = "Received and Stored by";
             // 
@@ -585,10 +580,10 @@
             this.ReceivedStoredByTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ReceivedStoredByTextBox.BackColor = System.Drawing.Color.White;
             this.ReceivedStoredByTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ReceivedStoredByTextBox.Location = new System.Drawing.Point(354, 601);
+            this.ReceivedStoredByTextBox.Location = new System.Drawing.Point(310, 511);
             this.ReceivedStoredByTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ReceivedStoredByTextBox.Name = "ReceivedStoredByTextBox";
-            this.ReceivedStoredByTextBox.Size = new System.Drawing.Size(341, 27);
+            this.ReceivedStoredByTextBox.Size = new System.Drawing.Size(299, 25);
             this.ReceivedStoredByTextBox.TabIndex = 102;
             // 
             // InspectedAcceptedByTextBox
@@ -596,20 +591,20 @@
             this.InspectedAcceptedByTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.InspectedAcceptedByTextBox.BackColor = System.Drawing.Color.White;
             this.InspectedAcceptedByTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.InspectedAcceptedByTextBox.Location = new System.Drawing.Point(19, 653);
+            this.InspectedAcceptedByTextBox.Location = new System.Drawing.Point(17, 555);
             this.InspectedAcceptedByTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.InspectedAcceptedByTextBox.Name = "InspectedAcceptedByTextBox";
-            this.InspectedAcceptedByTextBox.Size = new System.Drawing.Size(328, 27);
+            this.InspectedAcceptedByTextBox.Size = new System.Drawing.Size(287, 25);
             this.InspectedAcceptedByTextBox.TabIndex = 104;
             // 
             // InspectedAcceptedByLabel
             // 
             this.InspectedAcceptedByLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.InspectedAcceptedByLabel.AutoSize = true;
-            this.InspectedAcceptedByLabel.Location = new System.Drawing.Point(15, 630);
+            this.InspectedAcceptedByLabel.Location = new System.Drawing.Point(13, 536);
             this.InspectedAcceptedByLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.InspectedAcceptedByLabel.Name = "InspectedAcceptedByLabel";
-            this.InspectedAcceptedByLabel.Size = new System.Drawing.Size(189, 20);
+            this.InspectedAcceptedByLabel.Size = new System.Drawing.Size(166, 17);
             this.InspectedAcceptedByLabel.TabIndex = 103;
             this.InspectedAcceptedByLabel.Text = "Inspected and Accepted by";
             // 
@@ -618,20 +613,20 @@
             this.ApprovedByTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ApprovedByTextBox.BackColor = System.Drawing.Color.White;
             this.ApprovedByTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ApprovedByTextBox.Location = new System.Drawing.Point(354, 653);
+            this.ApprovedByTextBox.Location = new System.Drawing.Point(310, 555);
             this.ApprovedByTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.ApprovedByTextBox.Name = "ApprovedByTextBox";
-            this.ApprovedByTextBox.Size = new System.Drawing.Size(341, 27);
+            this.ApprovedByTextBox.Size = new System.Drawing.Size(299, 25);
             this.ApprovedByTextBox.TabIndex = 106;
             // 
             // ApprovedByLabel
             // 
             this.ApprovedByLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ApprovedByLabel.AutoSize = true;
-            this.ApprovedByLabel.Location = new System.Drawing.Point(351, 630);
+            this.ApprovedByLabel.Location = new System.Drawing.Point(307, 536);
             this.ApprovedByLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ApprovedByLabel.Name = "ApprovedByLabel";
-            this.ApprovedByLabel.Size = new System.Drawing.Size(95, 20);
+            this.ApprovedByLabel.Size = new System.Drawing.Size(84, 17);
             this.ApprovedByLabel.TabIndex = 105;
             this.ApprovedByLabel.Text = "Approved by";
             // 
@@ -650,11 +645,11 @@
             this.gbxFilter.Controls.Add(this.cmbxFilterByItem);
             this.gbxFilter.Controls.Add(this.ckbxFilterBySupplier);
             this.gbxFilter.Controls.Add(this.ckbxFilterByItem);
-            this.gbxFilter.Location = new System.Drawing.Point(11, 159);
+            this.gbxFilter.Location = new System.Drawing.Point(10, 135);
             this.gbxFilter.Margin = new System.Windows.Forms.Padding(2);
             this.gbxFilter.Name = "gbxFilter";
             this.gbxFilter.Padding = new System.Windows.Forms.Padding(2);
-            this.gbxFilter.Size = new System.Drawing.Size(1064, 130);
+            this.gbxFilter.Size = new System.Drawing.Size(733, 111);
             this.gbxFilter.TabIndex = 107;
             this.gbxFilter.TabStop = false;
             this.gbxFilter.Text = "Filtering";
@@ -664,20 +659,20 @@
             this.cmbxFilterByBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxFilterByBranch.Enabled = false;
             this.cmbxFilterByBranch.FormattingEnabled = true;
-            this.cmbxFilterByBranch.Location = new System.Drawing.Point(553, 24);
+            this.cmbxFilterByBranch.Location = new System.Drawing.Point(421, 20);
             this.cmbxFilterByBranch.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxFilterByBranch.Name = "cmbxFilterByBranch";
-            this.cmbxFilterByBranch.Size = new System.Drawing.Size(251, 28);
+            this.cmbxFilterByBranch.Size = new System.Drawing.Size(220, 25);
             this.cmbxFilterByBranch.TabIndex = 114;
             // 
             // ckbxFilterByBranch
             // 
             this.ckbxFilterByBranch.AutoSize = true;
             this.ckbxFilterByBranch.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByBranch.Location = new System.Drawing.Point(477, 26);
+            this.ckbxFilterByBranch.Location = new System.Drawing.Point(351, 22);
             this.ckbxFilterByBranch.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByBranch.Name = "ckbxFilterByBranch";
-            this.ckbxFilterByBranch.Size = new System.Drawing.Size(73, 24);
+            this.ckbxFilterByBranch.Size = new System.Drawing.Size(66, 21);
             this.ckbxFilterByBranch.TabIndex = 113;
             this.ckbxFilterByBranch.Text = "Branch";
             this.ckbxFilterByBranch.UseVisualStyleBackColor = true;
@@ -687,10 +682,10 @@
             // 
             this.ckbxFilterByDrNumber.AutoSize = true;
             this.ckbxFilterByDrNumber.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByDrNumber.Location = new System.Drawing.Point(469, 87);
+            this.ckbxFilterByDrNumber.Location = new System.Drawing.Point(342, 75);
             this.ckbxFilterByDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByDrNumber.Name = "ckbxFilterByDrNumber";
-            this.ckbxFilterByDrNumber.Size = new System.Drawing.Size(81, 24);
+            this.ckbxFilterByDrNumber.Size = new System.Drawing.Size(75, 21);
             this.ckbxFilterByDrNumber.TabIndex = 112;
             this.ckbxFilterByDrNumber.Text = "D.R. No.";
             this.ckbxFilterByDrNumber.UseVisualStyleBackColor = true;
@@ -699,7 +694,7 @@
             // nudFilterByDrNumber
             // 
             this.nudFilterByDrNumber.Enabled = false;
-            this.nudFilterByDrNumber.Location = new System.Drawing.Point(554, 88);
+            this.nudFilterByDrNumber.Location = new System.Drawing.Point(422, 75);
             this.nudFilterByDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudFilterByDrNumber.Maximum = new decimal(new int[] {
             999999,
@@ -707,13 +702,13 @@
             0,
             0});
             this.nudFilterByDrNumber.Name = "nudFilterByDrNumber";
-            this.nudFilterByDrNumber.Size = new System.Drawing.Size(250, 27);
+            this.nudFilterByDrNumber.Size = new System.Drawing.Size(219, 25);
             this.nudFilterByDrNumber.TabIndex = 111;
             // 
             // nudFilterBySiNumber
             // 
             this.nudFilterBySiNumber.Enabled = false;
-            this.nudFilterBySiNumber.Location = new System.Drawing.Point(112, 88);
+            this.nudFilterBySiNumber.Location = new System.Drawing.Point(98, 75);
             this.nudFilterBySiNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudFilterBySiNumber.Maximum = new decimal(new int[] {
             999999,
@@ -721,7 +716,7 @@
             0,
             0});
             this.nudFilterBySiNumber.Name = "nudFilterBySiNumber";
-            this.nudFilterBySiNumber.Size = new System.Drawing.Size(275, 27);
+            this.nudFilterBySiNumber.Size = new System.Drawing.Size(211, 25);
             this.nudFilterBySiNumber.TabIndex = 110;
             this.nudFilterBySiNumber.ValueChanged += new System.EventHandler(this.nudFilterBySiNumber_ValueChanged);
             // 
@@ -729,10 +724,10 @@
             // 
             this.ckbxFilterBySiNumber.AutoSize = true;
             this.ckbxFilterBySiNumber.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterBySiNumber.Location = new System.Drawing.Point(33, 88);
+            this.ckbxFilterBySiNumber.Location = new System.Drawing.Point(29, 75);
             this.ckbxFilterBySiNumber.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterBySiNumber.Name = "ckbxFilterBySiNumber";
-            this.ckbxFilterBySiNumber.Size = new System.Drawing.Size(73, 24);
+            this.ckbxFilterBySiNumber.Size = new System.Drawing.Size(68, 21);
             this.ckbxFilterBySiNumber.TabIndex = 109;
             this.ckbxFilterBySiNumber.Text = "S.I. No.";
             this.ckbxFilterBySiNumber.UseVisualStyleBackColor = true;
@@ -746,10 +741,10 @@
             this.btnFilter.FlatAppearance.BorderSize = 0;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(808, 85);
+            this.btnFilter.Location = new System.Drawing.Point(649, 75);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(91, 29);
+            this.btnFilter.Size = new System.Drawing.Size(80, 25);
             this.btnFilter.TabIndex = 108;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = false;
@@ -761,20 +756,20 @@
             this.dtpFilterByDeliveryDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFilterByDeliveryDate.Enabled = false;
             this.dtpFilterByDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(553, 56);
+            this.dtpFilterByDeliveryDate.Location = new System.Drawing.Point(421, 48);
             this.dtpFilterByDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFilterByDeliveryDate.Name = "dtpFilterByDeliveryDate";
-            this.dtpFilterByDeliveryDate.Size = new System.Drawing.Size(251, 27);
+            this.dtpFilterByDeliveryDate.Size = new System.Drawing.Size(220, 25);
             this.dtpFilterByDeliveryDate.TabIndex = 7;
             // 
             // ckbxFilterByDeliveryDate
             // 
             this.ckbxFilterByDeliveryDate.AutoSize = true;
             this.ckbxFilterByDeliveryDate.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByDeliveryDate.Location = new System.Drawing.Point(431, 59);
+            this.ckbxFilterByDeliveryDate.Location = new System.Drawing.Point(313, 50);
             this.ckbxFilterByDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByDeliveryDate.Name = "ckbxFilterByDeliveryDate";
-            this.ckbxFilterByDeliveryDate.Size = new System.Drawing.Size(118, 24);
+            this.ckbxFilterByDeliveryDate.Size = new System.Drawing.Size(104, 21);
             this.ckbxFilterByDeliveryDate.TabIndex = 6;
             this.ckbxFilterByDeliveryDate.Text = "Delivery Date";
             this.ckbxFilterByDeliveryDate.UseVisualStyleBackColor = true;
@@ -785,10 +780,10 @@
             this.cmbxFilterBySupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxFilterBySupplier.Enabled = false;
             this.cmbxFilterBySupplier.FormattingEnabled = true;
-            this.cmbxFilterBySupplier.Location = new System.Drawing.Point(112, 56);
+            this.cmbxFilterBySupplier.Location = new System.Drawing.Point(98, 48);
             this.cmbxFilterBySupplier.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxFilterBySupplier.Name = "cmbxFilterBySupplier";
-            this.cmbxFilterBySupplier.Size = new System.Drawing.Size(275, 28);
+            this.cmbxFilterBySupplier.Size = new System.Drawing.Size(211, 25);
             this.cmbxFilterBySupplier.TabIndex = 3;
             // 
             // cmbxFilterByItem
@@ -796,20 +791,20 @@
             this.cmbxFilterByItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxFilterByItem.Enabled = false;
             this.cmbxFilterByItem.FormattingEnabled = true;
-            this.cmbxFilterByItem.Location = new System.Drawing.Point(112, 24);
+            this.cmbxFilterByItem.Location = new System.Drawing.Point(98, 20);
             this.cmbxFilterByItem.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxFilterByItem.Name = "cmbxFilterByItem";
-            this.cmbxFilterByItem.Size = new System.Drawing.Size(275, 28);
+            this.cmbxFilterByItem.Size = new System.Drawing.Size(211, 25);
             this.cmbxFilterByItem.TabIndex = 2;
             // 
             // ckbxFilterBySupplier
             // 
             this.ckbxFilterBySupplier.AutoSize = true;
             this.ckbxFilterBySupplier.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterBySupplier.Location = new System.Drawing.Point(23, 59);
+            this.ckbxFilterBySupplier.Location = new System.Drawing.Point(20, 50);
             this.ckbxFilterBySupplier.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterBySupplier.Name = "ckbxFilterBySupplier";
-            this.ckbxFilterBySupplier.Size = new System.Drawing.Size(83, 24);
+            this.ckbxFilterBySupplier.Size = new System.Drawing.Size(75, 21);
             this.ckbxFilterBySupplier.TabIndex = 1;
             this.ckbxFilterBySupplier.Text = "Supplier";
             this.ckbxFilterBySupplier.UseVisualStyleBackColor = true;
@@ -819,10 +814,10 @@
             // 
             this.ckbxFilterByItem.AutoSize = true;
             this.ckbxFilterByItem.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckbxFilterByItem.Location = new System.Drawing.Point(4, 26);
+            this.ckbxFilterByItem.Location = new System.Drawing.Point(4, 22);
             this.ckbxFilterByItem.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxFilterByItem.Name = "ckbxFilterByItem";
-            this.ckbxFilterByItem.Size = new System.Drawing.Size(104, 24);
+            this.ckbxFilterByItem.Size = new System.Drawing.Size(93, 21);
             this.ckbxFilterByItem.TabIndex = 0;
             this.ckbxFilterByItem.Text = "Description";
             this.ckbxFilterByItem.UseVisualStyleBackColor = true;
@@ -832,12 +827,13 @@
             // 
             this.lblGrandTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblGrandTotal.AutoSize = true;
-            this.lblGrandTotal.Location = new System.Drawing.Point(749, 525);
+            this.lblGrandTotal.Location = new System.Drawing.Point(456, 443);
             this.lblGrandTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrandTotal.Name = "lblGrandTotal";
-            this.lblGrandTotal.Size = new System.Drawing.Size(86, 20);
+            this.lblGrandTotal.Size = new System.Drawing.Size(76, 17);
             this.lblGrandTotal.TabIndex = 108;
             this.lblGrandTotal.Text = "Grand Total";
+            this.lblGrandTotal.Click += new System.EventHandler(this.lblGrandTotal_Click);
             // 
             // tbxGrandTotal
             // 
@@ -846,11 +842,11 @@
             this.tbxGrandTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxGrandTotal.ForeColor = System.Drawing.Color.Lime;
-            this.tbxGrandTotal.Location = new System.Drawing.Point(839, 519);
+            this.tbxGrandTotal.Location = new System.Drawing.Point(536, 443);
             this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
             this.tbxGrandTotal.ReadOnly = true;
-            this.tbxGrandTotal.Size = new System.Drawing.Size(236, 33);
+            this.tbxGrandTotal.Size = new System.Drawing.Size(207, 33);
             this.tbxGrandTotal.TabIndex = 109;
             this.tbxGrandTotal.Text = "0.00";
             this.tbxGrandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -860,10 +856,10 @@
             // 
             this.lblReprintMris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblReprintMris.AutoSize = true;
-            this.lblReprintMris.Location = new System.Drawing.Point(7, 532);
+            this.lblReprintMris.Location = new System.Drawing.Point(6, 452);
             this.lblReprintMris.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReprintMris.Name = "lblReprintMris";
-            this.lblReprintMris.Size = new System.Drawing.Size(95, 20);
+            this.lblReprintMris.Size = new System.Drawing.Size(84, 17);
             this.lblReprintMris.TabIndex = 110;
             this.lblReprintMris.Text = "Reprint MRIS";
             // 
@@ -872,10 +868,10 @@
             this.tbxReprintMris.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tbxReprintMris.BackColor = System.Drawing.Color.White;
             this.tbxReprintMris.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxReprintMris.Location = new System.Drawing.Point(106, 530);
+            this.tbxReprintMris.Location = new System.Drawing.Point(93, 451);
             this.tbxReprintMris.Margin = new System.Windows.Forms.Padding(2);
             this.tbxReprintMris.Name = "tbxReprintMris";
-            this.tbxReprintMris.Size = new System.Drawing.Size(240, 27);
+            this.tbxReprintMris.Size = new System.Drawing.Size(210, 25);
             this.tbxReprintMris.TabIndex = 111;
             // 
             // btnReprintMris
@@ -885,10 +881,10 @@
             this.btnReprintMris.FlatAppearance.BorderSize = 0;
             this.btnReprintMris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReprintMris.ForeColor = System.Drawing.Color.White;
-            this.btnReprintMris.Location = new System.Drawing.Point(350, 530);
+            this.btnReprintMris.Location = new System.Drawing.Point(306, 451);
             this.btnReprintMris.Margin = new System.Windows.Forms.Padding(2);
             this.btnReprintMris.Name = "btnReprintMris";
-            this.btnReprintMris.Size = new System.Drawing.Size(87, 27);
+            this.btnReprintMris.Size = new System.Drawing.Size(76, 23);
             this.btnReprintMris.TabIndex = 112;
             this.btnReprintMris.Text = "Reprint";
             this.btnReprintMris.UseVisualStyleBackColor = false;
@@ -898,10 +894,10 @@
             // 
             this.lblChangeAccountDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblChangeAccountDescription.AutoSize = true;
-            this.lblChangeAccountDescription.Location = new System.Drawing.Point(1134, 502);
+            this.lblChangeAccountDescription.Location = new System.Drawing.Point(795, 402);
             this.lblChangeAccountDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblChangeAccountDescription.Name = "lblChangeAccountDescription";
-            this.lblChangeAccountDescription.Size = new System.Drawing.Size(310, 20);
+            this.lblChangeAccountDescription.Size = new System.Drawing.Size(270, 17);
             this.lblChangeAccountDescription.TabIndex = 113;
             this.lblChangeAccountDescription.Text = "Change Account Description of Selected Item";
             // 
@@ -911,10 +907,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbxExpense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxExpense.FormattingEnabled = true;
-            this.cmbxExpense.Location = new System.Drawing.Point(1138, 524);
+            this.cmbxExpense.Location = new System.Drawing.Point(799, 421);
             this.cmbxExpense.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxExpense.Name = "cmbxExpense";
-            this.cmbxExpense.Size = new System.Drawing.Size(360, 28);
+            this.cmbxExpense.Size = new System.Drawing.Size(302, 25);
             this.cmbxExpense.TabIndex = 113;
             // 
             // btnChangeAccountDescription
@@ -924,10 +920,10 @@
             this.btnChangeAccountDescription.FlatAppearance.BorderSize = 0;
             this.btnChangeAccountDescription.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeAccountDescription.ForeColor = System.Drawing.Color.White;
-            this.btnChangeAccountDescription.Location = new System.Drawing.Point(1502, 524);
+            this.btnChangeAccountDescription.Location = new System.Drawing.Point(1105, 421);
             this.btnChangeAccountDescription.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAccountDescription.Name = "btnChangeAccountDescription";
-            this.btnChangeAccountDescription.Size = new System.Drawing.Size(87, 28);
+            this.btnChangeAccountDescription.Size = new System.Drawing.Size(76, 25);
             this.btnChangeAccountDescription.TabIndex = 114;
             this.btnChangeAccountDescription.Text = "Done";
             this.btnChangeAccountDescription.UseVisualStyleBackColor = false;
@@ -940,10 +936,10 @@
             this.btnRemoveExpenseClassification.FlatAppearance.BorderSize = 0;
             this.btnRemoveExpenseClassification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveExpenseClassification.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveExpenseClassification.Location = new System.Drawing.Point(1363, 159);
+            this.btnRemoveExpenseClassification.Location = new System.Drawing.Point(983, 107);
             this.btnRemoveExpenseClassification.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveExpenseClassification.Name = "btnRemoveExpenseClassification";
-            this.btnRemoveExpenseClassification.Size = new System.Drawing.Size(226, 28);
+            this.btnRemoveExpenseClassification.Size = new System.Drawing.Size(198, 24);
             this.btnRemoveExpenseClassification.TabIndex = 115;
             this.btnRemoveExpenseClassification.Text = "Remove Expense Classification";
             this.btnRemoveExpenseClassification.UseVisualStyleBackColor = false;
@@ -953,10 +949,10 @@
             // 
             this.lblAccountBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAccountBranch.AutoSize = true;
-            this.lblAccountBranch.Location = new System.Drawing.Point(1134, 450);
+            this.lblAccountBranch.Location = new System.Drawing.Point(795, 356);
             this.lblAccountBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccountBranch.Name = "lblAccountBranch";
-            this.lblAccountBranch.Size = new System.Drawing.Size(54, 20);
+            this.lblAccountBranch.Size = new System.Drawing.Size(47, 17);
             this.lblAccountBranch.TabIndex = 116;
             this.lblAccountBranch.Text = "Branch";
             // 
@@ -965,10 +961,10 @@
             this.cmbxAccountBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmbxAccountBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxAccountBranch.FormattingEnabled = true;
-            this.cmbxAccountBranch.Location = new System.Drawing.Point(1138, 472);
+            this.cmbxAccountBranch.Location = new System.Drawing.Point(799, 375);
             this.cmbxAccountBranch.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxAccountBranch.Name = "cmbxAccountBranch";
-            this.cmbxAccountBranch.Size = new System.Drawing.Size(229, 28);
+            this.cmbxAccountBranch.Size = new System.Drawing.Size(187, 25);
             this.cmbxAccountBranch.TabIndex = 117;
             // 
             // cmbxAccountCompany
@@ -976,20 +972,20 @@
             this.cmbxAccountCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmbxAccountCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxAccountCompany.FormattingEnabled = true;
-            this.cmbxAccountCompany.Location = new System.Drawing.Point(1371, 472);
+            this.cmbxAccountCompany.Location = new System.Drawing.Point(990, 374);
             this.cmbxAccountCompany.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxAccountCompany.Name = "cmbxAccountCompany";
-            this.cmbxAccountCompany.Size = new System.Drawing.Size(218, 28);
+            this.cmbxAccountCompany.Size = new System.Drawing.Size(191, 25);
             this.cmbxAccountCompany.TabIndex = 119;
             // 
             // lblAccountCompany
             // 
             this.lblAccountCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblAccountCompany.AutoSize = true;
-            this.lblAccountCompany.Location = new System.Drawing.Point(1367, 450);
+            this.lblAccountCompany.Location = new System.Drawing.Point(987, 355);
             this.lblAccountCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAccountCompany.Name = "lblAccountCompany";
-            this.lblAccountCompany.Size = new System.Drawing.Size(72, 20);
+            this.lblAccountCompany.Size = new System.Drawing.Size(63, 17);
             this.lblAccountCompany.TabIndex = 118;
             this.lblAccountCompany.Text = "Company";
             // 
@@ -1000,10 +996,10 @@
             this.btnInsertToQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnInsertToQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsertToQueue.ForeColor = System.Drawing.Color.White;
-            this.btnInsertToQueue.Location = new System.Drawing.Point(1079, 322);
+            this.btnInsertToQueue.Location = new System.Drawing.Point(747, 264);
             this.btnInsertToQueue.Margin = new System.Windows.Forms.Padding(2);
             this.btnInsertToQueue.Name = "btnInsertToQueue";
-            this.btnInsertToQueue.Size = new System.Drawing.Size(55, 55);
+            this.btnInsertToQueue.Size = new System.Drawing.Size(48, 47);
             this.btnInsertToQueue.TabIndex = 74;
             this.btnInsertToQueue.UseVisualStyleBackColor = false;
             this.btnInsertToQueue.Click += new System.EventHandler(this.btnInsertToQueue_Click);
@@ -1015,20 +1011,20 @@
             this.btnRemoveFromQueue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRemoveFromQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveFromQueue.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveFromQueue.Location = new System.Drawing.Point(1079, 387);
+            this.btnRemoveFromQueue.Location = new System.Drawing.Point(747, 319);
             this.btnRemoveFromQueue.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveFromQueue.Name = "btnRemoveFromQueue";
-            this.btnRemoveFromQueue.Size = new System.Drawing.Size(55, 55);
+            this.btnRemoveFromQueue.Size = new System.Drawing.Size(48, 47);
             this.btnRemoveFromQueue.TabIndex = 73;
             this.btnRemoveFromQueue.UseVisualStyleBackColor = false;
             this.btnRemoveFromQueue.Click += new System.EventHandler(this.btnRemoveFromQueue_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1597, 691);
+            this.ClientSize = new System.Drawing.Size(1192, 587);
             this.Controls.Add(this.cmbxAccountCompany);
             this.Controls.Add(this.lblAccountCompany);
             this.Controls.Add(this.cmbxAccountBranch);
@@ -1067,11 +1063,11 @@
             this.Controls.Add(this.dgvUnpaidStocks);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.Header);
-            this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Payables";

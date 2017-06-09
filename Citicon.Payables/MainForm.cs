@@ -641,5 +641,10 @@ namespace Citicon.Payables
             dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name].Value = stock;
             dgvMrisNumberIssuanceQueue.InvalidateCell(dgvMrisNumberIssuanceQueue.Rows[index].Cells[colMrisNumberIssuanceQueue.Name]);
         }
+
+        private void lblGrandTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

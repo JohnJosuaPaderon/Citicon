@@ -46,9 +46,10 @@
             // lblBank
             // 
             this.lblBank.AutoSize = true;
-            this.lblBank.Location = new System.Drawing.Point(12, 15);
+            this.lblBank.Location = new System.Drawing.Point(9, 12);
+            this.lblBank.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBank.Name = "lblBank";
-            this.lblBank.Size = new System.Drawing.Size(44, 21);
+            this.lblBank.Size = new System.Drawing.Size(35, 17);
             this.lblBank.TabIndex = 0;
             this.lblBank.Text = "Bank";
             // 
@@ -56,18 +57,20 @@
             // 
             this.cmbxBank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxBank.FormattingEnabled = true;
-            this.cmbxBank.Location = new System.Drawing.Point(122, 12);
+            this.cmbxBank.Location = new System.Drawing.Point(95, 10);
+            this.cmbxBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxBank.Name = "cmbxBank";
-            this.cmbxBank.Size = new System.Drawing.Size(341, 29);
+            this.cmbxBank.Size = new System.Drawing.Size(266, 25);
             this.cmbxBank.TabIndex = 1;
             this.cmbxBank.SelectedIndexChanged += new System.EventHandler(this.cmbxBank_SelectedIndexChanged);
             // 
             // lblBankAccount
             // 
             this.lblBankAccount.AutoSize = true;
-            this.lblBankAccount.Location = new System.Drawing.Point(12, 50);
+            this.lblBankAccount.Location = new System.Drawing.Point(9, 40);
+            this.lblBankAccount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBankAccount.Name = "lblBankAccount";
-            this.lblBankAccount.Size = new System.Drawing.Size(104, 21);
+            this.lblBankAccount.Size = new System.Drawing.Size(85, 17);
             this.lblBankAccount.TabIndex = 2;
             this.lblBankAccount.Text = "Bank Account";
             // 
@@ -75,51 +78,56 @@
             // 
             this.cmbxBankAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxBankAccount.FormattingEnabled = true;
-            this.cmbxBankAccount.Location = new System.Drawing.Point(122, 47);
+            this.cmbxBankAccount.Location = new System.Drawing.Point(95, 38);
+            this.cmbxBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbxBankAccount.Name = "cmbxBankAccount";
-            this.cmbxBankAccount.Size = new System.Drawing.Size(341, 29);
+            this.cmbxBankAccount.Size = new System.Drawing.Size(266, 25);
             this.cmbxBankAccount.TabIndex = 3;
             // 
             // nudRangeStart
             // 
-            this.nudRangeStart.Location = new System.Drawing.Point(16, 119);
+            this.nudRangeStart.Location = new System.Drawing.Point(12, 96);
+            this.nudRangeStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudRangeStart.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.nudRangeStart.Name = "nudRangeStart";
-            this.nudRangeStart.Size = new System.Drawing.Size(221, 29);
+            this.nudRangeStart.Size = new System.Drawing.Size(172, 25);
             this.nudRangeStart.TabIndex = 4;
             // 
             // lblRangeStart
             // 
             this.lblRangeStart.AutoSize = true;
-            this.lblRangeStart.Location = new System.Drawing.Point(12, 95);
+            this.lblRangeStart.Location = new System.Drawing.Point(9, 77);
+            this.lblRangeStart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRangeStart.Name = "lblRangeStart";
-            this.lblRangeStart.Size = new System.Drawing.Size(42, 21);
+            this.lblRangeStart.Size = new System.Drawing.Size(35, 17);
             this.lblRangeStart.TabIndex = 5;
             this.lblRangeStart.Text = "Start";
             // 
             // lblRangeEnd
             // 
             this.lblRangeEnd.AutoSize = true;
-            this.lblRangeEnd.Location = new System.Drawing.Point(238, 95);
+            this.lblRangeEnd.Location = new System.Drawing.Point(185, 77);
+            this.lblRangeEnd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRangeEnd.Name = "lblRangeEnd";
-            this.lblRangeEnd.Size = new System.Drawing.Size(36, 21);
+            this.lblRangeEnd.Size = new System.Drawing.Size(30, 17);
             this.lblRangeEnd.TabIndex = 7;
             this.lblRangeEnd.Text = "End";
             // 
             // nudRangeEnd
             // 
-            this.nudRangeEnd.Location = new System.Drawing.Point(242, 119);
+            this.nudRangeEnd.Location = new System.Drawing.Point(188, 96);
+            this.nudRangeEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudRangeEnd.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.nudRangeEnd.Name = "nudRangeEnd";
-            this.nudRangeEnd.Size = new System.Drawing.Size(221, 29);
+            this.nudRangeEnd.Size = new System.Drawing.Size(172, 25);
             this.nudRangeEnd.TabIndex = 6;
             // 
             // btnSaveRange
@@ -128,9 +136,10 @@
             this.btnSaveRange.FlatAppearance.BorderSize = 0;
             this.btnSaveRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveRange.ForeColor = System.Drawing.Color.White;
-            this.btnSaveRange.Location = new System.Drawing.Point(232, 154);
+            this.btnSaveRange.Location = new System.Drawing.Point(180, 125);
+            this.btnSaveRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveRange.Name = "btnSaveRange";
-            this.btnSaveRange.Size = new System.Drawing.Size(125, 50);
+            this.btnSaveRange.Size = new System.Drawing.Size(97, 40);
             this.btnSaveRange.TabIndex = 8;
             this.btnSaveRange.Text = "Save Range";
             this.btnSaveRange.UseVisualStyleBackColor = false;
@@ -141,9 +150,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(363, 154);
+            this.btnCancel.Location = new System.Drawing.Point(282, 125);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 50);
+            this.btnCancel.Size = new System.Drawing.Size(78, 40);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -151,10 +161,10 @@
             // 
             // ChequeNumberRangeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(480, 220);
+            this.ClientSize = new System.Drawing.Size(373, 178);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSaveRange);
             this.Controls.Add(this.lblRangeEnd);
@@ -165,11 +175,11 @@
             this.Controls.Add(this.lblBankAccount);
             this.Controls.Add(this.cmbxBank);
             this.Controls.Add(this.lblBank);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "ChequeNumberRangeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
