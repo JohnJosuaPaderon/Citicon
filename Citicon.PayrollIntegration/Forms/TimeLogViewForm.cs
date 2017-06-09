@@ -100,7 +100,11 @@ namespace Citicon.PayrollIntegration.Forms
 
             try
             {
-                var employees = await EmployeeManager.GetListWithTimeLogAsync(FilterByBranchCheckBox.Checked, branch, FilterByEmployeePositionCheckBox.Checked, employeePosition, FilterByPayrollTypeCheckBox.Checked, (PayrollType)PayrollTypeComboBox.SelectedItem, new DateTimeRange(TimeRangeStartDdateTimePicker.Value, TimeRangeEndDateTimePicker.Value));
+                var employees = await EmployeeManager.GetListWithTimeLogAsync(
+                    FilterByBranchCheckBox.Checked, branch,
+                    FilterByEmployeePositionCheckBox.Checked, employeePosition,
+                    FilterByPayrollTypeCheckBox.Checked, PayrollTypeComboBox.SelectedItem != null ? (PayrollType)PayrollTypeComboBox.SelectedItem : PayrollType.SemiMonthly ,
+                    new DateTimeRange(TimeRangeStartDdateTimePicker.Value, TimeRangeEndDateTimePicker.Value));
 
                 if (employees != null && employees.Any())
                 {
