@@ -83,10 +83,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Citicon.HumanResourceIntegration\Citicon.HumanResourceIntegration.csproj">
-      <Project>{D25AB3F8-1A7E-419F-BD4A-55C7AFF5144A}</Project>
-      <Name>Citicon.HumanResourceIntegration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Citicon\Citicon.csproj">
       <Project>{cec456ef-e300-48b1-9fc5-ec6e6ec46df0}</Project>
       <Name>Citicon</Name>
