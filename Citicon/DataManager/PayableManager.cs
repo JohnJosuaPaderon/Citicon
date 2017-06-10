@@ -137,8 +137,7 @@ namespace Citicon.DataManager
                 Excel.Worksheet sheet = book.ActiveSheet;
                 try
                 {
-                    Supplier payee = new Supplier
-                    { };
+                    Supplier payee = null;
                     string chequeVoucherNumber = null;
                     decimal totalAmount = 0.00M;
                     var particularLocation = ChequeVoucherCellLocation("Particulars");
@@ -258,7 +257,7 @@ namespace Citicon.DataManager
                     sheet.Cells[chequeVoucherNumberLocation.X, chequeVoucherNumberLocation.Y] = $"C.V. No. : {chequeVoucherNumber}";
                     sheet.Cells[payeeLocation.X, payeeLocation.Y] = payee?.Description ?? defaultPayee;
                     sheet.Cells[dateLocation.X, dateLocation.Y] = DateTime.Now.ToString("MM-dd-yyyy");
-                    sheet.Cells[amountInWordsLocation.X, amountInWordsLocation.Y] = Sorschia.Supports.CurrencyToWords(totalAmount);
+                    sheet.Cells[amountInWordsLocation.X, amountInWordsLocation.Y] = Sorschia.Supports.CurrencyToWords(totalAmount * -1);
                     sheet.Cells[totalAmountLocation.X, totalAmountLocation.Y] = totalAmount.ToString("#,##0.00");
                     sheet.Cells[preparedByLocation.X, preparedByLocation.Y] = defaultPreparedBy;
                     sheet.Cells[checkedByLocation.X, checkedByLocation.Y] = defaultCheckedBy;
@@ -267,7 +266,7 @@ namespace Citicon.DataManager
                     sheet.Cells[postedByLocation.X, postedByLocation.Y] = defaultPostedBy;
                     sheet.Cells[recordedByLocation.X, recordedByLocation.Y] = defaultRecordedBy;
                     //var filePath = $@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx";
-                    var filePath = Path.Combine(ChequeVoucherDirectory, string.Format("{0}_yyMMddHHmm.xlsx", chequeVoucherNumber));
+                    var filePath = Path.Combine(ChequeVoucherDirectory, string.Format("{0}_{1:yyMMddHHmm}.xlsx", chequeVoucherNumber, DateTime.Now));
                     book.SaveAs(filePath);
                     book.PrintOutEx();
                     //if (File.Exists(filePath))
