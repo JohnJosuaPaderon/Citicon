@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DeliveryDataGridView = new System.Windows.Forms.DataGridView();
             this.DesignDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.Design_StrengthTextBox = new System.Windows.Forms.TextBox();
@@ -80,15 +80,15 @@
             this.FinishedUnloadingDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.EstimatedStayCheckBox = new System.Windows.Forms.CheckBox();
             this.EstimatedStayDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.SearchDeliveryReceiptNumberTextBox = new System.Windows.Forms.TextBox();
+            this.SearchDeliveryReceiptNumberLabel = new System.Windows.Forms.Label();
+            this.SearchDeliveryReceiptNumberTimer = new System.Windows.Forms.Timer(this.components);
+            this.Delivery_DeliveryReceiptNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_Project_ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_PlantLeaveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_DeliveryReceiptNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SearchDeliveryReceiptNumberTextBox = new System.Windows.Forms.TextBox();
-            this.SearchDeliveryReceiptNumberLabel = new System.Windows.Forms.Label();
-            this.SearchDeliveryReceiptNumberTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView)).BeginInit();
             this.DesignDetailsGroupBox.SuspendLayout();
             this.DeliveryDetailsGroupBox.SuspendLayout();
@@ -99,8 +99,8 @@
             this.DeliveryDataGridView.AllowUserToAddRows = false;
             this.DeliveryDataGridView.AllowUserToDeleteRows = false;
             this.DeliveryDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DeliveryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DeliveryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DeliveryDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -109,31 +109,31 @@
             this.DeliveryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DeliveryDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.DeliveryDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DeliveryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DeliveryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DeliveryDataGridView.ColumnHeadersHeight = 60;
             this.DeliveryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DeliveryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delivery_DeliveryReceiptNumberColumn,
             this.Delivery_Project_ClientColumn,
             this.Delivery_ProjectColumn,
             this.DeliveryColumn,
             this.Delivery_PlantLeaveColumn,
-            this.Delivery_DeliveryReceiptNumberColumn,
             this.Delivery_ExtraColumn});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
             this.DeliveryDataGridView.EnableHeadersVisualStyles = false;
             this.DeliveryDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.DeliveryDataGridView.Location = new System.Drawing.Point(3, 34);
@@ -142,8 +142,8 @@
             this.DeliveryDataGridView.ReadOnly = true;
             this.DeliveryDataGridView.RowHeadersVisible = false;
             this.DeliveryDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DeliveryDataGridView.RowTemplate.Height = 40;
             this.DeliveryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DeliveryDataGridView.Size = new System.Drawing.Size(913, 821);
@@ -631,6 +631,37 @@
             this.EstimatedStayDateTimePicker.TabIndex = 152;
             this.EstimatedStayDateTimePicker.Leave += new System.EventHandler(this.EstimatedStayDateTimePicker_Leave);
             // 
+            // SearchDeliveryReceiptNumberTextBox
+            // 
+            this.SearchDeliveryReceiptNumberTextBox.BackColor = System.Drawing.Color.White;
+            this.SearchDeliveryReceiptNumberTextBox.Location = new System.Drawing.Point(102, 3);
+            this.SearchDeliveryReceiptNumberTextBox.Name = "SearchDeliveryReceiptNumberTextBox";
+            this.SearchDeliveryReceiptNumberTextBox.Size = new System.Drawing.Size(189, 25);
+            this.SearchDeliveryReceiptNumberTextBox.TabIndex = 139;
+            this.SearchDeliveryReceiptNumberTextBox.TextChanged += new System.EventHandler(this.SearchDeliveryReceiptNumberTextBox_TextChanged);
+            // 
+            // SearchDeliveryReceiptNumberLabel
+            // 
+            this.SearchDeliveryReceiptNumberLabel.AutoSize = true;
+            this.SearchDeliveryReceiptNumberLabel.Location = new System.Drawing.Point(3, 6);
+            this.SearchDeliveryReceiptNumberLabel.Name = "SearchDeliveryReceiptNumberLabel";
+            this.SearchDeliveryReceiptNumberLabel.Size = new System.Drawing.Size(93, 17);
+            this.SearchDeliveryReceiptNumberLabel.TabIndex = 138;
+            this.SearchDeliveryReceiptNumberLabel.Text = "Search DR No.";
+            // 
+            // SearchDeliveryReceiptNumberTimer
+            // 
+            this.SearchDeliveryReceiptNumberTimer.Interval = 500;
+            this.SearchDeliveryReceiptNumberTimer.Tick += new System.EventHandler(this.SearchDeliveryReceiptNumberTimer_Tick);
+            // 
+            // Delivery_DeliveryReceiptNumberColumn
+            // 
+            this.Delivery_DeliveryReceiptNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_DeliveryReceiptNumberColumn.HeaderText = "DR NO.";
+            this.Delivery_DeliveryReceiptNumberColumn.Name = "Delivery_DeliveryReceiptNumberColumn";
+            this.Delivery_DeliveryReceiptNumberColumn.ReadOnly = true;
+            this.Delivery_DeliveryReceiptNumberColumn.Width = 70;
+            // 
             // Delivery_Project_ClientColumn
             // 
             this.Delivery_Project_ClientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -659,21 +690,13 @@
             // Delivery_PlantLeaveColumn
             // 
             this.Delivery_PlantLeaveColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Format = "MMM d, yyyy";
-            this.Delivery_PlantLeaveColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Format = "MMM d, yyyy";
+            this.Delivery_PlantLeaveColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.Delivery_PlantLeaveColumn.HeaderText = "PLANT LEAVE";
             this.Delivery_PlantLeaveColumn.MinimumWidth = 125;
             this.Delivery_PlantLeaveColumn.Name = "Delivery_PlantLeaveColumn";
             this.Delivery_PlantLeaveColumn.ReadOnly = true;
             this.Delivery_PlantLeaveColumn.Width = 125;
-            // 
-            // Delivery_DeliveryReceiptNumberColumn
-            // 
-            this.Delivery_DeliveryReceiptNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delivery_DeliveryReceiptNumberColumn.HeaderText = "DR NO.";
-            this.Delivery_DeliveryReceiptNumberColumn.Name = "Delivery_DeliveryReceiptNumberColumn";
-            this.Delivery_DeliveryReceiptNumberColumn.ReadOnly = true;
-            this.Delivery_DeliveryReceiptNumberColumn.Width = 70;
             // 
             // Delivery_ExtraColumn
             // 
@@ -681,29 +704,6 @@
             this.Delivery_ExtraColumn.HeaderText = "";
             this.Delivery_ExtraColumn.Name = "Delivery_ExtraColumn";
             this.Delivery_ExtraColumn.ReadOnly = true;
-            // 
-            // SearchDeliveryReceiptNumberTextBox
-            // 
-            this.SearchDeliveryReceiptNumberTextBox.BackColor = System.Drawing.Color.White;
-            this.SearchDeliveryReceiptNumberTextBox.Location = new System.Drawing.Point(102, 3);
-            this.SearchDeliveryReceiptNumberTextBox.Name = "SearchDeliveryReceiptNumberTextBox";
-            this.SearchDeliveryReceiptNumberTextBox.Size = new System.Drawing.Size(189, 25);
-            this.SearchDeliveryReceiptNumberTextBox.TabIndex = 139;
-            this.SearchDeliveryReceiptNumberTextBox.TextChanged += new System.EventHandler(this.SearchDeliveryReceiptNumberTextBox_TextChanged);
-            // 
-            // SearchDeliveryReceiptNumberLabel
-            // 
-            this.SearchDeliveryReceiptNumberLabel.AutoSize = true;
-            this.SearchDeliveryReceiptNumberLabel.Location = new System.Drawing.Point(3, 6);
-            this.SearchDeliveryReceiptNumberLabel.Name = "SearchDeliveryReceiptNumberLabel";
-            this.SearchDeliveryReceiptNumberLabel.Size = new System.Drawing.Size(93, 17);
-            this.SearchDeliveryReceiptNumberLabel.TabIndex = 138;
-            this.SearchDeliveryReceiptNumberLabel.Text = "Search DR No.";
-            // 
-            // SearchDeliveryReceiptNumberTimer
-            // 
-            this.SearchDeliveryReceiptNumberTimer.Interval = 500;
-            this.SearchDeliveryReceiptNumberTimer.Tick += new System.EventHandler(this.SearchDeliveryReceiptNumberTimer_Tick);
             // 
             // DeliveryConfirmationControl
             // 
@@ -789,14 +789,14 @@
         private System.Windows.Forms.DateTimePicker FinishedUnloadingDateTimePicker;
         private System.Windows.Forms.CheckBox EstimatedStayCheckBox;
         private System.Windows.Forms.DateTimePicker EstimatedStayDateTimePicker;
+        private System.Windows.Forms.TextBox SearchDeliveryReceiptNumberTextBox;
+        private System.Windows.Forms.Label SearchDeliveryReceiptNumberLabel;
+        private System.Windows.Forms.Timer SearchDeliveryReceiptNumberTimer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_DeliveryReceiptNumberColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_Project_ClientColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ProjectColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_PlantLeaveColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_DeliveryReceiptNumberColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ExtraColumn;
-        private System.Windows.Forms.TextBox SearchDeliveryReceiptNumberTextBox;
-        private System.Windows.Forms.Label SearchDeliveryReceiptNumberLabel;
-        private System.Windows.Forms.Timer SearchDeliveryReceiptNumberTimer;
     }
 }

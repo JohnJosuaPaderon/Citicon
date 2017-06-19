@@ -89,11 +89,11 @@ namespace Citicon.Forms.Controls
                 {
                     Height = 30
                 };
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.DeliveryReceiptNumberDisplay });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project?.Client });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.PlantLeave });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.DeliveryReceiptNumberDisplay });
                 DeliveryDataGridView.Rows.Add(row);
             }
         }
