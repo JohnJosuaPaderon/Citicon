@@ -14,6 +14,11 @@ namespace Citicon.DataProcess
             MRIS = mris;
             MRISReportTemplate = ConfigurationManager.AppSettings["MrisReportTemplateV2"];
             MRISReportDirectory = ConfigurationManager.AppSettings["MrisReportDirectoryV2"];
+
+            if (uint.TryParse(ConfigurationManager.AppSettings["Mris.PrintCopies"], out uint printCopies))
+            {
+                PrintCopies = printCopies;
+            }
         }
 
         private MRISReport MRIS { get; set; }
