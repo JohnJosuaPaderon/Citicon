@@ -89,7 +89,7 @@ namespace Citicon.Payables
             exportableStocks.Add(e);
         }
 
-        private void addStockToUnpaidStock(Stock e)
+        private void AddStockToUnpaidStock(Stock e)
         {
             if (this != null)
             {
@@ -131,7 +131,7 @@ namespace Citicon.Payables
 
         private void StockManager_NewUnpaidStockGenerated(Stock e)
         {
-            addStockToUnpaidStock(e);
+            AddStockToUnpaidStock(e);
         }
 
         private void StockManager_NewItemGenerated(Stock e)
@@ -152,7 +152,7 @@ namespace Citicon.Payables
                 btnChequeIssuance.Enabled = false;
                 btnChequeVoucher.Enabled = false;
             }
-            generateMrisNumber();
+            GenerateMrisNumber();
             Parallel.Invoke(
                 /*() => loadUnPaidStocks(),*/
                 /*async () => await branchManager.GetListAsync(),*/
@@ -240,11 +240,11 @@ namespace Citicon.Payables
             });
         }
 
-        private void loadUnPaidStocks()
+        private void LoadUnPaidStocks()
         {
             if (!loadingUnpaidStocks)
             {
-                setColumnVisibility();
+                SetColumnVisibility();
                 dgvUnpaidStocks.Rows.Clear();
                 gbxFilter.Enabled = false;
                 tbxGrandTotal.Text = "0.00";
@@ -260,7 +260,7 @@ namespace Citicon.Payables
                             //Parallel.ForEach(x.Result.AsEnumerable(), y => addStockToUnpaidStock(y));
                             foreach (var item in x.Result)
                             {
-                                Parallel.Invoke(() => addStockToUnpaidStock(item));
+                                Parallel.Invoke(() => AddStockToUnpaidStock(item));
                             }
                             Debug.WriteLine("Unpaid List Generated End : {0}", DateTime.Now);
                         }
@@ -270,13 +270,13 @@ namespace Citicon.Payables
                         loadingUnpaidStocks = false;
                         gbxFilter.Enabled = true;
                     }));
-                    countGrandTotal();
+                    CountGrandTotal();
                 });
             }
             else MessageBox.Show("Unpaid stocks already loading, please wait!");
         }
 
-        private void countGrandTotal()
+        private void CountGrandTotal()
         {
             Invoke(new Action(() =>
             {
@@ -290,7 +290,7 @@ namespace Citicon.Payables
             }));
         }
 
-        private void setColumnVisibility()
+        private void SetColumnVisibility()
         {
             //colStockSiNumber.Visible = !ckbxFilterBySiNumber.Checked;
             //colStockDrNumber.Visible = !ckbxFilterByDrNumber.Checked;
@@ -300,11 +300,11 @@ namespace Citicon.Payables
             colStock.Visible = !ckbxFilterByItem.Checked;
         }
 
-        private void loadFilteredUnpaidStock()
+        private void LoadFilteredUnpaidStock()
         {
             if (!loadingUnpaidStocks)
             {
-                setColumnVisibility();
+                SetColumnVisibility();
                 dgvUnpaidStocks.Rows.Clear();
                 gbxFilter.Enabled = false;
                 tbxGrandTotal.Text = "0.00";
@@ -325,7 +325,7 @@ namespace Citicon.Payables
                             //Parallel.ForEach(x.Result.AsEnumerable(), y => addStockToUnpaidStock(y));
                             foreach (var item in x.Result)
                             {
-                                Parallel.Invoke(() => addStockToUnpaidStock(item));
+                                Parallel.Invoke(() => AddStockToUnpaidStock(item));
                             }
                         }
                     }
@@ -334,17 +334,17 @@ namespace Citicon.Payables
                         loadingUnpaidStocks = false;
                         gbxFilter.Enabled = true;
                     }));
-                    countGrandTotal();
+                    CountGrandTotal();
                 });
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            loadUnPaidStocks();
+            LoadUnPaidStocks();
         }
 
-        private void displaySelectedUnpaidStock()
+        private void DisplaySelectedUnpaidStock()
         {
             if (UnpaidStockHasSelectedRows)
             {
@@ -354,7 +354,7 @@ namespace Citicon.Payables
 
         private void dgvUnpaidStocks_SelectionChanged(object sender, EventArgs e)
         {
-            displaySelectedUnpaidStock();
+            DisplaySelectedUnpaidStock();
         }
 
         private void ViewUnpaidStockDetails_Click(object sender, EventArgs e)
@@ -403,7 +403,7 @@ namespace Citicon.Payables
             {
                 var row = dgvMrisNumberIssuanceQueue.SelectedRows[0];
                 var stock = (Stock)row.Cells[colMrisNumberIssuanceQueue.Name].Value;
-                addStockToUnpaidStock(stock);
+                AddStockToUnpaidStock(stock);
                 if (dgvMrisNumberIssuanceQueue.Rows.Count == 1)
                 {
                     activeSupplier = null;
@@ -415,10 +415,10 @@ namespace Citicon.Payables
 
         private void lblGenerateMrisNumber_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            generateMrisNumber();
+            GenerateMrisNumber();
         }
 
-        private void generateMrisNumber()
+        private void GenerateMrisNumber()
         {
             tbxActiveMrisNumber.Text = stockManager.GenerateMrisNumber();
         }
@@ -435,7 +435,7 @@ namespace Citicon.Payables
                     stock.MrisNumber = tbxActiveMrisNumber.Text.Trim();
                     stockManager.Update(stock);
                 }
-                generateMrisNumber();
+                GenerateMrisNumber();
                 dgvMrisNumberIssuanceQueue.Rows.Clear();
                 activeSupplier = null;
                 tbxActiveSupplier.Text = string.Empty;
@@ -544,7 +544,7 @@ namespace Citicon.Payables
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            loadFilteredUnpaidStock();
+            LoadFilteredUnpaidStock();
         }
 
         private void ckbxFilterByDrNumber_CheckedChanged(object sender, EventArgs e)

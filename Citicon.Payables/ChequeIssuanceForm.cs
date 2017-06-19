@@ -151,7 +151,7 @@ namespace Citicon.Payables
                             grandTotalAmount += payable.Value;
                         }
                     }
-                    tbxGrandTotal.Text = grandTotalAmount.ToString("#,##0.00");
+                    tbxGrandTotal.Text = Math.Abs(grandTotalAmount).ToString("#,##0.00");
                     tbxPayee.Text = payee.Description;
                 }
             }
