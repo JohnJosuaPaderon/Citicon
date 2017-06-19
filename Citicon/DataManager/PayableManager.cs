@@ -257,8 +257,8 @@ namespace Citicon.DataManager
                     sheet.Cells[chequeVoucherNumberLocation.X, chequeVoucherNumberLocation.Y] = $"C.V. No. : {chequeVoucherNumber}";
                     sheet.Cells[payeeLocation.X, payeeLocation.Y] = payee?.Description ?? defaultPayee;
                     sheet.Cells[dateLocation.X, dateLocation.Y] = DateTime.Now.ToString("MM-dd-yyyy");
-                    sheet.Cells[amountInWordsLocation.X, amountInWordsLocation.Y] = Sorschia.Supports.CurrencyToWords(totalAmount * -1);
-                    sheet.Cells[totalAmountLocation.X, totalAmountLocation.Y] = totalAmount.ToString("#,##0.00");
+                    sheet.Cells[amountInWordsLocation.X, amountInWordsLocation.Y] = Sorschia.Supports.CurrencyToWords(Math.Abs(totalAmount));
+                    sheet.Cells[totalAmountLocation.X, totalAmountLocation.Y] = Math.Abs(totalAmount).ToString("#,##0.00");
                     sheet.Cells[preparedByLocation.X, preparedByLocation.Y] = defaultPreparedBy;
                     sheet.Cells[checkedByLocation.X, checkedByLocation.Y] = defaultCheckedBy;
                     sheet.Cells[approvedByLocation.X, approvedByLocation.Y] = defaultApprovedBy;
@@ -331,10 +331,10 @@ namespace Citicon.DataManager
                 var file = $@"{ChequeDirectory}/{DateTime.Now.ToString("yyyyMMddhhmmss")}_{payee.Code}.xlsx";
                 try
                 {
-                    sheet.Cells[4, 7] = grandTotalAmount.ToString("#,##0.00");
+                    sheet.Cells[4, 7] = (Math.Abs(grandTotalAmount)).ToString("#,##0.00");
                     sheet.Cells[4, 2] = payee.Description;
                     sheet.Cells[1, 7] = chequeDate.ToString("MM/dd/yyyy");
-                    sheet.Cells[5, 2] = Sorschia.Supports.CurrencyToWords(grandTotalAmount);
+                    sheet.Cells[5, 2] = Sorschia.Supports.CurrencyToWords(Math.Abs(grandTotalAmount));
                     book.SaveAs(file);
                     book.PrintOutEx();
                 }

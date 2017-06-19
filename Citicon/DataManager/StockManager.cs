@@ -135,6 +135,12 @@ namespace Citicon.DataManager
                 Excel.Workbook book = app.Workbooks.Open(MrisReportTemplate);
                 Excel.Worksheet sheet = book.ActiveSheet;
                 Excel.Sheets sheets = book.Sheets;
+
+                if (!uint.TryParse(ConfigurationManager.AppSettings["Mris.PrintCopies"], out uint printCopies))
+                {
+                    printCopies = 1;
+                }
+
                 try
                 {
                     string mrisNumber = null;
@@ -246,7 +252,7 @@ namespace Citicon.DataManager
                     //sheet.Cells[7, 1] = supplier.Description;
                     //sheet.Cells[7, 7] = deliveryDate;
                     book.SaveAs($@"{MrisReportDirectory}/{DateTime.Now.ToString("yyyyMMddhhmm")}_{supplier.Code}.xlsx");
-                    book.PrintOutEx();
+                    book.PrintOutEx(Copies: printCopies);
                 }
                 catch (Exception)
                 { throw; }
@@ -309,7 +315,7 @@ namespace Citicon.DataManager
 
         public string GenerateMrisNumber()
         {
-            using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _inventorystocks_generatemrisnumber();", System.Data.CommandType.Text))
+            using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _inventorystocks_generatemrisnumber();", CommandType.Text))
             {
                 query.ExceptionCatched += OnExceptionCatched;
                 return query.GetValue().ToString();
