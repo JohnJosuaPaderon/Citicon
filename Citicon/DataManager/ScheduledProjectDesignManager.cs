@@ -51,11 +51,11 @@ namespace Citicon.DataManager
             }
         }
 
-        public async Task<IEnumerable<ScheduledProjectDesign>> GetListAsync(DateTime scheduledDate)
+        public async Task<IEnumerable<ScheduledProjectDesign>> GetListAsync(DateTime scheduledDate, ScheduledProjectDesignStatus status)
         {
-            if (scheduledDate.Date != default(DateTime).Date)
+            if (scheduledDate.Date != default(DateTime).Date && status != null)
             {
-                using (var process = new GetScheduledProjectDesignList(scheduledDate))
+                using (var process = new GetScheduledProjectDesignList(scheduledDate, status))
                 {
                     return await process.ExecuteAsync();
                 }
@@ -64,6 +64,47 @@ namespace Citicon.DataManager
             {
                 return null;
             }
+        }
+
+        public Task<IEnumerable<ScheduledProjectDesign>> GetListByStatusAsync(ScheduledProjectDesignStatus status)
+        {
+            if (status != null)
+            {
+                using (var process = new GetScheduledProjectDesignListByStatus(status))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public async Task<ScheduledProjectDesign> UpdateAsync(ScheduledProjectDesign scheduledProjectDesign)
+        {
+            if (scheduledProjectDesign != null)
+            {
+                using (var process = new UpdateScheduledProjectDesign(scheduledProjectDesign))
+                {
+                    scheduledProjectDesign = await process.ExecuteAsync();
+                }
+            }
+
+            return scheduledProjectDesign;
+        }
+
+        public async Task<ScheduledProjectDesign> DeleteAsync(ScheduledProjectDesign scheduledProjectDesign)
+        {
+            if (scheduledProjectDesign != null)
+            {
+                using (var process = new DeleteScheduledProjectDesign(scheduledProjectDesign))
+                {
+                    scheduledProjectDesign = await process.ExecuteAsync();
+                }
+            }
+
+            return scheduledProjectDesign;
         }
     }
 }
