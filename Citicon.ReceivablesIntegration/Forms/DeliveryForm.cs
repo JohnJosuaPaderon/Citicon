@@ -23,7 +23,7 @@ namespace Citicon.ReceivablesIntegration.Forms
 
             try
             {
-                var scheduledList = await ScheduledProjectDesignManager.GetListAsync(DateTime.Now);
+                var scheduledList = await ScheduledProjectDesignManager.GetListAsync(DateTime.Now, ScheduledProjectDesignStatus.FinalApproved);
 
                 if (scheduledList != null)
                 {
