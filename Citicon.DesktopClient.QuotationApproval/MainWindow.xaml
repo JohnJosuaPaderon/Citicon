@@ -69,6 +69,13 @@
                                 <TextBlock Text="Delivery Scheduler" Style="{StaticResource MaterialDesignBody2TextBlock}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Label>
+                        <Label Padding="10" materialDesign:TextFieldAssist.TextBoxViewMargin="30">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CalendarToday" Height="30" Width="30"/>
+                                <Border Width="10"/>
+                                <TextBlock Text="Scheduled Delivery Design Manager" Style="{StaticResource MaterialDesignBody2TextBlock}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Label>
                     </ListBox>
                 </DockPanel>
                 
@@ -108,7 +115,7 @@
 
 
                     <materialDesign:TransitionerSlide x:Name="LoginSlide">
-                        <common:LoginControl x:Name="LoginControl" VerticalAlignment="Center" LoggedIn="LoginControl_LoggedIn"/>
+                        <common:LoginControl x:Name="LoginControl" VerticalAlignment="Center" HorizontalAlignment="Center" LoggedIn="LoginControl_LoggedIn"/>
                     </materialDesign:TransitionerSlide>
 
                     <materialDesign:TransitionerSlide x:Name="ClientDisplaySlide">
@@ -133,6 +140,10 @@
 
                     <materialDesign:TransitionerSlide x:Name="ProjectDesignForApprovalSlide">
                         <views:ProjectDesignApprovalControl x:Name="ProjectDesignForApproval" Margin="10"/>
+                    </materialDesign:TransitionerSlide>
+
+                    <materialDesign:TransitionerSlide x:Name="ScheduledDesignDeliveryManagementSlide">
+                        <views:ScheduledDesignDeliveryManagementControl x:Name="ScheduledDesignDeliveryManagement" Margin="10"/>
                     </materialDesign:TransitionerSlide>
                     
                 </materialDesign:Transitioner>

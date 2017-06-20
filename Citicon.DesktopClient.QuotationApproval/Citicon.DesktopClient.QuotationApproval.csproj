@@ -97,6 +97,9 @@
     <Compile Include="Views\QuotationForFinalApprovalDisplayControl.xaml.cs">
       <DependentUpon>QuotationForFinalApprovalDisplayControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ScheduledDesignDeliveryManagementControl.xaml.cs">
+      <DependentUpon>ScheduledDesignDeliveryManagementControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="Assets\Common.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +133,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\QuotationForFinalApprovalDisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScheduledDesignDeliveryManagementControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -62,7 +62,7 @@ namespace Citicon.DesktopClient.QuotationApproval
             if (e.User.Module == Module.CurrentModule)
             {
                 var quotationUser = QuotationUserManager.GetByIdAsync(e.User.Id).Result;
-
+                QuotationUser.CurrentQuotationUser = quotationUser;
                 Menu.SelectedIndex = -1;
 
                 if (quotationUser.RedirectToFinalApproval)
@@ -83,7 +83,7 @@ namespace Citicon.DesktopClient.QuotationApproval
             }
         }
 
-        private void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void Menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MenuToggleButton.IsChecked = false;
 
@@ -105,6 +105,11 @@ namespace Citicon.DesktopClient.QuotationApproval
                     var form = new DeliverySchedulerForm();
                     WindowInteropHelper wih = new WindowInteropHelper(this);
                     form.Show();
+                    break;
+                case 4:
+                    Transitioner.SelectedItem = ScheduledDesignDeliveryManagementSlide;
+                    ScheduledDesignDeliveryManagement.InitializeDisplay();
+                    await ScheduledDesignDeliveryManagement.GetScheduledDesignListAsync();
                     break;
             }
         }
