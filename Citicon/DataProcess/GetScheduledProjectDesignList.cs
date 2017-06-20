@@ -10,17 +10,20 @@ namespace Citicon.DataProcess
 {
     internal sealed class GetScheduledProjectDesignList : DataProcessBase
     {
-        public GetScheduledProjectDesignList(DateTime scheduledDate)
+        public GetScheduledProjectDesignList(DateTime scheduledDate, ScheduledProjectDesignStatus status)
         {
             ScheduledDate = scheduledDate.Date == default(DateTime).Date ? throw new ArgumentException("Value cannot be equal to 0001/01/01", nameof(scheduledDate)) : scheduledDate.Date;
+            Status = status ?? throw new ArgumentNullException(nameof(status));
         }
 
         private DateTime ScheduledDate;
+        private ScheduledProjectDesignStatus Status;
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = Utility.CreateProcedureCommand("GetScheduledProjectDesignList", connection);
             command.Parameters.AddWithValue("@_ScheduledDate", ScheduledDate);
+            command.Parameters.AddWithValue("@_Status", Status.Value);
 
             return command;
         }
@@ -40,7 +43,8 @@ namespace Citicon.DataProcess
             return new ScheduledProjectDesign()
             {
                 Design = await ProjectDesignManager.GetByIdAsync(reader.GetUInt64("DesignId")),
-                ScheduledDate = ScheduledDate
+                ScheduledDate = ScheduledDate,
+                Status = Status
             };
         }
     }
