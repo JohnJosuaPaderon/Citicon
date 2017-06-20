@@ -89,11 +89,13 @@
     <Compile Include="DataManager\HolidayManager.cs" />
     <Compile Include="DataManager\HolidayTypeManager.cs" />
     <Compile Include="DataManager\PayrollTypeManager.cs" />
+    <Compile Include="DataManager\ScheduledProjectDesignStatusManager.cs" />
     <Compile Include="DataManager\TransitMixerManager.cs" />
     <Compile Include="DataManager\TripReportManager.cs" />
     <Compile Include="DataProcess\ConfirmDelivery.cs" />
     <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
+    <Compile Include="DataProcess\DeleteScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
     <Compile Include="DataProcess\DeleteTransitMixer.cs" />
     <Compile Include="DataProcess\EmployeeExists.cs" />
@@ -125,6 +127,8 @@
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
+    <Compile Include="DataProcess\GetScheduledProjectDesignListByStatus.cs" />
+    <Compile Include="DataProcess\GetScheduledProjectDesignStatusList.cs" />
     <Compile Include="DataProcess\GetTimeLogListByEmployee.cs" />
     <Compile Include="DataProcess\GetTransitMixerById.cs" />
     <Compile Include="DataProcess\GetTransitMixerList.cs" />
@@ -234,6 +238,7 @@
     <Compile Include="DataProcess\UpdateProject.cs" />
     <Compile Include="DataProcess\UpdateProjectDesign.cs" />
     <Compile Include="DataProcess\UpdateQuotation.cs" />
+    <Compile Include="DataProcess\UpdateScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\UpdateTimeLog.cs" />
     <Compile Include="DataProcess\UpdateTransitMixer.cs" />
     <Compile Include="DataProcess\ValidateClient.cs" />
@@ -360,6 +365,7 @@
     <Compile Include="Data\QuotationUser.cs" />
     <Compile Include="Data\SalesInvoice.cs" />
     <Compile Include="Data\ScheduledProjectDesign.cs" />
+    <Compile Include="Data\ScheduledProjectDesignStatus.cs" />
     <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
     <Compile Include="Data\TallySheetItem.cs" />
