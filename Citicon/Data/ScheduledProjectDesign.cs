@@ -6,6 +6,7 @@ namespace Citicon.Data
     {
         public ProjectDesign Design { get; set; }
         public DateTime ScheduledDate { get; set; }
+        public ScheduledProjectDesignStatus Status { get; set; }
 
         public static bool operator ==(ScheduledProjectDesign left, ScheduledProjectDesign right)
         {
