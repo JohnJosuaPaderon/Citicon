@@ -264,6 +264,7 @@ namespace Citicon.Inventory
             dgvItems.Height = 50 + (30 * (dgvItems.Rows.Count <= 15 ? dgvItems.Rows.Count : 15));
             if (dgvItems.Rows.Count == 0) dgvItems.Height = 0;
         }
+
         private void AppendSingleItem(Item item)
         {
             foreach (DataGridViewRow row in dgvItems.Rows)
@@ -271,10 +272,12 @@ namespace Citicon.Inventory
             dgvItems.Rows.Add(item, item.Code, item.Classification, item.StockValue.ToString("#,##0"));
             if (HasRows) dgvItems.Rows[0].Selected = true;
         }
+
         private void CmbxSearchBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             AppendItems(items ?? tempItems?.ToArray(), false);
         }
+
         private bool HasRows
         {
             get { return dgvItems.Rows.Count > 0; }
