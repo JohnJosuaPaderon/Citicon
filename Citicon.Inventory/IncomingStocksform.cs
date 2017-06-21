@@ -337,10 +337,9 @@ namespace Citicon.Inventory
             {
                 foreach (Control c in control.Controls)
                 {
-                    if (c.Tag == (object)"MeasurementDescription") c.Enabled = enabled;
-
-                    if (c is NumericUpDown)
+                    if (c.Tag == (object)"MeasurementDescription" && c is NumericUpDown)
                     {
+                        c.Enabled = enabled;
                         var nud = c as NumericUpDown;
                         nud.Value = 0;
                     }
