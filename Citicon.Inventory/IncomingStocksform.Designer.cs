@@ -150,7 +150,7 @@
             this.tbxSearchItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSearchItems.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxSearchItems.Location = new System.Drawing.Point(11, 87);
-            this.tbxSearchItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxSearchItems.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSearchItems.Name = "tbxSearchItems";
             this.tbxSearchItems.Size = new System.Drawing.Size(863, 25);
             this.tbxSearchItems.TabIndex = 12;
@@ -166,9 +166,9 @@
             this.btnSearchItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchItems.ForeColor = System.Drawing.Color.White;
             this.btnSearchItems.Location = new System.Drawing.Point(1170, 87);
-            this.btnSearchItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchItems.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchItems.Name = "btnSearchItems";
-            this.btnSearchItems.Size = new System.Drawing.Size(79, 23);
+            this.btnSearchItems.Size = new System.Drawing.Size(79, 26);
             this.btnSearchItems.TabIndex = 36;
             this.btnSearchItems.Text = "Search";
             this.btnSearchItems.UseVisualStyleBackColor = false;
@@ -218,7 +218,7 @@
             this.dgvItems.EnableHeadersVisualStyles = false;
             this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvItems.Location = new System.Drawing.Point(11, 113);
-            this.dgvItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvItems.Margin = new System.Windows.Forms.Padding(2);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
@@ -282,7 +282,7 @@
             this.cmbxSearchBy.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxSearchBy.FormattingEnabled = true;
             this.cmbxSearchBy.Location = new System.Drawing.Point(879, 87);
-            this.cmbxSearchBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxSearchBy.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxSearchBy.Name = "cmbxSearchBy";
             this.cmbxSearchBy.Size = new System.Drawing.Size(288, 25);
             this.cmbxSearchBy.TabIndex = 39;
@@ -306,7 +306,7 @@
             this.tbxItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxItemDescription.Location = new System.Drawing.Point(11, 134);
-            this.tbxItemDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxItemDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbxItemDescription.Name = "tbxItemDescription";
             this.tbxItemDescription.ReadOnly = true;
             this.tbxItemDescription.Size = new System.Drawing.Size(536, 25);
@@ -330,7 +330,7 @@
             this.tbxItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxItemCode.Location = new System.Drawing.Point(554, 134);
-            this.tbxItemCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxItemCode.Margin = new System.Windows.Forms.Padding(2);
             this.tbxItemCode.Name = "tbxItemCode";
             this.tbxItemCode.ReadOnly = true;
             this.tbxItemCode.Size = new System.Drawing.Size(196, 25);
@@ -380,14 +380,14 @@
             this.dgvStocks.EnableHeadersVisualStyles = false;
             this.dgvStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvStocks.Location = new System.Drawing.Point(11, 178);
-            this.dgvStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvStocks.Margin = new System.Windows.Forms.Padding(2);
             this.dgvStocks.MultiSelect = false;
             this.dgvStocks.Name = "dgvStocks";
             this.dgvStocks.ReadOnly = true;
             this.dgvStocks.RowHeadersVisible = false;
             this.dgvStocks.RowTemplate.Height = 30;
             this.dgvStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStocks.Size = new System.Drawing.Size(860, 505);
+            this.dgvStocks.Size = new System.Drawing.Size(860, 533);
             this.dgvStocks.TabIndex = 50;
             // 
             // colStock
@@ -453,7 +453,7 @@
             this.dtpDeliveryDate.CustomFormat = "MMM dd, yyyy";
             this.dtpDeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDeliveryDate.Location = new System.Drawing.Point(879, 198);
-            this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDeliveryDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDeliveryDate.Name = "dtpDeliveryDate";
             this.dtpDeliveryDate.Size = new System.Drawing.Size(183, 25);
             this.dtpDeliveryDate.TabIndex = 53;
@@ -466,7 +466,7 @@
             this.tbxItemStockValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemStockValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxItemStockValue.Location = new System.Drawing.Point(752, 134);
-            this.tbxItemStockValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxItemStockValue.Margin = new System.Windows.Forms.Padding(2);
             this.tbxItemStockValue.Name = "tbxItemStockValue";
             this.tbxItemStockValue.ReadOnly = true;
             this.tbxItemStockValue.Size = new System.Drawing.Size(120, 25);
@@ -490,7 +490,7 @@
             this.cmbxPaymentTerms.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxPaymentTerms.FormattingEnabled = true;
             this.cmbxPaymentTerms.Location = new System.Drawing.Point(1066, 198);
-            this.cmbxPaymentTerms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxPaymentTerms.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxPaymentTerms.Name = "cmbxPaymentTerms";
             this.cmbxPaymentTerms.Size = new System.Drawing.Size(184, 25);
             this.cmbxPaymentTerms.TabIndex = 63;
@@ -506,7 +506,7 @@
             this.cmbxVehicles.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxVehicles.FormattingEnabled = true;
             this.cmbxVehicles.Location = new System.Drawing.Point(988, 134);
-            this.cmbxVehicles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxVehicles.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxVehicles.Name = "cmbxVehicles";
             this.cmbxVehicles.Size = new System.Drawing.Size(157, 25);
             this.cmbxVehicles.TabIndex = 65;
@@ -573,7 +573,7 @@
             this.nudAddedStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudAddedStockValue.DecimalPlaces = 2;
             this.nudAddedStockValue.Location = new System.Drawing.Point(880, 291);
-            this.nudAddedStockValue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudAddedStockValue.Margin = new System.Windows.Forms.Padding(2);
             this.nudAddedStockValue.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -602,7 +602,7 @@
             this.nudUnitPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudUnitPrice.DecimalPlaces = 4;
             this.nudUnitPrice.Location = new System.Drawing.Point(1066, 291);
-            this.nudUnitPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.nudUnitPrice.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -634,7 +634,7 @@
             this.cmbxCompanies.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxCompanies.FormattingEnabled = true;
             this.cmbxCompanies.Location = new System.Drawing.Point(881, 133);
-            this.cmbxCompanies.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxCompanies.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxCompanies.Name = "cmbxCompanies";
             this.cmbxCompanies.Size = new System.Drawing.Size(184, 25);
             this.cmbxCompanies.TabIndex = 72;
@@ -661,7 +661,7 @@
             this.cmbxBranches.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxBranches.FormattingEnabled = true;
             this.cmbxBranches.Location = new System.Drawing.Point(881, 244);
-            this.cmbxBranches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxBranches.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxBranches.Name = "cmbxBranches";
             this.cmbxBranches.Size = new System.Drawing.Size(127, 25);
             this.cmbxBranches.TabIndex = 70;
@@ -688,7 +688,7 @@
             this.cmbxSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxSuppliers.FormattingEnabled = true;
             this.cmbxSuppliers.Location = new System.Drawing.Point(881, 440);
-            this.cmbxSuppliers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxSuppliers.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxSuppliers.Name = "cmbxSuppliers";
             this.cmbxSuppliers.Size = new System.Drawing.Size(371, 25);
             this.cmbxSuppliers.TabIndex = 74;
@@ -705,7 +705,7 @@
             this.tbxAcceptedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxAcceptedBy.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxAcceptedBy.Location = new System.Drawing.Point(880, 532);
-            this.tbxAcceptedBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxAcceptedBy.Margin = new System.Windows.Forms.Padding(2);
             this.tbxAcceptedBy.Name = "tbxAcceptedBy";
             this.tbxAcceptedBy.Size = new System.Drawing.Size(371, 25);
             this.tbxAcceptedBy.TabIndex = 77;
@@ -732,7 +732,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(1006, 607);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 34);
             this.btnSave.TabIndex = 78;
@@ -748,7 +748,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(1089, 607);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 34);
             this.btnCancel.TabIndex = 79;
@@ -775,7 +775,7 @@
             this.tbxRemarks.BackColor = System.Drawing.Color.White;
             this.tbxRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxRemarks.Location = new System.Drawing.Point(881, 578);
-            this.tbxRemarks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxRemarks.Margin = new System.Windows.Forms.Padding(2);
             this.tbxRemarks.Name = "tbxRemarks";
             this.tbxRemarks.Size = new System.Drawing.Size(370, 25);
             this.tbxRemarks.TabIndex = 81;
@@ -800,7 +800,7 @@
             this.nudLength.DecimalPlaces = 2;
             this.nudLength.Enabled = false;
             this.nudLength.Location = new System.Drawing.Point(881, 486);
-            this.nudLength.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudLength.Margin = new System.Windows.Forms.Padding(2);
             this.nudLength.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -820,7 +820,7 @@
             this.nudWidth.DecimalPlaces = 2;
             this.nudWidth.Enabled = false;
             this.nudWidth.Location = new System.Drawing.Point(1008, 486);
-            this.nudWidth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudWidth.Margin = new System.Windows.Forms.Padding(2);
             this.nudWidth.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -840,7 +840,7 @@
             this.nudHeight.DecimalPlaces = 2;
             this.nudHeight.Enabled = false;
             this.nudHeight.Location = new System.Drawing.Point(1128, 486);
-            this.nudHeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudHeight.Margin = new System.Windows.Forms.Padding(2);
             this.nudHeight.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -889,7 +889,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.Location = new System.Drawing.Point(1173, 607);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 34);
             this.btnClose.TabIndex = 88;
@@ -912,7 +912,7 @@
             // 
             this.nudSiNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSiNumber.Location = new System.Drawing.Point(1010, 244);
-            this.nudSiNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudSiNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudSiNumber.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -927,7 +927,7 @@
             // 
             this.nudDrNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudDrNumber.Location = new System.Drawing.Point(1130, 244);
-            this.nudDrNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudDrNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudDrNumber.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -945,8 +945,8 @@
             this.btnEditSelectedUnitPrice.FlatAppearance.BorderSize = 0;
             this.btnEditSelectedUnitPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSelectedUnitPrice.ForeColor = System.Drawing.Color.White;
-            this.btnEditSelectedUnitPrice.Location = new System.Drawing.Point(743, 687);
-            this.btnEditSelectedUnitPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditSelectedUnitPrice.Location = new System.Drawing.Point(743, 715);
+            this.btnEditSelectedUnitPrice.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditSelectedUnitPrice.Name = "btnEditSelectedUnitPrice";
             this.btnEditSelectedUnitPrice.Size = new System.Drawing.Size(128, 34);
             this.btnEditSelectedUnitPrice.TabIndex = 92;
@@ -959,7 +959,7 @@
             this.ckbxIncludeWithHoldingTax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbxIncludeWithHoldingTax.AutoSize = true;
             this.ckbxIncludeWithHoldingTax.Location = new System.Drawing.Point(881, 320);
-            this.ckbxIncludeWithHoldingTax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ckbxIncludeWithHoldingTax.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxIncludeWithHoldingTax.Name = "ckbxIncludeWithHoldingTax";
             this.ckbxIncludeWithHoldingTax.Size = new System.Drawing.Size(172, 21);
             this.ckbxIncludeWithHoldingTax.TabIndex = 93;
@@ -973,7 +973,7 @@
             this.nudWithHoldingTax.DecimalPlaces = 2;
             this.nudWithHoldingTax.Enabled = false;
             this.nudWithHoldingTax.Location = new System.Drawing.Point(880, 345);
-            this.nudWithHoldingTax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudWithHoldingTax.Margin = new System.Windows.Forms.Padding(2);
             this.nudWithHoldingTax.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -992,7 +992,7 @@
             this.nudAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudAmountDue.DecimalPlaces = 2;
             this.nudAmountDue.Location = new System.Drawing.Point(1066, 345);
-            this.nudAmountDue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudAmountDue.Margin = new System.Windows.Forms.Padding(2);
             this.nudAmountDue.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -1032,7 +1032,7 @@
             this.nudVat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudVat.DecimalPlaces = 2;
             this.nudVat.Location = new System.Drawing.Point(880, 394);
-            this.nudVat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudVat.Margin = new System.Windows.Forms.Padding(2);
             this.nudVat.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -1061,7 +1061,7 @@
             this.nudTotalAmountDue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudTotalAmountDue.DecimalPlaces = 2;
             this.nudTotalAmountDue.Location = new System.Drawing.Point(1066, 394);
-            this.nudTotalAmountDue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudTotalAmountDue.Margin = new System.Windows.Forms.Padding(2);
             this.nudTotalAmountDue.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -1078,7 +1078,7 @@
             this.ckbxRetainData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ckbxRetainData.AutoSize = true;
             this.ckbxRetainData.Location = new System.Drawing.Point(881, 615);
-            this.ckbxRetainData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ckbxRetainData.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxRetainData.Name = "ckbxRetainData";
             this.ckbxRetainData.Size = new System.Drawing.Size(94, 21);
             this.ckbxRetainData.TabIndex = 101;
@@ -1091,7 +1091,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1263, 732);
+            this.ClientSize = new System.Drawing.Size(1263, 760);
             this.Controls.Add(this.ckbxRetainData);
             this.Controls.Add(this.lblTotalAmountDue);
             this.Controls.Add(this.nudTotalAmountDue);
@@ -1154,7 +1154,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "IncomingStocksform";
             this.Text = "Citicon Inventory | Incoming Stocks";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
