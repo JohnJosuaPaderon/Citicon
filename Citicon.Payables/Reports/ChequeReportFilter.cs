@@ -144,14 +144,17 @@ namespace Citicon.Payables.Reports
 
         private async void ChequeReportFilter_Load(object sender, EventArgs e)
         {
-            SupplierManager = new SupplierManager();
-            BranchManager = new BranchManager();
-            CompanyManager = new CompanyManager();
+            if (!DesignMode)
+            {
+                SupplierManager = new SupplierManager();
+                BranchManager = new BranchManager();
+                CompanyManager = new CompanyManager();
 
-            await GetSupplierListAsync();
-            await GetBranchListAsync();
-            await GetCompanyListAsync();
-            OnHasFiltered();
+                await GetSupplierListAsync();
+                await GetBranchListAsync();
+                await GetCompanyListAsync();
+                OnHasFiltered();
+            }
         }
 
         private void DtpRangeDate_Start_ValueChanged(object sender, EventArgs e)

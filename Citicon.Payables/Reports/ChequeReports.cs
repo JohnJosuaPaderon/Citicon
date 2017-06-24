@@ -1,5 +1,7 @@
-﻿using Citicon.DataManager;
+﻿using Citicon.Data;
+using Citicon.DataManager;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -11,13 +13,21 @@ namespace Citicon.Payables.Reports
         {
             InitializeComponent();
             ChequeSummaryItemManager = new ChequeSummaryItemManager();
+            PayableManager = new PayableManager();
         }
 
         private ChequeSummaryItemManager ChequeSummaryItemManager;
+        private IEnumerable<ChequeSummaryItem> ChequeSummaryItems { get; set; }
+        private PayableManager PayableManager;
 
         private void HasFilteredChanged(bool hasfiltered)
         {
             btnGenerate.Enabled = hasfiltered;
+        }
+
+        public async Task ExportAsync()
+        {
+            await PayableManager.ExportChequeReportAsync(ChequeSummaryItems);
         }
 
         private async Task GetChequeSummaryIEnumerableAsync()
@@ -25,18 +35,18 @@ namespace Citicon.Payables.Reports
             try
             {
                 dgvCheques.Rows.Clear();
-                var summaryItemIEnumerable = await ChequeSummaryItemManager.GetFilterIEnumerableAsync(
+                ChequeSummaryItems = await ChequeSummaryItemManager.GetFilterIEnumerableAsync(
                     ReportFilter.FilterByRangeDate, ReportFilter.RangeDate,
                     ReportFilter.FilterBySupplier, ReportFilter.Supplier,
                     ReportFilter.FilterByBranch, ReportFilter.Branch,
                     ReportFilter.FilterByCompany, ReportFilter.Company,
                     ReportFilter.FilterByTransactionDate, ReportFilter.TransactionDate);
 
-                if (summaryItemIEnumerable != null)
+                if (ChequeSummaryItems != null)
                 {
                     decimal totalDisbursement = 0;
 
-                    foreach (var item in summaryItemIEnumerable)
+                    foreach (var item in ChequeSummaryItems)
                     {
                         var row = new DataGridViewRow()
                         {
@@ -72,7 +82,10 @@ namespace Citicon.Payables.Reports
 
         private void ChequeReports_Load(object sender, EventArgs e)
         {
-            ReportFilter.HasFiltered = HasFilteredChanged;
+            if (!DesignMode)
+            {
+                ReportFilter.HasFiltered = HasFilteredChanged; 
+            }
         }
     }
 }
