@@ -393,6 +393,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public Task ExportChequeReportAsync(IEnumerable<ChequeSummaryItem> chequeSummaryItems)
+        {
+            if (chequeSummaryItems != null && chequeSummaryItems.Any())
+            {
+                using (var process = new ExportChequeReport(chequeSummaryItems))
+                {
+                    return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public string GenerateChequeVoucherNumber()
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "SELECT _payables_generatechequevouchernumber();", System.Data.CommandType.Text))
