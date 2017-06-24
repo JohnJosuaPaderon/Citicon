@@ -365,5 +365,11 @@ namespace Citicon.Forms.Controls
             LoadPayrollTypeList();
             UpdateUI(Employee);
         }
+
+        private async void AddPositionButton_Click(object sender, EventArgs e)
+        {
+            AddEditEmployeePositionDialog.AddEmployeePosition();
+            await LoadPositionListAsync();
+        }
     }
 }

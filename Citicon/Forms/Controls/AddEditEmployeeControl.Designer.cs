@@ -114,6 +114,7 @@
             this.SickLeaveLabel = new System.Windows.Forms.Label();
             this.VacationLeaveNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.VacationLeaveLabel = new System.Windows.Forms.Label();
+            this.AddPositionButton = new System.Windows.Forms.Button();
             this.EmployeeTabControl.SuspendLayout();
             this.PersonalInformationTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PagIbigRtnDependentNumberNumericUpDown)).BeginInit();
@@ -184,6 +185,7 @@
             // PersonalInformationTabPage
             // 
             this.PersonalInformationTabPage.AutoScroll = true;
+            this.PersonalInformationTabPage.Controls.Add(this.AddPositionButton);
             this.PersonalInformationTabPage.Controls.Add(this.PagIbigRtnDependentCountLabel);
             this.PersonalInformationTabPage.Controls.Add(this.PagIbigRtnDependentNumberNumericUpDown);
             this.PersonalInformationTabPage.Controls.Add(this.PagIbigRtnRegistrationDateTimePicker);
@@ -622,7 +624,7 @@
             this.PositionComboBox.FormattingEnabled = true;
             this.PositionComboBox.Location = new System.Drawing.Point(9, 120);
             this.PositionComboBox.Name = "PositionComboBox";
-            this.PositionComboBox.Size = new System.Drawing.Size(234, 25);
+            this.PositionComboBox.Size = new System.Drawing.Size(198, 25);
             this.PositionComboBox.TabIndex = 13;
             // 
             // PositionLabel
@@ -1049,6 +1051,19 @@
             this.VacationLeaveLabel.TabIndex = 0;
             this.VacationLeaveLabel.Text = "Vacation Leave (Remaining)";
             // 
+            // AddPositionButton
+            // 
+            this.AddPositionButton.BackColor = System.Drawing.Color.Red;
+            this.AddPositionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddPositionButton.ForeColor = System.Drawing.Color.White;
+            this.AddPositionButton.Location = new System.Drawing.Point(213, 119);
+            this.AddPositionButton.Name = "AddPositionButton";
+            this.AddPositionButton.Size = new System.Drawing.Size(30, 26);
+            this.AddPositionButton.TabIndex = 52;
+            this.AddPositionButton.Text = "+";
+            this.AddPositionButton.UseVisualStyleBackColor = false;
+            this.AddPositionButton.Click += new System.EventHandler(this.AddPositionButton_Click);
+            // 
             // AddEditEmployeeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1178,5 +1193,6 @@
         private System.Windows.Forms.Label PagIbigDeductionLabel;
         private System.Windows.Forms.NumericUpDown WithHoldingTaxNumericUpDown;
         private System.Windows.Forms.Label WithholdingTaxLabel;
+        private System.Windows.Forms.Button AddPositionButton;
     }
 }
