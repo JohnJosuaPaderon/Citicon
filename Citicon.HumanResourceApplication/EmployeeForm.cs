@@ -8,9 +8,9 @@ using Citicon.Forms;
 
 namespace Citicon.HumanResourceApplication
 {
-    public partial class MainForm : Form
+    public partial class EmployeeForm : Form
     {
-        public MainForm()
+        public EmployeeForm()
         {
             InitializeComponent();
         }

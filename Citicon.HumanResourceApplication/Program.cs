@@ -14,7 +14,7 @@ namespace Citicon.HumanResourceApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm(new MainForm()));
+            Application.Run(new LoginForm(new EmployeeForm()));
         }
     }
 }
