@@ -58,8 +58,8 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_FilterByCompanyId", FilterByCompany);
             command.Parameters.AddWithValue("@_CompanyId", Company?.Id);
             command.Parameters.AddWithValue("@_FilterByTransactionDateRange", FilterByTransactionDateRange);
-            command.Parameters.AddWithValue("@_TransactionDateRangeStart", TransactionDateRange.Start);
-            command.Parameters.AddWithValue("@_TransactionDateRangeEnd", TransactionDateRange.End);
+            command.Parameters.AddWithValue("@_TransactionDateRangeStart", TransactionDateRange?.Start);
+            command.Parameters.AddWithValue("@_TransactionDateRangeEnd", TransactionDateRange?.End);
 
             return command;
         }
