@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Citicon.DataManager
 {
@@ -30,6 +31,14 @@ namespace Citicon.DataManager
                     }
                     return department;
                 }
+            }
+        }
+
+        public static Task<IEnumerable<Department>> GetListAsync()
+        {
+            using (var process = new GetDepartmentList())
+            {
+                return process.ExecuteAsync();
             }
         }
     }

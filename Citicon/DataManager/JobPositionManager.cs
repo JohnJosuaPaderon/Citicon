@@ -41,5 +41,41 @@ namespace Citicon.DataManager
                 return process.ExecuteAsync();
             }
         }
+
+        public static async Task<JobPosition> InsertAsync(JobPosition jobPosition)
+        {
+            if (jobPosition != null)
+            {
+                using (var process = new InsertJobPosition(jobPosition))
+                {
+                    jobPosition = await process.ExecuteAsync();
+
+                    if (jobPosition != null && !JobPositions.ContainsKey(jobPosition.Id))
+                    {
+                        JobPositions.Add(jobPosition.Id, jobPosition);
+                    }
+                }
+            }
+
+            return jobPosition;
+        }
+
+        public static async Task<JobPosition> UpdateAsync(JobPosition jobPosition)
+        {
+            if (jobPosition != null)
+            {
+                using (var process = new UpdateJobPosition(jobPosition))
+                {
+                    jobPosition = await process.ExecuteAsync();
+
+                    if (jobPosition != null && JobPositions.ContainsKey(jobPosition.Id))
+                    {
+                        JobPositions[jobPosition.Id] = jobPosition;
+                    }
+                }
+            }
+
+            return jobPosition;
+        }
     }
 }
