@@ -13,6 +13,7 @@ namespace Citicon.Payables
         ClassificationManager classificationManager;
         ExpenseManager expenseManager;
         SupplierManager supplierManager;
+
         public ReportsForm()
         {
             InitializeComponent();
@@ -81,11 +82,14 @@ namespace Citicon.Payables
 
         private void ReportsForm_Load(object sender, EventArgs e)
         {
-            cmbxTransactionsBranch.Items.AddRange(branchManager.GetListAsync().Result);
-            cmbxTransactionsCompany.Items.AddRange(companyManager.GetListAsync().Result);
-            cmbxTransactionsItemClassification.Items.AddRange(classificationManager.GetListAsync().Result);
-            cmbxTransactionsExpense.Items.AddRange(expenseManager.GetListAsync().Result);
-            cmbxTransactionsSupplier.Items.AddRange(supplierManager.GetListAsync().Result);
+            if (!DesignMode)
+            {
+                cmbxTransactionsBranch.Items.AddRange(branchManager.GetListAsync().Result);
+                cmbxTransactionsCompany.Items.AddRange(companyManager.GetListAsync().Result);
+                cmbxTransactionsItemClassification.Items.AddRange(classificationManager.GetListAsync().Result);
+                cmbxTransactionsExpense.Items.AddRange(expenseManager.GetListAsync().Result);
+                cmbxTransactionsSupplier.Items.AddRange(supplierManager.GetListAsync().Result); 
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -105,6 +109,22 @@ namespace Citicon.Payables
         private void ChequeReports_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private async void btnExportCheque_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tcReports.SelectedTab == tpReports_Cheques)
+                {
+                    await ChequeReports.ExportAsync();
+                    MessageBox.Show("Successfully exported!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
