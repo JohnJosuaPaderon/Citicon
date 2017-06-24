@@ -49,9 +49,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
-    <Reference Include="System.ValueTuple, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -112,6 +109,7 @@
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetDeliveryRouteById.cs" />
     <Compile Include="DataProcess\GetDeliveryRouteList.cs" />
+    <Compile Include="DataProcess\GetDepartmentList.cs" />
     <Compile Include="DataProcess\GetDriverList.cs" />
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
@@ -138,6 +136,7 @@
     <Compile Include="DataProcess\InsertDelivery.cs" />
     <Compile Include="DataProcess\InsertEmployee.cs" />
     <Compile Include="DataProcess\InsertHoliday.cs" />
+    <Compile Include="DataProcess\InsertJobPosition.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
     <Compile Include="DataManager\ItemManager.cs" />
     <Compile Include="DataManager\MeasurementUnitManager.cs" />
@@ -235,6 +234,7 @@
     <Compile Include="DataProcess\UpdateClient.cs" />
     <Compile Include="DataProcess\UpdateEmployee.cs" />
     <Compile Include="DataProcess\UpdateHoliday.cs" />
+    <Compile Include="DataProcess\UpdateJobPosition.cs" />
     <Compile Include="DataProcess\UpdateProject.cs" />
     <Compile Include="DataProcess\UpdateProjectDesign.cs" />
     <Compile Include="DataProcess\UpdateQuotation.cs" />
@@ -497,6 +497,12 @@
     <Compile Include="Forms\Dialogs\AddEditClientDialog.Designer.cs">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\AddEditEmployeePositionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditEmployeePositionDialog.Designer.cs">
+      <DependentUpon>AddEditEmployeePositionDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\AddEditHolidayDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -666,6 +672,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditClientDialog.resx">
       <DependentUpon>AddEditClientDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddEditEmployeePositionDialog.resx">
+      <DependentUpon>AddEditEmployeePositionDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditHolidayDialog.resx">
       <DependentUpon>AddEditHolidayDialog.cs</DependentUpon>
