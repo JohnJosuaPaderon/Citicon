@@ -222,6 +222,7 @@
             this.AmountNumericUpDown.Name = "AmountNumericUpDown";
             this.AmountNumericUpDown.Size = new System.Drawing.Size(171, 25);
             this.AmountNumericUpDown.TabIndex = 17;
+            this.AmountNumericUpDown.Visible = false;
             this.AmountNumericUpDown.ValueChanged += new System.EventHandler(this.AmountNumericUpDown_ValueChanged);
             // 
             // AmountLabel
@@ -232,6 +233,7 @@
             this.AmountLabel.Size = new System.Drawing.Size(53, 17);
             this.AmountLabel.TabIndex = 16;
             this.AmountLabel.Text = "Amount";
+            this.AmountLabel.Visible = false;
             // 
             // ProjectDesignDataGridView
             // 

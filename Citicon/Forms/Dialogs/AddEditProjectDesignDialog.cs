@@ -169,6 +169,7 @@ namespace Citicon.Forms.Dialogs
             if (ProjectDesign != null)
             {
                 ProjectDesign.MixType = (ProjectDesignMixType)MixTypeComboBox.SelectedItem;
+                CementFactorNumericUpDown.Enabled = ProjectDesign.MixType == ProjectDesignMixType.PCD;
             }
         }
 

@@ -89,7 +89,6 @@
             // 
             // PSINumericUpDown
             // 
-            this.PSINumericUpDown.DecimalPlaces = 3;
             this.PSINumericUpDown.Location = new System.Drawing.Point(9, 137);
             this.PSINumericUpDown.Maximum = new decimal(new int[] {
             10000,
@@ -100,7 +99,6 @@
             this.PSINumericUpDown.Size = new System.Drawing.Size(342, 25);
             this.PSINumericUpDown.TabIndex = 2;
             this.PSINumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.PSINumericUpDown.ThousandsSeparator = true;
             this.PSINumericUpDown.ValueChanged += new System.EventHandler(this.PSINumericUpDown_ValueChanged);
             // 
             // PricePerCubicMeterNumericUpDown
