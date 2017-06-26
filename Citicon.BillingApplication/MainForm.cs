@@ -83,6 +83,16 @@ namespace Citicon.BillingApplication
             }
         }
 
+        private PurchaseOrderMonitoringForm PurchaseOrderMonitoringForm
+        {
+            get
+            {
+                var form = new PurchaseOrderMonitoringForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void InitializeSecurity()
         {
             UserSettingsButton.Enabled = User.CurrentUser.Admin;
@@ -143,6 +153,11 @@ namespace Citicon.BillingApplication
         private void DeliveryConfirmationButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DeliveryConfirmationForm);
+        }
+
+        private void PurchaseOrderMonitorButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(PurchaseOrderMonitoringForm);
         }
     }
 }

@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DeliveryConfirmationButton = new System.Windows.Forms.Button();
             this.TallySheetButton = new System.Windows.Forms.Button();
             this.UserSettingsButton = new System.Windows.Forms.Button();
             this.PurchaseOrderButton = new System.Windows.Forms.Button();
             this.PaymentButton = new System.Windows.Forms.Button();
             this.SalesInvoiceButton = new System.Windows.Forms.Button();
             this.BillingButton = new System.Windows.Forms.Button();
-            this.DeliveryConfirmationButton = new System.Windows.Forms.Button();
+            this.PurchaseOrderMonitorButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.PurchaseOrderMonitorButton);
             this.panel1.Controls.Add(this.DeliveryConfirmationButton);
             this.panel1.Controls.Add(this.TallySheetButton);
             this.panel1.Controls.Add(this.UserSettingsButton);
@@ -57,6 +59,22 @@
             this.panel1.Size = new System.Drawing.Size(1472, 60);
             this.panel1.TabIndex = 1;
             // 
+            // DeliveryConfirmationButton
+            // 
+            this.DeliveryConfirmationButton.BackColor = System.Drawing.Color.Red;
+            this.DeliveryConfirmationButton.FlatAppearance.BorderSize = 0;
+            this.DeliveryConfirmationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeliveryConfirmationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryConfirmationButton.ForeColor = System.Drawing.Color.White;
+            this.DeliveryConfirmationButton.Location = new System.Drawing.Point(794, 5);
+            this.DeliveryConfirmationButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.DeliveryConfirmationButton.Name = "DeliveryConfirmationButton";
+            this.DeliveryConfirmationButton.Size = new System.Drawing.Size(125, 50);
+            this.DeliveryConfirmationButton.TabIndex = 6;
+            this.DeliveryConfirmationButton.Text = "DELIVERY CONFIRMATION";
+            this.DeliveryConfirmationButton.UseVisualStyleBackColor = false;
+            this.DeliveryConfirmationButton.Click += new System.EventHandler(this.DeliveryConfirmationButton_Click);
+            // 
             // TallySheetButton
             // 
             this.TallySheetButton.BackColor = System.Drawing.Color.Red;
@@ -64,7 +82,7 @@
             this.TallySheetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TallySheetButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TallySheetButton.ForeColor = System.Drawing.Color.White;
-            this.TallySheetButton.Location = new System.Drawing.Point(524, 5);
+            this.TallySheetButton.Location = new System.Drawing.Point(659, 5);
             this.TallySheetButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.TallySheetButton.Name = "TallySheetButton";
             this.TallySheetButton.Size = new System.Drawing.Size(125, 50);
@@ -80,7 +98,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(794, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(929, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -153,21 +171,21 @@
             this.BillingButton.UseVisualStyleBackColor = false;
             this.BillingButton.Click += new System.EventHandler(this.BillingButton_Click);
             // 
-            // DeliveryConfirmationButton
+            // PurchaseOrderMonitorButton
             // 
-            this.DeliveryConfirmationButton.BackColor = System.Drawing.Color.Red;
-            this.DeliveryConfirmationButton.FlatAppearance.BorderSize = 0;
-            this.DeliveryConfirmationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeliveryConfirmationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeliveryConfirmationButton.ForeColor = System.Drawing.Color.White;
-            this.DeliveryConfirmationButton.Location = new System.Drawing.Point(659, 5);
-            this.DeliveryConfirmationButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.DeliveryConfirmationButton.Name = "DeliveryConfirmationButton";
-            this.DeliveryConfirmationButton.Size = new System.Drawing.Size(125, 50);
-            this.DeliveryConfirmationButton.TabIndex = 6;
-            this.DeliveryConfirmationButton.Text = "DELIVERY CONFIRMATION";
-            this.DeliveryConfirmationButton.UseVisualStyleBackColor = false;
-            this.DeliveryConfirmationButton.Click += new System.EventHandler(this.DeliveryConfirmationButton_Click);
+            this.PurchaseOrderMonitorButton.BackColor = System.Drawing.Color.Red;
+            this.PurchaseOrderMonitorButton.FlatAppearance.BorderSize = 0;
+            this.PurchaseOrderMonitorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PurchaseOrderMonitorButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PurchaseOrderMonitorButton.ForeColor = System.Drawing.Color.White;
+            this.PurchaseOrderMonitorButton.Location = new System.Drawing.Point(524, 5);
+            this.PurchaseOrderMonitorButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PurchaseOrderMonitorButton.Name = "PurchaseOrderMonitorButton";
+            this.PurchaseOrderMonitorButton.Size = new System.Drawing.Size(125, 50);
+            this.PurchaseOrderMonitorButton.TabIndex = 7;
+            this.PurchaseOrderMonitorButton.Text = "P.O. MONITOR";
+            this.PurchaseOrderMonitorButton.UseVisualStyleBackColor = false;
+            this.PurchaseOrderMonitorButton.Click += new System.EventHandler(this.PurchaseOrderMonitorButton_Click);
             // 
             // MainForm
             // 
@@ -202,6 +220,7 @@
         private System.Windows.Forms.Button UserSettingsButton;
         private System.Windows.Forms.Button TallySheetButton;
         private System.Windows.Forms.Button DeliveryConfirmationButton;
+        private System.Windows.Forms.Button PurchaseOrderMonitorButton;
     }
 }
 
