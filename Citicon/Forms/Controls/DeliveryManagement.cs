@@ -52,6 +52,7 @@ namespace Citicon.Forms.Controls
         private void OnPurchaseOrder()
         {
             PurchaseOrderTextBox.Text = PurchaseOrder?.Number ?? "<No P.O.>";
+            PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Text = PurchaseOrder?.MaximumCumulativePricePerCubicMeter.ToString("#,##0.00") ?? "N/A";
         }
 
         private void OnProjectDesignChanged()
@@ -167,6 +168,7 @@ namespace Citicon.Forms.Controls
 
                 if (purchaseOrderProjectDesign != null)
                 {
+                    PurchaseOrder_MaximumVolumeTextBox.Text = purchaseOrderProjectDesign.MaxVolume.ToString("#,##0.0##");
                     PurchaseOrder = purchaseOrderProjectDesign.PurchaseOrder;
                 }
             }

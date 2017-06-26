@@ -80,6 +80,10 @@
             this.PurchaseOrderTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrderLabel = new System.Windows.Forms.Label();
             this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
+            this.PurchaseOrder_MaximumVolumeTextBox = new System.Windows.Forms.TextBox();
+            this.PurchaseOrder_MaximumVolumeLabel = new System.Windows.Forms.Label();
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox = new System.Windows.Forms.TextBox();
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel = new System.Windows.Forms.Label();
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
@@ -121,7 +125,7 @@
             this.ProjectGroupBox.Controls.Add(this.Project_Client_AddressLabel);
             this.ProjectGroupBox.Controls.Add(this.Project_ClientTextBox);
             this.ProjectGroupBox.Controls.Add(this.Project_ClientLabel);
-            this.ProjectGroupBox.Location = new System.Drawing.Point(10, 52);
+            this.ProjectGroupBox.Location = new System.Drawing.Point(10, 110);
             this.ProjectGroupBox.Name = "ProjectGroupBox";
             this.ProjectGroupBox.Size = new System.Drawing.Size(850, 125);
             this.ProjectGroupBox.TabIndex = 2;
@@ -216,7 +220,7 @@
             this.DesignGroupBox.Controls.Add(this.Design_PsiLabel);
             this.DesignGroupBox.Controls.Add(this.Design_MixTypeTextBox);
             this.DesignGroupBox.Controls.Add(this.Design_MixTypeLabel);
-            this.DesignGroupBox.Location = new System.Drawing.Point(10, 183);
+            this.DesignGroupBox.Location = new System.Drawing.Point(10, 241);
             this.DesignGroupBox.Name = "DesignGroupBox";
             this.DesignGroupBox.Size = new System.Drawing.Size(850, 126);
             this.DesignGroupBox.TabIndex = 3;
@@ -359,7 +363,7 @@
             this.DeliveryGroupBox.Controls.Add(this.Delivery_RouteLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveredVolumeNumericUpDown);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveredVolumeLabel);
-            this.DeliveryGroupBox.Location = new System.Drawing.Point(10, 315);
+            this.DeliveryGroupBox.Location = new System.Drawing.Point(10, 373);
             this.DeliveryGroupBox.Name = "DeliveryGroupBox";
             this.DeliveryGroupBox.Size = new System.Drawing.Size(850, 233);
             this.DeliveryGroupBox.TabIndex = 4;
@@ -605,7 +609,7 @@
             this.CancelDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelDeliveryButton.ForeColor = System.Drawing.Color.Red;
-            this.CancelDeliveryButton.Location = new System.Drawing.Point(760, 554);
+            this.CancelDeliveryButton.Location = new System.Drawing.Point(760, 612);
             this.CancelDeliveryButton.Name = "CancelDeliveryButton";
             this.CancelDeliveryButton.Size = new System.Drawing.Size(100, 50);
             this.CancelDeliveryButton.TabIndex = 114;
@@ -621,7 +625,7 @@
             this.SaveDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveDeliveryButton.ForeColor = System.Drawing.Color.White;
-            this.SaveDeliveryButton.Location = new System.Drawing.Point(629, 554);
+            this.SaveDeliveryButton.Location = new System.Drawing.Point(629, 612);
             this.SaveDeliveryButton.Name = "SaveDeliveryButton";
             this.SaveDeliveryButton.Size = new System.Drawing.Size(125, 50);
             this.SaveDeliveryButton.TabIndex = 113;
@@ -666,11 +670,51 @@
             this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
             this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
             // 
+            // PurchaseOrder_MaximumVolumeTextBox
+            // 
+            this.PurchaseOrder_MaximumVolumeTextBox.BackColor = System.Drawing.Color.White;
+            this.PurchaseOrder_MaximumVolumeTextBox.Location = new System.Drawing.Point(10, 69);
+            this.PurchaseOrder_MaximumVolumeTextBox.Name = "PurchaseOrder_MaximumVolumeTextBox";
+            this.PurchaseOrder_MaximumVolumeTextBox.ReadOnly = true;
+            this.PurchaseOrder_MaximumVolumeTextBox.Size = new System.Drawing.Size(246, 25);
+            this.PurchaseOrder_MaximumVolumeTextBox.TabIndex = 119;
+            // 
+            // PurchaseOrder_MaximumVolumeLabel
+            // 
+            this.PurchaseOrder_MaximumVolumeLabel.AutoSize = true;
+            this.PurchaseOrder_MaximumVolumeLabel.Location = new System.Drawing.Point(7, 49);
+            this.PurchaseOrder_MaximumVolumeLabel.Name = "PurchaseOrder_MaximumVolumeLabel";
+            this.PurchaseOrder_MaximumVolumeLabel.Size = new System.Drawing.Size(83, 17);
+            this.PurchaseOrder_MaximumVolumeLabel.TabIndex = 118;
+            this.PurchaseOrder_MaximumVolumeLabel.Text = "Max. Volume";
+            // 
+            // PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox
+            // 
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.BackColor = System.Drawing.Color.White;
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Location = new System.Drawing.Point(262, 69);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Name = "PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox";
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.ReadOnly = true;
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Size = new System.Drawing.Size(246, 25);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.TabIndex = 121;
+            // 
+            // PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel
+            // 
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.AutoSize = true;
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Location = new System.Drawing.Point(259, 49);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Name = "PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel";
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Size = new System.Drawing.Size(177, 17);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.TabIndex = 120;
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Text = "Max. Cumulative Price/Cu. M.";
+            // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox);
+            this.Controls.Add(this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel);
+            this.Controls.Add(this.PurchaseOrder_MaximumVolumeTextBox);
+            this.Controls.Add(this.PurchaseOrder_MaximumVolumeLabel);
             this.Controls.Add(this.PurchaseOrderTextBox);
             this.Controls.Add(this.PurchaseOrderLabel);
             this.Controls.Add(this.DeliveryReceiptRefreshButton);
@@ -685,7 +729,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DeliveryManagement";
-            this.Size = new System.Drawing.Size(869, 613);
+            this.Size = new System.Drawing.Size(869, 665);
             this.Load += new System.EventHandler(this.DeliveryManagement_Load);
             this.ProjectGroupBox.ResumeLayout(false);
             this.ProjectGroupBox.PerformLayout();
@@ -756,5 +800,9 @@
         private System.Windows.Forms.Label Delivery_LoadLabel;
         private System.Windows.Forms.NumericUpDown Delivery_MaxSlumpNumericUpDown;
         private System.Windows.Forms.Label Delivery_MaxSlumpLabel;
+        private System.Windows.Forms.TextBox PurchaseOrder_MaximumVolumeTextBox;
+        private System.Windows.Forms.Label PurchaseOrder_MaximumVolumeLabel;
+        private System.Windows.Forms.TextBox PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox;
+        private System.Windows.Forms.Label PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel;
     }
 }
