@@ -125,6 +125,7 @@
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetPurchaseOrderListBySelector.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
     <Compile Include="DataProcess\GetScheduledProjectDesignListByStatus.cs" />
     <Compile Include="DataProcess\GetScheduledProjectDesignStatusList.cs" />
@@ -357,6 +358,7 @@
     <Compile Include="Data\PumpType.cs" />
     <Compile Include="Data\PurchaseOrder.cs" />
     <Compile Include="Data\PurchaseOrderProjectDesign.cs" />
+    <Compile Include="Data\PurchaseOrderSelector.cs" />
     <Compile Include="Data\PurchaseOrderTransaction.cs" />
     <Compile Include="Data\Quotation.cs" />
     <Compile Include="Data\QuotationRevisionHistoryItem.cs" />
@@ -577,6 +579,12 @@
     <Compile Include="Forms\ProjectManagementForm.Designer.cs">
       <DependentUpon>ProjectManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PurchaseOrderMonitoringForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PurchaseOrderMonitoringForm.Designer.cs">
+      <DependentUpon>PurchaseOrderMonitoringForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QuotationManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -712,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectManagementForm.resx">
       <DependentUpon>ProjectManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PurchaseOrderMonitoringForm.resx">
+      <DependentUpon>PurchaseOrderMonitoringForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuotationManagementForm.resx">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
