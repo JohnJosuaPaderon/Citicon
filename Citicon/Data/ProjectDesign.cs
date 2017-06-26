@@ -52,7 +52,11 @@ namespace Citicon.Data
             displayBuilder.Append($"{Psi} ");
             displayBuilder.Append($"{Aggregate} ");
             displayBuilder.Append($"{Strength} ");
-            displayBuilder.Append($"CF {CementFactor}");
+
+            if (MixType == ProjectDesignMixType.PCD)
+            {
+                displayBuilder.Append($"CF {CementFactor}");
+            }
 
             return displayBuilder.ToString();
         }
