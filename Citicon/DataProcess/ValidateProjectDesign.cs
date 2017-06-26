@@ -23,7 +23,7 @@ namespace Citicon.DataProcess
             {
                 return new ValidationResult(false, "Invalid aggregate.");
             }
-            else if (ProjectDesign.CementFactor == 0)
+            else if (ProjectDesign.MixType == ProjectDesignMixType.PCD && ProjectDesign.CementFactor == 0)
             {
                 return new ValidationResult(false, "Invalid cement factor.");
             }

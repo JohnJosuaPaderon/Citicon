@@ -21,6 +21,7 @@ namespace Citicon.DataProcess
             command.Parameters.Add(Utility.CreateOutParameter(Parameter_Id));
             command.Parameters.AddWithValue("@_ProjectId", PurchaseOrder.Project?.Id);
             command.Parameters.AddWithValue("@_Number", PurchaseOrder.Number);
+            command.Parameters.AddWithValue("@_MaximumCumulativePricePerCubicMeter", PurchaseOrder.MaximumCumulativePricePerCubicMeter);
 
             return command;
         }
