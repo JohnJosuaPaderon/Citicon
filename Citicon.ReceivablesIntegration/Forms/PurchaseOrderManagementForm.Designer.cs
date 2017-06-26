@@ -54,10 +54,13 @@
             this.btnExcludeProjectDesign = new System.Windows.Forms.Button();
             this.nudMaxVolume = new System.Windows.Forms.NumericUpDown();
             this.lblMaxVolume = new System.Windows.Forms.Label();
+            this.lblMaximumCumulativePricePerCubicMeter = new System.Windows.Forms.Label();
+            this.nudMaximumCumulativePricePerCubicMeter = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudPurchaseOrderNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaximumCumulativePricePerCubicMeter)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPurchaseOrderNumber
@@ -101,9 +104,9 @@
             this.dgvProjectDesign.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvProjectDesign.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -121,8 +124,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProjectDesign.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProjectDesign.EnableHeadersVisualStyles = false;
-            this.dgvProjectDesign.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvProjectDesign.Location = new System.Drawing.Point(21, 187);
+            this.dgvProjectDesign.GridColor = System.Drawing.Color.Red;
+            this.dgvProjectDesign.Location = new System.Drawing.Point(16, 258);
             this.dgvProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvProjectDesign.MultiSelect = false;
             this.dgvProjectDesign.Name = "dgvProjectDesign";
@@ -131,7 +134,7 @@
             this.dgvProjectDesign.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProjectDesign.RowTemplate.Height = 40;
             this.dgvProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjectDesign.Size = new System.Drawing.Size(639, 546);
+            this.dgvProjectDesign.Size = new System.Drawing.Size(644, 475);
             this.dgvProjectDesign.TabIndex = 104;
             // 
             // colProjectDesign
@@ -145,7 +148,7 @@
             // lblClient
             // 
             this.lblClient.AutoSize = true;
-            this.lblClient.Location = new System.Drawing.Point(17, 72);
+            this.lblClient.Location = new System.Drawing.Point(12, 134);
             this.lblClient.Name = "lblClient";
             this.lblClient.Size = new System.Drawing.Size(50, 21);
             this.lblClient.TabIndex = 105;
@@ -155,9 +158,9 @@
             // 
             this.cmbxClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxClient.FormattingEnabled = true;
-            this.cmbxClient.Location = new System.Drawing.Point(21, 96);
+            this.cmbxClient.Location = new System.Drawing.Point(16, 158);
             this.cmbxClient.Name = "cmbxClient";
-            this.cmbxClient.Size = new System.Drawing.Size(639, 29);
+            this.cmbxClient.Size = new System.Drawing.Size(644, 29);
             this.cmbxClient.TabIndex = 106;
             this.cmbxClient.SelectedIndexChanged += new System.EventHandler(this.CmbxClient_SelectedIndexChanged);
             // 
@@ -165,16 +168,16 @@
             // 
             this.cmbxProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxProject.FormattingEnabled = true;
-            this.cmbxProject.Location = new System.Drawing.Point(21, 152);
+            this.cmbxProject.Location = new System.Drawing.Point(16, 214);
             this.cmbxProject.Name = "cmbxProject";
-            this.cmbxProject.Size = new System.Drawing.Size(639, 29);
+            this.cmbxProject.Size = new System.Drawing.Size(644, 29);
             this.cmbxProject.TabIndex = 108;
             this.cmbxProject.SelectedIndexChanged += new System.EventHandler(this.CmbxProject_SelectedIndexChanged);
             // 
             // lblProject
             // 
             this.lblProject.AutoSize = true;
-            this.lblProject.Location = new System.Drawing.Point(17, 128);
+            this.lblProject.Location = new System.Drawing.Point(12, 190);
             this.lblProject.Name = "lblProject";
             this.lblProject.Size = new System.Drawing.Size(58, 21);
             this.lblProject.TabIndex = 107;
@@ -225,9 +228,9 @@
             this.dgvPurchaseOrderProjectDesign.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvPurchaseOrderProjectDesign.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -247,8 +250,8 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPurchaseOrderProjectDesign.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPurchaseOrderProjectDesign.EnableHeadersVisualStyles = false;
-            this.dgvPurchaseOrderProjectDesign.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvPurchaseOrderProjectDesign.Location = new System.Drawing.Point(723, 187);
+            this.dgvPurchaseOrderProjectDesign.GridColor = System.Drawing.Color.Red;
+            this.dgvPurchaseOrderProjectDesign.Location = new System.Drawing.Point(723, 258);
             this.dgvPurchaseOrderProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvPurchaseOrderProjectDesign.MultiSelect = false;
             this.dgvPurchaseOrderProjectDesign.Name = "dgvPurchaseOrderProjectDesign";
@@ -257,7 +260,7 @@
             this.dgvPurchaseOrderProjectDesign.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPurchaseOrderProjectDesign.RowTemplate.Height = 40;
             this.dgvPurchaseOrderProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchaseOrderProjectDesign.Size = new System.Drawing.Size(900, 546);
+            this.dgvPurchaseOrderProjectDesign.Size = new System.Drawing.Size(900, 475);
             this.dgvPurchaseOrderProjectDesign.TabIndex = 113;
             // 
             // colPurchaseOrderProjectDesign
@@ -344,12 +347,38 @@
             this.lblMaxVolume.TabIndex = 115;
             this.lblMaxVolume.Text = "Max Volume";
             // 
+            // lblMaximumCumulativePricePerCubicMeter
+            // 
+            this.lblMaximumCumulativePricePerCubicMeter.AutoSize = true;
+            this.lblMaximumCumulativePricePerCubicMeter.Location = new System.Drawing.Point(12, 78);
+            this.lblMaximumCumulativePricePerCubicMeter.Name = "lblMaximumCumulativePricePerCubicMeter";
+            this.lblMaximumCumulativePricePerCubicMeter.Size = new System.Drawing.Size(212, 21);
+            this.lblMaximumCumulativePricePerCubicMeter.TabIndex = 116;
+            this.lblMaximumCumulativePricePerCubicMeter.Text = "Max. Cumulative Price/Cu. M.";
+            // 
+            // nudMaximumCumulativePricePerCubicMeter
+            // 
+            this.nudMaximumCumulativePricePerCubicMeter.DecimalPlaces = 2;
+            this.nudMaximumCumulativePricePerCubicMeter.Location = new System.Drawing.Point(16, 102);
+            this.nudMaximumCumulativePricePerCubicMeter.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.nudMaximumCumulativePricePerCubicMeter.Name = "nudMaximumCumulativePricePerCubicMeter";
+            this.nudMaximumCumulativePricePerCubicMeter.Size = new System.Drawing.Size(644, 29);
+            this.nudMaximumCumulativePricePerCubicMeter.TabIndex = 117;
+            this.nudMaximumCumulativePricePerCubicMeter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudMaximumCumulativePricePerCubicMeter.ThousandsSeparator = true;
+            // 
             // PurchaseOrderManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1635, 806);
+            this.Controls.Add(this.nudMaximumCumulativePricePerCubicMeter);
+            this.Controls.Add(this.lblMaximumCumulativePricePerCubicMeter);
             this.Controls.Add(this.lblMaxVolume);
             this.Controls.Add(this.nudMaxVolume);
             this.Controls.Add(this.dgvPurchaseOrderProjectDesign);
@@ -377,6 +406,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderProjectDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaximumCumulativePricePerCubicMeter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,5 +432,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseOrderProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseOrderProjectDesign_ProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseOrderProjectDesign_MaxVolume;
+        private System.Windows.Forms.Label lblMaximumCumulativePricePerCubicMeter;
+        private System.Windows.Forms.NumericUpDown nudMaximumCumulativePricePerCubicMeter;
     }
 }

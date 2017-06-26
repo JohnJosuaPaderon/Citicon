@@ -104,7 +104,8 @@ namespace Citicon.ReceivablesIntegration.Forms
                         var purchaseOrder = new PurchaseOrder()
                         {
                             Project = project,
-                            Number = purchaseOrderNumber
+                            Number = purchaseOrderNumber,
+                            MaximumCumulativePricePerCubicMeter = nudMaximumCumulativePricePerCubicMeter.Value
                         };
                         var purchaseOrderTransaction = new PurchaseOrderTransaction()
                         {
@@ -126,6 +127,7 @@ namespace Citicon.ReceivablesIntegration.Forms
                                 dgvProjectDesign.Rows.Clear();
                                 dgvPurchaseOrderProjectDesign.Rows.Clear();
                                 nudPurchaseOrderNumber.Value = 0;
+                                nudMaximumCumulativePricePerCubicMeter.Value = 0;
                             }
                             else
                             {
