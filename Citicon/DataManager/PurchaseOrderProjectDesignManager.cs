@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Citicon.DataManager
@@ -40,6 +41,21 @@ namespace Citicon.DataManager
                 using (var process = new GetAvailablePurchaseOrderProjectDesign(projectDesign))
                 {
                     return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static Task<IEnumerable<PurchaseOrderProjectDesign>> GetListByPurchaseOrderAsync(PurchaseOrder purchaseOrder)
+        {
+            if (purchaseOrder != null)
+            {
+                using (var process = new GetPurchaseOrderProjectDesignListByPurchaseOrder(purchaseOrder))
+                {
+                    return process.ExecuteAsync();
                 }
             }
             else
