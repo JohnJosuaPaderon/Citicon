@@ -126,6 +126,7 @@
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
     <Compile Include="DataProcess\GetPurchaseOrderListBySelector.cs" />
+    <Compile Include="DataProcess\GetPurchaseOrderProjectDesignListByPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
     <Compile Include="DataProcess\GetScheduledProjectDesignListByStatus.cs" />
     <Compile Include="DataProcess\GetScheduledProjectDesignStatusList.cs" />
