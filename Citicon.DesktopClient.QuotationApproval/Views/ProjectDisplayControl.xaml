@@ -179,7 +179,7 @@
                                         <DataGridTextColumn Header="Mix Type" Binding="{Binding MixType}"/>
                                         <DataGridTextColumn Header="Aggregate" Binding="{Binding Aggregate}"/>
                                         <DataGridTextColumn Header="Strength" Binding="{Binding Strength}"/>
-                                        <DataGridTextColumn Header="PSI" Binding="{Binding Psi,StringFormat='#,##0.00'}"/>
+                                        <DataGridTextColumn Header="PSI" Binding="{Binding Psi,StringFormat='###0'}"/>
                                         <DataGridTextColumn Header="Price/Cu.M" Binding="{Binding PricePerCubicMeter,StringFormat='#,##0.00'}"/>
                                         <DataGridTextColumn Header="Cement Factor" Binding="{Binding CementFactor,StringFormat='#,##0.00'}"/>
                                     </DataGrid.Columns>

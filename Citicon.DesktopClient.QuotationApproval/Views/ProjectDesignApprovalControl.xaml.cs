@@ -41,12 +41,12 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
                     if (value != null)
                     {
                         tbxAggregate.Text = value.Aggregate.ToString();
-                        tbxCementFactor.Text = value.CementFactor.ToString("#,##0.00");
+                        tbxCementFactor.Text = value.CementFactor.ToString("#,##0.0##");
                         tbxClient.Text = value.Project.Client.ToString();
                         tbxMixType.Text = value.MixType.ToString();
                         tbxPricePerCubicMeter.Text = value.PricePerCubicMeter.ToString("#,##0.00");
                         tbxProject.Text = value.Project.ToString();
-                        tbxPsi.Text = value.Psi.ToString("#,##0");
+                        tbxPsi.Text = value.Psi.ToString("###0");
                         tbxStrength.Text = value.Strength.ToString();
                     }
 
