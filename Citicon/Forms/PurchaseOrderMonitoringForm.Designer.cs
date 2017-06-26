@@ -44,11 +44,14 @@
             this.PurchaseOrder_Project_ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchaseOrder_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchaseOrderProjectDesignDataGridView = new System.Windows.Forms.DataGridView();
+            this.tlp = new System.Windows.Forms.TableLayoutPanel();
             this.PurchaseOrderProjectDesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PurchaseOrderProjectDesign_MaximumVolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaseOrderProjectDesign_ConsumedVolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.PurchaseOrderDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PurchaseOrderProjectDesignDataGridView)).BeginInit();
+            this.tlp.SuspendLayout();
             this.SuspendLayout();
             // 
             // PurchaseOrderDataGridView
@@ -92,7 +95,7 @@
             this.PurchaseOrderDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.PurchaseOrderDataGridView.EnableHeadersVisualStyles = false;
             this.PurchaseOrderDataGridView.GridColor = System.Drawing.Color.Red;
-            this.PurchaseOrderDataGridView.Location = new System.Drawing.Point(11, 12);
+            this.PurchaseOrderDataGridView.Location = new System.Drawing.Point(2, 3);
             this.PurchaseOrderDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.PurchaseOrderDataGridView.MultiSelect = false;
             this.PurchaseOrderDataGridView.Name = "PurchaseOrderDataGridView";
@@ -100,12 +103,14 @@
             this.PurchaseOrderDataGridView.RowHeadersVisible = false;
             this.PurchaseOrderDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.PurchaseOrderDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.PurchaseOrderDataGridView.RowTemplate.Height = 40;
             this.PurchaseOrderDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PurchaseOrderDataGridView.Size = new System.Drawing.Size(448, 793);
+            this.PurchaseOrderDataGridView.Size = new System.Drawing.Size(420, 787);
             this.PurchaseOrderDataGridView.TabIndex = 109;
+            this.PurchaseOrderDataGridView.SelectionChanged += new System.EventHandler(this.PurchaseOrderDataGridView_SelectionChanged);
             // 
             // PurchaseOrderColumn
             // 
@@ -153,7 +158,8 @@
             this.PurchaseOrderProjectDesignDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PurchaseOrderProjectDesignDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.PurchaseOrderProjectDesignDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.PurchaseOrderProjectDesignDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PurchaseOrderProjectDesignDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.PurchaseOrderProjectDesignDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
@@ -173,6 +179,7 @@
             this.PurchaseOrderProjectDesignDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PurchaseOrderProjectDesignColumn,
             this.PurchaseOrderProjectDesign_MaximumVolumeColumn,
+            this.PurchaseOrderProjectDesign_ConsumedVolumeColumn,
             this.dataGridViewTextBoxColumn5});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
@@ -184,7 +191,7 @@
             this.PurchaseOrderProjectDesignDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
             this.PurchaseOrderProjectDesignDataGridView.EnableHeadersVisualStyles = false;
             this.PurchaseOrderProjectDesignDataGridView.GridColor = System.Drawing.Color.Red;
-            this.PurchaseOrderProjectDesignDataGridView.Location = new System.Drawing.Point(463, 12);
+            this.PurchaseOrderProjectDesignDataGridView.Location = new System.Drawing.Point(426, 3);
             this.PurchaseOrderProjectDesignDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.PurchaseOrderProjectDesignDataGridView.MultiSelect = false;
             this.PurchaseOrderProjectDesignDataGridView.Name = "PurchaseOrderProjectDesignDataGridView";
@@ -196,8 +203,25 @@
             this.PurchaseOrderProjectDesignDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.PurchaseOrderProjectDesignDataGridView.RowTemplate.Height = 40;
             this.PurchaseOrderProjectDesignDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PurchaseOrderProjectDesignDataGridView.Size = new System.Drawing.Size(398, 793);
+            this.PurchaseOrderProjectDesignDataGridView.Size = new System.Drawing.Size(420, 787);
             this.PurchaseOrderProjectDesignDataGridView.TabIndex = 110;
+            // 
+            // tlp
+            // 
+            this.tlp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlp.ColumnCount = 2;
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlp.Controls.Add(this.PurchaseOrderDataGridView, 0, 0);
+            this.tlp.Controls.Add(this.PurchaseOrderProjectDesignDataGridView, 1, 0);
+            this.tlp.Location = new System.Drawing.Point(12, 12);
+            this.tlp.Name = "tlp";
+            this.tlp.RowCount = 1;
+            this.tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlp.Size = new System.Drawing.Size(848, 793);
+            this.tlp.TabIndex = 111;
             // 
             // PurchaseOrderProjectDesignColumn
             // 
@@ -215,6 +239,14 @@
             this.PurchaseOrderProjectDesign_MaximumVolumeColumn.ReadOnly = true;
             this.PurchaseOrderProjectDesign_MaximumVolumeColumn.Width = 86;
             // 
+            // PurchaseOrderProjectDesign_ConsumedVolumeColumn
+            // 
+            this.PurchaseOrderProjectDesign_ConsumedVolumeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.PurchaseOrderProjectDesign_ConsumedVolumeColumn.HeaderText = "CONSUMED VOL.";
+            this.PurchaseOrderProjectDesign_ConsumedVolumeColumn.Name = "PurchaseOrderProjectDesign_ConsumedVolumeColumn";
+            this.PurchaseOrderProjectDesign_ConsumedVolumeColumn.ReadOnly = true;
+            this.PurchaseOrderProjectDesign_ConsumedVolumeColumn.Width = 123;
+            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -228,8 +260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(872, 817);
-            this.Controls.Add(this.PurchaseOrderProjectDesignDataGridView);
-            this.Controls.Add(this.PurchaseOrderDataGridView);
+            this.Controls.Add(this.tlp);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -241,6 +272,7 @@
             this.Load += new System.EventHandler(this.PurchaseOrderMonitoringForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PurchaseOrderDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PurchaseOrderProjectDesignDataGridView)).EndInit();
+            this.tlp.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,8 +286,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseOrder_Project_ClientColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseOrder_ExtraColumn;
         private System.Windows.Forms.DataGridView PurchaseOrderProjectDesignDataGridView;
+        private System.Windows.Forms.TableLayoutPanel tlp;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseOrderProjectDesignColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseOrderProjectDesign_MaximumVolumeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseOrderProjectDesign_ConsumedVolumeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
