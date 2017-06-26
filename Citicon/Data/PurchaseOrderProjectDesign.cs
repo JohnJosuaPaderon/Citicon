@@ -40,5 +40,10 @@
         {
             return PurchaseOrder.GetHashCode() ^ ProjectDesign.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return ProjectDesign?.ToString();
+        }
     }
 }
