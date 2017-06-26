@@ -130,5 +130,13 @@ namespace Citicon.DataManager
             }
         }
         #endregion
+
+        public static Task<IEnumerable<PurchaseOrder>> GetListBySelectorAsync(PurchaseOrderSelector selector)
+        {
+            using (var process = new GetPurchaseOrderListBySelector(selector))
+            {
+                return process.ExecuteAsync();
+            }
+        }
     }
 }
