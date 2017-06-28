@@ -268,7 +268,12 @@ namespace Citicon.DataManager
                     //var filePath = $@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx";
                     var filePath = Path.Combine(ChequeVoucherDirectory, string.Format("{0}_{1:yyMMddHHmm}.xlsx", chequeVoucherNumber, DateTime.Now));
                     book.SaveAs(filePath);
-                    book.PrintOutEx();
+
+                    if (!uint.TryParse(ConfigurationManager.AppSettings["ChequeVoucher.PrintCopies"], out uint printCopies))
+                    {
+                        printCopies = 1;
+                    }
+                    book.PrintOutEx(Copies: printCopies);
                     //if (File.Exists(filePath))
                     //{
                     //    Process.Start(new ProcessStartInfo(filePath) { Verb = "print" });
