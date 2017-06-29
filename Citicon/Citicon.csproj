@@ -544,6 +544,7 @@
       <DependentUpon>AddTimeLogDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\DataDialogMode.cs" />
+    <Compile Include="Forms\Dialogs\QuotationDialogMode.cs" />
     <Compile Include="Forms\DriverTripReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
