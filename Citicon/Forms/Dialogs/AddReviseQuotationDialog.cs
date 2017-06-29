@@ -22,7 +22,7 @@ namespace Citicon.Forms.Dialogs
         {
             var dialog = new AddReviseQuotationDialog()
             {
-                Mode = DataDialogMode.Add,
+                Mode = QuotationDialogMode.Add,
                 Quotation = new Quotation()
                 {
                     Project = project
@@ -36,10 +36,24 @@ namespace Citicon.Forms.Dialogs
         public static Quotation EditQuotation(Quotation quotation)
         {
             var tempQuotation = Supports.Clone(quotation);
+            var dialog = new AddReviseQuotationDialog()
+            {
+                Mode = QuotationDialogMode.Edit,
+                Quotation = quotation ?? throw new ArgumentNullException(nameof(quotation)),
+                TempQuotation = tempQuotation
+            };
+            dialog.ShowDialog();
+            dialog.Dispose();
+            return dialog.Quotation;
+        }
+
+        public static Quotation ReviseQuotation(Quotation quotation)
+        {
+            var tempQuotation = Supports.Clone(quotation);
             quotation.RevisionNumber++;
             var dialog = new AddReviseQuotationDialog()
             {
-                Mode = DataDialogMode.Edit,
+                Mode = QuotationDialogMode.Revise,
                 Quotation = quotation ?? throw new ArgumentNullException(nameof(quotation)),
                 TempQuotation = tempQuotation
             };
@@ -58,7 +72,7 @@ namespace Citicon.Forms.Dialogs
 
         private Quotation Quotation { get; set; }
         private Quotation TempQuotation { get; set; }
-        private DataDialogMode Mode { get; set; }
+        private QuotationDialogMode Mode { get; set; }
         private List<ProjectDesign> DeletedProjectDesigns { get; }
 
         private void UpdateUI()
@@ -118,7 +132,7 @@ namespace Citicon.Forms.Dialogs
 
         private async Task GenerateQuotationNumberByTypeAsync()
         {
-            if (Mode == DataDialogMode.Add)
+            if (Mode == QuotationDialogMode.Add)
             {
                 if (Quotation != null)
                 {
@@ -158,6 +172,38 @@ namespace Citicon.Forms.Dialogs
                 else
                 {
                     MessageBox.Show("Failed to add quotation.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task EditAsync(QuotationTransaction quotationTransaction)
+        {
+            try
+            {
+                Quotation = await QuotationManager.UpdateAsync(quotationTransaction.Quotation);
+
+                foreach (var item in quotationTransaction.Designs)
+                {
+                    item.Project = Quotation.Project;
+                    item.Quotation = Quotation;
+                    await ProjectDesignManager.UpdateAsync(item);
+                }
+
+                await DeleteProjectDesignsAsync();
+
+                if (Quotation != null)
+                {
+                    MessageBox.Show("Quotation has been modified successfully.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ExportQuotationToExcel(quotationTransaction);
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to edit quotation.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
@@ -228,13 +274,16 @@ namespace Citicon.Forms.Dialogs
 
                     switch (Mode)
                     {
-                        case DataDialogMode.None:
+                        case QuotationDialogMode.None:
                             MessageBox.Show("Nothing to be done.", Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             break;
-                        case DataDialogMode.Add:
+                        case QuotationDialogMode.Add:
                             await AddAsync(quotationTransaction);
                             break;
-                        case DataDialogMode.Edit:
+                        case QuotationDialogMode.Edit:
+                            await EditAsync(quotationTransaction);
+                            break;
+                        case QuotationDialogMode.Revise:
                             await ReviseAsync(quotationTransaction);
                             break;
                     }
@@ -273,11 +322,11 @@ namespace Citicon.Forms.Dialogs
 
             if (message == DialogResult.Yes)
             {
-                if (Mode == DataDialogMode.Add)
+                if (Mode == QuotationDialogMode.Add)
                 {
                     Quotation = null;
                 }
-                else if (Mode == DataDialogMode.Edit)
+                else if (Mode == QuotationDialogMode.Edit || Mode == QuotationDialogMode.Revise)
                 {
                     Quotation = Supports.Clone(TempQuotation);
                 }
@@ -290,7 +339,7 @@ namespace Citicon.Forms.Dialogs
         {
             if (Quotation != null)
             {
-                if (Mode == DataDialogMode.Add)
+                if (Mode == QuotationDialogMode.Add)
                 {
                     Quotation.Type = (QuotationType)TypeComboBox.SelectedItem;
                     await GenerateQuotationNumberByTypeAsync();
