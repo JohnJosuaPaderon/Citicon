@@ -87,9 +87,21 @@ namespace Citicon.Forms
         {
             if (QuotationView.Quotation != null)
             {
+                var quotation = AddReviseQuotationDialog.ReviseQuotation(Supports.Clone(QuotationView.Quotation));
+
+                var selectedRow = QuotationDataGridView.SelectedRows[0];
+                selectedRow.Cells[QuotationColumn.Name].Value = quotation;
+                QuotationDataGridView.Refresh();
+            }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (QuotationView.Quotation != null)
+            {
                 var quotation = AddReviseQuotationDialog.EditQuotation(Supports.Clone(QuotationView.Quotation));
 
-                 var selectedRow = QuotationDataGridView.SelectedRows[0];
+                var selectedRow = QuotationDataGridView.SelectedRows[0];
                 selectedRow.Cells[QuotationColumn.Name].Value = quotation;
                 QuotationDataGridView.Refresh();
             }

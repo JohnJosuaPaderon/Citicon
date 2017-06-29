@@ -48,6 +48,7 @@
             this.DesignDataGridView = new System.Windows.Forms.DataGridView();
             this.DesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConfirmDeliveryButton = new System.Windows.Forms.Button();
+            this.SpecialClientsCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesignDataGridView)).BeginInit();
@@ -89,7 +90,7 @@
             this.ClientDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.ClientDataGridView.EnableHeadersVisualStyles = false;
             this.ClientDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ClientDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.ClientDataGridView.Location = new System.Drawing.Point(12, 37);
             this.ClientDataGridView.MultiSelect = false;
             this.ClientDataGridView.Name = "ClientDataGridView";
             this.ClientDataGridView.ReadOnly = true;
@@ -99,7 +100,7 @@
             this.ClientDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ClientDataGridView.RowTemplate.Height = 40;
             this.ClientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ClientDataGridView.Size = new System.Drawing.Size(583, 368);
+            this.ClientDataGridView.Size = new System.Drawing.Size(583, 343);
             this.ClientDataGridView.TabIndex = 125;
             this.ClientDataGridView.SelectionChanged += new System.EventHandler(this.ClientDataGridView_SelectionChanged);
             // 
@@ -239,12 +240,26 @@
             this.ConfirmDeliveryButton.UseVisualStyleBackColor = false;
             this.ConfirmDeliveryButton.Click += new System.EventHandler(this.ConfirmDeliveryButton_Click);
             // 
+            // SpecialClientsCheckBox
+            // 
+            this.SpecialClientsCheckBox.AutoSize = true;
+            this.SpecialClientsCheckBox.Checked = true;
+            this.SpecialClientsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.SpecialClientsCheckBox.Location = new System.Drawing.Point(465, 12);
+            this.SpecialClientsCheckBox.Name = "SpecialClientsCheckBox";
+            this.SpecialClientsCheckBox.Size = new System.Drawing.Size(130, 19);
+            this.SpecialClientsCheckBox.TabIndex = 129;
+            this.SpecialClientsCheckBox.Text = "Special Clients Only";
+            this.SpecialClientsCheckBox.UseVisualStyleBackColor = true;
+            this.SpecialClientsCheckBox.CheckedChanged += new System.EventHandler(this.SpecialClientsCheckBox_CheckedChanged);
+            // 
             // LegitimateProjectDesignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1385, 812);
+            this.Controls.Add(this.SpecialClientsCheckBox);
             this.Controls.Add(this.ConfirmDeliveryButton);
             this.Controls.Add(this.DesignDataGridView);
             this.Controls.Add(this.ProjectDataGridView);
@@ -261,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DesignDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -273,5 +289,6 @@
         private System.Windows.Forms.DataGridView DesignDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn DesignColumn;
         private System.Windows.Forms.Button ConfirmDeliveryButton;
+        private System.Windows.Forms.CheckBox SpecialClientsCheckBox;
     }
 }

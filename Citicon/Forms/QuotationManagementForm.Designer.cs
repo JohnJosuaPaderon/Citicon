@@ -42,6 +42,7 @@
             this.QuotationView = new Citicon.Forms.Controls.QuotationViewControl();
             this.AddNewButton = new System.Windows.Forms.Button();
             this.ReviseButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.QuotationDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,7 +180,7 @@
             this.ReviseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReviseButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReviseButton.ForeColor = System.Drawing.Color.White;
-            this.ReviseButton.Location = new System.Drawing.Point(1197, 74);
+            this.ReviseButton.Location = new System.Drawing.Point(1305, 74);
             this.ReviseButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ReviseButton.Name = "ReviseButton";
             this.ReviseButton.Size = new System.Drawing.Size(100, 35);
@@ -188,12 +189,30 @@
             this.ReviseButton.UseVisualStyleBackColor = false;
             this.ReviseButton.Click += new System.EventHandler(this.ReviseButton_Click);
             // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditButton.BackColor = System.Drawing.Color.Red;
+            this.EditButton.FlatAppearance.BorderSize = 0;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditButton.ForeColor = System.Drawing.Color.White;
+            this.EditButton.Location = new System.Drawing.Point(1197, 74);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(100, 35);
+            this.EditButton.TabIndex = 122;
+            this.EditButton.Text = "EDIT";
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
             // QuotationManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1485, 801);
+            this.Controls.Add(this.EditButton);
             this.Controls.Add(this.ReviseButton);
             this.Controls.Add(this.AddNewButton);
             this.Controls.Add(this.QuotationView);
@@ -228,5 +247,6 @@
         private Controls.QuotationViewControl QuotationView;
         private System.Windows.Forms.Button AddNewButton;
         private System.Windows.Forms.Button ReviseButton;
+        private System.Windows.Forms.Button EditButton;
     }
 }

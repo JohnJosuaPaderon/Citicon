@@ -1,9 +1,9 @@
-﻿using Citicon.DataManager;
+﻿using Citicon.Data;
+using Citicon.DataManager;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Citicon.Data;
 
 namespace Citicon.Forms
 {
@@ -63,7 +63,7 @@ namespace Citicon.Forms
 
             try
             {
-                var clients = await ClientManager.GetLegitimateListAsync();
+                var clients = await (SpecialClientsCheckBox.Checked ? ClientManager.GetLegitimateListAsync() : ClientManager.GetListAsync());
 
                 if (clients != null && clients.Any())
                 {
@@ -148,6 +148,11 @@ namespace Citicon.Forms
                 form.ShowDialog();
                 form = null;
             }
+        }
+
+        private async void SpecialClientsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            await GetClientListAsync();
         }
     }
 }
