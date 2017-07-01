@@ -149,5 +149,22 @@ namespace Citicon.HumanResourceApplication
                 await GetListAsync();
             }
         }
+
+        private void SearchEmployeeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var key = SearchEmployeeTextBox.Text.Trim().ToLower();
+            foreach (DataGridViewRow row in EmployeeDataGridView.Rows)
+            {
+                if (row.Cells[EmployeeColumn.Name].Value is Employee employee)
+                {
+                    if (employee.ToString().ToLower().Contains(key))
+                    {
+                        row.Selected = true;
+                        EmployeeDataGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                        return;
+                    }
+                }
+            }
+        }
     }
 }
