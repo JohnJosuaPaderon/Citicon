@@ -94,6 +94,7 @@ namespace Citicon.Forms.Controls
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.PlantLeave });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.ScheduleStatus });
                 DeliveryDataGridView.Rows.Add(row);
             }
         }

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Citicon.Data;
+using Citicon.DataManager;
+using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Citicon.Data;
-using Citicon.DataManager;
-using System.Linq;
 
 namespace Citicon.Forms.Controls
 {
@@ -24,6 +24,17 @@ namespace Citicon.Forms.Controls
 
         private ulong LatestDeliveryReceiptNumber { get; set; }
         public Delivery Delivery { get; private set; }
+
+        private DeliveryScheduleStatus _DeliveryScheduleStatus;
+
+        public DeliveryScheduleStatus DeliveryScheduleStatus
+        {
+            get { return _DeliveryScheduleStatus; }
+            set
+            {
+                _DeliveryScheduleStatus = value;
+            }
+        }
 
         private ProjectDesign _ProjectDesign;
 
@@ -199,6 +210,7 @@ namespace Citicon.Forms.Controls
             Delivery_DeliveryDateTimePicker.Value = DateTime.Now;
             Delivery.Project = ProjectDesign.Project;
             Delivery.ProjectDesign = ProjectDesign;
+            Delivery.ScheduleStatus = DeliveryScheduleStatus;
             await GetDeliveryRouteListAsync();
             await GetDriverListAsync();
             await GetTransitMixerListAsync();
@@ -242,7 +254,7 @@ namespace Citicon.Forms.Controls
             {
                 Delivery_DeliveryDateCheckBox.Text = "Delivery Date (Auto)";
                 Delivery_DeliveryDateTimePicker.Enabled = false;
-                Delivery_DeliveryDateTimePicker.Value = DateTime.Now;
+                Delivery_DeliveryDateTimePicker.Value = DateTime.Now.Date;
             }
             else
             {

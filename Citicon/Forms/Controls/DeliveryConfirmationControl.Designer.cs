@@ -88,6 +88,7 @@
             this.Delivery_ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_PlantLeaveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ScheduleStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView)).BeginInit();
             this.DesignDetailsGroupBox.SuspendLayout();
@@ -125,6 +126,7 @@
             this.Delivery_ProjectColumn,
             this.DeliveryColumn,
             this.Delivery_PlantLeaveColumn,
+            this.Delivery_ScheduleStatusColumn,
             this.Delivery_ExtraColumn});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -698,6 +700,14 @@
             this.Delivery_PlantLeaveColumn.ReadOnly = true;
             this.Delivery_PlantLeaveColumn.Width = 125;
             // 
+            // Delivery_ScheduleStatusColumn
+            // 
+            this.Delivery_ScheduleStatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_ScheduleStatusColumn.HeaderText = "REMARKS";
+            this.Delivery_ScheduleStatusColumn.Name = "Delivery_ScheduleStatusColumn";
+            this.Delivery_ScheduleStatusColumn.ReadOnly = true;
+            this.Delivery_ScheduleStatusColumn.Width = 90;
+            // 
             // Delivery_ExtraColumn
             // 
             this.Delivery_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -797,6 +807,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ProjectColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_PlantLeaveColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ScheduleStatusColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ExtraColumn;
     }
 }
