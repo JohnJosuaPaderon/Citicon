@@ -324,6 +324,7 @@
     <Compile Include="Data\DateTimeRange.cs" />
     <Compile Include="Data\Delivery.cs" />
     <Compile Include="Data\DeliveryRoute.cs" />
+    <Compile Include="Data\DeliveryScheduleStatus.cs" />
     <Compile Include="Data\Department.cs" />
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
