@@ -56,5 +56,10 @@ namespace Citicon.HumanResourceApplication
         {
             OpenMdiChild(UserSettingsForm);
         }
+
+        private void EmployeeButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(EmployeeForm);
+        }
     }
 }

@@ -77,6 +77,7 @@
             this.EmployeeButton.TabIndex = 0;
             this.EmployeeButton.Text = "EMPLOYEES";
             this.EmployeeButton.UseVisualStyleBackColor = false;
+            this.EmployeeButton.Click += new System.EventHandler(this.EmployeeButton_Click);
             // 
             // MainForm
             // 
