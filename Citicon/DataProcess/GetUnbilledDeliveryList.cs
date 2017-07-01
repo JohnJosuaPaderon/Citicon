@@ -42,7 +42,8 @@ namespace Citicon.DataProcess
                 Remarks = reader.GetString("Remarks"),
                 Route = await RouteManager.GetByIdAsync(reader.GetInt64("RouteId")),
                 TransitMixer = await TransitMixerManager.GetByIdAsync(reader.GetUInt64("TransitMixerId")),
-                Volume = reader.GetDecimal("Volume")
+                Volume = reader.GetDecimal("Volume"),
+                ScheduleStatus = reader.GetString("ScheduleStatus")
             };
         }
 
