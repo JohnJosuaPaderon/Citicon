@@ -353,6 +353,7 @@ namespace Citicon.Forms.Controls
             PayrollTypeComboBox.Items.Add(PayrollType.SemiMonthly);
             PayrollTypeComboBox.Items.Add(PayrollType.Weekly);
             PayrollTypeComboBox.Items.Add(PayrollType.Driver);
+            PayrollTypeComboBox.Items.Add(PayrollType.SubContractual);
         }
 
         private async void AddEditEmployeeControl_Load(object sender, EventArgs e)
