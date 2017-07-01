@@ -144,7 +144,7 @@ namespace Citicon.Forms
         {
             if (DesignDataGridView.SelectedRows.Count == 1 && DesignDataGridView.SelectedRows[0].Cells[DesignColumn.Name].Value is ProjectDesign design)
             {
-                var form = new DeliveryManagementForm(design);
+                var form = new DeliveryManagementForm(design, SpecialClientsCheckBox.Checked ? DeliveryScheduleStatus.SpecialClient : DeliveryScheduleStatus.Rescue);
                 form.ShowDialog();
                 form = null;
             }
