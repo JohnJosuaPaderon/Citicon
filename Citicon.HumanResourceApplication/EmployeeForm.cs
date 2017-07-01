@@ -18,6 +18,7 @@ namespace Citicon.HumanResourceApplication
         private const string DateFormat = "MMMM dd, yyyy";
         private const string MonetaryFormat = "#,##0.00";
         private Employee _CurrentEmployee;
+        private EmployeeLogin _CurrentEmployeeLogin;
 
         public Employee CurrentEmployee
         {
@@ -30,6 +31,24 @@ namespace Citicon.HumanResourceApplication
                     UpdateUI(value);
                 }
             }
+        }
+
+        public EmployeeLogin CurrentEmployeeLogin
+        {
+            get { return _CurrentEmployeeLogin; }
+            set
+            {
+                if (_CurrentEmployeeLogin != value)
+                {
+                    _CurrentEmployeeLogin = value;
+                    UpdateUI(value);
+                }
+            }
+        }
+
+        private void UpdateUI(EmployeeLogin value)
+        {
+            LoginCodeTextBox.Text = value?.LoginCode.ToString("000000");
         }
 
         private void UpdateUI(Employee value)
@@ -124,6 +143,11 @@ namespace Citicon.HumanResourceApplication
             {
                 var tempEmployee = EmployeeDataGridView.SelectedRows[0].Cells[EmployeeColumn.Name].Value as Employee;
                 CurrentEmployee = await EmployeeManager.GetByIdAsync(tempEmployee.Id);
+
+                if (CurrentEmployee != null)
+                {
+                    CurrentEmployeeLogin = await EmployeeManager.RegisterEmployeeLoginAsync(CurrentEmployee);
+                }
             }
             else
             {

@@ -122,6 +122,8 @@
             this.AddNewButton = new System.Windows.Forms.Button();
             this.SearchEmployeeTextBox = new System.Windows.Forms.TextBox();
             this.SearchEmployeeLabel = new System.Windows.Forms.Label();
+            this.LoginCodeTextBox = new System.Windows.Forms.TextBox();
+            this.LoginCodeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             this.EarningsAndDeductionInformationTabPage.SuspendLayout();
             this.DeductionsGroupBox.SuspendLayout();
@@ -527,6 +529,8 @@
             // PersonalInformationTabPage
             // 
             this.PersonalInformationTabPage.AutoScroll = true;
+            this.PersonalInformationTabPage.Controls.Add(this.LoginCodeTextBox);
+            this.PersonalInformationTabPage.Controls.Add(this.LoginCodeLabel);
             this.PersonalInformationTabPage.Controls.Add(this.DependentsTextBox);
             this.PersonalInformationTabPage.Controls.Add(this.PagIbigRtnTextBox);
             this.PersonalInformationTabPage.Controls.Add(this.DependentsLabel);
@@ -1081,6 +1085,24 @@
             this.SearchEmployeeLabel.TabIndex = 116;
             this.SearchEmployeeLabel.Text = "Search Employee";
             // 
+            // LoginCodeTextBox
+            // 
+            this.LoginCodeTextBox.BackColor = System.Drawing.Color.White;
+            this.LoginCodeTextBox.Location = new System.Drawing.Point(10, 700);
+            this.LoginCodeTextBox.Name = "LoginCodeTextBox";
+            this.LoginCodeTextBox.ReadOnly = true;
+            this.LoginCodeTextBox.Size = new System.Drawing.Size(264, 25);
+            this.LoginCodeTextBox.TabIndex = 49;
+            // 
+            // LoginCodeLabel
+            // 
+            this.LoginCodeLabel.AutoSize = true;
+            this.LoginCodeLabel.Location = new System.Drawing.Point(7, 680);
+            this.LoginCodeLabel.Name = "LoginCodeLabel";
+            this.LoginCodeLabel.Size = new System.Drawing.Size(75, 17);
+            this.LoginCodeLabel.TabIndex = 48;
+            this.LoginCodeLabel.Text = "Login Code";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1209,6 +1231,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Employee_ExtraColumn;
         private System.Windows.Forms.TextBox SearchEmployeeTextBox;
         private System.Windows.Forms.Label SearchEmployeeLabel;
+        private System.Windows.Forms.TextBox LoginCodeTextBox;
+        private System.Windows.Forms.Label LoginCodeLabel;
     }
 }
 
