@@ -38,6 +38,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DeliveryManagement.BackColor = System.Drawing.Color.White;
+            this.DeliveryManagement.DeliveryScheduleStatus = null;
             this.DeliveryManagement.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeliveryManagement.ForeColor = System.Drawing.Color.Red;
             this.DeliveryManagement.Location = new System.Drawing.Point(12, 13);
@@ -45,7 +46,7 @@
             this.DeliveryManagement.Name = "DeliveryManagement";
             this.DeliveryManagement.ProjectDesign = null;
             this.DeliveryManagement.PurchaseOrder = null;
-            this.DeliveryManagement.Size = new System.Drawing.Size(876, 609);
+            this.DeliveryManagement.Size = new System.Drawing.Size(876, 674);
             this.DeliveryManagement.TabIndex = 0;
             this.DeliveryManagement.CloseDialogRequested += new System.EventHandler(this.DeliveryManagement_CloseDialogRequested);
             // 
@@ -54,7 +55,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(900, 635);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.DeliveryManagement);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;

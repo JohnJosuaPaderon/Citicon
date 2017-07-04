@@ -86,6 +86,7 @@ namespace Citicon.Forms
                 };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = item.MaximumCumulativePricePerCubicMeter });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = item.RunningBalance });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Project });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Project?.Client });
                 PurchaseOrderDataGridView.Rows.Add(row);
