@@ -306,5 +306,13 @@ namespace Citicon.DataManager
                 return process.ExecuteAsync();
             }
         }
+
+        public static Task<IEnumerable<Employee>> GetServiceEngineerListAsync()
+        {
+            using (var process = new GetServiceEngineerList())
+            {
+                return process.ExecuteAsync();
+            }
+        }
     }
 }
