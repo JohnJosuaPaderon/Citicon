@@ -34,6 +34,8 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_DriverId", Delivery.Driver?.Id);
             command.Parameters.AddWithValue("@_MaxSlump", Delivery.MaxSlump);
             command.Parameters.AddWithValue("@_ScheduleStatus", (string)Delivery.ScheduleStatus);
+            command.Parameters.AddWithValue("@_PurchaseOrderId", Delivery.PurchaseOrder?.Id);
+            command.Parameters.AddWithValue("@_ServiceEngineerId", Delivery.ServiceEngineer?.Id);
 
             return command;
         }

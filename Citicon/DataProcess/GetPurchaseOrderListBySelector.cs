@@ -31,7 +31,8 @@ namespace Citicon.DataProcess
                 Id = reader.GetUInt64("Id"),
                 MaximumCumulativePricePerCubicMeter = reader.GetDecimal("MaximumCumulativePricePerCubicMeter"),
                 Number = reader.GetString("Number"),
-                Project = await ProjectManager.GetByIdAsync(reader.GetUInt64("ProjectId"))
+                Project = await ProjectManager.GetByIdAsync(reader.GetUInt64("ProjectId")),
+                RunningBalance = reader.GetDecimal("RunningBalance")
             };
         }
 

@@ -31,7 +31,8 @@ namespace Citicon.DataProcess
             {
                 Id = PurchaseOrderId,
                 Number = reader.GetString("Number"),
-                //RunningBalance = reader.GetDecimal("RunningBalance")
+                MaximumCumulativePricePerCubicMeter = reader.GetDecimal("MaximumCumulativePricePerCubicMeter"),
+                RunningBalance = reader.GetDecimal("RunningBalance")
             };
         }
 
