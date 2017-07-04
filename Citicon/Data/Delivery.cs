@@ -29,6 +29,8 @@ namespace Citicon.Data
         public decimal AdmixtureQuantity { get; set; }
         public decimal MaxSlump { get; set; }
         public DeliveryScheduleStatus ScheduleStatus { get; set; }
+        public PurchaseOrder PurchaseOrder { get; set; }
+        public Employee ServiceEngineer { get; set; }
         public string DeliveryReceiptNumberDisplay
         {
             get

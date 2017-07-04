@@ -7,6 +7,13 @@
         public string Number { get; set; }
         public decimal RunningBalance { get; set; }
         public decimal MaximumCumulativePricePerCubicMeter { get; set; }
+        public bool WarningLevelReached
+        {
+            get
+            {
+                return (MaximumCumulativePricePerCubicMeter * 0.25M) >= RunningBalance;
+            }
+        }
 
         public static bool operator ==(PurchaseOrder left, PurchaseOrder right)
         {
