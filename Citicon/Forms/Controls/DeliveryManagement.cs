@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -62,8 +63,19 @@ namespace Citicon.Forms.Controls
 
         private void OnPurchaseOrder()
         {
+            PurchaseOrderTextBox.BackColor = Color.White;
             PurchaseOrderTextBox.Text = PurchaseOrder?.Number ?? "<No P.O.>";
             PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Text = PurchaseOrder?.MaximumCumulativePricePerCubicMeter.ToString("#,##0.00") ?? "N/A";
+
+            if (PurchaseOrder != null && PurchaseOrder.WarningLevelReached)
+            {
+                PurchaseOrderWarningTimer.Start();
+                MessageBox.Show("P.O.'s Maximum Cumulative Price/Cu.M. is nearly to be consumed.", "P.O. Monitoring", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                PurchaseOrderWarningTimer.Stop();
+            }
         }
 
         private void OnProjectDesignChanged()
@@ -110,6 +122,25 @@ namespace Citicon.Forms.Controls
                 if (drivers != null && drivers.Any())
                 {
                     Delivery_DriverComboBox.Items.AddRange(drivers.ToArray());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async Task GetServiceEngineerListAsync()
+        {
+            ServiceEngineerComboBox.Items.Clear();
+
+            try
+            {
+                var serviceEngineers = await EmployeeManager.GetServiceEngineerListAsync();
+
+                if (serviceEngineers != null && serviceEngineers.Any())
+                {
+                    ServiceEngineerComboBox.Items.AddRange(serviceEngineers.ToArray());
                 }
             }
             catch (Exception ex)
@@ -207,12 +238,12 @@ namespace Citicon.Forms.Controls
         private async void DeliveryManagement_Load(object sender, EventArgs e)
         {
             Delivery = new Delivery();
+
             Delivery_DeliveryDateTimePicker.Value = DateTime.Now;
-            Delivery.Project = ProjectDesign.Project;
-            Delivery.ProjectDesign = ProjectDesign;
-            Delivery.ScheduleStatus = DeliveryScheduleStatus;
+
             await GetDeliveryRouteListAsync();
             await GetDriverListAsync();
+            await GetServiceEngineerListAsync();
             await GetTransitMixerListAsync();
             await GetBranchListAsync();
             await GetPurchaseOrderAsync();
@@ -227,6 +258,11 @@ namespace Citicon.Forms.Controls
             SetDeliveryTransitMixer();
             SetDeliveryLoad();
             SetDeliveryMaxSlump();
+
+            Delivery.Project = ProjectDesign.Project;
+            Delivery.ProjectDesign = ProjectDesign;
+            Delivery.PurchaseOrder = PurchaseOrder;
+            Delivery.ScheduleStatus = DeliveryScheduleStatus;
         }
 
         private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -267,6 +303,8 @@ namespace Citicon.Forms.Controls
         {
             try
             {
+                Delivery.ServiceEngineer = ServiceEngineerComboBox.SelectedItem as Employee;
+                Delivery.PricePerCubicMeter = ProjectDesign?.PricePerCubicMeter ?? 0;
                 var delivery = await DeliveryManager.InsertAsync(Delivery);
                 if (delivery != null)
                 {
@@ -416,6 +454,20 @@ namespace Citicon.Forms.Controls
             if (Delivery.MaxSlump != Delivery_MaxSlumpNumericUpDown.Value)
             {
                 Delivery.MaxSlump = Delivery_MaxSlumpNumericUpDown.Value;
+            }
+        }
+
+        private void PurchaseOrderWarningTimer_Tick(object sender, EventArgs e)
+        {
+            if (PurchaseOrderTextBox.BackColor == Color.White)
+            {
+                PurchaseOrderTextBox.BackColor = Color.Red;
+                PurchaseOrderTextBox.ForeColor = Color.White;
+            }
+            else
+            {
+                PurchaseOrderTextBox.BackColor = Color.White;
+                PurchaseOrderTextBox.ForeColor = Color.Black;
             }
         }
     }

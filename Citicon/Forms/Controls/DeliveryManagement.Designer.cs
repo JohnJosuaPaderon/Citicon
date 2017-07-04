@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.DeliveryReceiptNumberLabel = new System.Windows.Forms.Label();
             this.DeliveryReceiptNumberTextBox = new System.Windows.Forms.TextBox();
             this.ProjectGroupBox = new System.Windows.Forms.GroupBox();
@@ -84,6 +85,9 @@
             this.PurchaseOrder_MaximumVolumeLabel = new System.Windows.Forms.Label();
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel = new System.Windows.Forms.Label();
+            this.ServiceEngineerComboBox = new System.Windows.Forms.ComboBox();
+            this.ServiceEngineerLabel = new System.Windows.Forms.Label();
+            this.PurchaseOrderWarningTimer = new System.Windows.Forms.Timer(this.components);
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
@@ -341,6 +345,8 @@
             // 
             this.DeliveryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeliveryGroupBox.Controls.Add(this.ServiceEngineerComboBox);
+            this.DeliveryGroupBox.Controls.Add(this.ServiceEngineerLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_MaxSlumpNumericUpDown);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_MaxSlumpLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_LoadNumericUpDown);
@@ -365,7 +371,7 @@
             this.DeliveryGroupBox.Controls.Add(this.Delivery_DeliveredVolumeLabel);
             this.DeliveryGroupBox.Location = new System.Drawing.Point(10, 373);
             this.DeliveryGroupBox.Name = "DeliveryGroupBox";
-            this.DeliveryGroupBox.Size = new System.Drawing.Size(850, 233);
+            this.DeliveryGroupBox.Size = new System.Drawing.Size(850, 240);
             this.DeliveryGroupBox.TabIndex = 4;
             this.DeliveryGroupBox.TabStop = false;
             this.DeliveryGroupBox.Text = "DELIVERY DETAILS";
@@ -373,14 +379,14 @@
             // Delivery_MaxSlumpNumericUpDown
             // 
             this.Delivery_MaxSlumpNumericUpDown.DecimalPlaces = 3;
-            this.Delivery_MaxSlumpNumericUpDown.Location = new System.Drawing.Point(495, 196);
+            this.Delivery_MaxSlumpNumericUpDown.Location = new System.Drawing.Point(370, 196);
             this.Delivery_MaxSlumpNumericUpDown.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
             this.Delivery_MaxSlumpNumericUpDown.Name = "Delivery_MaxSlumpNumericUpDown";
-            this.Delivery_MaxSlumpNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_MaxSlumpNumericUpDown.Size = new System.Drawing.Size(119, 25);
             this.Delivery_MaxSlumpNumericUpDown.TabIndex = 40;
             this.Delivery_MaxSlumpNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Delivery_MaxSlumpNumericUpDown.ThousandsSeparator = true;
@@ -389,7 +395,7 @@
             // Delivery_MaxSlumpLabel
             // 
             this.Delivery_MaxSlumpLabel.AutoSize = true;
-            this.Delivery_MaxSlumpLabel.Location = new System.Drawing.Point(492, 176);
+            this.Delivery_MaxSlumpLabel.Location = new System.Drawing.Point(367, 176);
             this.Delivery_MaxSlumpLabel.Name = "Delivery_MaxSlumpLabel";
             this.Delivery_MaxSlumpLabel.Size = new System.Drawing.Size(73, 17);
             this.Delivery_MaxSlumpLabel.TabIndex = 39;
@@ -404,7 +410,7 @@
             0,
             0});
             this.Delivery_LoadNumericUpDown.Name = "Delivery_LoadNumericUpDown";
-            this.Delivery_LoadNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_LoadNumericUpDown.Size = new System.Drawing.Size(112, 25);
             this.Delivery_LoadNumericUpDown.TabIndex = 38;
             this.Delivery_LoadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Delivery_LoadNumericUpDown.ThousandsSeparator = true;
@@ -609,7 +615,7 @@
             this.CancelDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelDeliveryButton.ForeColor = System.Drawing.Color.Red;
-            this.CancelDeliveryButton.Location = new System.Drawing.Point(760, 612);
+            this.CancelDeliveryButton.Location = new System.Drawing.Point(760, 619);
             this.CancelDeliveryButton.Name = "CancelDeliveryButton";
             this.CancelDeliveryButton.Size = new System.Drawing.Size(100, 50);
             this.CancelDeliveryButton.TabIndex = 114;
@@ -625,7 +631,7 @@
             this.SaveDeliveryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveDeliveryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveDeliveryButton.ForeColor = System.Drawing.Color.White;
-            this.SaveDeliveryButton.Location = new System.Drawing.Point(629, 612);
+            this.SaveDeliveryButton.Location = new System.Drawing.Point(629, 619);
             this.SaveDeliveryButton.Name = "SaveDeliveryButton";
             this.SaveDeliveryButton.Size = new System.Drawing.Size(125, 50);
             this.SaveDeliveryButton.TabIndex = 113;
@@ -706,6 +712,29 @@
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.TabIndex = 120;
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Text = "Max. Cumulative Price/Cu. M.";
             // 
+            // ServiceEngineerComboBox
+            // 
+            this.ServiceEngineerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ServiceEngineerComboBox.FormattingEnabled = true;
+            this.ServiceEngineerComboBox.Location = new System.Drawing.Point(495, 199);
+            this.ServiceEngineerComboBox.Name = "ServiceEngineerComboBox";
+            this.ServiceEngineerComboBox.Size = new System.Drawing.Size(237, 25);
+            this.ServiceEngineerComboBox.TabIndex = 42;
+            // 
+            // ServiceEngineerLabel
+            // 
+            this.ServiceEngineerLabel.AutoSize = true;
+            this.ServiceEngineerLabel.Location = new System.Drawing.Point(492, 179);
+            this.ServiceEngineerLabel.Name = "ServiceEngineerLabel";
+            this.ServiceEngineerLabel.Size = new System.Drawing.Size(104, 17);
+            this.ServiceEngineerLabel.TabIndex = 41;
+            this.ServiceEngineerLabel.Text = "Service Engineer";
+            // 
+            // PurchaseOrderWarningTimer
+            // 
+            this.PurchaseOrderWarningTimer.Interval = 500;
+            this.PurchaseOrderWarningTimer.Tick += new System.EventHandler(this.PurchaseOrderWarningTimer_Tick);
+            // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -729,7 +758,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DeliveryManagement";
-            this.Size = new System.Drawing.Size(869, 665);
+            this.Size = new System.Drawing.Size(869, 687);
             this.Load += new System.EventHandler(this.DeliveryManagement_Load);
             this.ProjectGroupBox.ResumeLayout(false);
             this.ProjectGroupBox.PerformLayout();
@@ -804,5 +833,8 @@
         private System.Windows.Forms.Label PurchaseOrder_MaximumVolumeLabel;
         private System.Windows.Forms.TextBox PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox;
         private System.Windows.Forms.Label PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel;
+        private System.Windows.Forms.ComboBox ServiceEngineerComboBox;
+        private System.Windows.Forms.Label ServiceEngineerLabel;
+        private System.Windows.Forms.Timer PurchaseOrderWarningTimer;
     }
 }
