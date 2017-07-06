@@ -42,6 +42,16 @@ namespace Citicon.PayrollApplication
             }
         }
 
+        private RouteManagementForm RouteManagementForm
+        {
+            get
+            {
+                var form = new RouteManagementForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void OpenMdiChild(Form form)
         {
             if (ActiveMdiChild != null && ActiveMdiChild.GetType() == form.GetType())
@@ -72,6 +82,11 @@ namespace Citicon.PayrollApplication
         private void DriverTripReportButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DriverTripReportForm);
+        }
+
+        private void RouteButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(RouteManagementForm);
         }
     }
 }

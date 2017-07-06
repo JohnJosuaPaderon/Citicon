@@ -30,15 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DriverTripReportButton = new System.Windows.Forms.Button();
             this.UserSettingsButton = new System.Windows.Forms.Button();
             this.ViewTimeLogsButton = new System.Windows.Forms.Button();
-            this.DriverTripReportButton = new System.Windows.Forms.Button();
+            this.RouteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.RouteButton);
             this.panel1.Controls.Add(this.DriverTripReportButton);
             this.panel1.Controls.Add(this.UserSettingsButton);
             this.panel1.Controls.Add(this.ViewTimeLogsButton);
@@ -49,6 +51,22 @@
             this.panel1.Size = new System.Drawing.Size(1008, 60);
             this.panel1.TabIndex = 1;
             // 
+            // DriverTripReportButton
+            // 
+            this.DriverTripReportButton.BackColor = System.Drawing.Color.Red;
+            this.DriverTripReportButton.FlatAppearance.BorderSize = 0;
+            this.DriverTripReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DriverTripReportButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DriverTripReportButton.ForeColor = System.Drawing.Color.White;
+            this.DriverTripReportButton.Location = new System.Drawing.Point(144, 5);
+            this.DriverTripReportButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.DriverTripReportButton.Name = "DriverTripReportButton";
+            this.DriverTripReportButton.Size = new System.Drawing.Size(125, 50);
+            this.DriverTripReportButton.TabIndex = 6;
+            this.DriverTripReportButton.Text = "DRIVER TRIP REPORT";
+            this.DriverTripReportButton.UseVisualStyleBackColor = false;
+            this.DriverTripReportButton.Click += new System.EventHandler(this.DriverTripReportButton_Click);
+            // 
             // UserSettingsButton
             // 
             this.UserSettingsButton.BackColor = System.Drawing.Color.Red;
@@ -56,7 +74,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(279, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(414, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -81,21 +99,21 @@
             this.ViewTimeLogsButton.UseVisualStyleBackColor = false;
             this.ViewTimeLogsButton.Click += new System.EventHandler(this.ViewTimeLogsButton_Click);
             // 
-            // DriverTripReportButton
+            // RouteButton
             // 
-            this.DriverTripReportButton.BackColor = System.Drawing.Color.Red;
-            this.DriverTripReportButton.FlatAppearance.BorderSize = 0;
-            this.DriverTripReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DriverTripReportButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DriverTripReportButton.ForeColor = System.Drawing.Color.White;
-            this.DriverTripReportButton.Location = new System.Drawing.Point(144, 5);
-            this.DriverTripReportButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.DriverTripReportButton.Name = "DriverTripReportButton";
-            this.DriverTripReportButton.Size = new System.Drawing.Size(125, 50);
-            this.DriverTripReportButton.TabIndex = 6;
-            this.DriverTripReportButton.Text = "DRIVER TRIP REPORT";
-            this.DriverTripReportButton.UseVisualStyleBackColor = false;
-            this.DriverTripReportButton.Click += new System.EventHandler(this.DriverTripReportButton_Click);
+            this.RouteButton.BackColor = System.Drawing.Color.Red;
+            this.RouteButton.FlatAppearance.BorderSize = 0;
+            this.RouteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RouteButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RouteButton.ForeColor = System.Drawing.Color.White;
+            this.RouteButton.Location = new System.Drawing.Point(279, 5);
+            this.RouteButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.RouteButton.Name = "RouteButton";
+            this.RouteButton.Size = new System.Drawing.Size(125, 50);
+            this.RouteButton.TabIndex = 7;
+            this.RouteButton.Text = "ROUTES";
+            this.RouteButton.UseVisualStyleBackColor = false;
+            this.RouteButton.Click += new System.EventHandler(this.RouteButton_Click);
             // 
             // MainForm
             // 
@@ -125,6 +143,7 @@
         private System.Windows.Forms.Button UserSettingsButton;
         private System.Windows.Forms.Button ViewTimeLogsButton;
         private System.Windows.Forms.Button DriverTripReportButton;
+        private System.Windows.Forms.Button RouteButton;
     }
 }
 
