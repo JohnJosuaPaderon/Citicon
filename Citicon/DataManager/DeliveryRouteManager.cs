@@ -38,6 +38,42 @@ namespace Citicon.DataManager
             }
         }
 
+        public async Task<DeliveryRoute> InsertAsync(DeliveryRoute route)
+        {
+            if (route != null)
+            {
+                using (var process = new InsertDeliveryRoute(route))
+                {
+                    route = await process.ExecuteAsync();
+
+                    if (route != null)
+                    {
+                        Dictionary.Add(route.Id, route);
+                    }
+                }
+            }
+
+            return route;
+        }
+
+        public async Task<DeliveryRoute> UpdateAsync(DeliveryRoute route)
+        {
+            if (route != null)
+            {
+                using (var process = new UpdateDeliveryRoute(route))
+                {
+                    route = await process.ExecuteAsync();
+
+                    if (route != null)
+                    {
+                        Dictionary[route.Id] = route;
+                    }
+                }
+            }
+
+            return route;
+        }
+
         public Task<IEnumerable<DeliveryRoute>> GetListAsync()
         {
             using (var process = new GetDeliveryRouteList())
