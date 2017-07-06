@@ -138,6 +138,7 @@
     <Compile Include="DataProcess\GetTripReportDriverList.cs" />
     <Compile Include="DataProcess\GetUnbilledDeliveryList.cs" />
     <Compile Include="DataProcess\InsertDelivery.cs" />
+    <Compile Include="DataProcess\InsertDeliveryRoute.cs" />
     <Compile Include="DataProcess\InsertEmployee.cs" />
     <Compile Include="DataProcess\InsertHoliday.cs" />
     <Compile Include="DataProcess\InsertJobPosition.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="DataProcess\InsertPurchaseOrderTransaction.cs" />
     <Compile Include="DataProcess\PurchaseOrderNumberExists.cs" />
     <Compile Include="DataProcess\UpdateClient.cs" />
+    <Compile Include="DataProcess\UpdateDeliveryRoute.cs" />
     <Compile Include="DataProcess\UpdateEmployee.cs" />
     <Compile Include="DataProcess\UpdateHoliday.cs" />
     <Compile Include="DataProcess\UpdateJobPosition.cs" />
@@ -473,6 +475,12 @@
     <Compile Include="Forms\Controls\QuotationViewControl.Designer.cs">
       <DependentUpon>QuotationViewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Controls\RoutePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\RoutePreview.Designer.cs">
+      <DependentUpon>RoutePreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Controls\TransitMixerManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -526,6 +534,12 @@
     </Compile>
     <Compile Include="Forms\Dialogs\AddEditProjectDialog.Designer.cs">
       <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditRouteDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\AddEditRouteDialog.Designer.cs">
+      <DependentUpon>AddEditRouteDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\AddEditTransitMixerDialog.cs">
       <SubType>Form</SubType>
@@ -594,6 +608,12 @@
     </Compile>
     <Compile Include="Forms\QuotationManagementForm.Designer.cs">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RouteManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RouteManagementForm.Designer.cs">
+      <DependentUpon>RouteManagementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\SalesInvoiceAssignmentForm.cs">
       <SubType>Form</SubType>
@@ -671,6 +691,9 @@
     <EmbeddedResource Include="Forms\Controls\QuotationViewControl.resx">
       <DependentUpon>QuotationViewControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\RoutePreview.resx">
+      <DependentUpon>RoutePreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\TransitMixerManagement.resx">
       <DependentUpon>TransitMixerManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -697,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditProjectDialog.resx">
       <DependentUpon>AddEditProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\AddEditRouteDialog.resx">
+      <DependentUpon>AddEditRouteDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddEditTransitMixerDialog.resx">
       <DependentUpon>AddEditTransitMixerDialog.cs</DependentUpon>
@@ -730,6 +756,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuotationManagementForm.resx">
       <DependentUpon>QuotationManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RouteManagementForm.resx">
+      <DependentUpon>RouteManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SalesInvoiceAssignmentForm.resx">
       <DependentUpon>SalesInvoiceAssignmentForm.cs</DependentUpon>
