@@ -61,6 +61,8 @@
             this.RemoveAllDesignsButton = new System.Windows.Forms.Button();
             this.CancelQuotationButton = new System.Windows.Forms.Button();
             this.SaveQuotationButton = new System.Windows.Forms.Button();
+            this.PaymentTermComboBox = new System.Windows.Forms.ComboBox();
+            this.PaymentTermLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EngineerIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDesignDataGridView)).BeginInit();
@@ -415,6 +417,25 @@
             this.SaveQuotationButton.UseVisualStyleBackColor = false;
             this.SaveQuotationButton.Click += new System.EventHandler(this.SaveQuotationButton_Click);
             // 
+            // PaymentTermComboBox
+            // 
+            this.PaymentTermComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PaymentTermComboBox.FormattingEnabled = true;
+            this.PaymentTermComboBox.Location = new System.Drawing.Point(1091, 154);
+            this.PaymentTermComboBox.Name = "PaymentTermComboBox";
+            this.PaymentTermComboBox.Size = new System.Drawing.Size(348, 25);
+            this.PaymentTermComboBox.TabIndex = 126;
+            this.PaymentTermComboBox.SelectedIndexChanged += new System.EventHandler(this.PaymentTermComboBox_SelectedIndexChanged);
+            // 
+            // PaymentTermLabel
+            // 
+            this.PaymentTermLabel.AutoSize = true;
+            this.PaymentTermLabel.Location = new System.Drawing.Point(1088, 131);
+            this.PaymentTermLabel.Name = "PaymentTermLabel";
+            this.PaymentTermLabel.Size = new System.Drawing.Size(90, 17);
+            this.PaymentTermLabel.TabIndex = 125;
+            this.PaymentTermLabel.Text = "Payment Term";
+            // 
             // AddReviseQuotationDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -422,6 +443,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1451, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.PaymentTermComboBox);
+            this.Controls.Add(this.PaymentTermLabel);
             this.Controls.Add(this.CancelQuotationButton);
             this.Controls.Add(this.SaveQuotationButton);
             this.Controls.Add(this.RemoveAllDesignsButton);
@@ -496,5 +519,7 @@
         private System.Windows.Forms.Button RemoveAllDesignsButton;
         private System.Windows.Forms.Button CancelQuotationButton;
         private System.Windows.Forms.Button SaveQuotationButton;
+        private System.Windows.Forms.ComboBox PaymentTermComboBox;
+        private System.Windows.Forms.Label PaymentTermLabel;
     }
 }

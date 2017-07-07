@@ -435,5 +435,13 @@ namespace Citicon.Forms.Dialogs
                 Quotation.NoteDetails = TermsRichTextBox.Rtf;
             }
         }
+
+        private void PaymentTermComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Quotation != null)
+            {
+                Quotation.PaymentTerm = (PaymentTerm)PaymentTermComboBox.SelectedItem;
+            }
+        }
     }
 }
