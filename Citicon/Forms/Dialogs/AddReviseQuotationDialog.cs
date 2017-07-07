@@ -12,10 +12,13 @@ namespace Citicon.Forms.Dialogs
 {
     public partial class AddReviseQuotationDialog : Form
     {
+        private PaymentTermManager PaymentTermManager;
+
         private AddReviseQuotationDialog()
         {
             InitializeComponent();
             DeletedProjectDesigns = new List<ProjectDesign>();
+            PaymentTermManager = new PaymentTermManager();
         }
 
         public static Quotation AddQuotation(Project project)
@@ -68,6 +71,8 @@ namespace Citicon.Forms.Dialogs
             LoadAgents();
             UpdateUI();
             await GetProjectDesignsAsync();
+            await GetPaymentTermsAsync();
+
         }
 
         private Quotation Quotation { get; set; }
@@ -121,6 +126,18 @@ namespace Citicon.Forms.Dialogs
                         AddToUI(projectDesign);
                     }
                 }
+            }
+        }
+
+        private async Task GetPaymentTermsAsync()
+        {
+            PaymentTermComboBox.Items.Clear();
+
+            var list = await PaymentTermManager.GetListAsync();
+
+            if (list != null && list.Any())
+            {
+                PaymentTermComboBox.Items.AddRange(list);
             }
         }
 
