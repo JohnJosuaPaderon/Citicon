@@ -56,9 +56,9 @@ namespace Citicon.DataManager
             }
         }
 
-        public static Task<IEnumerable<Delivery>> GetUnbilledDeliveryListAsync()
+        public static Task<IEnumerable<Delivery>> GetUnbilledDeliveryListAsync(bool filterByDeliveryDate, DateTime deliveryDate)
         {
-            using (var process = new GetUnbilledDeliveryList())
+            using (var process = new GetUnbilledDeliveryList(filterByDeliveryDate, deliveryDate))
             {
                 return process.ExecuteAsync();
             }
