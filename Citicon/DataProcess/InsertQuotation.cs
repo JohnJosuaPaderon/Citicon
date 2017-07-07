@@ -29,6 +29,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_RevisionNo", Quotation.RevisionNumber);
             command.Parameters.AddWithValue("@_Type", Quotation.Type.ToString());
             command.Parameters.AddWithValue("@_Number", Quotation.Number);
+            command.Parameters.AddWithValue("@_PaymentTermId", Quotation.PaymentTerm?.Id);
 
             return command;
         }
