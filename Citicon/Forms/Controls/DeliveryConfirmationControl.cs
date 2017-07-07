@@ -65,7 +65,7 @@ namespace Citicon.Forms.Controls
 
             try
             {
-                var deliveries = await DeliveryManager.GetUnbilledDeliveryListAsync();
+                var deliveries = await DeliveryManager.GetUnbilledDeliveryListAsync(FilterByDeliveryDateCheckBox.Checked, FilterByDeliveryDateTimePicker.Value);
 
                 if (deliveries != null && deliveries.Any())
                 {
@@ -288,6 +288,16 @@ namespace Citicon.Forms.Controls
                     row.Selected = true;
                 }
             }
+        }
+
+        private async void FilterByDeliveryDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            await GetUnbilledDeliveryListAsync();
+        }
+
+        private async void FilterByDeliveryDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            await GetUnbilledDeliveryListAsync();
         }
     }
 }

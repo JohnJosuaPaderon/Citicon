@@ -29,12 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DeliveryDataGridView = new System.Windows.Forms.DataGridView();
+            this.Delivery_DeliveryReceiptNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_Project_ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_PlantLeaveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ScheduleStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DesignDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.Design_StrengthTextBox = new System.Windows.Forms.TextBox();
             this.Design_StrengthLabel = new System.Windows.Forms.Label();
@@ -83,13 +90,8 @@
             this.SearchDeliveryReceiptNumberTextBox = new System.Windows.Forms.TextBox();
             this.SearchDeliveryReceiptNumberLabel = new System.Windows.Forms.Label();
             this.SearchDeliveryReceiptNumberTimer = new System.Windows.Forms.Timer(this.components);
-            this.Delivery_DeliveryReceiptNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_Project_ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_PlantLeaveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_ScheduleStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delivery_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FilterByDeliveryDateCheckBox = new System.Windows.Forms.CheckBox();
+            this.FilterByDeliveryDateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView)).BeginInit();
             this.DesignDetailsGroupBox.SuspendLayout();
             this.DeliveryDetailsGroupBox.SuspendLayout();
@@ -100,8 +102,8 @@
             this.DeliveryDataGridView.AllowUserToAddRows = false;
             this.DeliveryDataGridView.AllowUserToDeleteRows = false;
             this.DeliveryDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DeliveryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DeliveryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.DeliveryDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -110,14 +112,14 @@
             this.DeliveryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DeliveryDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.DeliveryDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DeliveryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DeliveryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DeliveryDataGridView.ColumnHeadersHeight = 60;
             this.DeliveryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DeliveryDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -128,14 +130,14 @@
             this.Delivery_PlantLeaveColumn,
             this.Delivery_ScheduleStatusColumn,
             this.Delivery_ExtraColumn});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle14;
             this.DeliveryDataGridView.EnableHeadersVisualStyles = false;
             this.DeliveryDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.DeliveryDataGridView.Location = new System.Drawing.Point(3, 34);
@@ -144,13 +146,72 @@
             this.DeliveryDataGridView.ReadOnly = true;
             this.DeliveryDataGridView.RowHeadersVisible = false;
             this.DeliveryDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.DeliveryDataGridView.RowTemplate.Height = 40;
             this.DeliveryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DeliveryDataGridView.Size = new System.Drawing.Size(913, 821);
             this.DeliveryDataGridView.TabIndex = 126;
             this.DeliveryDataGridView.SelectionChanged += new System.EventHandler(this.DeliveryDataGridView_SelectionChanged);
+            // 
+            // Delivery_DeliveryReceiptNumberColumn
+            // 
+            this.Delivery_DeliveryReceiptNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_DeliveryReceiptNumberColumn.HeaderText = "DR NO.";
+            this.Delivery_DeliveryReceiptNumberColumn.Name = "Delivery_DeliveryReceiptNumberColumn";
+            this.Delivery_DeliveryReceiptNumberColumn.ReadOnly = true;
+            this.Delivery_DeliveryReceiptNumberColumn.Width = 70;
+            // 
+            // Delivery_Project_ClientColumn
+            // 
+            this.Delivery_Project_ClientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_Project_ClientColumn.HeaderText = "CLIENT";
+            this.Delivery_Project_ClientColumn.Name = "Delivery_Project_ClientColumn";
+            this.Delivery_Project_ClientColumn.ReadOnly = true;
+            this.Delivery_Project_ClientColumn.Width = 73;
+            // 
+            // Delivery_ProjectColumn
+            // 
+            this.Delivery_ProjectColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_ProjectColumn.HeaderText = "PROJECT";
+            this.Delivery_ProjectColumn.Name = "Delivery_ProjectColumn";
+            this.Delivery_ProjectColumn.ReadOnly = true;
+            this.Delivery_ProjectColumn.Width = 84;
+            // 
+            // DeliveryColumn
+            // 
+            this.DeliveryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DeliveryColumn.HeaderText = "DELIVERIES";
+            this.DeliveryColumn.MinimumWidth = 150;
+            this.DeliveryColumn.Name = "DeliveryColumn";
+            this.DeliveryColumn.ReadOnly = true;
+            this.DeliveryColumn.Width = 150;
+            // 
+            // Delivery_PlantLeaveColumn
+            // 
+            this.Delivery_PlantLeaveColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle13.Format = "MMM d, yyyy";
+            this.Delivery_PlantLeaveColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Delivery_PlantLeaveColumn.HeaderText = "PLANT LEAVE";
+            this.Delivery_PlantLeaveColumn.MinimumWidth = 125;
+            this.Delivery_PlantLeaveColumn.Name = "Delivery_PlantLeaveColumn";
+            this.Delivery_PlantLeaveColumn.ReadOnly = true;
+            this.Delivery_PlantLeaveColumn.Width = 125;
+            // 
+            // Delivery_ScheduleStatusColumn
+            // 
+            this.Delivery_ScheduleStatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_ScheduleStatusColumn.HeaderText = "REMARKS";
+            this.Delivery_ScheduleStatusColumn.Name = "Delivery_ScheduleStatusColumn";
+            this.Delivery_ScheduleStatusColumn.ReadOnly = true;
+            this.Delivery_ScheduleStatusColumn.Width = 90;
+            // 
+            // Delivery_ExtraColumn
+            // 
+            this.Delivery_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Delivery_ExtraColumn.HeaderText = "";
+            this.Delivery_ExtraColumn.Name = "Delivery_ExtraColumn";
+            this.Delivery_ExtraColumn.ReadOnly = true;
             // 
             // DesignDetailsGroupBox
             // 
@@ -656,70 +717,36 @@
             this.SearchDeliveryReceiptNumberTimer.Interval = 500;
             this.SearchDeliveryReceiptNumberTimer.Tick += new System.EventHandler(this.SearchDeliveryReceiptNumberTimer_Tick);
             // 
-            // Delivery_DeliveryReceiptNumberColumn
+            // FilterByDeliveryDateCheckBox
             // 
-            this.Delivery_DeliveryReceiptNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delivery_DeliveryReceiptNumberColumn.HeaderText = "DR NO.";
-            this.Delivery_DeliveryReceiptNumberColumn.Name = "Delivery_DeliveryReceiptNumberColumn";
-            this.Delivery_DeliveryReceiptNumberColumn.ReadOnly = true;
-            this.Delivery_DeliveryReceiptNumberColumn.Width = 70;
+            this.FilterByDeliveryDateCheckBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FilterByDeliveryDateCheckBox.AutoSize = true;
+            this.FilterByDeliveryDateCheckBox.Location = new System.Drawing.Point(557, 5);
+            this.FilterByDeliveryDateCheckBox.Name = "FilterByDeliveryDateCheckBox";
+            this.FilterByDeliveryDateCheckBox.Size = new System.Drawing.Size(153, 21);
+            this.FilterByDeliveryDateCheckBox.TabIndex = 155;
+            this.FilterByDeliveryDateCheckBox.Text = "Filter By Delivery Date";
+            this.FilterByDeliveryDateCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByDeliveryDateCheckBox.CheckedChanged += new System.EventHandler(this.FilterByDeliveryDateCheckBox_CheckedChanged);
             // 
-            // Delivery_Project_ClientColumn
+            // FilterByDeliveryDateTimePicker
             // 
-            this.Delivery_Project_ClientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delivery_Project_ClientColumn.HeaderText = "CLIENT";
-            this.Delivery_Project_ClientColumn.Name = "Delivery_Project_ClientColumn";
-            this.Delivery_Project_ClientColumn.ReadOnly = true;
-            this.Delivery_Project_ClientColumn.Width = 73;
-            // 
-            // Delivery_ProjectColumn
-            // 
-            this.Delivery_ProjectColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delivery_ProjectColumn.HeaderText = "PROJECT";
-            this.Delivery_ProjectColumn.Name = "Delivery_ProjectColumn";
-            this.Delivery_ProjectColumn.ReadOnly = true;
-            this.Delivery_ProjectColumn.Width = 84;
-            // 
-            // DeliveryColumn
-            // 
-            this.DeliveryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DeliveryColumn.HeaderText = "DELIVERIES";
-            this.DeliveryColumn.MinimumWidth = 150;
-            this.DeliveryColumn.Name = "DeliveryColumn";
-            this.DeliveryColumn.ReadOnly = true;
-            this.DeliveryColumn.Width = 150;
-            // 
-            // Delivery_PlantLeaveColumn
-            // 
-            this.Delivery_PlantLeaveColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Format = "MMM d, yyyy";
-            this.Delivery_PlantLeaveColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Delivery_PlantLeaveColumn.HeaderText = "PLANT LEAVE";
-            this.Delivery_PlantLeaveColumn.MinimumWidth = 125;
-            this.Delivery_PlantLeaveColumn.Name = "Delivery_PlantLeaveColumn";
-            this.Delivery_PlantLeaveColumn.ReadOnly = true;
-            this.Delivery_PlantLeaveColumn.Width = 125;
-            // 
-            // Delivery_ScheduleStatusColumn
-            // 
-            this.Delivery_ScheduleStatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delivery_ScheduleStatusColumn.HeaderText = "REMARKS";
-            this.Delivery_ScheduleStatusColumn.Name = "Delivery_ScheduleStatusColumn";
-            this.Delivery_ScheduleStatusColumn.ReadOnly = true;
-            this.Delivery_ScheduleStatusColumn.Width = 90;
-            // 
-            // Delivery_ExtraColumn
-            // 
-            this.Delivery_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Delivery_ExtraColumn.HeaderText = "";
-            this.Delivery_ExtraColumn.Name = "Delivery_ExtraColumn";
-            this.Delivery_ExtraColumn.ReadOnly = true;
+            this.FilterByDeliveryDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FilterByDeliveryDateTimePicker.CustomFormat = "MMM d, yyyy";
+            this.FilterByDeliveryDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FilterByDeliveryDateTimePicker.Location = new System.Drawing.Point(716, 3);
+            this.FilterByDeliveryDateTimePicker.Name = "FilterByDeliveryDateTimePicker";
+            this.FilterByDeliveryDateTimePicker.Size = new System.Drawing.Size(200, 25);
+            this.FilterByDeliveryDateTimePicker.TabIndex = 154;
+            this.FilterByDeliveryDateTimePicker.ValueChanged += new System.EventHandler(this.FilterByDeliveryDateTimePicker_ValueChanged);
             // 
             // DeliveryConfirmationControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.FilterByDeliveryDateCheckBox);
+            this.Controls.Add(this.FilterByDeliveryDateTimePicker);
             this.Controls.Add(this.SearchDeliveryReceiptNumberTextBox);
             this.Controls.Add(this.EstimatedStayCheckBox);
             this.Controls.Add(this.SearchDeliveryReceiptNumberLabel);
@@ -809,5 +836,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_PlantLeaveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ScheduleStatusColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ExtraColumn;
+        private System.Windows.Forms.CheckBox FilterByDeliveryDateCheckBox;
+        private System.Windows.Forms.DateTimePicker FilterByDeliveryDateTimePicker;
     }
 }
