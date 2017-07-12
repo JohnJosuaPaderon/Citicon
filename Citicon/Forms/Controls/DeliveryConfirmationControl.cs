@@ -43,7 +43,7 @@ namespace Citicon.Forms.Controls
             DriverTextBox.Text = value?.Driver?.ToString();
             TransitMixerTextBox.Text = value?.TransitMixer?.ToString();
             AdmixtureTextBox.Text = value?.Admixture;
-            AdmixtureQuantityTextBox.Text = value?.AdmixtureQuantity.ToString("#,##0.00");
+            AdmixtureQuantityTextBox.Text = value?.AdmixtureQuantity;
             PlantLeaveTextBox.Text = value?.PlantLeave?.ToString("MMM d, yyyy");
             LoadTextBox.Text = value?.Load;
             MaxSlumpTextBox.Text = value?.MaxSlump.ToString("#,##0.00");

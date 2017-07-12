@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -305,6 +306,7 @@ namespace Citicon.Forms.Controls
             {
                 Delivery.ServiceEngineer = ServiceEngineerComboBox.SelectedItem as Employee;
                 Delivery.PricePerCubicMeter = ProjectDesign?.PricePerCubicMeter ?? 0;
+                Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityTextBox.Text;
                 var delivery = await DeliveryManager.InsertAsync(Delivery);
                 if (delivery != null)
                 {
@@ -411,9 +413,9 @@ namespace Citicon.Forms.Controls
 
         private void SetDeliveryAdmixtureQuantity()
         {
-            if (Delivery.AdmixtureQuantity != Delivery_AdmixtureQuantityNumericUpDown.Value)
+            if (Delivery.AdmixtureQuantity != Delivery_AdmixtureQuantityTextBox.Text)
             {
-                Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityNumericUpDown.Value;
+                Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityTextBox.Text;
             }
         }
 
@@ -468,6 +470,21 @@ namespace Citicon.Forms.Controls
             {
                 PurchaseOrderTextBox.BackColor = Color.White;
                 PurchaseOrderTextBox.ForeColor = Color.Black;
+            }
+        }
+
+        private void NewRouteButton_Click(object sender, EventArgs e)
+        {
+            var route = AddEditRouteDialog.AddRoute();
+
+            if (route != null)
+            {
+                if (!Delivery_RouteComboBox.Items.Contains(route))
+                {
+                    Delivery_RouteComboBox.Items.Add(route);
+                }
+
+                Delivery_RouteComboBox.SelectedItem = route;
             }
         }
     }

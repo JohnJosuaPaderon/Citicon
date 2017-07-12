@@ -54,13 +54,14 @@
             this.Design_MixTypeTextBox = new System.Windows.Forms.TextBox();
             this.Design_MixTypeLabel = new System.Windows.Forms.Label();
             this.DeliveryGroupBox = new System.Windows.Forms.GroupBox();
+            this.ServiceEngineerComboBox = new System.Windows.Forms.ComboBox();
+            this.ServiceEngineerLabel = new System.Windows.Forms.Label();
             this.Delivery_MaxSlumpNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Delivery_MaxSlumpLabel = new System.Windows.Forms.Label();
             this.Delivery_LoadNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Delivery_LoadLabel = new System.Windows.Forms.Label();
             this.Delivery_PlantLeaveDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Delivery_PlantLeaveLabel = new System.Windows.Forms.Label();
-            this.Delivery_AdmixtureQuantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Delivery_AdmixtureQuantityLabel = new System.Windows.Forms.Label();
             this.Delivery_AdmixtureTextBox = new System.Windows.Forms.TextBox();
             this.Delivery_AdmixtureLabel = new System.Windows.Forms.Label();
@@ -80,20 +81,19 @@
             this.SaveDeliveryButton = new System.Windows.Forms.Button();
             this.PurchaseOrderTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrderLabel = new System.Windows.Forms.Label();
-            this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
             this.PurchaseOrder_MaximumVolumeTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrder_MaximumVolumeLabel = new System.Windows.Forms.Label();
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel = new System.Windows.Forms.Label();
-            this.ServiceEngineerComboBox = new System.Windows.Forms.ComboBox();
-            this.ServiceEngineerLabel = new System.Windows.Forms.Label();
             this.PurchaseOrderWarningTimer = new System.Windows.Forms.Timer(this.components);
+            this.Delivery_AdmixtureQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
+            this.NewRouteButton = new System.Windows.Forms.Button();
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -345,6 +345,8 @@
             // 
             this.DeliveryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeliveryGroupBox.Controls.Add(this.NewRouteButton);
+            this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureQuantityTextBox);
             this.DeliveryGroupBox.Controls.Add(this.ServiceEngineerComboBox);
             this.DeliveryGroupBox.Controls.Add(this.ServiceEngineerLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_MaxSlumpNumericUpDown);
@@ -353,7 +355,6 @@
             this.DeliveryGroupBox.Controls.Add(this.Delivery_LoadLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantLeaveDateTimePicker);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_PlantLeaveLabel);
-            this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureQuantityNumericUpDown);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureQuantityLabel);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureTextBox);
             this.DeliveryGroupBox.Controls.Add(this.Delivery_AdmixtureLabel);
@@ -375,6 +376,24 @@
             this.DeliveryGroupBox.TabIndex = 4;
             this.DeliveryGroupBox.TabStop = false;
             this.DeliveryGroupBox.Text = "DELIVERY DETAILS";
+            // 
+            // ServiceEngineerComboBox
+            // 
+            this.ServiceEngineerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ServiceEngineerComboBox.FormattingEnabled = true;
+            this.ServiceEngineerComboBox.Location = new System.Drawing.Point(495, 199);
+            this.ServiceEngineerComboBox.Name = "ServiceEngineerComboBox";
+            this.ServiceEngineerComboBox.Size = new System.Drawing.Size(237, 25);
+            this.ServiceEngineerComboBox.TabIndex = 42;
+            // 
+            // ServiceEngineerLabel
+            // 
+            this.ServiceEngineerLabel.AutoSize = true;
+            this.ServiceEngineerLabel.Location = new System.Drawing.Point(492, 179);
+            this.ServiceEngineerLabel.Name = "ServiceEngineerLabel";
+            this.ServiceEngineerLabel.Size = new System.Drawing.Size(104, 17);
+            this.ServiceEngineerLabel.TabIndex = 41;
+            this.ServiceEngineerLabel.Text = "Service Engineer";
             // 
             // Delivery_MaxSlumpNumericUpDown
             // 
@@ -443,22 +462,6 @@
             this.Delivery_PlantLeaveLabel.Size = new System.Drawing.Size(73, 17);
             this.Delivery_PlantLeaveLabel.TabIndex = 35;
             this.Delivery_PlantLeaveLabel.Text = "Plant Leave";
-            // 
-            // Delivery_AdmixtureQuantityNumericUpDown
-            // 
-            this.Delivery_AdmixtureQuantityNumericUpDown.DecimalPlaces = 3;
-            this.Delivery_AdmixtureQuantityNumericUpDown.Location = new System.Drawing.Point(495, 148);
-            this.Delivery_AdmixtureQuantityNumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.Delivery_AdmixtureQuantityNumericUpDown.Name = "Delivery_AdmixtureQuantityNumericUpDown";
-            this.Delivery_AdmixtureQuantityNumericUpDown.Size = new System.Drawing.Size(237, 25);
-            this.Delivery_AdmixtureQuantityNumericUpDown.TabIndex = 34;
-            this.Delivery_AdmixtureQuantityNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Delivery_AdmixtureQuantityNumericUpDown.ThousandsSeparator = true;
-            this.Delivery_AdmixtureQuantityNumericUpDown.ValueChanged += new System.EventHandler(this.Delivery_AdmixtureQuantityNumericUpDown_ValueChanged);
             // 
             // Delivery_AdmixtureQuantityLabel
             // 
@@ -549,16 +552,16 @@
             // 
             this.Delivery_PlantComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Delivery_PlantComboBox.FormattingEnabled = true;
-            this.Delivery_PlantComboBox.Location = new System.Drawing.Point(495, 40);
+            this.Delivery_PlantComboBox.Location = new System.Drawing.Point(572, 40);
             this.Delivery_PlantComboBox.Name = "Delivery_PlantComboBox";
-            this.Delivery_PlantComboBox.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_PlantComboBox.Size = new System.Drawing.Size(160, 25);
             this.Delivery_PlantComboBox.TabIndex = 24;
             this.Delivery_PlantComboBox.SelectedIndexChanged += new System.EventHandler(this.Delivery_PlantComboBox_SelectedIndexChanged);
             // 
             // Delivery_PlantLabel
             // 
             this.Delivery_PlantLabel.AutoSize = true;
-            this.Delivery_PlantLabel.Location = new System.Drawing.Point(492, 20);
+            this.Delivery_PlantLabel.Location = new System.Drawing.Point(569, 20);
             this.Delivery_PlantLabel.Name = "Delivery_PlantLabel";
             this.Delivery_PlantLabel.Size = new System.Drawing.Size(36, 17);
             this.Delivery_PlantLabel.TabIndex = 23;
@@ -585,7 +588,7 @@
             // 
             // Delivery_DeliveredVolumeNumericUpDown
             // 
-            this.Delivery_DeliveredVolumeNumericUpDown.DecimalPlaces = 3;
+            this.Delivery_DeliveredVolumeNumericUpDown.DecimalPlaces = 2;
             this.Delivery_DeliveredVolumeNumericUpDown.Location = new System.Drawing.Point(9, 41);
             this.Delivery_DeliveredVolumeNumericUpDown.Maximum = new decimal(new int[] {
             100000,
@@ -661,21 +664,6 @@
             this.PurchaseOrderLabel.TabIndex = 116;
             this.PurchaseOrderLabel.Text = "P.O. No.";
             // 
-            // DeliveryReceiptRefreshButton
-            // 
-            this.DeliveryReceiptRefreshButton.BackColor = System.Drawing.Color.Red;
-            this.DeliveryReceiptRefreshButton.FlatAppearance.BorderSize = 0;
-            this.DeliveryReceiptRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeliveryReceiptRefreshButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeliveryReceiptRefreshButton.ForeColor = System.Drawing.Color.White;
-            this.DeliveryReceiptRefreshButton.Image = global::Citicon.Properties.Resources.Refresh_16;
-            this.DeliveryReceiptRefreshButton.Location = new System.Drawing.Point(394, 3);
-            this.DeliveryReceiptRefreshButton.Name = "DeliveryReceiptRefreshButton";
-            this.DeliveryReceiptRefreshButton.Size = new System.Drawing.Size(43, 43);
-            this.DeliveryReceiptRefreshButton.TabIndex = 115;
-            this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
-            this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
-            // 
             // PurchaseOrder_MaximumVolumeTextBox
             // 
             this.PurchaseOrder_MaximumVolumeTextBox.BackColor = System.Drawing.Color.White;
@@ -702,6 +690,7 @@
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.ReadOnly = true;
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Size = new System.Drawing.Size(246, 25);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.TabIndex = 121;
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Visible = false;
             // 
             // PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel
             // 
@@ -711,29 +700,50 @@
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Size = new System.Drawing.Size(177, 17);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.TabIndex = 120;
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Text = "Max. Cumulative Price/Cu. M.";
-            // 
-            // ServiceEngineerComboBox
-            // 
-            this.ServiceEngineerComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ServiceEngineerComboBox.FormattingEnabled = true;
-            this.ServiceEngineerComboBox.Location = new System.Drawing.Point(495, 199);
-            this.ServiceEngineerComboBox.Name = "ServiceEngineerComboBox";
-            this.ServiceEngineerComboBox.Size = new System.Drawing.Size(237, 25);
-            this.ServiceEngineerComboBox.TabIndex = 42;
-            // 
-            // ServiceEngineerLabel
-            // 
-            this.ServiceEngineerLabel.AutoSize = true;
-            this.ServiceEngineerLabel.Location = new System.Drawing.Point(492, 179);
-            this.ServiceEngineerLabel.Name = "ServiceEngineerLabel";
-            this.ServiceEngineerLabel.Size = new System.Drawing.Size(104, 17);
-            this.ServiceEngineerLabel.TabIndex = 41;
-            this.ServiceEngineerLabel.Text = "Service Engineer";
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Visible = false;
             // 
             // PurchaseOrderWarningTimer
             // 
             this.PurchaseOrderWarningTimer.Interval = 500;
             this.PurchaseOrderWarningTimer.Tick += new System.EventHandler(this.PurchaseOrderWarningTimer_Tick);
+            // 
+            // Delivery_AdmixtureQuantityTextBox
+            // 
+            this.Delivery_AdmixtureQuantityTextBox.Location = new System.Drawing.Point(495, 148);
+            this.Delivery_AdmixtureQuantityTextBox.Name = "Delivery_AdmixtureQuantityTextBox";
+            this.Delivery_AdmixtureQuantityTextBox.Size = new System.Drawing.Size(237, 25);
+            this.Delivery_AdmixtureQuantityTextBox.TabIndex = 122;
+            // 
+            // DeliveryReceiptRefreshButton
+            // 
+            this.DeliveryReceiptRefreshButton.BackColor = System.Drawing.Color.Red;
+            this.DeliveryReceiptRefreshButton.FlatAppearance.BorderSize = 0;
+            this.DeliveryReceiptRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeliveryReceiptRefreshButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryReceiptRefreshButton.ForeColor = System.Drawing.Color.White;
+            this.DeliveryReceiptRefreshButton.Image = global::Citicon.Properties.Resources.Refresh_16;
+            this.DeliveryReceiptRefreshButton.Location = new System.Drawing.Point(394, 3);
+            this.DeliveryReceiptRefreshButton.Name = "DeliveryReceiptRefreshButton";
+            this.DeliveryReceiptRefreshButton.Size = new System.Drawing.Size(43, 43);
+            this.DeliveryReceiptRefreshButton.TabIndex = 115;
+            this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
+            this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
+            // 
+            // NewRouteButton
+            // 
+            this.NewRouteButton.BackColor = System.Drawing.Color.Red;
+            this.NewRouteButton.FlatAppearance.BorderSize = 0;
+            this.NewRouteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewRouteButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewRouteButton.ForeColor = System.Drawing.Color.White;
+            this.NewRouteButton.Location = new System.Drawing.Point(496, 41);
+            this.NewRouteButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.NewRouteButton.Name = "NewRouteButton";
+            this.NewRouteButton.Size = new System.Drawing.Size(48, 25);
+            this.NewRouteButton.TabIndex = 132;
+            this.NewRouteButton.Text = "NEW";
+            this.NewRouteButton.UseVisualStyleBackColor = false;
+            this.NewRouteButton.Click += new System.EventHandler(this.NewRouteButton_Click);
             // 
             // DeliveryManagement
             // 
@@ -768,7 +778,6 @@
             this.DeliveryGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_MaxSlumpNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_LoadNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_AdmixtureQuantityNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -822,7 +831,6 @@
         private System.Windows.Forms.Label Delivery_AdmixtureLabel;
         private System.Windows.Forms.TextBox Delivery_AdmixtureTextBox;
         private System.Windows.Forms.Label Delivery_AdmixtureQuantityLabel;
-        private System.Windows.Forms.NumericUpDown Delivery_AdmixtureQuantityNumericUpDown;
         private System.Windows.Forms.DateTimePicker Delivery_PlantLeaveDateTimePicker;
         private System.Windows.Forms.Label Delivery_PlantLeaveLabel;
         private System.Windows.Forms.NumericUpDown Delivery_LoadNumericUpDown;
@@ -836,5 +844,7 @@
         private System.Windows.Forms.ComboBox ServiceEngineerComboBox;
         private System.Windows.Forms.Label ServiceEngineerLabel;
         private System.Windows.Forms.Timer PurchaseOrderWarningTimer;
+        private System.Windows.Forms.TextBox Delivery_AdmixtureQuantityTextBox;
+        private System.Windows.Forms.Button NewRouteButton;
     }
 }

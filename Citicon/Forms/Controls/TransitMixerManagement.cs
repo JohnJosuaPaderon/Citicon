@@ -39,6 +39,7 @@ namespace Citicon.Forms.Controls
             VolumeCapacityTextBox.Text = (SelectedTransitMixer?.VolumeCapacity ?? 0).ToString("#,##0.00");
             PhysicalNumberTextBox.Text = SelectedTransitMixer?.PhysicalNumber;
             DefaultDriverTextBox.Text = SelectedTransitMixer?.DefaultDriver?.ToString() ?? "Default not set.";
+            AdditionalsTextBox.Text = (SelectedTransitMixer?.Additionals ?? 0).ToString("#,##0.00");
         }
 
         private async Task LoadListAsync()
@@ -96,6 +97,7 @@ namespace Citicon.Forms.Controls
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = transitMixer });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = transitMixer.PlateNumber });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = transitMixer.VolumeCapacity });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = transitMixer.Additionals });
 
                 return row;
             }
