@@ -34,10 +34,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DriverTripReportForm));
             this.DriverDataGridView = new System.Windows.Forms.DataGridView();
             this.DriverColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,8 @@
             this.RangeEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.LoadButton = new System.Windows.Forms.Button();
             this.DeliveryDataGridView = new System.Windows.Forms.DataGridView();
+            this.ExportDriverButton = new System.Windows.Forms.Button();
+            this.ExportAllButton = new System.Windows.Forms.Button();
             this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_ProjectDesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_DeliveryDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +59,8 @@
             this.Delivery_Project_LocationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_RouteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_Route_RateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_TransitMixer_Additionals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExportDriverButton = new System.Windows.Forms.Button();
-            this.ExportAllButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DriverDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +111,7 @@
             this.DriverDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DriverDataGridView.RowTemplate.Height = 40;
             this.DriverDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DriverDataGridView.Size = new System.Drawing.Size(542, 212);
+            this.DriverDataGridView.Size = new System.Drawing.Size(542, 284);
             this.DriverDataGridView.TabIndex = 125;
             this.DriverDataGridView.SelectionChanged += new System.EventHandler(this.DriverDataGridView_SelectionChanged);
             // 
@@ -207,15 +209,16 @@
             this.Delivery_Project_LocationColumn,
             this.Delivery_RouteColumn,
             this.Delivery_Route_RateColumn,
+            this.Delivery_TransitMixer_Additionals,
             this.Delivery_ExtraColumn});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DeliveryDataGridView.DefaultCellStyle = dataGridViewCellStyle10;
             this.DeliveryDataGridView.EnableHeadersVisualStyles = false;
             this.DeliveryDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.DeliveryDataGridView.Location = new System.Drawing.Point(560, 61);
@@ -224,12 +227,46 @@
             this.DeliveryDataGridView.ReadOnly = true;
             this.DeliveryDataGridView.RowHeadersVisible = false;
             this.DeliveryDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.DeliveryDataGridView.RowTemplate.Height = 40;
             this.DeliveryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DeliveryDataGridView.Size = new System.Drawing.Size(711, 212);
+            this.DeliveryDataGridView.Size = new System.Drawing.Size(824, 284);
             this.DeliveryDataGridView.TabIndex = 131;
+            // 
+            // ExportDriverButton
+            // 
+            this.ExportDriverButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportDriverButton.BackColor = System.Drawing.Color.Red;
+            this.ExportDriverButton.FlatAppearance.BorderSize = 0;
+            this.ExportDriverButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportDriverButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportDriverButton.ForeColor = System.Drawing.Color.White;
+            this.ExportDriverButton.Location = new System.Drawing.Point(1101, 351);
+            this.ExportDriverButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ExportDriverButton.Name = "ExportDriverButton";
+            this.ExportDriverButton.Size = new System.Drawing.Size(150, 35);
+            this.ExportDriverButton.TabIndex = 132;
+            this.ExportDriverButton.Text = "EXPORT BY DRIVER";
+            this.ExportDriverButton.UseVisualStyleBackColor = false;
+            this.ExportDriverButton.Click += new System.EventHandler(this.ExportDriverButton_Click);
+            // 
+            // ExportAllButton
+            // 
+            this.ExportAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportAllButton.BackColor = System.Drawing.Color.Red;
+            this.ExportAllButton.FlatAppearance.BorderSize = 0;
+            this.ExportAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportAllButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportAllButton.ForeColor = System.Drawing.Color.White;
+            this.ExportAllButton.Location = new System.Drawing.Point(1259, 351);
+            this.ExportAllButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ExportAllButton.Name = "ExportAllButton";
+            this.ExportAllButton.Size = new System.Drawing.Size(125, 35);
+            this.ExportAllButton.TabIndex = 133;
+            this.ExportAllButton.Text = "EXPORT ALL";
+            this.ExportAllButton.UseVisualStyleBackColor = false;
+            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
             // 
             // DeliveryColumn
             // 
@@ -237,7 +274,7 @@
             this.DeliveryColumn.Name = "DeliveryColumn";
             this.DeliveryColumn.ReadOnly = true;
             this.DeliveryColumn.Visible = false;
-            this.DeliveryColumn.Width = 88;
+            this.DeliveryColumn.Width = 87;
             // 
             // Delivery_ProjectDesignColumn
             // 
@@ -307,6 +344,16 @@
             this.Delivery_Route_RateColumn.ReadOnly = true;
             this.Delivery_Route_RateColumn.Width = 95;
             // 
+            // Delivery_TransitMixer_Additionals
+            // 
+            this.Delivery_TransitMixer_Additionals.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle9.Format = "#,##0.00";
+            this.Delivery_TransitMixer_Additionals.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Delivery_TransitMixer_Additionals.HeaderText = "ADDITIONALS";
+            this.Delivery_TransitMixer_Additionals.Name = "Delivery_TransitMixer_Additionals";
+            this.Delivery_TransitMixer_Additionals.ReadOnly = true;
+            this.Delivery_TransitMixer_Additionals.Width = 112;
+            // 
             // Delivery_ExtraColumn
             // 
             this.Delivery_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -314,46 +361,12 @@
             this.Delivery_ExtraColumn.Name = "Delivery_ExtraColumn";
             this.Delivery_ExtraColumn.ReadOnly = true;
             // 
-            // ExportDriverButton
-            // 
-            this.ExportDriverButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportDriverButton.BackColor = System.Drawing.Color.Red;
-            this.ExportDriverButton.FlatAppearance.BorderSize = 0;
-            this.ExportDriverButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExportDriverButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportDriverButton.ForeColor = System.Drawing.Color.White;
-            this.ExportDriverButton.Location = new System.Drawing.Point(988, 279);
-            this.ExportDriverButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ExportDriverButton.Name = "ExportDriverButton";
-            this.ExportDriverButton.Size = new System.Drawing.Size(150, 35);
-            this.ExportDriverButton.TabIndex = 132;
-            this.ExportDriverButton.Text = "EXPORT BY DRIVER";
-            this.ExportDriverButton.UseVisualStyleBackColor = false;
-            this.ExportDriverButton.Click += new System.EventHandler(this.ExportDriverButton_Click);
-            // 
-            // ExportAllButton
-            // 
-            this.ExportAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ExportAllButton.BackColor = System.Drawing.Color.Red;
-            this.ExportAllButton.FlatAppearance.BorderSize = 0;
-            this.ExportAllButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExportAllButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExportAllButton.ForeColor = System.Drawing.Color.White;
-            this.ExportAllButton.Location = new System.Drawing.Point(1146, 279);
-            this.ExportAllButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.ExportAllButton.Name = "ExportAllButton";
-            this.ExportAllButton.Size = new System.Drawing.Size(125, 35);
-            this.ExportAllButton.TabIndex = 133;
-            this.ExportAllButton.Text = "EXPORT ALL";
-            this.ExportAllButton.UseVisualStyleBackColor = false;
-            this.ExportAllButton.Click += new System.EventHandler(this.ExportAllButton_Click);
-            // 
             // DriverTripReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1283, 326);
+            this.ClientSize = new System.Drawing.Size(1396, 398);
             this.Controls.Add(this.ExportAllButton);
             this.Controls.Add(this.ExportDriverButton);
             this.Controls.Add(this.DeliveryDataGridView);
@@ -389,6 +402,8 @@
         private System.Windows.Forms.DateTimePicker RangeEndDateTimePicker;
         private System.Windows.Forms.Button LoadButton;
         private System.Windows.Forms.DataGridView DeliveryDataGridView;
+        private System.Windows.Forms.Button ExportDriverButton;
+        private System.Windows.Forms.Button ExportAllButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ProjectDesignColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_DeliveryDateColumn;
@@ -398,8 +413,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_Project_LocationColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_RouteColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_Route_RateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_TransitMixer_Additionals;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ExtraColumn;
-        private System.Windows.Forms.Button ExportDriverButton;
-        private System.Windows.Forms.Button ExportAllButton;
     }
 }

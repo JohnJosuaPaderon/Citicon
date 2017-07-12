@@ -97,6 +97,7 @@ namespace Citicon.Forms
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Project?.Location });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Route });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Route?.Rate });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.TransitMixer.Additionals });
                 DeliveryDataGridView.Rows.Add(row);
             }
         }
