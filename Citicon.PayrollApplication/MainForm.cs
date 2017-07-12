@@ -52,6 +52,16 @@ namespace Citicon.PayrollApplication
             }
         }
 
+        private TransitMixerManagementForm TransitMixerManagementForm
+        {
+            get
+            {
+                var form = new TransitMixerManagementForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void OpenMdiChild(Form form)
         {
             if (ActiveMdiChild != null && ActiveMdiChild.GetType() == form.GetType())
@@ -87,6 +97,11 @@ namespace Citicon.PayrollApplication
         private void RouteButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(RouteManagementForm);
+        }
+
+        private void TransitMixerButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(TransitMixerManagementForm);
         }
     }
 }
