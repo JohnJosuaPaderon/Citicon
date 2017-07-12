@@ -39,7 +39,10 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.DefaultDriverCheckBox = new System.Windows.Forms.CheckBox();
             this.DefaultDriverComboBox = new System.Windows.Forms.ComboBox();
+            this.AdditionalsNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.AdditionalsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.VolumeCapacityNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdditionalsNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // PhysicalNumberLabel
@@ -107,7 +110,7 @@
             this.CancelOperationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelOperationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelOperationButton.ForeColor = System.Drawing.Color.Red;
-            this.CancelOperationButton.Location = new System.Drawing.Point(218, 215);
+            this.CancelOperationButton.Location = new System.Drawing.Point(218, 262);
             this.CancelOperationButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CancelOperationButton.Name = "CancelOperationButton";
             this.CancelOperationButton.Size = new System.Drawing.Size(100, 35);
@@ -123,7 +126,7 @@
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(110, 215);
+            this.SaveButton.Location = new System.Drawing.Point(110, 262);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 35);
@@ -137,7 +140,7 @@
             this.DefaultDriverCheckBox.AutoSize = true;
             this.DefaultDriverCheckBox.Checked = true;
             this.DefaultDriverCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.DefaultDriverCheckBox.Location = new System.Drawing.Point(15, 157);
+            this.DefaultDriverCheckBox.Location = new System.Drawing.Point(15, 204);
             this.DefaultDriverCheckBox.Name = "DefaultDriverCheckBox";
             this.DefaultDriverCheckBox.Size = new System.Drawing.Size(107, 21);
             this.DefaultDriverCheckBox.TabIndex = 124;
@@ -149,18 +152,44 @@
             // 
             this.DefaultDriverComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DefaultDriverComboBox.FormattingEnabled = true;
-            this.DefaultDriverComboBox.Location = new System.Drawing.Point(15, 184);
+            this.DefaultDriverComboBox.Location = new System.Drawing.Point(15, 231);
             this.DefaultDriverComboBox.Name = "DefaultDriverComboBox";
             this.DefaultDriverComboBox.Size = new System.Drawing.Size(303, 25);
             this.DefaultDriverComboBox.TabIndex = 125;
             this.DefaultDriverComboBox.SelectedIndexChanged += new System.EventHandler(this.DefaultDriverComboBox_SelectedIndexChanged);
+            // 
+            // AdditionalsNumericUpDown
+            // 
+            this.AdditionalsNumericUpDown.DecimalPlaces = 2;
+            this.AdditionalsNumericUpDown.Location = new System.Drawing.Point(15, 173);
+            this.AdditionalsNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.AdditionalsNumericUpDown.Name = "AdditionalsNumericUpDown";
+            this.AdditionalsNumericUpDown.Size = new System.Drawing.Size(303, 25);
+            this.AdditionalsNumericUpDown.TabIndex = 127;
+            this.AdditionalsNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.AdditionalsNumericUpDown.ThousandsSeparator = true;
+            // 
+            // AdditionalsLabel
+            // 
+            this.AdditionalsLabel.AutoSize = true;
+            this.AdditionalsLabel.Location = new System.Drawing.Point(12, 153);
+            this.AdditionalsLabel.Name = "AdditionalsLabel";
+            this.AdditionalsLabel.Size = new System.Drawing.Size(73, 17);
+            this.AdditionalsLabel.TabIndex = 126;
+            this.AdditionalsLabel.Text = "Additionals";
             // 
             // AddEditTransitMixerDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(331, 264);
+            this.ClientSize = new System.Drawing.Size(331, 312);
+            this.Controls.Add(this.AdditionalsNumericUpDown);
+            this.Controls.Add(this.AdditionalsLabel);
             this.Controls.Add(this.DefaultDriverComboBox);
             this.Controls.Add(this.DefaultDriverCheckBox);
             this.Controls.Add(this.CancelOperationButton);
@@ -180,6 +209,7 @@
             this.Text = "Add or Edit Transit Mixer";
             this.Load += new System.EventHandler(this.AddEditTransitMixerDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.VolumeCapacityNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdditionalsNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +227,7 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.CheckBox DefaultDriverCheckBox;
         private System.Windows.Forms.ComboBox DefaultDriverComboBox;
+        private System.Windows.Forms.NumericUpDown AdditionalsNumericUpDown;
+        private System.Windows.Forms.Label AdditionalsLabel;
     }
 }

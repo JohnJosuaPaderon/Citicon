@@ -143,7 +143,7 @@ namespace Citicon.Forms.Dialogs
 
         private void AddDesignButton_Click(object sender, EventArgs e)
         {
-            var projectDesign = AddEditProjectDesignDialog.ShowAddDialog(false);
+            var projectDesign = AddEditProjectDesignDialog.ShowAddDialog(Quotation.Project, false);
             AddToUI(projectDesign);
         }
 
@@ -280,6 +280,7 @@ namespace Citicon.Forms.Dialogs
             if (Quotation != null)
             {
                 Quotation.Status = QuotationStatus.UnderNegotiation;
+                Quotation.InHouseAgent = InHouseAgentCheckBox.Checked;
                 if (ProjectDesignDataGridView.Rows.Count > 0)
                 {
                     var quotationTransaction = new QuotationTransaction(Quotation);
@@ -458,6 +459,19 @@ namespace Citicon.Forms.Dialogs
             if (Quotation != null)
             {
                 Quotation.PaymentTerm = (PaymentTerm)PaymentTermComboBox.SelectedItem;
+            }
+        }
+
+        private void InHouseAgentCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (InHouseAgentCheckBox.Checked)
+            {
+                AgentComboBox.Enabled = false;
+                AgentComboBox.SelectedItem = null;
+            }
+            else
+            {
+                AgentComboBox.Enabled = true;
             }
         }
     }

@@ -13,13 +13,16 @@ namespace Citicon.Forms.Dialogs
             InitializeComponent();
         }
 
-        public static ProjectDesign ShowAddDialog(bool saveToDB)
+        public static ProjectDesign ShowAddDialog(Project project, bool saveToDB)
         {
             var dialog = new AddEditProjectDesignDialog()
             {
                 Mode = DataDialogMode.Add,
                 SaveToDB = saveToDB,
                 ProjectDesign = new ProjectDesign()
+                {
+                    Project = project
+                }
             };
             dialog.ShowDialog();
 
@@ -89,6 +92,8 @@ namespace Citicon.Forms.Dialogs
             LoadAggregates();
             LoadStrengths();
             UpdateUI();
+
+            CementFactorNumericUpDown.Enabled = ProjectDesign.Project.Type == ProjectType.CementSupplied;
         }
 
         private void CancelQuotationButton_Click(object sender, EventArgs e)
@@ -169,7 +174,6 @@ namespace Citicon.Forms.Dialogs
             if (ProjectDesign != null)
             {
                 ProjectDesign.MixType = (ProjectDesignMixType)MixTypeComboBox.SelectedItem;
-                CementFactorNumericUpDown.Enabled = ProjectDesign.MixType == ProjectDesignMixType.PCD;
             }
         }
 

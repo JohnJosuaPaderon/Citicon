@@ -90,6 +90,7 @@ namespace Citicon.Forms.Dialogs
             {
                 try
                 {
+                    TransitMixer.Additionals = AdditionalsNumericUpDown.Value;
                     string failedMessage = string.Empty;
                     string successMessage = string.Empty;
 

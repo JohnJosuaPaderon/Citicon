@@ -63,6 +63,7 @@
             this.SaveQuotationButton = new System.Windows.Forms.Button();
             this.PaymentTermComboBox = new System.Windows.Forms.ComboBox();
             this.PaymentTermLabel = new System.Windows.Forms.Label();
+            this.InHouseAgentCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.EngineerIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDesignDataGridView)).BeginInit();
@@ -436,6 +437,17 @@
             this.PaymentTermLabel.TabIndex = 125;
             this.PaymentTermLabel.Text = "Payment Term";
             // 
+            // InHouseAgentCheckBox
+            // 
+            this.InHouseAgentCheckBox.AutoSize = true;
+            this.InHouseAgentCheckBox.Location = new System.Drawing.Point(890, 85);
+            this.InHouseAgentCheckBox.Name = "InHouseAgentCheckBox";
+            this.InHouseAgentCheckBox.Size = new System.Drawing.Size(79, 21);
+            this.InHouseAgentCheckBox.TabIndex = 127;
+            this.InHouseAgentCheckBox.Text = "In-House";
+            this.InHouseAgentCheckBox.UseVisualStyleBackColor = true;
+            this.InHouseAgentCheckBox.CheckedChanged += new System.EventHandler(this.InHouseAgentCheckBox_CheckedChanged);
+            // 
             // AddReviseQuotationDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -443,6 +455,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1451, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.InHouseAgentCheckBox);
             this.Controls.Add(this.PaymentTermComboBox);
             this.Controls.Add(this.PaymentTermLabel);
             this.Controls.Add(this.CancelQuotationButton);
@@ -521,5 +534,6 @@
         private System.Windows.Forms.Button SaveQuotationButton;
         private System.Windows.Forms.ComboBox PaymentTermComboBox;
         private System.Windows.Forms.Label PaymentTermLabel;
+        private System.Windows.Forms.CheckBox InHouseAgentCheckBox;
     }
 }

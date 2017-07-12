@@ -8,11 +8,18 @@ namespace Citicon.Forms.Dialogs
 {
     public partial class AddEditRouteDialog : Form
     {
-        public static void AddRoute()
+        public static DeliveryRoute AddRoute()
         {
             var dialog = new AddEditRouteDialog(new DeliveryRoute(), DataDialogMode.Add);
-            dialog.ShowDialog();
-            dialog = null;
+            try
+            {
+                dialog.ShowDialog();
+                return dialog.Route;
+            }
+            finally
+            {
+                dialog = null;
+            }
         }
 
         public static void EditRoute(DeliveryRoute route)
@@ -121,6 +128,7 @@ namespace Citicon.Forms.Dialogs
                 if (route != null)
                 {
                     MessageBox.Show("Route has been added successfully.");
+                    Route = route;
                     Close();
                 }
                 else
