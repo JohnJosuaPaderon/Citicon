@@ -33,7 +33,7 @@
                     <DataGridTextColumn Header="Client" Binding="{Binding Design.Project.Client}"/>
                     <DataGridTextColumn Header="Project" Binding="{Binding Design.Project}"/>
                     <DataGridTextColumn Header="Design" Binding="{Binding Design}"/>
-                    <DataGridTextColumn Header="Scheduled Date" Binding="{Binding ScheduledDate,StringFormat='MMMM dd, yyyy'}"/>
+                    <DataGridTextColumn Header="Scheduled Date" Binding="{Binding}"/>
                     <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
                 </DataGrid.Columns>
             </DataGrid>
