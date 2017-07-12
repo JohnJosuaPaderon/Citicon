@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.Filter = new System.Windows.Forms.GroupBox();
+            this.pnlTransactionDate = new System.Windows.Forms.Panel();
+            this.dtpTransactionDate_End = new System.Windows.Forms.DateTimePicker();
+            this.lblTransactionDateTo = new System.Windows.Forms.Label();
+            this.dtpTransactionDate_Start = new System.Windows.Forms.DateTimePicker();
+            this.FilterByChequeTransactionDateCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterByCompanyComboBox = new System.Windows.Forms.ComboBox();
             this.FilterByCompanyCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterByBranchComboBox = new System.Windows.Forms.ComboBox();
@@ -40,14 +45,9 @@
             this.lblRangeDateTo = new System.Windows.Forms.Label();
             this.dtpRangeDate_Start = new System.Windows.Forms.DateTimePicker();
             this.ckbxRangeDate = new System.Windows.Forms.CheckBox();
-            this.FilterByChequeTransactionDateCheckBox = new System.Windows.Forms.CheckBox();
-            this.pnlTransactionDate = new System.Windows.Forms.Panel();
-            this.dtpTransactionDate_End = new System.Windows.Forms.DateTimePicker();
-            this.lblTransactionDateTo = new System.Windows.Forms.Label();
-            this.dtpTransactionDate_Start = new System.Windows.Forms.DateTimePicker();
             this.Filter.SuspendLayout();
-            this.pnlRangeDate.SuspendLayout();
             this.pnlTransactionDate.SuspendLayout();
+            this.pnlRangeDate.SuspendLayout();
             this.SuspendLayout();
             // 
             // Filter
@@ -71,6 +71,57 @@
             this.Filter.TabIndex = 0;
             this.Filter.TabStop = false;
             this.Filter.Text = "Filter";
+            // 
+            // pnlTransactionDate
+            // 
+            this.pnlTransactionDate.Controls.Add(this.dtpTransactionDate_End);
+            this.pnlTransactionDate.Controls.Add(this.lblTransactionDateTo);
+            this.pnlTransactionDate.Controls.Add(this.dtpTransactionDate_Start);
+            this.pnlTransactionDate.Enabled = false;
+            this.pnlTransactionDate.Location = new System.Drawing.Point(156, 97);
+            this.pnlTransactionDate.Name = "pnlTransactionDate";
+            this.pnlTransactionDate.Size = new System.Drawing.Size(357, 29);
+            this.pnlTransactionDate.TabIndex = 3;
+            // 
+            // dtpTransactionDate_End
+            // 
+            this.dtpTransactionDate_End.CustomFormat = "MMM dd, yyyy";
+            this.dtpTransactionDate_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTransactionDate_End.Location = new System.Drawing.Point(197, 0);
+            this.dtpTransactionDate_End.Name = "dtpTransactionDate_End";
+            this.dtpTransactionDate_End.Size = new System.Drawing.Size(160, 29);
+            this.dtpTransactionDate_End.TabIndex = 2;
+            this.dtpTransactionDate_End.ValueChanged += new System.EventHandler(this.dtpTransactionDate_End_ValueChanged);
+            // 
+            // lblTransactionDateTo
+            // 
+            this.lblTransactionDateTo.AutoSize = true;
+            this.lblTransactionDateTo.Location = new System.Drawing.Point(166, 4);
+            this.lblTransactionDateTo.Name = "lblTransactionDateTo";
+            this.lblTransactionDateTo.Size = new System.Drawing.Size(25, 21);
+            this.lblTransactionDateTo.TabIndex = 0;
+            this.lblTransactionDateTo.Text = "To";
+            // 
+            // dtpTransactionDate_Start
+            // 
+            this.dtpTransactionDate_Start.CustomFormat = "MMM dd, yyyy";
+            this.dtpTransactionDate_Start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTransactionDate_Start.Location = new System.Drawing.Point(0, 0);
+            this.dtpTransactionDate_Start.Name = "dtpTransactionDate_Start";
+            this.dtpTransactionDate_Start.Size = new System.Drawing.Size(160, 29);
+            this.dtpTransactionDate_Start.TabIndex = 0;
+            this.dtpTransactionDate_Start.ValueChanged += new System.EventHandler(this.dtpTransactionDate_Start_ValueChanged);
+            // 
+            // FilterByChequeTransactionDateCheckBox
+            // 
+            this.FilterByChequeTransactionDateCheckBox.AutoSize = true;
+            this.FilterByChequeTransactionDateCheckBox.Location = new System.Drawing.Point(6, 100);
+            this.FilterByChequeTransactionDateCheckBox.Name = "FilterByChequeTransactionDateCheckBox";
+            this.FilterByChequeTransactionDateCheckBox.Size = new System.Drawing.Size(144, 25);
+            this.FilterByChequeTransactionDateCheckBox.TabIndex = 8;
+            this.FilterByChequeTransactionDateCheckBox.Text = "Transaction Date";
+            this.FilterByChequeTransactionDateCheckBox.UseVisualStyleBackColor = true;
+            this.FilterByChequeTransactionDateCheckBox.CheckedChanged += new System.EventHandler(this.FilterByChequeTransactionDate_CheckedChanged);
             // 
             // FilterByCompanyComboBox
             // 
@@ -108,7 +159,7 @@
             // FilterByBranchCheckBox
             // 
             this.FilterByBranchCheckBox.AutoSize = true;
-            this.FilterByBranchCheckBox.Location = new System.Drawing.Point(562, 32);
+            this.FilterByBranchCheckBox.Location = new System.Drawing.Point(543, 30);
             this.FilterByBranchCheckBox.Name = "FilterByBranchCheckBox";
             this.FilterByBranchCheckBox.Size = new System.Drawing.Size(77, 25);
             this.FilterByBranchCheckBox.TabIndex = 4;
@@ -189,57 +240,6 @@
             this.ckbxRangeDate.UseVisualStyleBackColor = true;
             this.ckbxRangeDate.CheckedChanged += new System.EventHandler(this.CkbxRangeDate_CheckedChanged);
             // 
-            // FilterByChequeTransactionDateCheckBox
-            // 
-            this.FilterByChequeTransactionDateCheckBox.AutoSize = true;
-            this.FilterByChequeTransactionDateCheckBox.Location = new System.Drawing.Point(6, 100);
-            this.FilterByChequeTransactionDateCheckBox.Name = "FilterByChequeTransactionDateCheckBox";
-            this.FilterByChequeTransactionDateCheckBox.Size = new System.Drawing.Size(144, 25);
-            this.FilterByChequeTransactionDateCheckBox.TabIndex = 8;
-            this.FilterByChequeTransactionDateCheckBox.Text = "Transaction Date";
-            this.FilterByChequeTransactionDateCheckBox.UseVisualStyleBackColor = true;
-            this.FilterByChequeTransactionDateCheckBox.CheckedChanged += new System.EventHandler(this.FilterByChequeTransactionDate_CheckedChanged);
-            // 
-            // pnlTransactionDate
-            // 
-            this.pnlTransactionDate.Controls.Add(this.dtpTransactionDate_End);
-            this.pnlTransactionDate.Controls.Add(this.lblTransactionDateTo);
-            this.pnlTransactionDate.Controls.Add(this.dtpTransactionDate_Start);
-            this.pnlTransactionDate.Enabled = false;
-            this.pnlTransactionDate.Location = new System.Drawing.Point(156, 97);
-            this.pnlTransactionDate.Name = "pnlTransactionDate";
-            this.pnlTransactionDate.Size = new System.Drawing.Size(357, 29);
-            this.pnlTransactionDate.TabIndex = 3;
-            // 
-            // dtpTransactionDate_End
-            // 
-            this.dtpTransactionDate_End.CustomFormat = "MMM dd, yyyy";
-            this.dtpTransactionDate_End.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTransactionDate_End.Location = new System.Drawing.Point(197, 0);
-            this.dtpTransactionDate_End.Name = "dtpTransactionDate_End";
-            this.dtpTransactionDate_End.Size = new System.Drawing.Size(160, 29);
-            this.dtpTransactionDate_End.TabIndex = 2;
-            this.dtpTransactionDate_End.ValueChanged += new System.EventHandler(this.dtpTransactionDate_End_ValueChanged);
-            // 
-            // lblTransactionDateTo
-            // 
-            this.lblTransactionDateTo.AutoSize = true;
-            this.lblTransactionDateTo.Location = new System.Drawing.Point(166, 4);
-            this.lblTransactionDateTo.Name = "lblTransactionDateTo";
-            this.lblTransactionDateTo.Size = new System.Drawing.Size(25, 21);
-            this.lblTransactionDateTo.TabIndex = 0;
-            this.lblTransactionDateTo.Text = "To";
-            // 
-            // dtpTransactionDate_Start
-            // 
-            this.dtpTransactionDate_Start.CustomFormat = "MMM dd, yyyy";
-            this.dtpTransactionDate_Start.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTransactionDate_Start.Location = new System.Drawing.Point(0, 0);
-            this.dtpTransactionDate_Start.Name = "dtpTransactionDate_Start";
-            this.dtpTransactionDate_Start.Size = new System.Drawing.Size(160, 29);
-            this.dtpTransactionDate_Start.TabIndex = 0;
-            this.dtpTransactionDate_Start.ValueChanged += new System.EventHandler(this.dtpTransactionDate_Start_ValueChanged);
-            // 
             // ChequeReportFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -254,10 +254,10 @@
             this.Load += new System.EventHandler(this.ChequeReportFilter_Load);
             this.Filter.ResumeLayout(false);
             this.Filter.PerformLayout();
-            this.pnlRangeDate.ResumeLayout(false);
-            this.pnlRangeDate.PerformLayout();
             this.pnlTransactionDate.ResumeLayout(false);
             this.pnlTransactionDate.PerformLayout();
+            this.pnlRangeDate.ResumeLayout(false);
+            this.pnlRangeDate.PerformLayout();
             this.ResumeLayout(false);
 
         }
