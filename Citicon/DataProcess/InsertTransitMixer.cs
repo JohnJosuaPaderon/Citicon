@@ -23,6 +23,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_PlateNumber", TransitMixer.PlateNumber);
             command.Parameters.AddWithValue("@_VolumeCapacity", TransitMixer.VolumeCapacity);
             command.Parameters.AddWithValue("@_DefaultDriverId", TransitMixer.DefaultDriver?.Id);
+            command.Parameters.AddWithValue("@_Additionals", TransitMixer.Additionals);
 
             return command;
         }

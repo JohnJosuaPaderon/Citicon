@@ -36,6 +36,8 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_ScheduleStatus", (string)Delivery.ScheduleStatus);
             command.Parameters.AddWithValue("@_PurchaseOrderId", Delivery.PurchaseOrder?.Id);
             command.Parameters.AddWithValue("@_ServiceEngineerId", Delivery.ServiceEngineer?.Id);
+            command.Parameters.AddWithValue("@_Admixture", Delivery.Admixture);
+            command.Parameters.AddWithValue("@_AdmixtureQuantity", Delivery.AdmixtureQuantity);
 
             return command;
         }

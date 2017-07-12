@@ -25,6 +25,9 @@ namespace Citicon.DataProcess
             var command = Utility.CreateProcedureCommand("InsertScheduledProjectDesign", connection, transaction);
             command.Parameters.AddWithValue("@_ProjectDesignId", ScheduledDesign.Design.Id);
             command.Parameters.AddWithValue("@_ScheduledDate", ScheduledDesign.ScheduledDate);
+            command.Parameters.AddWithValue("@_UseRangeDate", ScheduledDesign.UseRangeDate);
+            command.Parameters.AddWithValue("@_RangeEnd", ScheduledDesign.RangeEnd);
+            command.Parameters.AddWithValue("@_StructureTypeId", ScheduledDesign.StructureType?.Id);
 
             return command;
         }

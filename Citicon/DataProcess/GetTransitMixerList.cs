@@ -29,7 +29,8 @@ namespace Citicon.DataProcess
                 PlateNumber = reader.GetString("PlateNumber"),
                 Type = VehicleType.TransitMixer,
                 VolumeCapacity = reader.GetDouble("VolumeCapacity"),
-                DefaultDriver = await EmployeeManager.GetByIdAsync(reader.GetInt64("DefaultDriverId"))
+                DefaultDriver = await EmployeeManager.GetByIdAsync(reader.GetInt64("DefaultDriverId")),
+                Additionals = reader.GetDecimal("Additionals")
             };
         }
     }

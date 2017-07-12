@@ -15,16 +15,20 @@ namespace Citicon.DataProcess
         private ScheduledProjectDesign ScheduledDesign;
         private const string Parameter_ProjectDesignId = "@_ProjectDesignId";
         private const string Parameter_ScheduledDate = "@_ScheduledDate";
+        private const string Parameter_UseRangeDate = "@_UseRangeDate";
+        private const string Parameter_RangeEnd = "@_RangeEnd";
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = new MySqlCommand()
             {
                 Connection = connection,
-                CommandText = string.Format("SELECT ScheduledProjectDesignExists({0}, {1});", Parameter_ProjectDesignId, Parameter_ScheduledDate)
+                CommandText = string.Format("SELECT ScheduledProjectDesignExists({0}, {1}, {2}, {3});", Parameter_ProjectDesignId, Parameter_ScheduledDate, Parameter_UseRangeDate, Parameter_RangeEnd)
             };
             command.Parameters.AddWithValue(Parameter_ProjectDesignId, ScheduledDesign.Design.Id);
             command.Parameters.AddWithValue(Parameter_ScheduledDate, ScheduledDesign.ScheduledDate);
+            command.Parameters.AddWithValue(Parameter_UseRangeDate, ScheduledDesign.UseRangeDate);
+            command.Parameters.AddWithValue(Parameter_RangeEnd, ScheduledDesign.RangeEnd);
 
             return command;
         }

@@ -56,7 +56,7 @@ namespace Citicon.DataProcess
             {
                 Id = reader.GetUInt64("Id"),
                 Admixture = reader.GetString("Admixture"),
-                AdmixtureQuantity = reader.GetDecimal("AdmixtureQuantity"),
+                AdmixtureQuantity = reader.GetString("AdmixtureQuantity"),
                 Billing = null,
                 Branch = BranchManager.GetById(reader.GetUInt64("BranchId")),
                 DeliveryDate = reader.GetDateTime("DeliveryDate"),

@@ -31,7 +31,9 @@ namespace Citicon.DataProcess
             {
                  Design = await ProjectDesignManager.GetByIdAsync(reader.GetUInt64("ProjectDesignId")),
                  ScheduledDate = reader.GetDateTime("ScheduledDate"),
-                 Status = Status
+                 Status = Status,
+                 RangeEnd = reader.GetDateTime("RangeEnd"),
+                 UseRangeDate = reader.GetBoolean("UseRangeDate")
             };
         }
 

@@ -38,7 +38,8 @@ namespace Citicon.DataProcess
                 PhysicalNumber = reader.GetString("PhysicalNumber"),
                 PlateNumber = reader.GetString("PlateNumber"),
                 Type = VehicleType.TransitMixer,
-                VolumeCapacity =reader.GetDouble("VolumeCapacity")
+                VolumeCapacity =reader.GetDouble("VolumeCapacity"),
+                Additionals = reader.GetDecimal("Additionals")
             };
         }
     }

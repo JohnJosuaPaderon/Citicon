@@ -20,6 +20,8 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_ProjectDesignId", ScheduledProjectDesign.Design?.Id);
             command.Parameters.AddWithValue("@_ScheduledDate", ScheduledProjectDesign.ScheduledDate);
             command.Parameters.AddWithValue("@_Status", ScheduledProjectDesign.Status?.Value);
+            command.Parameters.AddWithValue("@_UseRangeDate", ScheduledProjectDesign.UseRangeDate);
+            command.Parameters.AddWithValue("@_RangeEnd", ScheduledProjectDesign.RangeEnd);
 
             return command;
         }
