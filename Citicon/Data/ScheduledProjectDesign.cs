@@ -6,7 +6,10 @@ namespace Citicon.Data
     {
         public ProjectDesign Design { get; set; }
         public DateTime ScheduledDate { get; set; }
+        public bool UseRangeDate { get; set; }
+        public DateTime RangeEnd { get; set; }
         public ScheduledProjectDesignStatus Status { get; set; }
+        public BillingStructureType StructureType { get; set; }
 
         public static bool operator ==(ScheduledProjectDesign left, ScheduledProjectDesign right)
         {
@@ -38,6 +41,13 @@ namespace Citicon.Data
         public override int GetHashCode()
         {
             return Design.GetHashCode() ^ ScheduledDate.Date.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return UseRangeDate ?
+                    $"{ScheduledDate.ToString("MMMM dd, yyyy")} to {RangeEnd.ToString("MMMM dd, yyyy")}" :
+                    ScheduledDate.ToString("MMMM dd, yyyy");
         }
     }
 }

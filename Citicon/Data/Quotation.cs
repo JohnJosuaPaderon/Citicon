@@ -19,6 +19,7 @@ namespace Citicon.Data
         public Employee Agent { get; set; }
         public QuotationType Type { get; set; }
         public uint Number { get; set; }
+        public bool InHouseAgent { get; set; }
         public PaymentTerm PaymentTerm { get; set; }
 
         public static bool operator ==(Quotation left, Quotation right)

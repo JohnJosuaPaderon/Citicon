@@ -26,7 +26,7 @@ namespace Citicon.Data
         public Branch Branch { get; set; }
         public DeliveryRoute Route { get; set; }
         public string Admixture { get; set; }
-        public decimal AdmixtureQuantity { get; set; }
+        public string AdmixtureQuantity { get; set; }
         public decimal MaxSlump { get; set; }
         public DeliveryScheduleStatus ScheduleStatus { get; set; }
         public PurchaseOrder PurchaseOrder { get; set; }

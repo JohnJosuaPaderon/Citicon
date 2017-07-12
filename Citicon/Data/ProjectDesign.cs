@@ -53,7 +53,7 @@ namespace Citicon.Data
             displayBuilder.Append($"{Aggregate} ");
             displayBuilder.Append($"{Strength} ");
 
-            if (MixType == ProjectDesignMixType.PCD)
+            if (Project.Type == ProjectType.CementSupplied)
             {
                 displayBuilder.Append($"CF {CementFactor}");
             }

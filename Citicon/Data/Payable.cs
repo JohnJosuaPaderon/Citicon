@@ -54,6 +54,7 @@ namespace Citicon.Data
             {
                 return (Payable)arg == this;
             }
+
             return false;
         }
 

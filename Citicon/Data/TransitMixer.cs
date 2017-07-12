@@ -4,6 +4,7 @@
     {
         public double VolumeCapacity { get; set; }
         public Employee DefaultDriver { get; set; }
+        public decimal Additionals { get; set; }
 
         public override string ToString()
         {
