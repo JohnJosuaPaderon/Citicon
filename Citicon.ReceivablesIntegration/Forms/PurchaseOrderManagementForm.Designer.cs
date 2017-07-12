@@ -50,12 +50,14 @@
             this.colPurchaseOrderProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPurchaseOrderProjectDesign_ProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPurchaseOrderProjectDesign_MaxVolume = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnIncludeProjectDesign = new System.Windows.Forms.Button();
-            this.btnExcludeProjectDesign = new System.Windows.Forms.Button();
             this.nudMaxVolume = new System.Windows.Forms.NumericUpDown();
             this.lblMaxVolume = new System.Windows.Forms.Label();
             this.lblMaximumCumulativePricePerCubicMeter = new System.Windows.Forms.Label();
             this.nudMaximumCumulativePricePerCubicMeter = new System.Windows.Forms.NumericUpDown();
+            this.SearchClientButton = new System.Windows.Forms.Button();
+            this.SearchProjectButton = new System.Windows.Forms.Button();
+            this.btnIncludeProjectDesign = new System.Windows.Forms.Button();
+            this.btnExcludeProjectDesign = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudPurchaseOrderNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrderProjectDesign)).BeginInit();
@@ -160,7 +162,7 @@
             this.cmbxClient.FormattingEnabled = true;
             this.cmbxClient.Location = new System.Drawing.Point(16, 158);
             this.cmbxClient.Name = "cmbxClient";
-            this.cmbxClient.Size = new System.Drawing.Size(644, 29);
+            this.cmbxClient.Size = new System.Drawing.Size(537, 29);
             this.cmbxClient.TabIndex = 106;
             this.cmbxClient.SelectedIndexChanged += new System.EventHandler(this.CmbxClient_SelectedIndexChanged);
             // 
@@ -170,7 +172,7 @@
             this.cmbxProject.FormattingEnabled = true;
             this.cmbxProject.Location = new System.Drawing.Point(16, 214);
             this.cmbxProject.Name = "cmbxProject";
-            this.cmbxProject.Size = new System.Drawing.Size(644, 29);
+            this.cmbxProject.Size = new System.Drawing.Size(537, 29);
             this.cmbxProject.TabIndex = 108;
             this.cmbxProject.SelectedIndexChanged += new System.EventHandler(this.CmbxProject_SelectedIndexChanged);
             // 
@@ -251,7 +253,7 @@
             this.dgvPurchaseOrderProjectDesign.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPurchaseOrderProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvPurchaseOrderProjectDesign.GridColor = System.Drawing.Color.Red;
-            this.dgvPurchaseOrderProjectDesign.Location = new System.Drawing.Point(723, 258);
+            this.dgvPurchaseOrderProjectDesign.Location = new System.Drawing.Point(723, 12);
             this.dgvPurchaseOrderProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvPurchaseOrderProjectDesign.MultiSelect = false;
             this.dgvPurchaseOrderProjectDesign.Name = "dgvPurchaseOrderProjectDesign";
@@ -260,7 +262,7 @@
             this.dgvPurchaseOrderProjectDesign.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvPurchaseOrderProjectDesign.RowTemplate.Height = 40;
             this.dgvPurchaseOrderProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchaseOrderProjectDesign.Size = new System.Drawing.Size(900, 475);
+            this.dgvPurchaseOrderProjectDesign.Size = new System.Drawing.Size(900, 721);
             this.dgvPurchaseOrderProjectDesign.TabIndex = 113;
             // 
             // colPurchaseOrderProjectDesign
@@ -290,36 +292,6 @@
             this.colPurchaseOrderProjectDesign_MaxVolume.Name = "colPurchaseOrderProjectDesign_MaxVolume";
             this.colPurchaseOrderProjectDesign_MaxVolume.ReadOnly = true;
             this.colPurchaseOrderProjectDesign_MaxVolume.Width = 150;
-            // 
-            // btnIncludeProjectDesign
-            // 
-            this.btnIncludeProjectDesign.BackColor = System.Drawing.Color.Black;
-            this.btnIncludeProjectDesign.BackgroundImage = global::Citicon.ReceivablesIntegration.Properties.Resources.right_arrow;
-            this.btnIncludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnIncludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIncludeProjectDesign.ForeColor = System.Drawing.Color.White;
-            this.btnIncludeProjectDesign.Location = new System.Drawing.Point(664, 403);
-            this.btnIncludeProjectDesign.Margin = new System.Windows.Forms.Padding(2);
-            this.btnIncludeProjectDesign.Name = "btnIncludeProjectDesign";
-            this.btnIncludeProjectDesign.Size = new System.Drawing.Size(55, 55);
-            this.btnIncludeProjectDesign.TabIndex = 74;
-            this.btnIncludeProjectDesign.UseVisualStyleBackColor = false;
-            this.btnIncludeProjectDesign.Click += new System.EventHandler(this.BtnIncludeProjectDesign_Click);
-            // 
-            // btnExcludeProjectDesign
-            // 
-            this.btnExcludeProjectDesign.BackColor = System.Drawing.Color.Black;
-            this.btnExcludeProjectDesign.BackgroundImage = global::Citicon.ReceivablesIntegration.Properties.Resources.left_arrow;
-            this.btnExcludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExcludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcludeProjectDesign.ForeColor = System.Drawing.Color.White;
-            this.btnExcludeProjectDesign.Location = new System.Drawing.Point(664, 462);
-            this.btnExcludeProjectDesign.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExcludeProjectDesign.Name = "btnExcludeProjectDesign";
-            this.btnExcludeProjectDesign.Size = new System.Drawing.Size(55, 55);
-            this.btnExcludeProjectDesign.TabIndex = 73;
-            this.btnExcludeProjectDesign.UseVisualStyleBackColor = false;
-            this.btnExcludeProjectDesign.Click += new System.EventHandler(this.BtnExcludeProjectDesign_Click);
             // 
             // nudMaxVolume
             // 
@@ -371,12 +343,76 @@
             this.nudMaximumCumulativePricePerCubicMeter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudMaximumCumulativePricePerCubicMeter.ThousandsSeparator = true;
             // 
+            // SearchClientButton
+            // 
+            this.SearchClientButton.BackColor = System.Drawing.Color.Red;
+            this.SearchClientButton.FlatAppearance.BorderSize = 0;
+            this.SearchClientButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchClientButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchClientButton.ForeColor = System.Drawing.Color.White;
+            this.SearchClientButton.Location = new System.Drawing.Point(560, 158);
+            this.SearchClientButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.SearchClientButton.Name = "SearchClientButton";
+            this.SearchClientButton.Size = new System.Drawing.Size(100, 29);
+            this.SearchClientButton.TabIndex = 131;
+            this.SearchClientButton.Text = "SEARCH";
+            this.SearchClientButton.UseVisualStyleBackColor = false;
+            this.SearchClientButton.Click += new System.EventHandler(this.SearchClientButton_Click);
+            // 
+            // SearchProjectButton
+            // 
+            this.SearchProjectButton.BackColor = System.Drawing.Color.Red;
+            this.SearchProjectButton.FlatAppearance.BorderSize = 0;
+            this.SearchProjectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchProjectButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchProjectButton.ForeColor = System.Drawing.Color.White;
+            this.SearchProjectButton.Location = new System.Drawing.Point(560, 214);
+            this.SearchProjectButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.SearchProjectButton.Name = "SearchProjectButton";
+            this.SearchProjectButton.Size = new System.Drawing.Size(100, 29);
+            this.SearchProjectButton.TabIndex = 132;
+            this.SearchProjectButton.Text = "SEARCH";
+            this.SearchProjectButton.UseVisualStyleBackColor = false;
+            this.SearchProjectButton.Click += new System.EventHandler(this.SearchProjectButton_Click);
+            // 
+            // btnIncludeProjectDesign
+            // 
+            this.btnIncludeProjectDesign.BackColor = System.Drawing.Color.Black;
+            this.btnIncludeProjectDesign.BackgroundImage = global::Citicon.ReceivablesIntegration.Properties.Resources.right_arrow;
+            this.btnIncludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnIncludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncludeProjectDesign.ForeColor = System.Drawing.Color.White;
+            this.btnIncludeProjectDesign.Location = new System.Drawing.Point(664, 403);
+            this.btnIncludeProjectDesign.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIncludeProjectDesign.Name = "btnIncludeProjectDesign";
+            this.btnIncludeProjectDesign.Size = new System.Drawing.Size(55, 55);
+            this.btnIncludeProjectDesign.TabIndex = 74;
+            this.btnIncludeProjectDesign.UseVisualStyleBackColor = false;
+            this.btnIncludeProjectDesign.Click += new System.EventHandler(this.BtnIncludeProjectDesign_Click);
+            // 
+            // btnExcludeProjectDesign
+            // 
+            this.btnExcludeProjectDesign.BackColor = System.Drawing.Color.Black;
+            this.btnExcludeProjectDesign.BackgroundImage = global::Citicon.ReceivablesIntegration.Properties.Resources.left_arrow;
+            this.btnExcludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExcludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcludeProjectDesign.ForeColor = System.Drawing.Color.White;
+            this.btnExcludeProjectDesign.Location = new System.Drawing.Point(664, 462);
+            this.btnExcludeProjectDesign.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExcludeProjectDesign.Name = "btnExcludeProjectDesign";
+            this.btnExcludeProjectDesign.Size = new System.Drawing.Size(55, 55);
+            this.btnExcludeProjectDesign.TabIndex = 73;
+            this.btnExcludeProjectDesign.UseVisualStyleBackColor = false;
+            this.btnExcludeProjectDesign.Click += new System.EventHandler(this.BtnExcludeProjectDesign_Click);
+            // 
             // PurchaseOrderManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1635, 806);
+            this.Controls.Add(this.SearchProjectButton);
+            this.Controls.Add(this.SearchClientButton);
             this.Controls.Add(this.nudMaximumCumulativePricePerCubicMeter);
             this.Controls.Add(this.lblMaximumCumulativePricePerCubicMeter);
             this.Controls.Add(this.lblMaxVolume);
@@ -434,5 +470,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseOrderProjectDesign_MaxVolume;
         private System.Windows.Forms.Label lblMaximumCumulativePricePerCubicMeter;
         private System.Windows.Forms.NumericUpDown nudMaximumCumulativePricePerCubicMeter;
+        private System.Windows.Forms.Button SearchClientButton;
+        private System.Windows.Forms.Button SearchProjectButton;
     }
 }

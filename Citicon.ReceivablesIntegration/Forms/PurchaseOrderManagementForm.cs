@@ -1,6 +1,8 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -9,6 +11,9 @@ namespace Citicon.ReceivablesIntegration.Forms
 {
     public partial class PurchaseOrderManagementForm : Form
     {
+        private IEnumerable<Client> Clients { get; set; }
+        private IEnumerable<Project> Projects { get; set; }
+
         public PurchaseOrderManagementForm()
         {
             InitializeComponent();
@@ -25,11 +30,11 @@ namespace Citicon.ReceivablesIntegration.Forms
 
             try
             {
-                var clients = await ClientManager.GetListWithApprovedProjectDesignAsync();
+                Clients = await ClientManager.GetListWithApprovedProjectDesignAsync();
 
-                if (clients != null)
+                if (Clients != null)
                 {
-                    cmbxClient.Items.AddRange(clients.ToArray());
+                    cmbxClient.Items.AddRange(Clients.ToArray());
                 }
             }
             catch (Exception ex)
@@ -46,11 +51,11 @@ namespace Citicon.ReceivablesIntegration.Forms
             {
                 try
                 {
-                    var projects = await ProjectManager.GetListWithApprovedProjectDesignByClientAsync(client);
+                    Projects = await ProjectManager.GetListWithApprovedProjectDesignByClientAsync(client);
 
-                    if (projects != null)
+                    if (Projects != null)
                     {
-                        cmbxProject.Items.AddRange(projects.ToArray());
+                        cmbxProject.Items.AddRange(Projects.ToArray());
                     }
                 }
                 catch (Exception ex)
@@ -260,6 +265,19 @@ namespace Citicon.ReceivablesIntegration.Forms
         private async void BtnSave_Click(object sender, EventArgs e)
         {
             await SaveAsync();
+        }
+
+        private void SearchClientButton_Click(object sender, EventArgs e)
+        {
+            cmbxClient.SelectedItem = ClientSearchDialog.Show(Clients);
+        }
+
+        private void SearchProjectButton_Click(object sender, EventArgs e)
+        {
+            if (cmbxClient.SelectedItem is Client client)
+            {
+                cmbxProject.SelectedItem = ProjectSearchDialog.Show(client, Projects);
+            }
         }
     }
 }

@@ -34,6 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryForm));
             this.dgvScheduledProjectDesign = new System.Windows.Forms.DataGridView();
+            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledProjectDesign_ProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledProjectDesign_ProjectDesign_Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduledProjectDesign_AgentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduledProjectDesign_PurchaseOrderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduledProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxProjectDesignDetails = new System.Windows.Forms.GroupBox();
             this.tbxProjectDesignDetails_CementFactor = new System.Windows.Forms.TextBox();
             this.lblProjectDesignDetails_CementFactor = new System.Windows.Forms.Label();
@@ -55,12 +61,6 @@
             this.lblProjectDesignDetails_Project_Client = new System.Windows.Forms.Label();
             this.btnConfirmDelivery = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_ProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_ProjectDesign_Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_AgentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_PurchaseOrderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
             this.gbxProjectDesignDetails.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +123,55 @@
             this.dgvScheduledProjectDesign.TabIndex = 108;
             this.dgvScheduledProjectDesign.SelectionChanged += new System.EventHandler(this.DgvScheduledProjectDesign_SelectionChanged);
             // 
+            // colScheduledProjectDesign
+            // 
+            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
+            this.colScheduledProjectDesign.MinimumWidth = 100;
+            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
+            this.colScheduledProjectDesign.ReadOnly = true;
+            this.colScheduledProjectDesign.Visible = false;
+            this.colScheduledProjectDesign.Width = 149;
+            // 
+            // colScheduledProjectDesign_ProjectDesign
+            // 
+            this.colScheduledProjectDesign_ProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colScheduledProjectDesign_ProjectDesign.HeaderText = "SCHEDULED PROJECT DESIGNS TODAY";
+            this.colScheduledProjectDesign_ProjectDesign.Name = "colScheduledProjectDesign_ProjectDesign";
+            this.colScheduledProjectDesign_ProjectDesign.ReadOnly = true;
+            this.colScheduledProjectDesign_ProjectDesign.Width = 236;
+            // 
+            // colScheduledProjectDesign_ProjectDesign_Project
+            // 
+            this.colScheduledProjectDesign_ProjectDesign_Project.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colScheduledProjectDesign_ProjectDesign_Project.HeaderText = "PROJECT";
+            this.colScheduledProjectDesign_ProjectDesign_Project.MinimumWidth = 100;
+            this.colScheduledProjectDesign_ProjectDesign_Project.Name = "colScheduledProjectDesign_ProjectDesign_Project";
+            this.colScheduledProjectDesign_ProjectDesign_Project.ReadOnly = true;
+            // 
+            // ScheduledProjectDesign_AgentColumn
+            // 
+            this.ScheduledProjectDesign_AgentColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ScheduledProjectDesign_AgentColumn.HeaderText = "AGENT";
+            this.ScheduledProjectDesign_AgentColumn.Name = "ScheduledProjectDesign_AgentColumn";
+            this.ScheduledProjectDesign_AgentColumn.ReadOnly = true;
+            this.ScheduledProjectDesign_AgentColumn.Width = 83;
+            // 
+            // ScheduledProjectDesign_PurchaseOrderColumn
+            // 
+            this.ScheduledProjectDesign_PurchaseOrderColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ScheduledProjectDesign_PurchaseOrderColumn.HeaderText = "PO No.";
+            this.ScheduledProjectDesign_PurchaseOrderColumn.Name = "ScheduledProjectDesign_PurchaseOrderColumn";
+            this.ScheduledProjectDesign_PurchaseOrderColumn.ReadOnly = true;
+            this.ScheduledProjectDesign_PurchaseOrderColumn.Width = 77;
+            // 
+            // ScheduledProjectDesign_ExtraColumn
+            // 
+            this.ScheduledProjectDesign_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ScheduledProjectDesign_ExtraColumn.HeaderText = "";
+            this.ScheduledProjectDesign_ExtraColumn.Name = "ScheduledProjectDesign_ExtraColumn";
+            this.ScheduledProjectDesign_ExtraColumn.ReadOnly = true;
+            // 
             // gbxProjectDesignDetails
             // 
             this.gbxProjectDesignDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -146,14 +195,15 @@
             this.gbxProjectDesignDetails.Controls.Add(this.lblProjectDesignDetails_Project_Client);
             this.gbxProjectDesignDetails.Location = new System.Drawing.Point(892, 12);
             this.gbxProjectDesignDetails.Name = "gbxProjectDesignDetails";
-            this.gbxProjectDesignDetails.Size = new System.Drawing.Size(660, 370);
+            this.gbxProjectDesignDetails.Size = new System.Drawing.Size(660, 315);
             this.gbxProjectDesignDetails.TabIndex = 109;
             this.gbxProjectDesignDetails.TabStop = false;
             this.gbxProjectDesignDetails.Text = "Project Design Details";
+            this.gbxProjectDesignDetails.Enter += new System.EventHandler(this.gbxProjectDesignDetails_Enter);
             // 
             // tbxProjectDesignDetails_CementFactor
             // 
-            this.tbxProjectDesignDetails_CementFactor.Location = new System.Drawing.Point(10, 329);
+            this.tbxProjectDesignDetails_CementFactor.Location = new System.Drawing.Point(331, 273);
             this.tbxProjectDesignDetails_CementFactor.Name = "tbxProjectDesignDetails_CementFactor";
             this.tbxProjectDesignDetails_CementFactor.ReadOnly = true;
             this.tbxProjectDesignDetails_CementFactor.Size = new System.Drawing.Size(315, 29);
@@ -162,7 +212,7 @@
             // lblProjectDesignDetails_CementFactor
             // 
             this.lblProjectDesignDetails_CementFactor.AutoSize = true;
-            this.lblProjectDesignDetails_CementFactor.Location = new System.Drawing.Point(6, 305);
+            this.lblProjectDesignDetails_CementFactor.Location = new System.Drawing.Point(327, 249);
             this.lblProjectDesignDetails_CementFactor.Name = "lblProjectDesignDetails_CementFactor";
             this.lblProjectDesignDetails_CementFactor.Size = new System.Drawing.Size(110, 21);
             this.lblProjectDesignDetails_CementFactor.TabIndex = 16;
@@ -170,7 +220,7 @@
             // 
             // tbxProjectDesignDetails_Strength
             // 
-            this.tbxProjectDesignDetails_Strength.Location = new System.Drawing.Point(331, 273);
+            this.tbxProjectDesignDetails_Strength.Location = new System.Drawing.Point(10, 273);
             this.tbxProjectDesignDetails_Strength.Name = "tbxProjectDesignDetails_Strength";
             this.tbxProjectDesignDetails_Strength.ReadOnly = true;
             this.tbxProjectDesignDetails_Strength.Size = new System.Drawing.Size(315, 29);
@@ -179,7 +229,7 @@
             // lblProjectDesignDetails_Strength
             // 
             this.lblProjectDesignDetails_Strength.AutoSize = true;
-            this.lblProjectDesignDetails_Strength.Location = new System.Drawing.Point(327, 249);
+            this.lblProjectDesignDetails_Strength.Location = new System.Drawing.Point(6, 249);
             this.lblProjectDesignDetails_Strength.Name = "lblProjectDesignDetails_Strength";
             this.lblProjectDesignDetails_Strength.Size = new System.Drawing.Size(69, 21);
             this.lblProjectDesignDetails_Strength.TabIndex = 14;
@@ -187,7 +237,7 @@
             // 
             // tbxProjectDesignDetails_Aggregate
             // 
-            this.tbxProjectDesignDetails_Aggregate.Location = new System.Drawing.Point(10, 273);
+            this.tbxProjectDesignDetails_Aggregate.Location = new System.Drawing.Point(331, 217);
             this.tbxProjectDesignDetails_Aggregate.Name = "tbxProjectDesignDetails_Aggregate";
             this.tbxProjectDesignDetails_Aggregate.ReadOnly = true;
             this.tbxProjectDesignDetails_Aggregate.Size = new System.Drawing.Size(315, 29);
@@ -196,7 +246,7 @@
             // lblProjectDesignDetails_Aggregate
             // 
             this.lblProjectDesignDetails_Aggregate.AutoSize = true;
-            this.lblProjectDesignDetails_Aggregate.Location = new System.Drawing.Point(6, 249);
+            this.lblProjectDesignDetails_Aggregate.Location = new System.Drawing.Point(327, 193);
             this.lblProjectDesignDetails_Aggregate.Name = "lblProjectDesignDetails_Aggregate";
             this.lblProjectDesignDetails_Aggregate.Size = new System.Drawing.Size(82, 21);
             this.lblProjectDesignDetails_Aggregate.TabIndex = 12;
@@ -204,7 +254,7 @@
             // 
             // tbxProjectDesignDetails_Psi
             // 
-            this.tbxProjectDesignDetails_Psi.Location = new System.Drawing.Point(331, 217);
+            this.tbxProjectDesignDetails_Psi.Location = new System.Drawing.Point(10, 217);
             this.tbxProjectDesignDetails_Psi.Name = "tbxProjectDesignDetails_Psi";
             this.tbxProjectDesignDetails_Psi.ReadOnly = true;
             this.tbxProjectDesignDetails_Psi.Size = new System.Drawing.Size(315, 29);
@@ -213,7 +263,7 @@
             // lblProjectDesignDetails_Psi
             // 
             this.lblProjectDesignDetails_Psi.AutoSize = true;
-            this.lblProjectDesignDetails_Psi.Location = new System.Drawing.Point(327, 193);
+            this.lblProjectDesignDetails_Psi.Location = new System.Drawing.Point(6, 193);
             this.lblProjectDesignDetails_Psi.Name = "lblProjectDesignDetails_Psi";
             this.lblProjectDesignDetails_Psi.Size = new System.Drawing.Size(32, 21);
             this.lblProjectDesignDetails_Psi.TabIndex = 10;
@@ -221,7 +271,7 @@
             // 
             // tbxProjectDesignDetails_MixType
             // 
-            this.tbxProjectDesignDetails_MixType.Location = new System.Drawing.Point(10, 217);
+            this.tbxProjectDesignDetails_MixType.Location = new System.Drawing.Point(331, 161);
             this.tbxProjectDesignDetails_MixType.Name = "tbxProjectDesignDetails_MixType";
             this.tbxProjectDesignDetails_MixType.ReadOnly = true;
             this.tbxProjectDesignDetails_MixType.Size = new System.Drawing.Size(315, 29);
@@ -230,7 +280,7 @@
             // lblProjectDesignDetails_MixType
             // 
             this.lblProjectDesignDetails_MixType.AutoSize = true;
-            this.lblProjectDesignDetails_MixType.Location = new System.Drawing.Point(6, 193);
+            this.lblProjectDesignDetails_MixType.Location = new System.Drawing.Point(327, 137);
             this.lblProjectDesignDetails_MixType.Name = "lblProjectDesignDetails_MixType";
             this.lblProjectDesignDetails_MixType.Size = new System.Drawing.Size(71, 21);
             this.lblProjectDesignDetails_MixType.TabIndex = 8;
@@ -238,7 +288,7 @@
             // 
             // tbxProjectDesignDetails_InitialVolume
             // 
-            this.tbxProjectDesignDetails_InitialVolume.Location = new System.Drawing.Point(331, 161);
+            this.tbxProjectDesignDetails_InitialVolume.Location = new System.Drawing.Point(10, 161);
             this.tbxProjectDesignDetails_InitialVolume.Name = "tbxProjectDesignDetails_InitialVolume";
             this.tbxProjectDesignDetails_InitialVolume.ReadOnly = true;
             this.tbxProjectDesignDetails_InitialVolume.Size = new System.Drawing.Size(315, 29);
@@ -247,7 +297,7 @@
             // lblProjectDesignDetails_InitialVolume
             // 
             this.lblProjectDesignDetails_InitialVolume.AutoSize = true;
-            this.lblProjectDesignDetails_InitialVolume.Location = new System.Drawing.Point(327, 137);
+            this.lblProjectDesignDetails_InitialVolume.Location = new System.Drawing.Point(6, 137);
             this.lblProjectDesignDetails_InitialVolume.Name = "lblProjectDesignDetails_InitialVolume";
             this.lblProjectDesignDetails_InitialVolume.Size = new System.Drawing.Size(105, 21);
             this.lblProjectDesignDetails_InitialVolume.TabIndex = 6;
@@ -255,20 +305,22 @@
             // 
             // tbxProjectDesignDetails_PricePerCubicMeter
             // 
-            this.tbxProjectDesignDetails_PricePerCubicMeter.Location = new System.Drawing.Point(10, 161);
+            this.tbxProjectDesignDetails_PricePerCubicMeter.Location = new System.Drawing.Point(331, 329);
             this.tbxProjectDesignDetails_PricePerCubicMeter.Name = "tbxProjectDesignDetails_PricePerCubicMeter";
             this.tbxProjectDesignDetails_PricePerCubicMeter.ReadOnly = true;
             this.tbxProjectDesignDetails_PricePerCubicMeter.Size = new System.Drawing.Size(315, 29);
             this.tbxProjectDesignDetails_PricePerCubicMeter.TabIndex = 5;
+            this.tbxProjectDesignDetails_PricePerCubicMeter.Visible = false;
             // 
             // lblProjectDesignDetails_PricePerCubicMeter
             // 
             this.lblProjectDesignDetails_PricePerCubicMeter.AutoSize = true;
-            this.lblProjectDesignDetails_PricePerCubicMeter.Location = new System.Drawing.Point(6, 137);
+            this.lblProjectDesignDetails_PricePerCubicMeter.Location = new System.Drawing.Point(327, 305);
             this.lblProjectDesignDetails_PricePerCubicMeter.Name = "lblProjectDesignDetails_PricePerCubicMeter";
             this.lblProjectDesignDetails_PricePerCubicMeter.Size = new System.Drawing.Size(101, 21);
             this.lblProjectDesignDetails_PricePerCubicMeter.TabIndex = 4;
             this.lblProjectDesignDetails_PricePerCubicMeter.Text = "Price / Cu. M.";
+            this.lblProjectDesignDetails_PricePerCubicMeter.Visible = false;
             // 
             // tbxProjectDesignDetails_Project
             // 
@@ -311,7 +363,7 @@
             this.btnConfirmDelivery.FlatAppearance.BorderSize = 0;
             this.btnConfirmDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmDelivery.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmDelivery.Location = new System.Drawing.Point(1246, 388);
+            this.btnConfirmDelivery.Location = new System.Drawing.Point(1246, 333);
             this.btnConfirmDelivery.Name = "btnConfirmDelivery";
             this.btnConfirmDelivery.Size = new System.Drawing.Size(150, 50);
             this.btnConfirmDelivery.TabIndex = 111;
@@ -325,62 +377,13 @@
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(1402, 388);
+            this.btnCancel.Location = new System.Drawing.Point(1402, 333);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 112;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // colScheduledProjectDesign
-            // 
-            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
-            this.colScheduledProjectDesign.MinimumWidth = 100;
-            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
-            this.colScheduledProjectDesign.ReadOnly = true;
-            this.colScheduledProjectDesign.Visible = false;
-            this.colScheduledProjectDesign.Width = 148;
-            // 
-            // colScheduledProjectDesign_ProjectDesign
-            // 
-            this.colScheduledProjectDesign_ProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign_ProjectDesign.HeaderText = "SCHEDULED PROJECT DESIGNS TODAY";
-            this.colScheduledProjectDesign_ProjectDesign.Name = "colScheduledProjectDesign_ProjectDesign";
-            this.colScheduledProjectDesign_ProjectDesign.ReadOnly = true;
-            this.colScheduledProjectDesign_ProjectDesign.Width = 236;
-            // 
-            // colScheduledProjectDesign_ProjectDesign_Project
-            // 
-            this.colScheduledProjectDesign_ProjectDesign_Project.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign_ProjectDesign_Project.HeaderText = "PROJECT";
-            this.colScheduledProjectDesign_ProjectDesign_Project.MinimumWidth = 100;
-            this.colScheduledProjectDesign_ProjectDesign_Project.Name = "colScheduledProjectDesign_ProjectDesign_Project";
-            this.colScheduledProjectDesign_ProjectDesign_Project.ReadOnly = true;
-            // 
-            // ScheduledProjectDesign_AgentColumn
-            // 
-            this.ScheduledProjectDesign_AgentColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ScheduledProjectDesign_AgentColumn.HeaderText = "AGENT";
-            this.ScheduledProjectDesign_AgentColumn.Name = "ScheduledProjectDesign_AgentColumn";
-            this.ScheduledProjectDesign_AgentColumn.ReadOnly = true;
-            this.ScheduledProjectDesign_AgentColumn.Width = 83;
-            // 
-            // ScheduledProjectDesign_PurchaseOrderColumn
-            // 
-            this.ScheduledProjectDesign_PurchaseOrderColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ScheduledProjectDesign_PurchaseOrderColumn.HeaderText = "PO No.";
-            this.ScheduledProjectDesign_PurchaseOrderColumn.Name = "ScheduledProjectDesign_PurchaseOrderColumn";
-            this.ScheduledProjectDesign_PurchaseOrderColumn.ReadOnly = true;
-            this.ScheduledProjectDesign_PurchaseOrderColumn.Width = 77;
-            // 
-            // ScheduledProjectDesign_ExtraColumn
-            // 
-            this.ScheduledProjectDesign_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ScheduledProjectDesign_ExtraColumn.HeaderText = "";
-            this.ScheduledProjectDesign_ExtraColumn.Name = "ScheduledProjectDesign_ExtraColumn";
-            this.ScheduledProjectDesign_ExtraColumn.ReadOnly = true;
             // 
             // DeliveryForm
             // 

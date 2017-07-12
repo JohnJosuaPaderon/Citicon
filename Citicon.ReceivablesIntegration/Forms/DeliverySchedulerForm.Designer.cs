@@ -53,6 +53,12 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRemoveAll = new System.Windows.Forms.Button();
             this.btnRemoveSelected = new System.Windows.Forms.Button();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.UseRangedDateCheckBox = new System.Windows.Forms.CheckBox();
+            this.RangeEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.StructureTypeLabel = new System.Windows.Forms.Label();
+            this.StructureTypeComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
@@ -93,7 +99,7 @@
             this.dgvProjects.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProjects.EnableHeadersVisualStyles = false;
             this.dgvProjects.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.dgvProjects.Location = new System.Drawing.Point(11, 12);
+            this.dgvProjects.Location = new System.Drawing.Point(11, 71);
             this.dgvProjects.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvProjects.MultiSelect = false;
             this.dgvProjects.Name = "dgvProjects";
@@ -102,7 +108,7 @@
             this.dgvProjects.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvProjects.RowTemplate.Height = 40;
             this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjects.Size = new System.Drawing.Size(628, 415);
+            this.dgvProjects.Size = new System.Drawing.Size(628, 356);
             this.dgvProjects.TabIndex = 103;
             this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged);
             // 
@@ -188,11 +194,11 @@
             // 
             // dtpScheduledDate
             // 
-            this.dtpScheduledDate.CustomFormat = "MMMM dd, yyyy hh:mm tt";
+            this.dtpScheduledDate.CustomFormat = "MMMM dd, yyyy";
             this.dtpScheduledDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpScheduledDate.Location = new System.Drawing.Point(644, 36);
             this.dtpScheduledDate.Name = "dtpScheduledDate";
-            this.dtpScheduledDate.Size = new System.Drawing.Size(292, 29);
+            this.dtpScheduledDate.Size = new System.Drawing.Size(225, 29);
             this.dtpScheduledDate.TabIndex = 106;
             // 
             // dgvScheduledProjectDesign
@@ -333,12 +339,74 @@
             this.btnRemoveSelected.UseVisualStyleBackColor = false;
             this.btnRemoveSelected.Click += new System.EventHandler(this.btnRemoveSelected_Click);
             // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Location = new System.Drawing.Point(7, 12);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(172, 21);
+            this.SearchLabel.TabIndex = 113;
+            this.SearchLabel.Text = "Search Client or Project";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Location = new System.Drawing.Point(12, 36);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(626, 29);
+            this.SearchTextBox.TabIndex = 114;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
+            // UseRangedDateCheckBox
+            // 
+            this.UseRangedDateCheckBox.AutoSize = true;
+            this.UseRangedDateCheckBox.Location = new System.Drawing.Point(875, 11);
+            this.UseRangedDateCheckBox.Name = "UseRangedDateCheckBox";
+            this.UseRangedDateCheckBox.Size = new System.Drawing.Size(164, 25);
+            this.UseRangedDateCheckBox.TabIndex = 115;
+            this.UseRangedDateCheckBox.Text = "Use Range of Dates";
+            this.UseRangedDateCheckBox.UseVisualStyleBackColor = true;
+            this.UseRangedDateCheckBox.CheckedChanged += new System.EventHandler(this.UseRangedDateCheckBox_CheckedChanged);
+            // 
+            // RangeEndDateTimePicker
+            // 
+            this.RangeEndDateTimePicker.CustomFormat = "MMMM dd, yyyy";
+            this.RangeEndDateTimePicker.Enabled = false;
+            this.RangeEndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.RangeEndDateTimePicker.Location = new System.Drawing.Point(875, 36);
+            this.RangeEndDateTimePicker.Name = "RangeEndDateTimePicker";
+            this.RangeEndDateTimePicker.Size = new System.Drawing.Size(225, 29);
+            this.RangeEndDateTimePicker.TabIndex = 116;
+            // 
+            // StructureTypeLabel
+            // 
+            this.StructureTypeLabel.AutoSize = true;
+            this.StructureTypeLabel.Location = new System.Drawing.Point(1106, 12);
+            this.StructureTypeLabel.Name = "StructureTypeLabel";
+            this.StructureTypeLabel.Size = new System.Drawing.Size(109, 21);
+            this.StructureTypeLabel.TabIndex = 117;
+            this.StructureTypeLabel.Text = "Structure Type";
+            // 
+            // StructureTypeComboBox
+            // 
+            this.StructureTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.StructureTypeComboBox.FormattingEnabled = true;
+            this.StructureTypeComboBox.Location = new System.Drawing.Point(1106, 36);
+            this.StructureTypeComboBox.Name = "StructureTypeComboBox";
+            this.StructureTypeComboBox.Size = new System.Drawing.Size(235, 29);
+            this.StructureTypeComboBox.TabIndex = 118;
+            // 
             // DeliverySchedulerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1606, 818);
+            this.Controls.Add(this.StructureTypeComboBox);
+            this.Controls.Add(this.StructureTypeLabel);
+            this.Controls.Add(this.RangeEndDateTimePicker);
+            this.Controls.Add(this.UseRangedDateCheckBox);
+            this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.btnRemoveSelected);
             this.Controls.Add(this.btnRemoveAll);
             this.Controls.Add(this.btnSave);
@@ -383,5 +451,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign_Project;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.TextBox SearchTextBox;
+        private System.Windows.Forms.CheckBox UseRangedDateCheckBox;
+        private System.Windows.Forms.DateTimePicker RangeEndDateTimePicker;
+        private System.Windows.Forms.Label StructureTypeLabel;
+        private System.Windows.Forms.ComboBox StructureTypeComboBox;
     }
 }

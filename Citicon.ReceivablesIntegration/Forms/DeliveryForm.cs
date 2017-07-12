@@ -149,5 +149,10 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             Close();
         }
+
+        private void gbxProjectDesignDetails_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

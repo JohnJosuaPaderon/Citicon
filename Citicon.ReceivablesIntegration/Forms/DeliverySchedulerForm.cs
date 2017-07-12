@@ -2,6 +2,7 @@
 using Citicon.DataManager;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,7 +29,10 @@ namespace Citicon.ReceivablesIntegration.Forms
                     var scheduledDesign = new ScheduledProjectDesign()
                     {
                         Design = row.Cells[colScheduledProjectDesign.Name].Value as ProjectDesign,
-                        ScheduledDate = dtpScheduledDate.Value
+                        ScheduledDate = dtpScheduledDate.Value,
+                        UseRangeDate = UseRangedDateCheckBox.Checked,
+                        RangeEnd = RangeEndDateTimePicker.Value,
+                        StructureType = StructureTypeComboBox.SelectedItem as BillingStructureType
                     };
                     if (!await ScheduledProjectDesignManager.ExistsAsync(scheduledDesign))
                     {
@@ -202,6 +206,19 @@ namespace Citicon.ReceivablesIntegration.Forms
         private async void DeliverySchedulerForm_Load(object sender, EventArgs e)
         {
             await GetApprovedProjectListAsync();
+            await GetStructureTypeAsync();
+        }
+
+        private async Task GetStructureTypeAsync()
+        {
+            try
+            {
+                StructureTypeComboBox.Items.AddRange((await BillingStructureTypeManager.GetListAsync()).ToArray());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void dgvProjects_SelectionChanged(object sender, EventArgs e)
@@ -230,6 +247,29 @@ namespace Citicon.ReceivablesIntegration.Forms
         private async void btnSave_Click(object sender, EventArgs e)
         {
             await SaveSchedulesAsync();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var key = SearchTextBox.Text.Trim().ToUpper();
+
+            foreach (DataGridViewRow row in dgvProjects.Rows)
+            {
+                if (row.Cells[colProject.Name].Value is Project project)
+                {
+                    if (project.Name.ToUpper().Contains(key) || (project.Client?.CompanyName.ToUpper().Contains(key) ?? false))
+                    {
+                        dgvProjects.FirstDisplayedScrollingRowIndex = row.Index;
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void UseRangedDateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            RangeEndDateTimePicker.Enabled = UseRangedDateCheckBox.Checked;
         }
     }
 }
