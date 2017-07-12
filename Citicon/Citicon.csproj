@@ -559,7 +559,19 @@
     <Compile Include="Forms\Dialogs\AddTimeLogDialog.Designer.cs">
       <DependentUpon>AddTimeLogDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\ClientSearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ClientSearchDialog.Designer.cs">
+      <DependentUpon>ClientSearchDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\DataDialogMode.cs" />
+    <Compile Include="Forms\Dialogs\ProjectSearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ProjectSearchDialog.Designer.cs">
+      <DependentUpon>ProjectSearchDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\QuotationDialogMode.cs" />
     <Compile Include="Forms\DriverTripReportForm.cs">
       <SubType>Form</SubType>
@@ -732,6 +744,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\AddTimeLogDialog.resx">
       <DependentUpon>AddTimeLogDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ClientSearchDialog.resx">
+      <DependentUpon>ClientSearchDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ProjectSearchDialog.resx">
+      <DependentUpon>ProjectSearchDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DriverTripReportForm.resx">
       <DependentUpon>DriverTripReportForm.cs</DependentUpon>
