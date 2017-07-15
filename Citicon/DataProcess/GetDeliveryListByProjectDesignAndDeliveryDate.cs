@@ -51,7 +51,8 @@ namespace Citicon.DataProcess
                 Driver = await EmployeeManager.GetByIdAsync(reader.GetInt64("DriverId")),
                 PlantLeave = reader.GetDateTime("PlantLeave"),
                 PlantArrive = reader.GetDateTime("PlantArrive"),
-                Volume = reader.GetDecimal("Volume")
+                Volume = reader.GetDecimal("Volume"),
+                ServiceEngineer = await EmployeeManager.GetByIdAsync(reader.GetInt64("ServiceEngineerId"))
             };
         }
     }

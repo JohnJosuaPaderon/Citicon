@@ -17,6 +17,7 @@ namespace Citicon.DataProcess
         public ExportDeliveryReceipt(Delivery delivery)
         {
             Delivery = delivery ?? throw new ArgumentNullException(nameof(delivery));
+            PrintOption = ExportExcelPrintOption.Workbook;
         }
 
         public static string Template { get; private set; }
@@ -59,7 +60,7 @@ namespace Citicon.DataProcess
                 Worksheet.Cells[14, 6] = Delivery.Driver?.ToString();
                 Worksheet.Cells[16, 1] = Delivery.Project?.Location;
                 Worksheet.Cells[20, 2] = Delivery.ProjectDesign?.Strength?.ToString();
-                Worksheet.Cells[20, 4] = Delivery.ProjectDesign?.Psi.ToString("#,##0.00");
+                Worksheet.Cells[20, 4] = Delivery.ProjectDesign?.Psi.ToString("###0");
                 Worksheet.Cells[23, 4] = Delivery.ProjectDesign?.Aggregate?.ToString();
                 Worksheet.Cells[23, 8] = Delivery.MaxSlump;
                 Worksheet.Cells[28, 3] = Delivery.ProjectDesign?.MixType.ToString();

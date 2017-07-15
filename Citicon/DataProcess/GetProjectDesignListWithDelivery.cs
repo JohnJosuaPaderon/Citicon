@@ -41,7 +41,7 @@ namespace Citicon.DataProcess
                 PricePerCubicMeter = reader.GetDecimal("PricePerCubicMeter"),
                 Project = await ProjectManager.GetByIdAsync(reader.GetUInt64("ProjectId")),
                 Psi = reader.GetDecimal("Psi"),
-                Strength = ProductStrengthManager.GetById(reader.GetInt64("StrengthId")),
+                Strength = ProductStrengthManager.GetById(reader.GetInt64("StrengthId"))
             };
         }
     }

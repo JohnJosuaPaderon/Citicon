@@ -133,6 +133,7 @@ namespace Citicon.DataProcess
                             Worksheet.Cells[rowCounter, 6] = delivery.PlantArrive;
                             Worksheet.Cells[rowCounter, 7] = delivery.Volume;
                             Worksheet.Cells[rowCounter, 8] = string.Format("=H{0}+G{1}", rowCounter - 1, rowCounter);
+                            Worksheet.Cells[rowCounter, 9] = delivery.ServiceEngineer?.ToString();
                             rowCounter++;
                         }
 
