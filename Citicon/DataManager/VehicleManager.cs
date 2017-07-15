@@ -21,7 +21,7 @@ namespace Citicon.DataManager
         }
 
         public static async Task<Vehicle> GetByVehicleIdAsync(ulong id)
-        {
+         {
             Vehicle vehicle = null;
             foreach (var item in Vehicles)
             {
