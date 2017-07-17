@@ -79,7 +79,7 @@ namespace Citicon.Forms.Controls
             QuotationDateTextBox.Text = Quotation?.QuotationDate.ToString("MMMM dd, yyyy");
             StatusTextBox.Text = Quotation?.Status.ToString();
 
-            PrintButton.Enabled = Quotation?.Status == QuotationStatus.Approved;
+            PrintButton.Enabled = Quotation?.Status == QuotationStatus.Approved || Quotation?.Status == QuotationStatus.FinalApproved;
         }
 
         private void PrintButton_Click(object sender, EventArgs e)
@@ -119,6 +119,14 @@ namespace Citicon.Forms.Controls
             }
 
             return null;
+        }
+
+        private void ViewInWordButton_Click(object sender, EventArgs e)
+        {
+            if (!Supports.OpenFileQuotationFile(Quotation?.ToString()))
+            {
+                MessageBox.Show("Unable to view quotation");
+            }
         }
     }
 }
