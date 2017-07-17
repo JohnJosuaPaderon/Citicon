@@ -32,17 +32,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DailyTallySheetForm));
             this.SelectDateLabel = new System.Windows.Forms.Label();
             this.SelectDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.DeliveryDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProjectDesignDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProjectDesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProjectDesign_ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProjectDesign_Project_ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProjectDesign_BlankColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CancelPrintButton = new System.Windows.Forms.Button();
+            this.ExportButton = new System.Windows.Forms.Button();
             this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_LoadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_DeliveryReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,14 +58,8 @@
             this.Delivery_VolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_PlantLeaveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_PlantArriveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delivery_ServiceEngineerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_BlankColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProjectDesignDataGridView = new System.Windows.Forms.DataGridView();
-            this.ProjectDesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProjectDesign_ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProjectDesign_Project_ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProjectDesign_BlankColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CancelPrintButton = new System.Windows.Forms.Button();
-            this.ExportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDesignDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +132,7 @@
             this.Delivery_VolumeColumn,
             this.Delivery_PlantLeaveColumn,
             this.Delivery_PlantArriveColumn,
+            this.Delivery_ServiceEngineerColumn,
             this.Delivery_BlankColumn});
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
@@ -154,74 +156,6 @@
             this.DeliveryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DeliveryDataGridView.Size = new System.Drawing.Size(650, 681);
             this.DeliveryDataGridView.TabIndex = 123;
-            // 
-            // DeliveryColumn
-            // 
-            this.DeliveryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DeliveryColumn.HeaderText = "DESIGNS";
-            this.DeliveryColumn.MinimumWidth = 100;
-            this.DeliveryColumn.Name = "DeliveryColumn";
-            this.DeliveryColumn.ReadOnly = true;
-            this.DeliveryColumn.Visible = false;
-            // 
-            // Delivery_LoadColumn
-            // 
-            this.Delivery_LoadColumn.HeaderText = "LOAD";
-            this.Delivery_LoadColumn.Name = "Delivery_LoadColumn";
-            this.Delivery_LoadColumn.ReadOnly = true;
-            this.Delivery_LoadColumn.Width = 65;
-            // 
-            // Delivery_DeliveryReceiptNumber
-            // 
-            this.Delivery_DeliveryReceiptNumber.HeaderText = "DR NO.";
-            this.Delivery_DeliveryReceiptNumber.Name = "Delivery_DeliveryReceiptNumber";
-            this.Delivery_DeliveryReceiptNumber.ReadOnly = true;
-            this.Delivery_DeliveryReceiptNumber.Width = 70;
-            // 
-            // Delivery_TransitMixerColumn
-            // 
-            this.Delivery_TransitMixerColumn.HeaderText = "TRANSIT MIXER";
-            this.Delivery_TransitMixerColumn.Name = "Delivery_TransitMixerColumn";
-            this.Delivery_TransitMixerColumn.ReadOnly = true;
-            this.Delivery_TransitMixerColumn.Width = 113;
-            // 
-            // Delivery_DriverColumn
-            // 
-            this.Delivery_DriverColumn.HeaderText = "DRIVER";
-            this.Delivery_DriverColumn.Name = "Delivery_DriverColumn";
-            this.Delivery_DriverColumn.ReadOnly = true;
-            this.Delivery_DriverColumn.Width = 75;
-            // 
-            // Delivery_VolumeColumn
-            // 
-            this.Delivery_VolumeColumn.HeaderText = "VOLUME";
-            this.Delivery_VolumeColumn.Name = "Delivery_VolumeColumn";
-            this.Delivery_VolumeColumn.ReadOnly = true;
-            this.Delivery_VolumeColumn.Width = 84;
-            // 
-            // Delivery_PlantLeaveColumn
-            // 
-            dataGridViewCellStyle3.Format = "HH:mm";
-            this.Delivery_PlantLeaveColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Delivery_PlantLeaveColumn.HeaderText = "PLANT LEAVE";
-            this.Delivery_PlantLeaveColumn.Name = "Delivery_PlantLeaveColumn";
-            this.Delivery_PlantLeaveColumn.ReadOnly = true;
-            // 
-            // Delivery_PlantArriveColumn
-            // 
-            dataGridViewCellStyle4.Format = "HH:mm";
-            this.Delivery_PlantArriveColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Delivery_PlantArriveColumn.HeaderText = "PLANT ARRIVE";
-            this.Delivery_PlantArriveColumn.Name = "Delivery_PlantArriveColumn";
-            this.Delivery_PlantArriveColumn.ReadOnly = true;
-            this.Delivery_PlantArriveColumn.Width = 106;
-            // 
-            // Delivery_BlankColumn
-            // 
-            this.Delivery_BlankColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Delivery_BlankColumn.HeaderText = "";
-            this.Delivery_BlankColumn.Name = "Delivery_BlankColumn";
-            this.Delivery_BlankColumn.ReadOnly = true;
             // 
             // ProjectDesignDataGridView
             // 
@@ -341,6 +275,82 @@
             this.ExportButton.UseVisualStyleBackColor = false;
             this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
             // 
+            // DeliveryColumn
+            // 
+            this.DeliveryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DeliveryColumn.HeaderText = "DESIGNS";
+            this.DeliveryColumn.MinimumWidth = 100;
+            this.DeliveryColumn.Name = "DeliveryColumn";
+            this.DeliveryColumn.ReadOnly = true;
+            this.DeliveryColumn.Visible = false;
+            // 
+            // Delivery_LoadColumn
+            // 
+            this.Delivery_LoadColumn.HeaderText = "LOAD";
+            this.Delivery_LoadColumn.Name = "Delivery_LoadColumn";
+            this.Delivery_LoadColumn.ReadOnly = true;
+            this.Delivery_LoadColumn.Width = 65;
+            // 
+            // Delivery_DeliveryReceiptNumber
+            // 
+            this.Delivery_DeliveryReceiptNumber.HeaderText = "DR NO.";
+            this.Delivery_DeliveryReceiptNumber.Name = "Delivery_DeliveryReceiptNumber";
+            this.Delivery_DeliveryReceiptNumber.ReadOnly = true;
+            this.Delivery_DeliveryReceiptNumber.Width = 70;
+            // 
+            // Delivery_TransitMixerColumn
+            // 
+            this.Delivery_TransitMixerColumn.HeaderText = "TRANSIT MIXER";
+            this.Delivery_TransitMixerColumn.Name = "Delivery_TransitMixerColumn";
+            this.Delivery_TransitMixerColumn.ReadOnly = true;
+            this.Delivery_TransitMixerColumn.Width = 113;
+            // 
+            // Delivery_DriverColumn
+            // 
+            this.Delivery_DriverColumn.HeaderText = "DRIVER";
+            this.Delivery_DriverColumn.Name = "Delivery_DriverColumn";
+            this.Delivery_DriverColumn.ReadOnly = true;
+            this.Delivery_DriverColumn.Width = 75;
+            // 
+            // Delivery_VolumeColumn
+            // 
+            this.Delivery_VolumeColumn.HeaderText = "VOLUME";
+            this.Delivery_VolumeColumn.Name = "Delivery_VolumeColumn";
+            this.Delivery_VolumeColumn.ReadOnly = true;
+            this.Delivery_VolumeColumn.Width = 84;
+            // 
+            // Delivery_PlantLeaveColumn
+            // 
+            dataGridViewCellStyle3.Format = "HH:mm";
+            this.Delivery_PlantLeaveColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Delivery_PlantLeaveColumn.HeaderText = "PLANT LEAVE";
+            this.Delivery_PlantLeaveColumn.Name = "Delivery_PlantLeaveColumn";
+            this.Delivery_PlantLeaveColumn.ReadOnly = true;
+            // 
+            // Delivery_PlantArriveColumn
+            // 
+            dataGridViewCellStyle4.Format = "HH:mm";
+            this.Delivery_PlantArriveColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Delivery_PlantArriveColumn.HeaderText = "PLANT ARRIVE";
+            this.Delivery_PlantArriveColumn.Name = "Delivery_PlantArriveColumn";
+            this.Delivery_PlantArriveColumn.ReadOnly = true;
+            this.Delivery_PlantArriveColumn.Width = 106;
+            // 
+            // Delivery_ServiceEngineerColumn
+            // 
+            this.Delivery_ServiceEngineerColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delivery_ServiceEngineerColumn.HeaderText = "SERVICE ENGINEER";
+            this.Delivery_ServiceEngineerColumn.Name = "Delivery_ServiceEngineerColumn";
+            this.Delivery_ServiceEngineerColumn.ReadOnly = true;
+            this.Delivery_ServiceEngineerColumn.Width = 132;
+            // 
+            // Delivery_BlankColumn
+            // 
+            this.Delivery_BlankColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Delivery_BlankColumn.HeaderText = "";
+            this.Delivery_BlankColumn.Name = "Delivery_BlankColumn";
+            this.Delivery_BlankColumn.ReadOnly = true;
+            // 
             // DailyTallySheetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -378,6 +388,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_ProjectColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_Project_ClientColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_BlankColumn;
+        private System.Windows.Forms.Button CancelPrintButton;
+        private System.Windows.Forms.Button ExportButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_LoadColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_DeliveryReceiptNumber;
@@ -386,8 +398,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_VolumeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_PlantLeaveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_PlantArriveColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_ServiceEngineerColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Delivery_BlankColumn;
-        private System.Windows.Forms.Button CancelPrintButton;
-        private System.Windows.Forms.Button ExportButton;
     }
 }

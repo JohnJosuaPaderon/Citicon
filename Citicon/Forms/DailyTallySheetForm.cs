@@ -85,6 +85,7 @@ namespace Citicon.Forms
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.Volume });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.PlantLeave });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.PlantArrive });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = delivery.ServiceEngineer });
 
                 DeliveryDataGridView.Rows.Add(row);
             }
