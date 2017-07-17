@@ -168,6 +168,7 @@ namespace Citicon.Forms.Dialogs
 
         private void CancelDialogButton_Click(object sender, EventArgs e)
         {
+            Route = null;
             Close();
         }
     }
