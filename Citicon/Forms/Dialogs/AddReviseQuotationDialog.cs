@@ -91,6 +91,9 @@ namespace Citicon.Forms.Dialogs
             ProjectTextBox.Text = Quotation?.Project?.ToString();
             TermsRichTextBox.Rtf = Quotation?.NoteDetails;
             TypeComboBox.SelectedItem = Quotation?.Type;
+            VatExcludedCheckBox.Checked = Quotation?.VatExcluded != null;
+            PaymentTermComboBox.SelectedItem = Quotation.PaymentTerm;
+            VatExcludedNumericUpDown.Value = Quotation?.VatExcluded ?? 0;
         }
 
         private void LoadQuotationTypes()
@@ -281,6 +284,7 @@ namespace Citicon.Forms.Dialogs
             {
                 Quotation.Status = QuotationStatus.UnderNegotiation;
                 Quotation.InHouseAgent = InHouseAgentCheckBox.Checked;
+                Quotation.VatExcluded = VatExcludedCheckBox.Checked ? new decimal?(VatExcludedNumericUpDown.Value) : null;
                 if (ProjectDesignDataGridView.Rows.Count > 0)
                 {
                     var quotationTransaction = new QuotationTransaction(Quotation);
@@ -473,6 +477,11 @@ namespace Citicon.Forms.Dialogs
             {
                 AgentComboBox.Enabled = true;
             }
+        }
+
+        private void VatExcludedCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            VatExcludedNumericUpDown.Enabled = VatExcludedCheckBox.Checked;
         }
     }
 }

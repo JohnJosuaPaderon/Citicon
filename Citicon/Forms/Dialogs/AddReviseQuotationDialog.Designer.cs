@@ -64,9 +64,12 @@
             this.PaymentTermComboBox = new System.Windows.Forms.ComboBox();
             this.PaymentTermLabel = new System.Windows.Forms.Label();
             this.InHouseAgentCheckBox = new System.Windows.Forms.CheckBox();
+            this.VatExcludedCheckBox = new System.Windows.Forms.CheckBox();
+            this.VatExcludedNumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.EngineerIDNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDesignDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VatExcludedNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // QuotationNumberLabel
@@ -205,7 +208,7 @@
             // EngineerIDLabel
             // 
             this.EngineerIDLabel.AutoSize = true;
-            this.EngineerIDLabel.Location = new System.Drawing.Point(536, 111);
+            this.EngineerIDLabel.Location = new System.Drawing.Point(533, 115);
             this.EngineerIDLabel.Name = "EngineerIDLabel";
             this.EngineerIDLabel.Size = new System.Drawing.Size(75, 17);
             this.EngineerIDLabel.TabIndex = 14;
@@ -213,7 +216,7 @@
             // 
             // EngineerIDNumericUpDown
             // 
-            this.EngineerIDNumericUpDown.Location = new System.Drawing.Point(536, 134);
+            this.EngineerIDNumericUpDown.Location = new System.Drawing.Point(536, 137);
             this.EngineerIDNumericUpDown.Name = "EngineerIDNumericUpDown";
             this.EngineerIDNumericUpDown.Size = new System.Drawing.Size(171, 25);
             this.EngineerIDNumericUpDown.TabIndex = 15;
@@ -221,7 +224,7 @@
             // 
             // AmountNumericUpDown
             // 
-            this.AmountNumericUpDown.Location = new System.Drawing.Point(713, 134);
+            this.AmountNumericUpDown.Location = new System.Drawing.Point(1231, 36);
             this.AmountNumericUpDown.Name = "AmountNumericUpDown";
             this.AmountNumericUpDown.Size = new System.Drawing.Size(171, 25);
             this.AmountNumericUpDown.TabIndex = 17;
@@ -231,7 +234,7 @@
             // AmountLabel
             // 
             this.AmountLabel.AutoSize = true;
-            this.AmountLabel.Location = new System.Drawing.Point(713, 111);
+            this.AmountLabel.Location = new System.Drawing.Point(1231, 13);
             this.AmountLabel.Name = "AmountLabel";
             this.AmountLabel.Size = new System.Drawing.Size(53, 17);
             this.AmountLabel.TabIndex = 16;
@@ -422,7 +425,7 @@
             // 
             this.PaymentTermComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PaymentTermComboBox.FormattingEnabled = true;
-            this.PaymentTermComboBox.Location = new System.Drawing.Point(1091, 154);
+            this.PaymentTermComboBox.Location = new System.Drawing.Point(1091, 137);
             this.PaymentTermComboBox.Name = "PaymentTermComboBox";
             this.PaymentTermComboBox.Size = new System.Drawing.Size(348, 25);
             this.PaymentTermComboBox.TabIndex = 126;
@@ -431,7 +434,7 @@
             // PaymentTermLabel
             // 
             this.PaymentTermLabel.AutoSize = true;
-            this.PaymentTermLabel.Location = new System.Drawing.Point(1088, 131);
+            this.PaymentTermLabel.Location = new System.Drawing.Point(1088, 114);
             this.PaymentTermLabel.Name = "PaymentTermLabel";
             this.PaymentTermLabel.Size = new System.Drawing.Size(90, 17);
             this.PaymentTermLabel.TabIndex = 125;
@@ -448,6 +451,30 @@
             this.InHouseAgentCheckBox.UseVisualStyleBackColor = true;
             this.InHouseAgentCheckBox.CheckedChanged += new System.EventHandler(this.InHouseAgentCheckBox_CheckedChanged);
             // 
+            // VatExcludedCheckBox
+            // 
+            this.VatExcludedCheckBox.AutoSize = true;
+            this.VatExcludedCheckBox.Location = new System.Drawing.Point(713, 114);
+            this.VatExcludedCheckBox.Name = "VatExcludedCheckBox";
+            this.VatExcludedCheckBox.Size = new System.Drawing.Size(104, 21);
+            this.VatExcludedCheckBox.TabIndex = 128;
+            this.VatExcludedCheckBox.Text = "VAT Excluded";
+            this.VatExcludedCheckBox.UseVisualStyleBackColor = true;
+            this.VatExcludedCheckBox.CheckedChanged += new System.EventHandler(this.VatExcludedCheckBox_CheckedChanged);
+            // 
+            // VatExcludedNumericUpDown
+            // 
+            this.VatExcludedNumericUpDown.DecimalPlaces = 2;
+            this.VatExcludedNumericUpDown.Location = new System.Drawing.Point(713, 137);
+            this.VatExcludedNumericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.VatExcludedNumericUpDown.Name = "VatExcludedNumericUpDown";
+            this.VatExcludedNumericUpDown.Size = new System.Drawing.Size(171, 25);
+            this.VatExcludedNumericUpDown.TabIndex = 129;
+            // 
             // AddReviseQuotationDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -455,6 +482,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1451, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.VatExcludedNumericUpDown);
+            this.Controls.Add(this.VatExcludedCheckBox);
             this.Controls.Add(this.InHouseAgentCheckBox);
             this.Controls.Add(this.PaymentTermComboBox);
             this.Controls.Add(this.PaymentTermLabel);
@@ -497,6 +526,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.EngineerIDNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AmountNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDesignDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VatExcludedNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,5 +565,7 @@
         private System.Windows.Forms.ComboBox PaymentTermComboBox;
         private System.Windows.Forms.Label PaymentTermLabel;
         private System.Windows.Forms.CheckBox InHouseAgentCheckBox;
+        private System.Windows.Forms.CheckBox VatExcludedCheckBox;
+        private System.Windows.Forms.NumericUpDown VatExcludedNumericUpDown;
     }
 }
