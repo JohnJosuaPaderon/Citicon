@@ -46,7 +46,8 @@ namespace Citicon.DataProcess
                                     Status = QuotationStatusManager.Parse(reader.GetString("Status")),
                                     Cost = 0,
                                     Type = QuotationTypeConverter.Parse(reader.GetString("Type")),
-                                    Number = reader.GetUInt32("Number")
+                                    Number = reader.GetUInt32("Number"),
+                                    VatExcluded = reader.GetNullableDecimal("VatExcluded")
                                 };
                             }
 

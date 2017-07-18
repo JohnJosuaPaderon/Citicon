@@ -40,12 +40,12 @@ namespace Citicon.DataProcess
                                 {
                                     deliveries.Add(new Delivery
                                     {
-                                        CommulativeVolume = reader.GetDecimal("CommulativeVolume"),
+                                        CumulativeVolume = reader.GetDecimal("CommulativeVolume"),
                                         DeliveryDate = DeliveryDate,
                                         DeliveryReceiptNumber = reader.GetUInt64("DeliveryReceiptNumber"),
                                         Driver = await EmployeeManager.GetByIdAsync(reader.GetInt64("Driver")),
                                         Id = reader.GetUInt64("Id"),
-                                        Load = reader.GetString("Load"),
+                                        Load = reader.GetUInt32("Load"),
                                         PlantArrive = reader.GetNullableDateTime("PlantArrive"),
                                         PlantLeave = reader.GetNullableDateTime("PlantLeave"),
                                         Project = Project,

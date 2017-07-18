@@ -42,7 +42,8 @@ namespace Citicon.DataProcess
                                         QuotationDate = reader.GetDateTime("QuotationDate"),
                                         RevisionNumber = reader.GetUInt32("RevisionNumber"),
                                         NoteDetails = reader.GetString("NoteDetails"),
-                                        Type = QuotationTypeConverter.Parse(reader.GetString("Type"))
+                                        Type = QuotationTypeConverter.Parse(reader.GetString("Type")),
+                                        VatExcluded = reader.GetNullableDecimal("VatExcluded")
                                     });
                                 }
                             }

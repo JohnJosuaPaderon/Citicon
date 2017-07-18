@@ -37,7 +37,8 @@ namespace Citicon.DataProcess
                                         RevisionNumber = reader.GetUInt32("RevisionNumber"),
                                         Project = await ProjectManager.GetByIdAsync(reader.GetUInt64("ProjectId")),
                                         NoteDetails = reader.GetString("NoteDetails"),
-                                        Type = QuotationTypeConverter.Parse(reader.GetString("Type"))
+                                        Type = QuotationTypeConverter.Parse(reader.GetString("Type")),
+                                        VatExcluded = reader.GetNullableDecimal("VatExcluded")
                                     });
                                 }
                             }

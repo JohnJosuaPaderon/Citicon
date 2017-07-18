@@ -38,6 +38,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_ServiceEngineerId", Delivery.ServiceEngineer?.Id);
             command.Parameters.AddWithValue("@_Admixture", Delivery.Admixture);
             command.Parameters.AddWithValue("@_AdmixtureQuantity", Delivery.AdmixtureQuantity);
+            command.Parameters.AddWithValue("@_CumulativeVolume", Delivery.CumulativeVolume);
 
             return command;
         }

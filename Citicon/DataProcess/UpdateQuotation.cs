@@ -30,6 +30,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_Number", Quotation.Number);
             command.Parameters.AddWithValue("@_PaymentTermId", Quotation.PaymentTerm?.Id);
             command.Parameters.AddWithValue("@_InHouseAgent", Quotation.InHouseAgent);
+            command.Parameters.AddWithValue("@_VatExcluded", Quotation.VatExcluded);
 
             return command;
         }
