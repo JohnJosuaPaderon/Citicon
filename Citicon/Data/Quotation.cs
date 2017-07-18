@@ -21,6 +21,7 @@ namespace Citicon.Data
         public uint Number { get; set; }
         public bool InHouseAgent { get; set; }
         public PaymentTerm PaymentTerm { get; set; }
+        public decimal? VatExcluded { get; set; }
 
         public static bool operator ==(Quotation left, Quotation right)
         {
