@@ -13,6 +13,7 @@ namespace Citicon.ReceivablesIntegration.Forms
     {
         private IEnumerable<Client> Clients { get; set; }
         private IEnumerable<Project> Projects { get; set; }
+        private User Verifier;
 
         public PurchaseOrderManagementForm()
         {
@@ -110,7 +111,10 @@ namespace Citicon.ReceivablesIntegration.Forms
                         {
                             Project = project,
                             Number = purchaseOrderNumber,
-                            MaximumCumulativePricePerCubicMeter = nudMaximumCumulativePricePerCubicMeter.Value
+                            MaximumCumulativePricePerCubicMeter = nudMaximumCumulativePricePerCubicMeter.Value,
+                            Creator = User.CurrentUser,
+                            Verifier = Verifier
+
                         };
                         var purchaseOrderTransaction = new PurchaseOrderTransaction()
                         {
@@ -264,7 +268,16 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private async void BtnSave_Click(object sender, EventArgs e)
         {
-            await SaveAsync();
+            var verification = UserVerificationDialog.VerifyOther();
+            if (verification.Verified)
+            {
+                Verifier = verification.Verifier;
+                await SaveAsync();
+            }
+            else
+            {
+                MessageBox.Show("User is not verified and Purchase Order will not be saved.");
+            }
         }
 
         private void SearchClientButton_Click(object sender, EventArgs e)
