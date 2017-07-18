@@ -22,7 +22,7 @@ namespace Citicon.DesktopClient.Common
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            UserManager.LoginCurrent(tbxUsername.Text, tbxPassword.Password);
+            UserManager.Login(tbxUsername.Text, tbxPassword.Password);
 
             if (User.CurrentUser == null)
             {

@@ -42,16 +42,6 @@ namespace Citicon.QuotationApplication
             }
         }
 
-        private PurchaseOrderManagementForm PurchaseOrderManagementForm
-        {
-            get
-            {
-                var form = new PurchaseOrderManagementForm() { MdiParent = this };
-                form.FormClosed += (s, e) => form = null;
-                return form;
-            }
-        }
-
         private void OpenMdiChild(Form form)
         {
             if (ActiveMdiChild != null && ActiveMdiChild.GetType() == form.GetType())
@@ -87,11 +77,6 @@ namespace Citicon.QuotationApplication
         private void DeliverySchedulerButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DeliverySchedulerForm);
-        }
-
-        private void PurchaseOrderButton_Click(object sender, EventArgs e)
-        {
-            OpenMdiChild(PurchaseOrderManagementForm);
         }
     }
 }
