@@ -152,7 +152,7 @@
             this.QuotationView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.QuotationView.Name = "QuotationView";
             this.QuotationView.Quotation = null;
-            this.QuotationView.Size = new System.Drawing.Size(385, 672);
+            this.QuotationView.Size = new System.Drawing.Size(385, 673);
             this.QuotationView.TabIndex = 116;
             // 
             // AddNewButton

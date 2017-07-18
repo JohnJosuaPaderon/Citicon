@@ -24,7 +24,7 @@ namespace Citicon.Forms
 
         private void login()
         {
-            userManager.Login(tbxUsername.Text, tbxPassword.Text);
+            userManager.LoginCurrent(tbxUsername.Text, tbxPassword.Text);
             if (User.CurrentUser != null)
             {
                 if (User.CurrentUser.Active)

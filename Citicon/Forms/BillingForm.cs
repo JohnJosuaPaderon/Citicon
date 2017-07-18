@@ -372,7 +372,7 @@ namespace Citicon.Forms
                         new DataGridViewTextBoxCell { Value = item.DeliveryReceiptNumber },
                         new DataGridViewTextBoxCell { Value = item.PricePerCubicMeter },
                         new DataGridViewTextBoxCell { Value = item.Volume },
-                        new DataGridViewTextBoxCell { Value = item.CommulativeVolume });
+                        new DataGridViewTextBoxCell { Value = item.CumulativeVolume });
                     rows.Add(row);
                 }
 
