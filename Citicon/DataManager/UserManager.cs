@@ -138,7 +138,7 @@ namespace Citicon.DataManager
             return Task.Factory.StartNew(GetList);
         }
 
-        public void Login(string username, string password)
+        public void LoginCurrent(string username, string password)
         {
             using (var query = new MySqlQuery(Supports.ConnectionString, "_users_login"))
             {
@@ -146,6 +146,17 @@ namespace Citicon.DataManager
                 query.AddParameter("@_Password", Supports.Encrypt(password));
                 query.ExceptionCatched += OnExceptionCatched;
                 User.CurrentUser = ExtractFromDictionary(query.GetRecord());
+            }
+        }
+
+        public User Login(string username, string password)
+        {
+            using (var query = new MySqlQuery(Supports.ConnectionString, "_users_login"))
+            {
+                query.AddParameter("@_Username", Supports.Encrypt(username));
+                query.AddParameter("@_Password", Supports.Encrypt(password));
+                query.ExceptionCatched += OnExceptionCatched;
+                return ExtractFromDictionary(query.GetRecord());
             }
         }
 

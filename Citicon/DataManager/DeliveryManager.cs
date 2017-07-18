@@ -68,12 +68,12 @@ namespace Citicon.DataManager
         {
             return new Delivery()
             {
-                CommulativeVolume= dataReader.GetDecimal("CommulativeVolume"),
+                CumulativeVolume= dataReader.GetDecimal("CommulativeVolume"),
                 DeliveryDate = dataReader.GetDateTime("DeliveryDate"),
                 DeliveryReceiptNumber = dataReader.GetUInt64("DeliveryReceiptNumber"),
                 Driver = await EmployeeManager.GetByIdAsync(dataReader.GetInt64("Driver")),
                 Id = dataReader.GetUInt64("Id"),
-                Load = dataReader.GetString("Load"),
+                Load = dataReader.GetUInt32("Load"),
                 PlantLeave = dataReader.GetNullableDateTime("PlantLeave"),
                 PlantArrive = dataReader.GetNullableDateTime("PlantArrived"),
                 Project = await ProjectManager.GetByIdAsync(dataReader.GetUInt64("ProjectId")),
