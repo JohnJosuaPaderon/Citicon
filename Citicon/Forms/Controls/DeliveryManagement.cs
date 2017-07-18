@@ -257,8 +257,6 @@ namespace Citicon.Forms.Controls
             SetDeliveryPlantLeave();
             SetDeliveryRoute();
             SetDeliveryTransitMixer();
-            SetDeliveryLoad();
-            SetDeliveryMaxSlump();
 
             Delivery.Project = ProjectDesign.Project;
             Delivery.ProjectDesign = ProjectDesign;
@@ -307,6 +305,8 @@ namespace Citicon.Forms.Controls
                 Delivery.ServiceEngineer = ServiceEngineerComboBox.SelectedItem as Employee;
                 Delivery.PricePerCubicMeter = ProjectDesign?.PricePerCubicMeter ?? 0;
                 Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityTextBox.Text;
+                Delivery.Load = Convert.ToUInt32(LoadNumericUpDown.Value);
+                Delivery.CumulativeVolume = CumulativeVolumeNumericUpDown.Value;
                 var delivery = await DeliveryManager.InsertAsync(Delivery);
                 if (delivery != null)
                 {
@@ -429,33 +429,6 @@ namespace Citicon.Forms.Controls
             if (Delivery.PlantLeave != Delivery_PlantLeaveDateTimePicker.Value)
             {
                 Delivery.PlantLeave = Delivery_PlantLeaveDateTimePicker.Value;
-            }
-        }
-
-        private void Delivery_LoadNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            SetDeliveryLoad();
-        }
-
-        private void SetDeliveryLoad()
-        {
-            var load = Delivery_LoadNumericUpDown.Value.ToString("00");
-            if (Delivery.Load != load)
-            {
-                Delivery.Load = load;
-            }
-        }
-
-        private void Delivery_MaxSlumpNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            SetDeliveryMaxSlump();
-        }
-
-        private void SetDeliveryMaxSlump()
-        {
-            if (Delivery.MaxSlump != Delivery_MaxSlumpNumericUpDown.Value)
-            {
-                Delivery.MaxSlump = Delivery_MaxSlumpNumericUpDown.Value;
             }
         }
 

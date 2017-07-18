@@ -45,8 +45,8 @@ namespace Citicon.Forms.Controls
             AdmixtureTextBox.Text = value?.Admixture;
             AdmixtureQuantityTextBox.Text = value?.AdmixtureQuantity;
             PlantLeaveTextBox.Text = value?.PlantLeave?.ToString("MMM d, yyyy");
-            LoadTextBox.Text = value?.Load;
-            MaxSlumpTextBox.Text = value?.MaxSlump.ToString("#,##0.00");
+            LoadTextBox.Text = value?.Load.ToString();
+            MaxSlumpTextBox.Text = value?.MaxSlump;
             ProjectArriveCheckBox.Checked = false;
             PlantArriveCheckBox.Checked = false;
             StartUnloadingCheckBox.Checked = false;
