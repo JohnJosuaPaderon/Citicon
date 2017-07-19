@@ -15,13 +15,17 @@ namespace Citicon.Data
 
         public override string ToString()
         {
-            if (Start.Month == End.Month)
+            if (Start.Date == End.Date)
             {
-                return string.Format("{0:MMMM} {0:dd}-{1:dd}, {0:yyyy}", Start, End);
+                return string.Format("{0:MMMM dd, yyyy}", Start);
+            }
+            else if (Start.Month == End.Month)
+            {
+                return string.Format("{0:MMM} {0:dd}-{1:dd}, {0:yyyy}", Start, End);
             }
             else
             {
-                return string.Concat(Start.ToString("MMMM dd, yyyy"), " - ", End.ToString("MMMM dd, yyyy"));
+                return string.Concat(Start.ToString("MMM dd, yyyy"), " - ", End.ToString("MMM dd, yyyy"));
             }
         }
     }
