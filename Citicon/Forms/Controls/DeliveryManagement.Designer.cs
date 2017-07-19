@@ -54,6 +54,11 @@
             this.Design_MixTypeTextBox = new System.Windows.Forms.TextBox();
             this.Design_MixTypeLabel = new System.Windows.Forms.Label();
             this.DeliveryGroupBox = new System.Windows.Forms.GroupBox();
+            this.CumulativeVolumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CumulativeVolumeLabel = new System.Windows.Forms.Label();
+            this.LoadNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.LoadLabel = new System.Windows.Forms.Label();
+            this.MaxSlumpTextBox = new System.Windows.Forms.TextBox();
             this.NewRouteButton = new System.Windows.Forms.Button();
             this.Delivery_AdmixtureQuantityTextBox = new System.Windows.Forms.TextBox();
             this.ServiceEngineerComboBox = new System.Windows.Forms.ComboBox();
@@ -86,17 +91,14 @@
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel = new System.Windows.Forms.Label();
             this.PurchaseOrderWarningTimer = new System.Windows.Forms.Timer(this.components);
             this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
-            this.MaxSlumpTextBox = new System.Windows.Forms.TextBox();
-            this.LoadNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.LoadLabel = new System.Windows.Forms.Label();
-            this.CumulativeVolumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.CumulativeVolumeLabel = new System.Windows.Forms.Label();
+            this.MaxScheduledVolumeTextBox = new System.Windows.Forms.TextBox();
+            this.MaxScheduledVolumeLabel = new System.Windows.Forms.Label();
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LoadNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CumulativeVolumeNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // DeliveryReceiptNumberLabel
@@ -380,6 +382,60 @@
             this.DeliveryGroupBox.TabIndex = 4;
             this.DeliveryGroupBox.TabStop = false;
             this.DeliveryGroupBox.Text = "DELIVERY DETAILS";
+            // 
+            // CumulativeVolumeNumericUpDown
+            // 
+            this.CumulativeVolumeNumericUpDown.DecimalPlaces = 2;
+            this.CumulativeVolumeNumericUpDown.Location = new System.Drawing.Point(495, 90);
+            this.CumulativeVolumeNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.CumulativeVolumeNumericUpDown.Name = "CumulativeVolumeNumericUpDown";
+            this.CumulativeVolumeNumericUpDown.Size = new System.Drawing.Size(237, 25);
+            this.CumulativeVolumeNumericUpDown.TabIndex = 137;
+            this.CumulativeVolumeNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.CumulativeVolumeNumericUpDown.ThousandsSeparator = true;
+            // 
+            // CumulativeVolumeLabel
+            // 
+            this.CumulativeVolumeLabel.AutoSize = true;
+            this.CumulativeVolumeLabel.Location = new System.Drawing.Point(492, 70);
+            this.CumulativeVolumeLabel.Name = "CumulativeVolumeLabel";
+            this.CumulativeVolumeLabel.Size = new System.Drawing.Size(118, 17);
+            this.CumulativeVolumeLabel.TabIndex = 136;
+            this.CumulativeVolumeLabel.Text = "Cumulative Volume";
+            // 
+            // LoadNumericUpDown
+            // 
+            this.LoadNumericUpDown.Location = new System.Drawing.Point(252, 199);
+            this.LoadNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.LoadNumericUpDown.Name = "LoadNumericUpDown";
+            this.LoadNumericUpDown.Size = new System.Drawing.Size(88, 25);
+            this.LoadNumericUpDown.TabIndex = 135;
+            this.LoadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.LoadNumericUpDown.ThousandsSeparator = true;
+            // 
+            // LoadLabel
+            // 
+            this.LoadLabel.AutoSize = true;
+            this.LoadLabel.Location = new System.Drawing.Point(249, 179);
+            this.LoadLabel.Name = "LoadLabel";
+            this.LoadLabel.Size = new System.Drawing.Size(37, 17);
+            this.LoadLabel.TabIndex = 134;
+            this.LoadLabel.Text = "Load";
+            // 
+            // MaxSlumpTextBox
+            // 
+            this.MaxSlumpTextBox.Location = new System.Drawing.Point(346, 199);
+            this.MaxSlumpTextBox.Name = "MaxSlumpTextBox";
+            this.MaxSlumpTextBox.Size = new System.Drawing.Size(143, 25);
+            this.MaxSlumpTextBox.TabIndex = 133;
             // 
             // NewRouteButton
             // 
@@ -672,7 +728,7 @@
             // PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox
             // 
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.BackColor = System.Drawing.Color.White;
-            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Location = new System.Drawing.Point(262, 69);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Location = new System.Drawing.Point(615, 69);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Name = "PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox";
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.ReadOnly = true;
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Size = new System.Drawing.Size(246, 25);
@@ -682,7 +738,7 @@
             // PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel
             // 
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.AutoSize = true;
-            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Location = new System.Drawing.Point(259, 49);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Location = new System.Drawing.Point(612, 49);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Name = "PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel";
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Size = new System.Drawing.Size(177, 17);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.TabIndex = 120;
@@ -709,65 +765,31 @@
             this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
             this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
             // 
-            // MaxSlumpTextBox
+            // MaxScheduledVolumeTextBox
             // 
-            this.MaxSlumpTextBox.Location = new System.Drawing.Point(346, 199);
-            this.MaxSlumpTextBox.Name = "MaxSlumpTextBox";
-            this.MaxSlumpTextBox.Size = new System.Drawing.Size(143, 25);
-            this.MaxSlumpTextBox.TabIndex = 133;
+            this.MaxScheduledVolumeTextBox.BackColor = System.Drawing.Color.White;
+            this.MaxScheduledVolumeTextBox.Location = new System.Drawing.Point(262, 69);
+            this.MaxScheduledVolumeTextBox.Name = "MaxScheduledVolumeTextBox";
+            this.MaxScheduledVolumeTextBox.ReadOnly = true;
+            this.MaxScheduledVolumeTextBox.Size = new System.Drawing.Size(246, 25);
+            this.MaxScheduledVolumeTextBox.TabIndex = 123;
             // 
-            // LoadNumericUpDown
+            // MaxScheduledVolumeLabel
             // 
-            this.LoadNumericUpDown.Location = new System.Drawing.Point(252, 199);
-            this.LoadNumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.LoadNumericUpDown.Name = "LoadNumericUpDown";
-            this.LoadNumericUpDown.Size = new System.Drawing.Size(88, 25);
-            this.LoadNumericUpDown.TabIndex = 135;
-            this.LoadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.LoadNumericUpDown.ThousandsSeparator = true;
-            // 
-            // LoadLabel
-            // 
-            this.LoadLabel.AutoSize = true;
-            this.LoadLabel.Location = new System.Drawing.Point(249, 179);
-            this.LoadLabel.Name = "LoadLabel";
-            this.LoadLabel.Size = new System.Drawing.Size(37, 17);
-            this.LoadLabel.TabIndex = 134;
-            this.LoadLabel.Text = "Load";
-            // 
-            // CumulativeVolumeNumericUpDown
-            // 
-            this.CumulativeVolumeNumericUpDown.DecimalPlaces = 2;
-            this.CumulativeVolumeNumericUpDown.Location = new System.Drawing.Point(495, 90);
-            this.CumulativeVolumeNumericUpDown.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.CumulativeVolumeNumericUpDown.Name = "CumulativeVolumeNumericUpDown";
-            this.CumulativeVolumeNumericUpDown.Size = new System.Drawing.Size(237, 25);
-            this.CumulativeVolumeNumericUpDown.TabIndex = 137;
-            this.CumulativeVolumeNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.CumulativeVolumeNumericUpDown.ThousandsSeparator = true;
-            // 
-            // CumulativeVolumeLabel
-            // 
-            this.CumulativeVolumeLabel.AutoSize = true;
-            this.CumulativeVolumeLabel.Location = new System.Drawing.Point(492, 70);
-            this.CumulativeVolumeLabel.Name = "CumulativeVolumeLabel";
-            this.CumulativeVolumeLabel.Size = new System.Drawing.Size(118, 17);
-            this.CumulativeVolumeLabel.TabIndex = 136;
-            this.CumulativeVolumeLabel.Text = "Cumulative Volume";
+            this.MaxScheduledVolumeLabel.AutoSize = true;
+            this.MaxScheduledVolumeLabel.Location = new System.Drawing.Point(259, 49);
+            this.MaxScheduledVolumeLabel.Name = "MaxScheduledVolumeLabel";
+            this.MaxScheduledVolumeLabel.Size = new System.Drawing.Size(147, 17);
+            this.MaxScheduledVolumeLabel.TabIndex = 122;
+            this.MaxScheduledVolumeLabel.Text = "Max. Scheduled Volume";
             // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.MaxScheduledVolumeTextBox);
+            this.Controls.Add(this.MaxScheduledVolumeLabel);
             this.Controls.Add(this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox);
             this.Controls.Add(this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel);
             this.Controls.Add(this.PurchaseOrder_MaximumVolumeTextBox);
@@ -794,9 +816,9 @@
             this.DesignGroupBox.PerformLayout();
             this.DeliveryGroupBox.ResumeLayout(false);
             this.DeliveryGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LoadNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CumulativeVolumeNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LoadNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Delivery_DeliveredVolumeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -866,5 +888,7 @@
         private System.Windows.Forms.TextBox MaxSlumpTextBox;
         private System.Windows.Forms.NumericUpDown CumulativeVolumeNumericUpDown;
         private System.Windows.Forms.Label CumulativeVolumeLabel;
+        private System.Windows.Forms.TextBox MaxScheduledVolumeTextBox;
+        private System.Windows.Forms.Label MaxScheduledVolumeLabel;
     }
 }

@@ -17,12 +17,14 @@ namespace Citicon.Forms.Controls
             RouteManager = new DeliveryRouteManager();
             TransitMixerManager = new TransitMixerManager();
             BranchManager = new BranchManager();
+            ScheduledProjectDesignManager = new ScheduledProjectDesignManager();
         }
 
         public event EventHandler CloseDialogRequested;
         private DeliveryRouteManager RouteManager;
         private BranchManager BranchManager;
         private TransitMixerManager TransitMixerManager;
+        private ScheduledProjectDesignManager ScheduledProjectDesignManager;
 
         private ulong LatestDeliveryReceiptNumber { get; set; }
         public Delivery Delivery { get; private set; }
@@ -184,6 +186,21 @@ namespace Citicon.Forms.Controls
             }
         }
 
+        private async Task GetMaxScheduledVolumeAsync()
+        {
+            MaxScheduledVolumeTextBox.Text = "No Max. Scheduled Volume";
+
+            try
+            {
+                var maxVolume = await ScheduledProjectDesignManager.GetMaximumVolumeByProjectDesignAndDeliveryDateAsync(ProjectDesign, Delivery_DeliveryDateTimePicker.Value);
+                MaxScheduledVolumeTextBox.Text = maxVolume.ToString("#,##0.00");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private async Task GetTransitMixerListAsync()
         {
             Delivery_TransitMixerComboBox.Items.Clear();
@@ -249,6 +266,7 @@ namespace Citicon.Forms.Controls
             await GetBranchListAsync();
             await GetPurchaseOrderAsync();
             await GetLatestDeliveryReceiptNumberAsync();
+            await GetMaxScheduledVolumeAsync();
             SetDeliveryAdmixture();
             SetDeliveryAdmixtureQuantity();
             SetDeliveryDeliveredVolume();
