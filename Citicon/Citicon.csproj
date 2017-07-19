@@ -108,6 +108,7 @@
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
+    <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="DataProcess\GetHolidayTypeList.cs" />
     <Compile Include="DataProcess\GetJobPositionList.cs" />
     <Compile Include="DataProcess\GetLatestDeliveryReceiptNumber.cs" />
+    <Compile Include="DataProcess\GetMaximumScheduledVolumeByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetMinifiedEmployeeList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
@@ -335,6 +337,7 @@
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
     <Compile Include="Data\EmployeePayroll.cs" />
+    <Compile Include="Data\EmployeeTimeLogList.cs" />
     <Compile Include="Data\EmploymentStatus.cs" />
     <Compile Include="Data\ExcessPipeCharge.cs" />
     <Compile Include="Data\Expense.cs" />
@@ -382,6 +385,7 @@
     <Compile Include="Data\TallySheetItem.cs" />
     <Compile Include="Data\TallySheetReport.cs" />
     <Compile Include="Data\TimeLog.cs" />
+    <Compile Include="Data\TimeLogReport.cs" />
     <Compile Include="Data\TimeLogType.cs" />
     <Compile Include="Data\Transaction.cs" />
     <Compile Include="Data\TransitMixer.cs" />
