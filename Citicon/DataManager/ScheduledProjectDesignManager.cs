@@ -51,6 +51,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public async Task<decimal> GetMaximumVolumeByProjectDesignAndDeliveryDateAsync(ProjectDesign projectDesign, DateTime deliveryDate)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new GetMaximumScheduledVolumeByProjectDesignAndDeliveryDate(projectDesign, deliveryDate))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public async Task<IEnumerable<ScheduledProjectDesign>> GetListAsync(DateTime scheduledDate, ScheduledProjectDesignStatus status)
         {
             if (scheduledDate.Date != default(DateTime).Date && status != null)

@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Citicon.DataManager
@@ -208,6 +209,23 @@ namespace Citicon.DataManager
             else
             {
                 return null;
+            }
+        }
+
+        public static async Task<bool> ExportTimeLogReportAsync(TimeLogReport data)
+        {
+            if (data != null)
+            {
+                using (var process = new ExportTimeLogReport(data))
+                {
+                    await process.ExecuteAsync();
+
+                    return File.Exists(process.FilePath);
+                }
+            }
+            else
+            {
+                return false;
             }
         }
 
