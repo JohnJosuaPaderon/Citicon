@@ -28,6 +28,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_UseRangeDate", ScheduledDesign.UseRangeDate);
             command.Parameters.AddWithValue("@_RangeEnd", ScheduledDesign.RangeEnd);
             command.Parameters.AddWithValue("@_StructureTypeId", ScheduledDesign.StructureType?.Id);
+            command.Parameters.AddWithValue("@_MaximumVolume", ScheduledDesign.MaximumVolume);
 
             return command;
         }
