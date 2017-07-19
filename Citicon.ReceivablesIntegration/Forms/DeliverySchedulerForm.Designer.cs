@@ -59,9 +59,12 @@
             this.RangeEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.StructureTypeLabel = new System.Windows.Forms.Label();
             this.StructureTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ProjectDesignMaxVolumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ProjectDesignMaxVolumeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDesignMaxVolumeNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProjects
@@ -395,12 +398,39 @@
             this.StructureTypeComboBox.Size = new System.Drawing.Size(235, 29);
             this.StructureTypeComboBox.TabIndex = 118;
             // 
+            // ProjectDesignMaxVolumeNumericUpDown
+            // 
+            this.ProjectDesignMaxVolumeNumericUpDown.DecimalPlaces = 2;
+            this.ProjectDesignMaxVolumeNumericUpDown.Location = new System.Drawing.Point(281, 769);
+            this.ProjectDesignMaxVolumeNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.ProjectDesignMaxVolumeNumericUpDown.Name = "ProjectDesignMaxVolumeNumericUpDown";
+            this.ProjectDesignMaxVolumeNumericUpDown.Size = new System.Drawing.Size(214, 29);
+            this.ProjectDesignMaxVolumeNumericUpDown.TabIndex = 119;
+            this.ProjectDesignMaxVolumeNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ProjectDesignMaxVolumeNumericUpDown.ThousandsSeparator = true;
+            // 
+            // ProjectDesignMaxVolumeLabel
+            // 
+            this.ProjectDesignMaxVolumeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProjectDesignMaxVolumeLabel.AutoSize = true;
+            this.ProjectDesignMaxVolumeLabel.Location = new System.Drawing.Point(204, 771);
+            this.ProjectDesignMaxVolumeLabel.Name = "ProjectDesignMaxVolumeLabel";
+            this.ProjectDesignMaxVolumeLabel.Size = new System.Drawing.Size(71, 21);
+            this.ProjectDesignMaxVolumeLabel.TabIndex = 120;
+            this.ProjectDesignMaxVolumeLabel.Text = "Max. Vol.";
+            // 
             // DeliverySchedulerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1606, 818);
+            this.Controls.Add(this.ProjectDesignMaxVolumeLabel);
+            this.Controls.Add(this.ProjectDesignMaxVolumeNumericUpDown);
             this.Controls.Add(this.StructureTypeComboBox);
             this.Controls.Add(this.StructureTypeLabel);
             this.Controls.Add(this.RangeEndDateTimePicker);
@@ -429,6 +459,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDesignMaxVolumeNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,5 +488,7 @@
         private System.Windows.Forms.DateTimePicker RangeEndDateTimePicker;
         private System.Windows.Forms.Label StructureTypeLabel;
         private System.Windows.Forms.ComboBox StructureTypeComboBox;
+        private System.Windows.Forms.NumericUpDown ProjectDesignMaxVolumeNumericUpDown;
+        private System.Windows.Forms.Label ProjectDesignMaxVolumeLabel;
     }
 }

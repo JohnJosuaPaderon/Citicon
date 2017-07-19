@@ -88,9 +88,7 @@ namespace Citicon.ReceivablesIntegration.Forms
 
             if (dgvProjects.SelectedRows.Count == 1)
             {
-                var project = dgvProjects.SelectedRows[0].Cells[colProject.Name].Value as Project;
-
-                if (project != null)
+                if (dgvProjects.SelectedRows[0].Cells[colProject.Name].Value is Project project)
                 {
                     try
                     {
@@ -120,10 +118,13 @@ namespace Citicon.ReceivablesIntegration.Forms
 
                 if (projectDesign != null)
                 {
-                    var scheduledDesign = new ScheduledProjectDesign();
-                    scheduledDesign.Design = projectDesign;
-                    scheduledDesign.ScheduledDate = dtpScheduledDate.Value;
-
+                    var scheduledDesign = new ScheduledProjectDesign()
+                    {
+                        Design = projectDesign,
+                        ScheduledDate = dtpScheduledDate.Value,
+                        RangeEnd = RangeEndDateTimePicker.Value,
+                        UseRangeDate = UseRangedDateCheckBox.Checked
+                    };
                     if (await ScheduledDesignExistsAsync(scheduledDesign))
                     {
                         MessageBox.Show("Schedule already exists!");
@@ -144,9 +145,10 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             if (project != null)
             {
-                var row = new DataGridViewRow();
-                row.Height = 30;
-
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = project });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = project.Client });
 
@@ -158,9 +160,10 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             if (projectDesign != null)
             {
-                var row = new DataGridViewRow();
-                row.Height = 30;
-
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign });
 
                 dgvProjectDesign.Rows.Add(row);
@@ -193,9 +196,10 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             if (design != null)
             {
-                var row = new DataGridViewRow();
-                row.Height = 30;
-
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = design });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = design.Project });
 
