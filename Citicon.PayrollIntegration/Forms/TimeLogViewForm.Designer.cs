@@ -67,6 +67,7 @@
             this.FilterByEmployeePositionCheckBox = new System.Windows.Forms.CheckBox();
             this.FilterByPayrollTypeCheckBox = new System.Windows.Forms.CheckBox();
             this.PayrollTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ExportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimeLogDataGridView)).BeginInit();
             this.TimeLogDetailsGroupBox.SuspendLayout();
@@ -118,7 +119,7 @@
             this.EmployeeDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.EmployeeDataGridView.RowTemplate.Height = 40;
             this.EmployeeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeeDataGridView.Size = new System.Drawing.Size(470, 622);
+            this.EmployeeDataGridView.Size = new System.Drawing.Size(470, 582);
             this.EmployeeDataGridView.TabIndex = 105;
             this.EmployeeDataGridView.SelectionChanged += new System.EventHandler(this.EmployeeDataGridView_SelectionChanged);
             // 
@@ -244,7 +245,7 @@
             this.TimeLogDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.TimeLogDataGridView.RowTemplate.Height = 40;
             this.TimeLogDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TimeLogDataGridView.Size = new System.Drawing.Size(689, 622);
+            this.TimeLogDataGridView.Size = new System.Drawing.Size(689, 582);
             this.TimeLogDataGridView.TabIndex = 114;
             this.TimeLogDataGridView.SelectionChanged += new System.EventHandler(this.TimeLogDataGridView_SelectionChanged);
             // 
@@ -454,12 +455,30 @@
             this.PayrollTypeComboBox.Size = new System.Drawing.Size(240, 25);
             this.PayrollTypeComboBox.TabIndex = 121;
             // 
+            // ExportButton
+            // 
+            this.ExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExportButton.BackColor = System.Drawing.Color.Red;
+            this.ExportButton.FlatAppearance.BorderSize = 0;
+            this.ExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ExportButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExportButton.ForeColor = System.Drawing.Color.White;
+            this.ExportButton.Location = new System.Drawing.Point(1077, 707);
+            this.ExportButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ExportButton.Name = "ExportButton";
+            this.ExportButton.Size = new System.Drawing.Size(100, 35);
+            this.ExportButton.TabIndex = 116;
+            this.ExportButton.Text = "EXPORT";
+            this.ExportButton.UseVisualStyleBackColor = false;
+            this.ExportButton.Click += new System.EventHandler(this.ExportButton_Click);
+            // 
             // TimeLogViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1530, 754);
+            this.Controls.Add(this.ExportButton);
             this.Controls.Add(this.FilterByPayrollTypeCheckBox);
             this.Controls.Add(this.PayrollTypeComboBox);
             this.Controls.Add(this.FilterByEmployeePositionCheckBox);
@@ -522,5 +541,6 @@
         private System.Windows.Forms.CheckBox FilterByEmployeePositionCheckBox;
         private System.Windows.Forms.CheckBox FilterByPayrollTypeCheckBox;
         private System.Windows.Forms.ComboBox PayrollTypeComboBox;
+        private System.Windows.Forms.Button ExportButton;
     }
 }

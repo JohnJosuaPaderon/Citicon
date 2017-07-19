@@ -3,6 +3,7 @@ using Citicon.DataManager;
 using Citicon.Extensions;
 using Citicon.Forms.Dialogs;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -295,6 +296,51 @@ namespace Citicon.PayrollIntegration.Forms
         private void FilterByPayrollTypeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             PayrollTypeComboBox.Enabled = FilterByPayrollTypeCheckBox.Checked;
+        }
+
+        private async void ExportButton_Click(object sender, EventArgs e)
+        {
+            await ExportAsync();
+        }
+
+        private async Task ExportAsync()
+        {
+            if (EmployeeDataGridView.Rows.Count > 0)
+            {
+                var range = new DateTimeRange(TimeRangeStartDdateTimePicker.Value, TimeRangeEndDateTimePicker.Value);
+                var timeLogReport = new TimeLogReport()
+                {
+                    TimeLogRange = range
+                };
+                foreach (DataGridViewRow row in EmployeeDataGridView.Rows)
+                {
+                    var employee = row.Cells[EmployeeColumn.Name].Value as Employee;
+                    var employeeTimeLogList = new EmployeeTimeLogList(employee);
+                    employeeTimeLogList.TimeLogs.AddRange((await EmployeeManager.GetTimeLogListAsync(employee, range)) ?? new List<TimeLog>());
+
+                    timeLogReport.EmployeeTimeLogLists.Add(employeeTimeLogList);
+                }
+
+                try
+                {
+                    if (await EmployeeManager.ExportTimeLogReportAsync(timeLogReport))
+                    {
+                        MessageBox.Show("Time-logs exported successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to export time-logs.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Employees.");
+            }
         }
     }
 }
