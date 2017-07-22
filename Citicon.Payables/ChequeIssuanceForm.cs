@@ -225,16 +225,22 @@ namespace Citicon.Payables
                 if (dgvPayables.Rows.Count > 0)
                 {
                     grandTotalAmount = 0;
-                    var chequeNumber = tbxCheckNumber.Text.Trim();
-                    if (uint.Parse(chequeNumber) <= 0)
+                    var rawChequeNumber = tbxCheckNumber.Text.Trim();
+                    var chequeNumber = uint.Parse(rawChequeNumber);
+                    if (chequeNumber <= 0)
                     {
                         MessageBox.Show("Insufficient cheque number!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else if (await payableManager.ChequeNumberExistsAsync(chequeNumber))
+                    {
+                        MessageBox.Show("Cheque No. already exists.");
                         return;
                     }
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
-                        payable.ChequeNumber = chequeNumber;
+                        payable.ChequeNumber = rawChequeNumber;
                         payable.ChequeDate = dtpChequeDate.Value;
                         payable.BankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
                         payable.TransactionDate = Supports.SystemDate;
