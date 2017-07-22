@@ -92,6 +92,7 @@
     <Compile Include="DataManager\ScheduledProjectDesignStatusManager.cs" />
     <Compile Include="DataManager\TransitMixerManager.cs" />
     <Compile Include="DataManager\TripReportManager.cs" />
+    <Compile Include="DataProcess\ChequeNumberExists.cs" />
     <Compile Include="DataProcess\ConfirmDelivery.cs" />
     <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
