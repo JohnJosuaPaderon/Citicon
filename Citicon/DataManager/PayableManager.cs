@@ -326,6 +326,15 @@ namespace Citicon.DataManager
             }
             else throw new FileNotFoundException("Template file for Check Voucher printing was not found!", ChequeVoucherTemplate);
         }
+
+        public async Task<bool> ChequeNumberExistsAsync(uint chequeNumber)
+        {
+            using (var process = new ChequeNumberExists(chequeNumber))
+            {
+                return await process.ExecuteAsync();
+            }
+        }
+
         public void ExportCheque(decimal grandTotalAmount, Supplier payee, DateTime chequeDate)
         {
             if (File.Exists(ChequeTemplate))
@@ -336,10 +345,10 @@ namespace Citicon.DataManager
                 var file = $@"{ChequeDirectory}/{DateTime.Now.ToString("yyyyMMddhhmmss")}_{payee.Code}.xlsx";
                 try
                 {
-                    sheet.Cells[4, 7] = (Math.Abs(grandTotalAmount)).ToString("#,##0.00");
+                    sheet.Cells[4, 7] = Math.Abs(grandTotalAmount);
                     sheet.Cells[4, 2] = payee.Description;
-                    sheet.Cells[1, 7] = chequeDate.ToString("MM/dd/yyyy");
-                    sheet.Cells[5, 2] = Sorschia.Supports.CurrencyToWords(Math.Abs(grandTotalAmount));
+                    sheet.Cells[1, 7] = chequeDate;
+                    sheet.Cells[5, 1] = Sorschia.Supports.CurrencyToWords(Math.Abs(grandTotalAmount));
                     book.SaveAs(file);
                     book.PrintOutEx();
                 }
