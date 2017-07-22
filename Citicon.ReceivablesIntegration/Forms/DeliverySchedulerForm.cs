@@ -32,7 +32,8 @@ namespace Citicon.ReceivablesIntegration.Forms
                         ScheduledDate = dtpScheduledDate.Value,
                         UseRangeDate = UseRangedDateCheckBox.Checked,
                         RangeEnd = RangeEndDateTimePicker.Value,
-                        StructureType = StructureTypeComboBox.SelectedItem as BillingStructureType
+                        StructureType = StructureTypeComboBox.SelectedItem as BillingStructureType,
+                        MaximumVolume = (decimal)row.Cells[colScheduledProjectDesign_MaximumVolume.Name].Value
                     };
                     if (!await ScheduledProjectDesignManager.ExistsAsync(scheduledDesign))
                     {
@@ -123,7 +124,8 @@ namespace Citicon.ReceivablesIntegration.Forms
                         Design = projectDesign,
                         ScheduledDate = dtpScheduledDate.Value,
                         RangeEnd = RangeEndDateTimePicker.Value,
-                        UseRangeDate = UseRangedDateCheckBox.Checked
+                        UseRangeDate = UseRangedDateCheckBox.Checked,
+                        MaximumVolume = ProjectDesignMaxVolumeNumericUpDown.Value
                     };
                     if (await ScheduledDesignExistsAsync(scheduledDesign))
                     {
@@ -201,6 +203,7 @@ namespace Citicon.ReceivablesIntegration.Forms
                     Height = 30
                 };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = design });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = ProjectDesignMaxVolumeNumericUpDown.Value });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = design.Project });
 
                 dgvScheduledProjectDesign.Rows.Add(row);
