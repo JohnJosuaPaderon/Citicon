@@ -33,7 +33,8 @@ namespace Citicon.DataProcess
                  ScheduledDate = reader.GetDateTime("ScheduledDate"),
                  Status = Status,
                  RangeEnd = reader.GetDateTime("RangeEnd"),
-                 UseRangeDate = reader.GetBoolean("UseRangeDate")
+                 UseRangeDate = reader.GetBoolean("UseRangeDate"),
+                 MaximumVolume = reader.GetDecimal("MaximumVolume")
             };
         }
 
