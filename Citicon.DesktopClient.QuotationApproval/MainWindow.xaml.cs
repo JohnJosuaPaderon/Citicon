@@ -3,6 +3,7 @@ using Citicon.DataManager;
 using Citicon.DesktopClient.Common;
 using Citicon.ReceivablesIntegration.Forms;
 using MahApps.Metro.Controls;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
@@ -17,7 +18,30 @@ namespace Citicon.DesktopClient.QuotationApproval
         public MainWindow()
         {
             InitializeComponent();
+            GlobalTitleChanged += MainWindow_GlobalTitleChanged;
         }
+
+        private void MainWindow_GlobalTitleChanged(object sender, EventArgs e)
+        {
+            GeneralTitle.Text = GlobalTitle;
+        }
+
+        private static string _GlobalTitle;
+
+        public static string GlobalTitle
+        {
+            get { return _GlobalTitle; }
+            set
+            {
+                if (_GlobalTitle != value)
+                {
+                    _GlobalTitle = value;
+                    GlobalTitleChanged?.Invoke(null, EventArgs.Empty);
+                }
+            }
+        }
+
+        private static event EventHandler GlobalTitleChanged;
 
         private void ClientDisplayControl_NextButtonClick(object sender, Views.ClientDisplayNextButtonClickEventArgs e)
         {
@@ -90,23 +114,28 @@ namespace Citicon.DesktopClient.QuotationApproval
             switch (Menu.SelectedIndex)
             {
                 case 0:
+                    GeneralTitle.Text = "Quotation Approval";
                     Transitioner.SelectedItem = ClientDisplaySlide;
                     ClientDisplayControl.Focus();
                     break;
                 case 1:
+                    GeneralTitle.Text = "Quotation Approval";
                     Transitioner.SelectedItem = QuotationForFinalApprovalDisplaySlide;
                     QuotationForFinalApprovalDisplayControl.Focus();
                     break;
                 case 2:
+                    GeneralTitle.Text = "Quotation Approval";
                     Transitioner.SelectedItem = ProjectDesignForApprovalSlide;
                     ProjectDesignForApproval.Focus();
                     break;
                 case 3:
+                    GeneralTitle.Text = "Quotation Approval";
                     var form = new DeliverySchedulerForm();
                     WindowInteropHelper wih = new WindowInteropHelper(this);
                     form.Show();
                     break;
                 case 4:
+                    GeneralTitle.Text = "Scheduled Design Delivery";
                     Transitioner.SelectedItem = ScheduledDesignDeliveryManagementSlide;
                     ScheduledDesignDeliveryManagement.InitializeDisplay();
                     await ScheduledDesignDeliveryManagement.GetScheduledDesignListAsync();
