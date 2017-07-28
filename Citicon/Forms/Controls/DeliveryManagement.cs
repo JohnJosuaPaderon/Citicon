@@ -29,6 +29,24 @@ namespace Citicon.Forms.Controls
         private ulong LatestDeliveryReceiptNumber { get; set; }
         public Delivery Delivery { get; private set; }
 
+        private DeliveryAutoValues _AutoValues;
+
+        private DeliveryAutoValues AutoValues
+        {
+            get { return _AutoValues; }
+            set
+            {
+                _AutoValues = value;
+                LoadNumericUpDown.Value = value?.Load ?? 1;
+                ComputeCumulativeVolume();
+            }
+        }
+
+        private void ComputeCumulativeVolume()
+        {
+            CumulativeVolumeNumericUpDown.Value = (AutoValues?.CumulativeVolume ?? 0) + Delivery_DeliveredVolumeNumericUpDown.Value;
+        }
+
         private DeliveryScheduleStatus _DeliveryScheduleStatus;
 
         public DeliveryScheduleStatus DeliveryScheduleStatus
@@ -220,6 +238,18 @@ namespace Citicon.Forms.Controls
             }
         }
 
+        private async Task GetAutoValuesAsync()
+        {
+            try
+            {
+                AutoValues = await DeliveryManager.GetAutoValuesAsync(ProjectDesign, Delivery_DeliveryDateTimePicker.Value);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private async Task GetPurchaseOrderAsync()
         {
             try
@@ -275,6 +305,7 @@ namespace Citicon.Forms.Controls
             SetDeliveryPlantLeave();
             SetDeliveryRoute();
             SetDeliveryTransitMixer();
+            await GetAutoValuesAsync();
 
             Delivery.Project = ProjectDesign.Project;
             Delivery.ProjectDesign = ProjectDesign;
@@ -370,6 +401,7 @@ namespace Citicon.Forms.Controls
         {
             if (Delivery.Volume != Delivery_DeliveredVolumeNumericUpDown.Value)
             {
+                ComputeCumulativeVolume();
                 Delivery.Volume = Delivery_DeliveredVolumeNumericUpDown.Value;
             }
         }
