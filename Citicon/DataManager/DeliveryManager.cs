@@ -168,6 +168,21 @@ namespace Citicon.DataManager
             return delivery;
         }
 
+        public static async Task<DeliveryAutoValues> GetAutoValuesAsync(ProjectDesign projectDesign, DateTime deliveryDate)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new GetDeliveryAutoValues(projectDesign, deliveryDate))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static Task<ulong> GetLatestDeliveryReceiptNumberAsync(DateTime deliveryDate)
         {
             using (var process = new GetLatestDeliveryReceiptNumber(deliveryDate))
