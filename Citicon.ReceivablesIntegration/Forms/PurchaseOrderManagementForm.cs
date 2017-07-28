@@ -99,7 +99,7 @@ namespace Citicon.ReceivablesIntegration.Forms
             {
                 if (dgvPurchaseOrderProjectDesign.Rows.Count > 0)
                 {
-                    var purchaseOrderNumber = nudPurchaseOrderNumber.Value.ToString("#,##0");
+                    var purchaseOrderNumber = nudPurchaseOrderNumber.Value.ToString();
 
                     if (await PurchaseOrderManager.NumberExistsAsync(purchaseOrderNumber))
                     {

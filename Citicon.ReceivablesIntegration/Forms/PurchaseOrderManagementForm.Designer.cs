@@ -82,7 +82,7 @@
             this.nudPurchaseOrderNumber.ForeColor = System.Drawing.Color.Lime;
             this.nudPurchaseOrderNumber.Location = new System.Drawing.Point(360, 12);
             this.nudPurchaseOrderNumber.Maximum = new decimal(new int[] {
-            10000,
+            100000,
             0,
             0,
             0});
