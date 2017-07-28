@@ -112,6 +112,7 @@
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
+    <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetDeliveryRouteById.cs" />
     <Compile Include="DataProcess\GetDeliveryRouteList.cs" />
@@ -332,6 +333,7 @@
     <Compile Include="Data\Converters\QuotationTypeConverter.cs" />
     <Compile Include="Data\DateTimeRange.cs" />
     <Compile Include="Data\Delivery.cs" />
+    <Compile Include="Data\DeliveryAutoValues.cs" />
     <Compile Include="Data\DeliveryRoute.cs" />
     <Compile Include="Data\DeliveryScheduleStatus.cs" />
     <Compile Include="Data\Department.cs" />
