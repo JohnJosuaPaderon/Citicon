@@ -229,5 +229,20 @@ namespace Citicon.DataManager
                 return await process.ExecuteAsync();
             }
         }
+
+        public static async Task<decimal> GetConsumedVolumeAsync(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new GetConsumedProjectDesignVolume(projectDesign))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
