@@ -111,6 +111,7 @@
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
+    <Compile Include="DataProcess\GetConsumedProjectDesignVolume.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
