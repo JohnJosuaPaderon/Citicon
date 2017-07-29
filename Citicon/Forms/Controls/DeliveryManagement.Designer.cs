@@ -388,7 +388,7 @@
             this.CumulativeVolumeNumericUpDown.DecimalPlaces = 2;
             this.CumulativeVolumeNumericUpDown.Location = new System.Drawing.Point(495, 90);
             this.CumulativeVolumeNumericUpDown.Maximum = new decimal(new int[] {
-            100000,
+            10000000,
             0,
             0,
             0});

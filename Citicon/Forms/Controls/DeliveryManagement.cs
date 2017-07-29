@@ -25,6 +25,7 @@ namespace Citicon.Forms.Controls
         private BranchManager BranchManager;
         private TransitMixerManager TransitMixerManager;
         private ScheduledProjectDesignManager ScheduledProjectDesignManager;
+        private PurchaseOrderProjectDesign PurchaseOrderProjectDesign;
 
         private ulong LatestDeliveryReceiptNumber { get; set; }
         public Delivery Delivery { get; private set; }
@@ -106,7 +107,7 @@ namespace Citicon.Forms.Controls
             Project_NameTextBox.Text = ProjectDesign?.Project?.Name;
             Project_LocationTextBox.Text = ProjectDesign?.Project?.Location;
             Design_MixTypeTextBox.Text = ProjectDesign?.MixType.ToString();
-            Design_PsiTextBox.Text = (ProjectDesign?.Psi ?? 0).ToString("#,##0.0##");
+            Design_PsiTextBox.Text = (ProjectDesign?.Psi ?? 0).ToString("###0");
             Design_InitialVolumeTextBox.Text = (ProjectDesign?.InitialVolume ?? 0).ToString("#,##0.0##");
             Design_AggregateTextBox.Text = ProjectDesign?.Aggregate?.Value;
             Design_StrengthTextBox.Text = ProjectDesign?.Strength?.Value;
@@ -254,12 +255,23 @@ namespace Citicon.Forms.Controls
         {
             try
             {
-                var purchaseOrderProjectDesign = await PurchaseOrderProjectDesignManager.GetAvailableAsync(ProjectDesign);
+                PurchaseOrderProjectDesign = await PurchaseOrderProjectDesignManager.GetAvailableAsync(ProjectDesign);
 
-                if (purchaseOrderProjectDesign != null)
+                if (PurchaseOrderProjectDesign != null)
                 {
-                    PurchaseOrder_MaximumVolumeTextBox.Text = purchaseOrderProjectDesign.MaxVolume.ToString("#,##0.0##");
-                    PurchaseOrder = purchaseOrderProjectDesign.PurchaseOrder;
+                    PurchaseOrder_MaximumVolumeTextBox.Text = PurchaseOrderProjectDesign.MaxVolume.ToString("#,##0.0##");
+                    PurchaseOrder = PurchaseOrderProjectDesign.PurchaseOrder;
+
+                    var consumedProjectDesignVolume = await ProjectDesignManager.GetConsumedVolumeAsync(ProjectDesign);
+
+                    if (consumedProjectDesignVolume >= PurchaseOrderProjectDesign.MaxVolume)
+                    {
+                        MessageBox.Show("The design reached its maximum volume.");
+                    }
+                    else if (consumedProjectDesignVolume >= (PurchaseOrderProjectDesign.MaxVolume * 0.75M))
+                    {
+                        MessageBox.Show("The design is approaching to its maximum volume.");
+                    }
                 }
             }
             catch (Exception ex)
