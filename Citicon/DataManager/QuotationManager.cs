@@ -55,9 +55,9 @@ namespace Citicon.DataManager
             }
         }
 
-        public static ExportQuotationResult ExportQuotation(ExportQuotation.QuotationReportTemplate template, string templatesDirectory, Quotation quotation, List<ProjectDesign> projectDesigns, string saveDirectory)
+        public static ExportQuotationResult ExportQuotation(ExportQuotation.QuotationReportTemplate template, string templatesDirectory, Quotation quotation, List<ProjectDesign> projectDesigns, string saveDirectory, bool printAfterSave)
         {
-            using (var process = new ExportQuotation(template, templatesDirectory, quotation, projectDesigns, saveDirectory))
+            using (var process = new ExportQuotation(template, templatesDirectory, quotation, projectDesigns, saveDirectory, printAfterSave))
             {
                 return process.Export();
             }
