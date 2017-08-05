@@ -87,7 +87,7 @@ namespace Citicon.Forms.Controls
             try
             {
                 var result = QuotationManager.ExportQuotation(Quotation?.Type == QuotationType.Citicon ? ExportQuotation.QuotationReportTemplate.Citicon : ExportQuotation.QuotationReportTemplate.LexCiticoncrete,
-                ConfigurationManager.AppSettings["Quotation.TemplatesDirectory"], Quotation, GetProjectDesigns(), ConfigurationManager.AppSettings["Quotation.SaveDirectory"]);
+                ConfigurationManager.AppSettings["Quotation.TemplatesDirectory"], Quotation, GetProjectDesigns(), ConfigurationManager.AppSettings["Quotation.SaveDirectory"], true);
 
                 if (result.Success)
                 {
