@@ -30,7 +30,7 @@ namespace Citicon.DataProcess
             LexCiticoncrete = 1
         }
 
-        public ExportQuotation(QuotationReportTemplate template, string templatesDirectory, Quotation quotation, List<ProjectDesign> projectDesigns, string saveDirectory)
+        public ExportQuotation(QuotationReportTemplate template, string templatesDirectory, Quotation quotation, List<ProjectDesign> projectDesigns, string saveDirectory, bool printAfterSave)
         {
             Template = template;
             TemplatesDirectory = templatesDirectory;
@@ -168,7 +168,11 @@ namespace Citicon.DataProcess
                 }
 
                 Document.SaveAs2(FilePath);
-                Document.PrintOut();
+
+                if (PrintAfterSave)
+                {
+                    Document.PrintOut();
+                }
 
                 return new ExportQuotationResult(FilePath, "Quotation successfully saved!", true);
             }
@@ -187,6 +191,7 @@ namespace Citicon.DataProcess
         private Word.Document Document;
         private string FilePath;
         private string SaveDirectory;
+        private bool PrintAfterSave;
 
         public void Dispose()
         {
