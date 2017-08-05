@@ -270,7 +270,7 @@ namespace Citicon.Forms.Dialogs
             {
                 QuotationManager.ExportQuotation(
                 quotationTransaction.Quotation.Type == QuotationType.Citicon ? ExportQuotation.QuotationReportTemplate.Citicon : ExportQuotation.QuotationReportTemplate.LexCiticoncrete,
-                ConfigurationManager.AppSettings["Quotation.TemplatesDirectory"], quotationTransaction.Quotation, quotationTransaction.Designs, ConfigurationManager.AppSettings["Quotation.SaveDirectory"]);
+                ConfigurationManager.AppSettings["Quotation.TemplatesDirectory"], quotationTransaction.Quotation, quotationTransaction.Designs, ConfigurationManager.AppSettings["Quotation.SaveDirectory"], false);
             }
             catch (Exception ex)
             {
