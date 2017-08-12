@@ -36,17 +36,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.dgvCheques = new System.Windows.Forms.DataGridView();
+            this.lblTotalDisbursement = new System.Windows.Forms.Label();
+            this.tbxTotalDisbursement = new System.Windows.Forms.TextBox();
+            this.ReportFilter = new Citicon.Payables.Reports.ChequeReportFilter();
             this.colChequeSummary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChequeNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChequeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransactionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBankAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTotalDisbursement = new System.Windows.Forms.Label();
-            this.tbxTotalDisbursement = new System.Windows.Forms.TextBox();
-            this.ReportFilter = new Citicon.Payables.Reports.ChequeReportFilter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheques)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,6 +99,7 @@
             this.colChequeDate,
             this.colTransactionDate,
             this.colSupplier,
+            this.colCompany,
             this.colBank,
             this.colBankAccount,
             this.colTotalAmount});
@@ -119,78 +121,6 @@
             this.dgvCheques.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCheques.Size = new System.Drawing.Size(1069, 252);
             this.dgvCheques.TabIndex = 2;
-            // 
-            // colChequeSummary
-            // 
-            this.colChequeSummary.HeaderText = "Cheque Summary";
-            this.colChequeSummary.Name = "colChequeSummary";
-            this.colChequeSummary.ReadOnly = true;
-            this.colChequeSummary.Visible = false;
-            this.colChequeSummary.Width = 160;
-            // 
-            // colChequeNumber
-            // 
-            this.colChequeNumber.HeaderText = "Cheque No.";
-            this.colChequeNumber.MinimumWidth = 100;
-            this.colChequeNumber.Name = "colChequeNumber";
-            this.colChequeNumber.ReadOnly = true;
-            this.colChequeNumber.Width = 115;
-            // 
-            // colChequeDate
-            // 
-            dataGridViewCellStyle3.Format = "MMMM dd, yyyy";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colChequeDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colChequeDate.HeaderText = "Cheque Date";
-            this.colChequeDate.MinimumWidth = 150;
-            this.colChequeDate.Name = "colChequeDate";
-            this.colChequeDate.ReadOnly = true;
-            this.colChequeDate.Width = 150;
-            // 
-            // colTransactionDate
-            // 
-            dataGridViewCellStyle4.Format = "MMMM dd, yyyy";
-            this.colTransactionDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colTransactionDate.HeaderText = "Transaction Date";
-            this.colTransactionDate.MinimumWidth = 150;
-            this.colTransactionDate.Name = "colTransactionDate";
-            this.colTransactionDate.ReadOnly = true;
-            this.colTransactionDate.Width = 150;
-            // 
-            // colSupplier
-            // 
-            this.colSupplier.HeaderText = "Supplier";
-            this.colSupplier.MinimumWidth = 200;
-            this.colSupplier.Name = "colSupplier";
-            this.colSupplier.ReadOnly = true;
-            this.colSupplier.Width = 200;
-            // 
-            // colBank
-            // 
-            this.colBank.HeaderText = "Bank";
-            this.colBank.MinimumWidth = 150;
-            this.colBank.Name = "colBank";
-            this.colBank.ReadOnly = true;
-            this.colBank.Width = 150;
-            // 
-            // colBankAccount
-            // 
-            this.colBankAccount.HeaderText = "Bank Account";
-            this.colBankAccount.MinimumWidth = 150;
-            this.colBankAccount.Name = "colBankAccount";
-            this.colBankAccount.ReadOnly = true;
-            this.colBankAccount.Width = 150;
-            // 
-            // colTotalAmount
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.colTotalAmount.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colTotalAmount.HeaderText = "Total Amount";
-            this.colTotalAmount.Name = "colTotalAmount";
-            this.colTotalAmount.ReadOnly = true;
-            this.colTotalAmount.Width = 126;
             // 
             // lblTotalDisbursement
             // 
@@ -230,6 +160,85 @@
             this.ReportFilter.Size = new System.Drawing.Size(1072, 144);
             this.ReportFilter.TabIndex = 0;
             // 
+            // colChequeSummary
+            // 
+            this.colChequeSummary.HeaderText = "Cheque Summary";
+            this.colChequeSummary.Name = "colChequeSummary";
+            this.colChequeSummary.ReadOnly = true;
+            this.colChequeSummary.Visible = false;
+            this.colChequeSummary.Width = 159;
+            // 
+            // colChequeNumber
+            // 
+            this.colChequeNumber.HeaderText = "Cheque No.";
+            this.colChequeNumber.MinimumWidth = 100;
+            this.colChequeNumber.Name = "colChequeNumber";
+            this.colChequeNumber.ReadOnly = true;
+            this.colChequeNumber.Width = 115;
+            // 
+            // colChequeDate
+            // 
+            dataGridViewCellStyle3.Format = "MMMM dd, yyyy";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colChequeDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colChequeDate.HeaderText = "Cheque Date";
+            this.colChequeDate.MinimumWidth = 150;
+            this.colChequeDate.Name = "colChequeDate";
+            this.colChequeDate.ReadOnly = true;
+            this.colChequeDate.Width = 150;
+            // 
+            // colTransactionDate
+            // 
+            dataGridViewCellStyle4.Format = "MMMM dd, yyyy";
+            this.colTransactionDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colTransactionDate.HeaderText = "Transaction Date";
+            this.colTransactionDate.MinimumWidth = 150;
+            this.colTransactionDate.Name = "colTransactionDate";
+            this.colTransactionDate.ReadOnly = true;
+            this.colTransactionDate.Width = 150;
+            // 
+            // colSupplier
+            // 
+            this.colSupplier.HeaderText = "Supplier";
+            this.colSupplier.MinimumWidth = 200;
+            this.colSupplier.Name = "colSupplier";
+            this.colSupplier.ReadOnly = true;
+            this.colSupplier.Width = 200;
+            // 
+            // colCompany
+            // 
+            this.colCompany.HeaderText = "Company";
+            this.colCompany.Name = "colCompany";
+            this.colCompany.ReadOnly = true;
+            this.colCompany.Width = 101;
+            // 
+            // colBank
+            // 
+            this.colBank.HeaderText = "Bank";
+            this.colBank.MinimumWidth = 150;
+            this.colBank.Name = "colBank";
+            this.colBank.ReadOnly = true;
+            this.colBank.Width = 150;
+            // 
+            // colBankAccount
+            // 
+            this.colBankAccount.HeaderText = "Bank Account";
+            this.colBankAccount.MinimumWidth = 150;
+            this.colBankAccount.Name = "colBankAccount";
+            this.colBankAccount.ReadOnly = true;
+            this.colBankAccount.Width = 150;
+            // 
+            // colTotalAmount
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colTotalAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colTotalAmount.HeaderText = "Total Amount";
+            this.colTotalAmount.Name = "colTotalAmount";
+            this.colTotalAmount.ReadOnly = true;
+            this.colTotalAmount.Width = 126;
+            // 
             // ChequeReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -264,6 +273,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colChequeDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTransactionDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBank;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBankAccount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmount;

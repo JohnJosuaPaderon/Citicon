@@ -57,6 +57,7 @@ namespace Citicon.Payables.Reports
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.ChequeDate });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.TransactionDate });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Supplier });
+                        row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Company });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.BankAccount?.Bank });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.BankAccount });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.TotalAmount });
