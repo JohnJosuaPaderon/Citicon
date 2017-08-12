@@ -164,6 +164,8 @@ namespace Citicon.Payables
                 {
                     cmbxExpenseCompany.Items.Clear();
                     cmbxExpenseCompany.Items.AddRange(x.Result);
+                    ReportingCategoryComboBox.Items.Clear();
+                    ReportingCategoryComboBox.Items.AddRange(x.Result);
                 }));
             });
         }
@@ -362,7 +364,8 @@ namespace Citicon.Payables
                                 VariableCost = true,
                                 Remarks = rtbxRemarks.Text,
                                 AccountType = accountType,
-                                TransactionDate = DateTime.Now
+                                TransactionDate = DateTime.Now,
+                                ReportingCategory = ReportingCategoryComboBox.SelectedItem as Company
                                 //Remarks = $"Payment for {stock.Item?.Description} as per SIDR No. {stock.SiNumber} dated {stock.DeliveryDate.ToString("MMM dd, yyyy")}."
                             };
                             stock.Paid = true;
@@ -388,7 +391,8 @@ namespace Citicon.Payables
                             Stock = null,
                             Supplier = activeSupplier,
                             TransactionDate = DateTime.Now,
-                            VariableCost = true
+                            VariableCost = true,
+                            ReportingCategory = ReportingCategoryComboBox.SelectedItem as Company
                         };
                         payableManager.Add(withHoldingTaxPayable);
                         dgvStocks.Rows.Clear();
@@ -436,7 +440,8 @@ namespace Citicon.Payables
                                 Stock = null,
                                 Supplier = activeExpenseSupplier,
                                 TransactionDate = DateTime.Now,
-                                VariableCost = false
+                                VariableCost = false,
+                                ReportingCategory = ReportingCategoryComboBox.SelectedItem as Company
                             };
 
                             if (payable.Expense.Id == cashInBank.Id)

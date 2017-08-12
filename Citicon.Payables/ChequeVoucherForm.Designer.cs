@@ -91,6 +91,8 @@
             this.tbxCheckVoucherNumber = new System.Windows.Forms.TextBox();
             this.lblCheckVoucherNumber = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.ReportingCategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.ReportingCategoryLabel = new System.Windows.Forms.Label();
             this.tcChequeVoucher.SuspendLayout();
             this.tpVariableCost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocks)).BeginInit();
@@ -119,7 +121,7 @@
             this.tcChequeVoucher.Controls.Add(this.tpVariableCost);
             this.tcChequeVoucher.Controls.Add(this.tpExpenses);
             this.tcChequeVoucher.Location = new System.Drawing.Point(7, 70);
-            this.tcChequeVoucher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcChequeVoucher.Margin = new System.Windows.Forms.Padding(2);
             this.tcChequeVoucher.Name = "tcChequeVoucher";
             this.tcChequeVoucher.Padding = new System.Drawing.Point(30, 15);
             this.tcChequeVoucher.SelectedIndex = 0;
@@ -143,10 +145,10 @@
             this.tpVariableCost.Controls.Add(this.lblSearchMrisNumber);
             this.tpVariableCost.Controls.Add(this.dgvStocks);
             this.tpVariableCost.Location = new System.Drawing.Point(4, 50);
-            this.tpVariableCost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpVariableCost.Margin = new System.Windows.Forms.Padding(2);
             this.tpVariableCost.Name = "tpVariableCost";
-            this.tpVariableCost.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tpVariableCost.Size = new System.Drawing.Size(944, 369);
+            this.tpVariableCost.Padding = new System.Windows.Forms.Padding(2);
+            this.tpVariableCost.Size = new System.Drawing.Size(1151, 392);
             this.tpVariableCost.TabIndex = 0;
             this.tpVariableCost.Text = "MRIS Transaction";
             this.tpVariableCost.UseVisualStyleBackColor = true;
@@ -167,7 +169,7 @@
             this.cmbxVariableCostAccountType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxVariableCostAccountType.FormattingEnabled = true;
             this.cmbxVariableCostAccountType.Location = new System.Drawing.Point(148, 33);
-            this.cmbxVariableCostAccountType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxVariableCostAccountType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxVariableCostAccountType.Name = "cmbxVariableCostAccountType";
             this.cmbxVariableCostAccountType.Size = new System.Drawing.Size(141, 25);
             this.cmbxVariableCostAccountType.TabIndex = 88;
@@ -179,7 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rtbxRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbxRemarks.Location = new System.Drawing.Point(148, 62);
-            this.rtbxRemarks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbxRemarks.Margin = new System.Windows.Forms.Padding(2);
             this.rtbxRemarks.Name = "rtbxRemarks";
             this.rtbxRemarks.Size = new System.Drawing.Size(792, 33);
             this.rtbxRemarks.TabIndex = 87;
@@ -203,7 +205,7 @@
             this.btnRemoveSameMrisNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSameMrisNumber.ForeColor = System.Drawing.Color.White;
             this.btnRemoveSameMrisNumber.Location = new System.Drawing.Point(652, 337);
-            this.btnRemoveSameMrisNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveSameMrisNumber.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveSameMrisNumber.Name = "btnRemoveSameMrisNumber";
             this.btnRemoveSameMrisNumber.Size = new System.Drawing.Size(143, 28);
             this.btnRemoveSameMrisNumber.TabIndex = 84;
@@ -218,7 +220,7 @@
             this.btnRemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSelected.ForeColor = System.Drawing.Color.White;
             this.btnRemoveSelected.Location = new System.Drawing.Point(506, 337);
-            this.btnRemoveSelected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveSelected.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveSelected.Name = "btnRemoveSelected";
             this.btnRemoveSelected.Size = new System.Drawing.Size(143, 28);
             this.btnRemoveSelected.TabIndex = 83;
@@ -233,7 +235,7 @@
             this.btnRemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveAll.ForeColor = System.Drawing.Color.White;
             this.btnRemoveAll.Location = new System.Drawing.Point(799, 337);
-            this.btnRemoveAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveAll.Name = "btnRemoveAll";
             this.btnRemoveAll.Size = new System.Drawing.Size(143, 28);
             this.btnRemoveAll.TabIndex = 82;
@@ -263,7 +265,7 @@
             this.tbxActiveSupplier.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxActiveSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tbxActiveSupplier.Location = new System.Drawing.Point(455, 6);
-            this.tbxActiveSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxActiveSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.tbxActiveSupplier.Name = "tbxActiveSupplier";
             this.tbxActiveSupplier.ReadOnly = true;
             this.tbxActiveSupplier.Size = new System.Drawing.Size(485, 25);
@@ -276,7 +278,7 @@
             this.btnSearchMrisNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchMrisNumber.ForeColor = System.Drawing.Color.White;
             this.btnSearchMrisNumber.Location = new System.Drawing.Point(292, 4);
-            this.btnSearchMrisNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearchMrisNumber.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchMrisNumber.Name = "btnSearchMrisNumber";
             this.btnSearchMrisNumber.Size = new System.Drawing.Size(64, 25);
             this.btnSearchMrisNumber.TabIndex = 79;
@@ -291,7 +293,7 @@
             this.tbxSearchMrisNumber.BackColor = System.Drawing.Color.White;
             this.tbxSearchMrisNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSearchMrisNumber.Location = new System.Drawing.Point(148, 4);
-            this.tbxSearchMrisNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxSearchMrisNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSearchMrisNumber.Name = "tbxSearchMrisNumber";
             this.tbxSearchMrisNumber.Size = new System.Drawing.Size(140, 25);
             this.tbxSearchMrisNumber.TabIndex = 78;
@@ -349,7 +351,7 @@
             this.dgvStocks.EnableHeadersVisualStyles = false;
             this.dgvStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvStocks.Location = new System.Drawing.Point(7, 99);
-            this.dgvStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvStocks.Margin = new System.Windows.Forms.Padding(2);
             this.dgvStocks.MultiSelect = false;
             this.dgvStocks.Name = "dgvStocks";
             this.dgvStocks.ReadOnly = true;
@@ -424,9 +426,9 @@
             this.tpExpenses.Controls.Add(this.btnChangeExpenseSupplier);
             this.tpExpenses.Controls.Add(this.tbxExpenseSupplier);
             this.tpExpenses.Location = new System.Drawing.Point(4, 50);
-            this.tpExpenses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpExpenses.Margin = new System.Windows.Forms.Padding(2);
             this.tpExpenses.Name = "tpExpenses";
-            this.tpExpenses.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpExpenses.Padding = new System.Windows.Forms.Padding(2);
             this.tpExpenses.Size = new System.Drawing.Size(1151, 392);
             this.tpExpenses.TabIndex = 1;
             this.tpExpenses.Text = "Expenses";
@@ -439,7 +441,7 @@
             this.btnRemoveSelectedExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveSelectedExpense.ForeColor = System.Drawing.Color.White;
             this.btnRemoveSelectedExpense.Location = new System.Drawing.Point(645, 120);
-            this.btnRemoveSelectedExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveSelectedExpense.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveSelectedExpense.Name = "btnRemoveSelectedExpense";
             this.btnRemoveSelectedExpense.Size = new System.Drawing.Size(143, 25);
             this.btnRemoveSelectedExpense.TabIndex = 117;
@@ -458,7 +460,7 @@
             this.tbxExpenseTotalDebit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseTotalDebit.ForeColor = System.Drawing.Color.White;
             this.tbxExpenseTotalDebit.Location = new System.Drawing.Point(566, 355);
-            this.tbxExpenseTotalDebit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxExpenseTotalDebit.Margin = new System.Windows.Forms.Padding(2);
             this.tbxExpenseTotalDebit.Name = "tbxExpenseTotalDebit";
             this.tbxExpenseTotalDebit.ReadOnly = true;
             this.tbxExpenseTotalDebit.Size = new System.Drawing.Size(192, 33);
@@ -478,7 +480,7 @@
             this.tbxExpenseTotalCredit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseTotalCredit.ForeColor = System.Drawing.Color.White;
             this.tbxExpenseTotalCredit.Location = new System.Drawing.Point(761, 355);
-            this.tbxExpenseTotalCredit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxExpenseTotalCredit.Margin = new System.Windows.Forms.Padding(2);
             this.tbxExpenseTotalCredit.Name = "tbxExpenseTotalCredit";
             this.tbxExpenseTotalCredit.ReadOnly = true;
             this.tbxExpenseTotalCredit.Size = new System.Drawing.Size(192, 33);
@@ -498,7 +500,7 @@
             this.tbxExpenseDifference.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseDifference.ForeColor = System.Drawing.Color.White;
             this.tbxExpenseDifference.Location = new System.Drawing.Point(955, 355);
-            this.tbxExpenseDifference.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxExpenseDifference.Margin = new System.Windows.Forms.Padding(2);
             this.tbxExpenseDifference.Name = "tbxExpenseDifference";
             this.tbxExpenseDifference.ReadOnly = true;
             this.tbxExpenseDifference.Size = new System.Drawing.Size(192, 33);
@@ -547,7 +549,7 @@
             this.btnAddExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddExpense.ForeColor = System.Drawing.Color.White;
             this.btnAddExpense.Location = new System.Drawing.Point(562, 120);
-            this.btnAddExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddExpense.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddExpense.Name = "btnAddExpense";
             this.btnAddExpense.Size = new System.Drawing.Size(79, 25);
             this.btnAddExpense.TabIndex = 110;
@@ -560,7 +562,7 @@
             this.cmbxExpenseBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxExpenseBranch.FormattingEnabled = true;
             this.cmbxExpenseBranch.Location = new System.Drawing.Point(408, 120);
-            this.cmbxExpenseBranch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxExpenseBranch.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxExpenseBranch.Name = "cmbxExpenseBranch";
             this.cmbxExpenseBranch.Size = new System.Drawing.Size(150, 25);
             this.cmbxExpenseBranch.TabIndex = 109;
@@ -580,7 +582,7 @@
             this.cmbxExpenseCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxExpenseCompany.FormattingEnabled = true;
             this.cmbxExpenseCompany.Location = new System.Drawing.Point(271, 120);
-            this.cmbxExpenseCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxExpenseCompany.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxExpenseCompany.Name = "cmbxExpenseCompany";
             this.cmbxExpenseCompany.Size = new System.Drawing.Size(133, 25);
             this.cmbxExpenseCompany.TabIndex = 107;
@@ -602,7 +604,7 @@
             this.cmbxExpensesExpense.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxExpensesExpense.FormattingEnabled = true;
             this.cmbxExpensesExpense.Location = new System.Drawing.Point(8, 120);
-            this.cmbxExpensesExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxExpensesExpense.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxExpensesExpense.Name = "cmbxExpensesExpense";
             this.cmbxExpensesExpense.Size = new System.Drawing.Size(259, 25);
             this.cmbxExpensesExpense.TabIndex = 105;
@@ -629,7 +631,7 @@
             this.tbxExpenseRemarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseRemarks.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseRemarks.Location = new System.Drawing.Point(8, 67);
-            this.tbxExpenseRemarks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxExpenseRemarks.Margin = new System.Windows.Forms.Padding(2);
             this.tbxExpenseRemarks.Name = "tbxExpenseRemarks";
             this.tbxExpenseRemarks.Size = new System.Drawing.Size(552, 33);
             this.tbxExpenseRemarks.TabIndex = 103;
@@ -687,7 +689,7 @@
             this.dgvExpenses.EnableHeadersVisualStyles = false;
             this.dgvExpenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvExpenses.Location = new System.Drawing.Point(10, 149);
-            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExpenses.MultiSelect = false;
             this.dgvExpenses.Name = "dgvExpenses";
             this.dgvExpenses.RowHeadersVisible = false;
@@ -764,7 +766,7 @@
             this.btnChangeExpenseSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangeExpenseSupplier.ForeColor = System.Drawing.Color.White;
             this.btnChangeExpenseSupplier.Location = new System.Drawing.Point(482, 21);
-            this.btnChangeExpenseSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangeExpenseSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeExpenseSupplier.Name = "btnChangeExpenseSupplier";
             this.btnChangeExpenseSupplier.Size = new System.Drawing.Size(79, 25);
             this.btnChangeExpenseSupplier.TabIndex = 84;
@@ -781,7 +783,7 @@
             this.tbxExpenseSupplier.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseSupplier.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxExpenseSupplier.Location = new System.Drawing.Point(8, 21);
-            this.tbxExpenseSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxExpenseSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.tbxExpenseSupplier.Name = "tbxExpenseSupplier";
             this.tbxExpenseSupplier.Size = new System.Drawing.Size(470, 25);
             this.tbxExpenseSupplier.TabIndex = 83;
@@ -810,7 +812,7 @@
             this.tbxGrandTotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxGrandTotal.ForeColor = System.Drawing.Color.Lime;
             this.tbxGrandTotal.Location = new System.Drawing.Point(560, 550);
-            this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxGrandTotal.Margin = new System.Windows.Forms.Padding(2);
             this.tbxGrandTotal.Name = "tbxGrandTotal";
             this.tbxGrandTotal.Size = new System.Drawing.Size(340, 35);
             this.tbxGrandTotal.TabIndex = 79;
@@ -825,7 +827,7 @@
             this.btnExportCheque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportCheque.ForeColor = System.Drawing.Color.White;
             this.btnExportCheque.Location = new System.Drawing.Point(904, 545);
-            this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExportCheque.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportCheque.Name = "btnExportCheque";
             this.btnExportCheque.Size = new System.Drawing.Size(159, 40);
             this.btnExportCheque.TabIndex = 92;
@@ -843,7 +845,7 @@
             this.tbxCheckVoucherNumber.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCheckVoucherNumber.ForeColor = System.Drawing.Color.Yellow;
             this.tbxCheckVoucherNumber.Location = new System.Drawing.Point(7, 550);
-            this.tbxCheckVoucherNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxCheckVoucherNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxCheckVoucherNumber.Name = "tbxCheckVoucherNumber";
             this.tbxCheckVoucherNumber.Size = new System.Drawing.Size(236, 35);
             this.tbxCheckVoucherNumber.TabIndex = 93;
@@ -869,7 +871,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Red;
             this.btnClose.Location = new System.Drawing.Point(1067, 545);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(96, 40);
             this.btnClose.TabIndex = 95;
@@ -877,12 +879,36 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // ReportingCategoryComboBox
+            // 
+            this.ReportingCategoryComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReportingCategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ReportingCategoryComboBox.FormattingEnabled = true;
+            this.ReportingCategoryComboBox.Location = new System.Drawing.Point(355, 560);
+            this.ReportingCategoryComboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ReportingCategoryComboBox.Name = "ReportingCategoryComboBox";
+            this.ReportingCategoryComboBox.Size = new System.Drawing.Size(201, 25);
+            this.ReportingCategoryComboBox.TabIndex = 109;
+            // 
+            // ReportingCategoryLabel
+            // 
+            this.ReportingCategoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ReportingCategoryLabel.AutoSize = true;
+            this.ReportingCategoryLabel.Location = new System.Drawing.Point(352, 541);
+            this.ReportingCategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ReportingCategoryLabel.Name = "ReportingCategoryLabel";
+            this.ReportingCategoryLabel.Size = new System.Drawing.Size(123, 17);
+            this.ReportingCategoryLabel.TabIndex = 108;
+            this.ReportingCategoryLabel.Text = "Reporting Category";
+            // 
             // ChequeVoucherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1174, 596);
+            this.Controls.Add(this.ReportingCategoryComboBox);
+            this.Controls.Add(this.ReportingCategoryLabel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblCheckVoucherNumber);
             this.Controls.Add(this.tbxCheckVoucherNumber);
@@ -895,7 +921,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChequeVoucherForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Payables | Cheque Voucher";
@@ -968,5 +994,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseDebit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseCredit;
         private System.Windows.Forms.Button btnRemoveSelectedExpense;
+        private System.Windows.Forms.ComboBox ReportingCategoryComboBox;
+        private System.Windows.Forms.Label ReportingCategoryLabel;
     }
 }
