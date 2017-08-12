@@ -29,6 +29,7 @@ namespace Citicon.Data
         {
             get { return Credit != 0 ? -1 * Credit : Debit; }
         }
+        public Company ReportingCategory { get; set; }
 
         public static string InputTax => ConfigurationManager.AppSettings["Payable.Description.InputTax"];
 
