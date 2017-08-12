@@ -51,6 +51,7 @@ namespace Citicon.Forms.Controls
                 };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = chequeSummary });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = chequeSummary.Supplier });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = chequeSummary.Company });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = chequeSummary.TotalAmount });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = chequeSummary.ChequeDate });
                 ChequeDataGridView.Rows.Add(row);

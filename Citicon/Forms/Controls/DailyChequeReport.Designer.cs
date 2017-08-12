@@ -40,6 +40,7 @@
             this.ChequeDataGridView = new System.Windows.Forms.DataGridView();
             this.ChequeSummaryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChequeSummary_SupplierColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChequeSummary_CompanyColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChequeSummary_AmountColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChequeSummary_ChequeDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChequeSummary_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -108,6 +109,7 @@
             this.ChequeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ChequeSummaryColumn,
             this.ChequeSummary_SupplierColumn,
+            this.ChequeSummary_CompanyColumn,
             this.ChequeSummary_AmountColumn,
             this.ChequeSummary_ChequeDateColumn,
             this.ChequeSummary_ExtraColumn});
@@ -149,6 +151,13 @@
             this.ChequeSummary_SupplierColumn.Name = "ChequeSummary_SupplierColumn";
             this.ChequeSummary_SupplierColumn.ReadOnly = true;
             this.ChequeSummary_SupplierColumn.Width = 66;
+            // 
+            // ChequeSummary_CompanyColumn
+            // 
+            this.ChequeSummary_CompanyColumn.HeaderText = "COMPANY";
+            this.ChequeSummary_CompanyColumn.Name = "ChequeSummary_CompanyColumn";
+            this.ChequeSummary_CompanyColumn.ReadOnly = true;
+            this.ChequeSummary_CompanyColumn.Width = 93;
             // 
             // ChequeSummary_AmountColumn
             // 
@@ -205,6 +214,7 @@
         private System.Windows.Forms.DataGridView ChequeDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChequeSummaryColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChequeSummary_SupplierColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChequeSummary_CompanyColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChequeSummary_AmountColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChequeSummary_ChequeDateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChequeSummary_ExtraColumn;
