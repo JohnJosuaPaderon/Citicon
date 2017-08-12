@@ -72,6 +72,7 @@ namespace Citicon.DataManager
                 query.AddParameter("@_TransactionDate", data.TransactionDate);
                 query.AddParameter("@_AccountType", data.AccountType);
                 query.AddParameter("@_ChequeTransactionDate", data.ChequeTransactionDate);
+                query.AddParameter("@_ReportingCategoryId", data.ReportingCategory?.Id);
                 query.ExceptionCatched += OnExceptionCatched;
                 query.Execute();
                 if (query.AffectedRows == 1)
