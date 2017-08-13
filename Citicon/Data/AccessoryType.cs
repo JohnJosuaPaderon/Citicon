@@ -7,31 +7,29 @@
 
         public static bool operator ==(AccessoryType left, AccessoryType right)
         {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
+            return Equals(left, right);
         }
+
         public static bool operator !=(AccessoryType left, AccessoryType right)
         {
             return !(left == right);
         }
 
-        public override bool Equals(object arg)
+        public override bool Equals(object obj)
         {
-            if (arg is AccessoryType)
-            {
-                return (AccessoryType)arg == this;
-            }
-            return false;
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (GetType() != obj.GetType()) return false;
+
+            var value = obj as AccessoryType;
+            return Id.Equals(value.Id);
         }
+
         public override int GetHashCode()
         {
             return Id.GetHashCode();
         }
+
         public override string ToString()
         {
             return Value;

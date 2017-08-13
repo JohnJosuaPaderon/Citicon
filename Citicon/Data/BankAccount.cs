@@ -10,16 +10,9 @@
         public ulong ChequeNumberEnd { get; set; }
         public ulong ChequeNumber { get; set; }
 
-
         public static bool operator ==(BankAccount left, BankAccount right)
         {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
+            return Equals(left, right);
         }
 
         public static bool operator !=(BankAccount left, BankAccount right)
@@ -27,13 +20,14 @@
             return !(left == right);
         }
 
-        public override bool Equals(object arg)
+        public override bool Equals(object obj)
         {
-            if (arg is BankAccount)
-            {
-                return (BankAccount)arg == this;
-            }
-            return false;
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (GetType() != obj.GetType()) return false;
+
+            var value = obj as BankAccount;
+            return Id.Equals(value.Id);
         }
 
         public override int GetHashCode()

@@ -6,16 +6,9 @@
         public string Code { get; set; }
         public string Description { get; set; }
 
-
         public static bool operator ==(Bank left, Bank right)
         {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
+            return Equals(left, right);
         }
 
         public static bool operator !=(Bank left, Bank right)
@@ -23,13 +16,14 @@
             return !(left == right);
         }
 
-        public override bool Equals(object arg)
+        public override bool Equals(object obj)
         {
-            if (arg is Bank)
-            {
-                return (Bank)arg == this;
-            }
-            return false;
+            if (obj is null) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (GetType() != obj.GetType()) return false;
+
+            var value = obj as Bank;
+            return Id.Equals(value.Id);
         }
 
         public override int GetHashCode()
