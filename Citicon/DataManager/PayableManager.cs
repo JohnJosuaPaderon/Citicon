@@ -215,18 +215,8 @@ namespace Citicon.DataManager
                             var payable = payables[i];
                             if (payee == null) payee = payable.Supplier;
                             if (chequeVoucherNumber == null) chequeVoucherNumber = payable.ChequeVoucherNumber;
-                            //totalAmount += payable.Debit;
                             if (remarks == string.Empty)
                                 remarks = payable.Remarks;
-                            //if (i + 1 < maxParticulars)
-                            //    sheet.Cells[particularLocation.X + i, particularLocation.Y] = payable.Remarks;
-
-                            //if (payable.Expense?.Id == 76)
-                            //{
-                            //    sheet.Cells[accountLocation.X++, accountLocation.Y] = payable.Description;
-                            //    cashInBankRowIndex = accountsAmountLocation.X;
-                            //}
-                            //else if (i + 1 < maxAccounts && !payable.VariableCost)
 
                             if (payable.Expense?.Id == Expense.CashInBank?.Id)
                             {
@@ -266,7 +256,6 @@ namespace Citicon.DataManager
                     sheet.Cells[auditedByLocation.X, auditedByLocation.Y] = defaultAuditedBy;
                     sheet.Cells[postedByLocation.X, postedByLocation.Y] = defaultPostedBy;
                     sheet.Cells[recordedByLocation.X, recordedByLocation.Y] = defaultRecordedBy;
-                    //var filePath = $@"{ChequeVoucherDirectory}/{DateTime.Now.ToString("yyyyMMddHHmm")}_{payee?.Code ?? defaultPayee}.xlsx";
                     var filePath = Path.Combine(ChequeVoucherDirectory, string.Format("{0}_{1:yyMMddHHmm}.xlsx", chequeVoucherNumber, DateTime.Now));
                     book.SaveAs(filePath);
 
@@ -275,10 +264,6 @@ namespace Citicon.DataManager
                         printCopies = 1;
                     }
                     book.PrintOutEx(Copies: printCopies);
-                    //if (File.Exists(filePath))
-                    //{
-                    //    Process.Start(new ProcessStartInfo(filePath) { Verb = "print" });
-                    //}
                 }
                 catch (Exception ex)
                 { throw ex; }
@@ -291,39 +276,6 @@ namespace Citicon.DataManager
                     Marshal.ReleaseComObject(book);
                     Marshal.ReleaseComObject(app);
                 }
-                //try
-                //{
-                //    Supplier payee = null;
-                //    string chequeVoucherNumber = null;
-                //    decimal totalAmount = 0.00M;
-                //    var startingIndex = 10;
-                //    foreach (var item in payables)
-                //    {
-                //        if (payee == null) payee = item.Supplier;
-                //        if (chequeVoucherNumber == null) chequeVoucherNumber = item.ChequeVoucherNumber;
-                //        totalAmount += item.TotalAmount;
-                //        sheet.Cells[startingIndex++, 1] = item.Description;
-                //    }
-                //    sheet.Cells[2, 7] = $"C.V. NO. {chequeVoucherNumber}";
-                //    sheet.Cells[5, 1] = payee?.Description;
-                //    sheet.Cells[4, 8] = DateTime.Now.ToString("MMM dd, yyyy").ToUpper();
-                //    sheet.Cells[5, 8] = chequeVoucherNumber;
-                //    sheet.Cells[7, 1] = Sorschia.Supports.CurrencyToWords(totalAmount);
-                //    sheet.Cells[7, 7] = totalAmount.ToString("#,##0.00");
-                //    sheet.Cells[34, 8] = ChequeVoucherSignatories("PreparedBy");
-                //    sheet.Cells[36, 8] = ChequeVoucherSignatories("CheckedBy");
-                //    sheet.Cells[38, 8] = ChequeVoucherSignatories("ApprovedBy");
-                //    sheet.Cells[39, 1] = ChequeVoucherSignatories("AuditedBy");
-                //    sheet.Cells[39, 2] = ChequeVoucherSignatories("PostedBy");
-                //    sheet.Cells[39, 3] = ChequeVoucherSignatories("RecordedBy");
-                //    book.SaveAs($@"{ChequeVoucherDirectory}/{payee.Code}_{DateTime.Now.ToString("yyyyMMddhhmmss")}.xlsx");
-                //}
-                //catch (Exception ex) { throw ex; }
-                //finally
-                //{
-                //    book.Close();
-                //    app.Quit();
-                //}
             }
             else throw new FileNotFoundException("Template file for Check Voucher printing was not found!", ChequeVoucherTemplate);
         }
