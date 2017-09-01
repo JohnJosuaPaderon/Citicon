@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
@@ -85,6 +86,9 @@ namespace Citicon.DataProcess
                     case 0:
                     case 1:
                         WriteDesigns_V1();
+                        break;
+                    case 2:
+                        WriteDesigns_V2();
                         break;
                 }
 
@@ -216,13 +220,15 @@ namespace Citicon.DataProcess
         private void WriteDesigns_V2()
         {
             var data = new Dictionary<(decimal psi, ProductAggregate aggregate, ProjectDesignMixType mixType), Dictionary<ProductStrength, decimal>>();
-            var strengthColumn = new Dictionary<ProductStrength, int>();
+            var strengthColumns = new Dictionary<ProductStrength, int>();
 
             foreach (ProjectDesign projectDesign in ProjectDesigns)
             {
-                if (!strengthColumn.ContainsKey(projectDesign.Strength))
+                if (!strengthColumns.ContainsKey(projectDesign.Strength))
                 {
-                    strengthColumn.Add(projectDesign.Strength, strengthColumn.Values.Max() + 1);
+                    var column = (strengthColumns.Values.Any() ? strengthColumns.Values.Max() : 0) + 1;
+
+                    strengthColumns.Add(projectDesign.Strength, column);
                 }
 
                 var key = (projectDesign.Psi, projectDesign.Aggregate, projectDesign.MixType);
@@ -241,19 +247,57 @@ namespace Citicon.DataProcess
             Word.Table table = Document.Tables[1];
 
             table.Columns[4].Delete();
-            var cell = table.Cell(1, 4);
-            var columnSplit = strengthColumn.Count as object;
-            cell.Split(NumColumns: ref columnSplit);
 
-            foreach (var item in strengthColumn)
-            {
-                
-            }
+            //table.Columns[4].Cells.Split();
+            var cell = table.Cell(1, 4);
+
+            //cell.Split(NumRows: 2);
+            //cell.Range.Columns[1].Cells[1].Range.Text = "PRICE PER CUM.";
+            cell.Range.Columns[1].Cells[1].Split(NumColumns: strengthColumns.Count);
+            //var variableStrengthHeaderRow = cell.Range.Rows[3];
+
+            //foreach (var strengthColumn in strengthColumns)
+            //{
+            //    variableStrengthHeaderRow.Cells[strengthColumn.Value].Range.Text = strengthColumn.Key.Value;
+            //}
+
+            var counter = 2;
 
             foreach (var item in data)
             {
+                counter++;
 
+                var itemRow = table.Rows.Add();
+
+                itemRow.Cells[1].Range.Font.Bold = 0;
+                itemRow.Cells[1].Range.Text = item.Key.psi.ToString("###0") + " PSI";
+
+                itemRow.Cells[2].Range.Font.Bold = 0;
+                itemRow.Cells[2].Range.Text = item.Key.aggregate?.ToString();
+
+                itemRow.Cells[3].Range.Font.Bold = 0;
+                itemRow.Cells[3].Range.Text = item.Key.mixType.ToString();
+
+                foreach (var pricesPerCubic in item.Value)
+                {
+                    itemRow.Cells[3 + strengthColumns[pricesPerCubic.Key]].Range.Text = pricesPerCubic.Value.ToString("#,##0.00");
+                }
             }
+
+            table.Cell(1, 4).Merge(table.Cell(1, 3 + strengthColumns.Count));
+            table.Cell(1, 4).Split(NumRows: 2);
+
+            table.Cell(2, 4).Split(NumColumns: strengthColumns.Count);
+
+            foreach (var strengthColumn in strengthColumns)
+            {
+                table.Cell(2, 3 + strengthColumn.Value).Range.Text = strengthColumn.Key.Value;
+            }
+
+            //foreach (Word.Cell testCell in table.Range.Cells)
+            //{
+            //    testCell.Range.Text = $"{testCell.RowIndex},{testCell.ColumnIndex}";
+            //}
         }
 
         public void Dispose()
