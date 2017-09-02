@@ -14,11 +14,13 @@ namespace Citicon.Forms.Dialogs
     {
         private PaymentTermManager PaymentTermManager;
 
-        private AddReviseQuotationDialog()
+        private AddReviseQuotationDialog(uint revisionAdd = 0)
         {
             InitializeComponent();
             DeletedProjectDesigns = new List<ProjectDesign>();
             PaymentTermManager = new PaymentTermManager();
+            
+            RevisionAdd = revisionAdd;
         }
 
         public static Quotation AddQuotation(Project project)
@@ -29,7 +31,7 @@ namespace Citicon.Forms.Dialogs
                 Quotation = new Quotation()
                 {
                     Project = project
-                }
+                },
             };
             dialog.ShowDialog();
             dialog.Dispose();
@@ -54,7 +56,7 @@ namespace Citicon.Forms.Dialogs
         {
             var tempQuotation = Supports.Clone(quotation);
             quotation.RevisionNumber++;
-            var dialog = new AddReviseQuotationDialog()
+            var dialog = new AddReviseQuotationDialog(1)
             {
                 Mode = QuotationDialogMode.Revise,
                 Quotation = quotation ?? throw new ArgumentNullException(nameof(quotation)),
@@ -67,13 +69,15 @@ namespace Citicon.Forms.Dialogs
 
         private async void AddReviseQuotationDialog_Load(object sender, EventArgs e)
         {
+            await GetProjectDesignsAsync();
+            await GetPaymentTermsAsync();
             LoadQuotationTypes();
             LoadAgents();
             UpdateUI();
-            await GetProjectDesignsAsync();
-            await GetPaymentTermsAsync();
 
         }
+        
+        private uint RevisionAdd { get; }
 
         private Quotation Quotation { get; set; }
         private Quotation TempQuotation { get; set; }
@@ -94,6 +98,11 @@ namespace Citicon.Forms.Dialogs
             VatExcludedCheckBox.Checked = Quotation?.VatExcluded != null;
             PaymentTermComboBox.SelectedItem = Quotation.PaymentTerm;
             VatExcludedNumericUpDown.Value = Quotation?.VatExcluded ?? 0;
+            AgentComboBox.SelectedItem = Quotation.Agent;
+            InHouseAgentCheckBox.Checked = Quotation.InHouseAgent;
+            EngineerIDNumericUpDown.Value = Quotation.EngineerId;
+            VatExcludedCheckBox.Checked = Quotation.VatExcluded != null;
+            VatExcludedNumericUpDown.Value = Quotation.VatExcluded ?? 0;
         }
 
         private void LoadQuotationTypes()
@@ -152,14 +161,26 @@ namespace Citicon.Forms.Dialogs
 
         private async Task GenerateQuotationNumberByTypeAsync()
         {
-            if (Mode == QuotationDialogMode.Add)
+            if (Quotation != null)
             {
-                if (Quotation != null)
+                if (Quotation.Type == TempQuotation.Type)
+                {
+                    Quotation.Number = TempQuotation.Number;
+                    Quotation.RevisionNumber = TempQuotation.RevisionNumber + RevisionAdd;
+                }
+                else
                 {
                     Quotation.Number = await QuotationManager.GenerateNumberByTypeAsync(Quotation.Type);
-                    UpdateUI();
+                    Quotation.RevisionNumber = 0;
                 }
+
+                QuotationNumberTextBox.Text = Quotation.ToString();
             }
+
+            //if (Mode == QuotationDialogMode.Add)
+            //{
+                
+            //}
         }
 
         private void AddToUI(ProjectDesign projectDesign)
@@ -361,15 +382,15 @@ namespace Citicon.Forms.Dialogs
         {
             if (Quotation != null)
             {
-                if (Mode == QuotationDialogMode.Add)
-                {
+                //if (Mode == QuotationDialogMode.Add)
+                //{
                     Quotation.Type = (QuotationType)TypeComboBox.SelectedItem;
                     await GenerateQuotationNumberByTypeAsync();
-                }
-                else
-                {
-                    TypeComboBox.SelectedItem = Quotation.Type;
-                }
+                //}
+                //else
+                //{
+                //    TypeComboBox.SelectedItem = Quotation.Type;
+                //}
             }
         }
 
