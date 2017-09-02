@@ -9,6 +9,13 @@ namespace Citicon.DataProcess
 {
     public sealed class GetQuotationById : DataProcessBase
     {
+        static GetQuotationById()
+        {
+            PaymentTermManager = new PaymentTermManager();
+        }
+
+        private static PaymentTermManager PaymentTermManager { get; }
+
         public GetQuotationById(ulong quotationId)
         {
             QuotationId = quotationId;
@@ -47,7 +54,8 @@ namespace Citicon.DataProcess
                                     Cost = 0,
                                     Type = QuotationTypeConverter.Parse(reader.GetString("Type")),
                                     Number = reader.GetUInt32("Number"),
-                                    VatExcluded = reader.GetNullableDecimal("VatExcluded")
+                                    VatExcluded = reader.GetNullableDecimal("VatExcluded"),
+                                    PaymentTerm = await PaymentTermManager.GetByIdAsync(reader.GetUInt64("PaymentTermId"))
                                 };
                             }
 

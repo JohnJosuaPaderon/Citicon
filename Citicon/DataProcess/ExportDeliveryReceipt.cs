@@ -52,21 +52,21 @@ namespace Citicon.DataProcess
                 Sheets = Workbook.Sheets;
                 Worksheet = Sheets[1];
 
-                Worksheet.Cells[8, 2] = Delivery.Project?.Client?.CompanyName;
-                Worksheet.Cells[8, 6] = Delivery.DeliveryDate;
-                Worksheet.Cells[11, 6] = Delivery.Load;
-                Worksheet.Cells[11, 8] = Delivery.TransitMixer?.PhysicalNumber;
-                Worksheet.Cells[13, 2] = Delivery.Project?.Name;
-                Worksheet.Cells[14, 6] = Delivery.Driver?.ToString();
-                Worksheet.Cells[16, 1] = Delivery.Project?.Location;
-                Worksheet.Cells[20, 2] = Delivery.ProjectDesign?.Strength?.ToString();
-                Worksheet.Cells[20, 4] = Delivery.ProjectDesign?.Psi.ToString("###0");
-                Worksheet.Cells[23, 4] = Delivery.ProjectDesign?.Aggregate?.ToString();
-                Worksheet.Cells[23, 8] = Delivery.MaxSlump;
-                Worksheet.Cells[28, 3] = Delivery.ProjectDesign?.MixType.ToString();
-                Worksheet.Cells[31, 2] = Delivery.Admixture;
-                Worksheet.Cells[31, 4] = Delivery.AdmixtureQuantity;
-                Worksheet.Cells[36, 1] = Delivery.PlantLeave;
+                Worksheet.Cells[9, 2] = Delivery.Project?.Client?.CompanyName;
+                Worksheet.Cells[9, 6] = Delivery.DeliveryDate.ToString("MMMM d, yyyy");
+                Worksheet.Cells[12, 6] = Delivery.Load;
+                Worksheet.Cells[12, 8] = Delivery.TransitMixer?.PhysicalNumber;
+                Worksheet.Cells[14, 2] = Delivery.Project?.Name;
+                Worksheet.Cells[15, 6] = Delivery.Driver?.ToString();
+                Worksheet.Cells[17, 1] = Delivery.Project?.Location;
+                Worksheet.Cells[21, 2] = Delivery.ProjectDesign?.Strength?.ToString();
+                Worksheet.Cells[21, 4] = Delivery.ProjectDesign?.Psi.ToString("###0");
+                Worksheet.Cells[22, 8] = Delivery.ProjectDesign?.PricePerCubicMeter.ToString("#,##0.00");
+                Worksheet.Cells[23, 2] = Delivery.CumulativeVolume.ToString("#,##0.0");
+                Worksheet.Cells[24, 4] = Delivery.ProjectDesign?.Aggregate?.ToString();
+                Worksheet.Cells[24, 8] = Delivery.MaxSlump;
+                Worksheet.Cells[32, 2] = Delivery.Admixture;
+                Worksheet.Cells[32, 4] = Delivery.AdmixtureQuantity;
 
                 if (!Directory.Exists(SaveLocation))
                 {

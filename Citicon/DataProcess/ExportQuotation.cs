@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
@@ -107,8 +106,8 @@ namespace Citicon.DataProcess
                 {
                     Directory.CreateDirectory(SaveDirectory);
                 }
-
-                Document.SaveAs2(FilePath);
+                //GC.Collect();
+                Document.SaveAs(FilePath);
 
                 if (PrintAfterSave)
                 {
@@ -247,26 +246,11 @@ namespace Citicon.DataProcess
             Word.Table table = Document.Tables[1];
 
             table.Columns[4].Delete();
-
-            //table.Columns[4].Cells.Split();
             var cell = table.Cell(1, 4);
-
-            //cell.Split(NumRows: 2);
-            //cell.Range.Columns[1].Cells[1].Range.Text = "PRICE PER CUM.";
             cell.Range.Columns[1].Cells[1].Split(NumColumns: strengthColumns.Count);
-            //var variableStrengthHeaderRow = cell.Range.Rows[3];
-
-            //foreach (var strengthColumn in strengthColumns)
-            //{
-            //    variableStrengthHeaderRow.Cells[strengthColumn.Value].Range.Text = strengthColumn.Key.Value;
-            //}
-
-            var counter = 2;
-
+            
             foreach (var item in data)
             {
-                counter++;
-
                 var itemRow = table.Rows.Add();
 
                 itemRow.Cells[1].Range.Font.Bold = 0;
@@ -280,11 +264,15 @@ namespace Citicon.DataProcess
 
                 foreach (var pricesPerCubic in item.Value)
                 {
+                    itemRow.Cells[3 + strengthColumns[pricesPerCubic.Key]].Range.Bold = 0;
                     itemRow.Cells[3 + strengthColumns[pricesPerCubic.Key]].Range.Text = pricesPerCubic.Value.ToString("#,##0.00");
                 }
             }
 
-            table.Cell(1, 4).Merge(table.Cell(1, 3 + strengthColumns.Count));
+            if (table.Columns.Count > 4)
+            {
+                table.Cell(1, 4).Merge(table.Cell(1, 3 + strengthColumns.Count));
+            }
             table.Cell(1, 4).Split(NumRows: 2);
 
             table.Cell(2, 4).Split(NumColumns: strengthColumns.Count);
@@ -292,12 +280,28 @@ namespace Citicon.DataProcess
             foreach (var strengthColumn in strengthColumns)
             {
                 table.Cell(2, 3 + strengthColumn.Value).Range.Text = strengthColumn.Key.Value;
+                table.Cell(2, 3 + strengthColumn.Value).PreferredWidthType = Word.WdPreferredWidthType.wdPreferredWidthAuto;
             }
 
             //foreach (Word.Cell testCell in table.Range.Cells)
             //{
             //    testCell.Range.Text = $"{testCell.RowIndex},{testCell.ColumnIndex}";
             //}
+
+            if (table.Columns.Count <= 4)
+            {
+                table.Columns.DistributeWidth();
+            }
+
+            
+            //table.Cell(1, 1).PreferredWidth = 25;
+            //table.Cell(1, 2).PreferredWidth = 25;
+            //table.Cell(1, 3).PreferredWidth = 25;
+            table.AllowAutoFit = true;
+            table.AutoFitBehavior(Word.WdAutoFitBehavior.wdAutoFitContent);
+            table.PreferredWidthType = Word.WdPreferredWidthType.wdPreferredWidthPercent;
+            table.PreferredWidth = 100;
+            Marshal.ReleaseComObject(table);
         }
 
         public void Dispose()
