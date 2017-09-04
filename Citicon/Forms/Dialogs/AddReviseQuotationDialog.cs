@@ -31,7 +31,7 @@ namespace Citicon.Forms.Dialogs
                 Quotation = new Quotation()
                 {
                     Project = project
-                },
+                }
             };
             dialog.ShowDialog();
             dialog.Dispose();
@@ -163,7 +163,7 @@ namespace Citicon.Forms.Dialogs
         {
             if (Quotation != null)
             {
-                if (Quotation.Type == TempQuotation.Type)
+                if (TempQuotation != null && Quotation.Type == TempQuotation.Type)
                 {
                     Quotation.Number = TempQuotation.Number;
                     Quotation.RevisionNumber = TempQuotation.RevisionNumber + RevisionAdd;
