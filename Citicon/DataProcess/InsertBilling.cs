@@ -96,6 +96,7 @@ namespace Citicon.DataProcess
                 command.Parameters.AddWithValue("@_CheckedBy", Billing.CheckedBy);
                 command.Parameters.AddWithValue("@_CertifiedBy", Billing.CertifiedBy);
                 command.Parameters.AddWithValue("@_ReceivedBy", Billing.ReceivedBy);
+                command.Parameters.AddWithValue("@_Notes", Billing.Notes);
 
                 await command.ExecuteNonQueryAsync();
 
