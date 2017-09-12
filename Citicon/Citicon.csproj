@@ -101,6 +101,7 @@
     <Compile Include="DataProcess\DeleteTransitMixer.cs" />
     <Compile Include="DataProcess\EmployeeExists.cs" />
     <Compile Include="DataProcess\ExportAllTripReport.cs" />
+    <Compile Include="DataProcess\ExportBilling.cs" />
     <Compile Include="DataProcess\ExportChequeReport.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
     <Compile Include="DataProcess\ExportDeliveryReceipt.cs" />
