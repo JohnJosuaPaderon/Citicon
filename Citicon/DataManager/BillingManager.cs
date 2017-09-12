@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -36,6 +37,14 @@ namespace Citicon.DataManager
             using (var getUnpaidBillingListBySalesInvoice = new GetUnpaidBillingListBySalesInvoice(salesInvoice))
             {
                 return await getUnpaidBillingListBySalesInvoice.ExecuteAsync();
+            }
+        }
+
+        public static void Export(Billing billing, Action onExported, Action<string> onError)
+        {
+            using (var process = new ExportBilling(billing, onExported, onError))
+            {
+                process.Export();
             }
         }
     }
