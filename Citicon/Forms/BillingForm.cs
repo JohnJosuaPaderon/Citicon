@@ -602,11 +602,11 @@ namespace Citicon.Forms
             Close();
         }
 
-        private void btnSaveBilling_Click(object sender, EventArgs e)
+        private async void btnSaveBilling_Click(object sender, EventArgs e)
         {
             if (ValidateBilling())
             {
-                SaveBilling();
+                await SaveBillingAsync();
                 ClearAll();
             }
             else
@@ -673,7 +673,7 @@ namespace Citicon.Forms
             tcBillingDefinition.SelectedTab = tpBilling_Deliveries;
         }
 
-        private void SaveBilling()
+        private async Task SaveBillingAsync()
         {
             var billing = new Billing()
             {
@@ -683,7 +683,8 @@ namespace Citicon.Forms
                 PreparedBy = tbxSignatories_PreparedBy.Text,
                 CheckedBy = tbxSignatories_CheckBy.Text,
                 CertifiedBy = tbxSignatories_CertifiedBy.Text,
-                ReceivedBy = tbxSignatories_ReceivedBy.Text
+                ReceivedBy = tbxSignatories_ReceivedBy.Text,
+                Notes = tbxNotes.Text
             };
             foreach (DataGridViewRow row in dgvDeliveries.Rows)
             {
@@ -709,8 +710,30 @@ namespace Citicon.Forms
                 billing.OtherCharges.Add((OtherCharge)row.Cells[colOtherCharge.Name].Value);
             }
 
-            var inserBilligntask = BillingManager.InsertBillingAsync(billing);
-            inserBilligntask.ContinueWith(DisplayInsertBillingResult);
+            try
+            {
+                billing = await BillingManager.InsertBillingAsync(billing);
+
+                if (billing != null)
+                {
+                    BillingManager.Export(billing, OnExported, OnExportError);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+
+        private void OnExportError(string message)
+        {
+            MessageBox.Show(message);
+        }
+
+        private void OnExported()
+        {
+            MessageBox.Show("Exported.");
         }
 
         private void DisplayInsertBillingResult(Task<Billing> task)
