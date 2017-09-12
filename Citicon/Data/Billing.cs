@@ -14,6 +14,7 @@ namespace Citicon.Data
         public decimal AmountPaid { get; set; }
         public BillingStructureType StructureType { get; set; }
         public Project Project { get; set; }
+        public string Notes { get; set; }
         public decimal SubTotal
         {
             get
