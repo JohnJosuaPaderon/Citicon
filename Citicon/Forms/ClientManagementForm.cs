@@ -2,6 +2,7 @@
 using Citicon.DataManager;
 using Citicon.Forms.Dialogs;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,8 @@ namespace Citicon.Forms
             InitializeComponent();
         }
 
+        private IEnumerable<Client> Clients { get; set; }
+
         private async void ClientManagementForm_Load(object sender, EventArgs e)
         {
             await GetClientListAsync();
@@ -23,15 +26,8 @@ namespace Citicon.Forms
         private async Task GetClientListAsync()
         {
             ClientDataGridView.Rows.Clear();
-            var clients = await ClientManager.GetListAsync();
-
-            if (clients != null && clients.Any())
-            {
-                foreach (var client in clients)
-                {
-                    AddClientToUI(client);
-                }
-            }
+            Clients = await ClientManager.GetListAsync();
+            SearchTextBox.Text = string.Empty;
         }
 
         private void AddClientToUI(Client client)
@@ -65,20 +61,30 @@ namespace Citicon.Forms
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            var key = SearchTextBox.Text.Trim().ToUpper();
+            SearchTextBox.ReadOnly = true;
+
+            var key = SearchTextBox.Text.Trim().ToLower();
+            ClientDataGridView.Rows.Clear();
 
             if (!string.IsNullOrWhiteSpace(key))
             {
-                foreach (DataGridViewRow row in ClientDataGridView.Rows)
+                foreach (var client in Clients)
                 {
-                    if (row.Cells[colClient.Name].Value is Client client && client.CompanyName.ToUpper().StartsWith(key))
+                    if (client.CompanyName.ToLower().Contains(key))
                     {
-                        row.Selected = true;
-                        ClientDataGridView.FirstDisplayedScrollingRowIndex = row.Index;
-                        break;
+                        AddClientToUI(client);
                     }
                 }
             }
+            else
+            {
+                foreach (var client in Clients)
+                {
+                    AddClientToUI(client);
+                }
+            }
+
+            SearchTextBox.ReadOnly = false;
         }
 
         private async void AddNewButton_Click(object sender, EventArgs e)
