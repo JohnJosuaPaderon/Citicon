@@ -17,19 +17,19 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private ScheduledProjectDesignManager ScheduledProjectDesignManager;
 
-        private async Task GetScheduledListAsync()
+        private async Task GetClientListAsync()
         {
-            dgvScheduledProjectDesign.Rows.Clear();
+            ClientDataGridView.Rows.Clear();
 
             try
             {
-                var scheduledList = await ScheduledProjectDesignManager.GetListAsync(DateTime.Now, ScheduledProjectDesignStatus.FinalApproved);
+                var clients = await ClientManager.GetListWithScheduledProjectDesignAsync(DateTime.Now, ScheduledProjectDesignStatus.FinalApproved);
 
-                if (scheduledList != null)
+                if (clients != null)
                 {
-                    foreach (var item in scheduledList)
+                    foreach (var client in clients)
                     {
-                        AddScheduledProjectDesign(item);
+                        AddToUI(client);
                     }
                 }
             }
@@ -39,7 +39,85 @@ namespace Citicon.ReceivablesIntegration.Forms
             }
         }
 
-        private void AddScheduledProjectDesign(ScheduledProjectDesign scheduledProjectDesign)
+        private async Task GetProjectListAsync()
+        {
+            ProjectDataGridView.Rows.Clear();
+
+            if (ClientDataGridView.SelectedRows.Count == 1)
+            {
+                try
+                {
+                    var client = ClientDataGridView.SelectedRows[0].Cells[ClientColumn.Name].Value as Client;
+                    var projects = await ProjectManager.GetListWithScheduledProjectDesignByClientAsync(client, DateTime.Now, ScheduledProjectDesignStatus.FinalApproved);
+
+                    if (projects != null)
+                    {
+                        foreach (var project in projects)
+                        {
+                            AddToUI(project);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private async Task GetScheduledProjectDesignListAsync()
+        {
+            dgvScheduledProjectDesign.Rows.Clear();
+
+            if (ProjectDataGridView.SelectedRows.Count == 1)
+            {
+                try
+                {
+                    var project = ProjectDataGridView.SelectedRows[0].Cells[ProjectColumn.Name].Value as Project;
+                    var scheduledProjectDesigns = await ScheduledProjectDesignManager.GetListByProjectAsync(project, DateTime.Now, ScheduledProjectDesignStatus.FinalApproved);
+
+                    if (scheduledProjectDesigns != null)
+                    {
+                        foreach (var scheduledProjectDesign in scheduledProjectDesigns)
+                        {
+                            AddToUI(scheduledProjectDesign);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void AddToUI(Project project)
+        {
+            if (project != null)
+            {
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = project });
+                ProjectDataGridView.Rows.Add(row);
+            }
+        }
+
+        private void AddToUI(Client client)
+        {
+            if (client != null)
+            {
+                var row = new DataGridViewRow()
+                {
+                    Height = 30
+                };
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = client });
+                ClientDataGridView.Rows.Add(row);
+            }
+        }
+
+        private void AddToUI(ScheduledProjectDesign scheduledProjectDesign)
         {
             if (scheduledProjectDesign != null)
             {
@@ -49,8 +127,8 @@ namespace Citicon.ReceivablesIntegration.Forms
                 };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.Project });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.Quotation?.Agent });
+                //row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.Project });
+                //row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.Quotation?.Agent });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = scheduledProjectDesign.Design?.PurchaseOrder });
 
                 dgvScheduledProjectDesign.Rows.Add(row);
@@ -136,13 +214,14 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private async void DeliveryForm_Load(object sender, EventArgs e)
         {
-            await GetScheduledListAsync();
+            await GetClientListAsync();
+            //await GetScheduledListAsync();
         }
 
         private async void BtnConfirmDelivery_Click(object sender, EventArgs e)
         {
             ConfirmDelivery();
-            await GetScheduledListAsync();
+            await GetClientListAsync();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -153,6 +232,21 @@ namespace Citicon.ReceivablesIntegration.Forms
         private void gbxProjectDesignDetails_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvScheduledProjectDesign_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private async void ClientDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            await GetProjectListAsync();
+        }
+
+        private async void ProjectDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            await GetScheduledProjectDesignListAsync();
         }
     }
 }

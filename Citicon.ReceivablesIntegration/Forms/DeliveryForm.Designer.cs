@@ -32,14 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryForm));
             this.dgvScheduledProjectDesign = new System.Windows.Forms.DataGridView();
-            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_ProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_ProjectDesign_Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_AgentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_PurchaseOrderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxProjectDesignDetails = new System.Windows.Forms.GroupBox();
             this.tbxProjectDesignDetails_CementFactor = new System.Windows.Forms.TextBox();
             this.lblProjectDesignDetails_CementFactor = new System.Windows.Forms.Label();
@@ -61,8 +63,20 @@
             this.lblProjectDesignDetails_Project_Client = new System.Windows.Forms.Label();
             this.btnConfirmDelivery = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledProjectDesign_ProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduledProjectDesign_PurchaseOrderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduledProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientDataGridView = new System.Windows.Forms.DataGridView();
+            this.ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProjectDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
             this.gbxProjectDesignDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvScheduledProjectDesign
@@ -72,8 +86,7 @@
             this.dgvScheduledProjectDesign.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvScheduledProjectDesign.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvScheduledProjectDesign.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvScheduledProjectDesign.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvScheduledProjectDesign.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvScheduledProjectDesign.BackgroundColor = System.Drawing.Color.WhiteSmoke;
@@ -93,8 +106,6 @@
             this.dgvScheduledProjectDesign.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colScheduledProjectDesign,
             this.colScheduledProjectDesign_ProjectDesign,
-            this.colScheduledProjectDesign_ProjectDesign_Project,
-            this.ScheduledProjectDesign_AgentColumn,
             this.ScheduledProjectDesign_PurchaseOrderColumn,
             this.ScheduledProjectDesign_ExtraColumn});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -107,7 +118,7 @@
             this.dgvScheduledProjectDesign.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvScheduledProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvScheduledProjectDesign.GridColor = System.Drawing.Color.Red;
-            this.dgvScheduledProjectDesign.Location = new System.Drawing.Point(11, 12);
+            this.dgvScheduledProjectDesign.Location = new System.Drawing.Point(555, 12);
             this.dgvScheduledProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvScheduledProjectDesign.MultiSelect = false;
             this.dgvScheduledProjectDesign.Name = "dgvScheduledProjectDesign";
@@ -119,58 +130,10 @@
             this.dgvScheduledProjectDesign.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvScheduledProjectDesign.RowTemplate.Height = 40;
             this.dgvScheduledProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvScheduledProjectDesign.Size = new System.Drawing.Size(876, 793);
+            this.dgvScheduledProjectDesign.Size = new System.Drawing.Size(660, 416);
             this.dgvScheduledProjectDesign.TabIndex = 108;
+            this.dgvScheduledProjectDesign.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvScheduledProjectDesign_CellContentClick);
             this.dgvScheduledProjectDesign.SelectionChanged += new System.EventHandler(this.DgvScheduledProjectDesign_SelectionChanged);
-            // 
-            // colScheduledProjectDesign
-            // 
-            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
-            this.colScheduledProjectDesign.MinimumWidth = 100;
-            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
-            this.colScheduledProjectDesign.ReadOnly = true;
-            this.colScheduledProjectDesign.Visible = false;
-            this.colScheduledProjectDesign.Width = 149;
-            // 
-            // colScheduledProjectDesign_ProjectDesign
-            // 
-            this.colScheduledProjectDesign_ProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign_ProjectDesign.HeaderText = "SCHEDULED PROJECT DESIGNS TODAY";
-            this.colScheduledProjectDesign_ProjectDesign.Name = "colScheduledProjectDesign_ProjectDesign";
-            this.colScheduledProjectDesign_ProjectDesign.ReadOnly = true;
-            this.colScheduledProjectDesign_ProjectDesign.Width = 236;
-            // 
-            // colScheduledProjectDesign_ProjectDesign_Project
-            // 
-            this.colScheduledProjectDesign_ProjectDesign_Project.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign_ProjectDesign_Project.HeaderText = "PROJECT";
-            this.colScheduledProjectDesign_ProjectDesign_Project.MinimumWidth = 100;
-            this.colScheduledProjectDesign_ProjectDesign_Project.Name = "colScheduledProjectDesign_ProjectDesign_Project";
-            this.colScheduledProjectDesign_ProjectDesign_Project.ReadOnly = true;
-            // 
-            // ScheduledProjectDesign_AgentColumn
-            // 
-            this.ScheduledProjectDesign_AgentColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ScheduledProjectDesign_AgentColumn.HeaderText = "AGENT";
-            this.ScheduledProjectDesign_AgentColumn.Name = "ScheduledProjectDesign_AgentColumn";
-            this.ScheduledProjectDesign_AgentColumn.ReadOnly = true;
-            this.ScheduledProjectDesign_AgentColumn.Width = 83;
-            // 
-            // ScheduledProjectDesign_PurchaseOrderColumn
-            // 
-            this.ScheduledProjectDesign_PurchaseOrderColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ScheduledProjectDesign_PurchaseOrderColumn.HeaderText = "PO No.";
-            this.ScheduledProjectDesign_PurchaseOrderColumn.Name = "ScheduledProjectDesign_PurchaseOrderColumn";
-            this.ScheduledProjectDesign_PurchaseOrderColumn.ReadOnly = true;
-            this.ScheduledProjectDesign_PurchaseOrderColumn.Width = 77;
-            // 
-            // ScheduledProjectDesign_ExtraColumn
-            // 
-            this.ScheduledProjectDesign_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ScheduledProjectDesign_ExtraColumn.HeaderText = "";
-            this.ScheduledProjectDesign_ExtraColumn.Name = "ScheduledProjectDesign_ExtraColumn";
-            this.ScheduledProjectDesign_ExtraColumn.ReadOnly = true;
             // 
             // gbxProjectDesignDetails
             // 
@@ -193,7 +156,7 @@
             this.gbxProjectDesignDetails.Controls.Add(this.lblProjectDesignDetails_Project);
             this.gbxProjectDesignDetails.Controls.Add(this.tbxProjectDesignDetails_Project_Client);
             this.gbxProjectDesignDetails.Controls.Add(this.lblProjectDesignDetails_Project_Client);
-            this.gbxProjectDesignDetails.Location = new System.Drawing.Point(892, 12);
+            this.gbxProjectDesignDetails.Location = new System.Drawing.Point(555, 434);
             this.gbxProjectDesignDetails.Name = "gbxProjectDesignDetails";
             this.gbxProjectDesignDetails.Size = new System.Drawing.Size(660, 315);
             this.gbxProjectDesignDetails.TabIndex = 109;
@@ -363,7 +326,7 @@
             this.btnConfirmDelivery.FlatAppearance.BorderSize = 0;
             this.btnConfirmDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmDelivery.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmDelivery.Location = new System.Drawing.Point(1246, 333);
+            this.btnConfirmDelivery.Location = new System.Drawing.Point(909, 755);
             this.btnConfirmDelivery.Name = "btnConfirmDelivery";
             this.btnConfirmDelivery.Size = new System.Drawing.Size(150, 50);
             this.btnConfirmDelivery.TabIndex = 111;
@@ -377,7 +340,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(1402, 333);
+            this.btnCancel.Location = new System.Drawing.Point(1065, 755);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 112;
@@ -385,12 +348,185 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // colScheduledProjectDesign
+            // 
+            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
+            this.colScheduledProjectDesign.MinimumWidth = 100;
+            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
+            this.colScheduledProjectDesign.ReadOnly = true;
+            this.colScheduledProjectDesign.Visible = false;
+            this.colScheduledProjectDesign.Width = 148;
+            // 
+            // colScheduledProjectDesign_ProjectDesign
+            // 
+            this.colScheduledProjectDesign_ProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colScheduledProjectDesign_ProjectDesign.HeaderText = "SCHEDULED PROJECT DESIGNS TODAY";
+            this.colScheduledProjectDesign_ProjectDesign.Name = "colScheduledProjectDesign_ProjectDesign";
+            this.colScheduledProjectDesign_ProjectDesign.ReadOnly = true;
+            this.colScheduledProjectDesign_ProjectDesign.Width = 236;
+            // 
+            // ScheduledProjectDesign_PurchaseOrderColumn
+            // 
+            this.ScheduledProjectDesign_PurchaseOrderColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ScheduledProjectDesign_PurchaseOrderColumn.HeaderText = "PO No.";
+            this.ScheduledProjectDesign_PurchaseOrderColumn.Name = "ScheduledProjectDesign_PurchaseOrderColumn";
+            this.ScheduledProjectDesign_PurchaseOrderColumn.ReadOnly = true;
+            this.ScheduledProjectDesign_PurchaseOrderColumn.Width = 77;
+            // 
+            // ScheduledProjectDesign_ExtraColumn
+            // 
+            this.ScheduledProjectDesign_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ScheduledProjectDesign_ExtraColumn.HeaderText = "";
+            this.ScheduledProjectDesign_ExtraColumn.Name = "ScheduledProjectDesign_ExtraColumn";
+            this.ScheduledProjectDesign_ExtraColumn.ReadOnly = true;
+            // 
+            // ClientDataGridView
+            // 
+            this.ClientDataGridView.AllowUserToAddRows = false;
+            this.ClientDataGridView.AllowUserToDeleteRows = false;
+            this.ClientDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.ClientDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClientDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.ClientDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ClientDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.ClientDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ClientDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.ClientDataGridView.ColumnHeadersHeight = 60;
+            this.ClientDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.ClientDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientColumn,
+            this.Client_ExtraColumn});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ClientDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ClientDataGridView.EnableHeadersVisualStyles = false;
+            this.ClientDataGridView.GridColor = System.Drawing.Color.Red;
+            this.ClientDataGridView.Location = new System.Drawing.Point(11, 12);
+            this.ClientDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ClientDataGridView.MultiSelect = false;
+            this.ClientDataGridView.Name = "ClientDataGridView";
+            this.ClientDataGridView.ReadOnly = true;
+            this.ClientDataGridView.RowHeadersVisible = false;
+            this.ClientDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ClientDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.ClientDataGridView.RowTemplate.Height = 40;
+            this.ClientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ClientDataGridView.Size = new System.Drawing.Size(540, 416);
+            this.ClientDataGridView.TabIndex = 113;
+            this.ClientDataGridView.SelectionChanged += new System.EventHandler(this.ClientDataGridView_SelectionChanged);
+            // 
+            // ClientColumn
+            // 
+            this.ClientColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ClientColumn.HeaderText = "CLIENTS";
+            this.ClientColumn.MinimumWidth = 100;
+            this.ClientColumn.Name = "ClientColumn";
+            this.ClientColumn.ReadOnly = true;
+            // 
+            // Client_ExtraColumn
+            // 
+            this.Client_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Client_ExtraColumn.HeaderText = "";
+            this.Client_ExtraColumn.Name = "Client_ExtraColumn";
+            this.Client_ExtraColumn.ReadOnly = true;
+            // 
+            // ProjectDataGridView
+            // 
+            this.ProjectDataGridView.AllowUserToAddRows = false;
+            this.ProjectDataGridView.AllowUserToDeleteRows = false;
+            this.ProjectDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ProjectDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.ProjectDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProjectDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.ProjectDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.ProjectDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProjectDataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.ProjectDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.ProjectDataGridView.ColumnHeadersHeight = 60;
+            this.ProjectDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.ProjectDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProjectColumn,
+            this.Project_ExtraColumn});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ProjectDataGridView.DefaultCellStyle = dataGridViewCellStyle11;
+            this.ProjectDataGridView.EnableHeadersVisualStyles = false;
+            this.ProjectDataGridView.GridColor = System.Drawing.Color.Red;
+            this.ProjectDataGridView.Location = new System.Drawing.Point(10, 434);
+            this.ProjectDataGridView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ProjectDataGridView.MultiSelect = false;
+            this.ProjectDataGridView.Name = "ProjectDataGridView";
+            this.ProjectDataGridView.ReadOnly = true;
+            this.ProjectDataGridView.RowHeadersVisible = false;
+            this.ProjectDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ProjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.ProjectDataGridView.RowTemplate.Height = 40;
+            this.ProjectDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProjectDataGridView.Size = new System.Drawing.Size(540, 371);
+            this.ProjectDataGridView.TabIndex = 114;
+            this.ProjectDataGridView.SelectionChanged += new System.EventHandler(this.ProjectDataGridView_SelectionChanged);
+            // 
+            // ProjectColumn
+            // 
+            this.ProjectColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ProjectColumn.HeaderText = "PROJECTS";
+            this.ProjectColumn.MinimumWidth = 100;
+            this.ProjectColumn.Name = "ProjectColumn";
+            this.ProjectColumn.ReadOnly = true;
+            this.ProjectColumn.Width = 106;
+            // 
+            // Project_ExtraColumn
+            // 
+            this.Project_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Project_ExtraColumn.HeaderText = "";
+            this.Project_ExtraColumn.Name = "Project_ExtraColumn";
+            this.Project_ExtraColumn.ReadOnly = true;
+            // 
             // DeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1563, 817);
+            this.ClientSize = new System.Drawing.Size(1226, 817);
+            this.Controls.Add(this.ProjectDataGridView);
+            this.Controls.Add(this.ClientDataGridView);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirmDelivery);
             this.Controls.Add(this.gbxProjectDesignDetails);
@@ -407,6 +543,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).EndInit();
             this.gbxProjectDesignDetails.ResumeLayout(false);
             this.gbxProjectDesignDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,9 +575,13 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign_ProjectDesign;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign_ProjectDesign_Project;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ScheduledProjectDesign_AgentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ScheduledProjectDesign_PurchaseOrderColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ScheduledProjectDesign_ExtraColumn;
+        private System.Windows.Forms.DataGridView ClientDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Client_ExtraColumn;
+        private System.Windows.Forms.DataGridView ProjectDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProjectColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Project_ExtraColumn;
     }
 }
