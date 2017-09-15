@@ -52,16 +52,18 @@
                 </Style>
             </Grid.Resources>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="RejectButton" Grid.Column="1" Content="Reject" Click="RejectButton_Click"/>
-            <Button x:Name="ApproveButton" Grid.Column="2" Content="Approve" Click="ApproveButton_Click"/>
-            <Button x:Name="FinalApproveButton" Grid.Column="3" Content="Final Approve" Click="FinalApproveButton_Click"/>
-            <Button x:Name="DeleteButton" Grid.Column="4" Content="Delete" Click="DeleteButton_Click"/>
+            <Button x:Name="SelectAllButton" Grid.Column="0" Content="Select All" Click="SelectAllButton_Click"/>
+            <Button x:Name="RejectButton" Grid.Column="2" Content="Reject" Click="RejectButton_Click"/>
+            <Button x:Name="ApproveButton" Grid.Column="3" Content="Approve" Click="ApproveButton_Click"/>
+            <Button x:Name="FinalApproveButton" Grid.Column="4" Content="Final Approve" Click="FinalApproveButton_Click"/>
+            <Button x:Name="DeleteButton" Grid.Column="5" Content="Delete" Click="DeleteButton_Click" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </UserControl>

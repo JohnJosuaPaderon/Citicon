@@ -58,14 +58,34 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
 
         private async Task UpdateAsync(string nothingToDo, string failed, string success, ScheduledProjectDesignStatus status)
         {
-            if (ScheduledProjectDesignDataGrid.SelectedItem is ScheduledProjectDesign selected && selected != null)
+            if (ScheduledProjectDesignDataGrid.SelectedItems.Count > 0)
             {
                 try
                 {
-                    selected.Status = status;
-                    var scheduledProjectDesign = await ScheduledProjectDesignManager.UpdateAsync(selected);
+                    bool isSuccess = true;
+                    foreach (var item in ScheduledProjectDesignDataGrid.SelectedItems)
+                    {
+                        if (item is ScheduledProjectDesign selected && selected != null)
+                        {
+                            selected.Status = status;
+                            var scheduledProjectDesign = await ScheduledProjectDesignManager.UpdateAsync(selected);
 
-                    if (scheduledProjectDesign != null)
+                            if (scheduledProjectDesign != null)
+                            {
+                            }
+                            else
+                            {
+                                isSuccess = false;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(nothingToDo);
+                        }
+                    }
+
+                    if (isSuccess)
                     {
                         await GetScheduledDesignListAsync();
                         MessageBox.Show(success);
@@ -88,12 +108,12 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
 
         private async void RejectButton_Click(object sender, RoutedEventArgs e)
         {
-            await UpdateAsync("No selected Scheduled delivery to reject.", "Failed to reject schedule.", "Schedule successfully rejected.", ScheduledProjectDesignStatus.Rejected);
+            await UpdateAsync("No selected Scheduled delivery to reject.", "Failed to reject schedule.", "Schedules successfully rejected.", ScheduledProjectDesignStatus.Rejected);
         }
 
         private async void ApproveButton_Click(object sender, RoutedEventArgs e)
         {
-            await UpdateAsync("No selected Scheduled delivery to approve.", "Failed to approve schedule.", "Schedule successfully approved.", ScheduledProjectDesignStatus.Approved);
+            await UpdateAsync("No selected Scheduled delivery to approve.", "Failed to approve schedule.", "Schedules successfully approved.", ScheduledProjectDesignStatus.Approved);
         }
 
         private async void FinalApproveButton_Click(object sender, RoutedEventArgs e)
@@ -103,24 +123,40 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
 
         private async void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ScheduledProjectDesignDataGrid.SelectedItem is ScheduledProjectDesign selected && selected != null)
+            if (ScheduledProjectDesignDataGrid.SelectedItems.Count > 0)
             {
-                var result = MessageBox.Show("Do you really want to delete the selected schedule?", "Schedule Deletion Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                var result = MessageBox.Show("Do you really want to delete the selected schedule(s)?", "Schedule Deletion Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
                     try
                     {
-                        selected = await ScheduledProjectDesignManager.DeleteAsync(selected);
-
-                        if (selected != null)
+                        bool success = true;
+                        foreach (var item in ScheduledProjectDesignDataGrid.SelectedItems)
                         {
-                            await GetScheduledDesignListAsync();
+                            if (item is ScheduledProjectDesign selected && selected != null)
+                            {
+                                selected = await ScheduledProjectDesignManager.DeleteAsync(selected);
+
+                                if (selected != null)
+                                {
+                                    await GetScheduledDesignListAsync();
+                                }
+                                else
+                                {
+                                    success = false;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (success)
+                        {
                             MessageBox.Show("Successfully deleted.");
                         }
                         else
                         {
-                            MessageBox.Show("Failed to delete.");
+                            MessageBox.Show("Some schedules are not deleted successfully.");
                         }
                     }
                     catch (Exception ex)
@@ -128,6 +164,10 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
                         MessageBox.Show(ex.Message);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("No schedules to be deleted.");
             }
         }
 
@@ -143,6 +183,11 @@ namespace Citicon.DesktopClient.QuotationApproval.Views
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void SelectAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            ScheduledProjectDesignDataGrid.SelectAll();
         }
     }
 }
