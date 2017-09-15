@@ -81,6 +81,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public async Task<IEnumerable<ScheduledProjectDesign>> GetListByProjectAsync(Project project, DateTime scheduledDate, ScheduledProjectDesignStatus status)
+        {
+            if (project != null && scheduledDate.Date != default(DateTime).Date && status != null)
+            {
+                using (var process = new GetScheduledProjectDesignListByProject(project, scheduledDate, status))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public Task<IEnumerable<ScheduledProjectDesign>> GetListByStatusAsync(ScheduledProjectDesignStatus status)
         {
             if (status != null)
