@@ -112,6 +112,7 @@
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
+    <Compile Include="DataProcess\GetClientListWithScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\GetConsumedProjectDesignVolume.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
@@ -134,9 +135,11 @@
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetProjectListWithScheduledProjectDesignByClient.cs" />
     <Compile Include="DataProcess\GetPurchaseOrderListBySelector.cs" />
     <Compile Include="DataProcess\GetPurchaseOrderProjectDesignListByPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetQuotationListByProject.cs" />
+    <Compile Include="DataProcess\GetScheduledProjectDesignListByProject.cs" />
     <Compile Include="DataProcess\GetScheduledProjectDesignListByStatus.cs" />
     <Compile Include="DataProcess\GetScheduledProjectDesignStatusList.cs" />
     <Compile Include="DataProcess\GetServiceEngineerList.cs" />
