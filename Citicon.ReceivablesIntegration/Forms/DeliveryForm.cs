@@ -248,5 +248,31 @@ namespace Citicon.ReceivablesIntegration.Forms
         {
             await GetScheduledProjectDesignListAsync();
         }
+
+        private async void ReprintDeliveryReceiptButton_Click(object sender, EventArgs e)
+        {
+            await ReprintDeliveryReceiptAsync();
+        }
+
+        private async Task ReprintDeliveryReceiptAsync()
+        {
+            if (string.IsNullOrWhiteSpace(ReprintDeliveryReceiptTextBox.Text))
+            {
+                MessageBox.Show("DR No. is invalid.");
+            }
+            else
+            {
+                var delivery = await DeliveryManager.GetDeliveryByNumberAsync(ReprintDeliveryReceiptTextBox.Text.Trim());
+
+                if (delivery != null)
+                {
+                    await DeliveryManager.ExportDeliveryReceiptAsync(delivery);
+                }
+                else
+                {
+                    MessageBox.Show("DR not found!");
+                }
+            }
+        }
     }
 }

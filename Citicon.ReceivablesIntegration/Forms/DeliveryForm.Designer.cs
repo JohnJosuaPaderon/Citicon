@@ -42,6 +42,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryForm));
             this.dgvScheduledProjectDesign = new System.Windows.Forms.DataGridView();
+            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledProjectDesign_ProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduledProjectDesign_PurchaseOrderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScheduledProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxProjectDesignDetails = new System.Windows.Forms.GroupBox();
             this.tbxProjectDesignDetails_CementFactor = new System.Windows.Forms.TextBox();
             this.lblProjectDesignDetails_CementFactor = new System.Windows.Forms.Label();
@@ -63,16 +67,15 @@
             this.lblProjectDesignDetails_Project_Client = new System.Windows.Forms.Label();
             this.btnConfirmDelivery = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_ProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_PurchaseOrderColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ScheduledProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClientDataGridView = new System.Windows.Forms.DataGridView();
             this.ClientColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProjectDataGridView = new System.Windows.Forms.DataGridView();
             this.ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Project_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReprintDeliveryReceiptLabel = new System.Windows.Forms.Label();
+            this.ReprintDeliveryReceiptTextBox = new System.Windows.Forms.TextBox();
+            this.ReprintDeliveryReceiptButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
             this.gbxProjectDesignDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).BeginInit();
@@ -118,7 +121,7 @@
             this.dgvScheduledProjectDesign.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvScheduledProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvScheduledProjectDesign.GridColor = System.Drawing.Color.Red;
-            this.dgvScheduledProjectDesign.Location = new System.Drawing.Point(555, 12);
+            this.dgvScheduledProjectDesign.Location = new System.Drawing.Point(681, 12);
             this.dgvScheduledProjectDesign.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvScheduledProjectDesign.MultiSelect = false;
             this.dgvScheduledProjectDesign.Name = "dgvScheduledProjectDesign";
@@ -135,9 +138,42 @@
             this.dgvScheduledProjectDesign.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvScheduledProjectDesign_CellContentClick);
             this.dgvScheduledProjectDesign.SelectionChanged += new System.EventHandler(this.DgvScheduledProjectDesign_SelectionChanged);
             // 
+            // colScheduledProjectDesign
+            // 
+            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
+            this.colScheduledProjectDesign.MinimumWidth = 100;
+            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
+            this.colScheduledProjectDesign.ReadOnly = true;
+            this.colScheduledProjectDesign.Visible = false;
+            this.colScheduledProjectDesign.Width = 149;
+            // 
+            // colScheduledProjectDesign_ProjectDesign
+            // 
+            this.colScheduledProjectDesign_ProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colScheduledProjectDesign_ProjectDesign.HeaderText = "SCHEDULED PROJECT DESIGNS TODAY";
+            this.colScheduledProjectDesign_ProjectDesign.Name = "colScheduledProjectDesign_ProjectDesign";
+            this.colScheduledProjectDesign_ProjectDesign.ReadOnly = true;
+            this.colScheduledProjectDesign_ProjectDesign.Width = 236;
+            // 
+            // ScheduledProjectDesign_PurchaseOrderColumn
+            // 
+            this.ScheduledProjectDesign_PurchaseOrderColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ScheduledProjectDesign_PurchaseOrderColumn.HeaderText = "PO No.";
+            this.ScheduledProjectDesign_PurchaseOrderColumn.Name = "ScheduledProjectDesign_PurchaseOrderColumn";
+            this.ScheduledProjectDesign_PurchaseOrderColumn.ReadOnly = true;
+            this.ScheduledProjectDesign_PurchaseOrderColumn.Width = 77;
+            // 
+            // ScheduledProjectDesign_ExtraColumn
+            // 
+            this.ScheduledProjectDesign_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ScheduledProjectDesign_ExtraColumn.HeaderText = "";
+            this.ScheduledProjectDesign_ExtraColumn.Name = "ScheduledProjectDesign_ExtraColumn";
+            this.ScheduledProjectDesign_ExtraColumn.ReadOnly = true;
+            // 
             // gbxProjectDesignDetails
             // 
-            this.gbxProjectDesignDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxProjectDesignDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxProjectDesignDetails.Controls.Add(this.tbxProjectDesignDetails_CementFactor);
             this.gbxProjectDesignDetails.Controls.Add(this.lblProjectDesignDetails_CementFactor);
             this.gbxProjectDesignDetails.Controls.Add(this.tbxProjectDesignDetails_Strength);
@@ -156,7 +192,7 @@
             this.gbxProjectDesignDetails.Controls.Add(this.lblProjectDesignDetails_Project);
             this.gbxProjectDesignDetails.Controls.Add(this.tbxProjectDesignDetails_Project_Client);
             this.gbxProjectDesignDetails.Controls.Add(this.lblProjectDesignDetails_Project_Client);
-            this.gbxProjectDesignDetails.Location = new System.Drawing.Point(555, 434);
+            this.gbxProjectDesignDetails.Location = new System.Drawing.Point(681, 434);
             this.gbxProjectDesignDetails.Name = "gbxProjectDesignDetails";
             this.gbxProjectDesignDetails.Size = new System.Drawing.Size(660, 315);
             this.gbxProjectDesignDetails.TabIndex = 109;
@@ -321,12 +357,12 @@
             // 
             // btnConfirmDelivery
             // 
-            this.btnConfirmDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirmDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConfirmDelivery.BackColor = System.Drawing.Color.Red;
             this.btnConfirmDelivery.FlatAppearance.BorderSize = 0;
             this.btnConfirmDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirmDelivery.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmDelivery.Location = new System.Drawing.Point(909, 755);
+            this.btnConfirmDelivery.Location = new System.Drawing.Point(1035, 755);
             this.btnConfirmDelivery.Name = "btnConfirmDelivery";
             this.btnConfirmDelivery.Size = new System.Drawing.Size(150, 50);
             this.btnConfirmDelivery.TabIndex = 111;
@@ -336,50 +372,17 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(1065, 755);
+            this.btnCancel.Location = new System.Drawing.Point(1191, 755);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 50);
             this.btnCancel.TabIndex = 112;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // colScheduledProjectDesign
-            // 
-            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
-            this.colScheduledProjectDesign.MinimumWidth = 100;
-            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
-            this.colScheduledProjectDesign.ReadOnly = true;
-            this.colScheduledProjectDesign.Visible = false;
-            this.colScheduledProjectDesign.Width = 148;
-            // 
-            // colScheduledProjectDesign_ProjectDesign
-            // 
-            this.colScheduledProjectDesign_ProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colScheduledProjectDesign_ProjectDesign.HeaderText = "SCHEDULED PROJECT DESIGNS TODAY";
-            this.colScheduledProjectDesign_ProjectDesign.Name = "colScheduledProjectDesign_ProjectDesign";
-            this.colScheduledProjectDesign_ProjectDesign.ReadOnly = true;
-            this.colScheduledProjectDesign_ProjectDesign.Width = 236;
-            // 
-            // ScheduledProjectDesign_PurchaseOrderColumn
-            // 
-            this.ScheduledProjectDesign_PurchaseOrderColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ScheduledProjectDesign_PurchaseOrderColumn.HeaderText = "PO No.";
-            this.ScheduledProjectDesign_PurchaseOrderColumn.Name = "ScheduledProjectDesign_PurchaseOrderColumn";
-            this.ScheduledProjectDesign_PurchaseOrderColumn.ReadOnly = true;
-            this.ScheduledProjectDesign_PurchaseOrderColumn.Width = 77;
-            // 
-            // ScheduledProjectDesign_ExtraColumn
-            // 
-            this.ScheduledProjectDesign_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ScheduledProjectDesign_ExtraColumn.HeaderText = "";
-            this.ScheduledProjectDesign_ExtraColumn.Name = "ScheduledProjectDesign_ExtraColumn";
-            this.ScheduledProjectDesign_ExtraColumn.ReadOnly = true;
             // 
             // ClientDataGridView
             // 
@@ -431,7 +434,7 @@
             this.ClientDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.ClientDataGridView.RowTemplate.Height = 40;
             this.ClientDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ClientDataGridView.Size = new System.Drawing.Size(540, 416);
+            this.ClientDataGridView.Size = new System.Drawing.Size(666, 416);
             this.ClientDataGridView.TabIndex = 113;
             this.ClientDataGridView.SelectionChanged += new System.EventHandler(this.ClientDataGridView_SelectionChanged);
             // 
@@ -499,7 +502,7 @@
             this.ProjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.ProjectDataGridView.RowTemplate.Height = 40;
             this.ProjectDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProjectDataGridView.Size = new System.Drawing.Size(540, 371);
+            this.ProjectDataGridView.Size = new System.Drawing.Size(666, 315);
             this.ProjectDataGridView.TabIndex = 114;
             this.ProjectDataGridView.SelectionChanged += new System.EventHandler(this.ProjectDataGridView_SelectionChanged);
             // 
@@ -519,12 +522,48 @@
             this.Project_ExtraColumn.Name = "Project_ExtraColumn";
             this.Project_ExtraColumn.ReadOnly = true;
             // 
+            // ReprintDeliveryReceiptLabel
+            // 
+            this.ReprintDeliveryReceiptLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReprintDeliveryReceiptLabel.AutoSize = true;
+            this.ReprintDeliveryReceiptLabel.Location = new System.Drawing.Point(10, 755);
+            this.ReprintDeliveryReceiptLabel.Name = "ReprintDeliveryReceiptLabel";
+            this.ReprintDeliveryReceiptLabel.Size = new System.Drawing.Size(86, 21);
+            this.ReprintDeliveryReceiptLabel.TabIndex = 115;
+            this.ReprintDeliveryReceiptLabel.Text = "Reprint DR";
+            // 
+            // ReprintDeliveryReceiptTextBox
+            // 
+            this.ReprintDeliveryReceiptTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReprintDeliveryReceiptTextBox.Location = new System.Drawing.Point(14, 779);
+            this.ReprintDeliveryReceiptTextBox.Name = "ReprintDeliveryReceiptTextBox";
+            this.ReprintDeliveryReceiptTextBox.Size = new System.Drawing.Size(208, 29);
+            this.ReprintDeliveryReceiptTextBox.TabIndex = 116;
+            // 
+            // ReprintDeliveryReceiptButton
+            // 
+            this.ReprintDeliveryReceiptButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ReprintDeliveryReceiptButton.BackColor = System.Drawing.Color.Red;
+            this.ReprintDeliveryReceiptButton.FlatAppearance.BorderSize = 0;
+            this.ReprintDeliveryReceiptButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReprintDeliveryReceiptButton.ForeColor = System.Drawing.Color.White;
+            this.ReprintDeliveryReceiptButton.Location = new System.Drawing.Point(228, 758);
+            this.ReprintDeliveryReceiptButton.Name = "ReprintDeliveryReceiptButton";
+            this.ReprintDeliveryReceiptButton.Size = new System.Drawing.Size(122, 50);
+            this.ReprintDeliveryReceiptButton.TabIndex = 117;
+            this.ReprintDeliveryReceiptButton.Text = "Re-print";
+            this.ReprintDeliveryReceiptButton.UseVisualStyleBackColor = false;
+            this.ReprintDeliveryReceiptButton.Click += new System.EventHandler(this.ReprintDeliveryReceiptButton_Click);
+            // 
             // DeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1226, 817);
+            this.ClientSize = new System.Drawing.Size(1352, 817);
+            this.Controls.Add(this.ReprintDeliveryReceiptButton);
+            this.Controls.Add(this.ReprintDeliveryReceiptTextBox);
+            this.Controls.Add(this.ReprintDeliveryReceiptLabel);
             this.Controls.Add(this.ProjectDataGridView);
             this.Controls.Add(this.ClientDataGridView);
             this.Controls.Add(this.btnCancel);
@@ -546,6 +585,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -583,5 +623,8 @@
         private System.Windows.Forms.DataGridView ProjectDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Project_ExtraColumn;
+        private System.Windows.Forms.Label ReprintDeliveryReceiptLabel;
+        private System.Windows.Forms.TextBox ReprintDeliveryReceiptTextBox;
+        private System.Windows.Forms.Button ReprintDeliveryReceiptButton;
     }
 }
