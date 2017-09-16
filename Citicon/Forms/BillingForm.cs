@@ -351,7 +351,7 @@ namespace Citicon.Forms
             }
         }
 
-        private void DisplayDeliveryListByProject(Task<IEnumerable<Citicon.Data.Delivery>> task)
+        private void DisplayDeliveryListByProject(Task<IEnumerable<Delivery>> task)
         {
             Invoke(new Action(() => dgvDeliveries.Rows.Clear()));
 
