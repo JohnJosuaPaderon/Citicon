@@ -14,16 +14,10 @@ namespace Citicon.DataProcess
         {
             Range = range ?? throw new ArgumentNullException(nameof(range));
             Driver = driver ?? throw new ArgumentNullException(nameof(driver));
-            RouteManager = new DeliveryRouteManager();
-            BranchManager = new BranchManager();
-            TransitMixerManager = new TransitMixerManager();
         }
 
         private DateTimeRange Range;
         private Employee Driver;
-        private DeliveryRouteManager RouteManager;
-        private BranchManager BranchManager;
-        private TransitMixerManager TransitMixerManager;
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
@@ -44,9 +38,6 @@ namespace Citicon.DataProcess
         {
             Range = null;
             Driver = null;
-            BranchManager = null;
-            RouteManager = null;
-            TransitMixerManager = null;
             base.Dispose();
         }
 
@@ -71,7 +62,7 @@ namespace Citicon.DataProcess
                 Project = await ProjectManager.GetByIdAsync(reader.GetUInt64("ProjectId")),
                 ProjectDesign = await ProjectDesignManager.GetByIdAsync(reader.GetUInt64("ProjectDesignId")),
                 Remarks = null,
-                Route = await RouteManager.GetByIdAsync(reader.GetInt64("RouteId")),
+                Route = await DeliveryRouteManager.GetByIdAsync(reader.GetInt64("RouteId")),
                 TransitMixer = await TransitMixerManager.GetByIdAsync(reader.GetUInt64("TransitMixerId")),
                 Volume = reader.GetDecimal("Volume")
             };
