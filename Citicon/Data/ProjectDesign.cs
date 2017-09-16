@@ -48,10 +48,10 @@ namespace Citicon.Data
         {
             var displayBuilder = new StringBuilder();
 
-            displayBuilder.Append($"{MixType} ");
             displayBuilder.Append($"{Psi} ");
             displayBuilder.Append($"{Aggregate} ");
             displayBuilder.Append($"{Strength} ");
+            displayBuilder.Append($"{MixType} ");
 
             if (Project.Type == ProjectType.CementSupplied && CementFactor > 0)
             {
