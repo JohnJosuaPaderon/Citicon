@@ -9,7 +9,7 @@ namespace Citicon.DataManager
     {
         private static Dictionary<long, DeliveryRoute> Dictionary { get; } = new Dictionary<long, DeliveryRoute>();
 
-        public async Task<DeliveryRoute> GetByIdAsync(long routeId)
+        public static async Task<DeliveryRoute> GetByIdAsync(long routeId)
         {
             if (routeId > 0)
             {

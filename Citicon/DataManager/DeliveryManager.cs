@@ -79,7 +79,7 @@ namespace Citicon.DataManager
                 Project = await ProjectManager.GetByIdAsync(dataReader.GetUInt64("ProjectId")),
                 ProjectDesign = await ProjectDesignManager.GetByIdAsync(dataReader.GetUInt64("ProjectDesignId")),
                 Remarks = dataReader.GetString("Remarks"),
-                TransitMixer = await VehicleManager.GetByVehicleIdAsync(dataReader.GetUInt64("TransitMixer")) as TransitMixer,
+                TransitMixer = await TransitMixerManager.GetByIdAsync(dataReader.GetUInt64("TransitMixer")),
                 Volume = dataReader.GetDecimal("Volume"),
                 PricePerCubicMeter = dataReader.GetDecimal("PricePerCubicMeter")
             };
@@ -198,6 +198,21 @@ namespace Citicon.DataManager
                 using (var process = new GetTripReportDeliveryListByDriver(range, driver))
                 {
                     return process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<Delivery> GetDeliveryByNumberAsync(string number)
+        {
+            if (!string.IsNullOrWhiteSpace(number))
+            {
+                using (var process = new GetDeliveryReceiptByNumber(number))
+                {
+                    return await process.ExecuteAsync();
                 }
             }
             else

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataManager
 {
-    public sealed class BranchManager : DataManager<Branch>, IDataManager<Branch>
+    public sealed class BranchManager : DataManager<Branch>//, IDataManager<Branch>
     {
         static BranchManager()
         {
@@ -42,7 +42,7 @@ namespace Citicon.DataManager
             return Task.Factory.StartNew(() => Add(data));
         }
 
-        public Branch ExtractFromDictionary(Dictionary<string, object> dictionary)
+        public static Branch ExtractFromDictionary(Dictionary<string, object> dictionary)
         {
             if (dictionary != null)
             {
@@ -65,7 +65,7 @@ namespace Citicon.DataManager
             }
         }
 
-        public Branch GetById(ulong id)
+        public static Branch GetById(ulong id)
         {
             if (BranchDict.ContainsKey(id))
             {
@@ -77,8 +77,15 @@ namespace Citicon.DataManager
                 using (var query = new MySqlQuery(Supports.ConnectionString, "_branches_getbyid"))
                 {
                     query.AddParameter("@_BranchId", id);
-                    query.ExceptionCatched += OnExceptionCatched;
-                    return ExtractFromDictionary(query.GetRecord());
+                    //query.ExceptionCatched += OnExceptionCatched;
+                    var branch = ExtractFromDictionary(query.GetRecord());
+
+                    if (branch != null && !BranchDict.ContainsKey(branch.Id))
+                    {
+                        BranchDict.Add(branch.Id, branch);
+                    }
+
+                    return branch;
                 }
             }
             return null;

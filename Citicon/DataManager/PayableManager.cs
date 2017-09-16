@@ -324,7 +324,7 @@ namespace Citicon.DataManager
                 return new Payable
                 {
                     BankAccount = (new BankAccountManager()).GetById(dictionary.GetUInt64("BankAccountId")),
-                    Branch = (new BranchManager()).GetById(dictionary.GetUInt64("BranchId")),
+                    Branch = BranchManager.GetById(dictionary.GetUInt64("BranchId")),
                     ChequeNumber = dictionary.GetString("ChequeNumber"),
                     ChequeVoucherNumber = dictionary.GetString("ChequeVoucherNumber"),
                     Company = (new CompanyManager()).GetById(dictionary.GetUInt64("CompanyId")),

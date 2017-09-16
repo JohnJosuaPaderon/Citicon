@@ -56,7 +56,7 @@ namespace Citicon.DataManager
             return transitMixer;
         }
 
-        public async Task<TransitMixer> GetByIdAsync(ulong transitMixerId)
+        public static async Task<TransitMixer> GetByIdAsync(ulong transitMixerId)
         {
             if (transitMixerId > 0)
             {

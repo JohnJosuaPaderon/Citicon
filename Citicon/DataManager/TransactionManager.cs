@@ -102,7 +102,7 @@ namespace Citicon.DataManager
             {
                 return new Transaction
                 {
-                    Branch = (new BranchManager()).GetById(dictionary.GetUInt64("BranchId")),
+                    Branch = BranchManager.GetById(dictionary.GetUInt64("BranchId")),
                     Company = (new CompanyManager()).GetById(dictionary.GetUInt64("CompanyId")),
                     Id = dictionary.GetUInt64("TransactionId"),
                     Item = (new ItemManager()).GetById(dictionary.GetUInt64("ItemId")),

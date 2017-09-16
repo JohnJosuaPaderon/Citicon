@@ -288,7 +288,7 @@ namespace Citicon.DataManager
                 {
                     AcceptedBy = dictionary.GetString("AcceptedBy"),
                     AddedStockValue = dictionary.GetDecimal("AddedStockValue"),
-                    Branch = (new BranchManager()).GetById(dictionary.GetUInt64("BranchId")),
+                    Branch = BranchManager.GetById(dictionary.GetUInt64("BranchId")),
                     Company = (new CompanyManager()).GetById(dictionary.GetUInt64("CompanyId")),
                     DeliveryDate = dictionary.GetDateTime("DeliveryDate"),
                     DueDate = dictionary.GetDateTime("DueDate"),
