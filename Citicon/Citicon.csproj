@@ -117,6 +117,7 @@
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetDeliveryReceiptByNumber.cs" />
     <Compile Include="DataProcess\GetDeliveryRouteById.cs" />
     <Compile Include="DataProcess\GetDeliveryRouteList.cs" />
     <Compile Include="DataProcess\GetDepartmentList.cs" />
