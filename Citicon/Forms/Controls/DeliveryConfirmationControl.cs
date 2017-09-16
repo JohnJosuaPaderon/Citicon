@@ -12,7 +12,7 @@ namespace Citicon.Forms.Controls
         public DeliveryConfirmationControl()
         {
             InitializeComponent();
-        }
+         }
 
         private Delivery _CurrentDelivery;
 

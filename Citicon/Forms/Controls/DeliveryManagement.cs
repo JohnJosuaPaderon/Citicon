@@ -368,6 +368,8 @@ namespace Citicon.Forms.Controls
                 Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityTextBox.Text;
                 Delivery.Load = Convert.ToUInt32(LoadNumericUpDown.Value);
                 Delivery.CumulativeVolume = CumulativeVolumeNumericUpDown.Value;
+                Delivery.MaxSlump = MaxSlumpTextBox.Text;
+
                 var delivery = await DeliveryManager.InsertAsync(Delivery);
                 if (delivery != null)
                 {
