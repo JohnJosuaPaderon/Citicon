@@ -82,6 +82,40 @@ namespace Citicon.Data
             return Id.GetHashCode();
         }
 
+        public string FullName
+        {
+            get
+            {
+                var sb = new StringBuilder();
+                var lastName = LastName?.Trim();
+                var firstName = FirstName?.Trim();
+                var hasLastName = !string.IsNullOrEmpty(lastName);
+                var hasFirstName = !string.IsNullOrEmpty(firstName);
+
+                if (hasLastName)
+                {
+                    sb.Append(lastName);
+                }
+
+                if (hasLastName && hasFirstName)
+                {
+                    sb.Append(", ");
+                }
+
+                if (hasFirstName)
+                {
+                    sb.Append(firstName);
+                }
+
+                if (hasFirstName)
+                {
+                    sb.Append(" ");
+                }
+
+                return sb.ToString();
+            }
+        }
+
         public override string ToString()
         {
             var sb = new StringBuilder();
