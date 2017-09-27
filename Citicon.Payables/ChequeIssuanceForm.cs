@@ -15,6 +15,7 @@ namespace Citicon.Payables
         private PayableManager payableManager;
         private BankManager bankManager;
         private BankAccountManager bankAccountManager;
+        private CompanyManager CompanyManager;
         private Supplier payee;
         private Payable[] payables;
         private Bank[] banks;
@@ -41,6 +42,8 @@ namespace Citicon.Payables
             bankAccountManager = new BankAccountManager();
             bankAccountManager.ExceptionCatched += ExceptionCatched;
             bankAccountManager.NewItemGenerated += BankAccountManager_NewItemGenerated;
+
+            CompanyManager = new CompanyManager();
         }
 
         private void PayableManager_Updated(Payable e)
@@ -120,6 +123,25 @@ namespace Citicon.Payables
             if (checkVoucherNumbers != null)
             {
                 tbxCheckVoucherNumber.AutoCompleteCustomSource.AddRange(checkVoucherNumbers);
+            }
+        }
+
+        private async Task LoadCompanies()
+        {
+            ChequeCompanyComboBox.Items.Clear();
+
+            try
+            {
+                var companies = await CompanyManager.GetListAsync();
+
+                if (companies != null && companies.Any())
+                {
+                    ChequeCompanyComboBox.Items.AddRange(companies);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -227,6 +249,7 @@ namespace Citicon.Payables
                     grandTotalAmount = 0;
                     var rawChequeNumber = tbxCheckNumber.Text.Trim();
                     var chequeNumber = uint.Parse(rawChequeNumber);
+                    var chequeCompany = ChequeCompanyComboBox.SelectedItem as Company;
                     if (chequeNumber <= 0)
                     {
                         MessageBox.Show("Insufficient cheque number!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -244,6 +267,7 @@ namespace Citicon.Payables
                         payable.ChequeDate = dtpChequeDate.Value;
                         payable.BankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
                         payable.TransactionDate = Supports.SystemDate;
+                        payable.ChequeCompany = chequeCompany;
                         payableManager.Update(payable);
                     }
                     payableManager.ExportCheque(grandTotalAmount, payee, dtpChequeDate.Value);
@@ -255,6 +279,7 @@ namespace Citicon.Payables
                     tbxCheckNumber.Text = "0000000";
                     tbxCheckVoucherNumber.Text = string.Empty;
                     tbxPayee.Text = string.Empty;
+                    ChequeCompanyComboBox.SelectedItem = null;
                     payee = null;
                     //cmbxBanks.SelectedItem = null;
                     //cmbxBankAccounts.Items.Clear();
