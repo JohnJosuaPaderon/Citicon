@@ -25,6 +25,7 @@ namespace Citicon.Data
         public string AccountType { get; set; }
         public DateTime ChequeDate { get; set; }
         public DateTime? ChequeTransactionDate { get; set; }
+        public Company ChequeCompany { get; set; }
         public decimal Value
         {
             get { return Credit != 0 ? -1 * Credit : Debit; }

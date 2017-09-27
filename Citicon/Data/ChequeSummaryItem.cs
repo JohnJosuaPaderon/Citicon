@@ -11,6 +11,7 @@ namespace Citicon.Data
         public BankAccount BankAccount { get; set; }
         public Company Company { get; set; }
         public DateTime TransactionDate { get; set; }
+        public Company ChequeCompany { get; set; }
 
         public static bool operator ==(ChequeSummaryItem left, ChequeSummaryItem right)
         {
