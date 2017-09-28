@@ -20,6 +20,7 @@
     <DefineConstants>TRACE;DEBUG;__DEMO__,__DEMO_EXPERIMENTAL__</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>CS0618;CS0108;CS0612;IDE1006;CS1998</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -80,6 +81,7 @@
     <Compile Include="DataManager\ClassificationManager.cs" />
     <Compile Include="DataManager\ClientManager.cs" />
     <Compile Include="DataManager\CompanyManager.cs" />
+    <Compile Include="DataManager\DeliveryConsumedCementSuppliedManager.cs" />
     <Compile Include="DataManager\DeliveryManager.cs" />
     <Compile Include="DataManager\DeliveryRouteManager.cs" />
     <Compile Include="DataManager\EmploymentStatusManager.cs" />
@@ -112,10 +114,15 @@
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
+    <Compile Include="DataProcess\GetCementSuppliedListByProject.cs" />
+    <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
+    <Compile Include="DataProcess\GetClientListWithCementSuppliedProject.cs" />
     <Compile Include="DataProcess\GetClientListWithScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\GetConsumedProjectDesignVolume.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
+    <Compile Include="DataProcess\GetDeliveryConsumedCementSupplied.cs" />
+    <Compile Include="DataProcess\GetDeliveryListByProject.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetDeliveryReceiptByNumber.cs" />
     <Compile Include="DataProcess\GetDeliveryRouteById.cs" />
@@ -209,6 +216,7 @@
     <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
     <Compile Include="DataProcess\InsertTimeLog.cs" />
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
+    <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
     <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\GetDepartmentById.cs" />
@@ -340,6 +348,7 @@
     <Compile Include="Data\DateTimeRange.cs" />
     <Compile Include="Data\Delivery.cs" />
     <Compile Include="Data\DeliveryAutoValues.cs" />
+    <Compile Include="Data\DeliveryConsumedCementSupplied.cs" />
     <Compile Include="Data\DeliveryRoute.cs" />
     <Compile Include="Data\DeliveryScheduleStatus.cs" />
     <Compile Include="Data\Department.cs" />
@@ -443,6 +452,12 @@
     </Compile>
     <Compile Include="Forms\ClientManagementForm.Designer.cs">
       <DependentUpon>ClientManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConsumedCementSuppliedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConsumedCementSuppliedForm.Designer.cs">
+      <DependentUpon>ConsumedCementSuppliedForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Controls\AddEditEmployeeControl.cs">
       <SubType>UserControl</SubType>
@@ -583,6 +598,12 @@
       <DependentUpon>ClientSearchDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Dialogs\DataDialogMode.cs" />
+    <Compile Include="Forms\Dialogs\ManageCementSuppliedDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ManageCementSuppliedDialog.Designer.cs">
+      <DependentUpon>ManageCementSuppliedDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\ProjectSearchDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -732,6 +753,9 @@
     <EmbeddedResource Include="Forms\ClientManagementForm.resx">
       <DependentUpon>ClientManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConsumedCementSuppliedForm.resx">
+      <DependentUpon>ConsumedCementSuppliedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Controls\AddEditEmployeeControl.resx">
       <DependentUpon>AddEditEmployeeControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -800,6 +824,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ClientSearchDialog.resx">
       <DependentUpon>ClientSearchDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ManageCementSuppliedDialog.resx">
+      <DependentUpon>ManageCementSuppliedDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ProjectSearchDialog.resx">
       <DependentUpon>ProjectSearchDialog.cs</DependentUpon>
