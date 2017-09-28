@@ -416,15 +416,17 @@ namespace Citicon.Forms
         #region Add Entity
         private void AddPumpcreteCharge()
         {
-            var pumpcreteCharge = new PumpcreteCharge();
-            pumpcreteCharge.Billing = null;
-            pumpcreteCharge.OperationTimeFrame = new OperationTimeFrame() { Start = dtpPumpcrete_OperationTimeFrame_Start.Value, Finish = dtpPumpcrete_OperationTimeFrame_Finish.Value };
-            pumpcreteCharge.PricePerCubicMeter = nudPumpcrete_PricePerCubicMeter.Value;
-            pumpcreteCharge.PricePerSetup = nudPumpcrete_PricePerSetup.Value;
-            pumpcreteCharge.PumpSize = (PumpSize)cmbxPumpcrete_PumpSize.SelectedItem;
-            pumpcreteCharge.PumpType = (PumpType)cmbxPumpcrete_PumpType.SelectedItem;
-            pumpcreteCharge.Remarks = tbxPumpcrete_Remarks.Text;
-            pumpcreteCharge.TotalVolumePumped = nudPumpcrete_TotalVolumePumped.Value;
+            var pumpcreteCharge = new PumpcreteCharge
+            {
+                Billing = null,
+                OperationTimeFrame = new OperationTimeFrame() { Start = dtpPumpcrete_OperationTimeFrame_Start.Value, Finish = dtpPumpcrete_OperationTimeFrame_Finish.Value },
+                PricePerCubicMeter = nudPumpcrete_PricePerCubicMeter.Value,
+                PricePerSetup = nudPumpcrete_PricePerSetup.Value,
+                PumpSize = (PumpSize)cmbxPumpcrete_PumpSize.SelectedItem,
+                PumpType = (PumpType)cmbxPumpcrete_PumpType.SelectedItem,
+                Remarks = tbxPumpcrete_Remarks.Text,
+                TotalVolumePumped = nudPumpcrete_TotalVolumePumped.Value
+            };
 
             var row = new DataGridViewRow()
             {
@@ -472,12 +474,14 @@ namespace Citicon.Forms
 
         private void AddOtherCharge()
         {
-            var otherCharge = new OtherCharge();
-            otherCharge.Amount = nudOther_Amount.Value;
-            otherCharge.Billing = null;
-            otherCharge.Remarks = tbxOther_Remarks.Text;
-            otherCharge.Type = (OtherChargeType)cmbxOther_OtherChargeType.SelectedItem;
-            otherCharge.Unit = nudOther_Unit.Value;
+            var otherCharge = new OtherCharge
+            {
+                Amount = nudOther_Amount.Value,
+                Billing = null,
+                Remarks = tbxOther_Remarks.Text,
+                Type = (OtherChargeType)cmbxOther_OtherChargeType.SelectedItem,
+                Unit = nudOther_Unit.Value
+            };
 
             var row = new DataGridViewRow()
             {
