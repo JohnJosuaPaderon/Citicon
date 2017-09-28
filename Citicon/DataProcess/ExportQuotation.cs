@@ -55,6 +55,7 @@ namespace Citicon.DataProcess
             SaveDirectory = saveDirectory;
             FilePath = $@"{saveDirectory}\{quotation.ToString()}.doc";
             Version = ConfigurationManager.AppSettings.GetInt32("Quotation.Version");
+            PrintAfterSave = false;
         }
 
         public ExportQuotationResult Export()

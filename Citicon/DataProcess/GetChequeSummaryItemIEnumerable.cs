@@ -87,7 +87,8 @@ namespace Citicon.DataProcess
                 TotalAmount = reader.GetDecimal("TotalAmount"),
                 BankAccount = BankAccountManager.GetById(reader.GetUInt64("BankAccountId")),
                 TransactionDate = reader.GetDateTime("TransactionDate"),
-                Company = await CompanyManager.GetByIdAsync(reader.GetUInt64("CompanyId"))
+                Company = await CompanyManager.GetByIdAsync(reader.GetUInt64("CompanyId")),
+                ChequeCompany = await CompanyManager.GetByIdAsync(reader.GetUInt64("ChequeCompanyId"))
             };
         }
 
