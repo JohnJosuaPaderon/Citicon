@@ -93,6 +93,16 @@ namespace Citicon.BillingApplication
             }
         }
 
+        private ConsumedCementSuppliedForm ConsumedCementSuppliedForm
+        {
+            get
+            {
+                var form = new ConsumedCementSuppliedForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void InitializeSecurity()
         {
             UserSettingsButton.Enabled = User.CurrentUser.Admin;
@@ -158,6 +168,11 @@ namespace Citicon.BillingApplication
         private void PurchaseOrderMonitorButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(PurchaseOrderMonitoringForm);
+        }
+
+        private void CementSuppliedButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(ConsumedCementSuppliedForm);
         }
     }
 }

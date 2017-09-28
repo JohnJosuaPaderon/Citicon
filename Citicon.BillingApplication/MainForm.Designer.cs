@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PurchaseOrderMonitorButton = new System.Windows.Forms.Button();
             this.DeliveryConfirmationButton = new System.Windows.Forms.Button();
             this.TallySheetButton = new System.Windows.Forms.Button();
             this.UserSettingsButton = new System.Windows.Forms.Button();
@@ -37,13 +38,14 @@
             this.PaymentButton = new System.Windows.Forms.Button();
             this.SalesInvoiceButton = new System.Windows.Forms.Button();
             this.BillingButton = new System.Windows.Forms.Button();
-            this.PurchaseOrderMonitorButton = new System.Windows.Forms.Button();
+            this.CementSuppliedButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.CementSuppliedButton);
             this.panel1.Controls.Add(this.PurchaseOrderMonitorButton);
             this.panel1.Controls.Add(this.DeliveryConfirmationButton);
             this.panel1.Controls.Add(this.TallySheetButton);
@@ -59,6 +61,22 @@
             this.panel1.Size = new System.Drawing.Size(1472, 60);
             this.panel1.TabIndex = 1;
             // 
+            // PurchaseOrderMonitorButton
+            // 
+            this.PurchaseOrderMonitorButton.BackColor = System.Drawing.Color.Red;
+            this.PurchaseOrderMonitorButton.FlatAppearance.BorderSize = 0;
+            this.PurchaseOrderMonitorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PurchaseOrderMonitorButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PurchaseOrderMonitorButton.ForeColor = System.Drawing.Color.White;
+            this.PurchaseOrderMonitorButton.Location = new System.Drawing.Point(679, 5);
+            this.PurchaseOrderMonitorButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PurchaseOrderMonitorButton.Name = "PurchaseOrderMonitorButton";
+            this.PurchaseOrderMonitorButton.Size = new System.Drawing.Size(125, 50);
+            this.PurchaseOrderMonitorButton.TabIndex = 7;
+            this.PurchaseOrderMonitorButton.Text = "P.O. MONITOR";
+            this.PurchaseOrderMonitorButton.UseVisualStyleBackColor = false;
+            this.PurchaseOrderMonitorButton.Click += new System.EventHandler(this.PurchaseOrderMonitorButton_Click);
+            // 
             // DeliveryConfirmationButton
             // 
             this.DeliveryConfirmationButton.BackColor = System.Drawing.Color.Red;
@@ -66,7 +84,7 @@
             this.DeliveryConfirmationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeliveryConfirmationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeliveryConfirmationButton.ForeColor = System.Drawing.Color.White;
-            this.DeliveryConfirmationButton.Location = new System.Drawing.Point(794, 5);
+            this.DeliveryConfirmationButton.Location = new System.Drawing.Point(949, 5);
             this.DeliveryConfirmationButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DeliveryConfirmationButton.Name = "DeliveryConfirmationButton";
             this.DeliveryConfirmationButton.Size = new System.Drawing.Size(125, 50);
@@ -82,7 +100,7 @@
             this.TallySheetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TallySheetButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TallySheetButton.ForeColor = System.Drawing.Color.White;
-            this.TallySheetButton.Location = new System.Drawing.Point(659, 5);
+            this.TallySheetButton.Location = new System.Drawing.Point(814, 5);
             this.TallySheetButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.TallySheetButton.Name = "TallySheetButton";
             this.TallySheetButton.Size = new System.Drawing.Size(125, 50);
@@ -98,7 +116,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(929, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(1084, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -171,21 +189,21 @@
             this.BillingButton.UseVisualStyleBackColor = false;
             this.BillingButton.Click += new System.EventHandler(this.BillingButton_Click);
             // 
-            // PurchaseOrderMonitorButton
+            // CementSuppliedButton
             // 
-            this.PurchaseOrderMonitorButton.BackColor = System.Drawing.Color.Red;
-            this.PurchaseOrderMonitorButton.FlatAppearance.BorderSize = 0;
-            this.PurchaseOrderMonitorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PurchaseOrderMonitorButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PurchaseOrderMonitorButton.ForeColor = System.Drawing.Color.White;
-            this.PurchaseOrderMonitorButton.Location = new System.Drawing.Point(524, 5);
-            this.PurchaseOrderMonitorButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.PurchaseOrderMonitorButton.Name = "PurchaseOrderMonitorButton";
-            this.PurchaseOrderMonitorButton.Size = new System.Drawing.Size(125, 50);
-            this.PurchaseOrderMonitorButton.TabIndex = 7;
-            this.PurchaseOrderMonitorButton.Text = "P.O. MONITOR";
-            this.PurchaseOrderMonitorButton.UseVisualStyleBackColor = false;
-            this.PurchaseOrderMonitorButton.Click += new System.EventHandler(this.PurchaseOrderMonitorButton_Click);
+            this.CementSuppliedButton.BackColor = System.Drawing.Color.Red;
+            this.CementSuppliedButton.FlatAppearance.BorderSize = 0;
+            this.CementSuppliedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CementSuppliedButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CementSuppliedButton.ForeColor = System.Drawing.Color.White;
+            this.CementSuppliedButton.Location = new System.Drawing.Point(524, 5);
+            this.CementSuppliedButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CementSuppliedButton.Name = "CementSuppliedButton";
+            this.CementSuppliedButton.Size = new System.Drawing.Size(145, 50);
+            this.CementSuppliedButton.TabIndex = 8;
+            this.CementSuppliedButton.Text = "CEMENT SUPPLIED";
+            this.CementSuppliedButton.UseVisualStyleBackColor = false;
+            this.CementSuppliedButton.Click += new System.EventHandler(this.CementSuppliedButton_Click);
             // 
             // MainForm
             // 
@@ -221,6 +239,7 @@
         private System.Windows.Forms.Button TallySheetButton;
         private System.Windows.Forms.Button DeliveryConfirmationButton;
         private System.Windows.Forms.Button PurchaseOrderMonitorButton;
+        private System.Windows.Forms.Button CementSuppliedButton;
     }
 }
 
