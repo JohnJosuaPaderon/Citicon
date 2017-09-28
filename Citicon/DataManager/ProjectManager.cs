@@ -63,6 +63,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<Project>> GetCementSuppliedListByClientAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new GetCementSuppliedProjectListByClient(client))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static Task<IEnumerable<Project>> GetListWithScheduledProjectDesignByClientAsync(Client client, DateTime scheduledDate, ScheduledProjectDesignStatus status)
         {
             if (client != null && scheduledDate != default(DateTime) && status != null)

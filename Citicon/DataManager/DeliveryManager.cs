@@ -85,6 +85,21 @@ namespace Citicon.DataManager
             };
         }
 
+        public static async Task<IEnumerable<Delivery>> GetListByProjectAsync(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new GetDeliveryListByProject(project))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<IEnumerable<Delivery>> GetTallySheetDeliveryListByClientAndDeliveryDate(Client client, DateTime deliveryDate)
         {
             using (var getTallySheetDeliveryListByClientAndDeliveryDate = new GetTallySheetDeliveryListByClientAndDeliveryDate(client, deliveryDate))

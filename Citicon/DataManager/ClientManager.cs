@@ -26,6 +26,14 @@ namespace Citicon.DataManager
             }
         }
 
+        public static Task<IEnumerable<Client>> GetListWithCementSuppliedProjectAsync()
+        {
+            using (var process = new GetClientListWithCementSuppliedProject())
+            {
+                return process.ExecuteAsync();
+            }
+        }
+
         public static async Task<Client> GetByIdAsync(ulong clientId)
         {
             if (Clients.ContainsKey(clientId))

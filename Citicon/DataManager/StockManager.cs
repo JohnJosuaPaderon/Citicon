@@ -127,6 +127,21 @@ namespace Citicon.DataManager
             return ConfigurationManager.AppSettings[$"Mris.Default[{field}]"];
         }
 
+        public static async Task<IEnumerable<Stock>> GetCementSuppliedListByProjectAsync(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new GetCementSuppliedListByProject(project))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void ExportMrisReport(Stock[] stocks, string usage = "", string receivedStoredBy = "", string inspectedAcceptedBy = "", string approvedBy = "")
         {
             if (File.Exists(MrisReportTemplate))
