@@ -9,6 +9,11 @@
         /// <summary>
         /// PumpCrete Design
         /// </summary>
-        PCD
+        PCD,
+        RubberConcrete,
+        LeanConcrete,
+        LightWeightConcrete,
+        SelfCompactingConcrete,
+        MortarMix
     }
 }
