@@ -52,6 +52,11 @@ namespace Citicon.Forms.Dialogs
         {
             MixTypeComboBox.Items.Add(ProjectDesignMixType.ORD);
             MixTypeComboBox.Items.Add(ProjectDesignMixType.PCD);
+            MixTypeComboBox.Items.Add(ProjectDesignMixType.RubberConcrete);
+            MixTypeComboBox.Items.Add(ProjectDesignMixType.LeanConcrete);
+            MixTypeComboBox.Items.Add(ProjectDesignMixType.LightWeightConcrete);
+            MixTypeComboBox.Items.Add(ProjectDesignMixType.SelfCompactingConcrete);
+            MixTypeComboBox.Items.Add(ProjectDesignMixType.MortarMix);
         }
 
         private void LoadAggregates()
