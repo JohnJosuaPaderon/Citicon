@@ -113,6 +113,7 @@ namespace Citicon.Payables
             await LoadCheckVoucherNumbers();
             await LoadBanks();
             await LoadBankAccounts();
+            await LoadCompanies();
         }
 
         private async Task LoadCheckVoucherNumbers()
