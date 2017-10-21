@@ -90,7 +90,7 @@
             this.ProjectDesignDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ProjectDesignDataGridView.RowTemplate.Height = 40;
             this.ProjectDesignDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProjectDesignDataGridView.Size = new System.Drawing.Size(804, 757);
+            this.ProjectDesignDataGridView.Size = new System.Drawing.Size(989, 704);
             this.ProjectDesignDataGridView.TabIndex = 106;
             this.ProjectDesignDataGridView.SelectionChanged += new System.EventHandler(this.ProjectDesignDataGridView_SelectionChanged);
             // 
@@ -104,11 +104,13 @@
             // 
             // ClientTextBox
             // 
+            this.ClientTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientTextBox.BackColor = System.Drawing.Color.White;
             this.ClientTextBox.Location = new System.Drawing.Point(66, 12);
             this.ClientTextBox.Name = "ClientTextBox";
             this.ClientTextBox.ReadOnly = true;
-            this.ClientTextBox.Size = new System.Drawing.Size(695, 25);
+            this.ClientTextBox.Size = new System.Drawing.Size(935, 25);
             this.ClientTextBox.TabIndex = 108;
             // 
             // ClientLabel
@@ -122,11 +124,13 @@
             // 
             // ProjectTextBox
             // 
+            this.ProjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ProjectTextBox.BackColor = System.Drawing.Color.White;
             this.ProjectTextBox.Location = new System.Drawing.Point(66, 43);
             this.ProjectTextBox.Name = "ProjectTextBox";
             this.ProjectTextBox.ReadOnly = true;
-            this.ProjectTextBox.Size = new System.Drawing.Size(695, 25);
+            this.ProjectTextBox.Size = new System.Drawing.Size(935, 25);
             this.ProjectTextBox.TabIndex = 110;
             // 
             // ProjectLabel
@@ -144,7 +148,7 @@
             this.ProjectDesignView.BackColor = System.Drawing.Color.White;
             this.ProjectDesignView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectDesignView.ForeColor = System.Drawing.Color.Red;
-            this.ProjectDesignView.Location = new System.Drawing.Point(822, 74);
+            this.ProjectDesignView.Location = new System.Drawing.Point(1007, 74);
             this.ProjectDesignView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProjectDesignView.Name = "ProjectDesignView";
             this.ProjectDesignView.ProjectDesign = null;
@@ -156,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1202, 843);
+            this.ClientSize = new System.Drawing.Size(1387, 790);
             this.Controls.Add(this.ProjectDesignView);
             this.Controls.Add(this.ProjectTextBox);
             this.Controls.Add(this.ProjectLabel);

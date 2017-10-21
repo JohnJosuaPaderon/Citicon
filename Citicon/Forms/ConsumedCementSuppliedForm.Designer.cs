@@ -50,12 +50,12 @@
             this.ProjectColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryDataGridView = new System.Windows.Forms.DataGridView();
-            this.ManageSuppliedCementsButton = new System.Windows.Forms.Button();
             this.DeliveryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_ProjectDesignColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_DeliveryDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delivery_VolumeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ManageSuppliedCementsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClientDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeliveryDataGridView)).BeginInit();
@@ -176,7 +176,7 @@
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ProjectDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.ProjectDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ProjectDataGridView.Size = new System.Drawing.Size(506, 412);
+            this.ProjectDataGridView.Size = new System.Drawing.Size(506, 394);
             this.ProjectDataGridView.TabIndex = 3;
             this.ProjectDataGridView.SelectionChanged += new System.EventHandler(this.ProjectDataGridView_SelectionChanged);
             // 
@@ -249,24 +249,8 @@
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.DeliveryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.DeliveryDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DeliveryDataGridView.Size = new System.Drawing.Size(949, 757);
+            this.DeliveryDataGridView.Size = new System.Drawing.Size(915, 739);
             this.DeliveryDataGridView.TabIndex = 4;
-            // 
-            // ManageSuppliedCementsButton
-            // 
-            this.ManageSuppliedCementsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ManageSuppliedCementsButton.BackColor = System.Drawing.Color.Red;
-            this.ManageSuppliedCementsButton.FlatAppearance.BorderSize = 0;
-            this.ManageSuppliedCementsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ManageSuppliedCementsButton.ForeColor = System.Drawing.Color.White;
-            this.ManageSuppliedCementsButton.Location = new System.Drawing.Point(1284, 772);
-            this.ManageSuppliedCementsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.ManageSuppliedCementsButton.Name = "ManageSuppliedCementsButton";
-            this.ManageSuppliedCementsButton.Size = new System.Drawing.Size(186, 40);
-            this.ManageSuppliedCementsButton.TabIndex = 21;
-            this.ManageSuppliedCementsButton.Text = "Manage Supplied Cements";
-            this.ManageSuppliedCementsButton.UseVisualStyleBackColor = false;
-            this.ManageSuppliedCementsButton.Click += new System.EventHandler(this.ManageSuppliedCementsButton_Click);
             // 
             // DeliveryColumn
             // 
@@ -314,12 +298,28 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
+            // ManageSuppliedCementsButton
+            // 
+            this.ManageSuppliedCementsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ManageSuppliedCementsButton.BackColor = System.Drawing.Color.Red;
+            this.ManageSuppliedCementsButton.FlatAppearance.BorderSize = 0;
+            this.ManageSuppliedCementsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ManageSuppliedCementsButton.ForeColor = System.Drawing.Color.White;
+            this.ManageSuppliedCementsButton.Location = new System.Drawing.Point(1250, 754);
+            this.ManageSuppliedCementsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ManageSuppliedCementsButton.Name = "ManageSuppliedCementsButton";
+            this.ManageSuppliedCementsButton.Size = new System.Drawing.Size(186, 40);
+            this.ManageSuppliedCementsButton.TabIndex = 21;
+            this.ManageSuppliedCementsButton.Text = "Manage Supplied Cements";
+            this.ManageSuppliedCementsButton.UseVisualStyleBackColor = false;
+            this.ManageSuppliedCementsButton.Click += new System.EventHandler(this.ManageSuppliedCementsButton_Click);
+            // 
             // ConsumedCementSuppliedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1481, 823);
+            this.ClientSize = new System.Drawing.Size(1447, 805);
             this.Controls.Add(this.ManageSuppliedCementsButton);
             this.Controls.Add(this.DeliveryDataGridView);
             this.Controls.Add(this.ProjectDataGridView);
