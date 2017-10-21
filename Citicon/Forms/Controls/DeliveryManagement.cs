@@ -359,32 +359,93 @@ namespace Citicon.Forms.Controls
             }
         }
 
+        private bool ValidateEntry()
+        {
+            if (Delivery.Volume <= 0)
+            {
+                MessageBox.Show("Volume is not valid.");
+                return false;
+            }
+            else if (Delivery.Route == null)
+            {
+                MessageBox.Show("Route is not valid.");
+                return false;
+            }
+            else if (Delivery.Branch == null)
+            {
+                MessageBox.Show("Plant is not valid.");
+                return false;
+            }
+            else if (Delivery.Driver == null)
+            {
+                MessageBox.Show("Drive is not valid.");
+                return false;
+            }
+            else if (Delivery.CumulativeVolume <= 0)
+            {
+                MessageBox.Show("Cumulative Volume is not valid.");
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(Delivery.Admixture))
+            {
+                MessageBox.Show("Admixture is not valid.");
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(Delivery.AdmixtureQuantity))
+            {
+                MessageBox.Show("Admixture Quantity is not valid.");
+                return false;
+            }
+            else if (Delivery.Load <= 0)
+            {
+                MessageBox.Show("Load is not valid.");
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(Delivery.MaxSlump))
+            {
+                MessageBox.Show("Max Slump is not valid.");
+                return false;
+            }
+            else if (Delivery.ServiceEngineer == null)
+            {
+                MessageBox.Show("Service Engineer is not valid.");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         private async void SaveDeliveryButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Delivery.ServiceEngineer = ServiceEngineerComboBox.SelectedItem as Employee;
-                Delivery.PricePerCubicMeter = ProjectDesign?.PricePerCubicMeter ?? 0;
-                Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityTextBox.Text;
-                Delivery.Load = Convert.ToUInt32(LoadNumericUpDown.Value);
-                Delivery.CumulativeVolume = CumulativeVolumeNumericUpDown.Value;
-                Delivery.MaxSlump = MaxSlumpTextBox.Text;
+            Delivery.ServiceEngineer = ServiceEngineerComboBox.SelectedItem as Employee;
+            Delivery.PricePerCubicMeter = ProjectDesign?.PricePerCubicMeter ?? 0;
+            Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityTextBox.Text;
+            Delivery.Load = Convert.ToUInt32(LoadNumericUpDown.Value);
+            Delivery.CumulativeVolume = CumulativeVolumeNumericUpDown.Value;
+            Delivery.MaxSlump = MaxSlumpTextBox.Text;
 
-                var delivery = await DeliveryManager.InsertAsync(Delivery);
-                if (delivery != null)
-                {
-                    MessageBox.Show("Successfully delivered.");
-                    await DeliveryManager.ExportDeliveryReceiptAsync(delivery);
-                    OnCloseDialogRequested();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to deliver.");
-                }
-            }
-            catch (Exception ex)
+            if (ValidateEntry())
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    var delivery = await DeliveryManager.InsertAsync(Delivery);
+                    if (delivery != null)
+                    {
+                        MessageBox.Show("Successfully delivered.");
+                        await DeliveryManager.ExportDeliveryReceiptAsync(delivery);
+                        OnCloseDialogRequested();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to deliver.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                } 
             }
         }
 
