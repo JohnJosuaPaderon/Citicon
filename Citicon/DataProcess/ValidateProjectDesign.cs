@@ -23,18 +23,18 @@ namespace Citicon.DataProcess
             {
                 return new ValidationResult(false, "Invalid aggregate.");
             }
-            else if (ProjectDesign.Project.Type == ProjectType.CementSupplied && ProjectDesign.CementFactor == 0)
-            {
-                return new ValidationResult(false, "Invalid cement factor.");
-            }
+            //else if (ProjectDesign.Project.Type == ProjectType.CementSupplied && ProjectDesign.CementFactor == 0)
+            //{
+            //    return new ValidationResult(false, "Invalid cement factor.");
+            //}
             else if (ProjectDesign.PricePerCubicMeter == 0)
             {
                 return new ValidationResult(false, "Invalid price/cu.m.");
             }
-            else if (ProjectDesign.Strength == null)
-            {
-                return new ValidationResult(false, "Invalid strength.");
-            }
+            //else if (ProjectDesign.Strength == null)
+            //{
+            //    return new ValidationResult(false, "Invalid strength.");
+            //}
             else
             {
                 return new ValidationResult(true);

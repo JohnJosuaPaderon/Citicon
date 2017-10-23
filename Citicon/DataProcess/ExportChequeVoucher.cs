@@ -97,7 +97,7 @@ namespace Citicon.DataProcess
                 RowCounter++;
                 Range = Worksheet.Range[Worksheet.Cells[RowCounter, 1], Worksheet.Cells[RowCounter, 2]];
                 Range.Merge();
-                Range.Value = payable.Description;
+                Range.Value = $"{payable.Company?.Description} - {payable.Branch?.Description?.Substring(0, 3)}. - {payable.Description}";
 
                 Range = Worksheet.Cells[RowCounter, 3];
                 Range.NumberFormat = "#,##0.00;(#,##0.00)";

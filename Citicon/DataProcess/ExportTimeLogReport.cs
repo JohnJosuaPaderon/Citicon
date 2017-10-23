@@ -52,17 +52,27 @@ namespace Citicon.DataProcess
                         range.Value = timeLog.Login;
 
                         range = Worksheet.Cells[currentRow, 2];
-                        range.NumberFormat = "hh:mm:ss AM/PM";
+                        //range.NumberFormat = "[hh]:mm";
                         range.Value = timeLog.Login;
 
+
                         range = Worksheet.Cells[currentRow, 3];
-                        range.NumberFormat = "hh:mm:ss AM/PM";
+                        range.NumberFormat = "MMM dd, yyyy";
                         range.Value = timeLog.Logout;
+
+
+                        range = Worksheet.Cells[currentRow, 4];
+                        //range.NumberFormat = "[hh]:mm";
+                        range.Value = timeLog.Logout;
+
+                        //range = Worksheet.Cells[currentRow, 3];
+                        //range.NumberFormat = "hh:mm:ss AM/PM";
+                        //range.Value = timeLog.Logout;
                     }
 
                     var blockEnd = currentRow;
 
-                    range = Worksheet.Range[Worksheet.Cells[blockStart, 1], Worksheet.Cells[blockEnd, 3]];
+                    range = Worksheet.Range[Worksheet.Cells[blockStart, 1], Worksheet.Cells[blockEnd, 4]];
                     range.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
                     range.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous;
                 }
