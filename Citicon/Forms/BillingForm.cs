@@ -695,7 +695,7 @@ namespace Citicon.Forms
                 var included = (bool)row.Cells[colDelivery_Included.Name].Value;
                 if (included)
                 {
-                    billing.Deliveries.Add((Citicon.Data.Delivery)row.Cells[colDelivery.Name].Value);
+                    billing.Deliveries.Add((Delivery)row.Cells[colDelivery.Name].Value);
                 }
             }
 

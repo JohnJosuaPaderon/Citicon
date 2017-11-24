@@ -146,8 +146,10 @@ namespace Citicon.Forms
                     var rows = new List<DataGridViewRow>();
                     foreach (var item in task.Result)
                     {
-                        var row = new DataGridViewRow();
-                        row.Height = 30;
+                        var row = new DataGridViewRow
+                        {
+                            Height = 30
+                        };
                         row.Cells.Add(new DataGridViewCheckBoxCell { Value = false });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.TotalAmountDue });
@@ -212,8 +214,10 @@ namespace Citicon.Forms
                     var rows = new List<DataGridViewRow>();
                     foreach (var item in task.Result)
                     {
-                        var row = new DataGridViewRow();
-                        row.Height = 30;
+                        var row = new DataGridViewRow
+                        {
+                            Height = 30
+                        };
                         row.Cells.Add(new DataGridViewCheckBoxCell { Value = false });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item.SiNumber });
                         row.Cells.Add(new DataGridViewTextBoxCell { Value = item });

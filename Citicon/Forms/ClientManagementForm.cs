@@ -34,8 +34,10 @@ namespace Citicon.Forms
         {
             if (client != null)
             {
-                var row = new DataGridViewRow();
-                row.Height = 30;
+                var row = new DataGridViewRow
+                {
+                    Height = 30
+                };
 
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = client });
                 ClientDataGridView.Rows.Add(row);
