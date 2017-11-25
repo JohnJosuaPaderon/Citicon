@@ -1,5 +1,6 @@
 ﻿using Citicon.TimeLog.ViewModels;
 using MahApps.Metro.Controls;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -64,7 +65,7 @@ namespace Citicon.TimeLog
             //EmployeeLoginCode.Focus();
         }
 
-        private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void MetroWindow_Closing(object sender, CancelEventArgs e)
         {
             var vm = (LogSummaryViewModel)ViewModel.LogSummaryView.DataContext;
             vm.Dispose();
