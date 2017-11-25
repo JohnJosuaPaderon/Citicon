@@ -36,6 +36,14 @@ namespace Citicon.DataManager
         {
             NewItemStockGenerated?.Invoke(stock);
         }
+        
+        public static Task<Stock> GetLatestByItemAsync(Item item)
+        {
+            using (var process = new GetLatestStockByItem(item))
+            {
+                return process.ExecuteAsync();
+            }
+        }
 
         public void Add(Stock data)
         {

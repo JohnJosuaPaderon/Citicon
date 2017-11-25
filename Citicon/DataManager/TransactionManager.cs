@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -43,7 +44,10 @@ namespace Citicon.DataManager
                 query.AddParameter("@_RequestedBy", data.RequestedBy);
                 query.AddParameter("@_TruckID", data.Truck?.Id);
                 query.AddParameter("@_TransactionDate", data.TransactionDate);
-                query.AddParameter("@_SeriesNumber", data.SeriesNumber);
+                //query.AddParameter("@_SeriesNumber", data.SeriesNumber);
+                query.AddParameter("@_IssuanceSlipNumber", data.IssuanceSlipNumber);
+                query.AddParameter("@_LatestPrice", data.LatestPrice);
+                query.AddParameter("@_LatestPriceDate", data.LatestPriceDate);
                 query.AddParameter("@_CreatedBy", User.CurrentUser?.DisplayName);
 
                 query.ExceptionCatched += OnExceptionCatched;
@@ -136,6 +140,14 @@ namespace Citicon.DataManager
         public Task<Transaction> GetByIdAsync(ulong id)
         {
             return Task.Factory.StartNew(() => GetById(id));
+        }
+
+        public static Task<string> GenerateLatestIssuanceSlipNumberAsync()
+        {
+            using (var process = new GenerateLatestIssuanceSlipNumber())
+            {
+                return process.ExecuteAsync();
+            }
         }
 
         public Transaction[] GetList()
