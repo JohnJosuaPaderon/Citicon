@@ -111,6 +111,7 @@
     <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
+    <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GetCementSuppliedListByProject.cs" />
     <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="DataProcess\GetHolidayTypeList.cs" />
     <Compile Include="DataProcess\GetJobPositionList.cs" />
     <Compile Include="DataProcess\GetLatestDeliveryReceiptNumber.cs" />
+    <Compile Include="DataProcess\GetLatestStockByItem.cs" />
     <Compile Include="DataProcess\GetMaximumScheduledVolumeByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetMinifiedEmployeeList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
