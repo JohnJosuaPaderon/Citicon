@@ -22,6 +22,8 @@ namespace Citicon.Inventory
         Item currentItem;
         Vehicle[] vehicles;
 
+        Stock CurrentStock;
+
         List<Item> tempItems;
         enum SearchCategory
         {
@@ -133,6 +135,31 @@ namespace Citicon.Inventory
             vehicles = await vehicleManager.GetListAsync();
             tmrGenerateItems.Start();
             await LoadItems();
+            await GenerateLatestIssuanceSlipNumberAsync();
+        }
+
+        private async Task GenerateLatestIssuanceSlipNumberAsync()
+        {
+            IssuanceSlipNumberTextBox.Text = await TransactionManager.GenerateLatestIssuanceSlipNumberAsync();
+        }
+
+        private async Task GetLatestStockByItemAsync(Item item)
+        {
+            if (item != null)
+            {
+                CurrentStock = await StockManager.GetLatestByItemAsync(item);
+
+                if (CurrentStock != null)
+                {
+                    LastPriceTextBox.Text = CurrentStock.UnitPrice.ToString("#,##0.00");
+                    LastPriceDateTextBox.Text = CurrentStock.DeliveryDate.ToString("MMMM d, yyyy");
+                }
+            }
+            else
+            {
+                LastPriceTextBox.Text = string.Empty;
+                LastPriceDateTextBox.Text = string.Empty;
+            }
         }
 
         private void TmrGenerateItems_Tick(object sender, EventArgs e)
@@ -147,10 +174,10 @@ namespace Citicon.Inventory
 
         private void AppendItems(Item[] list, bool asIsSearching)
         {
-            if (tbxSearchItems.Text.Length < 8)
-            {
-                return;
-            }
+            //if (tbxSearchItems.Text.Length < 8)
+            //{
+            //    return;
+            //}
             dgvItems.Rows.Clear();
             if (tbxSearchItems.Text.Trim() != string.Empty)
             {
@@ -291,6 +318,7 @@ namespace Citicon.Inventory
                 tbxItemDescription.Text = currentItem.Description;
                 tbxItemStockValue.Text = currentItem.StockValue.ToString("#,##0.00");
                 transactions = await transactionManager.GetListByItemAsync(currentItem);
+                await GetLatestStockByItemAsync(currentItem);
             }
         }
 
@@ -307,8 +335,11 @@ namespace Citicon.Inventory
         {
             MessageBox.Show(message, Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        private void BtnSave_Click(object sender, EventArgs e)
+        private async void BtnSave_Click(object sender, EventArgs e)
         {
+            await GetLatestStockByItemAsync(currentItem);
+            await GenerateLatestIssuanceSlipNumberAsync();
+
             var transactionDate = dtpTransactionDate.Value;
             var removedStockValue = nudRemovedStockValue.Value;
             var branch = (Branch)cmbxBranch.SelectedItem;
@@ -317,12 +348,13 @@ namespace Citicon.Inventory
             var releasedBy = tbxReleasedBy.Text.Trim();
             var truck = (Vehicle)cmbxTruck.SelectedItem;
             var purpose = tbxPurpose.Text.Trim();
-            var seriesNumber = (uint)nudSeriesNumber.Value;
+            var issuanceSlipNumber = IssuanceSlipNumberTextBox.Text.Trim();
+            //var seriesNumber = (uint)IssuanceSlipNumberNumericUpDown.Value;
 
-            if (seriesNumber == 0)
-            {
-                DisplayError("Series No. should not be set to zero."); return;
-            }
+            //if (seriesNumber == 0)
+            //{
+            //    DisplayError("Series No. should not be set to zero."); return;
+            //}
 
             if (transactionDate == default(DateTime))
             {
@@ -376,8 +408,13 @@ namespace Citicon.Inventory
                 RequestedBy = requestedBy,
                 TransactionDate = transactionDate,
                 Truck = truck,
-                SeriesNumber = seriesNumber
+                IssuanceSlipNumber = issuanceSlipNumber,
+                LatestPrice = CurrentStock?.UnitPrice,
+                LatestPriceDate = CurrentStock?.DeliveryDate
+                //SeriesNumber = seriesNumber
             });
+
+            await GenerateLatestIssuanceSlipNumberAsync();
         }
 
         private void SaveReleasedBySuggest()

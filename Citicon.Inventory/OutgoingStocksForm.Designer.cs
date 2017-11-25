@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OutgoingStocksForm));
             this.lblIncomingStocks = new System.Windows.Forms.Label();
             this.dgvItems = new System.Windows.Forms.DataGridView();
@@ -79,12 +80,15 @@
             this.lblTruck = new System.Windows.Forms.Label();
             this.cmbxTruck = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblSeriesNumber = new System.Windows.Forms.Label();
-            this.nudSeriesNumber = new System.Windows.Forms.NumericUpDown();
+            this.IssuanceSlipNumberLabel = new System.Windows.Forms.Label();
+            this.IssuanceSlipNumberTextBox = new System.Windows.Forms.TextBox();
+            this.LastPriceDateTextBox = new System.Windows.Forms.TextBox();
+            this.LastPriceDateLabel = new System.Windows.Forms.Label();
+            this.LastPriceLabel = new System.Windows.Forms.Label();
+            this.LastPriceTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRemovedStockValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSeriesNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIncomingStocks
@@ -94,7 +98,7 @@
             this.lblIncomingStocks.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIncomingStocks.Location = new System.Drawing.Point(0, 0);
             this.lblIncomingStocks.Name = "lblIncomingStocks";
-            this.lblIncomingStocks.Size = new System.Drawing.Size(958, 86);
+            this.lblIncomingStocks.Size = new System.Drawing.Size(1193, 86);
             this.lblIncomingStocks.TabIndex = 11;
             this.lblIncomingStocks.Text = "Outgoing Stocks";
             this.lblIncomingStocks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -104,21 +108,22 @@
             this.dgvItems.AllowUserToAddRows = false;
             this.dgvItems.AllowUserToDeleteRows = false;
             this.dgvItems.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -131,24 +136,26 @@
             this.colClassification,
             this.colStockValue});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItems.EnableHeadersVisualStyles = false;
-            this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dgvItems.Location = new System.Drawing.Point(11, 131);
+            this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.dgvItems.Location = new System.Drawing.Point(11, 142);
             this.dgvItems.Margin = new System.Windows.Forms.Padding(2);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItems.RowTemplate.Height = 30;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(613, 0);
+            this.dgvItems.Size = new System.Drawing.Size(791, 0);
             this.dgvItems.TabIndex = 64;
             this.dgvItems.DoubleClick += new System.EventHandler(this.DgvItems_DoubleClick);
             this.dgvItems.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvItems_KeyDown);
@@ -187,7 +194,7 @@
             this.tbxItemStockValue.BackColor = System.Drawing.Color.White;
             this.tbxItemStockValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemStockValue.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxItemStockValue.Location = new System.Drawing.Point(510, 167);
+            this.tbxItemStockValue.Location = new System.Drawing.Point(688, 167);
             this.tbxItemStockValue.Margin = new System.Windows.Forms.Padding(2);
             this.tbxItemStockValue.Name = "tbxItemStockValue";
             this.tbxItemStockValue.ReadOnly = true;
@@ -198,7 +205,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(506, 142);
+            this.label4.Location = new System.Drawing.Point(684, 142);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 23);
@@ -221,18 +228,18 @@
             this.tbxItemCode.BackColor = System.Drawing.Color.White;
             this.tbxItemCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxItemCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxItemCode.Location = new System.Drawing.Point(275, 167);
+            this.tbxItemCode.Location = new System.Drawing.Point(510, 167);
             this.tbxItemCode.Margin = new System.Windows.Forms.Padding(2);
             this.tbxItemCode.Name = "tbxItemCode";
             this.tbxItemCode.ReadOnly = true;
-            this.tbxItemCode.Size = new System.Drawing.Size(231, 29);
+            this.tbxItemCode.Size = new System.Drawing.Size(174, 29);
             this.tbxItemCode.TabIndex = 70;
             // 
             // lblItemCode
             // 
             this.lblItemCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemCode.AutoSize = true;
-            this.lblItemCode.Location = new System.Drawing.Point(271, 142);
+            this.lblItemCode.Location = new System.Drawing.Point(506, 142);
             this.lblItemCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemCode.Name = "lblItemCode";
             this.lblItemCode.Size = new System.Drawing.Size(90, 23);
@@ -250,7 +257,7 @@
             this.tbxItemDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbxItemDescription.Name = "tbxItemDescription";
             this.tbxItemDescription.ReadOnly = true;
-            this.tbxItemDescription.Size = new System.Drawing.Size(260, 29);
+            this.tbxItemDescription.Size = new System.Drawing.Size(495, 29);
             this.tbxItemDescription.TabIndex = 68;
             // 
             // lblItemDescription
@@ -269,10 +276,10 @@
             this.cmbxSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxSearchBy.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxSearchBy.FormattingEnabled = true;
-            this.cmbxSearchBy.Location = new System.Drawing.Point(634, 111);
+            this.cmbxSearchBy.Location = new System.Drawing.Point(806, 111);
             this.cmbxSearchBy.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxSearchBy.Name = "cmbxSearchBy";
-            this.cmbxSearchBy.Size = new System.Drawing.Size(229, 29);
+            this.cmbxSearchBy.Size = new System.Drawing.Size(292, 29);
             this.cmbxSearchBy.TabIndex = 66;
             this.cmbxSearchBy.SelectedIndexChanged += new System.EventHandler(this.CmbxSearchBy_SelectedIndexChanged);
             // 
@@ -280,7 +287,7 @@
             // 
             this.lblSearchBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSearchBy.AutoSize = true;
-            this.lblSearchBy.Location = new System.Drawing.Point(631, 85);
+            this.lblSearchBy.Location = new System.Drawing.Point(802, 86);
             this.lblSearchBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchBy.Name = "lblSearchBy";
             this.lblSearchBy.Size = new System.Drawing.Size(84, 23);
@@ -294,7 +301,7 @@
             this.btnSearchItems.FlatAppearance.BorderSize = 0;
             this.btnSearchItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchItems.ForeColor = System.Drawing.Color.White;
-            this.btnSearchItems.Location = new System.Drawing.Point(867, 111);
+            this.btnSearchItems.Location = new System.Drawing.Point(1102, 111);
             this.btnSearchItems.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchItems.Name = "btnSearchItems";
             this.btnSearchItems.Size = new System.Drawing.Size(80, 29);
@@ -313,7 +320,7 @@
             this.tbxSearchItems.Location = new System.Drawing.Point(11, 111);
             this.tbxSearchItems.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSearchItems.Name = "tbxSearchItems";
-            this.tbxSearchItems.Size = new System.Drawing.Size(615, 29);
+            this.tbxSearchItems.Size = new System.Drawing.Size(791, 29);
             this.tbxSearchItems.TabIndex = 62;
             this.tbxSearchItems.TextChanged += new System.EventHandler(this.TbxSearchItems_TextChanged);
             this.tbxSearchItems.Enter += new System.EventHandler(this.TbxSearchItems_Enter);
@@ -334,8 +341,8 @@
             this.dgvStocks.AllowUserToAddRows = false;
             this.dgvStocks.AllowUserToDeleteRows = false;
             this.dgvStocks.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvStocks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvStocks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -344,14 +351,14 @@
             this.dgvStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvStocks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvStocks.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStocks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvStocks.ColumnHeadersHeight = 50;
             this.dgvStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -359,14 +366,14 @@
             this.colTransactionLastStockValue,
             this.colTransactionRemovedStockValue,
             this.colTransactionTransactionDate});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStocks.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStocks.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvStocks.EnableHeadersVisualStyles = false;
             this.dgvStocks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvStocks.Location = new System.Drawing.Point(11, 223);
@@ -377,7 +384,7 @@
             this.dgvStocks.RowHeadersVisible = false;
             this.dgvStocks.RowTemplate.Height = 30;
             this.dgvStocks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStocks.Size = new System.Drawing.Size(610, 424);
+            this.dgvStocks.Size = new System.Drawing.Size(791, 472);
             this.dgvStocks.TabIndex = 71;
             // 
             // colTransaction
@@ -421,7 +428,7 @@
             // 
             this.lblTransactionDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTransactionDate.AutoSize = true;
-            this.lblTransactionDate.Location = new System.Drawing.Point(625, 254);
+            this.lblTransactionDate.Location = new System.Drawing.Point(806, 299);
             this.lblTransactionDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTransactionDate.Name = "lblTransactionDate";
             this.lblTransactionDate.Size = new System.Drawing.Size(138, 23);
@@ -433,17 +440,17 @@
             this.dtpTransactionDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpTransactionDate.CustomFormat = "MMM dd, yyyy";
             this.dtpTransactionDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTransactionDate.Location = new System.Drawing.Point(628, 279);
+            this.dtpTransactionDate.Location = new System.Drawing.Point(806, 324);
             this.dtpTransactionDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpTransactionDate.Name = "dtpTransactionDate";
-            this.dtpTransactionDate.Size = new System.Drawing.Size(157, 29);
+            this.dtpTransactionDate.Size = new System.Drawing.Size(186, 29);
             this.dtpTransactionDate.TabIndex = 75;
             // 
             // lblRemovedStockValue
             // 
             this.lblRemovedStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRemovedStockValue.AutoSize = true;
-            this.lblRemovedStockValue.Location = new System.Drawing.Point(785, 254);
+            this.lblRemovedStockValue.Location = new System.Drawing.Point(992, 299);
             this.lblRemovedStockValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRemovedStockValue.Name = "lblRemovedStockValue";
             this.lblRemovedStockValue.Size = new System.Drawing.Size(173, 23);
@@ -454,7 +461,7 @@
             // 
             this.nudRemovedStockValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudRemovedStockValue.DecimalPlaces = 2;
-            this.nudRemovedStockValue.Location = new System.Drawing.Point(789, 279);
+            this.nudRemovedStockValue.Location = new System.Drawing.Point(996, 324);
             this.nudRemovedStockValue.Margin = new System.Windows.Forms.Padding(2);
             this.nudRemovedStockValue.Maximum = new decimal(new int[] {
             1000000,
@@ -462,7 +469,7 @@
             0,
             0});
             this.nudRemovedStockValue.Name = "nudRemovedStockValue";
-            this.nudRemovedStockValue.Size = new System.Drawing.Size(158, 29);
+            this.nudRemovedStockValue.Size = new System.Drawing.Size(186, 29);
             this.nudRemovedStockValue.TabIndex = 78;
             this.nudRemovedStockValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudRemovedStockValue.ThousandsSeparator = true;
@@ -473,10 +480,10 @@
             this.cmbxBranch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxBranch.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxBranch.FormattingEnabled = true;
-            this.cmbxBranch.Location = new System.Drawing.Point(628, 335);
+            this.cmbxBranch.Location = new System.Drawing.Point(806, 380);
             this.cmbxBranch.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxBranch.Name = "cmbxBranch";
-            this.cmbxBranch.Size = new System.Drawing.Size(157, 29);
+            this.cmbxBranch.Size = new System.Drawing.Size(186, 29);
             this.cmbxBranch.TabIndex = 79;
             this.cmbxBranch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
             this.cmbxBranch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
@@ -485,7 +492,7 @@
             // 
             this.lblBranch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBranch.AutoSize = true;
-            this.lblBranch.Location = new System.Drawing.Point(624, 310);
+            this.lblBranch.Location = new System.Drawing.Point(806, 355);
             this.lblBranch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBranch.Name = "lblBranch";
             this.lblBranch.Size = new System.Drawing.Size(63, 23);
@@ -496,7 +503,7 @@
             // 
             this.lblCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCompany.AutoSize = true;
-            this.lblCompany.Location = new System.Drawing.Point(787, 310);
+            this.lblCompany.Location = new System.Drawing.Point(992, 355);
             this.lblCompany.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCompany.Name = "lblCompany";
             this.lblCompany.Size = new System.Drawing.Size(83, 23);
@@ -509,10 +516,10 @@
             this.cmbxCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxCompany.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxCompany.FormattingEnabled = true;
-            this.cmbxCompany.Location = new System.Drawing.Point(789, 335);
+            this.cmbxCompany.Location = new System.Drawing.Point(996, 380);
             this.cmbxCompany.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxCompany.Name = "cmbxCompany";
-            this.cmbxCompany.Size = new System.Drawing.Size(157, 29);
+            this.cmbxCompany.Size = new System.Drawing.Size(185, 29);
             this.cmbxCompany.TabIndex = 81;
             this.cmbxCompany.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
             this.cmbxCompany.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchableComboBox);
@@ -521,7 +528,7 @@
             // 
             this.lblRequestedBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRequestedBy.AutoSize = true;
-            this.lblRequestedBy.Location = new System.Drawing.Point(625, 422);
+            this.lblRequestedBy.Location = new System.Drawing.Point(806, 467);
             this.lblRequestedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRequestedBy.Name = "lblRequestedBy";
             this.lblRequestedBy.Size = new System.Drawing.Size(113, 23);
@@ -532,7 +539,7 @@
             // 
             this.lblReleasedBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblReleasedBy.AutoSize = true;
-            this.lblReleasedBy.Location = new System.Drawing.Point(625, 478);
+            this.lblReleasedBy.Location = new System.Drawing.Point(806, 523);
             this.lblReleasedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblReleasedBy.Name = "lblReleasedBy";
             this.lblReleasedBy.Size = new System.Drawing.Size(100, 23);
@@ -547,10 +554,10 @@
             this.tbxRequestedBy.BackColor = System.Drawing.Color.White;
             this.tbxRequestedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxRequestedBy.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxRequestedBy.Location = new System.Drawing.Point(629, 447);
+            this.tbxRequestedBy.Location = new System.Drawing.Point(806, 492);
             this.tbxRequestedBy.Margin = new System.Windows.Forms.Padding(2);
             this.tbxRequestedBy.Name = "tbxRequestedBy";
-            this.tbxRequestedBy.Size = new System.Drawing.Size(316, 29);
+            this.tbxRequestedBy.Size = new System.Drawing.Size(374, 29);
             this.tbxRequestedBy.TabIndex = 85;
             this.tbxRequestedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxRequestedBy_KeyDown);
             this.tbxRequestedBy.Leave += new System.EventHandler(this.TbxRequestedBy_Leave);
@@ -563,10 +570,10 @@
             this.tbxReleasedBy.BackColor = System.Drawing.Color.White;
             this.tbxReleasedBy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxReleasedBy.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxReleasedBy.Location = new System.Drawing.Point(629, 503);
+            this.tbxReleasedBy.Location = new System.Drawing.Point(806, 548);
             this.tbxReleasedBy.Margin = new System.Windows.Forms.Padding(2);
             this.tbxReleasedBy.Name = "tbxReleasedBy";
-            this.tbxReleasedBy.Size = new System.Drawing.Size(316, 29);
+            this.tbxReleasedBy.Size = new System.Drawing.Size(374, 29);
             this.tbxReleasedBy.TabIndex = 86;
             this.tbxReleasedBy.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxReleasedBy_KeyDown);
             this.tbxReleasedBy.Leave += new System.EventHandler(this.TbxReleasedBy_Leave);
@@ -575,7 +582,7 @@
             // 
             this.lblPurpose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPurpose.AutoSize = true;
-            this.lblPurpose.Location = new System.Drawing.Point(625, 534);
+            this.lblPurpose.Location = new System.Drawing.Point(806, 579);
             this.lblPurpose.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPurpose.Name = "lblPurpose";
             this.lblPurpose.Size = new System.Drawing.Size(72, 23);
@@ -588,11 +595,11 @@
             this.tbxPurpose.BackColor = System.Drawing.Color.White;
             this.tbxPurpose.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxPurpose.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbxPurpose.Location = new System.Drawing.Point(629, 558);
+            this.tbxPurpose.Location = new System.Drawing.Point(806, 603);
             this.tbxPurpose.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPurpose.Multiline = true;
             this.tbxPurpose.Name = "tbxPurpose";
-            this.tbxPurpose.Size = new System.Drawing.Size(316, 51);
+            this.tbxPurpose.Size = new System.Drawing.Size(374, 51);
             this.tbxPurpose.TabIndex = 88;
             // 
             // btnCancel
@@ -602,7 +609,7 @@
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(866, 613);
+            this.btnCancel.Location = new System.Drawing.Point(1101, 658);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 34);
@@ -618,7 +625,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(782, 613);
+            this.btnSave.Location = new System.Drawing.Point(1017, 658);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(79, 34);
@@ -631,7 +638,7 @@
             // 
             this.lblTruck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTruck.AutoSize = true;
-            this.lblTruck.Location = new System.Drawing.Point(625, 366);
+            this.lblTruck.Location = new System.Drawing.Point(806, 411);
             this.lblTruck.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTruck.Name = "lblTruck";
             this.lblTruck.Size = new System.Drawing.Size(64, 23);
@@ -644,10 +651,10 @@
             this.cmbxTruck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxTruck.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxTruck.FormattingEnabled = true;
-            this.cmbxTruck.Location = new System.Drawing.Point(628, 391);
+            this.cmbxTruck.Location = new System.Drawing.Point(806, 436);
             this.cmbxTruck.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxTruck.Name = "cmbxTruck";
-            this.cmbxTruck.Size = new System.Drawing.Size(317, 29);
+            this.cmbxTruck.Size = new System.Drawing.Size(374, 29);
             this.cmbxTruck.Sorted = true;
             this.cmbxTruck.TabIndex = 92;
             this.cmbxTruck.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cmbx_KeyDown);
@@ -659,7 +666,7 @@
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnClose.Location = new System.Drawing.Point(874, 667);
+            this.btnClose.Location = new System.Drawing.Point(1109, 715);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 34);
@@ -668,41 +675,78 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // lblSeriesNumber
+            // IssuanceSlipNumberLabel
             // 
-            this.lblSeriesNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSeriesNumber.AutoSize = true;
-            this.lblSeriesNumber.Location = new System.Drawing.Point(701, 225);
-            this.lblSeriesNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSeriesNumber.Name = "lblSeriesNumber";
-            this.lblSeriesNumber.Size = new System.Drawing.Size(86, 23);
-            this.lblSeriesNumber.TabIndex = 94;
-            this.lblSeriesNumber.Text = "Series No.";
+            this.IssuanceSlipNumberLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.IssuanceSlipNumberLabel.AutoSize = true;
+            this.IssuanceSlipNumberLabel.Location = new System.Drawing.Point(854, 198);
+            this.IssuanceSlipNumberLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.IssuanceSlipNumberLabel.Name = "IssuanceSlipNumberLabel";
+            this.IssuanceSlipNumberLabel.Size = new System.Drawing.Size(139, 23);
+            this.IssuanceSlipNumberLabel.TabIndex = 94;
+            this.IssuanceSlipNumberLabel.Text = "Issuance Slip No.";
             // 
-            // nudSeriesNumber
+            // IssuanceSlipNumberTextBox
             // 
-            this.nudSeriesNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSeriesNumber.Location = new System.Drawing.Point(791, 223);
-            this.nudSeriesNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.nudSeriesNumber.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.nudSeriesNumber.Name = "nudSeriesNumber";
-            this.nudSeriesNumber.Size = new System.Drawing.Size(156, 29);
-            this.nudSeriesNumber.TabIndex = 95;
-            this.nudSeriesNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nudSeriesNumber.ThousandsSeparator = true;
+            this.IssuanceSlipNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.IssuanceSlipNumberTextBox.Location = new System.Drawing.Point(998, 195);
+            this.IssuanceSlipNumberTextBox.Name = "IssuanceSlipNumberTextBox";
+            this.IssuanceSlipNumberTextBox.ReadOnly = true;
+            this.IssuanceSlipNumberTextBox.Size = new System.Drawing.Size(183, 29);
+            this.IssuanceSlipNumberTextBox.TabIndex = 95;
+            // 
+            // LastPriceDateTextBox
+            // 
+            this.LastPriceDateTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LastPriceDateTextBox.Location = new System.Drawing.Point(996, 267);
+            this.LastPriceDateTextBox.Name = "LastPriceDateTextBox";
+            this.LastPriceDateTextBox.ReadOnly = true;
+            this.LastPriceDateTextBox.Size = new System.Drawing.Size(185, 29);
+            this.LastPriceDateTextBox.TabIndex = 96;
+            // 
+            // LastPriceDateLabel
+            // 
+            this.LastPriceDateLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LastPriceDateLabel.AutoSize = true;
+            this.LastPriceDateLabel.Location = new System.Drawing.Point(994, 241);
+            this.LastPriceDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastPriceDateLabel.Name = "LastPriceDateLabel";
+            this.LastPriceDateLabel.Size = new System.Drawing.Size(123, 23);
+            this.LastPriceDateLabel.TabIndex = 97;
+            this.LastPriceDateLabel.Text = "Last Price Date";
+            // 
+            // LastPriceLabel
+            // 
+            this.LastPriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LastPriceLabel.AutoSize = true;
+            this.LastPriceLabel.Location = new System.Drawing.Point(804, 241);
+            this.LastPriceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastPriceLabel.Name = "LastPriceLabel";
+            this.LastPriceLabel.Size = new System.Drawing.Size(82, 23);
+            this.LastPriceLabel.TabIndex = 99;
+            this.LastPriceLabel.Text = "Last Price";
+            // 
+            // LastPriceTextBox
+            // 
+            this.LastPriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LastPriceTextBox.Location = new System.Drawing.Point(806, 267);
+            this.LastPriceTextBox.Name = "LastPriceTextBox";
+            this.LastPriceTextBox.ReadOnly = true;
+            this.LastPriceTextBox.Size = new System.Drawing.Size(185, 29);
+            this.LastPriceTextBox.TabIndex = 98;
             // 
             // OutgoingStocksForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(958, 655);
-            this.Controls.Add(this.nudSeriesNumber);
-            this.Controls.Add(this.lblSeriesNumber);
+            this.ClientSize = new System.Drawing.Size(1193, 703);
+            this.Controls.Add(this.LastPriceLabel);
+            this.Controls.Add(this.LastPriceTextBox);
+            this.Controls.Add(this.LastPriceDateLabel);
+            this.Controls.Add(this.LastPriceDateTextBox);
+            this.Controls.Add(this.IssuanceSlipNumberTextBox);
+            this.Controls.Add(this.IssuanceSlipNumberLabel);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cmbxTruck);
             this.Controls.Add(this.lblTruck);
@@ -750,7 +794,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRemovedStockValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSeriesNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,7 +844,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassification;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockValue;
-        private System.Windows.Forms.Label lblSeriesNumber;
-        private System.Windows.Forms.NumericUpDown nudSeriesNumber;
+        private System.Windows.Forms.Label IssuanceSlipNumberLabel;
+        private System.Windows.Forms.TextBox IssuanceSlipNumberTextBox;
+        private System.Windows.Forms.TextBox LastPriceDateTextBox;
+        private System.Windows.Forms.Label LastPriceDateLabel;
+        private System.Windows.Forms.Label LastPriceLabel;
+        private System.Windows.Forms.TextBox LastPriceTextBox;
     }
 }
