@@ -9,7 +9,6 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Timers;
-using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -19,10 +18,17 @@ namespace Citicon.TimeLog.ViewModels
     {
         public LogSummaryViewModel() : base()
         {
-            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            Frame = new VideoCaptureDevice(CaptureDevice[0].MonikerString);
-            Frame.NewFrame += Frame_NewFrame;
-            Frame.Start();
+            try
+            {
+                CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                Frame = new VideoCaptureDevice(CaptureDevice[0].MonikerString);
+                Frame.NewFrame += Frame_NewFrame;
+                Frame.Start();
+            }
+            catch (Exception ex)
+            {
+                Message = "Camera unavailable.";
+            }
 
             DisplayTimer = new Timer(3000);
             DisplayTimer.Elapsed += DisplayTimer_Elapsed;
