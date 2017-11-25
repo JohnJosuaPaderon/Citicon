@@ -16,6 +16,9 @@ namespace Citicon.Data
         public string ReleasedBy { get; set; }
         public Vehicle Truck { get; set; }
         public uint SeriesNumber { get; set; }
+        public string IssuanceSlipNumber { get; set; }
+        public decimal? LatestPrice { get; set; }
+        public DateTime? LatestPriceDate { get; set; }
 
         public static bool operator ==(Transaction left, Transaction right)
         {
