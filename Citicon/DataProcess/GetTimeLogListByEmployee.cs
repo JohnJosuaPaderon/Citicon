@@ -50,7 +50,9 @@ namespace Citicon.DataProcess
                 EmployeeLogin = await EmployeeManager.GetEmployeeLoginByIdAsync(reader.GetUInt64("EmployeeLoginId")),
                 Login = reader.GetNullableDateTime("Login"),
                 Logout = reader.GetNullableDateTime("Logout"),
-                Type = await TypeManager.GetByIdAsync(reader.GetUInt64("TypeId"))
+                Type = await TypeManager.GetByIdAsync(reader.GetUInt64("TypeId")),
+                LoginEdited = reader.GetBoolean("LoginEdited"),
+                LogoutEdited = reader.GetBoolean("LogoutEdited")
             };
         }
     }

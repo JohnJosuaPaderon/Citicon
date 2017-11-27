@@ -51,19 +51,37 @@ namespace Citicon.DataProcess
                         range.NumberFormat = "MMM dd, yyyy";
                         range.Value = timeLog.Login;
 
+                        if (timeLog.LoginEdited)
+                        {
+                            range.Font.Italic = true;
+                        }
+
                         range = Worksheet.Cells[currentRow, 2];
                         //range.NumberFormat = "[hh]:mm";
                         range.Value = timeLog.Login;
 
+                        if (timeLog.LoginEdited)
+                        {
+                            range.Font.Italic = true;
+                        }
 
                         range = Worksheet.Cells[currentRow, 3];
                         range.NumberFormat = "MMM dd, yyyy";
                         range.Value = timeLog.Logout;
 
+                        if (timeLog.LogoutEdited)
+                        {
+                            range.Font.Italic = true;
+                        }
 
                         range = Worksheet.Cells[currentRow, 4];
                         //range.NumberFormat = "[hh]:mm";
                         range.Value = timeLog.Logout;
+
+                        if (timeLog.LogoutEdited)
+                        {
+                            range.Font.Italic = true;
+                        }
 
                         //range = Worksheet.Cells[currentRow, 3];
                         //range.NumberFormat = "hh:mm:ss AM/PM";
