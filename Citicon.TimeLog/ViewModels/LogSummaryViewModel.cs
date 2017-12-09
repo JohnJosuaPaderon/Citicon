@@ -25,7 +25,7 @@ namespace Citicon.TimeLog.ViewModels
                 Frame.NewFrame += Frame_NewFrame;
                 Frame.Start();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Message = "Camera unavailable.";
             }
