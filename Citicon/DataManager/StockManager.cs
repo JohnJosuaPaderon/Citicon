@@ -32,11 +32,12 @@ namespace Citicon.DataManager
         public event DataManagerEventHandler<Stock> NewUnpaidStockGenerated;
         public event DataManagerEventHandler<string> NewUnpaidMrisNumberGenerated;
         public event DataManagerEventHandler<Stock> NewItemByMrisNumberGenerated;
+
         private void OnNewItemStockGenerated(Stock stock)
         {
             NewItemStockGenerated?.Invoke(stock);
         }
-        
+
         public static Task<Stock> GetLatestByItemAsync(Item item)
         {
             using (var process = new GetLatestStockByItem(item))
@@ -78,12 +79,12 @@ namespace Citicon.DataManager
                 {
                     data.Id = (ulong)query.ParameterValues["@_StockId"];
                     var saveCementSuppliedStockProject = new SaveCementSuppliedStockProject(data, data.CementSuppliedProjects);
-                    var saveCementSuppliedStockProjectTask = saveCementSuppliedStockProject.ExecuteAsync(); 
+                    var saveCementSuppliedStockProjectTask = saveCementSuppliedStockProject.ExecuteAsync();
                 }
                 //if (query.AffectedRows == 1)
                 //{
                 //    data.Id = query.ParameterValues.GetUInt64("@_StockId");
-                    OnAdded(data);
+                OnAdded(data);
                 //}
                 //else OnAddedUnsuccessful(data);
             }
@@ -240,12 +241,12 @@ namespace Citicon.DataManager
 
                     //if (totalVat != 0)
                     //{
-                        lastRow++;
-                        sheet.Cells[21, unitCostColumn] = "VAT";
-                        sheet.Cells[21, amountColumn] = totalVat.ToString("#,##0.00");
+                    lastRow++;
+                    sheet.Cells[21, unitCostColumn] = "VAT";
+                    sheet.Cells[21, amountColumn] = totalVat.ToString("#,##0.00");
 
-                        sheet.Cells[22, unitCostColumn] = "Net Amount";
-                        sheet.Cells[22, amountColumn] = (totalAmount - totalVat).ToString("#,##0.00");
+                    sheet.Cells[22, unitCostColumn] = "Net Amount";
+                    sheet.Cells[22, amountColumn] = (totalAmount - totalVat).ToString("#,##0.00");
                     //}
 
                     sheet.Cells[mrisNumberLocation.X, mrisNumberLocation.Y] = mrisNumber;
@@ -543,7 +544,7 @@ namespace Citicon.DataManager
                         OnExceptionCatched(e);
                         return null;
                     }
-                    
+
                 }
             }
         }
@@ -655,6 +656,22 @@ namespace Citicon.DataManager
         public Task UpdateAsync(Stock data)
         {
             return Task.Factory.StartNew(() => Update(data));
+        }
+
+        public static Task<IEnumerable<Stock>> Search(SearchStockOptions options)
+        {
+            using (var process = new SearchStock(options))
+            {
+                return process.ExecuteAsync();
+            }
+        }
+
+        public static Task ExportStocksReportAsync(IEnumerable<Stock> stocks)
+        {
+            using (var process = new ExportStockReport(stocks))
+            {
+                return process.ExecuteAsync();
+            }
         }
     }
 }
