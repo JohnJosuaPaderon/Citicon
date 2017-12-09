@@ -18,7 +18,7 @@ namespace Citicon.DataProcess
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = Utility.CreateProcedureCommand("GetLatestStockByItem", connection);
-            command.Parameters.Add("@_ItemId", Item.Id);
+            command.Parameters.AddWithValue("@_ItemId", Item.Id);
 
             return command;
         }
