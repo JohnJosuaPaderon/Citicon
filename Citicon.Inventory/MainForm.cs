@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -175,8 +176,10 @@ namespace Citicon.Inventory
 
         private void BtnReports_Click(object sender, EventArgs e)
         {
-            ReportsForm form = new ReportsForm();
+            var form = new InventoryStocksReportForm();
             form.ShowDialog();
+            //ReportsForm form = new ReportsForm();
+            //form.ShowDialog();
         }
 
         private void TbxSearch_TextChanged(object sender, EventArgs e)
