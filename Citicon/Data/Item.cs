@@ -1,4 +1,6 @@
-﻿namespace Citicon.Data
+﻿using System;
+
+namespace Citicon.Data
 {
     public sealed class Item
     {
