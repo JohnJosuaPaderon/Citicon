@@ -109,6 +109,7 @@
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
     <Compile Include="DataProcess\ExportInventoryIssuanceSlip.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
+    <Compile Include="DataProcess\ExportStockReport.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
@@ -218,6 +219,8 @@
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
+    <Compile Include="DataProcess\SearchStock.cs" />
+    <Compile Include="DataProcess\SearchStockOptions.cs" />
     <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
     <Compile Include="DataProcess\GetDepartmentById.cs" />
     <Compile Include="DataProcess\GetEmployeeAgent.cs" />
@@ -629,6 +632,12 @@
     <Compile Include="Forms\EngineerDeliveryCreationForm.Designer.cs">
       <DependentUpon>EngineerDeliveryCreationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InventoryStocksReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryStocksReportForm.Designer.cs">
+      <DependentUpon>InventoryStocksReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LegitimateProjectDesignForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -839,6 +848,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EngineerDeliveryCreationForm.resx">
       <DependentUpon>EngineerDeliveryCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryStocksReportForm.resx">
+      <DependentUpon>InventoryStocksReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LegitimateProjectDesignForm.resx">
       <DependentUpon>LegitimateProjectDesignForm.cs</DependentUpon>
