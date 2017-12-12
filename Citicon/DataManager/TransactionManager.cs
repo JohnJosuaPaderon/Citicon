@@ -65,6 +65,7 @@ namespace Citicon.DataManager
         {
             return Task.Factory.StartNew(() => Add(data));
         }
+
         public void ExportIssuanceSlip(Transaction transaction)
         {
             if (File.Exists(IssuanceSlipTemplate))
@@ -135,6 +136,30 @@ namespace Citicon.DataManager
                 }
             }
             return null;
+        }
+
+        public Task<Transaction> InsertAsync(Transaction transaction)
+        {
+            using (var process = new InsertTransaction(transaction))
+            {
+                return process.ExecuteAsync();
+            }
+        }
+
+        public Task<IEnumerable<Transaction>> InsertAsync(IEnumerable<Transaction> transactions)
+        {
+            using (var process = new InsertTransactionList(transactions))
+            {
+                return process.ExecuteAsync();
+            }
+        }
+
+        public static Task ExportIssuanceSlipAsync(IEnumerable<Transaction> transactions)
+        {
+            using (var process = new ExportIssuanceSlip(transactions))
+            {
+                return process.ExecuteAsync();
+            }
         }
 
         public Task<Transaction> GetByIdAsync(ulong id)

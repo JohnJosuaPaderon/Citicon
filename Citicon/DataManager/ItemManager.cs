@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -19,6 +20,14 @@ namespace Citicon.DataManager
         private static Dictionary<ulong, Item> ItemDict { get; }
 
         public event DataManagerEventHandler<Tuple<Stock, Transaction>> NewTrackRecordGenerated;
+
+        public static Task<IEnumerable<Item>> SearchAsync(SearchItemCategory category, string searchKey)
+        {
+            using (var process = new SearchItem(category, searchKey))
+            {
+                return process.ExecuteAsync();
+            }
+        }
 
         public void Add(Item data)
         {
