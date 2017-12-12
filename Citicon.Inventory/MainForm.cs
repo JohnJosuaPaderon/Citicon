@@ -150,7 +150,8 @@ namespace Citicon.Inventory
 
         private void BtnOutgoingStocks_Click(object sender, EventArgs e)
         {
-            OutgoingStocksForm form = new OutgoingStocksForm();
+            //OutgoingStocksForm form = new OutgoingStocksForm();
+            var form = new OutgoingStockForm();
             form.ShowDialog();
         }
 
