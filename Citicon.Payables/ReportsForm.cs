@@ -113,6 +113,7 @@ namespace Citicon.Payables
 
         private async void btnExportCheque_Click(object sender, EventArgs e)
         {
+            btnExportCheque.Enabled = false;
             try
             {
                 if (tcReports.SelectedTab == tpReports_Cheques)
@@ -125,6 +126,7 @@ namespace Citicon.Payables
             {
                 MessageBox.Show(ex.Message);
             }
+            btnExportCheque.Enabled = true;
         }
     }
 }
