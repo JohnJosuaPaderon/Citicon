@@ -108,6 +108,7 @@
     <Compile Include="DataProcess\ExportExcelBase.cs" />
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
     <Compile Include="DataProcess\ExportInventoryIssuanceSlip.cs" />
+    <Compile Include="DataProcess\ExportIssuanceSlip.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\ExportStockReport.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
@@ -216,9 +217,13 @@
     <Compile Include="DataProcess\InsertQuotation.cs" />
     <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
     <Compile Include="DataProcess\InsertTimeLog.cs" />
+    <Compile Include="DataProcess\InsertTransaction.cs" />
+    <Compile Include="DataProcess\InsertTransactionList.cs" />
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
+    <Compile Include="DataProcess\SearchItem.cs" />
+    <Compile Include="DataProcess\SearchItemCategory.cs" />
     <Compile Include="DataProcess\SearchStock.cs" />
     <Compile Include="DataProcess\SearchStockOptions.cs" />
     <Compile Include="DataProcess\UpdateDeliveryBillingId.cs" />
@@ -650,6 +655,18 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ManageOutgoingStockItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageOutgoingStockItemForm.Designer.cs">
+      <DependentUpon>ManageOutgoingStockItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OutgoingStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OutgoingStockForm.Designer.cs">
+      <DependentUpon>OutgoingStockForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProjectDesignManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -857,6 +874,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageOutgoingStockItemForm.resx">
+      <DependentUpon>ManageOutgoingStockItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OutgoingStockForm.resx">
+      <DependentUpon>OutgoingStockForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectDesignManagementForm.resx">
       <DependentUpon>ProjectDesignManagementForm.cs</DependentUpon>
