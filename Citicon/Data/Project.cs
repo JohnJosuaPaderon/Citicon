@@ -11,6 +11,7 @@
         public ProjectType Type { get; set; }
         public decimal InitialPayment { get; set; }
         public double InitialCement { get; set; }
+        public QuotationType QuotationType { get; set; }
 
         public static bool operator ==(Project left, Project right)
         {
