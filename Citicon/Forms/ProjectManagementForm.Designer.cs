@@ -133,7 +133,7 @@
             this.ProjectView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ProjectView.Name = "ProjectView";
             this.ProjectView.Project = null;
-            this.ProjectView.Size = new System.Drawing.Size(419, 281);
+            this.ProjectView.Size = new System.Drawing.Size(419, 313);
             this.ProjectView.TabIndex = 106;
             // 
             // DeleteButton
@@ -195,7 +195,7 @@
             this.ViewDesignsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewDesignsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewDesignsButton.ForeColor = System.Drawing.Color.White;
-            this.ViewDesignsButton.Location = new System.Drawing.Point(1143, 373);
+            this.ViewDesignsButton.Location = new System.Drawing.Point(1143, 405);
             this.ViewDesignsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ViewDesignsButton.Name = "ViewDesignsButton";
             this.ViewDesignsButton.Size = new System.Drawing.Size(125, 35);
@@ -212,7 +212,7 @@
             this.ViewQuotationsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewQuotationsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewQuotationsButton.ForeColor = System.Drawing.Color.White;
-            this.ViewQuotationsButton.Location = new System.Drawing.Point(985, 373);
+            this.ViewQuotationsButton.Location = new System.Drawing.Point(985, 405);
             this.ViewQuotationsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ViewQuotationsButton.Name = "ViewQuotationsButton";
             this.ViewQuotationsButton.Size = new System.Drawing.Size(150, 35);

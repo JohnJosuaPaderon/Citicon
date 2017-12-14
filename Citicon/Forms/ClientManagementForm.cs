@@ -3,7 +3,6 @@ using Citicon.DataManager;
 using Citicon.Forms.Dialogs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -27,7 +26,7 @@ namespace Citicon.Forms
         {
             ClientDataGridView.Rows.Clear();
             Clients = await ClientManager.GetListAsync();
-            SearchTextBox.Text = string.Empty;
+            Search();
         }
 
         private void AddClientToUI(Client client)
@@ -62,6 +61,11 @@ namespace Citicon.Forms
         }
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Search();
+        }
+
+        private void Search()
         {
             SearchTextBox.ReadOnly = true;
 
