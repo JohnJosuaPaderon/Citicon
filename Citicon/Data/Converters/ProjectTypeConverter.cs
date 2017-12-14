@@ -17,7 +17,7 @@ namespace Citicon.Data.Converters
 
         private static List<Tuple<ProjectType, string>> ProjectTypeDisplays { get; }
 
-        public static ProjectType FromString(string value)
+        public static ProjectType Parse(string value)
         {
             Enum.TryParse(value, out ProjectType result);
 
