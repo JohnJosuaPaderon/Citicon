@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using Citicon.Data;
+﻿using Citicon.Data;
 using Citicon.Data.Converters;
+using System;
+using System.Windows.Forms;
 
 namespace Citicon.Forms.Controls
 {
@@ -32,6 +32,7 @@ namespace Citicon.Forms.Controls
             InitialPaymentTextBox.Text = Project?.InitialPayment.ToString("#,##0.00");
             InitialCementTextBox.Text = Project?.InitialCement.ToString("#,##0.0##");
             CompletedCheckBox.Checked = Project?.Completed ?? false;
+            QuotationTypeTextBox.Text = Project?.QuotationType.ToString();
         }
 
         private void CompletedCheckBox_CheckedChanged(object sender, EventArgs e)
