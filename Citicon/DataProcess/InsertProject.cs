@@ -26,6 +26,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_InitialPayment", Project.InitialPayment);
             command.Parameters.AddWithValue("@_InitialCement", Project.InitialCement);
             command.Parameters.AddWithValue("@_Completed", Project.Completed);
+            command.Parameters.AddWithValue("@_QuotationType", Project.QuotationType.ToString());
 
             return command;
         }

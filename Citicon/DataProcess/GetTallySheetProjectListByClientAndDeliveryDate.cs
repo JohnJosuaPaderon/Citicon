@@ -48,7 +48,7 @@ namespace Citicon.DataProcess
                                         Location = reader.GetString("Location"),
                                         Name = reader.GetString("Name"),
                                         TotalCost = reader.GetDecimal("TotalCost"),
-                                        Type = ProjectTypeConverter.FromString(reader.GetString("Type"))
+                                        Type = ProjectTypeConverter.Parse(reader.GetString("Type"))
                                     });
                                 }
                             }

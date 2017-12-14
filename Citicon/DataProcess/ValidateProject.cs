@@ -1,5 +1,4 @@
 ﻿using Citicon.Data;
-using Citicon.DataManager;
 using System;
 
 namespace Citicon.DataProcess
@@ -20,9 +19,7 @@ namespace Citicon.DataProcess
 
         public ValidationResult Execute()
         {
-            var clientValidationResult = ClientManager.Validate(Project.Client);
-
-            if (!clientValidationResult.Success)
+            if (Project.Client == null)
             {
                 return new ValidationResult(false, "Invalid client.");
             }
