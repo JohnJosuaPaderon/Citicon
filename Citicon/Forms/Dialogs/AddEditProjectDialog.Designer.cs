@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditProjectDialog));
             this.ProjectDetailsGroupBox = new System.Windows.Forms.GroupBox();
+            this.QuotationTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.QuotationTypeLabel = new System.Windows.Forms.Label();
+            this.InitialCementNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.InitialPaymentNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.TypeComboBox = new System.Windows.Forms.ComboBox();
             this.InitialCementLabel = new System.Windows.Forms.Label();
             this.InitialPaymentLabel = new System.Windows.Forms.Label();
@@ -41,15 +45,15 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.InitialPaymentNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.InitialCementNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ProjectDetailsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InitialPaymentNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InitialCementNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitialPaymentNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // ProjectDetailsGroupBox
             // 
+            this.ProjectDetailsGroupBox.Controls.Add(this.QuotationTypeComboBox);
+            this.ProjectDetailsGroupBox.Controls.Add(this.QuotationTypeLabel);
             this.ProjectDetailsGroupBox.Controls.Add(this.InitialCementNumericUpDown);
             this.ProjectDetailsGroupBox.Controls.Add(this.InitialPaymentNumericUpDown);
             this.ProjectDetailsGroupBox.Controls.Add(this.TypeComboBox);
@@ -63,10 +67,49 @@
             this.ProjectDetailsGroupBox.Controls.Add(this.NameLabel);
             this.ProjectDetailsGroupBox.Location = new System.Drawing.Point(12, 12);
             this.ProjectDetailsGroupBox.Name = "ProjectDetailsGroupBox";
-            this.ProjectDetailsGroupBox.Size = new System.Drawing.Size(413, 276);
+            this.ProjectDetailsGroupBox.Size = new System.Drawing.Size(413, 323);
             this.ProjectDetailsGroupBox.TabIndex = 1;
             this.ProjectDetailsGroupBox.TabStop = false;
             this.ProjectDetailsGroupBox.Text = "Project Details";
+            // 
+            // QuotationTypeComboBox
+            // 
+            this.QuotationTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.QuotationTypeComboBox.FormattingEnabled = true;
+            this.QuotationTypeComboBox.Location = new System.Drawing.Point(10, 285);
+            this.QuotationTypeComboBox.Name = "QuotationTypeComboBox";
+            this.QuotationTypeComboBox.Size = new System.Drawing.Size(390, 25);
+            this.QuotationTypeComboBox.TabIndex = 12;
+            this.QuotationTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.QuotationTypeComboBox_SelectedIndexChanged);
+            // 
+            // QuotationTypeLabel
+            // 
+            this.QuotationTypeLabel.AutoSize = true;
+            this.QuotationTypeLabel.Location = new System.Drawing.Point(7, 265);
+            this.QuotationTypeLabel.Name = "QuotationTypeLabel";
+            this.QuotationTypeLabel.Size = new System.Drawing.Size(97, 17);
+            this.QuotationTypeLabel.TabIndex = 13;
+            this.QuotationTypeLabel.Text = "Quotation Type";
+            // 
+            // InitialCementNumericUpDown
+            // 
+            this.InitialCementNumericUpDown.DecimalPlaces = 3;
+            this.InitialCementNumericUpDown.Location = new System.Drawing.Point(10, 237);
+            this.InitialCementNumericUpDown.Name = "InitialCementNumericUpDown";
+            this.InitialCementNumericUpDown.Size = new System.Drawing.Size(390, 25);
+            this.InitialCementNumericUpDown.TabIndex = 11;
+            this.InitialCementNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.InitialCementNumericUpDown.ValueChanged += new System.EventHandler(this.InitialCementNumericUpDown_ValueChanged);
+            // 
+            // InitialPaymentNumericUpDown
+            // 
+            this.InitialPaymentNumericUpDown.DecimalPlaces = 2;
+            this.InitialPaymentNumericUpDown.Location = new System.Drawing.Point(10, 189);
+            this.InitialPaymentNumericUpDown.Name = "InitialPaymentNumericUpDown";
+            this.InitialPaymentNumericUpDown.Size = new System.Drawing.Size(390, 25);
+            this.InitialPaymentNumericUpDown.TabIndex = 10;
+            this.InitialPaymentNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.InitialPaymentNumericUpDown.ValueChanged += new System.EventHandler(this.InitialPaymentNumericUpDown_ValueChanged);
             // 
             // TypeComboBox
             // 
@@ -158,7 +201,7 @@
             this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.ForeColor = System.Drawing.Color.Red;
-            this.CancelButton.Location = new System.Drawing.Point(325, 294);
+            this.CancelButton.Location = new System.Drawing.Point(323, 341);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(100, 35);
@@ -174,7 +217,7 @@
             this.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SaveButton.ForeColor = System.Drawing.Color.White;
-            this.SaveButton.Location = new System.Drawing.Point(217, 294);
+            this.SaveButton.Location = new System.Drawing.Point(215, 341);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(100, 35);
@@ -183,32 +226,12 @@
             this.SaveButton.UseVisualStyleBackColor = false;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // InitialPaymentNumericUpDown
-            // 
-            this.InitialPaymentNumericUpDown.DecimalPlaces = 2;
-            this.InitialPaymentNumericUpDown.Location = new System.Drawing.Point(10, 189);
-            this.InitialPaymentNumericUpDown.Name = "InitialPaymentNumericUpDown";
-            this.InitialPaymentNumericUpDown.Size = new System.Drawing.Size(390, 25);
-            this.InitialPaymentNumericUpDown.TabIndex = 10;
-            this.InitialPaymentNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.InitialPaymentNumericUpDown.ValueChanged += new System.EventHandler(this.InitialPaymentNumericUpDown_ValueChanged);
-            // 
-            // InitialCementNumericUpDown
-            // 
-            this.InitialCementNumericUpDown.DecimalPlaces = 3;
-            this.InitialCementNumericUpDown.Location = new System.Drawing.Point(10, 237);
-            this.InitialCementNumericUpDown.Name = "InitialCementNumericUpDown";
-            this.InitialCementNumericUpDown.Size = new System.Drawing.Size(390, 25);
-            this.InitialCementNumericUpDown.TabIndex = 11;
-            this.InitialCementNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.InitialCementNumericUpDown.ValueChanged += new System.EventHandler(this.InitialCementNumericUpDown_ValueChanged);
-            // 
             // AddEditProjectDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(436, 342);
+            this.ClientSize = new System.Drawing.Size(436, 388);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ProjectDetailsGroupBox);
@@ -222,8 +245,8 @@
             this.Load += new System.EventHandler(this.AddEditProjectDialog_Load);
             this.ProjectDetailsGroupBox.ResumeLayout(false);
             this.ProjectDetailsGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InitialPaymentNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InitialCementNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InitialPaymentNumericUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,5 +267,7 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.NumericUpDown InitialCementNumericUpDown;
         private System.Windows.Forms.NumericUpDown InitialPaymentNumericUpDown;
+        private System.Windows.Forms.ComboBox QuotationTypeComboBox;
+        private System.Windows.Forms.Label QuotationTypeLabel;
     }
 }

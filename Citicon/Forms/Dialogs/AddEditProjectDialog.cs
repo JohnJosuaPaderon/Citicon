@@ -64,6 +64,8 @@ namespace Citicon.Forms.Dialogs
         {
             TypeComboBox.Items.Add(ProjectTypeConverter.ToDisplay(ProjectType.Straight));
             TypeComboBox.Items.Add(ProjectTypeConverter.ToDisplay(ProjectType.CementSupplied));
+            QuotationTypeComboBox.Items.Add(QuotationType.Citicon);
+            QuotationTypeComboBox.Items.Add(QuotationType.Lex);
         }
 
         private async Task AddAsync()
@@ -207,6 +209,14 @@ namespace Citicon.Forms.Dialogs
             if (Project != null)
             {
                 Project.Completed = CompletedCheckBox.Checked;
+            }
+        }
+
+        private void QuotationTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Project != null)
+            {
+                Project.QuotationType = (QuotationType)QuotationTypeComboBox.SelectedItem;
             }
         }
     }
