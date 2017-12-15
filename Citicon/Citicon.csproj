@@ -119,6 +119,7 @@
     <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
     <Compile Include="DataProcess\GetClientListWithCementSuppliedProject.cs" />
     <Compile Include="DataProcess\GetClientListWithScheduledProjectDesign.cs" />
+    <Compile Include="DataProcess\GetCompanyById.cs" />
     <Compile Include="DataProcess\GetConsumedProjectDesignVolume.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="DataProcess\GetScheduledProjectDesignListByStatus.cs" />
     <Compile Include="DataProcess\GetScheduledProjectDesignStatusList.cs" />
     <Compile Include="DataProcess\GetServiceEngineerList.cs" />
+    <Compile Include="DataProcess\GetSupplierById.cs" />
     <Compile Include="DataProcess\GetTimeLogListByEmployee.cs" />
     <Compile Include="DataProcess\GetTransitMixerById.cs" />
     <Compile Include="DataProcess\GetTransitMixerList.cs" />
