@@ -14,10 +14,12 @@ namespace Citicon.Forms.Controls
         {
             InitializeComponent();
             ChequeSummaryItemManager = new ChequeSummaryItemManager();
+            _PayableManager = new PayableManager();
         }
 
         public IEnumerable<ChequeSummaryItem> ChequeSummaryList { get; private set; }
         private ChequeSummaryItemManager ChequeSummaryItemManager;
+        private readonly PayableManager _PayableManager;
 
         private async Task LoadAsync()
         {
@@ -61,6 +63,19 @@ namespace Citicon.Forms.Controls
         private async void LoadButton_Click(object sender, EventArgs e)
         {
             await LoadAsync();
+        }
+
+        public async Task ExportAsync()
+        {
+            try
+            {
+                await _PayableManager.ExportChequeReportAsync(ChequeSummaryList);
+                MessageBox.Show("Successfully exported.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
