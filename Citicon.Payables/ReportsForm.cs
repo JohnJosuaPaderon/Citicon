@@ -121,6 +121,10 @@ namespace Citicon.Payables
                     await ChequeReports.ExportAsync();
                     MessageBox.Show("Successfully exported!");
                 }
+                else if (tcReports.SelectedTab == ChequeDailyReportTabPage)
+                {
+                    await DailyChequeReport.ExportAsync();
+                }
             }
             catch (Exception ex)
             {

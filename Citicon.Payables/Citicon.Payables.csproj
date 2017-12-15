@@ -246,10 +246,7 @@
   <ItemGroup>
     <Content Include="citlog.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataManager\" />
-    <Folder Include="Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
