@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.DataProcess;
 using Sorschia;
 using Sorschia.Extensions;
 using Sorschia.Queries;
@@ -93,9 +94,33 @@ namespace Citicon.DataManager
             return null;
         }
 
-        public Task<Company> GetByIdAsync(ulong id)
+        public async Task<Company> GetByIdAsync(ulong id)
         {
-            return Task.Factory.StartNew(() => GetById(id));
+            if (id > 0)
+            {
+                if (CompanyDict.ContainsKey(id))
+                {
+                    return CompanyDict[id];
+                }
+                else
+                {
+                    using (var process = new GetCompanyById(id))
+                    {
+                        var result = await process.ExecuteAsync();
+
+                        if (result != null)
+                        {
+                            CompanyDict.Add(id, result);
+                        }
+
+                        return result;
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public Company[] GetList()

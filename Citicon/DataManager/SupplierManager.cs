@@ -93,14 +93,39 @@ namespace Citicon.DataManager
                 {
                     query.AddParameter("@_SupplierId", id);
                     query.ExceptionCatched += OnExceptionCatched;
-                    return ExtractFromDictionary(query.GetRecord());                }
+                    return ExtractFromDictionary(query.GetRecord());
+                }
             }
             return null;
         }
 
-        public Task<Supplier> GetByIdAsync(ulong id)
+        public async Task<Supplier> GetByIdAsync(ulong id)
         {
-            return Task.Factory.StartNew(() => GetById(id));
+            if (id > 0)
+            {
+                if (SupplierDict.ContainsKey(id))
+                {
+                    return SupplierDict[id];
+                }
+                else
+                {
+                    using (var process = new GetSupplierById(id))
+                    {
+                        var result = await process.ExecuteAsync();
+
+                        if (result != null)
+                        {
+                            SupplierDict.Add(result.Id, result);
+                        }
+
+                        return result;
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public Supplier[] GetList()
