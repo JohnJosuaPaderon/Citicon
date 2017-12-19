@@ -1,17 +1,16 @@
-﻿using System.Collections.Generic;
-
-namespace Citicon.Data
+﻿namespace Citicon.Data
 {
     public class Payroll
     {
         public Payroll()
         {
-            Items = new List<EmployeePayroll>();
+            Employees = new EmployeePayrollCollection(this);
         }
 
+        public ulong Id { get; set; }
         public DateTimeRange DateRange { get; set; }
         public Branch Branch { get; set; }
-        public List<EmployeePayroll> Items { get; }
+        public EmployeePayrollCollection Employees { get; }
 
     }
 }

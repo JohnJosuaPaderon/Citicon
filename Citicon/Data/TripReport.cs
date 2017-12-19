@@ -16,9 +16,9 @@ namespace Citicon.Data
                 {
                     var deliveryDate = delivery.DeliveryDate.Date;
 
-                    if (deliveryDate < tripReports.DeliveryDateRange.Start.Date)
+                    if (deliveryDate < tripReports.DeliveryDateRange.Begin.Date)
                     {
-                        tripReports.DeliveryDateRange.Start = deliveryDate;
+                        tripReports.DeliveryDateRange.Begin = deliveryDate;
                     }
 
                     if (deliveryDate > tripReports.DeliveryDateRange.End.Date)

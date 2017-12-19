@@ -5,6 +5,12 @@ namespace Citicon.Data
 {
     public class EmployeePayroll : IComparable<EmployeePayroll>
     {
+        public EmployeePayroll(Payroll payroll)
+        {
+            Payroll = payroll;
+        }
+
+        public Payroll Payroll { get; internal set; }
         public Employee Employee { get; set; }
         public decimal BasicPay { get; set; }
         public decimal DailyRate { get; set; }
