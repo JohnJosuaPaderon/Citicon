@@ -218,6 +218,7 @@
     <Compile Include="DataProcess\GetDeliveryListByClient.cs" />
     <Compile Include="DataProcess\InsertQuotation.cs" />
     <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
+    <Compile Include="DataProcess\InsertPayroll.cs" />
     <Compile Include="DataProcess\InsertTimeLog.cs" />
     <Compile Include="DataProcess\InsertTransaction.cs" />
     <Compile Include="DataProcess\InsertTransactionList.cs" />
@@ -365,6 +366,7 @@
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
     <Compile Include="Data\EmployeePayroll.cs" />
+    <Compile Include="Data\EmployeePayrollCollection.cs" />
     <Compile Include="Data\EmployeeTimeLogList.cs" />
     <Compile Include="Data\EmploymentStatus.cs" />
     <Compile Include="Data\ExcessPipeCharge.cs" />
@@ -431,6 +433,7 @@
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
+    <Compile Include="Extensions\DbParameterCollectionExtension.cs" />
     <Compile Include="Extensions\NameValueCollectionExtension.cs" />
     <Compile Include="Extensions\TimeSpanExtension.cs" />
     <Compile Include="Forms\AddEditEmployeeForm.cs">
@@ -731,6 +734,36 @@
     <Compile Include="UserSettingsForm.Designer.cs">
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\DbValueConverter.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Boolean.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Byte.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Char.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.DateTime.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Decimal.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Double.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Int16.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Int32.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Int64.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableBoolean.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableByte.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableChar.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableDateTime.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableDecimal.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableDouble.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableInt16.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableInt32.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableInt64.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableSByte.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableSingle.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableUInt16.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableUInt32.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.NullableUInt64.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.SByte.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.Single.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.String.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.UInt16.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.UInt32.cs" />
+    <Compile Include="Utilities\DbValueConverter.Definitions.UInt64.cs" />
     <Compile Include="Utilities\ValueConverter.cs" />
     <Compile Include="Utilities\ValueConverter.Definitions.Boolean.cs" />
     <Compile Include="Utilities\ValueConverter.Definitions.Byte.cs" />
