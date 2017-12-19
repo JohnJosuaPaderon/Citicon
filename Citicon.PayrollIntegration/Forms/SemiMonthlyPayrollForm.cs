@@ -32,7 +32,12 @@ namespace Citicon.PayrollIntegration.Forms
         private async Task GeneratePayrollAsync()
         {
             var branch = (Branch)cmbxSelectPlant.SelectedItem;
-            var rangeDate = new DateTimeRange(dtpSelectRange_From.Value, dtpSelectRange_To.Value);
+            var dateRange = new DateTimeRange(dtpSelectRange_From.Value, dtpSelectRange_To.Value);
+            var payroll = new Payroll
+            {
+                Branch = branch,
+                DateRange = dateRange
+            };
 
             if (branch != null)
             {
@@ -40,13 +45,14 @@ namespace Citicon.PayrollIntegration.Forms
 
                 try
                 {
-                    var payrollItems = await PayrollManager.GeneratePayrollAsync(rangeDate, branch);
+                    var payrollItems = await PayrollManager.GeneratePayrollAsync(payroll);
 
                     if (payrollItems != null)
                     {
                         foreach (var item in payrollItems)
                         {
-                            addEmployeePayrollToDataGridView(item);
+                            payroll.Employees.Add(item);
+                            AddEmployeePayrollToDataGridView(item);
                         }
                     }
                 }
@@ -66,13 +72,15 @@ namespace Citicon.PayrollIntegration.Forms
             {
                 if (branch != null)
                 {
-                    var payroll = new Payroll();
-                    payroll.Branch = branch;
-                    payroll.DateRange = rangeDate;
+                    var payroll = new Payroll
+                    {
+                        Branch = branch,
+                        DateRange = rangeDate
+                    };
 
                     foreach (DataGridViewRow row in dgvPayrollItems.Rows)
                     {
-                        payroll.Items.Add(((EmployeePayroll)row.Cells[colPayrollItem.Name].Value));
+                        payroll.Employees.Add(((EmployeePayroll)row.Cells[colPayrollItem.Name].Value));
                     }   
 
                     try
@@ -100,12 +108,15 @@ namespace Citicon.PayrollIntegration.Forms
             }
         }
 
-        private void addEmployeePayrollToDataGridView(EmployeePayroll employeePayroll)
+        private void AddEmployeePayrollToDataGridView(EmployeePayroll employeePayroll)
         {
             if (employeePayroll != null)
             {
-                var row = new DataGridViewRow();
-                row.Height = 30;
+                var row = new DataGridViewRow
+                {
+                    Height = 30
+                };
+
                 row.Cells.Add(CreateTextBoxCell(employeePayroll));
                 row.Cells.Add(CreateTextBoxCell(employeePayroll.Employee));
                 row.Cells.Add(CreateTextBoxCell(employeePayroll.VLSL));
