@@ -141,9 +141,9 @@ namespace Citicon.Reports
                         groupItems.Add(item, new List<EmployeePayroll>());
                     }
 
-                    Payroll.Items.Sort((x, y) => string.Compare(x.Employee.ToString(), y.Employee.ToString()));
+                    //Payroll.Employees.Sort((x, y) => string.Compare(x.Employee.ToString(), y.Employee.ToString()));
 
-                    foreach (var item in Payroll.Items)
+                    foreach (var item in Payroll.Employees)
                     {
                         groupItems[item.Group].Add(item);
                     }
