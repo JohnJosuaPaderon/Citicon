@@ -55,7 +55,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_SearchByBranch", Options.SearchByBranch);
             command.Parameters.AddWithValue("@_BranchId", Options.Branch?.Id);
             command.Parameters.AddWithValue("@_SearchByDeliveryDateRange", Options.SearchByDeliveryDateRange);
-            command.Parameters.AddWithValue("@_DeliveryDateBegin", Options.DeliveryDateRange.Start);
+            command.Parameters.AddWithValue("@_DeliveryDateBegin", Options.DeliveryDateRange.Begin);
             command.Parameters.AddWithValue("@_DeliveryDateEnd", Options.DeliveryDateRange.End);
             command.Parameters.AddWithValue("@_SearchBySiNumber", Options.SearchBySiNumber);
             command.Parameters.AddWithValue("@_SiNumber", Options.SiNumber);

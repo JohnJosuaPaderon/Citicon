@@ -9,32 +9,30 @@ namespace Citicon.DataProcess
 {
     internal sealed class GeneratePayroll : DataProcessBase
     {
-        public GeneratePayroll(DateTimeRange rangeDate, Branch branch)
+        public GeneratePayroll(Payroll payroll)
         {
-            RangeDate = rangeDate;
-            Branch = branch;
+            _Payroll = payroll;
             JobPositionManager = new JobPositionManager();
             PayrollGroupManager = new PayrollGroupManager();
         }
 
-        private DateTimeRange RangeDate;
-        private Branch Branch;
+        private readonly Payroll _Payroll;
         private JobPositionManager JobPositionManager;
         private PayrollGroupManager PayrollGroupManager;
 
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = Utility.CreateProcedureCommand("GeneratePayroll", connection);
-            command.Parameters.AddWithValue("@_RangeStart", RangeDate.Start);
-            command.Parameters.AddWithValue("@_RangeEnd", RangeDate.End);
-            command.Parameters.AddWithValue("@_BranchId", Branch.Id);
+            command.Parameters.AddWithValue("@_RangeStart", _Payroll.DateRange.Begin);
+            command.Parameters.AddWithValue("@_RangeEnd", _Payroll.DateRange.End);
+            command.Parameters.AddWithValue("@_BranchId", _Payroll.Branch.Id);
 
             return command;
         }
 
         private async Task<EmployeePayroll> FromReaderAsync(DbDataReader reader)
         {
-            return new EmployeePayroll()
+            return new EmployeePayroll(_Payroll)
             {
                 Employee = new Employee()
                 {

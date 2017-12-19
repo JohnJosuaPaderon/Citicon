@@ -23,7 +23,7 @@ namespace Citicon.DataProcess
         {
             var command = Utility.CreateProcedureCommand("GetTripReportDeliveryListByDriver", connection);
             command.Parameters.AddWithValue("@_DriverId", Driver.Id);
-            command.Parameters.AddWithValue("@_RangeStart", Range.Start);
+            command.Parameters.AddWithValue("@_RangeStart", Range.Begin);
             command.Parameters.AddWithValue("@_RangeEnd", Range.End);
 
             return command;

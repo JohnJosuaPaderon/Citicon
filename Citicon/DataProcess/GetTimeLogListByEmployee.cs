@@ -25,7 +25,7 @@ namespace Citicon.DataProcess
         {
             var command = Utility.CreateProcedureCommand("GetTimeLogListByEmployee", connection);
             command.Parameters.AddWithValue("@_EmployeeId", Employee.Id);
-            command.Parameters.AddWithValue("@_TimeRangeStart", TimeRange.Start);
+            command.Parameters.AddWithValue("@_TimeRangeStart", TimeRange.Begin);
             command.Parameters.AddWithValue("@_TimeRangeEnd", TimeRange.End);
 
             return command;

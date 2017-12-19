@@ -40,7 +40,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_EmployeePositionId", EmployeePosition?.Id);
             command.Parameters.AddWithValue("@_FilterByPayrollType", FilterByPayrollType);
             command.Parameters.AddWithValue("@_PayrollType", PayrollType.ToString());
-            command.Parameters.AddWithValue("@_TimeRangeStart", TimeRange.Start);
+            command.Parameters.AddWithValue("@_TimeRangeStart", TimeRange.Begin);
             command.Parameters.AddWithValue("@_TimeRangeEnd", TimeRange.End);
 
             return command;

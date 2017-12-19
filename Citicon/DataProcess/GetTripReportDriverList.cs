@@ -20,7 +20,7 @@ namespace Citicon.DataProcess
         private MySqlCommand CreateCommand(MySqlConnection connection)
         {
             var command = Utility.CreateProcedureCommand("GetTripReportDriverList", connection);
-            command.Parameters.AddWithValue("@_RangeStart", Range.Start);
+            command.Parameters.AddWithValue("@_RangeStart", Range.Begin);
             command.Parameters.AddWithValue("@_RangeEnd", Range.End);
 
             return command;

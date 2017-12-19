@@ -49,7 +49,7 @@ namespace Citicon.DataProcess
         {
             var command = Utility.CreateProcedureCommand("GetFilteredChequeSummary", connection);
             command.Parameters.AddWithValue("@_FilterByRangeDate", FilterByRangeDate);
-            command.Parameters.AddWithValue("@_RangeStart", RangeDate?.Start);
+            command.Parameters.AddWithValue("@_RangeStart", RangeDate?.Begin);
             command.Parameters.AddWithValue("@_RangeEnd", RangeDate?.End);
             command.Parameters.AddWithValue("@_FilterBySupplierId", FilterBySupplier);
             command.Parameters.AddWithValue("@_SupplierId", Supplier?.Id);
@@ -58,7 +58,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_FilterByCompanyId", FilterByCompany);
             command.Parameters.AddWithValue("@_CompanyId", Company?.Id);
             command.Parameters.AddWithValue("@_FilterByTransactionDateRange", FilterByTransactionDateRange);
-            command.Parameters.AddWithValue("@_TransactionDateRangeStart", TransactionDateRange?.Start);
+            command.Parameters.AddWithValue("@_TransactionDateRangeStart", TransactionDateRange?.Begin);
             command.Parameters.AddWithValue("@_TransactionDateRangeEnd", TransactionDateRange?.End);
 
             return command;
