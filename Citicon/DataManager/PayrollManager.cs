@@ -8,11 +8,11 @@ namespace Citicon.DataManager
 {
     public sealed class PayrollManager
     {
-        public async Task<IEnumerable<EmployeePayroll>> GeneratePayrollAsync(DateTimeRange rangeDate, Branch branch)
+        public async Task<IEnumerable<EmployeePayroll>> GeneratePayrollAsync(Payroll payroll)
         {
-            if (branch != null && rangeDate != null)
+            if (payroll != null)
             {
-                var process = new GeneratePayroll(rangeDate, branch);
+                var process = new GeneratePayroll(payroll);
                 return await process.ExecuteAsync();
             }
             else
@@ -27,6 +27,21 @@ namespace Citicon.DataManager
             {
                 var exporter = new ExportPayroll(payroll);
                 await exporter.ExportAsync();
+            }
+        }
+
+        public async Task<Payroll> InsertAsync(Payroll payroll)
+        {
+            if (payroll != null)
+            {
+                using (var process = new InsertPayroll(payroll))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
             }
         }
     }
