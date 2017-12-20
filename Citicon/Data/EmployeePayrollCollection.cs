@@ -8,6 +8,7 @@ namespace Citicon.Data
         public EmployeePayrollCollection(Payroll payroll)
         {
             Payroll = payroll;
+            _Source = new Dictionary<Employee, EmployeePayroll>();
         }
 
         private readonly Dictionary<Employee, EmployeePayroll> _Source;

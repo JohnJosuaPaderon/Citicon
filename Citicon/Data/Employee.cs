@@ -116,6 +116,33 @@ namespace Citicon.Data
             }
         }
 
+        public string FullName2
+        {
+            get
+            {
+                var sb = new StringBuilder();
+                var hasLastName = !string.IsNullOrWhiteSpace(LastName);
+                var hasFirstName = !string.IsNullOrWhiteSpace(FirstName);
+
+                if (hasLastName)
+                {
+                    sb.Append(LastName.Trim());
+
+                    if (hasFirstName)
+                    {
+                        sb.Append(", ");
+                    }
+                }
+
+                if (hasFirstName)
+                {
+                    sb.Append(FirstName.Trim());
+                }
+
+                return sb.ToString();
+            }
+        }
+
         public override string ToString()
         {
             var sb = new StringBuilder();

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Citicon.Data
 {
@@ -9,7 +8,6 @@ namespace Citicon.Data
         {
             Begin = begin;
             End = end;
-            List
         }
 
         public DateTime Begin { get; set; }
