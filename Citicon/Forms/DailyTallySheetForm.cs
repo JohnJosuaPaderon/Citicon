@@ -101,9 +101,7 @@ namespace Citicon.Forms
 
                 foreach (DataGridViewRow row in ProjectDesignDataGridView.Rows)
                 {
-                    var projectDesign = row.Cells[ProjectDesignColumn.Name].Value as ProjectDesign;
-
-                    if (projectDesign != null)
+                    if (row.Cells[ProjectDesignColumn.Name].Value is ProjectDesign projectDesign)
                     {
                         var tallySheetItem = new TallySheetItem(projectDesign);
 

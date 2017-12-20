@@ -330,7 +330,7 @@ namespace Citicon.Forms
         {
             Invoke(new Action(() => dgvProjects.Rows.Clear()));
 
-            if (task.Status == TaskStatus.RanToCompletion)
+            if (task.Status == TaskStatus.RanToCompletion && task.Result != null)
             {
                 var rows = new List<DataGridViewRow>();
 
