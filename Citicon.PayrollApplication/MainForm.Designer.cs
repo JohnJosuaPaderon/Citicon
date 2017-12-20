@@ -30,17 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TransitMixerButton = new System.Windows.Forms.Button();
             this.RouteButton = new System.Windows.Forms.Button();
             this.DriverTripReportButton = new System.Windows.Forms.Button();
             this.UserSettingsButton = new System.Windows.Forms.Button();
             this.ViewTimeLogsButton = new System.Windows.Forms.Button();
-            this.TransitMixerButton = new System.Windows.Forms.Button();
+            this.SemiMonthlyPayrollButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.SemiMonthlyPayrollButton);
             this.panel1.Controls.Add(this.TransitMixerButton);
             this.panel1.Controls.Add(this.RouteButton);
             this.panel1.Controls.Add(this.DriverTripReportButton);
@@ -50,8 +52,24 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.panel1.Size = new System.Drawing.Size(1008, 60);
+            this.panel1.Size = new System.Drawing.Size(1473, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // TransitMixerButton
+            // 
+            this.TransitMixerButton.BackColor = System.Drawing.Color.Red;
+            this.TransitMixerButton.FlatAppearance.BorderSize = 0;
+            this.TransitMixerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TransitMixerButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransitMixerButton.ForeColor = System.Drawing.Color.White;
+            this.TransitMixerButton.Location = new System.Drawing.Point(545, 5);
+            this.TransitMixerButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.TransitMixerButton.Name = "TransitMixerButton";
+            this.TransitMixerButton.Size = new System.Drawing.Size(125, 50);
+            this.TransitMixerButton.TabIndex = 8;
+            this.TransitMixerButton.Text = "TRANSIT MIXERS";
+            this.TransitMixerButton.UseVisualStyleBackColor = false;
+            this.TransitMixerButton.Click += new System.EventHandler(this.TransitMixerButton_Click);
             // 
             // RouteButton
             // 
@@ -60,7 +78,7 @@
             this.RouteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RouteButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RouteButton.ForeColor = System.Drawing.Color.White;
-            this.RouteButton.Location = new System.Drawing.Point(279, 5);
+            this.RouteButton.Location = new System.Drawing.Point(410, 5);
             this.RouteButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.RouteButton.Name = "RouteButton";
             this.RouteButton.Size = new System.Drawing.Size(125, 50);
@@ -76,7 +94,7 @@
             this.DriverTripReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DriverTripReportButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriverTripReportButton.ForeColor = System.Drawing.Color.White;
-            this.DriverTripReportButton.Location = new System.Drawing.Point(144, 5);
+            this.DriverTripReportButton.Location = new System.Drawing.Point(275, 5);
             this.DriverTripReportButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DriverTripReportButton.Name = "DriverTripReportButton";
             this.DriverTripReportButton.Size = new System.Drawing.Size(125, 50);
@@ -92,7 +110,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(549, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(680, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -108,7 +126,7 @@
             this.ViewTimeLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewTimeLogsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewTimeLogsButton.ForeColor = System.Drawing.Color.White;
-            this.ViewTimeLogsButton.Location = new System.Drawing.Point(9, 5);
+            this.ViewTimeLogsButton.Location = new System.Drawing.Point(140, 5);
             this.ViewTimeLogsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ViewTimeLogsButton.Name = "ViewTimeLogsButton";
             this.ViewTimeLogsButton.Size = new System.Drawing.Size(125, 50);
@@ -117,28 +135,28 @@
             this.ViewTimeLogsButton.UseVisualStyleBackColor = false;
             this.ViewTimeLogsButton.Click += new System.EventHandler(this.ViewTimeLogsButton_Click);
             // 
-            // TransitMixerButton
+            // SemiMonthlyPayrollButton
             // 
-            this.TransitMixerButton.BackColor = System.Drawing.Color.Red;
-            this.TransitMixerButton.FlatAppearance.BorderSize = 0;
-            this.TransitMixerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TransitMixerButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransitMixerButton.ForeColor = System.Drawing.Color.White;
-            this.TransitMixerButton.Location = new System.Drawing.Point(414, 5);
-            this.TransitMixerButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.TransitMixerButton.Name = "TransitMixerButton";
-            this.TransitMixerButton.Size = new System.Drawing.Size(125, 50);
-            this.TransitMixerButton.TabIndex = 8;
-            this.TransitMixerButton.Text = "TRANSIT MIXERS";
-            this.TransitMixerButton.UseVisualStyleBackColor = false;
-            this.TransitMixerButton.Click += new System.EventHandler(this.TransitMixerButton_Click);
+            this.SemiMonthlyPayrollButton.BackColor = System.Drawing.Color.Red;
+            this.SemiMonthlyPayrollButton.FlatAppearance.BorderSize = 0;
+            this.SemiMonthlyPayrollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SemiMonthlyPayrollButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemiMonthlyPayrollButton.ForeColor = System.Drawing.Color.White;
+            this.SemiMonthlyPayrollButton.Location = new System.Drawing.Point(5, 5);
+            this.SemiMonthlyPayrollButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.SemiMonthlyPayrollButton.Name = "SemiMonthlyPayrollButton";
+            this.SemiMonthlyPayrollButton.Size = new System.Drawing.Size(125, 50);
+            this.SemiMonthlyPayrollButton.TabIndex = 9;
+            this.SemiMonthlyPayrollButton.Text = "SEMI-MONTHLY PAYROLL";
+            this.SemiMonthlyPayrollButton.UseVisualStyleBackColor = false;
+            this.SemiMonthlyPayrollButton.Click += new System.EventHandler(this.SemiMonthlyPayrollButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1008, 732);
+            this.ClientSize = new System.Drawing.Size(1473, 807);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Red;
@@ -163,6 +181,7 @@
         private System.Windows.Forms.Button DriverTripReportButton;
         private System.Windows.Forms.Button RouteButton;
         private System.Windows.Forms.Button TransitMixerButton;
+        private System.Windows.Forms.Button SemiMonthlyPayrollButton;
     }
 }
 
