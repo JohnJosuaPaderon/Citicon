@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.Extensions;
+using Citicon.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -38,12 +39,7 @@ namespace Citicon.DataProcess
                 Worksheet = Sheets[1];
                 WriteFields();
                 WriteTransactions();
-
-                if (!Directory.Exists(_SaveDirectory))
-                {
-                    Directory.CreateDirectory(_SaveDirectory);
-                }
-
+                DirectoryResolver.Resolve(_SaveDirectory);
                 Workbook.SaveAs(_FilePath);
 
                 base.Execute();
