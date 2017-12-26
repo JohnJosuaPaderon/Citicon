@@ -764,6 +764,7 @@
     <Compile Include="Utilities\DbValueConverter.Definitions.UInt16.cs" />
     <Compile Include="Utilities\DbValueConverter.Definitions.UInt32.cs" />
     <Compile Include="Utilities\DbValueConverter.Definitions.UInt64.cs" />
+    <Compile Include="Utilities\DirectoryResolver.cs" />
     <Compile Include="Utilities\ValueConverter.cs" />
     <Compile Include="Utilities\ValueConverter.Definitions.Boolean.cs" />
     <Compile Include="Utilities\ValueConverter.Definitions.Byte.cs" />
