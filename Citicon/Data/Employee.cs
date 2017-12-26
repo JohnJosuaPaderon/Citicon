@@ -156,21 +156,21 @@ namespace Citicon.Data
             if (hasLastName)
             {
                 sb.Append(lastName);
-            }
 
-            if (hasLastName && (hasFirstName || hasMiddleName))
-            {
-                sb.Append(", ");
+                if (hasFirstName || hasMiddleName)
+                {
+                    sb.Append(", ");
+                }
             }
 
             if (hasFirstName)
             {
                 sb.Append(firstName);
-            }
 
-            if (hasFirstName && hasMiddleName)
-            {
-                sb.Append(" ");
+                if (hasMiddleName)
+                {
+                    sb.Append(" ");
+                }
             }
 
             if (hasMiddleName)
