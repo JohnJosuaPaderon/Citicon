@@ -51,7 +51,7 @@ namespace Citicon.DataProcess
                 SundayHours = reader.GetDecimal("SundayHours"),
                 SpecialHolidayHours = reader.GetDecimal("SpecialHolidayHours"),
                 SpecialHolidayOvertimeHours = reader.GetDecimal("SpecialHolidayOvertimeHours"),
-                WithHoldingTax = reader.GetDecimal("WithHoldingTax"),
+                WithholdingTax = reader.GetDecimal("WithHoldingTax"),
                 SSSEC = reader.GetDecimal("SSSEC"),
                 SSSER = reader.GetDecimal("SSSER"),
                 Group = await PayrollGroupManager.GetByIdAsync(reader.GetUInt32("PayrollGroupId"))
