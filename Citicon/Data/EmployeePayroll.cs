@@ -21,7 +21,7 @@ namespace Citicon.Data
         public decimal SundayHours { get; set; }
         public decimal SpecialHolidayHours { get; set; }
         public decimal SpecialHolidayOvertimeHours { get; set; }
-        public decimal WithHoldingTax { get; set; }
+        public decimal WithholdingTax { get; set; }
         public decimal SSSER { get; set; }
         public decimal SSSEC { get; set; }
         public string VLSL
@@ -34,7 +34,7 @@ namespace Citicon.Data
 
                 if (hasVacationLeave)
                 {
-                    stringBuilder.AppendFormat("{0}VL", VacationLeave.ToString("#.##"));
+                    stringBuilder.AppendFormat("{0:#.0#}VL", VacationLeave);
 
                     if (hasSickLeave)
                     {
@@ -44,7 +44,7 @@ namespace Citicon.Data
 
                 if (hasSickLeave)
                 {
-                    stringBuilder.AppendFormat("{0}SL", SickLeave.ToString("#.##"));
+                    stringBuilder.AppendFormat("{0:#.0#}SL", SickLeave);
                 }
 
                 return stringBuilder.ToString();
