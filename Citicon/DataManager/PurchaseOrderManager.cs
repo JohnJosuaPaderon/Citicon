@@ -2,7 +2,6 @@
 using Citicon.DataProcess;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Citicon.DataManager
@@ -55,21 +54,6 @@ namespace Citicon.DataManager
             {
                 return null;
             }
-        }
-        #endregion
-
-        #region Insert
-        public static PurchaseOrder _Insert(PurchaseOrder purchaseOrder)
-        {
-            if (purchaseOrder != null)
-            {
-                using (var process = new _InsertPurchaseOrder(purchaseOrder))
-                {
-                    purchaseOrder = Manage(process.Execute());
-                }
-            }
-
-            return purchaseOrder;
         }
         #endregion
 
