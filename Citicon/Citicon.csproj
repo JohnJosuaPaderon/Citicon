@@ -283,7 +283,6 @@
     <Compile Include="DataProcess\ValidateProject.cs" />
     <Compile Include="DataProcess\ValidateProjectDesign.cs" />
     <Compile Include="DataProcess\ValidationResult.cs" />
-    <Compile Include="DataProcess\_InsertPurchaseOrder.cs" />
     <Compile Include="DataProcess\InsertQuotationUser.cs" />
     <Compile Include="DataProcess\InsertScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\InsertScheduledProjectDesignList.cs" />
@@ -434,6 +433,7 @@
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
     <Compile Include="Extensions\DbParameterCollectionExtension.cs" />
+    <Compile Include="Extensions\MySqlCommandExtension.cs" />
     <Compile Include="Extensions\NameValueCollectionExtension.cs" />
     <Compile Include="Extensions\TimeSpanExtension.cs" />
     <Compile Include="Forms\AddEditEmployeeForm.cs">
