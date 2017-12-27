@@ -53,7 +53,7 @@ namespace Citicon.Reports
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Sunday_Hours, payrollItem.SundayHours);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Special_Holiday_Hours, payrollItem.SpecialHolidayHours);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Special_Holiday_Overtime_Hours, payrollItem.SpecialHolidayOvertimeHours);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.With_Holding_Tax, payrollItem.WithHoldingTax);
+            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.With_Holding_Tax, payrollItem.WithholdingTax);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Overtime_Allowance, 0);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Allowance, 0);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.SSS, 0);
