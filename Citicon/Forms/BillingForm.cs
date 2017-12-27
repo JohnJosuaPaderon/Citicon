@@ -82,36 +82,36 @@ namespace Citicon.Forms
         private void btnPumpcrete_Add_Click(object sender, EventArgs e)
         {
             AddPumpcreteCharge();
-            ClearPumpcrete();
+            ClearPumpcreteDetails();
         }
 
         private void btnExcessPipe_Add_Click(object sender, EventArgs e)
         {
             AddExcessPipeCharge();
-            ClearExcessPipe();
+            ClearExcessPipeDetails();
         }
 
         private void btnOther_Add_Click(object sender, EventArgs e)
         {
             AddOtherCharge();
-            ClearOther();
+            ClearOtherDetails();
         }
         #endregion
 
         #region EventHandler : Cancel
         private void btnPumpcrete_Cancel_Click(object sender, EventArgs e)
         {
-            ClearPumpcrete();
+            ClearPumpcreteDetails();
         }
 
         private void btnExcessPipe_Cancel_Click(object sender, EventArgs e)
         {
-            ClearExcessPipe();
+            ClearExcessPipeDetails();
         }
 
         private void btnOther_Cancel_Click(object sender, EventArgs e)
         {
-            ClearOther();
+            ClearOtherDetails();
         }
         #endregion
 
@@ -382,7 +382,7 @@ namespace Citicon.Forms
         #endregion
 
         #region Clear Entity
-        private void ClearPumpcrete()
+        private void ClearPumpcreteDetails()
         {
             tbxPumpcrete_Remarks.Text = string.Empty;
             dtpPumpcrete_OperationTimeFrame_Finish.Value = DateTime.Now;
@@ -394,7 +394,7 @@ namespace Citicon.Forms
             nudPumpcrete_TotalVolumePumped.Value = 0;
         }
 
-        private void ClearExcessPipe()
+        private void ClearExcessPipeDetails()
         {
             dtpExcessPipe_OperationTimeFrame_Finish.Value = DateTime.Now;
             dtpExcessPipe_OperationTimeFrame_Start.Value = DateTime.Now;
@@ -404,7 +404,7 @@ namespace Citicon.Forms
             nudExcessPipe_MaximumPieces.Value = 0;
         }
 
-        private void ClearOther()
+        private void ClearOtherDetails()
         {
             cmbxOther_OtherChargeType.SelectedItem = null;
             nudOther_Amount.Value = 0M;
@@ -629,20 +629,20 @@ namespace Citicon.Forms
                 }
             }
 
-            //if (dgvPumpcreteCharges.Rows.Count > 0)
-            //{
-            //    return true;
-            //}
+            if (dgvPumpcreteCharges.Rows.Count > 0)
+            {
+                return true;
+            }
 
-            //if (dgvExcessPipeCharges.Rows.Count > 0)
-            //{
-            //    return true;
-            //}
+            if (dgvExcessPipeCharges.Rows.Count > 0)
+            {
+                return true;
+            }
 
-            //if (dgvOtherCharges.Rows.Count > 0)
-            //{
-            //    return true;
-            //}
+            if (dgvOtherCharges.Rows.Count > 0)
+            {
+                return true;
+            }
 
             return false;
         }

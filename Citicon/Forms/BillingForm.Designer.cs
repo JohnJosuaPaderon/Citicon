@@ -220,7 +220,7 @@
             this.lblSearchClient.Location = new System.Drawing.Point(9, 12);
             this.lblSearchClient.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSearchClient.Name = "lblSearchClient";
-            this.lblSearchClient.Size = new System.Drawing.Size(110, 23);
+            this.lblSearchClient.Size = new System.Drawing.Size(83, 17);
             this.lblSearchClient.TabIndex = 0;
             this.lblSearchClient.Text = "Search Client";
             // 
@@ -297,7 +297,7 @@
             this.tbxSearchClient.Location = new System.Drawing.Point(93, 10);
             this.tbxSearchClient.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSearchClient.Name = "tbxSearchClient";
-            this.tbxSearchClient.Size = new System.Drawing.Size(496, 29);
+            this.tbxSearchClient.Size = new System.Drawing.Size(494, 25);
             this.tbxSearchClient.TabIndex = 2;
             this.tbxSearchClient.TextChanged += new System.EventHandler(this.tbxSearchClient_TextChanged);
             // 
@@ -391,11 +391,11 @@
             // tpBilling_Deliveries
             // 
             this.tpBilling_Deliveries.Controls.Add(this.dgvDeliveries);
-            this.tpBilling_Deliveries.Location = new System.Drawing.Point(4, 44);
+            this.tpBilling_Deliveries.Location = new System.Drawing.Point(4, 40);
             this.tpBilling_Deliveries.Margin = new System.Windows.Forms.Padding(2);
             this.tpBilling_Deliveries.Name = "tpBilling_Deliveries";
             this.tpBilling_Deliveries.Padding = new System.Windows.Forms.Padding(2);
-            this.tpBilling_Deliveries.Size = new System.Drawing.Size(800, 491);
+            this.tpBilling_Deliveries.Size = new System.Drawing.Size(800, 495);
             this.tpBilling_Deliveries.TabIndex = 0;
             this.tpBilling_Deliveries.Text = "Deliveries";
             this.tpBilling_Deliveries.UseVisualStyleBackColor = true;
@@ -524,17 +524,17 @@
             this.colDelivery_CommulativeVolume.MinimumWidth = 150;
             this.colDelivery_CommulativeVolume.Name = "colDelivery_CommulativeVolume";
             this.colDelivery_CommulativeVolume.ReadOnly = true;
-            this.colDelivery_CommulativeVolume.Width = 156;
+            this.colDelivery_CommulativeVolume.Width = 150;
             // 
             // tpBilling_PumpCreteCharges
             // 
             this.tpBilling_PumpCreteCharges.Controls.Add(this.pnlPumpCreteCharges);
             this.tpBilling_PumpCreteCharges.Controls.Add(this.ckbxIncludePumpCreteCharges);
-            this.tpBilling_PumpCreteCharges.Location = new System.Drawing.Point(4, 44);
+            this.tpBilling_PumpCreteCharges.Location = new System.Drawing.Point(4, 40);
             this.tpBilling_PumpCreteCharges.Margin = new System.Windows.Forms.Padding(2);
             this.tpBilling_PumpCreteCharges.Name = "tpBilling_PumpCreteCharges";
             this.tpBilling_PumpCreteCharges.Padding = new System.Windows.Forms.Padding(2);
-            this.tpBilling_PumpCreteCharges.Size = new System.Drawing.Size(800, 528);
+            this.tpBilling_PumpCreteCharges.Size = new System.Drawing.Size(800, 495);
             this.tpBilling_PumpCreteCharges.TabIndex = 1;
             this.tpBilling_PumpCreteCharges.Text = "Pumpcrete Charges";
             this.tpBilling_PumpCreteCharges.UseVisualStyleBackColor = true;
@@ -574,7 +574,7 @@
             this.tbxPumpcrete_Remarks.Location = new System.Drawing.Point(247, 188);
             this.tbxPumpcrete_Remarks.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPumpcrete_Remarks.Name = "tbxPumpcrete_Remarks";
-            this.tbxPumpcrete_Remarks.Size = new System.Drawing.Size(237, 29);
+            this.tbxPumpcrete_Remarks.Size = new System.Drawing.Size(237, 25);
             this.tbxPumpcrete_Remarks.TabIndex = 36;
             // 
             // lblPumpcrete_Remarks
@@ -583,7 +583,7 @@
             this.lblPumpcrete_Remarks.Location = new System.Drawing.Point(243, 168);
             this.lblPumpcrete_Remarks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpcrete_Remarks.Name = "lblPumpcrete_Remarks";
-            this.lblPumpcrete_Remarks.Size = new System.Drawing.Size(74, 23);
+            this.lblPumpcrete_Remarks.Size = new System.Drawing.Size(58, 17);
             this.lblPumpcrete_Remarks.TabIndex = 35;
             this.lblPumpcrete_Remarks.Text = "Remarks";
             // 
@@ -612,7 +612,7 @@
             0,
             0});
             this.nudPumpcrete_PricePerCubicMeter.Name = "nudPumpcrete_PricePerCubicMeter";
-            this.nudPumpcrete_PricePerCubicMeter.Size = new System.Drawing.Size(236, 29);
+            this.nudPumpcrete_PricePerCubicMeter.Size = new System.Drawing.Size(236, 25);
             this.nudPumpcrete_PricePerCubicMeter.TabIndex = 33;
             this.nudPumpcrete_PricePerCubicMeter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPumpcrete_PricePerCubicMeter.ThousandsSeparator = true;
@@ -638,7 +638,7 @@
             this.lblPumpcrete_PricePerCubicMeter.Location = new System.Drawing.Point(2, 168);
             this.lblPumpcrete_PricePerCubicMeter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpcrete_PricePerCubicMeter.Name = "lblPumpcrete_PricePerCubicMeter";
-            this.lblPumpcrete_PricePerCubicMeter.Size = new System.Drawing.Size(126, 23);
+            this.lblPumpcrete_PricePerCubicMeter.Size = new System.Drawing.Size(97, 17);
             this.lblPumpcrete_PricePerCubicMeter.TabIndex = 34;
             this.lblPumpcrete_PricePerCubicMeter.Text = "Price per Cu.M.";
             // 
@@ -653,7 +653,7 @@
             0,
             0});
             this.nudPumpcrete_PricePerSetup.Name = "nudPumpcrete_PricePerSetup";
-            this.nudPumpcrete_PricePerSetup.Size = new System.Drawing.Size(236, 29);
+            this.nudPumpcrete_PricePerSetup.Size = new System.Drawing.Size(236, 25);
             this.nudPumpcrete_PricePerSetup.TabIndex = 31;
             this.nudPumpcrete_PricePerSetup.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPumpcrete_PricePerSetup.ThousandsSeparator = true;
@@ -664,7 +664,7 @@
             this.lblPumpcrete_PricePerSetup.Location = new System.Drawing.Point(2, 123);
             this.lblPumpcrete_PricePerSetup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpcrete_PricePerSetup.Name = "lblPumpcrete_PricePerSetup";
-            this.lblPumpcrete_PricePerSetup.Size = new System.Drawing.Size(126, 23);
+            this.lblPumpcrete_PricePerSetup.Size = new System.Drawing.Size(97, 17);
             this.lblPumpcrete_PricePerSetup.TabIndex = 32;
             this.lblPumpcrete_PricePerSetup.Text = "Price per Setup";
             // 
@@ -675,7 +675,7 @@
             this.cmbxPumpcrete_PumpSize.Location = new System.Drawing.Point(247, 97);
             this.cmbxPumpcrete_PumpSize.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxPumpcrete_PumpSize.Name = "cmbxPumpcrete_PumpSize";
-            this.cmbxPumpcrete_PumpSize.Size = new System.Drawing.Size(237, 29);
+            this.cmbxPumpcrete_PumpSize.Size = new System.Drawing.Size(237, 25);
             this.cmbxPumpcrete_PumpSize.TabIndex = 30;
             // 
             // lblPumpcrete_PumpSize
@@ -684,7 +684,7 @@
             this.lblPumpcrete_PumpSize.Location = new System.Drawing.Point(243, 78);
             this.lblPumpcrete_PumpSize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpcrete_PumpSize.Name = "lblPumpcrete_PumpSize";
-            this.lblPumpcrete_PumpSize.Size = new System.Drawing.Size(90, 23);
+            this.lblPumpcrete_PumpSize.Size = new System.Drawing.Size(68, 17);
             this.lblPumpcrete_PumpSize.TabIndex = 29;
             this.lblPumpcrete_PumpSize.Text = "Pump Size";
             // 
@@ -805,7 +805,6 @@
             this.colPumpcreteCharge_PumpSize.MinimumWidth = 100;
             this.colPumpcreteCharge_PumpSize.Name = "colPumpcreteCharge_PumpSize";
             this.colPumpcreteCharge_PumpSize.ReadOnly = true;
-            this.colPumpcreteCharge_PumpSize.Width = 118;
             // 
             // colPumpcreteCharge_StartedAt
             // 
@@ -841,7 +840,7 @@
             this.colPumpcreteCharge_TotalVolumePumped.MinimumWidth = 100;
             this.colPumpcreteCharge_TotalVolumePumped.Name = "colPumpcreteCharge_TotalVolumePumped";
             this.colPumpcreteCharge_TotalVolumePumped.ReadOnly = true;
-            this.colPumpcreteCharge_TotalVolumePumped.Width = 176;
+            this.colPumpcreteCharge_TotalVolumePumped.Width = 125;
             // 
             // colPumpcreteCharge_PricePerCubicMeter
             // 
@@ -854,7 +853,7 @@
             this.colPumpcreteCharge_PricePerCubicMeter.MinimumWidth = 100;
             this.colPumpcreteCharge_PricePerCubicMeter.Name = "colPumpcreteCharge_PricePerCubicMeter";
             this.colPumpcreteCharge_PricePerCubicMeter.ReadOnly = true;
-            this.colPumpcreteCharge_PricePerCubicMeter.Width = 154;
+            this.colPumpcreteCharge_PricePerCubicMeter.Width = 111;
             // 
             // colPumpcreteCharge_TotalAmount
             // 
@@ -867,7 +866,6 @@
             this.colPumpcreteCharge_TotalAmount.MinimumWidth = 100;
             this.colPumpcreteCharge_TotalAmount.Name = "colPumpcreteCharge_TotalAmount";
             this.colPumpcreteCharge_TotalAmount.ReadOnly = true;
-            this.colPumpcreteCharge_TotalAmount.Width = 141;
             // 
             // nudPumpcrete_TotalVolumePumped
             // 
@@ -880,7 +878,7 @@
             0,
             0});
             this.nudPumpcrete_TotalVolumePumped.Name = "nudPumpcrete_TotalVolumePumped";
-            this.nudPumpcrete_TotalVolumePumped.Size = new System.Drawing.Size(236, 29);
+            this.nudPumpcrete_TotalVolumePumped.Size = new System.Drawing.Size(236, 25);
             this.nudPumpcrete_TotalVolumePumped.TabIndex = 4;
             this.nudPumpcrete_TotalVolumePumped.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudPumpcrete_TotalVolumePumped.ThousandsSeparator = true;
@@ -891,7 +889,7 @@
             this.lblPumpcrete_TotalVolumePumped.Location = new System.Drawing.Point(243, 123);
             this.lblPumpcrete_TotalVolumePumped.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpcrete_TotalVolumePumped.Name = "lblPumpcrete_TotalVolumePumped";
-            this.lblPumpcrete_TotalVolumePumped.Size = new System.Drawing.Size(178, 23);
+            this.lblPumpcrete_TotalVolumePumped.Size = new System.Drawing.Size(135, 17);
             this.lblPumpcrete_TotalVolumePumped.TabIndex = 3;
             this.lblPumpcrete_TotalVolumePumped.Text = "Total Volume Pumped";
             // 
@@ -916,7 +914,7 @@
             this.lblPumpcrete_OperationTimeFrame_Finish.Location = new System.Drawing.Point(204, 19);
             this.lblPumpcrete_OperationTimeFrame_Finish.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpcrete_OperationTimeFrame_Finish.Name = "lblPumpcrete_OperationTimeFrame_Finish";
-            this.lblPumpcrete_OperationTimeFrame_Finish.Size = new System.Drawing.Size(92, 23);
+            this.lblPumpcrete_OperationTimeFrame_Finish.Size = new System.Drawing.Size(70, 17);
             this.lblPumpcrete_OperationTimeFrame_Finish.TabIndex = 25;
             this.lblPumpcrete_OperationTimeFrame_Finish.Text = "Finished at";
             // 
@@ -927,7 +925,7 @@
             this.dtpPumpcrete_OperationTimeFrame_Start.Location = new System.Drawing.Point(8, 40);
             this.dtpPumpcrete_OperationTimeFrame_Start.Margin = new System.Windows.Forms.Padding(2);
             this.dtpPumpcrete_OperationTimeFrame_Start.Name = "dtpPumpcrete_OperationTimeFrame_Start";
-            this.dtpPumpcrete_OperationTimeFrame_Start.Size = new System.Drawing.Size(195, 29);
+            this.dtpPumpcrete_OperationTimeFrame_Start.Size = new System.Drawing.Size(195, 25);
             this.dtpPumpcrete_OperationTimeFrame_Start.TabIndex = 24;
             // 
             // lblPumpcrete_OperationTimeFrame_Start
@@ -936,7 +934,7 @@
             this.lblPumpcrete_OperationTimeFrame_Start.Location = new System.Drawing.Point(5, 20);
             this.lblPumpcrete_OperationTimeFrame_Start.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpcrete_OperationTimeFrame_Start.Name = "lblPumpcrete_OperationTimeFrame_Start";
-            this.lblPumpcrete_OperationTimeFrame_Start.Size = new System.Drawing.Size(84, 23);
+            this.lblPumpcrete_OperationTimeFrame_Start.Size = new System.Drawing.Size(65, 17);
             this.lblPumpcrete_OperationTimeFrame_Start.TabIndex = 3;
             this.lblPumpcrete_OperationTimeFrame_Start.Text = "Started at";
             // 
@@ -947,7 +945,7 @@
             this.dtpPumpcrete_OperationTimeFrame_Finish.Location = new System.Drawing.Point(207, 40);
             this.dtpPumpcrete_OperationTimeFrame_Finish.Margin = new System.Windows.Forms.Padding(2);
             this.dtpPumpcrete_OperationTimeFrame_Finish.Name = "dtpPumpcrete_OperationTimeFrame_Finish";
-            this.dtpPumpcrete_OperationTimeFrame_Finish.Size = new System.Drawing.Size(195, 29);
+            this.dtpPumpcrete_OperationTimeFrame_Finish.Size = new System.Drawing.Size(195, 25);
             this.dtpPumpcrete_OperationTimeFrame_Finish.TabIndex = 26;
             // 
             // cmbxPumpcrete_PumpType
@@ -957,7 +955,7 @@
             this.cmbxPumpcrete_PumpType.Location = new System.Drawing.Point(5, 97);
             this.cmbxPumpcrete_PumpType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxPumpcrete_PumpType.Name = "cmbxPumpcrete_PumpType";
-            this.cmbxPumpcrete_PumpType.Size = new System.Drawing.Size(237, 29);
+            this.cmbxPumpcrete_PumpType.Size = new System.Drawing.Size(237, 25);
             this.cmbxPumpcrete_PumpType.TabIndex = 1;
             // 
             // lblPumpCrete_PumpType
@@ -966,7 +964,7 @@
             this.lblPumpCrete_PumpType.Location = new System.Drawing.Point(2, 78);
             this.lblPumpCrete_PumpType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPumpCrete_PumpType.Name = "lblPumpCrete_PumpType";
-            this.lblPumpCrete_PumpType.Size = new System.Drawing.Size(95, 23);
+            this.lblPumpCrete_PumpType.Size = new System.Drawing.Size(72, 17);
             this.lblPumpCrete_PumpType.TabIndex = 0;
             this.lblPumpCrete_PumpType.Text = "Pump Type";
             // 
@@ -976,7 +974,7 @@
             this.ckbxIncludePumpCreteCharges.Location = new System.Drawing.Point(5, 5);
             this.ckbxIncludePumpCreteCharges.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxIncludePumpCreteCharges.Name = "ckbxIncludePumpCreteCharges";
-            this.ckbxIncludePumpCreteCharges.Size = new System.Drawing.Size(243, 27);
+            this.ckbxIncludePumpCreteCharges.Size = new System.Drawing.Size(186, 21);
             this.ckbxIncludePumpCreteCharges.TabIndex = 0;
             this.ckbxIncludePumpCreteCharges.Text = "Include Pumpcrete Charges";
             this.ckbxIncludePumpCreteCharges.UseVisualStyleBackColor = true;
@@ -986,11 +984,11 @@
             // 
             this.tpExcessCharge.Controls.Add(this.pnlExcessPipeCharges);
             this.tpExcessCharge.Controls.Add(this.ckbxIncludeExcessPipeCharges);
-            this.tpExcessCharge.Location = new System.Drawing.Point(4, 44);
+            this.tpExcessCharge.Location = new System.Drawing.Point(4, 40);
             this.tpExcessCharge.Margin = new System.Windows.Forms.Padding(2);
             this.tpExcessCharge.Name = "tpExcessCharge";
             this.tpExcessCharge.Padding = new System.Windows.Forms.Padding(2);
-            this.tpExcessCharge.Size = new System.Drawing.Size(800, 528);
+            this.tpExcessCharge.Size = new System.Drawing.Size(800, 495);
             this.tpExcessCharge.TabIndex = 3;
             this.tpExcessCharge.Text = "Excess Pipes Charges";
             this.tpExcessCharge.UseVisualStyleBackColor = true;
@@ -1128,7 +1126,7 @@
             this.colExcessPipeCharge_AccessoryType.MinimumWidth = 150;
             this.colExcessPipeCharge_AccessoryType.Name = "colExcessPipeCharge_AccessoryType";
             this.colExcessPipeCharge_AccessoryType.ReadOnly = true;
-            this.colExcessPipeCharge_AccessoryType.Width = 152;
+            this.colExcessPipeCharge_AccessoryType.Width = 150;
             // 
             // colExcessPipeCharge_Start
             // 
@@ -1163,7 +1161,7 @@
             this.colExcessPipeCharge_MaximumCount.MinimumWidth = 150;
             this.colExcessPipeCharge_MaximumCount.Name = "colExcessPipeCharge_MaximumCount";
             this.colExcessPipeCharge_MaximumCount.ReadOnly = true;
-            this.colExcessPipeCharge_MaximumCount.Width = 166;
+            this.colExcessPipeCharge_MaximumCount.Width = 150;
             // 
             // colExcessPipeCharge_ChargePerCubicMeter
             // 
@@ -1176,7 +1174,7 @@
             this.colExcessPipeCharge_ChargePerCubicMeter.MinimumWidth = 150;
             this.colExcessPipeCharge_ChargePerCubicMeter.Name = "colExcessPipeCharge_ChargePerCubicMeter";
             this.colExcessPipeCharge_ChargePerCubicMeter.ReadOnly = true;
-            this.colExcessPipeCharge_ChargePerCubicMeter.Width = 172;
+            this.colExcessPipeCharge_ChargePerCubicMeter.Width = 150;
             // 
             // colExcessPipeCharge_Amount
             // 
@@ -1231,7 +1229,7 @@
             0,
             0});
             this.nudExcessPipe_Amount.Name = "nudExcessPipe_Amount";
-            this.nudExcessPipe_Amount.Size = new System.Drawing.Size(236, 29);
+            this.nudExcessPipe_Amount.Size = new System.Drawing.Size(236, 25);
             this.nudExcessPipe_Amount.TabIndex = 37;
             this.nudExcessPipe_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudExcessPipe_Amount.ThousandsSeparator = true;
@@ -1242,7 +1240,7 @@
             this.lblExcessPipe_Amount.Location = new System.Drawing.Point(243, 123);
             this.lblExcessPipe_Amount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExcessPipe_Amount.Name = "lblExcessPipe_Amount";
-            this.lblExcessPipe_Amount.Size = new System.Drawing.Size(72, 23);
+            this.lblExcessPipe_Amount.Size = new System.Drawing.Size(53, 17);
             this.lblExcessPipe_Amount.TabIndex = 38;
             this.lblExcessPipe_Amount.Text = "Amount";
             // 
@@ -1257,7 +1255,7 @@
             0,
             0});
             this.nudExcessPipe_ChargePerCubicMeter.Name = "nudExcessPipe_ChargePerCubicMeter";
-            this.nudExcessPipe_ChargePerCubicMeter.Size = new System.Drawing.Size(236, 29);
+            this.nudExcessPipe_ChargePerCubicMeter.Size = new System.Drawing.Size(236, 25);
             this.nudExcessPipe_ChargePerCubicMeter.TabIndex = 35;
             this.nudExcessPipe_ChargePerCubicMeter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudExcessPipe_ChargePerCubicMeter.ThousandsSeparator = true;
@@ -1268,7 +1266,7 @@
             this.lblExcessPipe_ChargePerCubicMeter.Location = new System.Drawing.Point(2, 123);
             this.lblExcessPipe_ChargePerCubicMeter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExcessPipe_ChargePerCubicMeter.Name = "lblExcessPipe_ChargePerCubicMeter";
-            this.lblExcessPipe_ChargePerCubicMeter.Size = new System.Drawing.Size(144, 23);
+            this.lblExcessPipe_ChargePerCubicMeter.Size = new System.Drawing.Size(111, 17);
             this.lblExcessPipe_ChargePerCubicMeter.TabIndex = 36;
             this.lblExcessPipe_ChargePerCubicMeter.Text = "Charge per Cu.M.";
             // 
@@ -1282,7 +1280,7 @@
             0,
             0});
             this.nudExcessPipe_MaximumPieces.Name = "nudExcessPipe_MaximumPieces";
-            this.nudExcessPipe_MaximumPieces.Size = new System.Drawing.Size(236, 29);
+            this.nudExcessPipe_MaximumPieces.Size = new System.Drawing.Size(236, 25);
             this.nudExcessPipe_MaximumPieces.TabIndex = 33;
             this.nudExcessPipe_MaximumPieces.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudExcessPipe_MaximumPieces.ThousandsSeparator = true;
@@ -1293,7 +1291,7 @@
             this.lblExcessPipe_MaximumPieces.Location = new System.Drawing.Point(243, 78);
             this.lblExcessPipe_MaximumPieces.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExcessPipe_MaximumPieces.Name = "lblExcessPipe_MaximumPieces";
-            this.lblExcessPipe_MaximumPieces.Size = new System.Drawing.Size(119, 23);
+            this.lblExcessPipe_MaximumPieces.Size = new System.Drawing.Size(91, 17);
             this.lblExcessPipe_MaximumPieces.TabIndex = 34;
             this.lblExcessPipe_MaximumPieces.Text = "Maximum Pcs.";
             // 
@@ -1304,7 +1302,7 @@
             this.cmbxExcessPipe_AccessoryType.Location = new System.Drawing.Point(5, 97);
             this.cmbxExcessPipe_AccessoryType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxExcessPipe_AccessoryType.Name = "cmbxExcessPipe_AccessoryType";
-            this.cmbxExcessPipe_AccessoryType.Size = new System.Drawing.Size(237, 29);
+            this.cmbxExcessPipe_AccessoryType.Size = new System.Drawing.Size(237, 25);
             this.cmbxExcessPipe_AccessoryType.TabIndex = 5;
             // 
             // lblExcessPipe_AccessoryType
@@ -1313,7 +1311,7 @@
             this.lblExcessPipe_AccessoryType.Location = new System.Drawing.Point(2, 78);
             this.lblExcessPipe_AccessoryType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExcessPipe_AccessoryType.Name = "lblExcessPipe_AccessoryType";
-            this.lblExcessPipe_AccessoryType.Size = new System.Drawing.Size(124, 23);
+            this.lblExcessPipe_AccessoryType.Size = new System.Drawing.Size(97, 17);
             this.lblExcessPipe_AccessoryType.TabIndex = 4;
             this.lblExcessPipe_AccessoryType.Text = "Accessory Type";
             // 
@@ -1339,7 +1337,7 @@
             this.dtpExcessPipe_OperationTimeFrame_Finish.Location = new System.Drawing.Point(207, 40);
             this.dtpExcessPipe_OperationTimeFrame_Finish.Margin = new System.Windows.Forms.Padding(2);
             this.dtpExcessPipe_OperationTimeFrame_Finish.Name = "dtpExcessPipe_OperationTimeFrame_Finish";
-            this.dtpExcessPipe_OperationTimeFrame_Finish.Size = new System.Drawing.Size(195, 29);
+            this.dtpExcessPipe_OperationTimeFrame_Finish.Size = new System.Drawing.Size(195, 25);
             this.dtpExcessPipe_OperationTimeFrame_Finish.TabIndex = 27;
             // 
             // lblExcessPipe_OperationTimeFrame_Finish
@@ -1348,7 +1346,7 @@
             this.lblExcessPipe_OperationTimeFrame_Finish.Location = new System.Drawing.Point(204, 19);
             this.lblExcessPipe_OperationTimeFrame_Finish.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExcessPipe_OperationTimeFrame_Finish.Name = "lblExcessPipe_OperationTimeFrame_Finish";
-            this.lblExcessPipe_OperationTimeFrame_Finish.Size = new System.Drawing.Size(92, 23);
+            this.lblExcessPipe_OperationTimeFrame_Finish.Size = new System.Drawing.Size(70, 17);
             this.lblExcessPipe_OperationTimeFrame_Finish.TabIndex = 25;
             this.lblExcessPipe_OperationTimeFrame_Finish.Text = "Finished at";
             // 
@@ -1359,7 +1357,7 @@
             this.dtpExcessPipe_OperationTimeFrame_Start.Location = new System.Drawing.Point(8, 40);
             this.dtpExcessPipe_OperationTimeFrame_Start.Margin = new System.Windows.Forms.Padding(2);
             this.dtpExcessPipe_OperationTimeFrame_Start.Name = "dtpExcessPipe_OperationTimeFrame_Start";
-            this.dtpExcessPipe_OperationTimeFrame_Start.Size = new System.Drawing.Size(195, 29);
+            this.dtpExcessPipe_OperationTimeFrame_Start.Size = new System.Drawing.Size(195, 25);
             this.dtpExcessPipe_OperationTimeFrame_Start.TabIndex = 24;
             // 
             // lblExcessPipe_OperationTimeFrame_Start
@@ -1368,7 +1366,7 @@
             this.lblExcessPipe_OperationTimeFrame_Start.Location = new System.Drawing.Point(5, 20);
             this.lblExcessPipe_OperationTimeFrame_Start.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblExcessPipe_OperationTimeFrame_Start.Name = "lblExcessPipe_OperationTimeFrame_Start";
-            this.lblExcessPipe_OperationTimeFrame_Start.Size = new System.Drawing.Size(84, 23);
+            this.lblExcessPipe_OperationTimeFrame_Start.Size = new System.Drawing.Size(65, 17);
             this.lblExcessPipe_OperationTimeFrame_Start.TabIndex = 3;
             this.lblExcessPipe_OperationTimeFrame_Start.Text = "Started at";
             // 
@@ -1378,7 +1376,7 @@
             this.ckbxIncludeExcessPipeCharges.Location = new System.Drawing.Point(5, 5);
             this.ckbxIncludeExcessPipeCharges.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxIncludeExcessPipeCharges.Name = "ckbxIncludeExcessPipeCharges";
-            this.ckbxIncludeExcessPipeCharges.Size = new System.Drawing.Size(246, 27);
+            this.ckbxIncludeExcessPipeCharges.Size = new System.Drawing.Size(191, 21);
             this.ckbxIncludeExcessPipeCharges.TabIndex = 1;
             this.ckbxIncludeExcessPipeCharges.Text = "Include Excess Pipe Charges";
             this.ckbxIncludeExcessPipeCharges.UseVisualStyleBackColor = true;
@@ -1388,11 +1386,11 @@
             // 
             this.tpBilling_OtherCharges.Controls.Add(this.pnlOtherCharges);
             this.tpBilling_OtherCharges.Controls.Add(this.ckbxIncludeOtherCharges);
-            this.tpBilling_OtherCharges.Location = new System.Drawing.Point(4, 44);
+            this.tpBilling_OtherCharges.Location = new System.Drawing.Point(4, 40);
             this.tpBilling_OtherCharges.Margin = new System.Windows.Forms.Padding(2);
             this.tpBilling_OtherCharges.Name = "tpBilling_OtherCharges";
             this.tpBilling_OtherCharges.Padding = new System.Windows.Forms.Padding(2);
-            this.tpBilling_OtherCharges.Size = new System.Drawing.Size(800, 528);
+            this.tpBilling_OtherCharges.Size = new System.Drawing.Size(800, 495);
             this.tpBilling_OtherCharges.TabIndex = 2;
             this.tpBilling_OtherCharges.Text = "Other Charges";
             this.tpBilling_OtherCharges.UseVisualStyleBackColor = true;
@@ -1594,7 +1592,7 @@
             this.lblOther_Remarks.Location = new System.Drawing.Point(2, 45);
             this.lblOther_Remarks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOther_Remarks.Name = "lblOther_Remarks";
-            this.lblOther_Remarks.Size = new System.Drawing.Size(74, 23);
+            this.lblOther_Remarks.Size = new System.Drawing.Size(58, 17);
             this.lblOther_Remarks.TabIndex = 29;
             this.lblOther_Remarks.Text = "Remarks";
             // 
@@ -1638,7 +1636,7 @@
             0,
             0});
             this.nudOther_Unit.Name = "nudOther_Unit";
-            this.nudOther_Unit.Size = new System.Drawing.Size(194, 29);
+            this.nudOther_Unit.Size = new System.Drawing.Size(194, 25);
             this.nudOther_Unit.TabIndex = 8;
             this.nudOther_Unit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudOther_Unit.ThousandsSeparator = true;
@@ -1649,7 +1647,7 @@
             this.lblOther_Unit.Location = new System.Drawing.Point(399, 0);
             this.lblOther_Unit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOther_Unit.Name = "lblOther_Unit";
-            this.lblOther_Unit.Size = new System.Drawing.Size(42, 23);
+            this.lblOther_Unit.Size = new System.Drawing.Size(31, 17);
             this.lblOther_Unit.TabIndex = 7;
             this.lblOther_Unit.Text = "Unit";
             // 
@@ -1664,7 +1662,7 @@
             0,
             0});
             this.nudOther_Amount.Name = "nudOther_Amount";
-            this.nudOther_Amount.Size = new System.Drawing.Size(194, 29);
+            this.nudOther_Amount.Size = new System.Drawing.Size(194, 25);
             this.nudOther_Amount.TabIndex = 6;
             this.nudOther_Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudOther_Amount.ThousandsSeparator = true;
@@ -1675,7 +1673,7 @@
             this.lblOther_Amount.Location = new System.Drawing.Point(201, 0);
             this.lblOther_Amount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOther_Amount.Name = "lblOther_Amount";
-            this.lblOther_Amount.Size = new System.Drawing.Size(72, 23);
+            this.lblOther_Amount.Size = new System.Drawing.Size(53, 17);
             this.lblOther_Amount.TabIndex = 5;
             this.lblOther_Amount.Text = "Amount";
             // 
@@ -1686,7 +1684,7 @@
             this.cmbxOther_OtherChargeType.Location = new System.Drawing.Point(5, 19);
             this.cmbxOther_OtherChargeType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxOther_OtherChargeType.Name = "cmbxOther_OtherChargeType";
-            this.cmbxOther_OtherChargeType.Size = new System.Drawing.Size(195, 29);
+            this.cmbxOther_OtherChargeType.Size = new System.Drawing.Size(195, 25);
             this.cmbxOther_OtherChargeType.TabIndex = 3;
             // 
             // lblOther_OtherChargeType
@@ -1695,7 +1693,7 @@
             this.lblOther_OtherChargeType.Location = new System.Drawing.Point(2, 0);
             this.lblOther_OtherChargeType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOther_OtherChargeType.Name = "lblOther_OtherChargeType";
-            this.lblOther_OtherChargeType.Size = new System.Drawing.Size(154, 23);
+            this.lblOther_OtherChargeType.Size = new System.Drawing.Size(118, 17);
             this.lblOther_OtherChargeType.TabIndex = 2;
             this.lblOther_OtherChargeType.Text = "Other Charge Type";
             // 
@@ -1705,7 +1703,7 @@
             this.ckbxIncludeOtherCharges.Location = new System.Drawing.Point(5, 5);
             this.ckbxIncludeOtherCharges.Margin = new System.Windows.Forms.Padding(2);
             this.ckbxIncludeOtherCharges.Name = "ckbxIncludeOtherCharges";
-            this.ckbxIncludeOtherCharges.Size = new System.Drawing.Size(204, 27);
+            this.ckbxIncludeOtherCharges.Size = new System.Drawing.Size(157, 21);
             this.ckbxIncludeOtherCharges.TabIndex = 1;
             this.ckbxIncludeOtherCharges.Text = "Include Other Charges";
             this.ckbxIncludeOtherCharges.UseVisualStyleBackColor = true;
@@ -1749,7 +1747,7 @@
             this.lblStructureType.Location = new System.Drawing.Point(7, 607);
             this.lblStructureType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStructureType.Name = "lblStructureType";
-            this.lblStructureType.Size = new System.Drawing.Size(119, 23);
+            this.lblStructureType.Size = new System.Drawing.Size(91, 17);
             this.lblStructureType.TabIndex = 22;
             this.lblStructureType.Text = "Structure Type";
             // 
@@ -1762,7 +1760,7 @@
             this.cmbxStructureType.Location = new System.Drawing.Point(11, 632);
             this.cmbxStructureType.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxStructureType.Name = "cmbxStructureType";
-            this.cmbxStructureType.Size = new System.Drawing.Size(196, 36);
+            this.cmbxStructureType.Size = new System.Drawing.Size(196, 29);
             this.cmbxStructureType.TabIndex = 23;
             // 
             // gbxSignatories
@@ -1792,7 +1790,7 @@
             this.lblSignatories_ReceivedBy.Location = new System.Drawing.Point(247, 87);
             this.lblSignatories_ReceivedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSignatories_ReceivedBy.Name = "lblSignatories_ReceivedBy";
-            this.lblSignatories_ReceivedBy.Size = new System.Drawing.Size(100, 23);
+            this.lblSignatories_ReceivedBy.Size = new System.Drawing.Size(77, 17);
             this.lblSignatories_ReceivedBy.TabIndex = 9;
             this.lblSignatories_ReceivedBy.Text = "Received By";
             // 
@@ -1802,7 +1800,7 @@
             this.tbxSignatories_ReceivedBy.Location = new System.Drawing.Point(250, 112);
             this.tbxSignatories_ReceivedBy.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSignatories_ReceivedBy.Name = "tbxSignatories_ReceivedBy";
-            this.tbxSignatories_ReceivedBy.Size = new System.Drawing.Size(242, 29);
+            this.tbxSignatories_ReceivedBy.Size = new System.Drawing.Size(242, 25);
             this.tbxSignatories_ReceivedBy.TabIndex = 8;
             // 
             // tbxSignatories_CertifiedBy
@@ -1811,7 +1809,7 @@
             this.tbxSignatories_CertifiedBy.Location = new System.Drawing.Point(8, 112);
             this.tbxSignatories_CertifiedBy.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSignatories_CertifiedBy.Name = "tbxSignatories_CertifiedBy";
-            this.tbxSignatories_CertifiedBy.Size = new System.Drawing.Size(216, 29);
+            this.tbxSignatories_CertifiedBy.Size = new System.Drawing.Size(216, 25);
             this.tbxSignatories_CertifiedBy.TabIndex = 7;
             // 
             // lblSignatories_CertifiedBy
@@ -1821,7 +1819,7 @@
             this.lblSignatories_CertifiedBy.Location = new System.Drawing.Point(5, 87);
             this.lblSignatories_CertifiedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSignatories_CertifiedBy.Name = "lblSignatories_CertifiedBy";
-            this.lblSignatories_CertifiedBy.Size = new System.Drawing.Size(97, 23);
+            this.lblSignatories_CertifiedBy.Size = new System.Drawing.Size(74, 17);
             this.lblSignatories_CertifiedBy.TabIndex = 6;
             this.lblSignatories_CertifiedBy.Text = "Certified By";
             // 
@@ -1832,7 +1830,7 @@
             this.lblSignatories_CheckedBy.Location = new System.Drawing.Point(247, 33);
             this.lblSignatories_CheckedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSignatories_CheckedBy.Name = "lblSignatories_CheckedBy";
-            this.lblSignatories_CheckedBy.Size = new System.Drawing.Size(98, 23);
+            this.lblSignatories_CheckedBy.Size = new System.Drawing.Size(74, 17);
             this.lblSignatories_CheckedBy.TabIndex = 5;
             this.lblSignatories_CheckedBy.Text = "Checked By";
             // 
@@ -1842,7 +1840,7 @@
             this.tbxSignatories_CheckBy.Location = new System.Drawing.Point(251, 58);
             this.tbxSignatories_CheckBy.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSignatories_CheckBy.Name = "tbxSignatories_CheckBy";
-            this.tbxSignatories_CheckBy.Size = new System.Drawing.Size(242, 29);
+            this.tbxSignatories_CheckBy.Size = new System.Drawing.Size(242, 25);
             this.tbxSignatories_CheckBy.TabIndex = 4;
             // 
             // tbxSignatories_PreparedBy
@@ -1851,7 +1849,7 @@
             this.tbxSignatories_PreparedBy.Location = new System.Drawing.Point(9, 56);
             this.tbxSignatories_PreparedBy.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSignatories_PreparedBy.Name = "tbxSignatories_PreparedBy";
-            this.tbxSignatories_PreparedBy.Size = new System.Drawing.Size(216, 29);
+            this.tbxSignatories_PreparedBy.Size = new System.Drawing.Size(216, 25);
             this.tbxSignatories_PreparedBy.TabIndex = 3;
             // 
             // lblSignatories_PreparedBy
@@ -1861,7 +1859,7 @@
             this.lblSignatories_PreparedBy.Location = new System.Drawing.Point(5, 31);
             this.lblSignatories_PreparedBy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSignatories_PreparedBy.Name = "lblSignatories_PreparedBy";
-            this.lblSignatories_PreparedBy.Size = new System.Drawing.Size(102, 23);
+            this.lblSignatories_PreparedBy.Size = new System.Drawing.Size(79, 17);
             this.lblSignatories_PreparedBy.TabIndex = 1;
             this.lblSignatories_PreparedBy.Text = "Prepared By";
             // 
@@ -1872,7 +1870,7 @@
             this.lblBillingDate.Location = new System.Drawing.Point(9, 670);
             this.lblBillingDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBillingDate.Name = "lblBillingDate";
-            this.lblBillingDate.Size = new System.Drawing.Size(97, 23);
+            this.lblBillingDate.Size = new System.Drawing.Size(73, 17);
             this.lblBillingDate.TabIndex = 25;
             this.lblBillingDate.Text = "Billing Date";
             // 
@@ -1884,7 +1882,7 @@
             this.dtpBillingDate.Location = new System.Drawing.Point(11, 695);
             this.dtpBillingDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpBillingDate.Name = "dtpBillingDate";
-            this.dtpBillingDate.Size = new System.Drawing.Size(196, 29);
+            this.dtpBillingDate.Size = new System.Drawing.Size(196, 25);
             this.dtpBillingDate.TabIndex = 26;
             // 
             // lblNotes
@@ -1894,7 +1892,7 @@
             this.lblNotes.Location = new System.Drawing.Point(732, 581);
             this.lblNotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(55, 23);
+            this.lblNotes.Size = new System.Drawing.Size(43, 17);
             this.lblNotes.TabIndex = 11;
             this.lblNotes.Text = "Notes";
             // 
@@ -1905,12 +1903,12 @@
             this.tbxNotes.Location = new System.Drawing.Point(736, 607);
             this.tbxNotes.Margin = new System.Windows.Forms.Padding(2);
             this.tbxNotes.Name = "tbxNotes";
-            this.tbxNotes.Size = new System.Drawing.Size(660, 29);
+            this.tbxNotes.Size = new System.Drawing.Size(660, 25);
             this.tbxNotes.TabIndex = 10;
             // 
             // BillingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1409, 735);
