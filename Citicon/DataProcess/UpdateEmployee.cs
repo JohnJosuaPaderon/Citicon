@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.Extensions;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading.Tasks;
@@ -16,49 +17,42 @@ namespace Citicon.DataProcess
 
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
-            var command = Utility.CreateProcedureCommand("UpdateEmployee", connection, transaction);
-            command.Parameters.AddWithValue("@_Id", Employee.Id);
-            command.Parameters.AddWithValue("@_FirstName", Employee.FirstName);
-            command.Parameters.AddWithValue("@_MiddleName", Employee.MiddleName);
-            command.Parameters.AddWithValue("@_LastName", Employee.LastName);
-            command.Parameters.AddWithValue("@_PositionId", Employee.Position?.Id);
-            command.Parameters.AddWithValue("@_BranchId", Employee.Branch?.Id);
-            command.Parameters.AddWithValue("@_CompanyId", Employee.Company?.Id);
-            command.Parameters.AddWithValue("@_PayrollType", Employee.PayrollType.ToString());
-            command.Parameters.AddWithValue("@_BirthDate", Employee.BirthDate);
-            command.Parameters.AddWithValue("@_CivilStatus", Employee.CivilStatus.ToString());
-            command.Parameters.AddWithValue("@_EmploymentDate", Employee.EmploymentDate);
-            command.Parameters.AddWithValue("@_TIN", Employee.TIN);
-            command.Parameters.AddWithValue("@_Address", Employee.Address);
-            command.Parameters.AddWithValue("@_TelephoneNumber", Employee.TelephoneNumber);
-            command.Parameters.AddWithValue("@_MobileNumber", Employee.MobileNumber);
-            command.Parameters.AddWithValue("@_EmailAddress", Employee.EmailAddress);
-            command.Parameters.AddWithValue("@_EmergencyContactPerson", Employee.EmergencyContactPerson);
-            command.Parameters.AddWithValue("@_EmergencyContactPersonNumber", Employee.EmergencyContactPersonNumber);
-            command.Parameters.AddWithValue("@_EmploymentStatus", Employee.EmploymentStatus.ToString());
-            command.Parameters.AddWithValue("@_SSSNumber", Employee.SSSNumber);
-            command.Parameters.AddWithValue("@_R1ADate", Employee.R1ADate);
-            command.Parameters.AddWithValue("@_PagIbigNumber", Employee.PagIbigNumber);
-            command.Parameters.AddWithValue("@_PhilHealthNumber", Employee.PhilHealthNumber);
-            command.Parameters.AddWithValue("@_PhilHealthRegistrationDate", Employee.PhilHealthRegistrationDate);
-            command.Parameters.AddWithValue("@_PagIbigRTN", Employee.PagIbigRTN);
-            command.Parameters.AddWithValue("@_PagIbigRegistrationDate", Employee.PagIbigRegistrationDate);
-            command.Parameters.AddWithValue("@_PagIbigRTNDependentNumber", Employee.PagIbigRTNDependentNumber);
-            command.Parameters.AddWithValue("@_VacationLeave", Employee.VacationLeave);
-            command.Parameters.AddWithValue("@_SickLeave", Employee.SickLeave);
-            command.Parameters.AddWithValue("@_Absences", Employee.Absences);
-            command.Parameters.AddWithValue("@_BasicPay", Employee.BasicPay);
-            command.Parameters.AddWithValue("@_DailyRate", Employee.DailyRate);
-            command.Parameters.AddWithValue("@_Allowance", Employee.Allowance);
-            command.Parameters.AddWithValue("@_OTAllowance", Employee.OTAllowance);
-            command.Parameters.AddWithValue("@_SSSDeduction", Employee.SSSDeduction);
-            command.Parameters.AddWithValue("@_SSSERDeduction", Employee.SSSERDeduction);
-            command.Parameters.AddWithValue("@_SSSECDeduction", Employee.SSSECDeduction);
-            command.Parameters.AddWithValue("@_WithHoldingTax", Employee.WithHoldingTax);
-            command.Parameters.AddWithValue("@_PagIbigDeduction", Employee.PagIbigDeduction);
-            command.Parameters.AddWithValue("@_PhilHealthDeduction", Employee.PhilHealthDeduction);
-
-            return command;
+            return Utility.CreateProcedureCommand("UpdateEmployee", connection, transaction)
+                .AddInParameter("@_Id", Employee.Id)
+                .AddInParameter("@_FirstName", Employee.FirstName)
+                .AddInParameter("@_MiddleName", Employee.MiddleName)
+                .AddInParameter("@_LastName", Employee.LastName)
+                .AddInParameter("@_PositionId", Employee.Position?.Id)
+                .AddInParameter("@_BranchId", Employee.Branch?.Id)
+                .AddInParameter("@_CompanyId", Employee.Company?.Id)
+                .AddInParameter("@_PayrollType", Employee.PayrollType.ToString())
+                .AddInParameter("@_BirthDate", Employee.BirthDate)
+                .AddInParameter("@_CivilStatus", Employee.CivilStatus.ToString())
+                .AddInParameter("@_EmploymentDate", Employee.EmploymentDate)
+                .AddInParameter("@_TIN", Employee.TIN)
+                .AddInParameter("@_Address", Employee.Address)
+                .AddInParameter("@_TelephoneNumber", Employee.TelephoneNumber)
+                .AddInParameter("@_MobileNumber", Employee.MobileNumber)
+                .AddInParameter("@_EmailAddress", Employee.EmailAddress)
+                .AddInParameter("@_EmergencyContactPerson", Employee.EmergencyContactPerson)
+                .AddInParameter("@_EmergencyContactPersonNumber", Employee.EmergencyContactPersonNumber)
+                .AddInParameter("@_EmploymentStatus", Employee.EmploymentStatus.ToString())
+                .AddInParameter("@_SSSNumber", Employee.SSSNumber)
+                .AddInParameter("@_R1ADate", Employee.R1ADate)
+                .AddInParameter("@_PagIbigNumber", Employee.PagIbigNumber)
+                .AddInParameter("@_PhilHealthNumber", Employee.PhilHealthNumber)
+                .AddInParameter("@_PhilHealthRegistrationDate", Employee.PhilHealthRegistrationDate)
+                .AddInParameter("@_PagIbigRTN", Employee.PagIbigRTN)
+                .AddInParameter("@_PagIbigRegistrationDate", Employee.PagIbigRegistrationDate)
+                .AddInParameter("@_PagIbigRTNDependentNumber", Employee.PagIbigRTNDependentNumber)
+                .AddInParameter("@_VacationLeave", Employee.VacationLeave)
+                .AddInParameter("@_SickLeave", Employee.SickLeave)
+                .AddInParameter("@_Absences", Employee.Absences)
+                .AddInParameter("@_BasicPay", Employee.BasicPay)
+                .AddInParameter("@_DailyRate", Employee.DailyRate)
+                .AddInParameter("@_Allowance", Employee.Allowance)
+                .AddInParameter("@_OTAllowance", Employee.OTAllowance)
+                .AddInParameter("@_WithHoldingTax", Employee.WithHoldingTax);
         }
 
         public override void Dispose()

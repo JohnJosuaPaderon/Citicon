@@ -43,17 +43,10 @@ namespace Citicon.DataProcess
                     JobPosition = JobPositionManager.GetById(reader.GetInt64("JobPositionId"))
                 },
                 BasicPay = reader.GetDecimal("BasicPay"),
-                DailyRate = reader.GetDecimal("DailyRate"),
+                Rate = reader.GetDecimal("DailyRate"),
                 VacationLeave = reader.GetDecimal("VacationLeave"),
                 SickLeave = reader.GetDecimal("SickLeave"),
                 RegularWorkingHours = reader.GetDecimal("RegularWorkingHours"),
-                NightDifferentialHours = reader.GetDecimal("NightDifferentialHours"),
-                SundayHours = reader.GetDecimal("SundayHours"),
-                SpecialHolidayHours = reader.GetDecimal("SpecialHolidayHours"),
-                SpecialHolidayOvertimeHours = reader.GetDecimal("SpecialHolidayOvertimeHours"),
-                WithholdingTax = reader.GetDecimal("WithHoldingTax"),
-                SSSEC = reader.GetDecimal("SSSEC"),
-                SSSER = reader.GetDecimal("SSSER"),
                 Group = await PayrollGroupManager.GetByIdAsync(reader.GetUInt32("PayrollGroupId"))
             };
         }
