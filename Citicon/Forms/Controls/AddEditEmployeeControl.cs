@@ -95,12 +95,7 @@ namespace Citicon.Forms.Controls
             DailyRateNumericUpDown.Value = employee?.DailyRate ?? 0;
             AllowanceNumericUpDown.Value = employee?.Allowance ?? 0;
             OtAllowanceNumericUpDown.Value = employee?.OTAllowance ?? 0;
-            SssDeductionNumericUpDown.Value = employee?.SSSDeduction ?? 0;
-            SssErDeductionNumericUpDown.Value = employee?.SSSERDeduction ?? 0;
-            SssEcDeductionNumericUpDown.Value = employee?.SSSECDeduction ?? 0;
             WithHoldingTaxNumericUpDown.Value = employee?.WithHoldingTax ?? 0;
-            PagIbigDeductionNumericUpDown.Value = employee?.PagIbigDeduction ?? 0;
-            PhilHealthDeductionNumericUpDown.Value = employee?.PhilHealthDeduction ?? 0;
         }
 
         private void RequestFormCancel()
@@ -193,21 +188,16 @@ namespace Citicon.Forms.Controls
             Employee.MiddleName = MiddleNameTextBox.Text;
             Employee.MobileNumber = MobileNumberTextBox.Text;
             Employee.OTAllowance = OtAllowanceNumericUpDown.Value;
-            Employee.PagIbigDeduction = PagIbigDeductionNumericUpDown.Value;
             Employee.PagIbigNumber = PagIbigTextBox.Text;
             Employee.PagIbigRegistrationDate = PagIbigRtnRegistrationDateTimePicker.Value;
             Employee.PagIbigRTN = PagIbigRtnTextBox.Text;
             Employee.PagIbigRTNDependentNumber = Convert.ToUInt32(PagIbigRtnDependentNumberNumericUpDown.Value);
             Employee.PayrollType = (PayrollType)PayrollTypeComboBox.SelectedItem;
-            Employee.PhilHealthDeduction = PhilHealthDeductionNumericUpDown.Value;
             Employee.PhilHealthNumber = PhilHealthNumberTextBox.Text;
             Employee.PhilHealthRegistrationDate = PhilHealthRegistrationDateTimePicker.Value;
             Employee.Position = PositionComboBox.SelectedItem as JobPosition;
             Employee.R1ADate = R1ADateTimePicker.Value;
             Employee.SickLeave = SickLeaveNumericUpDown.Value;
-            Employee.SSSDeduction = SssDeductionNumericUpDown.Value;
-            Employee.SSSECDeduction = SssEcDeductionNumericUpDown.Value;
-            Employee.SSSERDeduction = SssErDeductionNumericUpDown.Value;
             Employee.SSSNumber = SssNumberTextBox.Text;
             Employee.TelephoneNumber = TelephoneNumberTextBox.Text;
             Employee.TIN = TinTextBox.Text;
