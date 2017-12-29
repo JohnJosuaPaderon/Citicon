@@ -12,18 +12,29 @@ namespace Citicon.Data
 
         public Payroll Payroll { get; internal set; }
         public Employee Employee { get; set; }
-        public decimal BasicPay { get; set; }
-        public decimal DailyRate { get; set; }
         public decimal VacationLeave { get; set; }
         public decimal SickLeave { get; set; }
+        public decimal Rate { get; set; }
+        public decimal BasicPay { get; set; }
         public decimal RegularWorkingHours { get; set; }
-        public decimal NightDifferentialHours { get; set; }
-        public decimal SundayHours { get; set; }
-        public decimal SpecialHolidayHours { get; set; }
-        public decimal SpecialHolidayOvertimeHours { get; set; }
+        public decimal RegularOvertimePay { get; set; }
+        public decimal NightDifferentialOvertimeHours { get; set; }
+        public decimal SundayWorkingHours { get; set; }
+        public decimal SundayPay { get; set; }
+        public decimal SpecialHolidayWorkingHours { get; set; }
+        public decimal SpecialHolidayPay { get; set; }
+        public decimal SpecialHolidayOvertimeWorkingHours { get; set; }
+        public decimal SpecialHolidayOvertimePay { get; set; }
+        public decimal OvertimePay { get; set; }
+        public decimal Allowance { get; set; }
+        public decimal GrossPay { get; set; }
         public decimal WithholdingTax { get; set; }
-        public decimal SSSER { get; set; }
-        public decimal SSSEC { get; set; }
+        public decimal Sss { get; set; }
+        public decimal SssLoan { get; set; }
+        public decimal PagibigLoan { get; set; }
+        public decimal PhilHealth { get; set; }
+        public decimal CashAdvance { get; set; }
+        public decimal SunCellBill { get; set; }
         public string VLSL
         {
             get

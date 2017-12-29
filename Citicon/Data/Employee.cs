@@ -47,12 +47,7 @@ namespace Citicon.Data
         public decimal DailyRate { get; set; }
         public decimal Allowance { get; set; }
         public decimal OTAllowance { get; set; }
-        public decimal SSSDeduction { get; set; }
-        public decimal SSSERDeduction { get; set; }
-        public decimal SSSECDeduction { get; set; }
         public decimal WithHoldingTax { get; set; }
-        public decimal PagIbigDeduction { get; set; }
-        public decimal PhilHealthDeduction { get; set; }
 
         public static bool operator ==(Employee left, Employee right)
         {
