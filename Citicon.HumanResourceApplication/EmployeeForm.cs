@@ -84,12 +84,7 @@ namespace Citicon.HumanResourceApplication
             DailyRateTextBox.Text = value?.DailyRate.ToString(MonetaryFormat);
             AllowanceTextBox.Text = value?.Allowance.ToString(MonetaryFormat);
             OtAllowanceTextBox.Text = value?.OTAllowance.ToString(MonetaryFormat);
-            SssDeductionTextBox.Text = value?.SSSDeduction.ToString(MonetaryFormat);
-            SssErDeductionTextBox.Text = value?.SSSERDeduction.ToString(MonetaryFormat);
-            SssEcDeductionTextBox.Text = value?.SSSECDeduction.ToString(MonetaryFormat);
             WithHoldingTaxTextBox.Text = value?.WithHoldingTax.ToString(MonetaryFormat);
-            PagIbigDeductionTextBox.Text = value?.PagIbigDeduction.ToString(MonetaryFormat);
-            PhilHealthDeductionTextBox.Text = value?.PhilHealthDeduction.ToString(MonetaryFormat);
         }
 
         private async Task GetListAsync()
