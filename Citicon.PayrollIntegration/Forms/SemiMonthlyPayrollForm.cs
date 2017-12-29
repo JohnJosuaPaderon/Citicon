@@ -120,13 +120,9 @@ namespace Citicon.PayrollIntegration.Forms
                 row.Cells.Add(CreateTextBoxCell(employeePayroll));
                 row.Cells.Add(CreateTextBoxCell(employeePayroll.Employee));
                 row.Cells.Add(CreateTextBoxCell(employeePayroll.VLSL));
-                row.Cells.Add(CreateTextBoxCell(employeePayroll.DailyRate));
+                row.Cells.Add(CreateTextBoxCell(employeePayroll.Rate));
                 row.Cells.Add(CreateTextBoxCell(employeePayroll.BasicPay));
                 row.Cells.Add(CreateTextBoxCell(employeePayroll.RegularWorkingHours));
-                row.Cells.Add(CreateTextBoxCell(employeePayroll.NightDifferentialHours));
-                row.Cells.Add(CreateTextBoxCell(employeePayroll.SundayHours));
-                row.Cells.Add(CreateTextBoxCell(employeePayroll.SpecialHolidayHours));
-                row.Cells.Add(CreateTextBoxCell(employeePayroll.SpecialHolidayOvertimeHours));
 
                 dgvPayrollItems.Rows.Add(row);
             }
