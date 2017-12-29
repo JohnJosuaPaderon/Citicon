@@ -46,13 +46,9 @@ namespace Citicon.Reports
         {
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Employee, payrollItem.Employee?.ToString());
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.VLSL, payrollItem.VLSL);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Rate, payrollItem.DailyRate);
+            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Rate, payrollItem.Rate);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Basic_Pay, payrollItem.BasicPay);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Regular_Working_Hours, payrollItem.RegularWorkingHours);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.ND_OT_Hours, payrollItem.NightDifferentialHours);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Sunday_Hours, payrollItem.SundayHours);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Special_Holiday_Hours, payrollItem.SpecialHolidayHours);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Special_Holiday_Overtime_Hours, payrollItem.SpecialHolidayOvertimeHours);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.With_Holding_Tax, payrollItem.WithholdingTax);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Overtime_Allowance, 0);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Allowance, 0);
@@ -61,8 +57,6 @@ namespace Citicon.Reports
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Pagibig_Loan, 0);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Cash_Advance, 0);
             SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.Sun_Cell_Bill, 0);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.SSS_EC, payrollItem.SSSEC);
-            SetCellValue(SemiMonthlyPayrollExportConfigurationColumnIndex.SSS_ER, payrollItem.SSSER);
         }
 
         private void SetCellFormulaValues()
