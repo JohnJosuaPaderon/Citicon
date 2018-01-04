@@ -48,13 +48,10 @@ namespace Citicon.DataProcess
                                     Position = pos,
                                     Absences = reader.GetDecimal("Absences"),
                                     Address = reader.GetString("Address"),
-                                    Allowance = reader.GetDecimal("Allowance"),
-                                    BasicPay = reader.GetDecimal("BasicPay"),
                                     BirthDate = reader.GetDateTime("BirthDate"),
                                     Branch = BranchManager.GetById(reader.GetUInt64("BranchId")),
                                     CivilStatus = CivilStatusManager.Parse(reader.GetString("CivilStatus")),
                                     Company = CompanyManager.GetById(reader.GetUInt64("CompanyId")),
-                                    DailyRate = reader.GetDecimal("DailyRate"),
                                     EmailAddress = reader.GetString("EmailAddress"),
                                     EmergencyContactPerson = reader.GetString("EmergencyContactPerson"),
                                     EmergencyContactPersonNumber = reader.GetString("EmergencyContactPersonNumber"),
@@ -62,7 +59,6 @@ namespace Citicon.DataProcess
                                     EmploymentStatus = EmploymentStatusManager.Parse(reader.GetString("EmploymentStatus")),
                                     MobileNumber = reader.GetString("MobileNumber"),
                                     JobPosition = pos,
-                                    OTAllowance = reader.GetDecimal("OTAllowance"),
                                     PagIbigNumber = reader.GetString("PagIbigNumber"),
                                     PagIbigRegistrationDate = reader.GetDateTime("PagIbigRegistrationDate"),
                                     PagIbigRTN = reader.GetString("PagIbigRTN"),
@@ -75,8 +71,7 @@ namespace Citicon.DataProcess
                                     SSSNumber = reader.GetString("SSSNumber"),
                                     TelephoneNumber = reader.GetString("TelephoneNumber"),
                                     TIN = reader.GetString("TIN"),
-                                    VacationLeave = reader.GetDecimal("VacationLeave"),
-                                    WithHoldingTax = reader.GetDecimal("WithHoldingTax")
+                                    VacationLeave = reader.GetDecimal("VacationLeave")
                                 };
                             }
                         }

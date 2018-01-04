@@ -51,12 +51,7 @@ namespace Citicon.DataProcess
                 .AddInParameter("@_PagIbigRTNDependentNumber", Employee.PagIbigRTNDependentNumber)
                 .AddInParameter("@_VacationLeave", Employee.VacationLeave)
                 .AddInParameter("@_SickLeave", Employee.SickLeave)
-                .AddInParameter("@_Absences", Employee.Absences)
-                .AddInParameter("@_BasicPay", Employee.BasicPay)
-                .AddInParameter("@_DailyRate", Employee.DailyRate)
-                .AddInParameter("@_Allowance", Employee.Allowance)
-                .AddInParameter("@_OTAllowance", Employee.OTAllowance)
-                .AddInParameter("@_WithHoldingTax", Employee.WithHoldingTax);
+                .AddInParameter("@_Absences", Employee.Absences);
         }
 
         public override void Dispose()
