@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataProcess;
+using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -282,6 +283,34 @@ namespace Citicon.DataManager
                 }
 
                 return employee;
+            }
+        }
+
+        public static async Task<Employee> InsertAsync(Employee employee, MySqlConnection connection, MySqlTransaction transaction)
+        {
+            if (employee == null) return null;
+
+            using (var process = new InsertEmployee(employee))
+            {
+                employee = await process.ExecuteAsync(connection, transaction);
+
+                if (employee != null && !Employees.ContainsKey(employee.Id))
+                {
+                    Employees.Add(employee.Id, employee);
+                }
+
+                return employee;
+            }
+        }
+
+        public static async Task InsertFullDetailsAsync(Employee employee, EmployeePayrollAddition payrollAddition, EmployeePayrollDeduction payrollDeduction)
+        {
+            if (employee != null && payrollAddition != null && payrollDeduction != null)
+            {
+                using (var process = new InsertEmployeeFullDetails(employee, payrollAddition, payrollDeduction))
+                {
+                    await process.ExecuteAsync();
+                }
             }
         }
 
