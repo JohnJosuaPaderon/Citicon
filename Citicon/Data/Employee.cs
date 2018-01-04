@@ -43,11 +43,6 @@ namespace Citicon.Data
         public decimal VacationLeave { get; set; }
         public decimal SickLeave { get; set; }
         public decimal Absences { get; set; }
-        public decimal BasicPay { get; set; }
-        public decimal DailyRate { get; set; }
-        public decimal Allowance { get; set; }
-        public decimal OTAllowance { get; set; }
-        public decimal WithHoldingTax { get; set; }
 
         public static bool operator ==(Employee left, Employee right)
         {
