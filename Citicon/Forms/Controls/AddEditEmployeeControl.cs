@@ -21,6 +21,8 @@ namespace Citicon.Forms.Controls
         private CompanyManager CompanyManager;
 
         private Employee _Employee;
+        private EmployeePayrollAddition _EmployeePayrollAddition;
+        private EmployeePayrollDeduction _EmployeePayrollDeduction;
 
         public Employee Employee
         {
@@ -28,6 +30,26 @@ namespace Citicon.Forms.Controls
             set
             {
                 _Employee = value;
+                UpdateUI(value);
+            }
+        }
+
+        public EmployeePayrollAddition EmployeePayrollAddition
+        {
+            get { return _EmployeePayrollAddition; }
+            set
+            {
+                _EmployeePayrollAddition = value;
+                UpdateUI(value);
+            }
+        }
+
+        public EmployeePayrollDeduction EmployeePayrollDeduction
+        {
+            get { return _EmployeePayrollDeduction; }
+            set
+            {
+                _EmployeePayrollDeduction = value;
                 UpdateUI(value);
             }
         }
@@ -91,11 +113,42 @@ namespace Citicon.Forms.Controls
             VacationLeaveNumericUpDown.Value = employee?.VacationLeave ?? 0;
             SickLeaveNumericUpDown.Value = employee?.SickLeave ?? 0;
             AbsencesNumericUpDown.Value = employee?.Absences ?? 0;
-            BasicPayNumericUpDown.Value = employee?.BasicPay ?? 0;
-            DailyRateNumericUpDown.Value = employee?.DailyRate ?? 0;
-            AllowanceNumericUpDown.Value = employee?.Allowance ?? 0;
-            OtAllowanceNumericUpDown.Value = employee?.OTAllowance ?? 0;
-            WithHoldingTaxNumericUpDown.Value = employee?.WithHoldingTax ?? 0;
+        }
+
+        private void UpdateUI(EmployeePayrollAddition payrollAddition)
+        {
+            BasicPayNumericUpDown.Value = 0;
+            DailyRateNumericUpDown.Value = 0;
+            AllowanceNumericUpDown.Value = 0;
+            OtAllowanceNumericUpDown.Value = 0;
+
+            if (payrollAddition != null)
+            {
+                BasicPayNumericUpDown.Value = payrollAddition.BasicPay;
+                DailyRateNumericUpDown.Value = payrollAddition.DailyRate;
+                AllowanceNumericUpDown.Value = payrollAddition.Allowance;
+                OtAllowanceNumericUpDown.Value = payrollAddition.OvertimeAllowance;
+            }
+        }
+
+        private void UpdateUI(EmployeePayrollDeduction payrollDeduction)
+        {
+            SssDeductionNumericUpDown.Value = 0;
+            SssErDeductionNumericUpDown.Value = 0;
+            SssEcDeductionNumericUpDown.Value = 0;
+            WithHoldingTaxNumericUpDown.Value = 0;
+            PagIbigDeductionNumericUpDown.Value = 0;
+            PhilHealthDeductionNumericUpDown.Value = 0;
+
+            if (payrollDeduction != null)
+            {
+                SssDeductionNumericUpDown.Value = payrollDeduction.Sss;
+                SssEcDeductionNumericUpDown.Value = payrollDeduction.SssEc;
+                SssErDeductionNumericUpDown.Value = payrollDeduction.SssEr;
+                WithHoldingTaxNumericUpDown.Value = payrollDeduction.WithholdingTax;
+                PagIbigDeductionNumericUpDown.Value = payrollDeduction.PagibigLoan;
+                PhilHealthDeductionNumericUpDown.Value = payrollDeduction.PhilHealth;
+            }
         }
 
         private void RequestFormCancel()
@@ -118,23 +171,14 @@ namespace Citicon.Forms.Controls
                 }
                 else
                 {
-                    var employee = await EmployeeManager.InsertAsync(Employee);
-
-                    if (employee != null)
-                    {
-                        Employee = employee;
-                        MessageBox.Show("Employee has been saved successfully!");
-                        RequestFormCancel();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to add employee.");
-                    }
+                    await EmployeeManager.InsertFullDetailsAsync(Employee, EmployeePayrollAddition, EmployeePayrollDeduction);
+                    MessageBox.Show("Employee has been saved successfully!");
+                    RequestFormCancel();
                 }
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                HandleException("Failed to add employee.", ex);
             }
         }
 
@@ -142,22 +186,13 @@ namespace Citicon.Forms.Controls
         {
             try
             {
-                var employee = await EmployeeManager.UpdateAsync(Employee);
-
-                if (employee != null)
-                {
-                    Employee = employee;
-                    MessageBox.Show("Employee's information has been saved successfully!");
-                    RequestFormCancel();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to updated employee's information");
-                }
+                await EmployeeManager.UpdateFullDetailsAsync(Employee, EmployeePayrollAddition, EmployeePayrollDeduction);
+                MessageBox.Show("Employee's information has been saved successfully!");
+                RequestFormCancel();
             }
             catch (Exception ex)
             {
-                HandleException(ex);
+                HandleException("Failed to edit employee's information.", ex);
             }
         }
 
@@ -166,17 +201,19 @@ namespace Citicon.Forms.Controls
             MessageBox.Show(exception.Message);
         }
 
+        private void HandleException(string message, Exception exception)
+        {
+            MessageBox.Show($"{message}{Environment.NewLine}{exception.Message}");
+        }
+
         private void PrepareData()
         {
             Employee.Absences = AbsencesNumericUpDown.Value;
             Employee.Address = AddressTextBox.Text;
-            Employee.Allowance = AllowanceNumericUpDown.Value;
-            Employee.BasicPay = BasicPayNumericUpDown.Value;
             Employee.BirthDate = BirthDateTimePicker.Value;
             Employee.Branch = BranchComboBox.SelectedItem as Branch;
             Employee.CivilStatus = (CivilStatus)CivilStatusComboBox.SelectedItem;
             Employee.Company = CompanyComboBox.SelectedItem as Company;
-            Employee.DailyRate = DailyRateNumericUpDown.Value;
             Employee.EmailAddress = EmailAddressTextBox.Text;
             Employee.EmergencyContactPerson = EmergencyContactPersonTextBox.Text;
             Employee.EmergencyContactPersonNumber = EmergencyContactPersonNumberTextBox.Text;
@@ -187,7 +224,6 @@ namespace Citicon.Forms.Controls
             Employee.LastName = LastNameTextBox.Text;
             Employee.MiddleName = MiddleNameTextBox.Text;
             Employee.MobileNumber = MobileNumberTextBox.Text;
-            Employee.OTAllowance = OtAllowanceNumericUpDown.Value;
             Employee.PagIbigNumber = PagIbigTextBox.Text;
             Employee.PagIbigRegistrationDate = PagIbigRtnRegistrationDateTimePicker.Value;
             Employee.PagIbigRTN = PagIbigRtnTextBox.Text;
@@ -202,7 +238,16 @@ namespace Citicon.Forms.Controls
             Employee.TelephoneNumber = TelephoneNumberTextBox.Text;
             Employee.TIN = TinTextBox.Text;
             Employee.VacationLeave = VacationLeaveNumericUpDown.Value;
-            Employee.WithHoldingTax = WithHoldingTaxNumericUpDown.Value;
+            EmployeePayrollAddition.BasicPay = BasicPayNumericUpDown.Value;
+            EmployeePayrollAddition.DailyRate = DailyRateNumericUpDown.Value;
+            EmployeePayrollAddition.Allowance = AllowanceNumericUpDown.Value;
+            EmployeePayrollAddition.OvertimeAllowance = OtAllowanceNumericUpDown.Value;
+            EmployeePayrollDeduction.Sss = SssDeductionNumericUpDown.Value;
+            EmployeePayrollDeduction.SssEc = SssEcDeductionNumericUpDown.Value;
+            EmployeePayrollDeduction.SssEr = SssErDeductionNumericUpDown.Value;
+            EmployeePayrollDeduction.PagibigLoan = PagIbigDeductionNumericUpDown.Value;
+            EmployeePayrollDeduction.PhilHealth = PhilHealthDeductionNumericUpDown.Value;
+            EmployeePayrollDeduction.WithholdingTax = WithHoldingTaxNumericUpDown.Value;
         }
 
         private async void SaveButton_Click(object sender, EventArgs e)
