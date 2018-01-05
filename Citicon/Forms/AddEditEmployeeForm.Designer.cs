@@ -46,6 +46,7 @@
             this.AddEditEmployeeControl.Size = new System.Drawing.Size(778, 641);
             this.AddEditEmployeeControl.TabIndex = 0;
             this.AddEditEmployeeControl.FormCancelRequested += new System.EventHandler(this.AddEditEmployeeControl_FormCancelRequested);
+            this.AddEditEmployeeControl.Load += new System.EventHandler(this.AddEditEmployeeControl_Load);
             // 
             // AddEditEmployeeForm
             // 
