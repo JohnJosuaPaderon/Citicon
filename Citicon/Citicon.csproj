@@ -81,6 +81,8 @@
     <Compile Include="DataManager\DeliveryConsumedCementSuppliedManager.cs" />
     <Compile Include="DataManager\DeliveryManager.cs" />
     <Compile Include="DataManager\DeliveryRouteManager.cs" />
+    <Compile Include="DataManager\EmployeePayrollAdditionManager.cs" />
+    <Compile Include="DataManager\EmployeePayrollDeductionManager.cs" />
     <Compile Include="DataManager\EmploymentStatusManager.cs" />
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
@@ -121,6 +123,8 @@
     <Compile Include="DataProcess\GetClientListWithScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\GetCompanyById.cs" />
     <Compile Include="DataProcess\GetConsumedProjectDesignVolume.cs" />
+    <Compile Include="DataProcess\GetCurrentEmployeePayrollAdditionByEmployee.cs" />
+    <Compile Include="DataProcess\GetCurrentEmployeePayrollDeductionByEmployee.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
     <Compile Include="DataProcess\GetDeliveryConsumedCementSupplied.cs" />
@@ -134,6 +138,8 @@
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
+    <Compile Include="DataProcess\GetEmployeePayrollAddition.cs" />
+    <Compile Include="DataProcess\GetEmployeePayrollDeduction.cs" />
     <Compile Include="DataProcess\GetHolidayList.cs" />
     <Compile Include="DataProcess\GetHolidayTypeById.cs" />
     <Compile Include="DataProcess\GetHolidayTypeList.cs" />
@@ -164,6 +170,9 @@
     <Compile Include="DataProcess\InsertDelivery.cs" />
     <Compile Include="DataProcess\InsertDeliveryRoute.cs" />
     <Compile Include="DataProcess\InsertEmployee.cs" />
+    <Compile Include="DataProcess\InsertEmployeeFullDetails.cs" />
+    <Compile Include="DataProcess\InsertEmployeePayrollAddition.cs" />
+    <Compile Include="DataProcess\InsertEmployeePayrollDeduction.cs" />
     <Compile Include="DataProcess\InsertHoliday.cs" />
     <Compile Include="DataProcess\InsertJobPosition.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
@@ -271,6 +280,9 @@
     <Compile Include="DataProcess\UpdateClient.cs" />
     <Compile Include="DataProcess\UpdateDeliveryRoute.cs" />
     <Compile Include="DataProcess\UpdateEmployee.cs" />
+    <Compile Include="DataProcess\UpdateEmployeeFullDetails.cs" />
+    <Compile Include="DataProcess\UpdateEmployeePayrollAddition.cs" />
+    <Compile Include="DataProcess\UpdateEmployeePayrollDeduction.cs" />
     <Compile Include="DataProcess\UpdateHoliday.cs" />
     <Compile Include="DataProcess\UpdateJobPosition.cs" />
     <Compile Include="DataProcess\UpdateProject.cs" />
@@ -365,9 +377,12 @@
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
     <Compile Include="Data\EmployeePayroll.cs" />
+    <Compile Include="Data\EmployeePayrollAddition.cs" />
     <Compile Include="Data\EmployeePayrollCollection.cs" />
+    <Compile Include="Data\EmployeePayrollDeduction.cs" />
     <Compile Include="Data\EmployeeTimeLogList.cs" />
     <Compile Include="Data\EmploymentStatus.cs" />
+    <Compile Include="Data\EntityBase.cs" />
     <Compile Include="Data\ExcessPipeCharge.cs" />
     <Compile Include="Data\Expense.cs" />
     <Compile Include="Data\Holiday.cs" />
