@@ -4,6 +4,11 @@ namespace Citicon.Data
 {
     public class EmployeePayrollDeduction : EntityBase<ulong>
     {
+        public EmployeePayrollDeduction()
+        {
+            EffectivityDate = DateTime.Now;
+        }
+
         public Employee Employee { get; set; }
         public DateTime EffectivityDate { get; set; }
         public decimal Sss { get; set; }
