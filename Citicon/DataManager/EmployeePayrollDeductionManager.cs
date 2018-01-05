@@ -66,5 +66,35 @@ namespace Citicon.DataManager
                 return null;
             }
         }
+
+        public static async Task<EmployeePayrollDeduction> UpdateAsync(EmployeePayrollDeduction employeePayrollDeduction)
+        {
+            if (employeePayrollDeduction != null)
+            {
+                using (var process = new UpdateEmployeePayrollDeduction(employeePayrollDeduction))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<EmployeePayrollDeduction> UpdateAsync(EmployeePayrollDeduction employeePayrollDeduction, MySqlConnection connection, MySqlTransaction transaction)
+        {
+            if (employeePayrollDeduction != null)
+            {
+                using (var process = new UpdateEmployeePayrollDeduction(employeePayrollDeduction))
+                {
+                    return await process.ExecuteAsync(connection, transaction);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

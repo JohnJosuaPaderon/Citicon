@@ -338,6 +338,41 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<Employee> UpdateAsync(Employee employee, MySqlConnection connection, MySqlTransaction transaction)
+        {
+            if (employee == null) return null;
+
+            using (var process = new UpdateEmployee(employee))
+            {
+                employee = await process.ExecuteAsync(connection, transaction);
+
+                if (employee != null)
+                {
+                    if (Employees.ContainsKey(employee.Id))
+                    {
+                        Employees[employee.Id] = employee;
+                    }
+                    else
+                    {
+                        Employees.Add(employee.Id, employee);
+                    }
+                }
+
+                return employee;
+            }
+        }
+
+        public static async Task UpdateFullDetailsAsync(Employee employee, EmployeePayrollAddition payrollAddition, EmployeePayrollDeduction payrollDeduction)
+        {
+            if (employee != null && payrollAddition != null && payrollDeduction != null)
+            {
+                using (var process = new UpdateEmployeeFullDetails(employee, payrollAddition, payrollDeduction))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
+
         public static Task<bool> EmployeeExistsAsync(string firstName, string middleName, string lastName)
         {
             using (var process = new EmployeeExists(firstName, middleName, lastName))
