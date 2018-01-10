@@ -284,20 +284,11 @@ namespace Citicon.DataProcess
                 table.Cell(2, 3 + strengthColumn.Value).PreferredWidthType = Word.WdPreferredWidthType.wdPreferredWidthAuto;
             }
 
-            //foreach (Word.Cell testCell in table.Range.Cells)
-            //{
-            //    testCell.Range.Text = $"{testCell.RowIndex},{testCell.ColumnIndex}";
-            //}
-
             if (table.Columns.Count <= 4)
             {
                 table.Columns.DistributeWidth();
             }
 
-            
-            //table.Cell(1, 1).PreferredWidth = 25;
-            //table.Cell(1, 2).PreferredWidth = 25;
-            //table.Cell(1, 3).PreferredWidth = 25;
             table.AllowAutoFit = true;
             table.AutoFitBehavior(Word.WdAutoFitBehavior.wdAutoFitContent);
             table.PreferredWidthType = Word.WdPreferredWidthType.wdPreferredWidthPercent;
