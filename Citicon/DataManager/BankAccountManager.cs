@@ -134,7 +134,7 @@ namespace Citicon.DataManager
             return Task.Factory.StartNew(GetList);
         }
 
-        public async Task<IEnumerable<BankAccount>> GetListByBankAsync(Bank bank)
+        public static async Task<IEnumerable<BankAccount>> GetListByBankAsync(Bank bank)
         {
             if (bank != null)
             {

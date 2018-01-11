@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataManager
 {
-    public sealed class BankManager : DataManager<Bank>, IDataManager<Bank>
+    public sealed class BankManager : DataManager<Bank>
     {
         static BankManager()
         {
@@ -47,7 +47,7 @@ namespace Citicon.DataManager
             return Task.Factory.StartNew(() => Add(data));
         }
 
-        public Bank ExtractFromDictionary(Dictionary<string, object> dictionary)
+        public static Bank ExtractFromDictionary(Dictionary<string, object> dictionary)
         {
             if (dictionary != null)
             {
@@ -104,13 +104,11 @@ namespace Citicon.DataManager
             return Task.Factory.StartNew(() => GetById(id));
         }
 
-        public Bank[] GetList()
+        public static Bank[] GetList()
         {
             List<Bank> banks = null;
             using (var query = new MySqlQuery(Supports.ConnectionString, "_banks_getlist"))
             {
-                query.ExceptionCatched += OnExceptionCatched;
-                query.ActiveRecordChanged += Query_ActiveRecordChanged;
                 var result = query.GetResult();
                 if (result != null)
                 {
