@@ -1,4 +1,5 @@
-﻿using Citicon.DataProcess;
+﻿using Citicon.Data;
+using Citicon.DataProcess;
 using System.Collections.Generic;
 
 namespace Citicon.DataManager
