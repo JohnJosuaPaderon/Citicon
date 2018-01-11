@@ -403,6 +403,8 @@
     <Compile Include="Data\PayrollGroup.cs" />
     <Compile Include="Data\PayrollType.cs" />
     <Compile Include="Data\Product.cs" />
+    <Compile Include="Data\ProductAggregate.cs" />
+    <Compile Include="Data\ProductStrength.cs" />
     <Compile Include="Data\Project.cs" />
     <Compile Include="Data\ProjectBillingInfo.cs" />
     <Compile Include="Data\ProjectDesign.cs" />
