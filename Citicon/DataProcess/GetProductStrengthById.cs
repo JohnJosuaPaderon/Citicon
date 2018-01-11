@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Citicon.Data;
+using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using System.Diagnostics;
