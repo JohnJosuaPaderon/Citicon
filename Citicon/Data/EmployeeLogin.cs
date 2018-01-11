@@ -1,8 +1,7 @@
 ﻿namespace Citicon.Data
 {
-    public class EmployeeLogin
+    public class EmployeeLogin : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public Employee Employee { get; set; }
         public uint LoginCode { get; set; }
 

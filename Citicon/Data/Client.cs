@@ -1,8 +1,7 @@
 ﻿namespace Citicon.Data
 {
-    public class Client
+    public class Client : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public string CompanyName { get; set; }
         public string Address { get; set; }
         public string EmailAddress { get; set; }
@@ -20,36 +19,6 @@
         public string Designation { get; set; }
         public Employee Employee { get; set; }
         public bool Legitimate { get; set; }
-
-        public static bool operator ==(Client left, Client right)
-        {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
-        }
-
-        public static bool operator !=(Client left, Client right)
-        {
-            return !(left == right);
-        }
-
-        public override bool Equals(object arg)
-        {
-            if (arg is Client)
-            {
-                return (Client)arg == this;
-            }
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
 
         public override string ToString()
         {

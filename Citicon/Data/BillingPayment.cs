@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace Citicon.Data
 {
-    public class BillingPayment
+    public class BillingPayment : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public BillingPaymentType PaymentType { get; set; }
         public decimal AmountPaid { get; set; }
         public bool VatIncluded { get; set; }

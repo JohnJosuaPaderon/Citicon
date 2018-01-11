@@ -2,9 +2,8 @@
 
 namespace Citicon.Data
 {
-    public sealed class Transaction
+    public sealed class Transaction : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public Item Item { get; set; }
         public decimal LastStockValue { get; set; }
         public decimal RemovedStockValue { get; set; }
@@ -19,37 +18,7 @@ namespace Citicon.Data
         public string IssuanceSlipNumber { get; set; }
         public decimal? LatestPrice { get; set; }
         public DateTime? LatestPriceDate { get; set; }
-
-        public static bool operator ==(Transaction left, Transaction right)
-        {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
-        }
-
-        public static bool operator !=(Transaction left, Transaction right)
-        {
-            return !(left == right);
-        }
-
-        public override bool Equals(object arg)
-        {
-            if (arg is Transaction)
-            {
-                return (Transaction)arg == this;
-            }
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
-
+        
         public override string ToString()
         {
             return Item?.ToString();

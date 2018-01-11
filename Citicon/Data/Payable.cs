@@ -3,9 +3,8 @@ using System.Configuration;
 
 namespace Citicon.Data
 {
-    public sealed class Payable
+    public sealed class Payable : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public Stock Stock { get; set; }
         public Expense Expense { get; set; }
         public bool VariableCost { get; set; }
@@ -33,37 +32,6 @@ namespace Citicon.Data
         public Company ReportingCategory { get; set; }
 
         public static string InputTax => ConfigurationManager.AppSettings["Payable.Description.InputTax"];
-
-        public static bool operator ==(Payable left, Payable right)
-        {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
-        }
-
-        public static bool operator !=(Payable left, Payable right)
-        {
-            return !(left == right);
-        }
-
-        public override bool Equals(object arg)
-        {
-            if (arg is Payable)
-            {
-                return (Payable)arg == this;
-            }
-
-            return false;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
 
         public override string ToString()
         {

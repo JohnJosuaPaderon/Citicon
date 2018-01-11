@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace Citicon.Data
 {
-    public class Billing
+    public class Billing : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public string BillingNo { get; set; }
         public DateTime BillingDate { get; set; }
         public string SiNumber { get; set; }
@@ -31,14 +30,6 @@ namespace Citicon.Data
         public List<OtherCharge> OtherCharges { get; } = new List<OtherCharge>();
         public List<Delivery> Deliveries { get; } = new List<Delivery>();
 
-        public override bool Equals(object obj)
-        {
-            return (obj is Billing) ? ((Billing)obj).Id == Id : false;
-        }
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
         public override string ToString()
         {
             return BillingNo;

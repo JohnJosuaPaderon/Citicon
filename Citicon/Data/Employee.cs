@@ -3,9 +3,8 @@ using System.Text;
 
 namespace Citicon.Data
 {
-    public class Employee
+    public class Employee : EntityBase<long>
     {
-        public long Id { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -43,34 +42,6 @@ namespace Citicon.Data
         public decimal VacationLeave { get; set; }
         public decimal SickLeave { get; set; }
         public decimal Absences { get; set; }
-
-        public static bool operator ==(Employee left, Employee right)
-        {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
-        }
-        public static bool operator !=(Employee left, Employee right)
-        {
-            return !(left == right);
-        }
-
-        public override bool Equals(object arg)
-        {
-            if (arg is Employee)
-            {
-                return (Employee)arg == this;
-            }
-            return false;
-        }
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
 
         public string FullName
         {

@@ -2,9 +2,8 @@
 
 namespace Citicon.Data
 {
-    public class Delivery
+    public class Delivery : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public Billing Billing { get; set; }
         public Project Project { get; set; }
         public ProjectDesign ProjectDesign { get; set; }
@@ -38,34 +37,7 @@ namespace Citicon.Data
                 return string.Format("{0:yy}-{1}", DeliveryDate, DeliveryReceiptNumber);
             }
         }
-
-        public static bool operator ==(Delivery left, Delivery right)
-        {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
-        }
-        public static bool operator !=(Delivery left, Delivery right)
-        {
-            return !(left == right);
-        }
-
-        public override bool Equals(object arg)
-        {
-            if (arg is Delivery)
-            {
-                return (Delivery)arg == this;
-            }
-            return false;
-        }
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        
         public override string ToString()
         {
             return ProjectDesign?.ToString();

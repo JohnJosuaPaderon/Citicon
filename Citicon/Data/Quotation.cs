@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Citicon.Data
 {
-    public class Quotation
+    public class Quotation : EntityBase<ulong>
     {
-        public ulong Id { get; set; }
         public Project Project { get; set; }
         public string QuotationNumber { get; set; }
         public DateTime QuotationDate { get; set; }
@@ -22,35 +21,7 @@ namespace Citicon.Data
         public bool InHouseAgent { get; set; }
         public PaymentTerm PaymentTerm { get; set; }
         public decimal? VatExcluded { get; set; }
-
-        public static bool operator ==(Quotation left, Quotation right)
-        {
-            if (ReferenceEquals(left, right))
-                return true;
-
-            if ((object)left == null || (object)right == null)
-                return false;
-
-            return left.Id == right.Id;
-        }
-
-        public static bool operator !=(Quotation left, Quotation right)
-        {
-            return !(left == right);
-        }
-
-        public override bool Equals(object arg)
-        {
-            if (arg is Quotation)
-            {
-                return (Quotation)arg == this;
-            }
-            return false;
-        }
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        
         public override string ToString()
         {
             var stringBuilder = new StringBuilder();
