@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -1087,6 +1088,13 @@ namespace Citicon.Payables
         {
             UserSettingsForm form = new UserSettingsForm();
             form.ShowDialog();
+        }
+
+        private void ChequeCancellationButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new ChequeCancellationDialog();
+            dialog.ShowDialog();
+            dialog = null;
         }
     }
 }

@@ -41,6 +41,7 @@
             this.lblMaintenance = new System.Windows.Forms.Label();
             this.tcMaintenance = new System.Windows.Forms.TabControl();
             this.tpGeneralSettings = new System.Windows.Forms.TabPage();
+            this.ChequeCancellationButton = new System.Windows.Forms.Button();
             this.lblRevokeChequeNumber = new System.Windows.Forms.Label();
             this.btnRevokeChequeNumber = new System.Windows.Forms.Button();
             this.lblRevokeChequeNumberBankAccount = new System.Windows.Forms.Label();
@@ -143,7 +144,7 @@
             this.tcMaintenance.Controls.Add(this.tpBanks);
             this.tcMaintenance.Controls.Add(this.tpBankAccounts);
             this.tcMaintenance.Location = new System.Drawing.Point(7, 70);
-            this.tcMaintenance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tcMaintenance.Margin = new System.Windows.Forms.Padding(2);
             this.tcMaintenance.Name = "tcMaintenance";
             this.tcMaintenance.Padding = new System.Drawing.Point(15, 15);
             this.tcMaintenance.SelectedIndex = 0;
@@ -154,6 +155,7 @@
             // tpGeneralSettings
             // 
             this.tpGeneralSettings.BackColor = System.Drawing.Color.White;
+            this.tpGeneralSettings.Controls.Add(this.ChequeCancellationButton);
             this.tpGeneralSettings.Controls.Add(this.lblRevokeChequeNumber);
             this.tpGeneralSettings.Controls.Add(this.btnRevokeChequeNumber);
             this.tpGeneralSettings.Controls.Add(this.lblRevokeChequeNumberBankAccount);
@@ -178,13 +180,30 @@
             this.tpGeneralSettings.Controls.Add(this.tbxRevokeMrisNumber);
             this.tpGeneralSettings.Controls.Add(this.lblRevokeMrisNumber);
             this.tpGeneralSettings.Location = new System.Drawing.Point(4, 50);
-            this.tpGeneralSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpGeneralSettings.Margin = new System.Windows.Forms.Padding(2);
             this.tpGeneralSettings.Name = "tpGeneralSettings";
-            this.tpGeneralSettings.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpGeneralSettings.Padding = new System.Windows.Forms.Padding(2);
             this.tpGeneralSettings.Size = new System.Drawing.Size(781, 348);
             this.tpGeneralSettings.TabIndex = 10;
             this.tpGeneralSettings.Text = "General Settings";
             this.tpGeneralSettings.Click += new System.EventHandler(this.tpGeneralSettings_Click);
+            // 
+            // ChequeCancellationButton
+            // 
+            this.ChequeCancellationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChequeCancellationButton.BackColor = System.Drawing.Color.Red;
+            this.ChequeCancellationButton.FlatAppearance.BorderSize = 0;
+            this.ChequeCancellationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ChequeCancellationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChequeCancellationButton.ForeColor = System.Drawing.Color.White;
+            this.ChequeCancellationButton.Location = new System.Drawing.Point(627, 4);
+            this.ChequeCancellationButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ChequeCancellationButton.Name = "ChequeCancellationButton";
+            this.ChequeCancellationButton.Size = new System.Drawing.Size(150, 35);
+            this.ChequeCancellationButton.TabIndex = 68;
+            this.ChequeCancellationButton.Text = "Cheque Cancellation";
+            this.ChequeCancellationButton.UseVisualStyleBackColor = false;
+            this.ChequeCancellationButton.Click += new System.EventHandler(this.ChequeCancellationButton_Click);
             // 
             // lblRevokeChequeNumber
             // 
@@ -196,6 +215,7 @@
             this.lblRevokeChequeNumber.Size = new System.Drawing.Size(86, 20);
             this.lblRevokeChequeNumber.TabIndex = 67;
             this.lblRevokeChequeNumber.Text = "Cheque No.";
+            this.lblRevokeChequeNumber.Visible = false;
             // 
             // btnRevokeChequeNumber
             // 
@@ -205,12 +225,13 @@
             this.btnRevokeChequeNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevokeChequeNumber.ForeColor = System.Drawing.Color.White;
             this.btnRevokeChequeNumber.Location = new System.Drawing.Point(233, 304);
-            this.btnRevokeChequeNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRevokeChequeNumber.Margin = new System.Windows.Forms.Padding(2);
             this.btnRevokeChequeNumber.Name = "btnRevokeChequeNumber";
             this.btnRevokeChequeNumber.Size = new System.Drawing.Size(96, 25);
             this.btnRevokeChequeNumber.TabIndex = 66;
             this.btnRevokeChequeNumber.Text = "Revoke";
             this.btnRevokeChequeNumber.UseVisualStyleBackColor = false;
+            this.btnRevokeChequeNumber.Visible = false;
             this.btnRevokeChequeNumber.Click += new System.EventHandler(this.btnRevokeChequeNumber_Click);
             // 
             // lblRevokeChequeNumberBankAccount
@@ -223,6 +244,7 @@
             this.lblRevokeChequeNumberBankAccount.Size = new System.Drawing.Size(99, 20);
             this.lblRevokeChequeNumberBankAccount.TabIndex = 65;
             this.lblRevokeChequeNumberBankAccount.Text = "Bank Account";
+            this.lblRevokeChequeNumberBankAccount.Visible = false;
             // 
             // lblRevokeChequeNumberBank
             // 
@@ -234,6 +256,7 @@
             this.lblRevokeChequeNumberBank.Size = new System.Drawing.Size(41, 20);
             this.lblRevokeChequeNumberBank.TabIndex = 64;
             this.lblRevokeChequeNumberBank.Text = "Bank";
+            this.lblRevokeChequeNumberBank.Visible = false;
             // 
             // cmbxRevokeChequeNumberBankAccount
             // 
@@ -241,10 +264,11 @@
             this.cmbxRevokeChequeNumberBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxRevokeChequeNumberBankAccount.FormattingEnabled = true;
             this.cmbxRevokeChequeNumberBankAccount.Location = new System.Drawing.Point(170, 255);
-            this.cmbxRevokeChequeNumberBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxRevokeChequeNumberBankAccount.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxRevokeChequeNumberBankAccount.Name = "cmbxRevokeChequeNumberBankAccount";
             this.cmbxRevokeChequeNumberBankAccount.Size = new System.Drawing.Size(160, 25);
             this.cmbxRevokeChequeNumberBankAccount.TabIndex = 63;
+            this.cmbxRevokeChequeNumberBankAccount.Visible = false;
             this.cmbxRevokeChequeNumberBankAccount.SelectedIndexChanged += new System.EventHandler(this.cmbxRevokeChequeNumberBankAccount_SelectedIndexChanged);
             // 
             // cmbxRevokeChequeNumberBank
@@ -253,10 +277,11 @@
             this.cmbxRevokeChequeNumberBank.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxRevokeChequeNumberBank.FormattingEnabled = true;
             this.cmbxRevokeChequeNumberBank.Location = new System.Drawing.Point(7, 255);
-            this.cmbxRevokeChequeNumberBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxRevokeChequeNumberBank.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxRevokeChequeNumberBank.Name = "cmbxRevokeChequeNumberBank";
             this.cmbxRevokeChequeNumberBank.Size = new System.Drawing.Size(160, 25);
             this.cmbxRevokeChequeNumberBank.TabIndex = 62;
+            this.cmbxRevokeChequeNumberBank.Visible = false;
             this.cmbxRevokeChequeNumberBank.SelectedIndexChanged += new System.EventHandler(this.cmbxRevokeChequeNumberBank_SelectedIndexChanged);
             // 
             // tbxRevokeChequeNumber
@@ -266,11 +291,12 @@
             this.tbxRevokeChequeNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxRevokeChequeNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxRevokeChequeNumber.Location = new System.Drawing.Point(7, 304);
-            this.tbxRevokeChequeNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxRevokeChequeNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxRevokeChequeNumber.MaxLength = 75;
             this.tbxRevokeChequeNumber.Name = "tbxRevokeChequeNumber";
             this.tbxRevokeChequeNumber.Size = new System.Drawing.Size(223, 25);
             this.tbxRevokeChequeNumber.TabIndex = 61;
+            this.tbxRevokeChequeNumber.Visible = false;
             this.tbxRevokeChequeNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxRevokeChequeNumber_KeyDown);
             this.tbxRevokeChequeNumber.Leave += new System.EventHandler(this.tbxRevokeChequeNumber_Leave);
             // 
@@ -283,6 +309,7 @@
             this.lblRevokeChequeNumberHeader.Size = new System.Drawing.Size(123, 17);
             this.lblRevokeChequeNumberHeader.TabIndex = 60;
             this.lblRevokeChequeNumberHeader.Text = "Revoke Cheque No.";
+            this.lblRevokeChequeNumberHeader.Visible = false;
             // 
             // btnSaveChequeNumberRange
             // 
@@ -292,7 +319,7 @@
             this.btnSaveChequeNumberRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChequeNumberRange.ForeColor = System.Drawing.Color.White;
             this.btnSaveChequeNumberRange.Location = new System.Drawing.Point(230, 189);
-            this.btnSaveChequeNumberRange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveChequeNumberRange.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveChequeNumberRange.Name = "btnSaveChequeNumberRange";
             this.btnSaveChequeNumberRange.Size = new System.Drawing.Size(96, 25);
             this.btnSaveChequeNumberRange.TabIndex = 59;
@@ -308,7 +335,7 @@
             this.tbxChequeNumberRangeCurrent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxChequeNumberRangeCurrent.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxChequeNumberRangeCurrent.Location = new System.Drawing.Point(7, 189);
-            this.tbxChequeNumberRangeCurrent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxChequeNumberRangeCurrent.Margin = new System.Windows.Forms.Padding(2);
             this.tbxChequeNumberRangeCurrent.MaxLength = 75;
             this.tbxChequeNumberRangeCurrent.Name = "tbxChequeNumberRangeCurrent";
             this.tbxChequeNumberRangeCurrent.ReadOnly = true;
@@ -330,7 +357,7 @@
             // 
             this.nudChequeNumberRangeEnd.Enabled = false;
             this.nudChequeNumberRangeEnd.Location = new System.Drawing.Point(171, 140);
-            this.nudChequeNumberRangeEnd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudChequeNumberRangeEnd.Margin = new System.Windows.Forms.Padding(2);
             this.nudChequeNumberRangeEnd.Name = "nudChequeNumberRangeEnd";
             this.nudChequeNumberRangeEnd.Size = new System.Drawing.Size(158, 25);
             this.nudChequeNumberRangeEnd.TabIndex = 56;
@@ -350,7 +377,7 @@
             // 
             this.nudChequeNumberRangeStart.Enabled = false;
             this.nudChequeNumberRangeStart.Location = new System.Drawing.Point(10, 140);
-            this.nudChequeNumberRangeStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudChequeNumberRangeStart.Margin = new System.Windows.Forms.Padding(2);
             this.nudChequeNumberRangeStart.Name = "nudChequeNumberRangeStart";
             this.nudChequeNumberRangeStart.Size = new System.Drawing.Size(158, 25);
             this.nudChequeNumberRangeStart.TabIndex = 54;
@@ -383,7 +410,7 @@
             this.cmbxChequeNumberRangeBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxChequeNumberRangeBankAccount.FormattingEnabled = true;
             this.cmbxChequeNumberRangeBankAccount.Location = new System.Drawing.Point(171, 95);
-            this.cmbxChequeNumberRangeBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxChequeNumberRangeBankAccount.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxChequeNumberRangeBankAccount.Name = "cmbxChequeNumberRangeBankAccount";
             this.cmbxChequeNumberRangeBankAccount.Size = new System.Drawing.Size(160, 25);
             this.cmbxChequeNumberRangeBankAccount.TabIndex = 51;
@@ -406,7 +433,7 @@
             this.cmbxChequeNumberRangeBank.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxChequeNumberRangeBank.FormattingEnabled = true;
             this.cmbxChequeNumberRangeBank.Location = new System.Drawing.Point(7, 95);
-            this.cmbxChequeNumberRangeBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxChequeNumberRangeBank.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxChequeNumberRangeBank.Name = "cmbxChequeNumberRangeBank";
             this.cmbxChequeNumberRangeBank.Size = new System.Drawing.Size(160, 25);
             this.cmbxChequeNumberRangeBank.TabIndex = 49;
@@ -429,9 +456,9 @@
             this.btnRevokeMrisNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRevokeMrisNumber.ForeColor = System.Drawing.Color.White;
             this.btnRevokeMrisNumber.Location = new System.Drawing.Point(233, 21);
-            this.btnRevokeMrisNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRevokeMrisNumber.Margin = new System.Windows.Forms.Padding(2);
             this.btnRevokeMrisNumber.Name = "btnRevokeMrisNumber";
-            this.btnRevokeMrisNumber.Size = new System.Drawing.Size(96, 23);
+            this.btnRevokeMrisNumber.Size = new System.Drawing.Size(96, 25);
             this.btnRevokeMrisNumber.TabIndex = 47;
             this.btnRevokeMrisNumber.Text = "Revoke";
             this.btnRevokeMrisNumber.UseVisualStyleBackColor = false;
@@ -444,7 +471,7 @@
             this.tbxRevokeMrisNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxRevokeMrisNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxRevokeMrisNumber.Location = new System.Drawing.Point(7, 21);
-            this.tbxRevokeMrisNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxRevokeMrisNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbxRevokeMrisNumber.MaxLength = 75;
             this.tbxRevokeMrisNumber.Name = "tbxRevokeMrisNumber";
             this.tbxRevokeMrisNumber.Size = new System.Drawing.Size(223, 25);
@@ -474,9 +501,9 @@
             this.tpExpenses.Controls.Add(this.btnNewExpense);
             this.tpExpenses.Controls.Add(this.dgvExpenses);
             this.tpExpenses.Location = new System.Drawing.Point(4, 50);
-            this.tpExpenses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpExpenses.Margin = new System.Windows.Forms.Padding(2);
             this.tpExpenses.Name = "tpExpenses";
-            this.tpExpenses.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpExpenses.Padding = new System.Windows.Forms.Padding(2);
             this.tpExpenses.Size = new System.Drawing.Size(781, 348);
             this.tpExpenses.TabIndex = 7;
             this.tpExpenses.Text = "Account Descriptions";
@@ -488,7 +515,7 @@
             this.btnCancelExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelExpense.ForeColor = System.Drawing.Color.White;
             this.btnCancelExpense.Location = new System.Drawing.Point(695, 127);
-            this.btnCancelExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelExpense.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelExpense.Name = "btnCancelExpense";
             this.btnCancelExpense.Size = new System.Drawing.Size(79, 34);
             this.btnCancelExpense.TabIndex = 52;
@@ -503,7 +530,7 @@
             this.btnSaveExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveExpense.ForeColor = System.Drawing.Color.White;
             this.btnSaveExpense.Location = new System.Drawing.Point(611, 127);
-            this.btnSaveExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveExpense.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveExpense.Name = "btnSaveExpense";
             this.btnSaveExpense.Size = new System.Drawing.Size(79, 34);
             this.btnSaveExpense.TabIndex = 51;
@@ -518,7 +545,7 @@
             this.btnRemoveExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveExpense.ForeColor = System.Drawing.Color.White;
             this.btnRemoveExpense.Location = new System.Drawing.Point(527, 127);
-            this.btnRemoveExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveExpense.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveExpense.Name = "btnRemoveExpense";
             this.btnRemoveExpense.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveExpense.TabIndex = 50;
@@ -532,7 +559,7 @@
             this.tbxExpenseCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseCode.Enabled = false;
             this.tbxExpenseCode.Location = new System.Drawing.Point(515, 100);
-            this.tbxExpenseCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxExpenseCode.Margin = new System.Windows.Forms.Padding(2);
             this.tbxExpenseCode.MaxLength = 75;
             this.tbxExpenseCode.Name = "tbxExpenseCode";
             this.tbxExpenseCode.Size = new System.Drawing.Size(259, 25);
@@ -554,7 +581,7 @@
             this.tbxExpenseDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxExpenseDescription.Enabled = false;
             this.tbxExpenseDescription.Location = new System.Drawing.Point(515, 57);
-            this.tbxExpenseDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxExpenseDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbxExpenseDescription.MaxLength = 75;
             this.tbxExpenseDescription.Name = "tbxExpenseDescription";
             this.tbxExpenseDescription.Size = new System.Drawing.Size(259, 25);
@@ -577,7 +604,7 @@
             this.btnEditExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditExpense.ForeColor = System.Drawing.Color.White;
             this.btnEditExpense.Location = new System.Drawing.Point(598, 2);
-            this.btnEditExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditExpense.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditExpense.Name = "btnEditExpense";
             this.btnEditExpense.Size = new System.Drawing.Size(79, 34);
             this.btnEditExpense.TabIndex = 43;
@@ -592,7 +619,7 @@
             this.btnNewExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewExpense.ForeColor = System.Drawing.Color.White;
             this.btnNewExpense.Location = new System.Drawing.Point(515, 2);
-            this.btnNewExpense.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewExpense.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewExpense.Name = "btnNewExpense";
             this.btnNewExpense.Size = new System.Drawing.Size(79, 34);
             this.btnNewExpense.TabIndex = 42;
@@ -637,7 +664,7 @@
             this.dgvExpenses.EnableHeadersVisualStyles = false;
             this.dgvExpenses.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvExpenses.Location = new System.Drawing.Point(2, 2);
-            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvExpenses.Margin = new System.Windows.Forms.Padding(2);
             this.dgvExpenses.MultiSelect = false;
             this.dgvExpenses.Name = "dgvExpenses";
             this.dgvExpenses.ReadOnly = true;
@@ -677,9 +704,9 @@
             this.tpBanks.Controls.Add(this.btnNewbank);
             this.tpBanks.Controls.Add(this.dgvBanks);
             this.tpBanks.Location = new System.Drawing.Point(4, 50);
-            this.tpBanks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBanks.Margin = new System.Windows.Forms.Padding(2);
             this.tpBanks.Name = "tpBanks";
-            this.tpBanks.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBanks.Padding = new System.Windows.Forms.Padding(2);
             this.tpBanks.Size = new System.Drawing.Size(781, 348);
             this.tpBanks.TabIndex = 8;
             this.tpBanks.Text = "Banks";
@@ -691,7 +718,7 @@
             this.btnCancelBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelBank.ForeColor = System.Drawing.Color.White;
             this.btnCancelBank.Location = new System.Drawing.Point(695, 127);
-            this.btnCancelBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelBank.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelBank.Name = "btnCancelBank";
             this.btnCancelBank.Size = new System.Drawing.Size(79, 34);
             this.btnCancelBank.TabIndex = 62;
@@ -706,7 +733,7 @@
             this.btnSaveBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveBank.ForeColor = System.Drawing.Color.White;
             this.btnSaveBank.Location = new System.Drawing.Point(611, 127);
-            this.btnSaveBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveBank.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveBank.Name = "btnSaveBank";
             this.btnSaveBank.Size = new System.Drawing.Size(79, 34);
             this.btnSaveBank.TabIndex = 61;
@@ -721,7 +748,7 @@
             this.btnRemoveBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveBank.ForeColor = System.Drawing.Color.White;
             this.btnRemoveBank.Location = new System.Drawing.Point(527, 127);
-            this.btnRemoveBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveBank.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveBank.Name = "btnRemoveBank";
             this.btnRemoveBank.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveBank.TabIndex = 60;
@@ -735,7 +762,7 @@
             this.tbxBankCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxBankCode.Enabled = false;
             this.tbxBankCode.Location = new System.Drawing.Point(515, 100);
-            this.tbxBankCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxBankCode.Margin = new System.Windows.Forms.Padding(2);
             this.tbxBankCode.MaxLength = 75;
             this.tbxBankCode.Name = "tbxBankCode";
             this.tbxBankCode.Size = new System.Drawing.Size(259, 25);
@@ -757,7 +784,7 @@
             this.tbxBankDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxBankDescription.Enabled = false;
             this.tbxBankDescription.Location = new System.Drawing.Point(515, 57);
-            this.tbxBankDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxBankDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbxBankDescription.MaxLength = 75;
             this.tbxBankDescription.Name = "tbxBankDescription";
             this.tbxBankDescription.Size = new System.Drawing.Size(259, 25);
@@ -780,7 +807,7 @@
             this.btnEditBank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditBank.ForeColor = System.Drawing.Color.White;
             this.btnEditBank.Location = new System.Drawing.Point(598, 2);
-            this.btnEditBank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditBank.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditBank.Name = "btnEditBank";
             this.btnEditBank.Size = new System.Drawing.Size(79, 34);
             this.btnEditBank.TabIndex = 55;
@@ -795,7 +822,7 @@
             this.btnNewbank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewbank.ForeColor = System.Drawing.Color.White;
             this.btnNewbank.Location = new System.Drawing.Point(515, 2);
-            this.btnNewbank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewbank.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewbank.Name = "btnNewbank";
             this.btnNewbank.Size = new System.Drawing.Size(79, 34);
             this.btnNewbank.TabIndex = 54;
@@ -840,7 +867,7 @@
             this.dgvBanks.EnableHeadersVisualStyles = false;
             this.dgvBanks.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvBanks.Location = new System.Drawing.Point(2, 2);
-            this.dgvBanks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBanks.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBanks.MultiSelect = false;
             this.dgvBanks.Name = "dgvBanks";
             this.dgvBanks.ReadOnly = true;
@@ -882,9 +909,9 @@
             this.tpBankAccounts.Controls.Add(this.btnNewBankAccount);
             this.tpBankAccounts.Controls.Add(this.dgvBankAccounts);
             this.tpBankAccounts.Location = new System.Drawing.Point(4, 50);
-            this.tpBankAccounts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBankAccounts.Margin = new System.Windows.Forms.Padding(2);
             this.tpBankAccounts.Name = "tpBankAccounts";
-            this.tpBankAccounts.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpBankAccounts.Padding = new System.Windows.Forms.Padding(2);
             this.tpBankAccounts.Size = new System.Drawing.Size(781, 348);
             this.tpBankAccounts.TabIndex = 9;
             this.tpBankAccounts.Text = "Bank Accounts";
@@ -906,7 +933,7 @@
             this.cmbxBankAccountbank.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbxBankAccountbank.FormattingEnabled = true;
             this.cmbxBankAccountbank.Location = new System.Drawing.Point(515, 57);
-            this.cmbxBankAccountbank.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxBankAccountbank.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxBankAccountbank.Name = "cmbxBankAccountbank";
             this.cmbxBankAccountbank.Size = new System.Drawing.Size(261, 25);
             this.cmbxBankAccountbank.TabIndex = 63;
@@ -919,7 +946,7 @@
             this.btnCancelBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnCancelBankAccount.Location = new System.Drawing.Point(695, 171);
-            this.btnCancelBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelBankAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelBankAccount.Name = "btnCancelBankAccount";
             this.btnCancelBankAccount.Size = new System.Drawing.Size(79, 34);
             this.btnCancelBankAccount.TabIndex = 62;
@@ -934,7 +961,7 @@
             this.btnSaveBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnSaveBankAccount.Location = new System.Drawing.Point(611, 171);
-            this.btnSaveBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveBankAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveBankAccount.Name = "btnSaveBankAccount";
             this.btnSaveBankAccount.Size = new System.Drawing.Size(79, 34);
             this.btnSaveBankAccount.TabIndex = 61;
@@ -949,7 +976,7 @@
             this.btnRemoveBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnRemoveBankAccount.Location = new System.Drawing.Point(527, 171);
-            this.btnRemoveBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveBankAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveBankAccount.Name = "btnRemoveBankAccount";
             this.btnRemoveBankAccount.Size = new System.Drawing.Size(79, 34);
             this.btnRemoveBankAccount.TabIndex = 60;
@@ -963,7 +990,7 @@
             this.tbxBankAccountCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxBankAccountCode.Enabled = false;
             this.tbxBankAccountCode.Location = new System.Drawing.Point(515, 144);
-            this.tbxBankAccountCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxBankAccountCode.Margin = new System.Windows.Forms.Padding(2);
             this.tbxBankAccountCode.MaxLength = 75;
             this.tbxBankAccountCode.Name = "tbxBankAccountCode";
             this.tbxBankAccountCode.Size = new System.Drawing.Size(259, 25);
@@ -985,7 +1012,7 @@
             this.tbxBankAccountDescription.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbxBankAccountDescription.Enabled = false;
             this.tbxBankAccountDescription.Location = new System.Drawing.Point(515, 100);
-            this.tbxBankAccountDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxBankAccountDescription.Margin = new System.Windows.Forms.Padding(2);
             this.tbxBankAccountDescription.MaxLength = 75;
             this.tbxBankAccountDescription.Name = "tbxBankAccountDescription";
             this.tbxBankAccountDescription.Size = new System.Drawing.Size(259, 25);
@@ -1008,7 +1035,7 @@
             this.btnEditBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnEditBankAccount.Location = new System.Drawing.Point(598, 2);
-            this.btnEditBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditBankAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditBankAccount.Name = "btnEditBankAccount";
             this.btnEditBankAccount.Size = new System.Drawing.Size(79, 34);
             this.btnEditBankAccount.TabIndex = 55;
@@ -1023,7 +1050,7 @@
             this.btnNewBankAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewBankAccount.ForeColor = System.Drawing.Color.White;
             this.btnNewBankAccount.Location = new System.Drawing.Point(515, 2);
-            this.btnNewBankAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewBankAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewBankAccount.Name = "btnNewBankAccount";
             this.btnNewBankAccount.Size = new System.Drawing.Size(79, 34);
             this.btnNewBankAccount.TabIndex = 54;
@@ -1070,7 +1097,7 @@
             this.dgvBankAccounts.EnableHeadersVisualStyles = false;
             this.dgvBankAccounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvBankAccounts.Location = new System.Drawing.Point(2, 2);
-            this.dgvBankAccounts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBankAccounts.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBankAccounts.MultiSelect = false;
             this.dgvBankAccounts.Name = "dgvBankAccounts";
             this.dgvBankAccounts.ReadOnly = true;
@@ -1117,7 +1144,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(716, 477);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(79, 34);
             this.btnClose.TabIndex = 11;
@@ -1132,7 +1159,7 @@
             this.btnUserSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserSettings.ForeColor = System.Drawing.Color.White;
             this.btnUserSettings.Location = new System.Drawing.Point(6, 477);
-            this.btnUserSettings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUserSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnUserSettings.Name = "btnUserSettings";
             this.btnUserSettings.Size = new System.Drawing.Size(96, 34);
             this.btnUserSettings.TabIndex = 12;
@@ -1154,7 +1181,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MaintenanceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Payables | Maintenance";
@@ -1251,5 +1278,6 @@
         private System.Windows.Forms.Button btnUserSettings;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenses;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseCode;
+        private System.Windows.Forms.Button ChequeCancellationButton;
     }
 }

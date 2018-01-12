@@ -24,6 +24,7 @@ namespace Citicon.Payables
         private List<Bank> tempBanks;
         private List<BankAccount> tempBankAccounts;
         private decimal grandTotalAmount;
+        private BankAccount selectedBankAccount;
 
         string checkVoucherNumber;
         public ChequeIssuanceForm()
@@ -79,6 +80,7 @@ namespace Citicon.Payables
         {
             tempBanks.Clear();
             banks = await bankManager.GetListAsync();
+            cmbxBanks.Items.Add(banks);
         }
 
         private async Task LoadBankAccounts()
@@ -243,7 +245,7 @@ namespace Citicon.Payables
 
         private async void btnExportCheque_Click(object sender, EventArgs e)
         {
-            if (cmbxBankAccounts.SelectedItem != null)
+            if (selectedBankAccount != null)
             {
                 if (dgvPayables.Rows.Count > 0)
                 {
@@ -256,6 +258,10 @@ namespace Citicon.Payables
                         MessageBox.Show("Insufficient cheque number!", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    else if (await ChequeManager.IsCancelledAsync(rawChequeNumber, cmbxBankAccounts.SelectedItem as BankAccount))
+                    {
+                        MessageBox.Show("Cheque is cancelled.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     else if (await payableManager.ChequeNumberExistsAsync(chequeNumber))
                     {
                         MessageBox.Show("Cheque No. already exists.");
@@ -266,15 +272,14 @@ namespace Citicon.Payables
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
                         payable.ChequeNumber = rawChequeNumber;
                         payable.ChequeDate = dtpChequeDate.Value;
-                        payable.BankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
+                        payable.BankAccount = selectedBankAccount;
                         payable.TransactionDate = Supports.SystemDate;
                         payable.ChequeCompany = chequeCompany;
                         payableManager.Update(payable);
                     }
                     payableManager.ExportCheque(grandTotalAmount, payee, dtpChequeDate.Value);
-                    var bankAccount = (BankAccount)cmbxBankAccounts.SelectedItem;
-                    bankAccount.ChequeNumber++;
-                    bankAccountManager.Update(bankAccount);
+                    selectedBankAccount.ChequeNumber++;
+                    bankAccountManager.Update(selectedBankAccount);
                     await LoadCheckVoucherNumbers();
                     dgvPayables.Rows.Clear();
                     tbxCheckNumber.Text = "0000000";
@@ -309,13 +314,15 @@ namespace Citicon.Payables
             var form = new ChequeNumberRangeForm(cmbxBankAccounts.SelectedItem as BankAccount);
             form.ShowDialog();
 
-            var bankAccount = form.CurrentBankAccount;
+            selectedBankAccount = form.CurrentBankAccount;
 
-            if (bankAccount != null)
+            if (selectedBankAccount != null)
             {
-                cmbxBanks.SelectedItem = bankAccount.Bank;
-                cmbxBankAccounts.SelectedItem = bankAccount;
-                tbxCheckNumber.Text = bankAccount.ChequeNumber.ToString("0000000");
+                cmbxBanks.SelectedItem = selectedBankAccount.Bank;
+                cmbxBankAccounts.SelectedItem = selectedBankAccount;
+                tbxBank.Text = selectedBankAccount.Bank?.Description;
+                tbxBankAccount.Text = selectedBankAccount.Description;
+                tbxCheckNumber.Text = selectedBankAccount.ChequeNumber.ToString("0000000");
             }
         }
     }
