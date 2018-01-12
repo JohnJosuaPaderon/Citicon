@@ -140,6 +140,11 @@ namespace Citicon.DesktopClient.QuotationApproval
                     ScheduledDesignDeliveryManagement.InitializeDisplay();
                     await ScheduledDesignDeliveryManagement.GetScheduledDesignListAsync();
                     break;
+                //case 5:
+                //    GeneralTitle.Text = "Cheque Cancellation";
+                //    Transitioner.SelectedItem = ChequeCancellationSlide;
+
+                //    break;
             }
         }
 
