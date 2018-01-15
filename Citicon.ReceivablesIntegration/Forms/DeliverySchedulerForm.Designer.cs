@@ -47,6 +47,9 @@
             this.lblScheduledDate = new System.Windows.Forms.Label();
             this.dtpScheduledDate = new System.Windows.Forms.DateTimePicker();
             this.dgvScheduledProjectDesign = new System.Windows.Forms.DataGridView();
+            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledProjectDesign_MaximumVolume = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledProjectDesign_Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnScheduleSelectedProjectDesign = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -60,9 +63,9 @@
             this.StructureTypeComboBox = new System.Windows.Forms.ComboBox();
             this.ProjectDesignMaxVolumeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.ProjectDesignMaxVolumeLabel = new System.Windows.Forms.Label();
-            this.colScheduledProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_MaximumVolume = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledProjectDesign_Project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchPredicateComboBox = new System.Windows.Forms.ComboBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.SearchPredicateLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
@@ -257,6 +260,30 @@
             this.dgvScheduledProjectDesign.Size = new System.Drawing.Size(952, 679);
             this.dgvScheduledProjectDesign.TabIndex = 107;
             // 
+            // colScheduledProjectDesign
+            // 
+            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
+            this.colScheduledProjectDesign.MinimumWidth = 100;
+            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
+            this.colScheduledProjectDesign.ReadOnly = true;
+            // 
+            // colScheduledProjectDesign_MaximumVolume
+            // 
+            dataGridViewCellStyle9.Format = "#,##0.00";
+            this.colScheduledProjectDesign_MaximumVolume.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colScheduledProjectDesign_MaximumVolume.HeaderText = "Max. Vol.";
+            this.colScheduledProjectDesign_MaximumVolume.Name = "colScheduledProjectDesign_MaximumVolume";
+            this.colScheduledProjectDesign_MaximumVolume.ReadOnly = true;
+            this.colScheduledProjectDesign_MaximumVolume.Width = 87;
+            // 
+            // colScheduledProjectDesign_Project
+            // 
+            this.colScheduledProjectDesign_Project.HeaderText = "Project";
+            this.colScheduledProjectDesign_Project.MinimumWidth = 100;
+            this.colScheduledProjectDesign_Project.Name = "colScheduledProjectDesign_Project";
+            this.colScheduledProjectDesign_Project.ReadOnly = true;
+            // 
             // btnScheduleSelectedProjectDesign
             // 
             this.btnScheduleSelectedProjectDesign.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -335,15 +362,15 @@
             this.SearchLabel.AutoSize = true;
             this.SearchLabel.Location = new System.Drawing.Point(7, 12);
             this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(172, 21);
+            this.SearchLabel.Size = new System.Drawing.Size(57, 21);
             this.SearchLabel.TabIndex = 113;
-            this.SearchLabel.Text = "Search Client or Project";
+            this.SearchLabel.Text = "Search";
             // 
             // SearchTextBox
             // 
             this.SearchTextBox.Location = new System.Drawing.Point(12, 36);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(626, 29);
+            this.SearchTextBox.Size = new System.Drawing.Size(385, 29);
             this.SearchTextBox.TabIndex = 114;
             this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
             // 
@@ -412,29 +439,38 @@
             this.ProjectDesignMaxVolumeLabel.TabIndex = 120;
             this.ProjectDesignMaxVolumeLabel.Text = "Max. Vol.";
             // 
-            // colScheduledProjectDesign
+            // SearchPredicateComboBox
             // 
-            this.colScheduledProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colScheduledProjectDesign.HeaderText = "Scheduled Project Designs";
-            this.colScheduledProjectDesign.MinimumWidth = 100;
-            this.colScheduledProjectDesign.Name = "colScheduledProjectDesign";
-            this.colScheduledProjectDesign.ReadOnly = true;
+            this.SearchPredicateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SearchPredicateComboBox.FormattingEnabled = true;
+            this.SearchPredicateComboBox.Location = new System.Drawing.Point(403, 36);
+            this.SearchPredicateComboBox.Name = "SearchPredicateComboBox";
+            this.SearchPredicateComboBox.Size = new System.Drawing.Size(128, 29);
+            this.SearchPredicateComboBox.TabIndex = 121;
             // 
-            // colScheduledProjectDesign_MaximumVolume
+            // SearchButton
             // 
-            dataGridViewCellStyle9.Format = "#,##0.00";
-            this.colScheduledProjectDesign_MaximumVolume.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colScheduledProjectDesign_MaximumVolume.HeaderText = "Max. Vol.";
-            this.colScheduledProjectDesign_MaximumVolume.Name = "colScheduledProjectDesign_MaximumVolume";
-            this.colScheduledProjectDesign_MaximumVolume.ReadOnly = true;
-            this.colScheduledProjectDesign_MaximumVolume.Width = 87;
+            this.SearchButton.BackColor = System.Drawing.Color.Red;
+            this.SearchButton.FlatAppearance.BorderSize = 0;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
+            this.SearchButton.Location = new System.Drawing.Point(537, 36);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(101, 29);
+            this.SearchButton.TabIndex = 122;
+            this.SearchButton.Text = "SEARCH";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // colScheduledProjectDesign_Project
+            // SearchPredicateLabel
             // 
-            this.colScheduledProjectDesign_Project.HeaderText = "Project";
-            this.colScheduledProjectDesign_Project.MinimumWidth = 100;
-            this.colScheduledProjectDesign_Project.Name = "colScheduledProjectDesign_Project";
-            this.colScheduledProjectDesign_Project.ReadOnly = true;
+            this.SearchPredicateLabel.AutoSize = true;
+            this.SearchPredicateLabel.Location = new System.Drawing.Point(399, 12);
+            this.SearchPredicateLabel.Name = "SearchPredicateLabel";
+            this.SearchPredicateLabel.Size = new System.Drawing.Size(78, 21);
+            this.SearchPredicateLabel.TabIndex = 123;
+            this.SearchPredicateLabel.Text = "Search by";
             // 
             // DeliverySchedulerForm
             // 
@@ -442,6 +478,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1606, 818);
+            this.Controls.Add(this.SearchPredicateLabel);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.SearchPredicateComboBox);
             this.Controls.Add(this.ProjectDesignMaxVolumeLabel);
             this.Controls.Add(this.ProjectDesignMaxVolumeNumericUpDown);
             this.Controls.Add(this.StructureTypeComboBox);
@@ -504,5 +543,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign_MaximumVolume;
         private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledProjectDesign_Project;
+        private System.Windows.Forms.ComboBox SearchPredicateComboBox;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Label SearchPredicateLabel;
     }
 }

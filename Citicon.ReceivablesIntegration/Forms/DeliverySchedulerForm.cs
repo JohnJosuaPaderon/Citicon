@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.DataProcess;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -212,8 +213,16 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private async void DeliverySchedulerForm_Load(object sender, EventArgs e)
         {
-            await GetApprovedProjectListAsync();
+            //await GetApprovedProjectListAsync();
             await GetStructureTypeAsync();
+            LoadSearchPredicates();
+        }
+
+        private void LoadSearchPredicates()
+        {
+            SearchPredicateComboBox.Items.Clear();
+            SearchPredicateComboBox.Items.Add(SearchApprovedProjectPredicate.Client);
+            SearchPredicateComboBox.Items.Add(SearchApprovedProjectPredicate.Project);
         }
 
         private async Task GetStructureTypeAsync()
@@ -258,25 +267,74 @@ namespace Citicon.ReceivablesIntegration.Forms
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
-            var key = SearchTextBox.Text.Trim().ToUpper();
+            Search();
+        }
 
-            foreach (DataGridViewRow row in dgvProjects.Rows)
+        private void Search()
+        {
+            //var key = SearchTextBox.Text.Trim().ToUpper();
+
+            //foreach (DataGridViewRow row in dgvProjects.Rows)
+            //{
+            //    if (row.Cells[colProject.Name].Value is Project project)
+            //    {
+            //        if (project.Name.ToUpper().Contains(key) || (project.Client?.CompanyName.ToUpper().Contains(key) ?? false))
+            //        {
+            //            dgvProjects.FirstDisplayedScrollingRowIndex = row.Index;
+            //            row.Selected = true;
+            //            break;
+            //        }
+            //    }
+            //}
+        }
+
+        private async Task SearchAsync()
+        {
+            if (!string.IsNullOrWhiteSpace(SearchTextBox.Text))
             {
-                if (row.Cells[colProject.Name].Value is Project project)
+                if (SearchPredicateComboBox.SelectedItem is SearchApprovedProjectPredicate predicate)
                 {
-                    if (project.Name.ToUpper().Contains(key) || (project.Client?.CompanyName.ToUpper().Contains(key) ?? false))
+                    try
                     {
-                        dgvProjects.FirstDisplayedScrollingRowIndex = row.Index;
-                        row.Selected = true;
-                        break;
+                        dgvProjects.Rows.Clear();
+                        var result = await ProjectManager.SearchApprovedProjectAsync(SearchTextBox.Text.Trim(), predicate);
+
+                        if (result != null && result.Any())
+                        {
+                            foreach (var project in result)
+                            {
+                                AddProject(project);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("No result.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Invalid search predicate.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid search key.");
             }
         }
 
         private void UseRangedDateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             RangeEndDateTimePicker.Enabled = UseRangedDateCheckBox.Checked;
+        }
+
+        private async void SearchButton_Click(object sender, EventArgs e)
+        {
+            await SearchAsync();
         }
     }
 }
