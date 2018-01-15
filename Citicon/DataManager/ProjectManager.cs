@@ -142,6 +142,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<Project>> SearchApprovedProjectAsync(string searchKey, SearchApprovedProjectPredicate predicate)
+        {
+            if (!string.IsNullOrWhiteSpace(searchKey))
+            {
+                using (var process = new SearchApprovedProject(searchKey, predicate))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<IEnumerable<Project>> GetListWithUnpaidBillingSiNumberByClientAsync(Client client)
         {
             using (var getProjectListWithUnpaidBillingSiNumberByClient = new GetProjectListWithUnpaidBillingSiNumberByClient(client))
