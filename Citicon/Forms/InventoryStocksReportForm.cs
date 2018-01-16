@@ -41,7 +41,7 @@ namespace Citicon.Forms
 
             try
             {
-                var stocks = await StockManager.Search(new SearchStockOptions
+                var stocks = await StockManager.SearchAsync(new SearchStockOptions
                 {
                     Branch = BranchFilterComboBox.SelectedItem as Branch,
                     DeliveryDateRange = new DateTimeRange(DeliveryDateFilterBeginDateTimePicker.Value, DeliveryDateFilterEndDateTimePicker.Value),
