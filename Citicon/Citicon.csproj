@@ -73,6 +73,7 @@
     <Compile Include="DataManager\BillingPaymentManager.cs" />
     <Compile Include="DataManager\BillingStructureTypeManager.cs" />
     <Compile Include="DataManager\BranchManager.cs" />
+    <Compile Include="DataManager\ChequeManager.cs" />
     <Compile Include="DataManager\ChequeSummaryItemManager.cs" />
     <Compile Include="DataManager\CivilStatusManager.cs" />
     <Compile Include="DataManager\ClassificationManager.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="DataManager\ScheduledProjectDesignStatusManager.cs" />
     <Compile Include="DataManager\TransitMixerManager.cs" />
     <Compile Include="DataManager\TripReportManager.cs" />
+    <Compile Include="DataProcess\CancelCheque.cs" />
     <Compile Include="DataProcess\ChequeNumberExists.cs" />
     <Compile Include="DataProcess\ConfirmDelivery.cs" />
     <Compile Include="DataProcess\DeleteHoliday.cs" />
@@ -109,7 +111,6 @@
     <Compile Include="DataProcess\ExportDriverTripReport.cs" />
     <Compile Include="DataProcess\ExportExcelBase.cs" />
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
-    <Compile Include="DataProcess\ExportInventoryIssuanceSlip.cs" />
     <Compile Include="DataProcess\ExportIssuanceSlip.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\ExportStockReport.cs" />
@@ -234,6 +235,8 @@
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
+    <Compile Include="DataProcess\SearchApprovedProject.cs" />
+    <Compile Include="DataProcess\SearchApprovedProjectPredicate.cs" />
     <Compile Include="DataProcess\SearchItem.cs" />
     <Compile Include="DataProcess\SearchItemCategory.cs" />
     <Compile Include="DataProcess\SearchStock.cs" />
@@ -350,6 +353,7 @@
     <Compile Include="DataProcess\SaveEditedProduct.cs" />
     <Compile Include="DataProcess\SaveProjectDetails.cs" />
     <Compile Include="DataProcess\UpdatePumpType.cs" />
+    <Compile Include="DataProcess\VoidChequeExists.cs" />
     <Compile Include="Data\AccessoryType.cs" />
     <Compile Include="Data\Bank.cs" />
     <Compile Include="Data\BankAccount.cs" />
@@ -448,6 +452,7 @@
     <Compile Include="Data\User.cs" />
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
+    <Compile Include="Data\VoidCheque.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
     <Compile Include="Extensions\DbParameterCollectionExtension.cs" />
     <Compile Include="Extensions\MySqlCommandExtension.cs" />
@@ -621,6 +626,13 @@
     <Compile Include="Forms\Dialogs\AddTimeLogDialog.Designer.cs">
       <DependentUpon>AddTimeLogDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dialogs\ChequeCancellationController.cs" />
+    <Compile Include="Forms\Dialogs\ChequeCancellationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\ChequeCancellationDialog.Designer.cs">
+      <DependentUpon>ChequeCancellationDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Dialogs\ClientSearchDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -634,6 +646,7 @@
     <Compile Include="Forms\Dialogs\ManageCementSuppliedDialog.Designer.cs">
       <DependentUpon>ManageCementSuppliedDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MessageDisplay.cs" />
     <Compile Include="Forms\Dialogs\ProjectSearchDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -659,6 +672,7 @@
     <Compile Include="Forms\EngineerDeliveryCreationForm.Designer.cs">
       <DependentUpon>EngineerDeliveryCreationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormControllerBase.cs" />
     <Compile Include="Forms\InventoryStocksReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -688,6 +702,12 @@
     </Compile>
     <Compile Include="Forms\OutgoingStockForm.Designer.cs">
       <DependentUpon>OutgoingStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OutgoingStockReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OutgoingStockReportForm.Designer.cs">
+      <DependentUpon>OutgoingStockReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ProjectDesignManagementForm.cs">
       <SubType>Form</SubType>
@@ -901,6 +921,9 @@
     <EmbeddedResource Include="Forms\Dialogs\AddTimeLogDialog.resx">
       <DependentUpon>AddTimeLogDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\ChequeCancellationDialog.resx">
+      <DependentUpon>ChequeCancellationDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dialogs\ClientSearchDialog.resx">
       <DependentUpon>ClientSearchDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -933,6 +956,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OutgoingStockForm.resx">
       <DependentUpon>OutgoingStockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OutgoingStockReportForm.resx">
+      <DependentUpon>OutgoingStockReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProjectDesignManagementForm.resx">
       <DependentUpon>ProjectDesignManagementForm.cs</DependentUpon>
