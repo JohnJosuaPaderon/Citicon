@@ -167,10 +167,7 @@ namespace Citicon.Payables
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
-                        //if (payable.Description != ConfigurationManager.AppSettings["Payable.Description.InputTax"])
-                        //{
-                        //    grandTotalAmount += payable.Debit;
-                        //}
+                        
                         if (payable.Expense == Expense.CashInBank)
                         {
                             grandTotalAmount += payable.Value;
@@ -261,12 +258,14 @@ namespace Citicon.Payables
                     else if (await ChequeManager.IsCancelledAsync(rawChequeNumber, cmbxBankAccounts.SelectedItem as BankAccount))
                     {
                         MessageBox.Show("Cheque is cancelled.", Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                     else if (await payableManager.ChequeNumberExistsAsync(chequeNumber))
                     {
                         MessageBox.Show("Cheque No. already exists.");
                         return;
                     }
+
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
@@ -277,6 +276,7 @@ namespace Citicon.Payables
                         payable.ChequeCompany = chequeCompany;
                         payableManager.Update(payable);
                     }
+
                     payableManager.ExportCheque(grandTotalAmount, payee, dtpChequeDate.Value);
                     selectedBankAccount.ChequeNumber++;
                     bankAccountManager.Update(selectedBankAccount);
@@ -287,10 +287,7 @@ namespace Citicon.Payables
                     tbxPayee.Text = string.Empty;
                     ChequeCompanyComboBox.SelectedItem = null;
                     payee = null;
-                    //cmbxBanks.SelectedItem = null;
-                    //cmbxBankAccounts.Items.Clear();
                     tbxGrandTotal.Text = "0.00";
-                    //await setCheckVoucherNumber();
                     ClearCheckVoucherNumber();
                     MessageBox.Show("Done!", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
