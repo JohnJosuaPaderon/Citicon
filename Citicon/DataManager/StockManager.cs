@@ -658,7 +658,7 @@ namespace Citicon.DataManager
             return Task.Factory.StartNew(() => Update(data));
         }
 
-        public static Task<IEnumerable<Stock>> Search(SearchStockOptions options)
+        public static Task<IEnumerable<Stock>> SearchAsync(SearchStockOptions options)
         {
             using (var process = new SearchStock(options))
             {
