@@ -154,7 +154,7 @@ namespace Citicon.DataProcess
             }
 
             Workbook.SaveAs(FilePath);
-            PrintOption = ExportExcelPrintOption.Workbook;
+            PrintOption = ExportExcelPrintOption.None;
             base.Execute();
         }
 
