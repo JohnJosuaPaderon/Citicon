@@ -4,6 +4,12 @@ namespace Citicon.Data
 {
     public sealed class DateTimeRange
     {
+        public DateTimeRange()
+        {
+            Begin = default(DateTime);
+            End = default(DateTime);
+        }
+
         public DateTimeRange(DateTime begin, DateTime end)
         {
             Begin = begin;
