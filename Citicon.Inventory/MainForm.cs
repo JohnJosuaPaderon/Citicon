@@ -177,7 +177,7 @@ namespace Citicon.Inventory
 
         private void BtnReports_Click(object sender, EventArgs e)
         {
-            var form = new InventoryStocksReportForm();
+            var form = new InventoryReportForm();
             form.ShowDialog();
             //ReportsForm form = new ReportsForm();
             //form.ShowDialog();
