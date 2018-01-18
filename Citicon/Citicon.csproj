@@ -90,6 +90,7 @@
     <Compile Include="DataManager\GenericManager.cs" />
     <Compile Include="DataManager\HolidayManager.cs" />
     <Compile Include="DataManager\HolidayTypeManager.cs" />
+    <Compile Include="DataManager\OutgoingStockManager.cs" />
     <Compile Include="DataManager\PayrollTypeManager.cs" />
     <Compile Include="DataManager\ScheduledProjectDesignStatusManager.cs" />
     <Compile Include="DataManager\TransitMixerManager.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
     <Compile Include="DataProcess\ExportIssuanceSlip.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
+    <Compile Include="DataProcess\ExportOutgoingStockReport.cs" />
     <Compile Include="DataProcess\ExportStockReport.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
@@ -141,6 +143,8 @@
     <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
     <Compile Include="DataProcess\GetEmployeePayrollAddition.cs" />
     <Compile Include="DataProcess\GetEmployeePayrollDeduction.cs" />
+    <Compile Include="DataProcess\GetFilteredOutgoingStockList.cs" />
+    <Compile Include="DataProcess\GetFilteredOutgoingStockListOption.cs" />
     <Compile Include="DataProcess\GetHolidayList.cs" />
     <Compile Include="DataProcess\GetHolidayTypeById.cs" />
     <Compile Include="DataProcess\GetHolidayTypeList.cs" />
@@ -400,6 +404,7 @@
     <Compile Include="Data\OperationTimeFrame.cs" />
     <Compile Include="Data\OtherCharge.cs" />
     <Compile Include="Data\OtherChargeType.cs" />
+    <Compile Include="Data\OutgoingStock.cs" />
     <Compile Include="Data\Payable.cs" />
     <Compile Include="Data\PayableType.cs" />
     <Compile Include="Data\PaymentTerm.cs" />
@@ -560,6 +565,15 @@
     <Compile Include="Forms\DailyTallySheetForm.Designer.cs">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InventoryReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryReportForm.Designer.cs">
+      <DependentUpon>InventoryReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryReportFormContent.cs" />
+    <Compile Include="Forms\InventoryReportFormController.cs" />
+    <Compile Include="WindowsForm\DataGridViewCellCollectionExtension.cs" />
     <Compile Include="Forms\DeliveryConfirmationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -709,6 +723,7 @@
     <Compile Include="Forms\OutgoingStockReportForm.Designer.cs">
       <DependentUpon>OutgoingStockReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OutgoingStockReportFormController.cs" />
     <Compile Include="Forms\ProjectDesignManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -832,6 +847,7 @@
     <Compile Include="Utilities\ValueConverter.Definitions.UInt16.cs" />
     <Compile Include="Utilities\ValueConverter.Definitions.UInt32.cs" />
     <Compile Include="Utilities\ValueConverter.Definitions.UInt64.cs" />
+    <Compile Include="WindowsForm\DataGridViewRowExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddUserForm.resx">
@@ -941,6 +957,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EngineerDeliveryCreationForm.resx">
       <DependentUpon>EngineerDeliveryCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryReportForm.resx">
+      <DependentUpon>InventoryReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventoryStocksReportForm.resx">
       <DependentUpon>InventoryStocksReportForm.cs</DependentUpon>
