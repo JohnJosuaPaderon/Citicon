@@ -25,11 +25,14 @@ namespace Citicon.Payables
         private List<BankAccount> tempBankAccounts;
         private decimal grandTotalAmount;
         private BankAccount selectedBankAccount;
+        private List<Supplier> MultiSuppliers;
 
         string checkVoucherNumber;
         public ChequeIssuanceForm()
         {
             InitializeComponent();
+            MultiSuppliers = new List<Supplier>();
+
             payableManager = new PayableManager();
             payableManager.ExceptionCatched += ExceptionCatched;
             //payableManager.NewChequeVoucherNumber += PayableManager_NewChequeVoucherNumber;
@@ -94,6 +97,10 @@ namespace Citicon.Payables
             Invoke(new Action(() =>
             {
                 if (payee == null) payee = e.Supplier;
+                if (!MultiSuppliers.Contains(e.Supplier))
+                {
+                    MultiSuppliers.Add(e.Supplier); 
+                }
                 dgvPayables.Rows.Add(e, e.Company, e.Branch, e.Value.ToString("#,##0.00"));
             }));
         }
@@ -148,7 +155,7 @@ namespace Citicon.Payables
             }
         }
 
-        private async Task SetCheckVoucherNumber()
+        private async Task SetCheckVoucherNumberAsync()
         {
             var x = tbxCheckVoucherNumber.Text.Trim();
             Color backColor = Color.White;
@@ -160,10 +167,12 @@ namespace Citicon.Payables
                 if (x != checkVoucherNumber)
                 {
                     payee = null;
+                    MultiSuppliers.Clear();
                     checkVoucherNumber = x;
                     dgvPayables.Rows.Clear();
                     payables = await payableManager.GetListByChequeVoucherNumberAsync(x);
                     grandTotalAmount = 0;
+
                     foreach (DataGridViewRow row in dgvPayables.Rows)
                     {
                         var payable = (Payable)row.Cells[colPayable.Name].Value;
@@ -181,6 +190,13 @@ namespace Citicon.Payables
             tbxCheckVoucherNumber.ForeColor = foreColor;
             tbxPayee.BackColor = backColor;
             tbxPayee.ForeColor = foreColor;
+
+            if (MultiSuppliers.Count > 1)
+            {
+                MessageBox.Show("Multiple suppliers found.");
+                ClearCheckVoucherNumber();
+                return;
+            }
         }
 
         private void ClearCheckVoucherNumber()
@@ -204,7 +220,7 @@ namespace Citicon.Payables
 
         private async void tbxCheckVoucherNumber_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) await SetCheckVoucherNumber();
+            if (e.KeyCode == Keys.Enter) await SetCheckVoucherNumberAsync();
         }
 
         private void tbxCheckVoucherNumber_Leave(object sender, EventArgs e)
