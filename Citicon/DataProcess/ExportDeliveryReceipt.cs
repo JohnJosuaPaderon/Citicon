@@ -15,10 +15,11 @@ namespace Citicon.DataProcess
             ResolveSaveLocation();
         }
 
-        public ExportDeliveryReceipt(Delivery delivery)
+        public ExportDeliveryReceipt(Delivery delivery, bool printAfterSave)
         {
             Delivery = delivery ?? throw new ArgumentNullException(nameof(delivery));
             PrintOption = ExportExcelPrintOption.Workbook;
+            _PrintAfterSave = printAfterSave;
         }
 
         public static string Template { get; private set; }
@@ -42,6 +43,7 @@ namespace Citicon.DataProcess
 
         public Delivery Delivery { get; private set; }
         public string FilePath { get; private set; }
+        private readonly bool _PrintAfterSave;
 
         public override void Execute()
         {
@@ -69,11 +71,21 @@ namespace Citicon.DataProcess
                 Worksheet.Cells[32, 2] = Delivery.Admixture;
                 Worksheet.Cells[32, 4] = Delivery.AdmixtureQuantity;
                 Worksheet.Cells[37, 1] = Delivery.PlantLeave?.ToString("HHmm");
+                Worksheet.Cells[4, 6] = Delivery.DeliveryReceiptNumberDisplay;
                 Worksheet.Cells[29, 3] = Delivery.ProjectDesign?.MixType == ProjectDesignMixType.PCD ? "PCD" : string.Empty;
 
                 DirectoryResolver.Resolve(SaveLocation);
                 FilePath = Path.Combine(SaveLocation, string.Format("{0}.xlsx", Delivery.DeliveryReceiptNumberDisplay));
                 Workbook.SaveAs(FilePath);
+
+                if (_PrintAfterSave)
+                {
+                    PrintOption = ExportExcelPrintOption.Workbook;
+                }
+                else
+                {
+                    PrintOption = ExportExcelPrintOption.None;
+                }
 
                 base.Execute();
             }

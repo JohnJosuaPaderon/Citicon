@@ -255,62 +255,69 @@ namespace Citicon.DataProcess
 
         private void WriteDeliveries()
         {
-            var table = Document.Tables[3];
-            var counter = 2;
-            Word.Cell cell = null;
-            decimal totalVolume = 0;
-
-            if (Supports.DebugMode)
+            try
             {
-                var list = new List<Delivery>(Billing.Deliveries);
+                var table = Document.Tables[3];
+                var counter = 2;
+                Word.Cell cell = null;
+                decimal totalVolume = 0;
 
-                for (int i = 0; i < 5; i++)
+                //if (Supports.DebugMode)
+                //{
+                //    var list = new List<Delivery>(Billing.Deliveries);
+
+                //    for (int i = 0; i < 5; i++)
+                //    {
+                //        list.AddRange(Billing.Deliveries);
+                //    }
+
+                //    Billing.Deliveries.AddRange(list);
+                //}
+
+                foreach (var delivery in Billing.Deliveries)
                 {
-                    list.AddRange(Billing.Deliveries);
+                    totalVolume += delivery.Volume;
+
+                    cell = table.Cell(counter, 1);
+                    cell.Range.Text = delivery.DeliveryDate.ToString(FORMAT_DATE);
+
+                    cell = table.Cell(counter, 2);
+                    cell.Range.Text = delivery.ProjectDesign.ToString();
+
+                    cell = table.Cell(counter, 3);
+                    cell.Range.Text = delivery.DeliveryReceiptNumberDisplay;
+
+                    cell = table.Cell(counter, 4);
+                    cell.Range.Text = delivery.Volume.ToString(FORMAT_CURRENCY);
+
+                    if (!ReachedMaxFirstPageDelivery && (counter >= MaxFirstPageDelivery + 1))
+                    {
+                        ReachedMaxFirstPageDelivery = true;
+                        table = Document.Tables[5];
+                        counter = 0;
+                    }
+
+                    if (ReachedMaxFirstPageDelivery)
+                    {
+                        table.Rows.Add();
+                    }
+
+                    counter++;
                 }
-
-                Billing.Deliveries.AddRange(list);
-            }
-
-            foreach (var delivery in Billing.Deliveries)
-            {
-                totalVolume += delivery.Volume;
-
-                cell = table.Cell(counter, 1);
-                cell.Range.Text = delivery.DeliveryDate.ToString(FORMAT_DATE);
-
-                cell = table.Cell(counter, 2);
-                cell.Range.Text = delivery.ProjectDesign.ToString();
-
-                cell = table.Cell(counter, 3);
-                cell.Range.Text = delivery.DeliveryReceiptNumberDisplay;
 
                 cell = table.Cell(counter, 4);
-                cell.Range.Text = delivery.Volume.ToString(FORMAT_CURRENCY);
+                var topBorder = cell.Borders[Word.WdBorderType.wdBorderTop];
+                var bottomBorder = cell.Borders[Word.WdBorderType.wdBorderBottom];
 
-                if (!ReachedMaxFirstPageDelivery && counter >= MaxFirstPageDelivery + 1)
-                {
-                    ReachedMaxFirstPageDelivery = true;
-                    table = Document.Tables[5];
-                    counter = 0;
-                }
+                topBorder.LineStyle = Word.WdLineStyle.wdLineStyleSingle;
+                bottomBorder.LineStyle = Word.WdLineStyle.wdLineStyleDouble;
 
-                if (ReachedMaxFirstPageDelivery)
-                {
-                    table.Rows.Add();
-                }
-
-                counter++;
+                cell.Range.Text = totalVolume.ToString(FORMAT_CURRENCY);
             }
-
-            cell = table.Cell(counter, 4);
-            var topBorder = cell.Borders[Word.WdBorderType.wdBorderTop];
-            var bottomBorder = cell.Borders[Word.WdBorderType.wdBorderBottom];
-
-            topBorder.LineStyle = Word.WdLineStyle.wdLineStyleSingle;
-            bottomBorder.LineStyle = Word.WdLineStyle.wdLineStyleDouble;
-
-            cell.Range.Text = totalVolume.ToString(FORMAT_CURRENCY);
+            catch (Exception)
+            {
+                // There's an unknown error here.
+            }
         }
 
         public void Dispose()

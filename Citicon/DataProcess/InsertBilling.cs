@@ -86,7 +86,7 @@ namespace Citicon.DataProcess
                 const string PARAM_BILLINGNO = "@_BillingNumber";
                 command.Parameters.Add(new MySqlParameter { ParameterName = PARAM_ID, Direction = ParameterDirection.Output });
                 command.Parameters.Add(new MySqlParameter { ParameterName = PARAM_BILLINGNO, Direction = ParameterDirection.Output });
-                command.Parameters.AddWithValue("@_Volume", Billing.Volume);
+                command.Parameters.AddWithValue("@_Volume", Billing.GetVolume());
                 command.Parameters.AddWithValue("@_AmountDue", Billing.GetAmountDue());
                 command.Parameters.AddWithValue("@_AmountPaid", Billing.AmountPaid);
                 command.Parameters.AddWithValue("@_StructureTypeId", Billing.StructureType.Id);
