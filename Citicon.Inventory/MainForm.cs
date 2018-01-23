@@ -133,6 +133,7 @@ namespace Citicon.Inventory
         {
             ItemManagerForm form = new ItemManagerForm();
             form.ShowDialog();
+            form = null;
         }
 
         private void BtnMaintenance_Click(object sender, EventArgs e)
@@ -146,6 +147,7 @@ namespace Citicon.Inventory
         {
             IncomingStocksform form = new IncomingStocksform();
             form.ShowDialog();
+            form = null;
         }
 
         private void BtnOutgoingStocks_Click(object sender, EventArgs e)
@@ -153,6 +155,7 @@ namespace Citicon.Inventory
             //OutgoingStocksForm form = new OutgoingStocksForm();
             var form = new OutgoingStockForm();
             form.ShowDialog();
+            form = null;
         }
 
         private void BtnViewTracking_Click(object sender, EventArgs e)

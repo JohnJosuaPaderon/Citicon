@@ -66,9 +66,9 @@
             this.Header.Controls.Add(this.UserPane);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
-            this.Header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Header.Margin = new System.Windows.Forms.Padding(2);
             this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(929, 68);
+            this.Header.Size = new System.Drawing.Size(934, 68);
             this.Header.TabIndex = 0;
             // 
             // lblCiticonInventory
@@ -78,7 +78,7 @@
             this.lblCiticonInventory.Location = new System.Drawing.Point(0, 0);
             this.lblCiticonInventory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCiticonInventory.Name = "lblCiticonInventory";
-            this.lblCiticonInventory.Size = new System.Drawing.Size(547, 68);
+            this.lblCiticonInventory.Size = new System.Drawing.Size(552, 68);
             this.lblCiticonInventory.TabIndex = 1;
             this.lblCiticonInventory.Text = "Citicon Inventory";
             this.lblCiticonInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -89,8 +89,8 @@
             this.UserPane.Controls.Add(this.lblLogout);
             this.UserPane.Controls.Add(this.lblHelloUser);
             this.UserPane.Dock = System.Windows.Forms.DockStyle.Right;
-            this.UserPane.Location = new System.Drawing.Point(547, 0);
-            this.UserPane.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserPane.Location = new System.Drawing.Point(552, 0);
+            this.UserPane.Margin = new System.Windows.Forms.Padding(2);
             this.UserPane.Name = "UserPane";
             this.UserPane.Size = new System.Drawing.Size(382, 68);
             this.UserPane.TabIndex = 0;
@@ -138,7 +138,7 @@
             this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItems.ForeColor = System.Drawing.Color.White;
             this.btnItems.Location = new System.Drawing.Point(138, 72);
-            this.btnItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnItems.Margin = new System.Windows.Forms.Padding(2);
             this.btnItems.Name = "btnItems";
             this.btnItems.Size = new System.Drawing.Size(128, 57);
             this.btnItems.TabIndex = 6;
@@ -152,7 +152,7 @@
             this.btnIncomingStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncomingStocks.ForeColor = System.Drawing.Color.White;
             this.btnIncomingStocks.Location = new System.Drawing.Point(270, 72);
-            this.btnIncomingStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIncomingStocks.Margin = new System.Windows.Forms.Padding(2);
             this.btnIncomingStocks.Name = "btnIncomingStocks";
             this.btnIncomingStocks.Size = new System.Drawing.Size(128, 57);
             this.btnIncomingStocks.TabIndex = 7;
@@ -166,7 +166,7 @@
             this.btnOutgoingStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOutgoingStocks.ForeColor = System.Drawing.Color.White;
             this.btnOutgoingStocks.Location = new System.Drawing.Point(401, 72);
-            this.btnOutgoingStocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOutgoingStocks.Margin = new System.Windows.Forms.Padding(2);
             this.btnOutgoingStocks.Name = "btnOutgoingStocks";
             this.btnOutgoingStocks.Size = new System.Drawing.Size(128, 57);
             this.btnOutgoingStocks.TabIndex = 8;
@@ -180,7 +180,7 @@
             this.btnMaintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaintenance.ForeColor = System.Drawing.Color.White;
             this.btnMaintenance.Location = new System.Drawing.Point(663, 72);
-            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMaintenance.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaintenance.Name = "btnMaintenance";
             this.btnMaintenance.Size = new System.Drawing.Size(128, 57);
             this.btnMaintenance.TabIndex = 9;
@@ -194,7 +194,7 @@
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.Color.White;
             this.btnReports.Location = new System.Drawing.Point(532, 72);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(128, 57);
             this.btnReports.TabIndex = 10;
@@ -245,7 +245,7 @@
             this.dgvItems.EnableHeadersVisualStyles = false;
             this.dgvItems.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.dgvItems.Location = new System.Drawing.Point(8, 160);
-            this.dgvItems.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvItems.Margin = new System.Windows.Forms.Padding(2);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
@@ -254,7 +254,7 @@
             this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItems.RowTemplate.Height = 30;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(914, 321);
+            this.dgvItems.Size = new System.Drawing.Size(919, 515);
             this.dgvItems.TabIndex = 11;
             // 
             // colItems
@@ -298,7 +298,7 @@
             this.btnViewTracking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewTracking.ForeColor = System.Drawing.Color.White;
             this.btnViewTracking.Location = new System.Drawing.Point(794, 72);
-            this.btnViewTracking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewTracking.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewTracking.Name = "btnViewTracking";
             this.btnViewTracking.Size = new System.Drawing.Size(128, 57);
             this.btnViewTracking.TabIndex = 12;
@@ -312,7 +312,7 @@
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.Location = new System.Drawing.Point(8, 72);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(128, 57);
             this.btnRefresh.TabIndex = 13;
@@ -334,7 +334,7 @@
             // 
             this.tbxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbxSearch.Location = new System.Drawing.Point(52, 134);
-            this.tbxSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(404, 25);
             this.tbxSearch.TabIndex = 15;
@@ -344,7 +344,7 @@
             // 
             this.lblMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMessage.AutoSize = true;
-            this.lblMessage.Location = new System.Drawing.Point(725, 136);
+            this.lblMessage.Location = new System.Drawing.Point(730, 136);
             this.lblMessage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(197, 17);
@@ -357,7 +357,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(929, 482);
+            this.ClientSize = new System.Drawing.Size(934, 686);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.lblSearch);
@@ -374,7 +374,8 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(950, 725);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Inventory";
