@@ -118,7 +118,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dgvBilling.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBilling.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBilling.Size = new System.Drawing.Size(660, 586);
+            this.dgvBilling.Size = new System.Drawing.Size(660, 603);
             this.dgvBilling.TabIndex = 0;
             this.dgvBilling.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBilling_CellContentClick);
             // 
@@ -166,10 +166,10 @@
             // 
             this.lblSiNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSiNumber.AutoSize = true;
-            this.lblSiNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.lblSiNumber.Location = new System.Drawing.Point(731, 621);
+            this.lblSiNumber.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSiNumber.Location = new System.Drawing.Point(669, 638);
             this.lblSiNumber.Name = "lblSiNumber";
-            this.lblSiNumber.Size = new System.Drawing.Size(49, 17);
+            this.lblSiNumber.Size = new System.Drawing.Size(99, 37);
             this.lblSiNumber.TabIndex = 1;
             this.lblSiNumber.Text = "S.I. No.";
             // 
@@ -177,7 +177,7 @@
             // 
             this.tbxSiNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxSiNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbxSiNumber.Location = new System.Drawing.Point(734, 645);
+            this.tbxSiNumber.Location = new System.Drawing.Point(774, 639);
             this.tbxSiNumber.Name = "tbxSiNumber";
             this.tbxSiNumber.Size = new System.Drawing.Size(334, 38);
             this.tbxSiNumber.TabIndex = 2;
@@ -188,13 +188,13 @@
             this.btnSave.BackColor = System.Drawing.Color.Red;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(1073, 621);
+            this.btnSave.Location = new System.Drawing.Point(1114, 637);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 57);
+            this.btnSave.Size = new System.Drawing.Size(100, 40);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -203,13 +203,13 @@
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(1199, 621);
+            this.btnCancel.Location = new System.Drawing.Point(1220, 637);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 57);
+            this.btnCancel.Size = new System.Drawing.Size(100, 40);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -367,7 +367,7 @@
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
             this.dgvProjects.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjects.Size = new System.Drawing.Size(643, 290);
+            this.dgvProjects.Size = new System.Drawing.Size(643, 307);
             this.dgvProjects.TabIndex = 9;
             this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged);
             // 

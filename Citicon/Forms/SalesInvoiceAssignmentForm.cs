@@ -92,6 +92,12 @@ namespace Citicon.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(tbxSiNumber.Text))
+            {
+                MessageBox.Show("Invalid Sales Invoice No.");
+                return;
+            }
+
             var billings = new List<Billing>();
             foreach (DataGridViewRow row in dgvBilling.Rows)
             {

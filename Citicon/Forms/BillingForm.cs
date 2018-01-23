@@ -1,5 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.Forms.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -502,10 +503,7 @@ namespace Citicon.Forms
         #region RemoveAll Entity
         private void RemoveAllPumpcreteCharges()
         {
-            var header = "Pumpcrete Charges";
-            var content = "Do you really want to remove all Pumpcrete Charges?";
-            var result = MessageBox.Show(content, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var result = PromptMessage_YesNo("Pumpcrete Charges", "Do you really want to remove all Pumpcrete Charges?");
             if (result == DialogResult.Yes)
             {
                 dgvPumpcreteCharges.Rows.Clear();
@@ -514,10 +512,7 @@ namespace Citicon.Forms
 
         private void RemoveAllExcessPipeCharges()
         {
-            var header = "Excess Pipe Charges";
-            var content = "Do you really want to remove all Excess Pipe Charges?";
-            var result = MessageBox.Show(content, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var result = PromptMessage_YesNo("Excess Pipe Charges", "Do you really want to remove all Excess Pipe Charges?");
             if (result == DialogResult.Yes)
             {
                 dgvExcessPipeCharges.Rows.Clear();
@@ -526,10 +521,7 @@ namespace Citicon.Forms
 
         private void RemoveAllOtherCharges()
         {
-            var header = "Other Charges";
-            var content = "Do you really want to remove all Other Charges?";
-            var result = MessageBox.Show(content, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var result = PromptMessage_YesNo("Other Charges", "Do you really want to remove all Other Charges?");
             if (result == DialogResult.Yes)
             {
                 dgvOtherCharges.Rows.Clear();
@@ -538,12 +530,14 @@ namespace Citicon.Forms
         #endregion
 
         #region RemoveSelected Entity
+        private DialogResult PromptMessage_YesNo(string header, string content)
+        {
+            return MessageBox.Show(content, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
         private void RemoveSelectedPumpcreteCharge()
         {
-            var header = "Pumpcrete Charges";
-            var content = "Do you really want to remove the selected Pumpcrete Charge?";
-            var result = MessageBox.Show(content, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var result = PromptMessage_YesNo("Pumpcrete Charges", "Do you really want to remove the selected Pumpcrete Charge?");
             if (result == DialogResult.Yes)
             {
                 var row = dgvPumpcreteCharges.SelectedRows[0];
@@ -553,10 +547,7 @@ namespace Citicon.Forms
 
         private void RemoveSelectedExcessPipeCharge()
         {
-            var header = "Excess Pipe Charges";
-            var content = "Do you really want to remove the selected Excess Pipe Charge?";
-            var result = MessageBox.Show(content, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var result = PromptMessage_YesNo("Excess Pipe Charges", "Do you really want to remove the selected Excess Pipe Charge?");
             if (result == DialogResult.Yes)
             {
                 var row = dgvExcessPipeCharges.SelectedRows[0];
@@ -566,10 +557,7 @@ namespace Citicon.Forms
 
         private void RemoveSelectedOtherCharge()
         {
-            var header = "Other Charges";
-            var content = "Do you really want to remove the selected Other Charge?";
-            var result = MessageBox.Show(content, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            var result = PromptMessage_YesNo("Other Charges", "Do you really want to remove the selected Other Charge?");
             if (result == DialogResult.Yes)
             {
                 var row = dgvOtherCharges.SelectedRows[0];
@@ -608,7 +596,11 @@ namespace Citicon.Forms
 
         private async void btnSaveBilling_Click(object sender, EventArgs e)
         {
-            if (ValidateBilling())
+            if (cmbxStructureType.SelectedItem == null)
+            {
+                MessageBox.Show("Select Structure Type.");
+            }
+            else if (ValidateBilling())
             {
                 await SaveBillingAsync();
                 ClearAll();
@@ -761,6 +753,38 @@ namespace Citicon.Forms
             if (task.Status == TaskStatus.RanToCompletion)
             {
                 MessageBox.Show("Exported!");
+            }
+        }
+
+        private void SelectAllDeliveriesButton_Click(object sender, EventArgs e)
+        {
+            IncludeAllDeliveries(true);
+        }
+
+        private void IncludeAllDeliveries(bool isIncluded)
+        {
+            if (dgvDeliveries.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dgvDeliveries.Rows)
+                {
+                    row.Cells[colDelivery_Included.Name].Value = isIncluded;
+                }
+            }
+        }
+
+        private void DeSelectAllDeliveriesButton_Click(object sender, EventArgs e)
+        {
+            IncludeAllDeliveries(false);
+        }
+
+        private void AddStructureTypeLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var structureType = AddEditStructureTypeDialog.Add();
+
+            if (structureType != null)
+            {
+                GetStructureTypeList();
+                cmbxStructureType.SelectedItem = structureType;
             }
         }
     }

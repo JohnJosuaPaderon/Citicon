@@ -79,6 +79,8 @@
             this.colProject_Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcBillingDefinition = new System.Windows.Forms.TabControl();
             this.tpBilling_Deliveries = new System.Windows.Forms.TabPage();
+            this.DeSelectAllDeliveriesButton = new System.Windows.Forms.Button();
+            this.SelectAllDeliveriesButton = new System.Windows.Forms.Button();
             this.dgvDeliveries = new System.Windows.Forms.DataGridView();
             this.colDelivery_Included = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colDelivery = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,6 +189,7 @@
             this.dtpBillingDate = new System.Windows.Forms.DateTimePicker();
             this.lblNotes = new System.Windows.Forms.Label();
             this.tbxNotes = new System.Windows.Forms.TextBox();
+            this.AddStructureTypeLinkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             this.tcBillingDefinition.SuspendLayout();
@@ -390,6 +393,8 @@
             // 
             // tpBilling_Deliveries
             // 
+            this.tpBilling_Deliveries.Controls.Add(this.DeSelectAllDeliveriesButton);
+            this.tpBilling_Deliveries.Controls.Add(this.SelectAllDeliveriesButton);
             this.tpBilling_Deliveries.Controls.Add(this.dgvDeliveries);
             this.tpBilling_Deliveries.Location = new System.Drawing.Point(4, 40);
             this.tpBilling_Deliveries.Margin = new System.Windows.Forms.Padding(2);
@@ -399,6 +404,38 @@
             this.tpBilling_Deliveries.TabIndex = 0;
             this.tpBilling_Deliveries.Text = "Deliveries";
             this.tpBilling_Deliveries.UseVisualStyleBackColor = true;
+            // 
+            // DeSelectAllDeliveriesButton
+            // 
+            this.DeSelectAllDeliveriesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeSelectAllDeliveriesButton.BackColor = System.Drawing.Color.Red;
+            this.DeSelectAllDeliveriesButton.FlatAppearance.BorderSize = 0;
+            this.DeSelectAllDeliveriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeSelectAllDeliveriesButton.ForeColor = System.Drawing.Color.White;
+            this.DeSelectAllDeliveriesButton.Location = new System.Drawing.Point(686, 451);
+            this.DeSelectAllDeliveriesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DeSelectAllDeliveriesButton.Name = "DeSelectAllDeliveriesButton";
+            this.DeSelectAllDeliveriesButton.Size = new System.Drawing.Size(110, 40);
+            this.DeSelectAllDeliveriesButton.TabIndex = 29;
+            this.DeSelectAllDeliveriesButton.Text = "Deselect All";
+            this.DeSelectAllDeliveriesButton.UseVisualStyleBackColor = false;
+            this.DeSelectAllDeliveriesButton.Click += new System.EventHandler(this.DeSelectAllDeliveriesButton_Click);
+            // 
+            // SelectAllDeliveriesButton
+            // 
+            this.SelectAllDeliveriesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectAllDeliveriesButton.BackColor = System.Drawing.Color.Red;
+            this.SelectAllDeliveriesButton.FlatAppearance.BorderSize = 0;
+            this.SelectAllDeliveriesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SelectAllDeliveriesButton.ForeColor = System.Drawing.Color.White;
+            this.SelectAllDeliveriesButton.Location = new System.Drawing.Point(585, 451);
+            this.SelectAllDeliveriesButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SelectAllDeliveriesButton.Name = "SelectAllDeliveriesButton";
+            this.SelectAllDeliveriesButton.Size = new System.Drawing.Size(97, 40);
+            this.SelectAllDeliveriesButton.TabIndex = 28;
+            this.SelectAllDeliveriesButton.Text = "Select All";
+            this.SelectAllDeliveriesButton.UseVisualStyleBackColor = false;
+            this.SelectAllDeliveriesButton.Click += new System.EventHandler(this.SelectAllDeliveriesButton_Click);
             // 
             // dgvDeliveries
             // 
@@ -453,7 +490,7 @@
             dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvDeliveries.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvDeliveries.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeliveries.Size = new System.Drawing.Size(792, 486);
+            this.dgvDeliveries.Size = new System.Drawing.Size(792, 442);
             this.dgvDeliveries.TabIndex = 2;
             // 
             // colDelivery_Included
@@ -696,7 +733,7 @@
             this.btnPumpcrete_RemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnPumpcrete_RemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPumpcrete_RemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnPumpcrete_RemoveSelected.Location = new System.Drawing.Point(571, 455);
+            this.btnPumpcrete_RemoveSelected.Location = new System.Drawing.Point(571, 421);
             this.btnPumpcrete_RemoveSelected.Margin = new System.Windows.Forms.Padding(2);
             this.btnPumpcrete_RemoveSelected.Name = "btnPumpcrete_RemoveSelected";
             this.btnPumpcrete_RemoveSelected.Size = new System.Drawing.Size(117, 40);
@@ -713,7 +750,7 @@
             this.btnPumpcrete_RemoveAll.FlatAppearance.BorderSize = 0;
             this.btnPumpcrete_RemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPumpcrete_RemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnPumpcrete_RemoveAll.Location = new System.Drawing.Point(692, 455);
+            this.btnPumpcrete_RemoveAll.Location = new System.Drawing.Point(692, 421);
             this.btnPumpcrete_RemoveAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnPumpcrete_RemoveAll.Name = "btnPumpcrete_RemoveAll";
             this.btnPumpcrete_RemoveAll.Size = new System.Drawing.Size(97, 40);
@@ -777,7 +814,7 @@
             dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvPumpcreteCharges.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvPumpcreteCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPumpcreteCharges.Size = new System.Drawing.Size(784, 189);
+            this.dgvPumpcreteCharges.Size = new System.Drawing.Size(784, 156);
             this.dgvPumpcreteCharges.TabIndex = 25;
             this.dgvPumpcreteCharges.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvPumpcreteCharges_RowsAdded);
             this.dgvPumpcreteCharges.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvPumpcreteCharges_RowsRemoved);
@@ -1027,7 +1064,7 @@
             this.btnExcessPipe_RemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnExcessPipe_RemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcessPipe_RemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnExcessPipe_RemoveSelected.Location = new System.Drawing.Point(571, 454);
+            this.btnExcessPipe_RemoveSelected.Location = new System.Drawing.Point(571, 421);
             this.btnExcessPipe_RemoveSelected.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcessPipe_RemoveSelected.Name = "btnExcessPipe_RemoveSelected";
             this.btnExcessPipe_RemoveSelected.Size = new System.Drawing.Size(117, 40);
@@ -1044,7 +1081,7 @@
             this.btnExcessPipe_RemoveAll.FlatAppearance.BorderSize = 0;
             this.btnExcessPipe_RemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcessPipe_RemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnExcessPipe_RemoveAll.Location = new System.Drawing.Point(692, 454);
+            this.btnExcessPipe_RemoveAll.Location = new System.Drawing.Point(692, 421);
             this.btnExcessPipe_RemoveAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcessPipe_RemoveAll.Name = "btnExcessPipe_RemoveAll";
             this.btnExcessPipe_RemoveAll.Size = new System.Drawing.Size(97, 40);
@@ -1107,7 +1144,7 @@
             dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvExcessPipeCharges.RowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dgvExcessPipeCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExcessPipeCharges.Size = new System.Drawing.Size(784, 233);
+            this.dgvExcessPipeCharges.Size = new System.Drawing.Size(784, 200);
             this.dgvExcessPipeCharges.TabIndex = 41;
             this.dgvExcessPipeCharges.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvExcessPipeCharges_RowsAdded);
             this.dgvExcessPipeCharges.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvExcessPipeCharges_RowsRemoved);
@@ -1427,7 +1464,7 @@
             this.btnOther_RemoveSelected.FlatAppearance.BorderSize = 0;
             this.btnOther_RemoveSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOther_RemoveSelected.ForeColor = System.Drawing.Color.White;
-            this.btnOther_RemoveSelected.Location = new System.Drawing.Point(571, 455);
+            this.btnOther_RemoveSelected.Location = new System.Drawing.Point(571, 421);
             this.btnOther_RemoveSelected.Margin = new System.Windows.Forms.Padding(2);
             this.btnOther_RemoveSelected.Name = "btnOther_RemoveSelected";
             this.btnOther_RemoveSelected.Size = new System.Drawing.Size(117, 40);
@@ -1443,7 +1480,7 @@
             this.btnOther_RemoveAll.FlatAppearance.BorderSize = 0;
             this.btnOther_RemoveAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOther_RemoveAll.ForeColor = System.Drawing.Color.White;
-            this.btnOther_RemoveAll.Location = new System.Drawing.Point(692, 455);
+            this.btnOther_RemoveAll.Location = new System.Drawing.Point(692, 421);
             this.btnOther_RemoveAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnOther_RemoveAll.Name = "btnOther_RemoveAll";
             this.btnOther_RemoveAll.Size = new System.Drawing.Size(97, 40);
@@ -1505,7 +1542,7 @@
             dataGridViewCellStyle40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvOtherCharges.RowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dgvOtherCharges.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOtherCharges.Size = new System.Drawing.Size(784, 341);
+            this.dgvOtherCharges.Size = new System.Drawing.Size(784, 307);
             this.dgvOtherCharges.TabIndex = 31;
             this.dgvOtherCharges.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvOtherCharges_RowsAdded);
             this.dgvOtherCharges.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvOtherCharges_RowsRemoved);
@@ -1906,12 +1943,25 @@
             this.tbxNotes.Size = new System.Drawing.Size(660, 25);
             this.tbxNotes.TabIndex = 10;
             // 
+            // AddStructureTypeLinkLabel
+            // 
+            this.AddStructureTypeLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddStructureTypeLinkLabel.AutoSize = true;
+            this.AddStructureTypeLinkLabel.Location = new System.Drawing.Point(175, 607);
+            this.AddStructureTypeLinkLabel.Name = "AddStructureTypeLinkLabel";
+            this.AddStructureTypeLinkLabel.Size = new System.Drawing.Size(32, 17);
+            this.AddStructureTypeLinkLabel.TabIndex = 27;
+            this.AddStructureTypeLinkLabel.TabStop = true;
+            this.AddStructureTypeLinkLabel.Text = "Add";
+            this.AddStructureTypeLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.AddStructureTypeLinkLabel_LinkClicked);
+            // 
             // BillingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1409, 735);
+            this.Controls.Add(this.AddStructureTypeLinkLabel);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.dtpBillingDate);
             this.Controls.Add(this.tbxNotes);
@@ -2095,5 +2145,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDelivery_CommulativeVolume;
         private System.Windows.Forms.Label lblNotes;
         private System.Windows.Forms.TextBox tbxNotes;
+        private System.Windows.Forms.Button DeSelectAllDeliveriesButton;
+        private System.Windows.Forms.Button SelectAllDeliveriesButton;
+        private System.Windows.Forms.LinkLabel AddStructureTypeLinkLabel;
     }
 }

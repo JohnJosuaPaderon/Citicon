@@ -2,11 +2,7 @@
 using Citicon.DataManager;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -298,7 +294,7 @@ namespace Citicon.Forms
             }
             var form = new BillingPaymentConfirmationForm(billings);
             form.ShowDialog();
-            ReloadBillings();
+            LoadClientsWithBillingSiNumber();
         }
 
         private void ReloadBillings()

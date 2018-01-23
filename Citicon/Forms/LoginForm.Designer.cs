@@ -45,7 +45,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
             this.btnCancel.Location = new System.Drawing.Point(205, 248);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(88, 40);
             this.btnCancel.TabIndex = 15;
@@ -57,10 +57,11 @@
             // 
             this.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnLogin.BackColor = System.Drawing.Color.Red;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(114, 248);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(88, 40);
             this.btnLogin.TabIndex = 14;
@@ -72,7 +73,7 @@
             // 
             this.tbxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbxPassword.Location = new System.Drawing.Point(16, 181);
-            this.tbxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(279, 25);
             this.tbxPassword.TabIndex = 13;
@@ -94,7 +95,7 @@
             // 
             this.tbxUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbxUsername.Location = new System.Drawing.Point(16, 130);
-            this.tbxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.tbxUsername.Name = "tbxUsername";
             this.tbxUsername.Size = new System.Drawing.Size(279, 25);
             this.tbxUsername.TabIndex = 11;
@@ -140,7 +141,7 @@
             this.ForeColor = System.Drawing.Color.Red;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon";
