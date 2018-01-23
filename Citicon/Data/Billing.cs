@@ -34,6 +34,18 @@ namespace Citicon.Data
         {
             return BillingNo;
         }
+
+        public decimal GetVolume()
+        {
+            var result = 0M;
+
+            foreach (var delivery in Deliveries)
+            {
+                result += delivery.Volume;
+            }
+            return Volume = result;
+        }
+
         public decimal GetAmountDue()
         {
             decimal amountDue = 0;
@@ -55,7 +67,7 @@ namespace Citicon.Data
 
             foreach (Delivery delivery in Deliveries)
             {
-                amountDue += (delivery.PricePerCubicMeter * delivery.CumulativeVolume);
+                amountDue += (delivery.PricePerCubicMeter * delivery.Volume);
             }
 
             return amountDue;
