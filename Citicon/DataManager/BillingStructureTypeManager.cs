@@ -32,5 +32,50 @@ namespace Citicon.DataManager
                 return await getBillingStructureTypeList.GetAsync();
             }
         }
+
+        public static async Task<bool> ExistsAsync(BillingStructureType structureType)
+        {
+            if (structureType != null)
+            {
+                using (var process =new BillingStructureTypeExists(structureType))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static async Task<BillingStructureType> InsertAsync(BillingStructureType structureType)
+        {
+            if (structureType != null)
+            {
+                using (var process = new InsertBillingStructureType(structureType))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<BillingStructureType> UpdateAsync(BillingStructureType structureType)
+        {
+            if (structureType != null)
+            {
+                using (var process = new UpdateBillingStructureType(structureType))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

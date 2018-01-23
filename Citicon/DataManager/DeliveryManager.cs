@@ -236,11 +236,11 @@ namespace Citicon.DataManager
             }
         }
 
-        public static async Task ExportDeliveryReceiptAsync(Delivery delivery)
+        public static async Task ExportDeliveryReceiptAsync(Delivery delivery, bool printAfterSave)
         {
             if (delivery != null)
             {
-                using (var process = new ExportDeliveryReceipt(delivery))
+                using (var process = new ExportDeliveryReceipt(delivery, printAfterSave))
                 {
                     await process.ExecuteAsync();
                 }
