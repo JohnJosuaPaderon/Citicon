@@ -266,7 +266,7 @@ namespace Citicon.ReceivablesIntegration.Forms
 
                 if (delivery != null)
                 {
-                    await DeliveryManager.ExportDeliveryReceiptAsync(delivery);
+                    await DeliveryManager.ExportDeliveryReceiptAsync(delivery, true);
                 }
                 else
                 {
