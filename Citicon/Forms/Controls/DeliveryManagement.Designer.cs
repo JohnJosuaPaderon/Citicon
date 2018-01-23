@@ -90,9 +90,10 @@
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox = new System.Windows.Forms.TextBox();
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel = new System.Windows.Forms.Label();
             this.PurchaseOrderWarningTimer = new System.Windows.Forms.Timer(this.components);
-            this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
             this.MaxScheduledVolumeTextBox = new System.Windows.Forms.TextBox();
             this.MaxScheduledVolumeLabel = new System.Windows.Forms.Label();
+            this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
+            this.PrintAfterSaveCheckBox = new System.Windows.Forms.CheckBox();
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
@@ -750,21 +751,6 @@
             this.PurchaseOrderWarningTimer.Interval = 500;
             this.PurchaseOrderWarningTimer.Tick += new System.EventHandler(this.PurchaseOrderWarningTimer_Tick);
             // 
-            // DeliveryReceiptRefreshButton
-            // 
-            this.DeliveryReceiptRefreshButton.BackColor = System.Drawing.Color.Red;
-            this.DeliveryReceiptRefreshButton.FlatAppearance.BorderSize = 0;
-            this.DeliveryReceiptRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeliveryReceiptRefreshButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeliveryReceiptRefreshButton.ForeColor = System.Drawing.Color.White;
-            this.DeliveryReceiptRefreshButton.Image = global::Citicon.Properties.Resources.Refresh_16;
-            this.DeliveryReceiptRefreshButton.Location = new System.Drawing.Point(394, 3);
-            this.DeliveryReceiptRefreshButton.Name = "DeliveryReceiptRefreshButton";
-            this.DeliveryReceiptRefreshButton.Size = new System.Drawing.Size(43, 43);
-            this.DeliveryReceiptRefreshButton.TabIndex = 115;
-            this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
-            this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
-            // 
             // MaxScheduledVolumeTextBox
             // 
             this.MaxScheduledVolumeTextBox.BackColor = System.Drawing.Color.White;
@@ -783,11 +769,37 @@
             this.MaxScheduledVolumeLabel.TabIndex = 122;
             this.MaxScheduledVolumeLabel.Text = "Max. Scheduled Volume";
             // 
+            // DeliveryReceiptRefreshButton
+            // 
+            this.DeliveryReceiptRefreshButton.BackColor = System.Drawing.Color.Red;
+            this.DeliveryReceiptRefreshButton.FlatAppearance.BorderSize = 0;
+            this.DeliveryReceiptRefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeliveryReceiptRefreshButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryReceiptRefreshButton.ForeColor = System.Drawing.Color.White;
+            this.DeliveryReceiptRefreshButton.Image = global::Citicon.Properties.Resources.Refresh_16;
+            this.DeliveryReceiptRefreshButton.Location = new System.Drawing.Point(394, 3);
+            this.DeliveryReceiptRefreshButton.Name = "DeliveryReceiptRefreshButton";
+            this.DeliveryReceiptRefreshButton.Size = new System.Drawing.Size(43, 43);
+            this.DeliveryReceiptRefreshButton.TabIndex = 115;
+            this.DeliveryReceiptRefreshButton.UseVisualStyleBackColor = false;
+            this.DeliveryReceiptRefreshButton.Click += new System.EventHandler(this.DeliveryReceiptRefreshButton_Click);
+            // 
+            // PrintAfterSaveCheckBox
+            // 
+            this.PrintAfterSaveCheckBox.AutoSize = true;
+            this.PrintAfterSaveCheckBox.Location = new System.Drawing.Point(10, 635);
+            this.PrintAfterSaveCheckBox.Name = "PrintAfterSaveCheckBox";
+            this.PrintAfterSaveCheckBox.Size = new System.Drawing.Size(116, 21);
+            this.PrintAfterSaveCheckBox.TabIndex = 124;
+            this.PrintAfterSaveCheckBox.Text = "Print After Save";
+            this.PrintAfterSaveCheckBox.UseVisualStyleBackColor = true;
+            // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.PrintAfterSaveCheckBox);
             this.Controls.Add(this.MaxScheduledVolumeTextBox);
             this.Controls.Add(this.MaxScheduledVolumeLabel);
             this.Controls.Add(this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox);
@@ -890,5 +902,6 @@
         private System.Windows.Forms.Label CumulativeVolumeLabel;
         private System.Windows.Forms.TextBox MaxScheduledVolumeTextBox;
         private System.Windows.Forms.Label MaxScheduledVolumeLabel;
+        private System.Windows.Forms.CheckBox PrintAfterSaveCheckBox;
     }
 }

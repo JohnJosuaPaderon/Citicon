@@ -300,6 +300,7 @@ namespace Citicon.Forms.Controls
             Delivery = new Delivery();
 
             Delivery_DeliveryDateTimePicker.Value = DateTime.Now;
+            PrintAfterSaveCheckBox.Checked = true;
 
             await GetDeliveryRouteListAsync();
             await GetDriverListAsync();
@@ -419,6 +420,8 @@ namespace Citicon.Forms.Controls
 
         private async void SaveDeliveryButton_Click(object sender, EventArgs e)
         {
+            await GetLatestDeliveryReceiptNumberAsync();
+
             Delivery.ServiceEngineer = ServiceEngineerComboBox.SelectedItem as Employee;
             Delivery.PricePerCubicMeter = ProjectDesign?.PricePerCubicMeter ?? 0;
             Delivery.AdmixtureQuantity = Delivery_AdmixtureQuantityTextBox.Text;
@@ -434,7 +437,7 @@ namespace Citicon.Forms.Controls
                     if (delivery != null)
                     {
                         MessageBox.Show("Successfully delivered.");
-                        await DeliveryManager.ExportDeliveryReceiptAsync(delivery);
+                        await DeliveryManager.ExportDeliveryReceiptAsync(delivery, PrintAfterSaveCheckBox.Checked);
                         OnCloseDialogRequested();
                     }
                     else
