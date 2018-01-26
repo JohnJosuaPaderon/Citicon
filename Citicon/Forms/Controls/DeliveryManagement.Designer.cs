@@ -94,6 +94,7 @@
             this.MaxScheduledVolumeLabel = new System.Windows.Forms.Label();
             this.DeliveryReceiptRefreshButton = new System.Windows.Forms.Button();
             this.PrintAfterSaveCheckBox = new System.Windows.Forms.CheckBox();
+            this.ResetLoadLinkLabel = new System.Windows.Forms.LinkLabel();
             this.ProjectGroupBox.SuspendLayout();
             this.DesignGroupBox.SuspendLayout();
             this.DeliveryGroupBox.SuspendLayout();
@@ -350,6 +351,7 @@
             // 
             this.DeliveryGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeliveryGroupBox.Controls.Add(this.ResetLoadLinkLabel);
             this.DeliveryGroupBox.Controls.Add(this.CumulativeVolumeNumericUpDown);
             this.DeliveryGroupBox.Controls.Add(this.CumulativeVolumeLabel);
             this.DeliveryGroupBox.Controls.Add(this.LoadNumericUpDown);
@@ -417,7 +419,7 @@
             0,
             0});
             this.LoadNumericUpDown.Name = "LoadNumericUpDown";
-            this.LoadNumericUpDown.Size = new System.Drawing.Size(88, 25);
+            this.LoadNumericUpDown.Size = new System.Drawing.Size(109, 25);
             this.LoadNumericUpDown.TabIndex = 135;
             this.LoadNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.LoadNumericUpDown.ThousandsSeparator = true;
@@ -433,9 +435,9 @@
             // 
             // MaxSlumpTextBox
             // 
-            this.MaxSlumpTextBox.Location = new System.Drawing.Point(346, 199);
+            this.MaxSlumpTextBox.Location = new System.Drawing.Point(367, 199);
             this.MaxSlumpTextBox.Name = "MaxSlumpTextBox";
-            this.MaxSlumpTextBox.Size = new System.Drawing.Size(143, 25);
+            this.MaxSlumpTextBox.Size = new System.Drawing.Size(122, 25);
             this.MaxSlumpTextBox.TabIndex = 133;
             // 
             // NewRouteButton
@@ -482,7 +484,7 @@
             // Delivery_MaxSlumpLabel
             // 
             this.Delivery_MaxSlumpLabel.AutoSize = true;
-            this.Delivery_MaxSlumpLabel.Location = new System.Drawing.Point(343, 176);
+            this.Delivery_MaxSlumpLabel.Location = new System.Drawing.Point(364, 179);
             this.Delivery_MaxSlumpLabel.Name = "Delivery_MaxSlumpLabel";
             this.Delivery_MaxSlumpLabel.Size = new System.Drawing.Size(73, 17);
             this.Delivery_MaxSlumpLabel.TabIndex = 39;
@@ -729,7 +731,7 @@
             // PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox
             // 
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.BackColor = System.Drawing.Color.White;
-            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Location = new System.Drawing.Point(615, 69);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Location = new System.Drawing.Point(288, 89);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Name = "PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox";
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.ReadOnly = true;
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterTextBox.Size = new System.Drawing.Size(246, 25);
@@ -739,7 +741,7 @@
             // PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel
             // 
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.AutoSize = true;
-            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Location = new System.Drawing.Point(612, 49);
+            this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Location = new System.Drawing.Point(211, 97);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Name = "PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel";
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.Size = new System.Drawing.Size(177, 17);
             this.PurchaseOrder_MaximumCumulativePricePerCubicMeterLabel.TabIndex = 120;
@@ -794,6 +796,17 @@
             this.PrintAfterSaveCheckBox.Text = "Print After Save";
             this.PrintAfterSaveCheckBox.UseVisualStyleBackColor = true;
             // 
+            // ResetLoadLinkLabel
+            // 
+            this.ResetLoadLinkLabel.AutoSize = true;
+            this.ResetLoadLinkLabel.Location = new System.Drawing.Point(321, 179);
+            this.ResetLoadLinkLabel.Name = "ResetLoadLinkLabel";
+            this.ResetLoadLinkLabel.Size = new System.Drawing.Size(40, 17);
+            this.ResetLoadLinkLabel.TabIndex = 138;
+            this.ResetLoadLinkLabel.TabStop = true;
+            this.ResetLoadLinkLabel.Text = "Reset";
+            this.ResetLoadLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ResetLoadLinkLabel_LinkClicked);
+            // 
             // DeliveryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -817,7 +830,7 @@
             this.Controls.Add(this.DeliveryReceiptNumberTextBox);
             this.Controls.Add(this.DeliveryReceiptNumberLabel);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.Red;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DeliveryManagement";
             this.Size = new System.Drawing.Size(869, 687);
@@ -903,5 +916,6 @@
         private System.Windows.Forms.TextBox MaxScheduledVolumeTextBox;
         private System.Windows.Forms.Label MaxScheduledVolumeLabel;
         private System.Windows.Forms.CheckBox PrintAfterSaveCheckBox;
+        private System.Windows.Forms.LinkLabel ResetLoadLinkLabel;
     }
 }

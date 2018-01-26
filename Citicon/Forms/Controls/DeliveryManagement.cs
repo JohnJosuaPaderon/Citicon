@@ -2,6 +2,7 @@
 using Citicon.DataManager;
 using Citicon.Forms.Dialogs;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -319,6 +320,7 @@ namespace Citicon.Forms.Controls
             SetDeliveryRoute();
             SetDeliveryTransitMixer();
             await GetAutoValuesAsync();
+            await GetCurrentLoadCutOffAsync();
 
             Delivery.Project = ProjectDesign.Project;
             Delivery.ProjectDesign = ProjectDesign;
@@ -329,6 +331,23 @@ namespace Citicon.Forms.Controls
         private void Delivery_DriverComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetDeliveryDriver();
+        }
+
+        private async Task GetCurrentLoadCutOffAsync()
+        {
+            try
+            {
+                var result = await ProjectDesignLoadCutOffManager.GetCurrentAsync(ProjectDesign);
+
+                if (result != null)
+                {
+                    Delivery.LoadCutOff = result;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
 
         private void SetDeliveryDriver()
@@ -586,6 +605,38 @@ namespace Citicon.Forms.Controls
                 }
 
                 Delivery_RouteComboBox.SelectedItem = route;
+            }
+        }
+
+        private async void ResetLoadLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var result = MessageBox.Show("Are you really sure, you want to reset Load counter?", "Reset Load Counter", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                await ResetAsync();
+            }
+        }
+
+        private async Task ResetAsync()
+        {
+            try
+            {
+                var result = await ProjectDesignLoadCutOffManager.ResetAsync(ProjectDesign);
+
+                if (result != null)
+                {
+                    Delivery.LoadCutOff = result;
+                    await GetAutoValuesAsync();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to reset Load counter.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
