@@ -1,7 +1,9 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
+using Citicon.WindowsForm;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,70 +20,36 @@ namespace Citicon.Forms
 
         }
 
-        private void SalesInvoiceAssignmentForm_Load(object sender, EventArgs e)
+        private async void SalesInvoiceAssignmentForm_Load(object sender, EventArgs e)
         {
-            LoadClientListWithoutBillingSiNumber();
+            await LoadClientListWithoutBillingSiNumberAsync();
         }
 
-        private void LoadClientListWithoutBillingSiNumber()
+        private async Task LoadClientListWithoutBillingSiNumberAsync()
         {
             dgvClients.Rows.Clear();
-            var task = ClientManager.GetListWithoutBillingSiNumberAsync();
-            task.ContinueWith(DisplayClientListWithoutBillingSiNumber);
-        }
-
-        private void DisplayClientListWithoutBillingSiNumber(Task<IEnumerable<Client>> task)
-        {
-            if (task.Status == TaskStatus.RanToCompletion)
+            var result = await ClientManager.GetListWithoutBillingSiNumberAsync();
+            foreach (var item in result)
             {
-                if (task.Result != null)
-                {
-                    List<DataGridViewRow> rows = new List<DataGridViewRow>();
-                    foreach (var item in task.Result)
-                    {
-                        var row = new DataGridViewRow();
-                        row.Height = 30;
-                        row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
-                        row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Address });
-                        rows.Add(row);
-                    }
-                    Invoke(new Action(() =>
-                    {
-                        dgvClients.Rows.AddRange(rows.ToArray());
-                    }));
-                }
+                dgvClients.Rows.Add(new DataGridViewRow()
+                    .SetHeight(30)
+                    .AddTextBoxCell(item)
+                    .AddTextBoxCell(item.Address));
             }
         }
 
-        private void LoadBillingListWithoutSiNumberByProject(Project project)
+        private async Task LoadBillingListWithoutSiNumberByProjectAsync(Project project)
         {
             dgvBilling.Rows.Clear();
-            var task = BillingManager.GetListWithoutSiNumberByProjectAsync(project);
-            task.ContinueWith(DisplayBillingListWithoutSiNumber);
-        }
-
-        private void DisplayBillingListWithoutSiNumber(Task<IEnumerable<Billing>> task)
-        {
-            if (task.Status == TaskStatus.RanToCompletion)
+            var result = await BillingManager.GetListWithoutSiNumberByProjectAsync(project);
+            foreach (var item in result)
             {
-                if (task.Result != null)
-                {
-                    List<DataGridViewRow> rows = new List<DataGridViewRow>();
-                    foreach (var item in task.Result)
-                    {
-                        var row = new DataGridViewRow();
-                        row.Cells.Add(new DataGridViewCheckBoxCell() { Value = false });
-                        row.Cells.Add(new DataGridViewTextBoxCell() { Value = item });
-                        row.Cells.Add(new DataGridViewTextBoxCell() { Value = item.Volume });
-                        row.Cells.Add(new DataGridViewTextBoxCell() { Value = item.AmountDue });
-                        row.Height = 30;
-                        rows.Add(row);
-                    }
-                    Invoke(new Action(() =>
-                    {
-                        dgvBilling.Rows.AddRange(rows.ToArray());
-                    }));
-                }
+                dgvBilling.Rows.Add(new DataGridViewRow()
+                    .SetHeight(30)
+                    .AddCheckBoxCell(false)
+                    .AddTextBoxCell(item)
+                    .AddTextBoxCell(item.Volume)
+                    .AddTextBoxCell(item.AmountDue));
             }
         }
 
@@ -119,12 +87,12 @@ namespace Citicon.Forms
             }
         }
 
-        private void dgvProjects_SelectionChanged(object sender, EventArgs e)
+        private async void dgvProjects_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvProjects.SelectedRows.Count > 0)
             {
                 var project = (Project)dgvProjects.SelectedRows[0].Cells[colProject.Name].Value;
-                LoadBillingListWithoutSiNumberByProject(project);
+                await LoadBillingListWithoutSiNumberByProjectAsync(project);
             }
         }
 
@@ -134,36 +102,65 @@ namespace Citicon.Forms
             {
                 if (task.Result != null)
                 {
-                    var rows = new List<DataGridViewRow>();
-                    foreach (var item in task.Result)
-                    {
-                        var row = new DataGridViewRow();
-                        row.Height = 30;
-                        row.Cells.Add(new DataGridViewTextBoxCell { Value = item });
-                        row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Location });
-                        rows.Add(row);
-                    }
-                    Invoke(new Action(() =>
-                    {
-                        dgvProjects.Rows.AddRange(rows.ToArray());
-                    }));
+                    
                 }
             }
         }
 
-        private void LoadProjectListWithoutBillingSiNumberByClient(Client client)
+        private async Task LoadProjectListWithoutBillingSiNumberByClientAsync(Client client)
         {
             dgvProjects.Rows.Clear();
-            var task = ProjectManager.GetListWithoutBillingSiNumberByClientAsync(client);
-            task.ContinueWith(DisplayProjectListWithoutBillingSiNumberByClient);
+            var result = await ProjectManager.GetListWithoutBillingSiNumberByClientAsync(client);
+            foreach (var item in result)
+            {
+                dgvProjects.Rows.Add(new DataGridViewRow()
+                    .SetHeight(30)
+                    .AddTextBoxCell(item)
+                    .AddTextBoxCell(item.Location));
+            }
         }
 
-        private void dgvClients_SelectionChanged(object sender, EventArgs e)
+        private async void dgvClients_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvClients.SelectedRows.Count > 0)
             {
                 var client = (Client)dgvClients.SelectedRows[0].Cells[colClient.Name].Value;
-                LoadProjectListWithoutBillingSiNumberByClient(client);
+                await LoadProjectListWithoutBillingSiNumberByClientAsync(client);
+            }
+        }
+
+        private async void dgvBilling_SelectionChanged(object sender, EventArgs e)
+        {
+            await GetDeliveriesAsync();
+        }
+
+        private async Task GetDeliveriesAsync()
+        {
+            DeliveriesDataGridView.Rows.Clear();
+
+            if (dgvBilling.SelectedRows.Count == 1 && dgvBilling.SelectedRows[0].Cells[colBilling.Name].Value is Billing billing)
+            {
+                try
+                {
+                    var result = await DeliveryManager.GetListByBillingAsync(billing);
+
+                    if (result != null && result.Any())
+                    {
+                        foreach (var delivery in result)
+                        {
+                            DeliveriesDataGridView.Rows.Add(new DataGridViewRow()
+                                .SetHeight(30)
+                                .AddTextBoxCell(delivery)
+                                .AddTextBoxCell(delivery.DeliveryReceiptNumberDisplay)
+                                .AddTextBoxCell(delivery.ProjectDesign)
+                                .AddTextBoxCell(delivery.Volume));
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
