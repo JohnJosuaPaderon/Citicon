@@ -246,5 +246,20 @@ namespace Citicon.DataManager
                 }
             }
         }
+
+        public static async Task<IEnumerable<Delivery>> GetListByBillingAsync(Billing billing)
+        {
+            if (billing != null)
+            {
+                using (var process = new GetDeliveryListByBilling(billing))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }
