@@ -168,6 +168,7 @@ namespace Citicon.ReceivablesIntegration.Forms
                     Height = 30
                 };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign.Quotation });
 
                 dgvProjectDesign.Rows.Add(row);
             }

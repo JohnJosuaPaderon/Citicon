@@ -43,7 +43,6 @@
             this.colProject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProject_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProjectDesign = new System.Windows.Forms.DataGridView();
-            this.colProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblScheduledDate = new System.Windows.Forms.Label();
             this.dtpScheduledDate = new System.Windows.Forms.DateTimePicker();
             this.dgvScheduledProjectDesign = new System.Windows.Forms.DataGridView();
@@ -66,6 +65,9 @@
             this.SearchPredicateComboBox = new System.Windows.Forms.ComboBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchPredicateLabel = new System.Windows.Forms.Label();
+            this.colProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProjectDesign_QuotationNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScheduledProjectDesign)).BeginInit();
@@ -160,7 +162,9 @@
             this.dgvProjectDesign.ColumnHeadersHeight = 60;
             this.dgvProjectDesign.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProjectDesign.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colProjectDesign});
+            this.colProjectDesign,
+            this.ProjectDesign_QuotationNumberColumn,
+            this.ProjectDesign_ExtraColumn});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,14 +186,6 @@
             this.dgvProjectDesign.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProjectDesign.Size = new System.Drawing.Size(628, 317);
             this.dgvProjectDesign.TabIndex = 104;
-            // 
-            // colProjectDesign
-            // 
-            this.colProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProjectDesign.HeaderText = "Project Designs";
-            this.colProjectDesign.MinimumWidth = 500;
-            this.colProjectDesign.Name = "colProjectDesign";
-            this.colProjectDesign.ReadOnly = true;
             // 
             // lblScheduledDate
             // 
@@ -472,6 +468,30 @@
             this.SearchPredicateLabel.TabIndex = 123;
             this.SearchPredicateLabel.Text = "Search by";
             // 
+            // colProjectDesign
+            // 
+            this.colProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colProjectDesign.HeaderText = "Project Designs";
+            this.colProjectDesign.MinimumWidth = 75;
+            this.colProjectDesign.Name = "colProjectDesign";
+            this.colProjectDesign.ReadOnly = true;
+            this.colProjectDesign.Width = 129;
+            // 
+            // ProjectDesign_QuotationNumberColumn
+            // 
+            this.ProjectDesign_QuotationNumberColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ProjectDesign_QuotationNumberColumn.HeaderText = "Quotation No.";
+            this.ProjectDesign_QuotationNumberColumn.Name = "ProjectDesign_QuotationNumberColumn";
+            this.ProjectDesign_QuotationNumberColumn.ReadOnly = true;
+            this.ProjectDesign_QuotationNumberColumn.Width = 121;
+            // 
+            // ProjectDesign_ExtraColumn
+            // 
+            this.ProjectDesign_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProjectDesign_ExtraColumn.HeaderText = "";
+            this.ProjectDesign_ExtraColumn.Name = "ProjectDesign_ExtraColumn";
+            this.ProjectDesign_ExtraColumn.ReadOnly = true;
+            // 
             // DeliverySchedulerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -531,7 +551,6 @@
         private System.Windows.Forms.Button btnRemoveSelected;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProject;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProject_Client;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProjectDesign;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.CheckBox UseRangedDateCheckBox;
@@ -546,5 +565,8 @@
         private System.Windows.Forms.ComboBox SearchPredicateComboBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label SearchPredicateLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProjectDesign;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_QuotationNumberColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_ExtraColumn;
     }
 }
