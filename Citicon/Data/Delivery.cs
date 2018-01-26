@@ -30,6 +30,7 @@ namespace Citicon.Data
         public DeliveryScheduleStatus ScheduleStatus { get; set; }
         public PurchaseOrder PurchaseOrder { get; set; }
         public Employee ServiceEngineer { get; set; }
+        public ProjectDesignLoadCutOff LoadCutOff { get; set; }
         public string DeliveryReceiptNumberDisplay
         {
             get
