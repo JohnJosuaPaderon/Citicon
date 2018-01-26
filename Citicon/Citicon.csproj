@@ -92,6 +92,7 @@
     <Compile Include="DataManager\HolidayTypeManager.cs" />
     <Compile Include="DataManager\OutgoingStockManager.cs" />
     <Compile Include="DataManager\PayrollTypeManager.cs" />
+    <Compile Include="DataManager\ProjectDesignLoadCutOffManager.cs" />
     <Compile Include="DataManager\ScheduledProjectDesignStatusManager.cs" />
     <Compile Include="DataManager\TransitMixerManager.cs" />
     <Compile Include="DataManager\TripReportManager.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="DataProcess\CancelCheque.cs" />
     <Compile Include="DataProcess\ChequeNumberExists.cs" />
     <Compile Include="DataProcess\ConfirmDelivery.cs" />
+    <Compile Include="DataProcess\CreateProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
     <Compile Include="DataProcess\DeleteScheduledProjectDesign.cs" />
@@ -129,9 +131,11 @@
     <Compile Include="DataProcess\GetConsumedProjectDesignVolume.cs" />
     <Compile Include="DataProcess\GetCurrentEmployeePayrollAdditionByEmployee.cs" />
     <Compile Include="DataProcess\GetCurrentEmployeePayrollDeductionByEmployee.cs" />
+    <Compile Include="DataProcess\GetCurrentProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
     <Compile Include="DataProcess\GetDeliveryConsumedCementSupplied.cs" />
+    <Compile Include="DataProcess\GetDeliveryListByBilling.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProject.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetDeliveryReceiptByNumber.cs" />
@@ -239,6 +243,7 @@
     <Compile Include="DataProcess\InsertTransaction.cs" />
     <Compile Include="DataProcess\InsertTransactionList.cs" />
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
+    <Compile Include="DataProcess\ResetProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
     <Compile Include="DataProcess\SearchApprovedProject.cs" />
@@ -401,6 +406,7 @@
     <Compile Include="Data\HolidayType.cs" />
     <Compile Include="Data\Item.cs" />
     <Compile Include="Data\JobPosition.cs" />
+    <Compile Include="Data\ProjectDesignLoadCutOff.cs" />
     <Compile Include="Data\MeasurementUnit.cs" />
     <Compile Include="Data\Module.cs" />
     <Compile Include="Data\MRISReport.cs" />
