@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.Extensions;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading.Tasks;
@@ -7,46 +8,40 @@ namespace Citicon.DataProcess
 {
     internal sealed class InsertDelivery : DataProcessBase
     {
+        private const string Parameter_Id = "@_Id";
+
         public InsertDelivery(Delivery delivery)
         {
-            Delivery = delivery ?? throw new ArgumentNullException(nameof(delivery));
+            _Delivery = delivery ?? throw new ArgumentNullException(nameof(delivery));
         }
 
-        private Delivery Delivery;
-        private const string Parameter_Id = "@_Id";
+        private readonly Delivery _Delivery;
 
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
-            var command = Utility.CreateProcedureCommand("InsertDelivery", connection, transaction);
-            command.Parameters.Add(Utility.CreateOutParameter(Parameter_Id));
-            command.Parameters.AddWithValue("@_ProjectId", Delivery.Project?.Id);
-            command.Parameters.AddWithValue("@_ProjectDesignId", Delivery.ProjectDesign?.Id);
-            command.Parameters.AddWithValue("@_DeliveryReceiptNumber", Delivery.DeliveryReceiptNumber);
-            command.Parameters.AddWithValue("@_DeliveryDate", Delivery.DeliveryDate);
-            command.Parameters.AddWithValue("@_Load", Delivery.Load);
-            command.Parameters.AddWithValue("@_PlantLeave", Delivery.PlantLeave);
-            command.Parameters.AddWithValue("@_PlantArrive", Delivery.PlantArrive);
-            command.Parameters.AddWithValue("@_Volume", Delivery.Volume);
-            command.Parameters.AddWithValue("@_PricePerCubicMeter", Delivery.PricePerCubicMeter);
-            command.Parameters.AddWithValue("@_RouteId", Delivery.Route?.Id);
-            command.Parameters.AddWithValue("@_TransitMixerId", Delivery.TransitMixer?.Id);
-            command.Parameters.AddWithValue("@_BranchId", Delivery.Branch?.Id);
-            command.Parameters.AddWithValue("@_DriverId", Delivery.Driver?.Id);
-            command.Parameters.AddWithValue("@_MaxSlump", Delivery.MaxSlump);
-            command.Parameters.AddWithValue("@_ScheduleStatus", (string)Delivery.ScheduleStatus);
-            command.Parameters.AddWithValue("@_PurchaseOrderId", Delivery.PurchaseOrder?.Id);
-            command.Parameters.AddWithValue("@_ServiceEngineerId", Delivery.ServiceEngineer?.Id);
-            command.Parameters.AddWithValue("@_Admixture", Delivery.Admixture);
-            command.Parameters.AddWithValue("@_AdmixtureQuantity", Delivery.AdmixtureQuantity);
-            command.Parameters.AddWithValue("@_CumulativeVolume", Delivery.CumulativeVolume);
-
-            return command;
-        }
-
-        public override void Dispose()
-        {
-            Delivery = null;
-            base.Dispose();
+            return Utility.CreateProcedureCommand("InsertDelivery", connection, transaction)
+                .AddOutParameter(Parameter_Id)
+                .AddInParameter("@_ProjectId", _Delivery.Project?.Id)
+                .AddInParameter("@_ProjectDesignId", _Delivery.ProjectDesign?.Id)
+                .AddInParameter("@_DeliveryReceiptNumber", _Delivery.DeliveryReceiptNumber)
+                .AddInParameter("@_DeliveryDate", _Delivery.DeliveryDate)
+                .AddInParameter("@_Load", _Delivery.Load)
+                .AddInParameter("@_PlantLeave", _Delivery.PlantLeave)
+                .AddInParameter("@_PlantArrive", _Delivery.PlantArrive)
+                .AddInParameter("@_Volume", _Delivery.Volume)
+                .AddInParameter("@_PricePerCubicMeter", _Delivery.PricePerCubicMeter)
+                .AddInParameter("@_RouteId", _Delivery.Route?.Id)
+                .AddInParameter("@_TransitMixerId", _Delivery.TransitMixer?.Id)
+                .AddInParameter("@_BranchId", _Delivery.Branch?.Id)
+                .AddInParameter("@_DriverId", _Delivery.Driver?.Id)
+                .AddInParameter("@_MaxSlump", _Delivery.MaxSlump)
+                .AddInParameter("@_ScheduleStatus", (string)_Delivery.ScheduleStatus)
+                .AddInParameter("@_PurchaseOrderId", _Delivery.PurchaseOrder?.Id)
+                .AddInParameter("@_ServiceEngineerId", _Delivery.ServiceEngineer?.Id)
+                .AddInParameter("@_Admixture", _Delivery.Admixture)
+                .AddInParameter("@_AdmixtureQuantity", _Delivery.AdmixtureQuantity)
+                .AddInParameter("@_CumulativeVolume", _Delivery.CumulativeVolume)
+                .AddInParameter("@_LoadCutOffId", _Delivery.LoadCutOff?.Id);
         }
 
         public Task<Delivery> ExecuteAsync()
@@ -60,14 +55,13 @@ namespace Citicon.DataProcess
             {
                 if (await command.ExecuteNonQueryAsync() == 1)
                 {
-                    Delivery.Id = Convert.ToUInt64(command.Parameters[Parameter_Id].Value);
+                    _Delivery.Id = Convert.ToUInt64(command.Parameters[Parameter_Id].Value);
+                    return _Delivery;
                 }
                 else
                 {
-                    Delivery = null;
+                    return null;
                 }
-
-                return Delivery;
             }
         }
     }

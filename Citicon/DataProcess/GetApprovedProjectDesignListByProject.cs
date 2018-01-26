@@ -4,8 +4,6 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
@@ -33,19 +31,14 @@ namespace Citicon.DataProcess
             return command;
         }
         
-        public Task<IEnumerable<ProjectDesign>> ExecuteAsync(MySqlConnection connection)
-        {
-            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand(connection), FromReader);
-        }
-
         public Task<IEnumerable<ProjectDesign>> ExecuteAsync()
         {
-            return ProcessUtility.HandleExecuteAsync(ExecuteAsync);
+            return ProcessUtility.HandleReadingIEnumerableAsync(CreateCommand, FromReaderAsync);
         }
 
-        private ProjectDesign FromReader(DbDataReader reader)
+        private async Task<ProjectDesign> FromReaderAsync(DbDataReader reader)
         {
-            return new ProjectDesign()
+            return new ProjectDesign
             {
                 Id = reader.GetUInt64("Id"),
                 PricePerCubicMeter = reader.GetDecimal("PricePerCubicMeter"),
@@ -57,7 +50,8 @@ namespace Citicon.DataProcess
                 CementFactor = reader.GetDecimal("CementFactor"),
                 ForApproval = false,
                 Project = Project,
-                PurchaseOrder = PurchaseOrderManager.GetById(reader.GetUInt64("PurchaseOrderId"))
+                PurchaseOrder = PurchaseOrderManager.GetById(reader.GetUInt64("PurchaseOrderId")),
+                Quotation = await QuotationManager.GetByIdAsync(reader.GetUInt64("QuotationId"))
             };
         }
     }
