@@ -15,5 +15,11 @@ namespace Citicon.WindowsForm
             instance.Cells.AddTextBox(value);
             return instance;
         }
+
+        public static DataGridViewRow AddCheckBoxCell(this DataGridViewRow instance, bool value)
+        {
+            instance.Cells.AddCheckBox(value);
+            return instance;
+        }
     }
 }
