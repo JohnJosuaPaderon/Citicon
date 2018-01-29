@@ -107,6 +107,7 @@
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
     <Compile Include="DataProcess\DeleteTransitMixer.cs" />
     <Compile Include="DataProcess\EmployeeExists.cs" />
+    <Compile Include="DataProcess\ExportAllDriverTripReport.cs" />
     <Compile Include="DataProcess\ExportAllTripReport.cs" />
     <Compile Include="DataProcess\ExportBilling.cs" />
     <Compile Include="DataProcess\ExportChequeReport.cs" />
@@ -136,6 +137,7 @@
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
     <Compile Include="DataProcess\GetDeliveryConsumedCementSupplied.cs" />
     <Compile Include="DataProcess\GetDeliveryListByBilling.cs" />
+    <Compile Include="DataProcess\GetDeliveryListByDeliveryDateRange.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProject.cs" />
     <Compile Include="DataProcess\GetDeliveryListByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetDeliveryReceiptByNumber.cs" />
@@ -601,6 +603,7 @@
     <Compile Include="Forms\TimeLogCalculatorForm.Designer.cs">
       <DependentUpon>TimeLogCalculatorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TimeLogCalculatorFormController.cs" />
     <Compile Include="WindowsForm\DataGridViewCellCollectionExtension.cs" />
     <Compile Include="Forms\DeliveryConfirmationForm.cs">
       <SubType>Form</SubType>

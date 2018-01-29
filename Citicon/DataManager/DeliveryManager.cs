@@ -221,6 +221,14 @@ namespace Citicon.DataManager
             }
         }
 
+        public static Task<IEnumerable<Delivery>> GetListByDeliveryDateRangeAsync(DateTimeRange deliveryDateRange)
+        {
+            using (var process = new GetDeliveryListByDeliveryDateRange(deliveryDateRange))
+            {
+                return process.ExecuteAsync();
+            }
+        }
+
         public static async Task<Delivery> GetDeliveryByNumberAsync(string number)
         {
             if (!string.IsNullOrWhiteSpace(number))

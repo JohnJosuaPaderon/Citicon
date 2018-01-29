@@ -152,8 +152,8 @@ namespace Citicon.ReceivablesIntegration.Forms
                 {
                     Height = 30
                 };
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = project });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = project.Client });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = project });
 
                 dgvProjects.Rows.Add(row);
             }
@@ -169,6 +169,7 @@ namespace Citicon.ReceivablesIntegration.Forms
                 };
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign.Quotation });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = projectDesign.PricePerCubicMeter });
 
                 dgvProjectDesign.Rows.Add(row);
             }

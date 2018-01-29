@@ -7,6 +7,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Citicon.DataProcess
 {
+
     internal sealed class ExportDriverTripReport : ExportExcelBase
     {
         public ExportDriverTripReport(TripReport tripReport)

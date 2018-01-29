@@ -40,8 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliverySchedulerForm));
             this.dgvProjects = new System.Windows.Forms.DataGridView();
-            this.colProject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProject_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvProjectDesign = new System.Windows.Forms.DataGridView();
             this.lblScheduledDate = new System.Windows.Forms.Label();
             this.dtpScheduledDate = new System.Windows.Forms.DateTimePicker();
@@ -65,8 +63,12 @@
             this.SearchPredicateComboBox = new System.Windows.Forms.ComboBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.SearchPredicateLabel = new System.Windows.Forms.Label();
+            this.colProject_Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Project_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProjectDesign = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProjectDesign_QuotationNumberColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProjectDesign_PricePerCubicColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProjectDesign_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDesign)).BeginInit();
@@ -97,8 +99,9 @@
             this.dgvProjects.ColumnHeadersHeight = 60;
             this.dgvProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProject_Client,
             this.colProject,
-            this.colProject_Client});
+            this.Project_ExtraColumn});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,21 +124,6 @@
             this.dgvProjects.Size = new System.Drawing.Size(628, 356);
             this.dgvProjects.TabIndex = 103;
             this.dgvProjects.SelectionChanged += new System.EventHandler(this.dgvProjects_SelectionChanged);
-            // 
-            // colProject
-            // 
-            this.colProject.HeaderText = "Projects";
-            this.colProject.MinimumWidth = 100;
-            this.colProject.Name = "colProject";
-            this.colProject.ReadOnly = true;
-            // 
-            // colProject_Client
-            // 
-            this.colProject_Client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProject_Client.HeaderText = "Client";
-            this.colProject_Client.MinimumWidth = 100;
-            this.colProject_Client.Name = "colProject_Client";
-            this.colProject_Client.ReadOnly = true;
             // 
             // dgvProjectDesign
             // 
@@ -164,6 +152,7 @@
             this.dgvProjectDesign.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colProjectDesign,
             this.ProjectDesign_QuotationNumberColumn,
+            this.ProjectDesign_PricePerCubicColumn,
             this.ProjectDesign_ExtraColumn});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -468,6 +457,29 @@
             this.SearchPredicateLabel.TabIndex = 123;
             this.SearchPredicateLabel.Text = "Search by";
             // 
+            // colProject_Client
+            // 
+            this.colProject_Client.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colProject_Client.HeaderText = "Client";
+            this.colProject_Client.MinimumWidth = 100;
+            this.colProject_Client.Name = "colProject_Client";
+            this.colProject_Client.ReadOnly = true;
+            // 
+            // colProject
+            // 
+            this.colProject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colProject.HeaderText = "Projects";
+            this.colProject.MinimumWidth = 100;
+            this.colProject.Name = "colProject";
+            this.colProject.ReadOnly = true;
+            // 
+            // Project_ExtraColumn
+            // 
+            this.Project_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Project_ExtraColumn.HeaderText = "";
+            this.Project_ExtraColumn.Name = "Project_ExtraColumn";
+            this.Project_ExtraColumn.ReadOnly = true;
+            // 
             // colProjectDesign
             // 
             this.colProjectDesign.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -484,6 +496,14 @@
             this.ProjectDesign_QuotationNumberColumn.Name = "ProjectDesign_QuotationNumberColumn";
             this.ProjectDesign_QuotationNumberColumn.ReadOnly = true;
             this.ProjectDesign_QuotationNumberColumn.Width = 121;
+            // 
+            // ProjectDesign_PricePerCubicColumn
+            // 
+            this.ProjectDesign_PricePerCubicColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ProjectDesign_PricePerCubicColumn.HeaderText = "Price/Cu.M.";
+            this.ProjectDesign_PricePerCubicColumn.Name = "ProjectDesign_PricePerCubicColumn";
+            this.ProjectDesign_PricePerCubicColumn.ReadOnly = true;
+            this.ProjectDesign_PricePerCubicColumn.Width = 113;
             // 
             // ProjectDesign_ExtraColumn
             // 
@@ -549,8 +569,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnRemoveAll;
         private System.Windows.Forms.Button btnRemoveSelected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProject;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProject_Client;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.TextBox SearchTextBox;
         private System.Windows.Forms.CheckBox UseRangedDateCheckBox;
@@ -565,8 +583,12 @@
         private System.Windows.Forms.ComboBox SearchPredicateComboBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label SearchPredicateLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProject_Client;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Project_ExtraColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProjectDesign;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_QuotationNumberColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_PricePerCubicColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectDesign_ExtraColumn;
     }
 }

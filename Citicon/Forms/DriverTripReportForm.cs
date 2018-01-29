@@ -1,8 +1,6 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using Citicon.Extensions;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -107,16 +105,29 @@ namespace Citicon.Forms
             if (Deliveries != null && Deliveries.Any())
             {
                 Employee driver = null;
-                if (mode == TripReportMode.Driver && DriverDataGridView.SelectedRows[0].Cells[DriverColumn.Name].Value is Employee tempDriver && Deliveries.Any(d => d.Driver == tempDriver))
-                {
-                    driver = tempDriver;
-                }
-                else
-                {
-                    MessageBox.Show("No driver.");
-                    return;
-                }
 
+                switch (mode)
+                {
+                    case TripReportMode.All:
+                        if (DriverDataGridView.Rows.Count <= 0)
+                        {
+                            MessageBox.Show("No drivers.");
+                            return;
+                        }
+                        break;
+                    case TripReportMode.Driver:
+                        if (DriverDataGridView.SelectedRows[0].Cells[DriverColumn.Name].Value is Employee tempDriver && Deliveries.Any(d => d.Driver == tempDriver))
+                        {
+                            driver = tempDriver;
+                        }
+                        else
+                        {
+                            MessageBox.Show("No driver.");
+                            return;
+                        }
+                        break;
+                }
+                
                 TripReport tripReport = null;
                 var deliveryDateRange = new DateTimeRange(RangeStartDateTimePicker.Value, RangeEndDateTimePicker.Value);
 
@@ -126,11 +137,14 @@ namespace Citicon.Forms
                         MessageBox.Show("Exporting information is not set.");
                         break;
                     case TripReportMode.All:
-                        tripReport = TripReport.Extract(deliveryDateRange, Deliveries);
+                        tripReport = TripReport.Extract(deliveryDateRange, await DeliveryManager.GetListByDeliveryDateRangeAsync(deliveryDateRange));
+                        await TripReportManager.ExportAllDriverTripReportAsync(tripReport);
+                        MessageBox.Show("Done");
                         break;
                     case TripReportMode.Driver:
                         tripReport = TripReport.ExtractDriver(deliveryDateRange, driver, Deliveries);
                         await TripReportManager.ExportDriverTripReportAsync(tripReport);
+                        MessageBox.Show("Done");
                         break;
                 }
             }

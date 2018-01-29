@@ -16,5 +16,16 @@ namespace Citicon.DataManager
                 }
             }
         }
+
+        public static async Task ExportAllDriverTripReportAsync(TripReport tripReport)
+        {
+            if (tripReport != null)
+            {
+                using (var process = new ExportAllDriverTripReport(tripReport))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
     }
 }
