@@ -35,6 +35,21 @@ namespace Citicon.DataManager
             };
         }
 
+        public static async Task<IEnumerable<ProjectDesign>> GetListByProjectWithCancellableDeliveryAsync(Project project)
+        {
+            if (project != null)
+            {
+                using (var process = new GetProjectDesignListByProjectWithCancellableDelivery(project))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<ProjectDesign> GetByIdAsync(ulong projectDesignId)
         {
             ProjectDesign tempProjectDesign = null;

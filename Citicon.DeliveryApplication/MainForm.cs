@@ -51,6 +51,16 @@ namespace Citicon.DeliveryApplication
             }
         }
 
+        private DeliveryCancellationForm DeliveryCancellationForm
+        {
+            get
+            {
+                var form = new DeliveryCancellationForm { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void DeliveryButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DeliveryForm);
@@ -86,6 +96,11 @@ namespace Citicon.DeliveryApplication
         private void UserSettingsButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(UserSettingsForm);
+        }
+
+        private void DeliveryCancellationButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(DeliveryCancellationForm);
         }
     }
 }

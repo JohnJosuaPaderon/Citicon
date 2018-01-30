@@ -25,6 +25,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<Delivery>> GetCancellableListByProjectDesignAsync(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new GetCancellableDeliveryListByProjectDesign(projectDesign))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<Delivery> ConfirmDeliveryAsync(Delivery delivery)
         {
             if (delivery != null)
@@ -36,6 +51,21 @@ namespace Citicon.DataManager
             }
 
             return delivery;
+        }
+
+        public static async Task<CancelledDelivery> CancelAsync(Delivery delivery, DateTime date, string remarks)
+        {
+            if (delivery != null)
+            {
+                using (var process = new CancelDelivery(delivery, date, remarks))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static async Task<IEnumerable<Delivery>> GetUnbilledListByProject(Project project)

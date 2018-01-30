@@ -98,6 +98,7 @@
     <Compile Include="DataManager\TripReportManager.cs" />
     <Compile Include="DataProcess\BillingStructureTypeExists.cs" />
     <Compile Include="DataProcess\CancelCheque.cs" />
+    <Compile Include="DataProcess\CancelDelivery.cs" />
     <Compile Include="DataProcess\ChequeNumberExists.cs" />
     <Compile Include="DataProcess\ConfirmDelivery.cs" />
     <Compile Include="DataProcess\CreateProjectDesignLoadCutOff.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
+    <Compile Include="DataProcess\GetCancellableDeliveryListByProjectDesign.cs" />
     <Compile Include="DataProcess\GetCementSuppliedListByProject.cs" />
     <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
     <Compile Include="DataProcess\GetClientListWithCementSuppliedProject.cs" />
@@ -161,6 +163,7 @@
     <Compile Include="DataProcess\GetMaximumScheduledVolumeByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetMinifiedEmployeeList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
+    <Compile Include="DataProcess\GetProjectDesignListByProjectWithCancellableDelivery.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithDelivery.cs" />
     <Compile Include="DataProcess\GetProjectListByDeliveryDate.cs" />
@@ -252,6 +255,8 @@
     <Compile Include="DataProcess\SearchApprovedProjectPredicate.cs" />
     <Compile Include="DataProcess\SearchItem.cs" />
     <Compile Include="DataProcess\SearchItemCategory.cs" />
+    <Compile Include="DataProcess\SearchProjectOption.cs" />
+    <Compile Include="DataProcess\SearchProjectWithCancellableDelivery.cs" />
     <Compile Include="DataProcess\SearchStock.cs" />
     <Compile Include="DataProcess\SearchStockOptions.cs" />
     <Compile Include="DataProcess\UpdateBillingStructureType.cs" />
@@ -376,6 +381,7 @@
     <Compile Include="Data\BillingPaymentType.cs" />
     <Compile Include="Data\BillingStructureType.cs" />
     <Compile Include="Data\Branch.cs" />
+    <Compile Include="Data\CancelledDelivery.cs" />
     <Compile Include="Data\ChequeSummaryItem.cs" />
     <Compile Include="Data\ChequeVoucher.cs" />
     <Compile Include="Data\CivilStatus.cs" />
@@ -582,6 +588,16 @@
     <Compile Include="Forms\DailyTallySheetForm.Designer.cs">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DataLinks\ComboBoxItemSource.cs" />
+    <Compile Include="Forms\DataLinks\ControlProperty.cs" />
+    <Compile Include="Forms\DataLinks\DataGridViewItemSource.cs" />
+    <Compile Include="Forms\DeliveryCancellationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeliveryCancellationForm.Designer.cs">
+      <DependentUpon>DeliveryCancellationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeliveryCancellationFormController.cs" />
     <Compile Include="Forms\Dialogs\AddEditStructureTypeController.cs" />
     <Compile Include="Forms\Dialogs\AddEditStructureTypeDialog.cs">
       <SubType>Form</SubType>
@@ -937,6 +953,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DailyTallySheetForm.resx">
       <DependentUpon>DailyTallySheetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeliveryCancellationForm.resx">
+      <DependentUpon>DeliveryCancellationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeliveryConfirmationForm.resx">
       <DependentUpon>DeliveryConfirmationForm.cs</DependentUpon>

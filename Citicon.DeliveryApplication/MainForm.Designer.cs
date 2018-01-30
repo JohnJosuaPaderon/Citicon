@@ -30,16 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.UserSettingsButton = new System.Windows.Forms.Button();
             this.EngineerButton = new System.Windows.Forms.Button();
             this.TallySheetButton = new System.Windows.Forms.Button();
             this.DeliveryButton = new System.Windows.Forms.Button();
-            this.UserSettingsButton = new System.Windows.Forms.Button();
+            this.DeliveryCancellationButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.DeliveryCancellationButton);
             this.panel1.Controls.Add(this.UserSettingsButton);
             this.panel1.Controls.Add(this.EngineerButton);
             this.panel1.Controls.Add(this.TallySheetButton);
@@ -50,6 +52,22 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel1.Size = new System.Drawing.Size(985, 60);
             this.panel1.TabIndex = 0;
+            // 
+            // UserSettingsButton
+            // 
+            this.UserSettingsButton.BackColor = System.Drawing.Color.Red;
+            this.UserSettingsButton.FlatAppearance.BorderSize = 0;
+            this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
+            this.UserSettingsButton.Location = new System.Drawing.Point(549, 5);
+            this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.UserSettingsButton.Name = "UserSettingsButton";
+            this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
+            this.UserSettingsButton.TabIndex = 5;
+            this.UserSettingsButton.Text = "USER SETTINGS";
+            this.UserSettingsButton.UseVisualStyleBackColor = false;
+            this.UserSettingsButton.Click += new System.EventHandler(this.UserSettingsButton_Click);
             // 
             // EngineerButton
             // 
@@ -99,21 +117,21 @@
             this.DeliveryButton.UseVisualStyleBackColor = false;
             this.DeliveryButton.Click += new System.EventHandler(this.DeliveryButton_Click);
             // 
-            // UserSettingsButton
+            // DeliveryCancellationButton
             // 
-            this.UserSettingsButton.BackColor = System.Drawing.Color.Red;
-            this.UserSettingsButton.FlatAppearance.BorderSize = 0;
-            this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(414, 5);
-            this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.UserSettingsButton.Name = "UserSettingsButton";
-            this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
-            this.UserSettingsButton.TabIndex = 5;
-            this.UserSettingsButton.Text = "USER SETTINGS";
-            this.UserSettingsButton.UseVisualStyleBackColor = false;
-            this.UserSettingsButton.Click += new System.EventHandler(this.UserSettingsButton_Click);
+            this.DeliveryCancellationButton.BackColor = System.Drawing.Color.Red;
+            this.DeliveryCancellationButton.FlatAppearance.BorderSize = 0;
+            this.DeliveryCancellationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeliveryCancellationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeliveryCancellationButton.ForeColor = System.Drawing.Color.White;
+            this.DeliveryCancellationButton.Location = new System.Drawing.Point(414, 5);
+            this.DeliveryCancellationButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.DeliveryCancellationButton.Name = "DeliveryCancellationButton";
+            this.DeliveryCancellationButton.Size = new System.Drawing.Size(125, 50);
+            this.DeliveryCancellationButton.TabIndex = 6;
+            this.DeliveryCancellationButton.Text = "DELIVERY CANCELLATION";
+            this.DeliveryCancellationButton.UseVisualStyleBackColor = false;
+            this.DeliveryCancellationButton.Click += new System.EventHandler(this.DeliveryCancellationButton_Click);
             // 
             // MainForm
             // 
@@ -144,5 +162,6 @@
         private System.Windows.Forms.Button TallySheetButton;
         private System.Windows.Forms.Button EngineerButton;
         private System.Windows.Forms.Button UserSettingsButton;
+        private System.Windows.Forms.Button DeliveryCancellationButton;
     }
 }

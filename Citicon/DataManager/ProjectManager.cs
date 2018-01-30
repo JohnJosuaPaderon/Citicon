@@ -32,6 +32,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<Project>> SearchWithCancellableDeliveryAsync(string searchKey, SearchProjectOption option)
+        {
+            if (!string.IsNullOrWhiteSpace(searchKey))
+            {
+                using (var process = new SearchProjectWithCancellableDelivery(searchKey, option))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         internal static async Task<Project> FromDbDataReaderAsync(DbDataReader reader)
         {
             return new Project
