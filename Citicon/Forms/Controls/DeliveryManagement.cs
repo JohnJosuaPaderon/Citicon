@@ -428,8 +428,14 @@ namespace Citicon.Forms.Controls
             }
             else if (Delivery.ServiceEngineer == null)
             {
-                MessageBox.Show("Service Engineer is not valid.");
-                return false;
+                if (MessageBox.Show("Do you really want to leave Service Engineer empty?", "Delivery", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
