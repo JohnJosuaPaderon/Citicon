@@ -65,7 +65,7 @@ namespace Citicon.DataProcess
                 Worksheet.Cells[21, 2] = Delivery.ProjectDesign?.Strength?.ToString();
                 Worksheet.Cells[21, 4] = Delivery.ProjectDesign?.Psi.ToString("###0");
                 Worksheet.Cells[22, 8] = Delivery.Volume.ToString("#,##0.0");
-                Worksheet.Cells[23, 2] = Delivery.CumulativeVolume.ToString("#,##0.0");
+                Worksheet.Cells[23, 2] = Delivery.CumulativeVolume.ToString();
                 Worksheet.Cells[24, 4] = Delivery.ProjectDesign?.Aggregate?.ToString();
                 Worksheet.Cells[24, 8] = Delivery.MaxSlump;
                 Worksheet.Cells[32, 2] = Delivery.Admixture;
