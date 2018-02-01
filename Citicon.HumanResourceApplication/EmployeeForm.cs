@@ -18,8 +18,6 @@ namespace Citicon.HumanResourceApplication
         private const string DateFormat = "MMMM dd, yyyy";
         private const string MonetaryFormat = "#,##0.00";
         private Employee _CurrentEmployee;
-        private EmployeePayrollAddition _CurrentEmployeePayrollAddition;
-        private EmployeePayrollDeduction _CurrentEmployeePayrollDeduction;
         private EmployeeLogin _CurrentEmployeeLogin;
 
         public Employee CurrentEmployee
@@ -30,32 +28,6 @@ namespace Citicon.HumanResourceApplication
                 if (_CurrentEmployee != value)
                 {
                     _CurrentEmployee = value;
-                    UpdateUI(value);
-                }
-            }
-        }
-
-        public EmployeePayrollAddition CurrentEmployeePayrollAddition
-        {
-            get { return _CurrentEmployeePayrollAddition; }
-            set
-            {
-                if (_CurrentEmployeePayrollAddition != value)
-                {
-                    _CurrentEmployeePayrollAddition = value;
-                    UpdateUI(value);
-                }
-            }
-        }
-
-        public EmployeePayrollDeduction CurrentEmployeePayrollDeduction
-        {
-            get { return _CurrentEmployeePayrollDeduction; }
-            set
-            {
-                if (_CurrentEmployeePayrollDeduction != value)
-                {
-                    _CurrentEmployeePayrollDeduction = value;
                     UpdateUI(value);
                 }
             }
@@ -108,42 +80,6 @@ namespace Citicon.HumanResourceApplication
             VacationLeaveTextBox.Text = value?.VacationLeave.ToString(MonetaryFormat);
             SickLeaveTextBox.Text = value?.SickLeave.ToString(MonetaryFormat);
             AbsencesTextBox.Text = value?.Absences.ToString("#,##0");
-        }
-
-        private void UpdateUI(EmployeePayrollAddition payrollAddition)
-        {
-            BasicPayTextBox.Text = string.Empty;
-            DailyRateTextBox.Text = string.Empty;
-            AllowanceTextBox.Text = string.Empty;
-            OtAllowanceTextBox.Text = string.Empty;
-
-            if (payrollAddition != null)
-            {
-                BasicPayTextBox.Text = payrollAddition.BasicPay.ToString("#,##0.00");
-                DailyRateTextBox.Text = payrollAddition.DailyRate.ToString("#,##0.00");
-                AllowanceTextBox.Text = payrollAddition.Allowance.ToString("#,##0.00");
-                OtAllowanceTextBox.Text = payrollAddition.OvertimeAllowance.ToString("#,##0.00");
-            }
-        }
-
-        private void UpdateUI(EmployeePayrollDeduction payrollDeduction)
-        {
-            SssDeductionTextBox.Text = string.Empty;
-            SssErDeductionTextBox.Text = string.Empty;
-            SssEcDeductionTextBox.Text = string.Empty;
-            WithHoldingTaxTextBox.Text = string.Empty;
-            PagIbigDeductionTextBox.Text = string.Empty;
-            PhilHealthDeductionTextBox.Text = string.Empty;
-
-            if (payrollDeduction != null)
-            {
-                SssDeductionTextBox.Text = payrollDeduction.Sss.ToString("#,##0.00");
-                SssEcDeductionTextBox.Text = payrollDeduction.SssEc.ToString("#,##0.00");
-                SssErDeductionTextBox.Text = payrollDeduction.SssEr.ToString("#,##0.00");
-                WithHoldingTaxTextBox.Text = payrollDeduction.WithholdingTax.ToString("#,##0.00");
-                PagIbigDeductionTextBox.Text = payrollDeduction.PagibigLoan.ToString("#,##0.00");
-                PhilHealthDeductionTextBox.Text = payrollDeduction.PhilHealth.ToString("#,##0.00");
-            }
         }
 
         private async Task GetListAsync()
@@ -201,8 +137,6 @@ namespace Citicon.HumanResourceApplication
                 if (CurrentEmployee != null)
                 {
                     CurrentEmployeeLogin = await EmployeeManager.RegisterEmployeeLoginAsync(CurrentEmployee);
-                    CurrentEmployeePayrollAddition = await EmployeePayrollAdditionManager.GetCurrentByEmployeeAsync(CurrentEmployee);
-                    CurrentEmployeePayrollDeduction = await EmployeePayrollDeductionManager.GetCurrentByEmployeeAsync(CurrentEmployee);
                 }
             }
             else
@@ -223,7 +157,7 @@ namespace Citicon.HumanResourceApplication
         {
             if (CurrentEmployee != null)
             {
-                var form = AddEditEmployeeForm.EditEmployee(CurrentEmployee, CurrentEmployeePayrollAddition, CurrentEmployeePayrollDeduction);
+                var form = AddEditEmployeeForm.EditEmployee(CurrentEmployee);
                 form.ShowDialog();
                 form = null;
                 await GetListAsync();

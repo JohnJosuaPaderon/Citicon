@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Inventory", "Citicon.Inventory\Citicon.Inventory.csproj", "{F0AB7BD6-170B-4684-A2A8-B92135553FED}"
 EndProject
@@ -13,30 +13,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.DesktopClient.Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.DesktopClient.QuotationApproval", "Citicon.DesktopClient.QuotationApproval\Citicon.DesktopClient.QuotationApproval.csproj", "{B83A8476-03A9-4932-B0CF-499B4D727373}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8174ACD8-FD50-45BE-8969-2CF449422B5C}"
-	ProjectSection(SolutionItems) = preProject
-		.gitattributes = .gitattributes
-		.gitignore = .gitignore
-		Citicon.Inventory.zip = Citicon.Inventory.zip
-		LICENSE = LICENSE
-		README.md = README.md
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.CommonUi", "Citicon.CommonUi\Citicon.CommonUi.csproj", "{512DAC34-6163-46EB-B85A-2AEA9FABFA9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.TimeLog", "Citicon.TimeLog\Citicon.TimeLog.csproj", "{E0AA12DE-3217-4559-B4A1-AAB6923F6720}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.TimeLogEnrollment", "Citicon.TimeLogEnrollment\Citicon.TimeLogEnrollment.csproj", "{658CB9A6-DEEA-4A9B-A409-F78920114219}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{20F74695-D619-479E-BE5C-B43F359D5314}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.PayrollIntegration", "Citicon.PayrollIntegration\Citicon.PayrollIntegration.csproj", "{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Tests.PayrollIntegrationTest", "Citicon.Tests.PayrollIntegrationTest\Citicon.Tests.PayrollIntegrationTest.csproj", "{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.ReceivablesIntegration", "Citicon.ReceivablesIntegration\Citicon.ReceivablesIntegration.csproj", "{28DC4421-F3F2-429A-9CF9-9A02FC582195}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.Tests.ReceivablesIntegrationTest", "Citicon.Tests.ReceivablesIntegrationTest\Citicon.Tests.ReceivablesIntegrationTest.csproj", "{7E0344D1-D465-4CD8-8BC7-06488C15678B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Citicon.DeliveryApplication", "Citicon.DeliveryApplication\Citicon.DeliveryApplication.csproj", "{BA3A0432-9C8D-4688-8810-8FF2C08D050B}"
 EndProject
@@ -96,18 +81,10 @@ Global
 		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E0344D1-D465-4CD8-8BC7-06488C15678B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BA3A0432-9C8D-4688-8810-8FF2C08D050B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BA3A0432-9C8D-4688-8810-8FF2C08D050B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA3A0432-9C8D-4688-8810-8FF2C08D050B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -146,9 +123,7 @@ Global
 		{E0AA12DE-3217-4559-B4A1-AAB6923F6720} = {35717519-16C0-40BF-849E-8FC12546D7C7}
 		{658CB9A6-DEEA-4A9B-A409-F78920114219} = {35717519-16C0-40BF-849E-8FC12546D7C7}
 		{7E1BD485-475D-4F19-AAB5-C02C0CAF085E} = {E9D5CBF6-92AA-4164-96A0-A80394E9A83E}
-		{08F0F3BF-4751-496C-98AD-BCE2F7DAF3CA} = {20F74695-D619-479E-BE5C-B43F359D5314}
 		{28DC4421-F3F2-429A-9CF9-9A02FC582195} = {E9D5CBF6-92AA-4164-96A0-A80394E9A83E}
-		{7E0344D1-D465-4CD8-8BC7-06488C15678B} = {20F74695-D619-479E-BE5C-B43F359D5314}
 		{BA3A0432-9C8D-4688-8810-8FF2C08D050B} = {35717519-16C0-40BF-849E-8FC12546D7C7}
 		{8158E83B-7511-488A-BC1A-B5793B63500F} = {35717519-16C0-40BF-849E-8FC12546D7C7}
 		{380B66CE-DCD2-431E-923B-BE7EC9FCE364} = {35717519-16C0-40BF-849E-8FC12546D7C7}

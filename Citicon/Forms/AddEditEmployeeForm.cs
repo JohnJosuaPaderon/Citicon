@@ -7,23 +7,21 @@ namespace Citicon.Forms
 {
     public partial class AddEditEmployeeForm : Form
     {
-        private AddEditEmployeeForm(DataDialogMode mode, Employee employee, EmployeePayrollAddition payrollAddition, EmployeePayrollDeduction payrollDeduction)
+        private AddEditEmployeeForm(DataDialogMode mode, Employee employee)
         {
             InitializeComponent();
             AddEditEmployeeControl.Mode = mode;
             AddEditEmployeeControl.Employee = employee ?? throw new ArgumentNullException(nameof(employee));
-            AddEditEmployeeControl.EmployeePayrollAddition = payrollAddition ?? throw new ArgumentNullException(nameof(payrollAddition));
-            AddEditEmployeeControl.EmployeePayrollDeduction = payrollDeduction ?? throw new ArgumentNullException(nameof(payrollDeduction));
         }
 
         public static AddEditEmployeeForm AddEmployee()
         {
-            return new AddEditEmployeeForm(DataDialogMode.Add, new Employee(), new EmployeePayrollAddition(), new EmployeePayrollDeduction());
+            return new AddEditEmployeeForm(DataDialogMode.Add, new Employee());
         }
 
-        public static AddEditEmployeeForm EditEmployee(Employee employee, EmployeePayrollAddition payrollAddition, EmployeePayrollDeduction payrollDeduction)
+        public static AddEditEmployeeForm EditEmployee(Employee employee)
         {
-            return new AddEditEmployeeForm(DataDialogMode.Edit, employee, payrollAddition ?? new EmployeePayrollAddition(), payrollDeduction ?? new EmployeePayrollDeduction());
+            return new AddEditEmployeeForm(DataDialogMode.Edit, employee);
         }
 
         private void AddEditEmployeeControl_FormCancelRequested(object sender, EventArgs e)

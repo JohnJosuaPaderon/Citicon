@@ -30,12 +30,12 @@ namespace Citicon.PayrollIntegration.Forms
                 if (_SelectedTimeLog != value)
                 {
                     _SelectedTimeLog = value;
-                    UpdateSelectedTimeLogUI();
+                    UpdateSelectedTimeLogUi();
                 }
             }
         }
 
-        private void UpdateSelectedTimeLogUI()
+        private void UpdateSelectedTimeLogUi()
         {
             TimeLogDetails_LoginDateTimePicker.Value = SelectedTimeLog?.Login ?? DateTime.Now;
             TimeLogDetails_LogoutDateTimePicker.Value = SelectedTimeLog?.Logout ?? DateTime.Now;

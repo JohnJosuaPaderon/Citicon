@@ -82,8 +82,6 @@
     <Compile Include="DataManager\DeliveryConsumedCementSuppliedManager.cs" />
     <Compile Include="DataManager\DeliveryManager.cs" />
     <Compile Include="DataManager\DeliveryRouteManager.cs" />
-    <Compile Include="DataManager\EmployeePayrollAdditionManager.cs" />
-    <Compile Include="DataManager\EmployeePayrollDeductionManager.cs" />
     <Compile Include="DataManager\EmploymentStatusManager.cs" />
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
@@ -132,8 +130,6 @@
     <Compile Include="DataProcess\GetClientListWithScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\GetCompanyById.cs" />
     <Compile Include="DataProcess\GetConsumedProjectDesignVolume.cs" />
-    <Compile Include="DataProcess\GetCurrentEmployeePayrollAdditionByEmployee.cs" />
-    <Compile Include="DataProcess\GetCurrentEmployeePayrollDeductionByEmployee.cs" />
     <Compile Include="DataProcess\GetCurrentProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\GetDailyReportChequeList.cs" />
     <Compile Include="DataProcess\GetDeliveryAutoValues.cs" />
@@ -150,8 +146,6 @@
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
-    <Compile Include="DataProcess\GetEmployeePayrollAddition.cs" />
-    <Compile Include="DataProcess\GetEmployeePayrollDeduction.cs" />
     <Compile Include="DataProcess\GetFilteredOutgoingStockList.cs" />
     <Compile Include="DataProcess\GetFilteredOutgoingStockListOption.cs" />
     <Compile Include="DataProcess\GetHolidayList.cs" />
@@ -187,8 +181,6 @@
     <Compile Include="DataProcess\InsertDeliveryRoute.cs" />
     <Compile Include="DataProcess\InsertEmployee.cs" />
     <Compile Include="DataProcess\InsertEmployeeFullDetails.cs" />
-    <Compile Include="DataProcess\InsertEmployeePayrollAddition.cs" />
-    <Compile Include="DataProcess\InsertEmployeePayrollDeduction.cs" />
     <Compile Include="DataProcess\InsertHoliday.cs" />
     <Compile Include="DataProcess\InsertJobPosition.cs" />
     <Compile Include="DataProcess\InsertPumpType.cs" />
@@ -200,8 +192,6 @@
     <Compile Include="DataManager\OtherChargeTypeManager.cs" />
     <Compile Include="DataManager\PayableManager.cs" />
     <Compile Include="DataManager\PaymentTermManager.cs" />
-    <Compile Include="DataManager\PayrollGroupManager.cs" />
-    <Compile Include="DataManager\PayrollManager.cs" />
     <Compile Include="DataManager\ProjectDesignManager.cs" />
     <Compile Include="DataManager\ProjectDesignMixTypeManager.cs" />
     <Compile Include="DataManager\ProjectManager.cs" />
@@ -243,7 +233,6 @@
     <Compile Include="DataProcess\GetDeliveryListByClient.cs" />
     <Compile Include="DataProcess\InsertQuotation.cs" />
     <Compile Include="DataProcess\InsertQuotationTransaction.cs" />
-    <Compile Include="DataProcess\InsertPayroll.cs" />
     <Compile Include="DataProcess\InsertTimeLog.cs" />
     <Compile Include="DataProcess\InsertTransaction.cs" />
     <Compile Include="DataProcess\InsertTransactionList.cs" />
@@ -269,7 +258,6 @@
     <Compile Include="DataManager\ProductManager.cs" />
     <Compile Include="DataManager\ProductStrengthManager.cs" />
     <Compile Include="DataProcess\InsertExcessPipeCharge.cs" />
-    <Compile Include="DataProcess\GeneratePayroll.cs" />
     <Compile Include="DataProcess\GetApprovedProjectDesignListByProject.cs" />
     <Compile Include="DataProcess\GetApprovedProjectList.cs" />
     <Compile Include="DataProcess\GetAvailablePurchaseOrderProjectDesign.cs" />
@@ -281,8 +269,6 @@
     <Compile Include="DataProcess\GetCurrentDate.cs" />
     <Compile Include="DataProcess\GetEmployeeListByDepartment.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginByCode.cs" />
-    <Compile Include="DataProcess\GetPayrollGroupById.cs" />
-    <Compile Include="DataProcess\GetPayrollGroupList.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByPurchaseOrder.cs" />
     <Compile Include="DataProcess\GetProjectDesignListWithNoPurchaseOrderByProject.cs" />
     <Compile Include="DataProcess\GetProjectListWithApprovedProjectDesignByClient.cs" />
@@ -303,8 +289,6 @@
     <Compile Include="DataProcess\UpdateDeliveryRoute.cs" />
     <Compile Include="DataProcess\UpdateEmployee.cs" />
     <Compile Include="DataProcess\UpdateEmployeeFullDetails.cs" />
-    <Compile Include="DataProcess\UpdateEmployeePayrollAddition.cs" />
-    <Compile Include="DataProcess\UpdateEmployeePayrollDeduction.cs" />
     <Compile Include="DataProcess\UpdateHoliday.cs" />
     <Compile Include="DataProcess\UpdateJobPosition.cs" />
     <Compile Include="DataProcess\UpdateProject.cs" />
@@ -400,10 +384,6 @@
     <Compile Include="Data\Department.cs" />
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
-    <Compile Include="Data\EmployeePayroll.cs" />
-    <Compile Include="Data\EmployeePayrollAddition.cs" />
-    <Compile Include="Data\EmployeePayrollCollection.cs" />
-    <Compile Include="Data\EmployeePayrollDeduction.cs" />
     <Compile Include="Data\EmployeeTimeLogList.cs" />
     <Compile Include="Data\EmploymentStatus.cs" />
     <Compile Include="Data\EntityBase.cs" />
@@ -414,6 +394,7 @@
     <Compile Include="Data\HolidayType.cs" />
     <Compile Include="Data\Item.cs" />
     <Compile Include="Data\JobPosition.cs" />
+    <Compile Include="Data\PayrollType.cs" />
     <Compile Include="Data\ProjectDesignLoadCutOff.cs" />
     <Compile Include="Data\MeasurementUnit.cs" />
     <Compile Include="Data\Module.cs" />
@@ -425,9 +406,6 @@
     <Compile Include="Data\Payable.cs" />
     <Compile Include="Data\PayableType.cs" />
     <Compile Include="Data\PaymentTerm.cs" />
-    <Compile Include="Data\Payroll.cs" />
-    <Compile Include="Data\PayrollGroup.cs" />
-    <Compile Include="Data\PayrollType.cs" />
     <Compile Include="Data\Product.cs" />
     <Compile Include="Data\ProductAggregate.cs" />
     <Compile Include="Data\ProductStrength.cs" />
@@ -823,9 +801,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RelationalDatabaseUtility.cs" />
-    <Compile Include="Reports\ExporterBase.cs" />
-    <Compile Include="Reports\ExportPayroll.cs" />
-    <Compile Include="Reports\SemiMonthlyPayrollExportConfiguration.cs" />
     <Compile Include="Supports.cs" />
     <Compile Include="UserSettingsForm.cs">
       <SubType>Form</SubType>

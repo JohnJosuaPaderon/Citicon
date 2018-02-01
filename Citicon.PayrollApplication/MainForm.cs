@@ -62,16 +62,6 @@ namespace Citicon.PayrollApplication
             }
         }
 
-        private SemiMonthlyPayrollForm SemiMonthlyPayrollForm
-        {
-            get
-            {
-                var form = new SemiMonthlyPayrollForm { MdiParent = this };
-                form.FormClosed += (s, e) => form = null;
-                return form;
-            }
-        }
-
         private void OpenMdiChild(Form form)
         {
             if (ActiveMdiChild != null && ActiveMdiChild.GetType() == form.GetType())
@@ -116,7 +106,6 @@ namespace Citicon.PayrollApplication
 
         private void SemiMonthlyPayrollButton_Click(object sender, EventArgs e)
         {
-            OpenMdiChild(SemiMonthlyPayrollForm);
         }
     }
 }

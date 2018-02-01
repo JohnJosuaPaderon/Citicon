@@ -303,11 +303,11 @@ namespace Citicon.DataManager
             }
         }
 
-        public static async Task InsertFullDetailsAsync(Employee employee, EmployeePayrollAddition payrollAddition, EmployeePayrollDeduction payrollDeduction)
+        public static async Task InsertFullDetailsAsync(Employee employee)
         {
-            if (employee != null && payrollAddition != null && payrollDeduction != null)
+            if (employee != null)
             {
-                using (var process = new InsertEmployeeFullDetails(employee, payrollAddition, payrollDeduction))
+                using (var process = new InsertEmployeeFullDetails(employee))
                 {
                     await process.ExecuteAsync();
                 }
@@ -362,11 +362,11 @@ namespace Citicon.DataManager
             }
         }
 
-        public static async Task UpdateFullDetailsAsync(Employee employee, EmployeePayrollAddition payrollAddition, EmployeePayrollDeduction payrollDeduction)
+        public static async Task UpdateFullDetailsAsync(Employee employee)
         {
-            if (employee != null && payrollAddition != null && payrollDeduction != null)
+            if (employee != null)
             {
-                using (var process = new UpdateEmployeeFullDetails(employee, payrollAddition, payrollDeduction))
+                using (var process = new UpdateEmployeeFullDetails(employee))
                 {
                     await process.ExecuteAsync();
                 }
