@@ -1,4 +1,5 @@
 ﻿using Citicon.Data;
+using Citicon.DataManager;
 using Citicon.Extensions;
 using MySql.Data.MySqlClient;
 using System;
@@ -29,7 +30,7 @@ namespace Citicon.DataProcess
                 .AddInParameter("@_PositionId", Employee.Position?.Id)
                 .AddInParameter("@_BranchId", Employee.Branch?.Id)
                 .AddInParameter("@_CompanyId", Employee.Company?.Id)
-                .AddInParameter("@_PayrollType", Employee.PayrollType.ToString())
+                .AddInParameter("@_PayrollType", Employee.PayrollType?.Id)
                 .AddInParameter("@_BirthDate", Employee.BirthDate)
                 .AddInParameter("@_CivilStatus", Employee.CivilStatus.ToString())
                 .AddInParameter("@_EmploymentDate", Employee.EmploymentDate)
@@ -62,11 +63,14 @@ namespace Citicon.DataProcess
 
         public async Task<Employee> ExecuteAsync(MySqlConnection connection, MySqlTransaction transaction)
         {
+
             using (var command = CreateCommand(connection, transaction))
             {
-                if (await command.ExecuteNonQueryAsync() == 1)
+                if (await command.ExecuteNonQueryAsync() > 0)
                 {
                     Employee.Id = Convert.ToInt64(command.Parameters[Parameter_Id].Value);
+                    await EmployeeAdditionManager.SaveAsync(Employee.Addition, connection, transaction);
+                    await EmployeeDeductionManager.SaveAsync(Employee.Deduction, connection, transaction);
                 }
                 else
                 {

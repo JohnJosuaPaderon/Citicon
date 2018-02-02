@@ -5,6 +5,12 @@ namespace Citicon.Data
 {
     public class Employee : EntityBase<long>
     {
+        public Employee()
+        {
+            Addition = new EmployeeAddition(this);
+            Deduction = new EmployeeDeduction(this);
+        }
+
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
@@ -103,6 +109,9 @@ namespace Citicon.Data
                 return sb.ToString();
             }
         }
+
+        public EmployeeAddition Addition { get; internal set; }
+        public EmployeeDeduction Deduction { get; internal set; }
 
         public override string ToString()
         {

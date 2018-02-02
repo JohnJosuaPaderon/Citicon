@@ -63,7 +63,7 @@ namespace Citicon.DataProcess
                                     PagIbigRegistrationDate = reader.GetDateTime("PagIbigRegistrationDate"),
                                     PagIbigRTN = reader.GetString("PagIbigRTN"),
                                     PagIbigRTNDependentNumber = reader.GetUInt32("PagIbigRTNDependentNumber"),
-                                    PayrollType = PayrollTypeManager.Parse(reader.GetString("PayrollType")),
+                                    PayrollType = PayrollTypeManager.GetById(reader.GetUInt16("PayrollTypeId")),
                                     PhilHealthNumber = reader.GetString("PhilHealthNumber"),
                                     PhilHealthRegistrationDate = reader.GetDateTime("PhilHealthRegistrationDate"),
                                     R1ADate = reader.GetDateTime("R1ADate"),

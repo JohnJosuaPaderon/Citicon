@@ -18,6 +18,8 @@ namespace Citicon.HumanResourceApplication
         private const string DateFormat = "MMMM dd, yyyy";
         private const string MonetaryFormat = "#,##0.00";
         private Employee _CurrentEmployee;
+        private EmployeeAddition _CurrentEmployeeAddition;
+        private EmployeeDeduction _CurrentEmployeeDeduction;
         private EmployeeLogin _CurrentEmployeeLogin;
 
         public Employee CurrentEmployee
@@ -28,6 +30,32 @@ namespace Citicon.HumanResourceApplication
                 if (_CurrentEmployee != value)
                 {
                     _CurrentEmployee = value;
+                    UpdateUI(value);
+                }
+            }
+        }
+
+        public EmployeeAddition CurrentEmployeeAddition
+        {
+            get { return _CurrentEmployeeAddition; }
+            set
+            {
+                if (_CurrentEmployeeAddition != value)
+                {
+                    _CurrentEmployeeAddition = value;
+                    UpdateUI(value);
+                }
+            }
+        }
+
+        public EmployeeDeduction CurrentEmployeeDeduction
+        {
+            get { return _CurrentEmployeeDeduction; }
+            set
+            {
+                if (_CurrentEmployeeDeduction != value)
+                {
+                    _CurrentEmployeeDeduction = value;
                     UpdateUI(value);
                 }
             }
@@ -51,6 +79,34 @@ namespace Citicon.HumanResourceApplication
             LoginCodeTextBox.Text = value?.LoginCode.ToString("000000");
         }
 
+        private void UpdateUI(EmployeeAddition employeeAddition)
+        {
+            BasicPayTextBox.Text = string.Empty;
+            DailyRateTextBox.Text = string.Empty;
+
+            if (employeeAddition != null)
+            {
+                BasicPayTextBox.Text = employeeAddition.BasicPay.ToString("#,##0.00");
+                DailyRateTextBox.Text = employeeAddition.DailyRate.ToString("#,##0.00");
+            }
+        }
+
+        private void UpdateUI(EmployeeDeduction employeeDeduction)
+        {
+            SssDeductionTextBox.Text = string.Empty;
+            SssErDeductionTextBox.Text = string.Empty;
+            WithHoldingTaxTextBox.Text = string.Empty;
+            PagIbigDeductionTextBox.Text = string.Empty;
+
+            if (employeeDeduction != null)
+            {
+                SssDeductionTextBox.Text = employeeDeduction.Sss?.ToString("#,##0.00");
+                SssErDeductionTextBox.Text = employeeDeduction.SssLoan?.ToString("#,##0.00");
+                WithHoldingTaxTextBox.Text = employeeDeduction.WithholdingTax?.ToString("#,##0.00");
+                PagIbigDeductionTextBox.Text = employeeDeduction.PagibigLoan?.ToString("#,##0.00");
+            }
+        }
+
         private void UpdateUI(Employee value)
         {
             FullNameTextBox.Text = value?.ToString();
@@ -62,7 +118,7 @@ namespace Citicon.HumanResourceApplication
             EmploymentStatusTextBox.Text = value?.EmploymentStatus.ToString();
             BranchTextBox.Text = value?.Branch?.ToString();
             CompanyTextBox.Text = value?.Company?.ToString();
-            PayrollTypeTextBox.Text = value?.PayrollType.ToString();
+            PayrollTypeTextBox.Text = value?.PayrollType?.Description;
             AddressTextBox.Text = value?.Address;
             TelephoneNumberTextBox.Text = value?.TelephoneNumber;
             MobileNumberTextBox.Text = value?.MobileNumber;
@@ -136,6 +192,8 @@ namespace Citicon.HumanResourceApplication
 
                 if (CurrentEmployee != null)
                 {
+                    CurrentEmployeeAddition = await EmployeeAdditionManager.GetAsync(CurrentEmployee);
+                    CurrentEmployeeDeduction = await EmployeeDeductionManager.GetAsync(CurrentEmployee);
                     CurrentEmployeeLogin = await EmployeeManager.RegisterEmployeeLoginAsync(CurrentEmployee);
                 }
             }

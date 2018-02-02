@@ -41,7 +41,7 @@ namespace Citicon.DataProcess
                 FirstName = reader.GetString("FirstName"),
                 MiddleName = reader.GetString("MiddleName"),
                 LastName = reader.GetString("LastName"),
-                PayrollType = PayrollTypeManager.Parse(reader.GetString("PayrollType")),
+                PayrollType = PayrollTypeManager.GetById(reader.GetUInt16("PayrollTypeId")),
                 Branch = BranchManager.GetById(reader.GetUInt64("BranchId"))
             };
         }

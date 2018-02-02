@@ -113,7 +113,7 @@ namespace Citicon.Forms.Controls
                 }
                 else
                 {
-                    await EmployeeManager.InsertFullDetailsAsync(Employee);
+                    await EmployeeManager.InsertAsync(Employee);
                     MessageBox.Show("Employee has been saved successfully!");
                     RequestFormCancel();
                 }
@@ -128,7 +128,7 @@ namespace Citicon.Forms.Controls
         {
             try
             {
-                await EmployeeManager.UpdateFullDetailsAsync(Employee);
+                await EmployeeManager.UpdateAsync(Employee);
                 MessageBox.Show("Employee's information has been saved successfully!");
                 RequestFormCancel();
             }
@@ -180,6 +180,24 @@ namespace Citicon.Forms.Controls
             Employee.TelephoneNumber = TelephoneNumberTextBox.Text;
             Employee.TIN = TinTextBox.Text;
             Employee.VacationLeave = VacationLeaveNumericUpDown.Value;
+
+            if (Employee.Addition == null)
+            {
+                Employee.Addition = new EmployeeAddition(Employee);
+            }
+
+            Employee.Addition.BasicPay = BasicPayNumericUpDown.Value;
+            Employee.Addition.DailyRate = DailyRateNumericUpDown.Value;
+
+            if (Employee.Deduction == null)
+            {
+                Employee.Deduction = new EmployeeDeduction(Employee);
+            }
+
+            Employee.Deduction.Sss = SssDeductionNumericUpDown.Value;
+            Employee.Deduction.SssLoan = SssErDeductionNumericUpDown.Value;
+            Employee.Deduction.WithholdingTax = WithHoldingTaxNumericUpDown.Value;
+            Employee.Deduction.PagibigLoan = PagIbigDeductionNumericUpDown.Value;
             //EmployeePayrollAddition.BasicPay = BasicPayNumericUpDown.Value;
             //EmployeePayrollAddition.DailyRate = DailyRateNumericUpDown.Value;
             //EmployeePayrollAddition.Allowance = AllowanceNumericUpDown.Value;
