@@ -86,25 +86,30 @@ namespace Citicon.DataProcess
             }
         }
 
+        public async Task<T> HandleExecuteAsync<T>(MySqlConnection connection, MySqlTransaction transaction, Func<MySqlConnection, MySqlTransaction, MySqlCommand> createCommand, Func<int, MySqlCommand, T> callback)
+        {
+            using (var command = createCommand(connection, transaction))
+            {
+                return callback(await command.ExecuteNonQueryAsync(), command);
+            }
+        }
+
         public async Task<T> HandleExecuteAsync<T>(Func<MySqlConnection, MySqlTransaction, MySqlCommand> createCommand, Func<int, MySqlCommand, T> callback)
         {
             using (var connection = await Utility.EstablishConnectionAsync())
             {
                 using (var transaction = connection.BeginTransaction())
                 {
-                    using (var command = createCommand(connection, transaction))
+                    try
                     {
-                        try
-                        {
-                            var result = callback(await command.ExecuteNonQueryAsync(), command);
-                            transaction.Commit();
-                            return result;
-                        }
-                        catch (Exception)
-                        {
-                            transaction.Rollback();
-                            throw;
-                        }
+                        var result = await HandleExecuteAsync(connection, transaction, createCommand, callback);
+                        transaction.Commit();
+                        return result;
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
                     }
                 }
             }
