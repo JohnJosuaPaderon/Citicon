@@ -4,32 +4,32 @@ using System.Collections.Generic;
 
 namespace Citicon.DataManager
 {
-    public static class PayrollTypeManager
+    public static class PayrollGroupManager
     {
-        static PayrollTypeManager()
+        static PayrollGroupManager()
         {
-            _Source = new Dictionary<ushort, PayrollType>();
+            _Source = new Dictionary<ushort, PayrollGroup>();
         }
 
-        private static readonly Dictionary<ushort, PayrollType> _Source;
+        private static Dictionary<ushort, PayrollGroup> _Source;
 
-        public static PayrollType GetById(ushort id)
+        public static PayrollGroup Get(ushort payrollGroupId)
         {
-            if (id > 0)
+            if (payrollGroupId > 0)
             {
-                if (_Source.ContainsKey(id))
+                if (_Source.ContainsKey(payrollGroupId))
                 {
-                    return _Source[id];
+                    return _Source[payrollGroupId];
                 }
                 else
                 {
-                    using (var process = new GetPayrollTypeById(id))
+                    using (var process = new GetPayrollGroup(payrollGroupId))
                     {
                         var result = process.Execute();
 
                         if (result != null)
                         {
-                            _Source.Add(id, result);
+                            _Source.Add(payrollGroupId, result);
                         }
 
                         return result;

@@ -48,6 +48,7 @@ namespace Citicon.Data
         public decimal VacationLeave { get; set; }
         public decimal SickLeave { get; set; }
         public decimal Absences { get; set; }
+        public PayrollGroup PayrollGroup { get; set; }
 
         public string FullName
         {

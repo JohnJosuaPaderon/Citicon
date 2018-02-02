@@ -82,6 +82,8 @@
     <Compile Include="DataManager\DeliveryConsumedCementSuppliedManager.cs" />
     <Compile Include="DataManager\DeliveryManager.cs" />
     <Compile Include="DataManager\DeliveryRouteManager.cs" />
+    <Compile Include="DataManager\EmployeeAdditionManager.cs" />
+    <Compile Include="DataManager\EmployeeDeductionManager.cs" />
     <Compile Include="DataManager\EmploymentStatusManager.cs" />
     <Compile Include="DataManager\ExcessPipeChargeManager.cs" />
     <Compile Include="DataManager\ExpenseManager.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="DataManager\HolidayManager.cs" />
     <Compile Include="DataManager\HolidayTypeManager.cs" />
     <Compile Include="DataManager\OutgoingStockManager.cs" />
+    <Compile Include="DataManager\PayrollGroupManager.cs" />
+    <Compile Include="DataManager\PayrollManager.cs" />
     <Compile Include="DataManager\PayrollTypeManager.cs" />
     <Compile Include="DataManager\ProjectDesignLoadCutOffManager.cs" />
     <Compile Include="DataManager\ScheduledProjectDesignStatusManager.cs" />
@@ -143,6 +147,8 @@
     <Compile Include="DataProcess\GetDeliveryRouteList.cs" />
     <Compile Include="DataProcess\GetDepartmentList.cs" />
     <Compile Include="DataProcess\GetDriverList.cs" />
+    <Compile Include="DataProcess\GetEmployeeAddition.cs" />
+    <Compile Include="DataProcess\GetEmployeeDeduction.cs" />
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
     <Compile Include="DataProcess\GetEmployeeLogin.cs" />
     <Compile Include="DataProcess\GetEmployeeLoginById.cs" />
@@ -156,6 +162,8 @@
     <Compile Include="DataProcess\GetLatestStockByItem.cs" />
     <Compile Include="DataProcess\GetMaximumScheduledVolumeByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetMinifiedEmployeeList.cs" />
+    <Compile Include="DataProcess\GetPayrollGroup.cs" />
+    <Compile Include="DataProcess\GetPayrollTypeById.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectWithCancellableDelivery.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByQuotation.cs" />
@@ -239,7 +247,11 @@
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
     <Compile Include="DataProcess\ResetProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
+    <Compile Include="DataProcess\SaveEmployeeAddition.cs" />
+    <Compile Include="DataProcess\SaveEmployeeDeduction.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
+    <Compile Include="DataProcess\SavePayrollBase.cs" />
+    <Compile Include="DataProcess\SaveSemiMonthlyPayroll.cs" />
     <Compile Include="DataProcess\SearchApprovedProject.cs" />
     <Compile Include="DataProcess\SearchApprovedProjectPredicate.cs" />
     <Compile Include="DataProcess\SearchItem.cs" />
@@ -383,6 +395,8 @@
     <Compile Include="Data\DeliveryScheduleStatus.cs" />
     <Compile Include="Data\Department.cs" />
     <Compile Include="Data\Employee.cs" />
+    <Compile Include="Data\EmployeeAddition.cs" />
+    <Compile Include="Data\EmployeeDeduction.cs" />
     <Compile Include="Data\EmployeeLogin.cs" />
     <Compile Include="Data\EmployeeTimeLogList.cs" />
     <Compile Include="Data\EmploymentStatus.cs" />
@@ -394,7 +408,13 @@
     <Compile Include="Data\HolidayType.cs" />
     <Compile Include="Data\Item.cs" />
     <Compile Include="Data\JobPosition.cs" />
+    <Compile Include="Data\PayrollBase.cs" />
+    <Compile Include="Data\PayrollEmployeeBase.cs" />
+    <Compile Include="Data\PayrollGroup.cs" />
     <Compile Include="Data\PayrollType.cs" />
+    <Compile Include="Data\PayrollType.Part.Static.Instance.cs" />
+    <Compile Include="Data\PayrollType.Part.Static.Process.cs" />
+    <Compile Include="Data\PayrollType.Part.Static.Declaration.cs" />
     <Compile Include="Data\ProjectDesignLoadCutOff.cs" />
     <Compile Include="Data\MeasurementUnit.cs" />
     <Compile Include="Data\Module.cs" />
@@ -430,6 +450,8 @@
     <Compile Include="Data\SalesInvoice.cs" />
     <Compile Include="Data\ScheduledProjectDesign.cs" />
     <Compile Include="Data\ScheduledProjectDesignStatus.cs" />
+    <Compile Include="Data\SemiMonthlyPayroll.cs" />
+    <Compile Include="Data\SemiMonthlyPayrollEmployee.cs" />
     <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
     <Compile Include="Data\TallySheetItem.cs" />
@@ -591,6 +613,13 @@
     </Compile>
     <Compile Include="Forms\InventoryReportFormContent.cs" />
     <Compile Include="Forms\InventoryReportFormController.cs" />
+    <Compile Include="Forms\SemiMonthlyPayrollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SemiMonthlyPayrollForm.Designer.cs">
+      <DependentUpon>SemiMonthlyPayrollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SemiMonthlyPayrollFormController.cs" />
     <Compile Include="Forms\TimeLogCalculatorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1028,6 +1057,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SalesInvoiceAssignmentForm.resx">
       <DependentUpon>SalesInvoiceAssignmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SemiMonthlyPayrollForm.resx">
+      <DependentUpon>SemiMonthlyPayrollForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimeLogCalculatorForm.resx">
       <DependentUpon>TimeLogCalculatorForm.cs</DependentUpon>

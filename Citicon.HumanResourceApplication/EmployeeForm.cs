@@ -83,11 +83,15 @@ namespace Citicon.HumanResourceApplication
         {
             BasicPayTextBox.Text = string.Empty;
             DailyRateTextBox.Text = string.Empty;
+            AllowanceTextBox.Text = string.Empty;
+            OtAllowanceTextBox.Text = string.Empty;
 
             if (employeeAddition != null)
             {
                 BasicPayTextBox.Text = employeeAddition.BasicPay.ToString("#,##0.00");
                 DailyRateTextBox.Text = employeeAddition.DailyRate.ToString("#,##0.00");
+                AllowanceTextBox.Text = employeeAddition.Allowance.ToString("#,##0.00");
+                OtAllowanceTextBox.Text = employeeAddition.OvertimeAllowance.ToString("#,##0.00");
             }
         }
 
@@ -97,13 +101,17 @@ namespace Citicon.HumanResourceApplication
             SssErDeductionTextBox.Text = string.Empty;
             WithHoldingTaxTextBox.Text = string.Empty;
             PagIbigDeductionTextBox.Text = string.Empty;
+            SssEcDeductionTextBox.Text = string.Empty;
+            PhilHealthDeductionTextBox.Text = string.Empty;
 
             if (employeeDeduction != null)
             {
                 SssDeductionTextBox.Text = employeeDeduction.Sss?.ToString("#,##0.00");
-                SssErDeductionTextBox.Text = employeeDeduction.SssLoan?.ToString("#,##0.00");
+                SssErDeductionTextBox.Text = employeeDeduction.SssEr?.ToString("#,##0.00");
                 WithHoldingTaxTextBox.Text = employeeDeduction.WithholdingTax?.ToString("#,##0.00");
-                PagIbigDeductionTextBox.Text = employeeDeduction.PagibigLoan?.ToString("#,##0.00");
+                PagIbigDeductionTextBox.Text = employeeDeduction.Pagibig?.ToString("#,##0.00");
+                SssEcDeductionTextBox.Text = employeeDeduction.SssEc?.ToString("#,##0.00");
+                PhilHealthDeductionTextBox.Text = employeeDeduction.PhilHealth?.ToString("#,##0.00");
             }
         }
 
