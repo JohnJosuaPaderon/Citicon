@@ -28,8 +28,10 @@ namespace Citicon.DataProcess
             {
                 Id = reader.GetUInt64("Id"),
                 Sss = reader.GetDecimal("Sss"),
-                SssLoan = reader.GetDecimal("SssLoan"),
-                PagibigLoan = reader.GetDecimal("PagibigLoan"),
+                SssEr = reader.GetDecimal("SssEr"),
+                SssEc = reader.GetDecimal("SssEc"),
+                Pagibig = reader.GetDecimal("Pagibig"),
+                PhilHealth = reader.GetDecimal("PhilHealth"),
                 WithholdingTax = reader.GetDecimal("WithholdingTax")
             };
         }

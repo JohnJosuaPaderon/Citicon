@@ -21,7 +21,9 @@ namespace Citicon.DataProcess
                 .AddOutParameter("@_Id")
                 .AddInParameter("@_EmployeeId", _EmployeeAddition.Employee?.Id)
                 .AddInParameter("@_DailyRate", _EmployeeAddition.DailyRate)
-                .AddInParameter("@_BasicPay", _EmployeeAddition.BasicPay);
+                .AddInParameter("@_BasicPay", _EmployeeAddition.BasicPay)
+                .AddInParameter("@_Allowance", _EmployeeAddition.Allowance)
+                .AddInParameter("@_OvertimeAllowance", _EmployeeAddition.OvertimeAllowance);
         }
 
         private EmployeeAddition Callback(int affectedRows, MySqlCommand command)

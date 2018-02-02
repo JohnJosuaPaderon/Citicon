@@ -12,7 +12,9 @@ namespace Citicon.Data
         public Employee Employee { get; }
         public decimal? WithholdingTax { get; set; }
         public decimal? Sss { get; set; }
-        public decimal? SssLoan { get; set; }
-        public decimal? PagibigLoan { get; set; }
+        public decimal? SssEr { get; set; }
+        public decimal? SssEc { get; set; }
+        public decimal? Pagibig { get; set; }
+        public decimal? PhilHealth { get; set; }
     }
 }

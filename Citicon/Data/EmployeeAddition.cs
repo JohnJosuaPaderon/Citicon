@@ -11,5 +11,7 @@
 
         public decimal DailyRate { get; set; }
         public decimal BasicPay { get; set; }
+        public decimal Allowance { get; set; }
+        public decimal OvertimeAllowance { get; set; }
     }
 }

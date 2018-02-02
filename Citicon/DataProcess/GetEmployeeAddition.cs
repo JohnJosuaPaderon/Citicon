@@ -28,7 +28,9 @@ namespace Citicon.DataProcess
             {
                 Id = reader.GetUInt64("Id"),
                 DailyRate = reader.GetDecimal("DailyRate"),
-                BasicPay = reader.GetDecimal("BasicPay")
+                BasicPay = reader.GetDecimal("BasicPay"),
+                Allowance = reader.GetDecimal("Allowance"),
+                OvertimeAllowance = reader.GetDecimal("OvertimeAllowance")
             };
         }
 

@@ -91,6 +91,35 @@ namespace Citicon.Forms.Controls
             VacationLeaveNumericUpDown.Value = employee?.VacationLeave ?? 0;
             SickLeaveNumericUpDown.Value = employee?.SickLeave ?? 0;
             AbsencesNumericUpDown.Value = employee?.Absences ?? 0;
+
+            BasicPayNumericUpDown.Value = 0;
+            DailyRateNumericUpDown.Value = 0;
+            AllowanceNumericUpDown.Value = 0;
+            OtAllowanceNumericUpDown.Value = 0;
+            SssDeductionNumericUpDown.Value = 0;
+            SssErDeductionNumericUpDown.Value = 0;
+            SssEcDeductionNumericUpDown.Value = 0;
+            WithHoldingTaxNumericUpDown.Value = 0;
+            PagIbigDeductionNumericUpDown.Value = 0;
+            PhilHealthDeductionNumericUpDown.Value = 0;
+
+            if (employee?.Addition != null)
+            {
+                BasicPayNumericUpDown.Value = employee.Addition.BasicPay;
+                DailyRateNumericUpDown.Value = employee.Addition.DailyRate;
+                AllowanceNumericUpDown.Value = employee.Addition.Allowance;
+                OtAllowanceNumericUpDown.Value = employee.Addition.OvertimeAllowance;
+            }
+
+            if (employee?.Deduction != null)
+            {
+                SssDeductionNumericUpDown.Value = employee.Deduction.Sss ?? 0;
+                SssErDeductionNumericUpDown.Value = employee.Deduction.SssEr ?? 0;
+                SssEcDeductionNumericUpDown.Value = employee.Deduction.SssEc ?? 0;
+                WithHoldingTaxNumericUpDown.Value = employee.Deduction.WithholdingTax ?? 0;
+                PagIbigDeductionNumericUpDown.Value = employee.Deduction.Pagibig ?? 0;
+                PhilHealthDeductionNumericUpDown.Value = employee.Deduction.PhilHealth ?? 0;
+            }
         }
 
         private void RequestFormCancel()
@@ -188,6 +217,8 @@ namespace Citicon.Forms.Controls
 
             Employee.Addition.BasicPay = BasicPayNumericUpDown.Value;
             Employee.Addition.DailyRate = DailyRateNumericUpDown.Value;
+            Employee.Addition.Allowance = AllowanceNumericUpDown.Value;
+            Employee.Addition.OvertimeAllowance = OtAllowanceNumericUpDown.Value;
 
             if (Employee.Deduction == null)
             {
@@ -195,9 +226,11 @@ namespace Citicon.Forms.Controls
             }
 
             Employee.Deduction.Sss = SssDeductionNumericUpDown.Value;
-            Employee.Deduction.SssLoan = SssErDeductionNumericUpDown.Value;
+            Employee.Deduction.SssEr = SssErDeductionNumericUpDown.Value;
             Employee.Deduction.WithholdingTax = WithHoldingTaxNumericUpDown.Value;
-            Employee.Deduction.PagibigLoan = PagIbigDeductionNumericUpDown.Value;
+            Employee.Deduction.Pagibig = PagIbigDeductionNumericUpDown.Value;
+            Employee.Deduction.SssEc = SssEcDeductionNumericUpDown.Value;
+            Employee.Deduction.PhilHealth = PhilHealthDeductionNumericUpDown.Value;
             //EmployeePayrollAddition.BasicPay = BasicPayNumericUpDown.Value;
             //EmployeePayrollAddition.DailyRate = DailyRateNumericUpDown.Value;
             //EmployeePayrollAddition.Allowance = AllowanceNumericUpDown.Value;

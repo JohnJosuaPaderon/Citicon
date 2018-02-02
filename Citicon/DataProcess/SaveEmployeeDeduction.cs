@@ -22,8 +22,10 @@ namespace Citicon.DataProcess
                 .AddInParameter("@_EmployeeId", _EmployeeDeduction.Employee?.Id)
                 .AddInParameter("@_WithholdingTax", _EmployeeDeduction.WithholdingTax)
                 .AddInParameter("@_Sss", _EmployeeDeduction.Sss)
-                .AddInParameter("@_SssLoan", _EmployeeDeduction.SssLoan)
-                .AddInParameter("@_PagibigLoan", _EmployeeDeduction.PagibigLoan);
+                .AddInParameter("@_SssEr", _EmployeeDeduction.SssEr)
+                .AddInParameter("@_SssEc", _EmployeeDeduction.SssEc)
+                .AddInParameter("@_Pagibig", _EmployeeDeduction.Pagibig)
+                .AddInParameter("@_PhilHealth", _EmployeeDeduction.PhilHealth);
         }
 
         private EmployeeDeduction Callback(int affectedRows, MySqlCommand command)
