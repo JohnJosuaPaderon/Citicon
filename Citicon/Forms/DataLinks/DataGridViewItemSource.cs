@@ -6,16 +6,16 @@ namespace Citicon.Forms.DataLinks
 {
     public class DataGridViewItemSource<T> where T : class
     {
-        public DataGridViewItemSource(DataGridView dataGridView, Func<T, DataGridViewRow> addRow, Func<string> getItemColumnName)
+        public DataGridViewItemSource(DataGridView dataGridView, Func<T, DataGridViewRow> addRow, string itemColumnName)
         {
             _DataGridView = dataGridView ?? throw new ArgumentNullException(nameof(dataGridView));
             _AddRow = addRow ?? throw new ArgumentNullException(nameof(addRow));
-            _GetItemColumnName = getItemColumnName ?? throw new ArgumentNullException(nameof(getItemColumnName));
+            _ItemColumnName = itemColumnName ?? throw new ArgumentNullException(nameof(itemColumnName));
         }
 
         private readonly Func<T, DataGridViewRow> _AddRow;
         private readonly DataGridView _DataGridView;
-        private readonly Func<string> _GetItemColumnName;
+        private readonly string _ItemColumnName;
 
         public T SelectedItem
         {
@@ -23,7 +23,7 @@ namespace Citicon.Forms.DataLinks
             {
                 if (_DataGridView.SelectedRows.Count == 1)
                 {
-                    return _DataGridView.SelectedRows[0].Cells[_GetItemColumnName()].Value as T;
+                    return _DataGridView.SelectedRows[0].Cells[_ItemColumnName].Value as T;
                 }
                 else
                 {
@@ -60,7 +60,7 @@ namespace Citicon.Forms.DataLinks
 
                 foreach (DataGridViewRow row in _DataGridView.Rows)
                 {
-                    if (row.Cells[_GetItemColumnName()].Value is T rowValue && Equals(value, rowValue))
+                    if (row.Cells[_ItemColumnName].Value is T rowValue && Equals(value, rowValue))
                     {
                         deletableRow = row;
                         break;

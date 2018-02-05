@@ -14,9 +14,9 @@ namespace Citicon.Forms
     {
         public DeliveryCancellationFormController(DeliveryCancellationForm form) : base(form)
         {
-            _Projects = new DataGridViewItemSource<Project>(_Form.ProjectsDataGridView, AddRow, () => _Form.LinkProjectColumn);
-            _ProjectDesigns = new DataGridViewItemSource<ProjectDesign>(_Form.ProjectDesignsDataGridView, AddRow, () => _Form.LinkProjectDesignColumn);
-            _Deliveries = new DataGridViewItemSource<Delivery>(_Form.DeliveriesDataGridView, AddRow, () => _Form.LinkDeliveryColumn);
+            _Projects = new DataGridViewItemSource<Project>(_Form.ProjectsDataGridView, AddRow, _Form.LinkProjectColumn);
+            _ProjectDesigns = new DataGridViewItemSource<ProjectDesign>(_Form.ProjectDesignsDataGridView, AddRow, _Form.LinkProjectDesignColumn);
+            _Deliveries = new DataGridViewItemSource<Delivery>(_Form.DeliveriesDataGridView, AddRow, _Form.LinkDeliveryColumn);
             _SearchKey = new ControlProperty<string>(value => _Form.SearchTextBox.Text = value, () => _Form.SearchTextBox.Text);
             _CancellationRemarks = new ControlProperty<string>(value => _Form.CancellationRemarksTextBox.Text = value, () => _Form.CancellationRemarksTextBox.Text);
             _Options = new ComboBoxItemSource<SearchProjectOption>(_Form.SearchComboBox);
