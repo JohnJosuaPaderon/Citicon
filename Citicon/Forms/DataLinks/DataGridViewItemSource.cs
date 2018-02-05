@@ -1,13 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Citicon.Forms.DataLinks
 {
-    public class DataGridViewItemSource<T> where T : class
+    public class DataGridViewItemSource<T> : IEnumerable<T>
+        where T : class
     {
         public DataGridViewItemSource(DataGridView dataGridView, Func<T, DataGridViewRow> addRow, string itemColumnName)
         {
+            _Items = new List<T>();
             _DataGridView = dataGridView ?? throw new ArgumentNullException(nameof(dataGridView));
             _AddRow = addRow ?? throw new ArgumentNullException(nameof(addRow));
             _ItemColumnName = itemColumnName ?? throw new ArgumentNullException(nameof(itemColumnName));
@@ -15,6 +18,7 @@ namespace Citicon.Forms.DataLinks
 
         private readonly Func<T, DataGridViewRow> _AddRow;
         private readonly DataGridView _DataGridView;
+        private readonly List<T> _Items;
         private readonly string _ItemColumnName;
 
         public T SelectedItem
@@ -36,6 +40,7 @@ namespace Citicon.Forms.DataLinks
 
         public void Add(T value)
         {
+            _Items.Add(value);
             _DataGridView.Rows.Add(_AddRow(value));
         }
 
@@ -43,12 +48,14 @@ namespace Citicon.Forms.DataLinks
         {
             foreach (var value in values)
             {
+                _Items.Add(value);
                 _DataGridView.Rows.Add(_AddRow(value));
             }
         }
 
         public void Clear()
         {
+            _Items.Clear();
             _DataGridView.Rows.Clear();
         }
 
@@ -67,8 +74,19 @@ namespace Citicon.Forms.DataLinks
                     }
                 }
 
+                _Items.Remove(value);
                 _DataGridView.Rows.Remove(deletableRow);
             }
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return _Items.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
