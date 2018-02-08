@@ -23,15 +23,15 @@ namespace Citicon.Data
         {
             if (Begin.Date == End.Date)
             {
-                return string.Format("{0:MMMM dd, yyyy}", Begin);
+                return string.Format("{0:MMMM dd, yyyy}", Begin).ToUpper();
             }
             else if (Begin.Year == End.Year && Begin.Month == End.Month)
             {
-                return string.Format("{0:MMM} {0:dd}-{1:dd}, {0:yyyy}", Begin, End);
+                return string.Format("{0:MMMM} {0:dd}-{1:dd}, {0:yyyy}", Begin, End).ToUpper();
             }
             else
             {
-                return string.Concat(Begin.ToString("MMM dd, yyyy"), " - ", End.ToString("MMM dd, yyyy"));
+                return string.Concat(Begin.ToString("MMMM dd, yyyy"), " - ", End.ToString("MMMM dd, yyyy")).ToUpper();
             }
         }
     }
