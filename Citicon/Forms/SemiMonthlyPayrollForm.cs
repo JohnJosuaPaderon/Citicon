@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Citicon.Forms
 {
@@ -11,10 +12,31 @@ namespace Citicon.Forms
         }
 
         private readonly SemiMonthlyPayrollFormController _Controller;
+        public string LinkSemiMonthlyPayrollEmployeeColumn => SemiMonthlyPayrollEmployeeColumn.Name;
+        public string LinkSemiMonthlyPayrollEmployeeDailyRateColumn => SemiMonthlyPayrollEmployee_DailyRateColumn.Name;
+        public string LinkSemiMonthlyPayrollEmployeeGrossPayColumn => SemiMonthlyPayrollEmployee_GrossPayColumn.Name;
+        public string LinkSemiMonthlyPayrollEmployeeTotalDeductionColumn => SemiMonthlyPayrollEmployee_TotalDeductionColumn.Name;
+        public string LinkSemiMonthlyPayrollEmployeeNetPayColumn => SemiMonthlyPayrollEmployee_NetPayColumn.Name;
 
-        private void GenerateButton_Click(object sender, System.EventArgs e)
+        private async void GenerateButton_Click(object sender, EventArgs e)
         {
+            await _Controller.GenerateAsync();
+        }
 
+        private async void SemiMonthlyPayrollForm_Load(object sender, EventArgs e)
+        {
+            await _Controller.InitializeAsync();
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            _Controller.Dispose();
+            base.OnClosed(e);
+        }
+
+        private async void SavePrintButton_Click(object sender, EventArgs e)
+        {
+            await _Controller.SavePrintAsync();
         }
     }
 }

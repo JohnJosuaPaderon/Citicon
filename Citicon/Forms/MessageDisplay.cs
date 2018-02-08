@@ -31,5 +31,10 @@ namespace Citicon.Forms
         {
             MessageBox.Show(message, "Citicon", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public DialogResult Question(string message, MessageBoxButtons buttons)
+        {
+            return MessageBox.Show(message, "Citicon", buttons, MessageBoxIcon.Question);
+        }
     }
 }
