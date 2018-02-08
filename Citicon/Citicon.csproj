@@ -110,6 +110,9 @@
     <Compile Include="DataProcess\DeleteTimeLog.cs" />
     <Compile Include="DataProcess\DeleteTransitMixer.cs" />
     <Compile Include="DataProcess\EmployeeExists.cs" />
+    <Compile Include="DataProcess\ExcelCell.cs" />
+    <Compile Include="DataProcess\ExcelCellParser.cs" />
+    <Compile Include="DataProcess\ExcelColumn.cs" />
     <Compile Include="DataProcess\ExportAllDriverTripReport.cs" />
     <Compile Include="DataProcess\ExportAllTripReport.cs" />
     <Compile Include="DataProcess\ExportBilling.cs" />
@@ -122,11 +125,13 @@
     <Compile Include="DataProcess\ExportIssuanceSlip.cs" />
     <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\ExportOutgoingStockReport.cs" />
+    <Compile Include="DataProcess\ExportSemiMonthlyPayroll.cs" />
     <Compile Include="DataProcess\ExportStockReport.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
+    <Compile Include="DataProcess\GenerateSemiMonthlyPayrollEmployeeList.cs" />
     <Compile Include="DataProcess\GetCancellableDeliveryListByProjectDesign.cs" />
     <Compile Include="DataProcess\GetCementSuppliedListByProject.cs" />
     <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
@@ -245,13 +250,15 @@
     <Compile Include="DataProcess\InsertTransaction.cs" />
     <Compile Include="DataProcess\InsertTransactionList.cs" />
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
+    <Compile Include="DataProcess\PayrollExists.cs" />
     <Compile Include="DataProcess\ResetProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
     <Compile Include="DataProcess\SaveEmployeeAddition.cs" />
     <Compile Include="DataProcess\SaveEmployeeDeduction.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
-    <Compile Include="DataProcess\SavePayrollBase.cs" />
+    <Compile Include="DataProcess\SavePayroll.cs" />
     <Compile Include="DataProcess\SaveSemiMonthlyPayroll.cs" />
+    <Compile Include="DataProcess\SaveSemiMonthlyPayrollEmployee.cs" />
     <Compile Include="DataProcess\SearchApprovedProject.cs" />
     <Compile Include="DataProcess\SearchApprovedProjectPredicate.cs" />
     <Compile Include="DataProcess\SearchItem.cs" />
@@ -452,6 +459,7 @@
     <Compile Include="Data\ScheduledProjectDesignStatus.cs" />
     <Compile Include="Data\SemiMonthlyPayroll.cs" />
     <Compile Include="Data\SemiMonthlyPayrollEmployee.cs" />
+    <Compile Include="Data\SemiMonthlyPayrollEmployeeCollection.cs" />
     <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
     <Compile Include="Data\TallySheetItem.cs" />
@@ -591,6 +599,7 @@
     <Compile Include="Forms\DataLinks\ComboBoxItemSource.cs" />
     <Compile Include="Forms\DataLinks\ControlProperty.cs" />
     <Compile Include="Forms\DataLinks\DataGridViewItemSource.cs" />
+    <Compile Include="Forms\DataLinks\TextBoxHelper.cs" />
     <Compile Include="Forms\DeliveryCancellationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -627,6 +636,7 @@
       <DependentUpon>TimeLogCalculatorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TimeLogCalculatorFormController.cs" />
+    <Compile Include="Resources.cs" />
     <Compile Include="WindowsForm\DataGridViewCellCollectionExtension.cs" />
     <Compile Include="Forms\DeliveryConfirmationForm.cs">
       <SubType>Form</SubType>
@@ -838,35 +848,6 @@
       <DependentUpon>UserSettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\DbValueConverter.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Boolean.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Byte.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Char.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.DateTime.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Decimal.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Double.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Int16.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Int32.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Int64.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableBoolean.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableByte.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableChar.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableDateTime.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableDecimal.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableDouble.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableInt16.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableInt32.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableInt64.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableSByte.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableSingle.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableUInt16.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableUInt32.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.NullableUInt64.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.SByte.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.Single.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.String.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.UInt16.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.UInt32.cs" />
-    <Compile Include="Utilities\DbValueConverter.Definitions.UInt64.cs" />
     <Compile Include="Utilities\DirectoryResolver.cs" />
     <Compile Include="Utilities\ValueConverter.cs" />
     <Compile Include="Utilities\ValueConverter.Definitions.Boolean.cs" />
