@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal abstract class SavePayrollBase<TPayroll> : DataProcessBase
+    internal abstract class SavePayroll<TPayroll> : DataProcessBase
         where TPayroll : PayrollBase
     {
-        public SavePayrollBase(TPayroll payroll)
+        public SavePayroll(TPayroll payroll)
         {
             _Payroll = payroll ?? throw new ArgumentNullException(nameof(payroll));
         }
@@ -18,12 +18,13 @@ namespace Citicon.DataProcess
 
         protected virtual MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
-            return Utility.CreateProcedureCommand(GetType().Name, connection, transaction)
+            return Utility.CreateProcedureCommand("SavePayroll", connection, transaction)
                 .AddOutParameter("@_Id")
                 .AddInParameter("@_TypeId", _Payroll.Type?.Id)
                 .AddInParameter("@_BranchId", _Payroll.Branch?.Id)
                 .AddInParameter("@_CutOffBegin", _Payroll.CutOff.Begin)
-                .AddInParameter("@_CutOffEnd", _Payroll.CutOff.End);
+                .AddInParameter("@_CutOffEnd", _Payroll.CutOff.End)
+                .AddInParameter("@_RunDate", _Payroll.RunDate);
         }
 
         protected virtual TPayroll Callback(int affectedRows, MySqlCommand command)
@@ -39,9 +40,9 @@ namespace Citicon.DataProcess
             }
         }
 
-        public virtual Task<TPayroll> ExecuteAsync()
+        public virtual Task<TPayroll> ExecuteAsync(MySqlConnection connection, MySqlTransaction transaction)
         {
-            return ProcessUtility.HandleExecuteAsync(CreateCommand, Callback);
+            return ProcessUtility.HandleExecuteAsync(connection, transaction, CreateCommand, Callback);
         }
     }
 }
