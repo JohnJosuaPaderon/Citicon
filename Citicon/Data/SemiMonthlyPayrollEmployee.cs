@@ -17,7 +17,7 @@
         {
             get
             {
-                return 0;
+                return (DailyRate / 8) * RegularWorkingHours;
             }
         }
 
@@ -25,7 +25,7 @@
         {
             get
             {
-                return 0;
+                return (DailyRate / 8) * SundayWorkingHours * 1.3M;
             }
         }
 
@@ -33,7 +33,7 @@
         {
             get
             {
-                return 0;
+                return (DailyRate / 8) * SpecialHolidayWorkingHours * 1.3M;
             }
         }
 
@@ -41,7 +41,7 @@
         {
             get
             {
-                return 0;
+                return (DailyRate / 8) * SpecialHolidayOvertimeWorkingHours * 1.6M;
             }
         }
 
@@ -49,7 +49,7 @@
         {
             get
             {
-                return 0;
+                return BasicPay + RegularOvertimePay + SundayPay + OvertimeAllowance + Allowance + SpecialHolidayPay + SpecialHolidayOvertimePay;
             }
         }
 
@@ -57,7 +57,7 @@
         {
             get
             {
-                return 0;
+                return WithholdingTax + Sss + CashAdvance + Pagibig + SunCellBill + PhilHealth;
             }
         }
 
@@ -65,7 +65,7 @@
         {
             get
             {
-                return 0;
+                return GrossPay - TotalDeduction;
             }
         }
     }
