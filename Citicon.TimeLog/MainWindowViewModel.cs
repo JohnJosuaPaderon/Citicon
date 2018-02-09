@@ -72,7 +72,6 @@ namespace Citicon.TimeLog
         private async void CurrentDateTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             CurrentDate = await GenericManager.GetCurrentDateAsync();
-            Debug.WriteLine("Current Date Updated @ {0}", DateTime.Now);
         }
     }
 }
