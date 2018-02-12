@@ -301,5 +301,22 @@ namespace Citicon.Forms
 
             return false;
         }
+
+        public async Task ViewTimeLogsAsync()
+        {
+            var selectedEmployee = _Employees.SelectedItem;
+            if (selectedEmployee != null)
+            {
+                var form = new EmployeeTimeLogForm(selectedEmployee.Employee, Payroll.CutOff);
+                form.ShowDialog();
+
+                if (form.HasChanges)
+                {
+                    _MessageDisplay.Inform("We've detected that you've made changes to the time-logs, we will refresh the employees.");
+                    await GenerateAsync();
+
+                }
+            }
+        }
     }
 }

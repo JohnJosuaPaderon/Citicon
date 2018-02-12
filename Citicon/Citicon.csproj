@@ -616,6 +616,13 @@
     <Compile Include="Forms\Dialogs\AddEditStructureTypeDialog.Designer.cs">
       <DependentUpon>AddEditStructureTypeDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeTimeLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeTimeLogForm.Designer.cs">
+      <DependentUpon>EmployeeTimeLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeTimeLogFormController.cs" />
     <Compile Include="Forms\InventoryReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -639,6 +646,7 @@
     </Compile>
     <Compile Include="Forms\TimeLogCalculatorFormController.cs" />
     <Compile Include="Resources.cs" />
+    <Compile Include="Utilities\NightDifferentialWorkingHoursCounter.cs" />
     <Compile Include="Utilities\RegularOvertimeWorkingHoursCounter.cs" />
     <Compile Include="Utilities\RegularWorkingHoursCounter.cs" />
     <Compile Include="Utilities\SpecialHolidayOvertimeWorkingHoursCounter.cs" />
@@ -1003,6 +1011,9 @@
     <EmbeddedResource Include="Forms\DriverTripReportForm.resx">
       <DependentUpon>DriverTripReportForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeTimeLogForm.resx">
+      <DependentUpon>EmployeeTimeLogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EngineerDeliveryCreationForm.resx">
       <DependentUpon>EngineerDeliveryCreationForm.cs</DependentUpon>

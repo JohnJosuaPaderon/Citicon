@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Citicon.Utilities
 {
-    public static class RegularOvertimeWorkingHoursCounter
+    public static class NightDifferentialWorkingHoursCounter
     {
         public static async Task<decimal> CountAsync(Employee employee, DateTimeRange cutOff)
         {
@@ -17,7 +17,7 @@ namespace Citicon.Utilities
                 throw new ArgumentException("Employee or Cut-Off is null.");
             }
 
-            var timeLogs = await PayrollManager.GetTimeLogListAsync(employee, TimeLogType.RegularOvertimeWorkingHours, cutOff);
+            var timeLogs = await PayrollManager.GetTimeLogListAsync(employee, TimeLogType.NightDifferentialWorkingHours, cutOff);
 
             if (timeLogs != null && timeLogs.Any())
             {
@@ -98,12 +98,12 @@ namespace Citicon.Utilities
 
         private static DateTime GetLoginDate(DateTime? loginDate)
         {
-            return loginDate?.Date.AddHours(17) ?? default(DateTime);
+            return loginDate?.Date.AddDays((loginDate?.Hour ?? 8) < 8 ? -1 : 0).AddHours(22) ?? default(DateTime);
         }
 
         private static DateTime GetLogoutDate(DateTime? loginDate)
         {
-            return loginDate?.Date.AddHours(22) ?? default(DateTime);
+            return loginDate?.Date.AddDays(1).AddHours(8) ?? default(DateTime);
         }
     }
 }

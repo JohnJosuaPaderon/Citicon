@@ -96,6 +96,7 @@
             this.WithholdingTaxTextBox = new System.Windows.Forms.TextBox();
             this.WithholdingTaxLabel = new System.Windows.Forms.Label();
             this.SavePrintButton = new System.Windows.Forms.Button();
+            this.ViewTimeLogsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SemiMonthlyPayrollEmployeesDataGridView)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
             this.TimeLogCalculationsGroupBox.SuspendLayout();
@@ -745,12 +746,29 @@
             this.SavePrintButton.UseVisualStyleBackColor = false;
             this.SavePrintButton.Click += new System.EventHandler(this.SavePrintButton_Click);
             // 
+            // ViewTimeLogsButton
+            // 
+            this.ViewTimeLogsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ViewTimeLogsButton.BackColor = System.Drawing.Color.Red;
+            this.ViewTimeLogsButton.FlatAppearance.BorderSize = 0;
+            this.ViewTimeLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ViewTimeLogsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewTimeLogsButton.ForeColor = System.Drawing.Color.White;
+            this.ViewTimeLogsButton.Location = new System.Drawing.Point(977, 747);
+            this.ViewTimeLogsButton.Name = "ViewTimeLogsButton";
+            this.ViewTimeLogsButton.Size = new System.Drawing.Size(125, 40);
+            this.ViewTimeLogsButton.TabIndex = 13;
+            this.ViewTimeLogsButton.Text = "View Time-Logs";
+            this.ViewTimeLogsButton.UseVisualStyleBackColor = false;
+            this.ViewTimeLogsButton.Click += new System.EventHandler(this.ViewTimeLogsButton_Click);
+            // 
             // SemiMonthlyPayrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1245, 799);
+            this.Controls.Add(this.ViewTimeLogsButton);
             this.Controls.Add(this.SavePrintButton);
             this.Controls.Add(this.DeductionsGroupBox);
             this.Controls.Add(this.EarningsGroupBox);
@@ -848,5 +866,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SemiMonthlyPayrollEmployee_NetPayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SemiMonthlyPayrollEmployee_ExtraColumn;
         private System.Windows.Forms.Button SavePrintButton;
+        private System.Windows.Forms.Button ViewTimeLogsButton;
     }
 }

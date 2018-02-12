@@ -38,5 +38,10 @@ namespace Citicon.Forms
         {
             await _Controller.SavePrintAsync();
         }
+
+        private async void ViewTimeLogsButton_Click(object sender, EventArgs e)
+        {
+            await _Controller.ViewTimeLogsAsync();
+        }
     }
 }
