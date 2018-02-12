@@ -168,6 +168,7 @@
     <Compile Include="DataProcess\GetMaximumScheduledVolumeByProjectDesignAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetMinifiedEmployeeList.cs" />
     <Compile Include="DataProcess\GetPayrollGroup.cs" />
+    <Compile Include="DataProcess\GetPayrollTimeLogList.cs" />
     <Compile Include="DataProcess\GetPayrollTypeById.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectAndDeliveryDate.cs" />
     <Compile Include="DataProcess\GetProjectDesignListByProjectWithCancellableDelivery.cs" />
@@ -484,6 +485,7 @@
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="Data\VoidCheque.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\DbParameterCollectionExtension.cs" />
     <Compile Include="Extensions\MySqlCommandExtension.cs" />
     <Compile Include="Extensions\NameValueCollectionExtension.cs" />
@@ -637,6 +639,11 @@
     </Compile>
     <Compile Include="Forms\TimeLogCalculatorFormController.cs" />
     <Compile Include="Resources.cs" />
+    <Compile Include="Utilities\RegularOvertimeWorkingHoursCounter.cs" />
+    <Compile Include="Utilities\RegularWorkingHoursCounter.cs" />
+    <Compile Include="Utilities\SpecialHolidayOvertimeWorkingHoursCounter.cs" />
+    <Compile Include="Utilities\SpecialHolidayWorkingHoursCounter.cs" />
+    <Compile Include="Utilities\SundayWorkingHoursCounter.cs" />
     <Compile Include="WindowsForm\DataGridViewCellCollectionExtension.cs" />
     <Compile Include="Forms\DeliveryConfirmationForm.cs">
       <SubType>Form</SubType>

@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Citicon.WindowsForm
 {
@@ -7,6 +9,17 @@ namespace Citicon.WindowsForm
         public static DataGridViewRow SetHeight(this DataGridViewRow instance, int height)
         {
             instance.Height = height;
+            return instance;
+        }
+
+        public static DataGridViewRow SetError(this DataGridViewRow instance, Func<bool> validate)
+        {
+            if (validate())
+            {
+                instance.DefaultCellStyle.BackColor = Color.Red;
+                instance.DefaultCellStyle.ForeColor = Color.White;
+            }
+
             return instance;
         }
 

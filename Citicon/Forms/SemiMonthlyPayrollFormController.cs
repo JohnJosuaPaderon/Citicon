@@ -95,6 +95,7 @@ namespace Citicon.Forms
         {
             return new DataGridViewRow()
                 .SetHeight(30)
+                .SetError(() => employee.IrregularWorkingHoursDetected)
                 .AddTextBoxCell(employee)
                 .AddTextBoxCell(employee.Employee)
                 .AddTextBoxCell(employee.DailyRate)
@@ -244,6 +245,12 @@ namespace Citicon.Forms
 
         public async Task SavePrintAsync()
         {
+            if (HasNoWorkingHoursIrregularities())
+            {
+                _MessageDisplay.Error("We've detected working hours irregularities. Saving is interrupted.");
+                return;
+            }
+
             SetData();
             var exists = default(bool);
             var allowContinue = default(bool);
@@ -280,6 +287,19 @@ namespace Citicon.Forms
                     _MessageDisplay.Exception(ex);
                 }
             }
+        }
+
+        private bool HasNoWorkingHoursIrregularities()
+        {
+            foreach (var payrollEmployee in _Employees)
+            {
+                if (payrollEmployee.IrregularWorkingHoursDetected)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

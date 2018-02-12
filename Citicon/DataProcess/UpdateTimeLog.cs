@@ -1,4 +1,6 @@
 ﻿using Citicon.Data;
+using Citicon.DataManager;
+using Citicon.Extensions;
 using MySql.Data.MySqlClient;
 using System;
 using System.Threading.Tasks;
@@ -21,7 +23,7 @@ namespace Citicon.DataProcess
             command.Parameters.AddWithValue("@_EmployeeLoginId", TimeLog.EmployeeLogin.Id);
             command.Parameters.AddWithValue("@_Login", TimeLog.Login);
             command.Parameters.AddWithValue("@_Logout", TimeLog.Logout);
-            command.Parameters.AddWithValue("@_TypeId", TimeLog.Type.Id);
+            command.AddOutParameter("@_TypeId");
 
             return command;
         }
@@ -44,6 +46,10 @@ namespace Citicon.DataProcess
                 if (await command.ExecuteNonQueryAsync() != 1)
                 {
                     TimeLog = null;
+                }
+                else
+                {
+                    TimeLog.Type = await new TimeLogTypeManager().GetByIdAsync(command.Parameters.GetUInt64("@_TypeId"));
                 }
 
                 return TimeLog;

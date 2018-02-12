@@ -55,6 +55,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<TimeLog>> GetTimeLogListAsync(Employee employee, TimeLogType type, DateTimeRange cutOff)
+        {
+            if (employee != null && type != null && cutOff != null)
+            {
+                using (var process = new GetPayrollTimeLogList(employee, type, cutOff))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<bool> ExistsAsync(PayrollBase payroll)
         {
             if (payroll != null)

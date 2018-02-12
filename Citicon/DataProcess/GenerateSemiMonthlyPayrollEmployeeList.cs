@@ -30,30 +30,27 @@ namespace Citicon.DataProcess
         {
             var employee = await EmployeeManager.GetByIdAsync(reader.GetInt64("EmployeeId"));
 
-            return new SemiMonthlyPayrollEmployee(_Payroll, employee)
+            var result = new SemiMonthlyPayrollEmployee(_Payroll, employee)
             {
                 Allowance = reader.GetDecimal("Allowance"),
                 BasicPay = reader.GetDecimal("BasicPay"),
                 CashAdvance = default(decimal),
                 DailyRate = reader.GetDecimal("DailyRate"),
                 Id = default(ulong),
-                NightDifferentialWorkingHours = reader.GetDecimal("NightDifferentialWorkingHours"),
                 OvertimeAllowance = reader.GetDecimal("OvertimeAllowance"),
                 Pagibig = reader.GetDecimal("Pagibig"),
                 PhilHealth = reader.GetDecimal("PhilHealth"),
-                RegularOvertimeWorkingHours = reader.GetDecimal("RegularOvertimeWorkingHours"),
-                RegularWorkingHours = reader.GetDecimal("RegularWorkingHours"),
                 SickLeave = default(decimal),
-                SpecialHolidayOvertimeWorkingHours = reader.GetDecimal("SpecialHolidayOvertimeWorkingHours"),
-                SpecialHolidayWorkingHours = reader.GetDecimal("SpecialHolidayWorkingHours"),
                 Sss = reader.GetDecimal("Sss"),
                 SssEc = reader.GetDecimal("SssEc"),
                 SssEr = reader.GetDecimal("SssEr"),
                 SunCellBill = default(decimal),
-                SundayWorkingHours = reader.GetDecimal("SundayWorkingHours"),
                 VacationLeave = default(decimal),
                 WithholdingTax = reader.GetDecimal("WithholdingTax")
             };
+            await result.CountTimeLogHoursAsync();
+
+            return result;
         }
 
         public Task<IEnumerable<SemiMonthlyPayrollEmployee>> ExecuteAsync()
