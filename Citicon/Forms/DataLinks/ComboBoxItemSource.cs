@@ -17,6 +17,11 @@ namespace Citicon.Forms.DataLinks
             _ComboBox.Items.Add(value);
         }
 
+        public void Clear()
+        {
+            _ComboBox.Items.Clear();
+        }
+
         public T SelectedItem
         {
             get
