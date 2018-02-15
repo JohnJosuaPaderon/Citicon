@@ -1,4 +1,4 @@
-﻿namespace Citicon.ReceivablesIntegration.Forms
+﻿namespace Citicon.Forms
 {
     partial class DeliveryForm
     {

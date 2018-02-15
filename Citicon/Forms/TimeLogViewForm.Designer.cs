@@ -1,4 +1,4 @@
-﻿namespace Citicon.PayrollIntegration.Forms
+﻿namespace Citicon.Forms
 {
     partial class TimeLogViewForm
     {

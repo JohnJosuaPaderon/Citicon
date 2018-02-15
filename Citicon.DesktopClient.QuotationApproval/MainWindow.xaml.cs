@@ -1,7 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
 using Citicon.DesktopClient.Common;
-using Citicon.ReceivablesIntegration.Forms;
+using Citicon.Forms;
 using MahApps.Metro.Controls;
 using System;
 using System.Windows;

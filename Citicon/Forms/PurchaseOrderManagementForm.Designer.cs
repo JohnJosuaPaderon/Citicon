@@ -1,4 +1,4 @@
-﻿namespace Citicon.ReceivablesIntegration.Forms
+﻿namespace Citicon.Forms
 {
     partial class PurchaseOrderManagementForm
     {
@@ -390,7 +390,7 @@
             // btnIncludeProjectDesign
             // 
             this.btnIncludeProjectDesign.BackColor = System.Drawing.Color.Black;
-            this.btnIncludeProjectDesign.BackgroundImage = global::Citicon.ReceivablesIntegration.Properties.Resources.right_arrow;
+            this.btnIncludeProjectDesign.BackgroundImage = global::Citicon.Properties.Resources.Refresh_26;
             this.btnIncludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnIncludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncludeProjectDesign.ForeColor = System.Drawing.Color.White;
@@ -405,7 +405,7 @@
             // btnExcludeProjectDesign
             // 
             this.btnExcludeProjectDesign.BackColor = System.Drawing.Color.Black;
-            this.btnExcludeProjectDesign.BackgroundImage = global::Citicon.ReceivablesIntegration.Properties.Resources.left_arrow;
+            this.btnExcludeProjectDesign.BackgroundImage = global::Citicon.Properties.Resources.Refresh_26;
             this.btnExcludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcludeProjectDesign.ForeColor = System.Drawing.Color.White;

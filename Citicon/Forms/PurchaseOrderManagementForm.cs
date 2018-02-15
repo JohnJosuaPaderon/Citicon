@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Citicon.ReceivablesIntegration.Forms
+namespace Citicon.Forms
 {
     public partial class PurchaseOrderManagementForm : Form
     {

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Citicon.PayrollIntegration.Forms
+namespace Citicon.Forms
 {
     public partial class TimeLogViewForm : Form
     {

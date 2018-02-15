@@ -1,11 +1,10 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
-using Citicon.Forms;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Citicon.ReceivablesIntegration.Forms
+namespace Citicon.Forms
 {
     public partial class DeliveryForm : Form
     {
