@@ -28,6 +28,7 @@ namespace Citicon.Forms
 
         private readonly DataGridViewItemSource<SemiMonthlyPayrollEmployee> _Employees;
         private readonly ComboBoxItemSource<Branch> _Branches;
+
         private readonly TextBoxHelper<decimal> _AllowanceHelper;
         private readonly TextBoxHelper<decimal> _OvertimeAllowanceHelper;
         private readonly TextBoxHelper<decimal> _WithholdingTaxHelper;
@@ -73,8 +74,6 @@ namespace Citicon.Forms
         private void SetData()
         {
             Payroll.Branch = _Branches.SelectedItem;
-            Payroll.CutOff.Begin = _Form.CutOffBeginDateTimePicker.Value;
-            Payroll.CutOff.End = _Form.CutOffEndDateTimePicker.Value;
             Payroll.RunDate = DateTime.Now;
         }
 
@@ -317,6 +316,19 @@ namespace Citicon.Forms
 
                 }
             }
+        }
+
+        public void ChangeCutOff()
+        {
+            var result = SemiMonthlyCutOffForm.Change(Payroll.CutOff);
+
+            if (result != null)
+            {
+                Payroll.CutOff.Begin = result.Begin;
+                Payroll.CutOff.End = result.End;
+            }
+
+            _Form.CutOffTextBox.Text = Payroll.CutOff.ToString();
         }
     }
 }

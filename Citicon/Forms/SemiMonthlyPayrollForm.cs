@@ -43,5 +43,10 @@ namespace Citicon.Forms
         {
             await _Controller.ViewTimeLogsAsync();
         }
+
+        private void ChangeCutOffLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            _Controller.ChangeCutOff();
+        }
     }
 }

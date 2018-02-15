@@ -40,9 +40,6 @@
             this.BranchLabel = new System.Windows.Forms.Label();
             this.BranchComboBox = new System.Windows.Forms.ComboBox();
             this.CutOffLabel = new System.Windows.Forms.Label();
-            this.CutOffBeginDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.CutOffToLabel = new System.Windows.Forms.Label();
-            this.CutOffEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.GenerateButton = new System.Windows.Forms.Button();
             this.SemiMonthlyPayrollEmployeesDataGridView = new System.Windows.Forms.DataGridView();
             this.SemiMonthlyPayrollEmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +94,8 @@
             this.WithholdingTaxLabel = new System.Windows.Forms.Label();
             this.SavePrintButton = new System.Windows.Forms.Button();
             this.ViewTimeLogsButton = new System.Windows.Forms.Button();
+            this.CutOffTextBox = new System.Windows.Forms.TextBox();
+            this.ChangeCutOffLinkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.SemiMonthlyPayrollEmployeesDataGridView)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
             this.TimeLogCalculationsGroupBox.SuspendLayout();
@@ -131,33 +130,6 @@
             this.CutOffLabel.TabIndex = 2;
             this.CutOffLabel.Text = "Cut-Off";
             // 
-            // CutOffBeginDateTimePicker
-            // 
-            this.CutOffBeginDateTimePicker.CustomFormat = "MMMM d, yyyy";
-            this.CutOffBeginDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CutOffBeginDateTimePicker.Location = new System.Drawing.Point(219, 34);
-            this.CutOffBeginDateTimePicker.Name = "CutOffBeginDateTimePicker";
-            this.CutOffBeginDateTimePicker.Size = new System.Drawing.Size(197, 25);
-            this.CutOffBeginDateTimePicker.TabIndex = 3;
-            // 
-            // CutOffToLabel
-            // 
-            this.CutOffToLabel.AutoSize = true;
-            this.CutOffToLabel.Location = new System.Drawing.Point(425, 40);
-            this.CutOffToLabel.Name = "CutOffToLabel";
-            this.CutOffToLabel.Size = new System.Drawing.Size(20, 17);
-            this.CutOffToLabel.TabIndex = 4;
-            this.CutOffToLabel.Text = "to";
-            // 
-            // CutOffEndDateTimePicker
-            // 
-            this.CutOffEndDateTimePicker.CustomFormat = "MMMM d, yyyy";
-            this.CutOffEndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CutOffEndDateTimePicker.Location = new System.Drawing.Point(451, 34);
-            this.CutOffEndDateTimePicker.Name = "CutOffEndDateTimePicker";
-            this.CutOffEndDateTimePicker.Size = new System.Drawing.Size(197, 25);
-            this.CutOffEndDateTimePicker.TabIndex = 5;
-            // 
             // GenerateButton
             // 
             this.GenerateButton.BackColor = System.Drawing.Color.Red;
@@ -165,7 +137,7 @@
             this.GenerateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.GenerateButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenerateButton.ForeColor = System.Drawing.Color.White;
-            this.GenerateButton.Location = new System.Drawing.Point(654, 25);
+            this.GenerateButton.Location = new System.Drawing.Point(487, 19);
             this.GenerateButton.Name = "GenerateButton";
             this.GenerateButton.Size = new System.Drawing.Size(100, 40);
             this.GenerateButton.TabIndex = 6;
@@ -762,12 +734,33 @@
             this.ViewTimeLogsButton.UseVisualStyleBackColor = false;
             this.ViewTimeLogsButton.Click += new System.EventHandler(this.ViewTimeLogsButton_Click);
             // 
+            // CutOffTextBox
+            // 
+            this.CutOffTextBox.Location = new System.Drawing.Point(219, 34);
+            this.CutOffTextBox.Name = "CutOffTextBox";
+            this.CutOffTextBox.ReadOnly = true;
+            this.CutOffTextBox.Size = new System.Drawing.Size(262, 25);
+            this.CutOffTextBox.TabIndex = 14;
+            // 
+            // ChangeCutOffLinkLabel
+            // 
+            this.ChangeCutOffLinkLabel.AutoSize = true;
+            this.ChangeCutOffLinkLabel.Location = new System.Drawing.Point(429, 9);
+            this.ChangeCutOffLinkLabel.Name = "ChangeCutOffLinkLabel";
+            this.ChangeCutOffLinkLabel.Size = new System.Drawing.Size(52, 17);
+            this.ChangeCutOffLinkLabel.TabIndex = 15;
+            this.ChangeCutOffLinkLabel.TabStop = true;
+            this.ChangeCutOffLinkLabel.Text = "Change";
+            this.ChangeCutOffLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ChangeCutOffLinkLabel_LinkClicked);
+            // 
             // SemiMonthlyPayrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1245, 799);
+            this.Controls.Add(this.ChangeCutOffLinkLabel);
+            this.Controls.Add(this.CutOffTextBox);
             this.Controls.Add(this.ViewTimeLogsButton);
             this.Controls.Add(this.SavePrintButton);
             this.Controls.Add(this.DeductionsGroupBox);
@@ -776,9 +769,6 @@
             this.Controls.Add(this.PersonalDetailsGroupBox);
             this.Controls.Add(this.SemiMonthlyPayrollEmployeesDataGridView);
             this.Controls.Add(this.GenerateButton);
-            this.Controls.Add(this.CutOffEndDateTimePicker);
-            this.Controls.Add(this.CutOffToLabel);
-            this.Controls.Add(this.CutOffBeginDateTimePicker);
             this.Controls.Add(this.CutOffLabel);
             this.Controls.Add(this.BranchComboBox);
             this.Controls.Add(this.BranchLabel);
@@ -810,9 +800,6 @@
         private System.Windows.Forms.Label BranchLabel;
         public System.Windows.Forms.ComboBox BranchComboBox;
         private System.Windows.Forms.Label CutOffLabel;
-        public System.Windows.Forms.DateTimePicker CutOffBeginDateTimePicker;
-        private System.Windows.Forms.Label CutOffToLabel;
-        public System.Windows.Forms.DateTimePicker CutOffEndDateTimePicker;
         private System.Windows.Forms.Button GenerateButton;
         public System.Windows.Forms.DataGridView SemiMonthlyPayrollEmployeesDataGridView;
         private System.Windows.Forms.GroupBox PersonalDetailsGroupBox;
@@ -867,5 +854,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SemiMonthlyPayrollEmployee_ExtraColumn;
         private System.Windows.Forms.Button SavePrintButton;
         private System.Windows.Forms.Button ViewTimeLogsButton;
+        private System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
+        public System.Windows.Forms.TextBox CutOffTextBox;
     }
 }
