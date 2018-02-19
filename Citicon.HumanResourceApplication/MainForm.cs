@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Citicon.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace Citicon.HumanResourceApplication
