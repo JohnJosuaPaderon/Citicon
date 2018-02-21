@@ -103,6 +103,7 @@
     <Compile Include="DataProcess\CancelDelivery.cs" />
     <Compile Include="DataProcess\ChequeNumberExists.cs" />
     <Compile Include="DataProcess\ConfirmDelivery.cs" />
+    <Compile Include="DataProcess\CountTripsPay.cs" />
     <Compile Include="DataProcess\CreateProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\DeleteHoliday.cs" />
     <Compile Include="DataProcess\DeleteProjectDesign.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="DataProcess\ExportStockReport.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
+    <Compile Include="DataProcess\GenerateDriverPayrollEmployeeList.cs" />
     <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GenerateSemiMonthlyPayrollEmployeeList.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="DataProcess\GetDeliveryRouteList.cs" />
     <Compile Include="DataProcess\GetDepartmentList.cs" />
     <Compile Include="DataProcess\GetDriverList.cs" />
+    <Compile Include="DataProcess\GetDriverWorkdays.cs" />
     <Compile Include="DataProcess\GetEmployeeAddition.cs" />
     <Compile Include="DataProcess\GetEmployeeDeduction.cs" />
     <Compile Include="DataProcess\GetEmployeeListWithTimeLog.cs" />
@@ -345,7 +348,7 @@
     <Compile Include="DataProcess\GetProjectById.cs" />
     <Compile Include="DataProcess\GetProjectDesignById.cs" />
     <Compile Include="DataProcess\GetProjectListByClient.cs" />
-    <Compile Include="DataProcess\GetProjectListWithoutBIllingSiNumberByClient.cs" />
+    <Compile Include="DataProcess\GetProjectListWithoutBillingSiNumberByClient.cs" />
     <Compile Include="DataProcess\GetProjectListWithUnbilledDeliveryByClient.cs" />
     <Compile Include="DataProcess\GetProjectListWithUnpaidBillingSiNumberByClient.cs" />
     <Compile Include="DataProcess\InsertPumpcreteCharge.cs" />
@@ -402,6 +405,8 @@
     <Compile Include="Data\DeliveryRoute.cs" />
     <Compile Include="Data\DeliveryScheduleStatus.cs" />
     <Compile Include="Data\Department.cs" />
+    <Compile Include="Data\DriverPayroll.cs" />
+    <Compile Include="Data\DriverPayrollEmployee.cs" />
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeAddition.cs" />
     <Compile Include="Data\EmployeeDeduction.cs" />
@@ -463,6 +468,9 @@
     <Compile Include="Data\SemiMonthlyPayrollEmployeeCollection.cs" />
     <Compile Include="Data\Stock.cs" />
     <Compile Include="Data\Supplier.cs" />
+    <Compile Include="Data\SystemUser.cs" />
+    <Compile Include="Data\SystemUserStatus.cs" />
+    <Compile Include="Data\SystemUserType.cs" />
     <Compile Include="Data\TallySheetItem.cs" />
     <Compile Include="Data\TallySheetReport.cs" />
     <Compile Include="Data\TimeLog.cs" />
@@ -628,6 +636,19 @@
     <Compile Include="Forms\Dialogs\AddEditStructureTypeDialog.Designer.cs">
       <DependentUpon>AddEditStructureTypeDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DriverPayrollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DriverPayrollForm.Designer.cs">
+      <DependentUpon>DriverPayrollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DriverPayrollFormController.cs" />
+    <Compile Include="Forms\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EmployeeTimeLogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -683,6 +704,12 @@
     <Compile Include="Forms\TimeLogViewForm.Designer.cs">
       <DependentUpon>TimeLogViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WeeklyCutOffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WeeklyCutOffForm.Designer.cs">
+      <DependentUpon>WeeklyCutOffForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources.cs" />
     <Compile Include="Utilities\NightDifferentialWorkingHoursCounter.cs" />
     <Compile Include="Utilities\RegularOvertimeWorkingHoursCounter.cs" />
@@ -690,6 +717,7 @@
     <Compile Include="Utilities\SpecialHolidayOvertimeWorkingHoursCounter.cs" />
     <Compile Include="Utilities\SpecialHolidayWorkingHoursCounter.cs" />
     <Compile Include="Utilities\SundayWorkingHoursCounter.cs" />
+    <Compile Include="Utilities\WorkDaysCounter.cs" />
     <Compile Include="WindowsForm\DataGridViewCellCollectionExtension.cs" />
     <Compile Include="Forms\DeliveryConfirmationForm.cs">
       <SubType>Form</SubType>
@@ -1052,9 +1080,15 @@
     <EmbeddedResource Include="Forms\Dialogs\UserVerificationDialog.resx">
       <DependentUpon>UserVerificationDialog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DriverPayrollForm.resx">
+      <DependentUpon>DriverPayrollForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DriverTripReportForm.resx">
       <DependentUpon>DriverTripReportForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeTimeLogForm.resx">
       <DependentUpon>EmployeeTimeLogForm.cs</DependentUpon>
@@ -1121,6 +1155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TransitMixerManagementForm.resx">
       <DependentUpon>TransitMixerManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeeklyCutOffForm.resx">
+      <DependentUpon>WeeklyCutOffForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

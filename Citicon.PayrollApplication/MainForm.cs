@@ -118,5 +118,10 @@ namespace Citicon.PayrollApplication
         {
             OpenMdiChild(SemiMonthlyPayrollForm);
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            OpenMdiChild(TimeLogViewForm);
+        }
     }
 }

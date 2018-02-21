@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CementSuppliedButton = new System.Windows.Forms.Button();
             this.PurchaseOrderMonitorButton = new System.Windows.Forms.Button();
             this.DeliveryConfirmationButton = new System.Windows.Forms.Button();
             this.TallySheetButton = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.PaymentButton = new System.Windows.Forms.Button();
             this.SalesInvoiceButton = new System.Windows.Forms.Button();
             this.BillingButton = new System.Windows.Forms.Button();
-            this.CementSuppliedButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,22 @@
             this.panel1.Size = new System.Drawing.Size(1472, 60);
             this.panel1.TabIndex = 1;
             // 
+            // CementSuppliedButton
+            // 
+            this.CementSuppliedButton.BackColor = System.Drawing.Color.Red;
+            this.CementSuppliedButton.FlatAppearance.BorderSize = 0;
+            this.CementSuppliedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CementSuppliedButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CementSuppliedButton.ForeColor = System.Drawing.Color.White;
+            this.CementSuppliedButton.Location = new System.Drawing.Point(659, 5);
+            this.CementSuppliedButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CementSuppliedButton.Name = "CementSuppliedButton";
+            this.CementSuppliedButton.Size = new System.Drawing.Size(145, 50);
+            this.CementSuppliedButton.TabIndex = 8;
+            this.CementSuppliedButton.Text = "CEMENT SUPPLIED";
+            this.CementSuppliedButton.UseVisualStyleBackColor = false;
+            this.CementSuppliedButton.Click += new System.EventHandler(this.CementSuppliedButton_Click);
+            // 
             // PurchaseOrderMonitorButton
             // 
             this.PurchaseOrderMonitorButton.BackColor = System.Drawing.Color.Red;
@@ -68,7 +84,7 @@
             this.PurchaseOrderMonitorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PurchaseOrderMonitorButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PurchaseOrderMonitorButton.ForeColor = System.Drawing.Color.White;
-            this.PurchaseOrderMonitorButton.Location = new System.Drawing.Point(679, 5);
+            this.PurchaseOrderMonitorButton.Location = new System.Drawing.Point(814, 5);
             this.PurchaseOrderMonitorButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PurchaseOrderMonitorButton.Name = "PurchaseOrderMonitorButton";
             this.PurchaseOrderMonitorButton.Size = new System.Drawing.Size(125, 50);
@@ -84,7 +100,7 @@
             this.DeliveryConfirmationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeliveryConfirmationButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeliveryConfirmationButton.ForeColor = System.Drawing.Color.White;
-            this.DeliveryConfirmationButton.Location = new System.Drawing.Point(949, 5);
+            this.DeliveryConfirmationButton.Location = new System.Drawing.Point(9, 5);
             this.DeliveryConfirmationButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DeliveryConfirmationButton.Name = "DeliveryConfirmationButton";
             this.DeliveryConfirmationButton.Size = new System.Drawing.Size(125, 50);
@@ -100,7 +116,7 @@
             this.TallySheetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TallySheetButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TallySheetButton.ForeColor = System.Drawing.Color.White;
-            this.TallySheetButton.Location = new System.Drawing.Point(814, 5);
+            this.TallySheetButton.Location = new System.Drawing.Point(949, 5);
             this.TallySheetButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.TallySheetButton.Name = "TallySheetButton";
             this.TallySheetButton.Size = new System.Drawing.Size(125, 50);
@@ -132,7 +148,7 @@
             this.PurchaseOrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PurchaseOrderButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PurchaseOrderButton.ForeColor = System.Drawing.Color.White;
-            this.PurchaseOrderButton.Location = new System.Drawing.Point(364, 5);
+            this.PurchaseOrderButton.Location = new System.Drawing.Point(499, 5);
             this.PurchaseOrderButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PurchaseOrderButton.Name = "PurchaseOrderButton";
             this.PurchaseOrderButton.Size = new System.Drawing.Size(150, 50);
@@ -148,7 +164,7 @@
             this.PaymentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PaymentButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PaymentButton.ForeColor = System.Drawing.Color.White;
-            this.PaymentButton.Location = new System.Drawing.Point(254, 5);
+            this.PaymentButton.Location = new System.Drawing.Point(389, 5);
             this.PaymentButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.PaymentButton.Name = "PaymentButton";
             this.PaymentButton.Size = new System.Drawing.Size(100, 50);
@@ -164,7 +180,7 @@
             this.SalesInvoiceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalesInvoiceButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesInvoiceButton.ForeColor = System.Drawing.Color.White;
-            this.SalesInvoiceButton.Location = new System.Drawing.Point(119, 5);
+            this.SalesInvoiceButton.Location = new System.Drawing.Point(254, 5);
             this.SalesInvoiceButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.SalesInvoiceButton.Name = "SalesInvoiceButton";
             this.SalesInvoiceButton.Size = new System.Drawing.Size(125, 50);
@@ -180,7 +196,7 @@
             this.BillingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BillingButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BillingButton.ForeColor = System.Drawing.Color.White;
-            this.BillingButton.Location = new System.Drawing.Point(9, 5);
+            this.BillingButton.Location = new System.Drawing.Point(144, 5);
             this.BillingButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BillingButton.Name = "BillingButton";
             this.BillingButton.Size = new System.Drawing.Size(100, 50);
@@ -188,22 +204,6 @@
             this.BillingButton.Text = "BILLING";
             this.BillingButton.UseVisualStyleBackColor = false;
             this.BillingButton.Click += new System.EventHandler(this.BillingButton_Click);
-            // 
-            // CementSuppliedButton
-            // 
-            this.CementSuppliedButton.BackColor = System.Drawing.Color.Red;
-            this.CementSuppliedButton.FlatAppearance.BorderSize = 0;
-            this.CementSuppliedButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CementSuppliedButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CementSuppliedButton.ForeColor = System.Drawing.Color.White;
-            this.CementSuppliedButton.Location = new System.Drawing.Point(524, 5);
-            this.CementSuppliedButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.CementSuppliedButton.Name = "CementSuppliedButton";
-            this.CementSuppliedButton.Size = new System.Drawing.Size(145, 50);
-            this.CementSuppliedButton.TabIndex = 8;
-            this.CementSuppliedButton.Text = "CEMENT SUPPLIED";
-            this.CementSuppliedButton.UseVisualStyleBackColor = false;
-            this.CementSuppliedButton.Click += new System.EventHandler(this.CementSuppliedButton_Click);
             // 
             // MainForm
             // 

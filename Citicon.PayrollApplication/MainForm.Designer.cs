@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.SemiMonthlyPayrollButton = new System.Windows.Forms.Button();
             this.TransitMixerButton = new System.Windows.Forms.Button();
             this.RouteButton = new System.Windows.Forms.Button();
             this.DriverTripReportButton = new System.Windows.Forms.Button();
             this.UserSettingsButton = new System.Windows.Forms.Button();
             this.ViewTimeLogsButton = new System.Windows.Forms.Button();
-            this.SemiMonthlyPayrollButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,22 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel1.Size = new System.Drawing.Size(1473, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // SemiMonthlyPayrollButton
+            // 
+            this.SemiMonthlyPayrollButton.BackColor = System.Drawing.Color.Red;
+            this.SemiMonthlyPayrollButton.FlatAppearance.BorderSize = 0;
+            this.SemiMonthlyPayrollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SemiMonthlyPayrollButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SemiMonthlyPayrollButton.ForeColor = System.Drawing.Color.White;
+            this.SemiMonthlyPayrollButton.Location = new System.Drawing.Point(5, 5);
+            this.SemiMonthlyPayrollButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.SemiMonthlyPayrollButton.Name = "SemiMonthlyPayrollButton";
+            this.SemiMonthlyPayrollButton.Size = new System.Drawing.Size(125, 50);
+            this.SemiMonthlyPayrollButton.TabIndex = 9;
+            this.SemiMonthlyPayrollButton.Text = "SEMI-MONTHLY PAYROLL";
+            this.SemiMonthlyPayrollButton.UseVisualStyleBackColor = false;
+            this.SemiMonthlyPayrollButton.Click += new System.EventHandler(this.SemiMonthlyPayrollButton_Click);
             // 
             // TransitMixerButton
             // 
@@ -135,22 +151,6 @@
             this.ViewTimeLogsButton.UseVisualStyleBackColor = false;
             this.ViewTimeLogsButton.Click += new System.EventHandler(this.ViewTimeLogsButton_Click);
             // 
-            // SemiMonthlyPayrollButton
-            // 
-            this.SemiMonthlyPayrollButton.BackColor = System.Drawing.Color.Red;
-            this.SemiMonthlyPayrollButton.FlatAppearance.BorderSize = 0;
-            this.SemiMonthlyPayrollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SemiMonthlyPayrollButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SemiMonthlyPayrollButton.ForeColor = System.Drawing.Color.White;
-            this.SemiMonthlyPayrollButton.Location = new System.Drawing.Point(5, 5);
-            this.SemiMonthlyPayrollButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.SemiMonthlyPayrollButton.Name = "SemiMonthlyPayrollButton";
-            this.SemiMonthlyPayrollButton.Size = new System.Drawing.Size(125, 50);
-            this.SemiMonthlyPayrollButton.TabIndex = 9;
-            this.SemiMonthlyPayrollButton.Text = "SEMI-MONTHLY PAYROLL";
-            this.SemiMonthlyPayrollButton.UseVisualStyleBackColor = false;
-            this.SemiMonthlyPayrollButton.Click += new System.EventHandler(this.SemiMonthlyPayrollButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -167,6 +167,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Citicon Payroll";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
