@@ -13,5 +13,6 @@
         public decimal BasicPay { get; set; }
         public decimal Allowance { get; set; }
         public decimal OvertimeAllowance { get; set; }
+        public decimal ShopRate { get; set; }
     }
 }

@@ -12,13 +12,9 @@ namespace Citicon.Data
         }
 
         public TPayroll Payroll { get; }
-        public Employee Employee { get; }
         public decimal VacationLeave { get; set; }
         public decimal SickLeave { get; set; }
-        public decimal DailyRate { get; set; }
-        public decimal BasicPay { get; set; }
-        public decimal Allowance { get; set; }
-        public decimal OvertimeAllowance { get; set; }
+        public Employee Employee { get; }
         public decimal WithholdingTax { get; set; }
         public decimal Sss { get; set; }
         public decimal SssEr { get; set; }

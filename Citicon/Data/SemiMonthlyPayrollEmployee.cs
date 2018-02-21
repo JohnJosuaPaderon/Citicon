@@ -9,6 +9,10 @@ namespace Citicon.Data
         {
         }
 
+        public decimal DailyRate { get; set; }
+        public decimal BasicPay { get; set; }
+        public decimal Allowance { get; set; }
+        public decimal OvertimeAllowance { get; set; }
         public decimal RegularWorkingHours { get; private set; }
         public decimal RegularOvertimeWorkingHours { get; private set; }
         public decimal SundayWorkingHours { get; private set; }

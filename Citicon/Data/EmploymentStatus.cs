@@ -8,6 +8,7 @@ namespace Citicon.Data
         NotSet = 0,
         Active = 1,
         Resigned = 2,
-        Retired = 4
+        Retired = 4,
+        Inactive = 8
     }
 }
