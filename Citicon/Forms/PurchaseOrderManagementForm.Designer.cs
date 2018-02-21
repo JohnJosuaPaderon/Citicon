@@ -82,7 +82,7 @@
             this.nudPurchaseOrderNumber.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPurchaseOrderNumber.ForeColor = System.Drawing.Color.Lime;
             this.nudPurchaseOrderNumber.Location = new System.Drawing.Point(280, 10);
-            this.nudPurchaseOrderNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudPurchaseOrderNumber.Margin = new System.Windows.Forms.Padding(2);
             this.nudPurchaseOrderNumber.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -130,7 +130,7 @@
             this.dgvProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvProjectDesign.GridColor = System.Drawing.Color.Red;
             this.dgvProjectDesign.Location = new System.Drawing.Point(12, 209);
-            this.dgvProjectDesign.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvProjectDesign.Margin = new System.Windows.Forms.Padding(2);
             this.dgvProjectDesign.MultiSelect = false;
             this.dgvProjectDesign.Name = "dgvProjectDesign";
             this.dgvProjectDesign.ReadOnly = true;
@@ -164,7 +164,7 @@
             this.cmbxClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxClient.FormattingEnabled = true;
             this.cmbxClient.Location = new System.Drawing.Point(11, 134);
-            this.cmbxClient.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxClient.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxClient.Name = "cmbxClient";
             this.cmbxClient.Size = new System.Drawing.Size(419, 25);
             this.cmbxClient.TabIndex = 106;
@@ -175,7 +175,7 @@
             this.cmbxProject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxProject.FormattingEnabled = true;
             this.cmbxProject.Location = new System.Drawing.Point(11, 180);
-            this.cmbxProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbxProject.Margin = new System.Windows.Forms.Padding(2);
             this.cmbxProject.Name = "cmbxProject";
             this.cmbxProject.Size = new System.Drawing.Size(419, 25);
             this.cmbxProject.TabIndex = 108;
@@ -199,7 +199,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(1103, 763);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(78, 40);
             this.btnSave.TabIndex = 112;
@@ -214,7 +214,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.Red;
             this.btnCancel.Location = new System.Drawing.Point(1185, 763);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(78, 40);
             this.btnCancel.TabIndex = 111;
@@ -262,7 +262,7 @@
             this.dgvPurchaseOrderProjectDesign.EnableHeadersVisualStyles = false;
             this.dgvPurchaseOrderProjectDesign.GridColor = System.Drawing.Color.Red;
             this.dgvPurchaseOrderProjectDesign.Location = new System.Drawing.Point(562, 10);
-            this.dgvPurchaseOrderProjectDesign.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPurchaseOrderProjectDesign.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPurchaseOrderProjectDesign.MultiSelect = false;
             this.dgvPurchaseOrderProjectDesign.Name = "dgvPurchaseOrderProjectDesign";
             this.dgvPurchaseOrderProjectDesign.ReadOnly = true;
@@ -279,7 +279,7 @@
             this.colPurchaseOrderProjectDesign.Name = "colPurchaseOrderProjectDesign";
             this.colPurchaseOrderProjectDesign.ReadOnly = true;
             this.colPurchaseOrderProjectDesign.Visible = false;
-            this.colPurchaseOrderProjectDesign.Width = 19;
+            this.colPurchaseOrderProjectDesign.Width = 18;
             // 
             // colPurchaseOrderProjectDesign_ProjectDesign
             // 
@@ -306,7 +306,7 @@
             this.nudMaxVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nudMaxVolume.DecimalPlaces = 3;
             this.nudMaxVolume.Location = new System.Drawing.Point(280, 773);
-            this.nudMaxVolume.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudMaxVolume.Margin = new System.Windows.Forms.Padding(2);
             this.nudMaxVolume.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -343,7 +343,7 @@
             // 
             this.nudMaximumCumulativePricePerCubicMeter.DecimalPlaces = 2;
             this.nudMaximumCumulativePricePerCubicMeter.Location = new System.Drawing.Point(11, 88);
-            this.nudMaximumCumulativePricePerCubicMeter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudMaximumCumulativePricePerCubicMeter.Margin = new System.Windows.Forms.Padding(2);
             this.nudMaximumCumulativePricePerCubicMeter.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -390,7 +390,7 @@
             // btnIncludeProjectDesign
             // 
             this.btnIncludeProjectDesign.BackColor = System.Drawing.Color.Black;
-            this.btnIncludeProjectDesign.BackgroundImage = global::Citicon.Properties.Resources.Refresh_26;
+            this.btnIncludeProjectDesign.BackgroundImage = global::Citicon.Properties.Resources.right_arrow;
             this.btnIncludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnIncludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncludeProjectDesign.ForeColor = System.Drawing.Color.White;
@@ -405,7 +405,7 @@
             // btnExcludeProjectDesign
             // 
             this.btnExcludeProjectDesign.BackColor = System.Drawing.Color.Black;
-            this.btnExcludeProjectDesign.BackgroundImage = global::Citicon.Properties.Resources.Refresh_26;
+            this.btnExcludeProjectDesign.BackgroundImage = global::Citicon.Properties.Resources.left_arrow;
             this.btnExcludeProjectDesign.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnExcludeProjectDesign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcludeProjectDesign.ForeColor = System.Drawing.Color.White;

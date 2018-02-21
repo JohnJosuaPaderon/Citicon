@@ -1,0 +1,98 @@
+﻿using Citicon.Data;
+using Citicon.DataManager;
+using Citicon.Forms.DataLinks;
+using Citicon.WindowsForm;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Citicon.Forms
+{
+    internal sealed class DriverPayrollFormController : FormControllerBase<DriverPayrollForm>
+    {
+        public DriverPayrollFormController(DriverPayrollForm form) : base(form)
+        {
+            _Branches = new ComboBoxItemSource<Branch>(_Form.BranchComboBox);
+            _PayrollEmployees = new DataGridViewItemSource<DriverPayrollEmployee>(_Form.DriverPayrollEmployeeDataGridView, AddRow, SelectedItemChanged, "DriverPayrollEmployeeColumn", RefreshRow);
+        }
+
+        private readonly ComboBoxItemSource<Branch> _Branches;
+        private readonly DataGridViewItemSource<DriverPayrollEmployee> _PayrollEmployees;
+
+        private async Task LoadBranchesAsync()
+        {
+            _Branches.Clear();
+            var branches = await (new BranchManager()).GetListAsync();
+
+            if (branches != null && branches.Any())
+            {
+                foreach (var branch in branches)
+                {
+                    _Branches.Add(branch);
+                }
+            }
+        }
+
+        public async Task InitializeAsync()
+        {
+            await LoadBranchesAsync();
+        }
+
+        public async Task GenerateAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        private DataGridViewRow AddRow(DriverPayrollEmployee payrollEmployee)
+        {
+            return new DataGridViewRow()
+                .SetHeight(30)
+                .AddTextBoxCell(payrollEmployee)
+                .AddTextBoxCell(payrollEmployee.Employee)
+                .AddTextBoxCell(payrollEmployee.GrossPay)
+                .AddTextBoxCell(payrollEmployee.TotalDeduction)
+                .AddTextBoxCell(payrollEmployee.NetPay);
+        }
+
+        private void SelectedItemChanged(DriverPayrollEmployee payrollEmployee)
+        {
+            _Form.EmployeeNameTextBox.Text = string.Empty;
+            _Form.DepartmentTextBox.Text = string.Empty;
+            _Form.PositionTextBox.Text = string.Empty;
+            _Form.WorkDaysTextBox.Text = string.Empty;
+            _Form.HolidaysTextBox.Text = string.Empty;
+            _Form.WithholdingTaxTextBox.Text = string.Empty;
+            _Form.SssTextBox.Text = string.Empty;
+            _Form.SssEcTextBox.Text = string.Empty;
+            _Form.SssErTextBox.Text = string.Empty;
+            _Form.PagibigTextBox.Text = string.Empty;
+            _Form.PhilHealthTextBox.Text = string.Empty;
+            _Form.ShopRateTextBox.Text = string.Empty;
+
+            if (payrollEmployee != null)
+            {
+                _Form.EmployeeNameTextBox.Text = payrollEmployee.Employee?.ToString();
+                _Form.DepartmentTextBox.Text = payrollEmployee.Employee?.Position?.Department?.ToString();
+                _Form.PositionTextBox.Text = payrollEmployee.Employee?.Position?.ToString();
+                _Form.WorkDaysTextBox.Text = payrollEmployee.WorkDays.ToString();
+                _Form.HolidaysTextBox.Text = payrollEmployee.Holidays.ToString();
+                _Form.SssTextBox.Text = payrollEmployee.Sss.ToString(Resources.Formats.Currency);
+                _Form.SssEcTextBox.Text = payrollEmployee.SssEc.ToString(Resources.Formats.Currency);
+                _Form.SssErTextBox.Text = payrollEmployee.SssEr.ToString(Resources.Formats.Currency);
+                _Form.PagibigTextBox.Text = payrollEmployee.Pagibig.ToString(Resources.Formats.Currency);
+                _Form.PhilHealthTextBox.Text = payrollEmployee.PhilHealth.ToString(Resources.Formats.Currency);
+                _Form.ShopRateTextBox.Text = payrollEmployee.ShopRate.ToString(Resources.Formats.Currency);
+            }
+        }
+
+        private void RefreshRow(DataGridViewRow row, DriverPayrollEmployee payrollEmployee)
+        {
+            row.Cells["DriverPayrollEmployeeColumn"].Value = payrollEmployee;
+            row.Cells["DriverPayrollEmployee_EmployeeColumn"].Value = payrollEmployee.Employee;
+            row.Cells["DriverPayrollEmployee_GrossPayColumn"].Value = payrollEmployee.GrossPay;
+            row.Cells["DriverPayrollEmployee_TotalDeductionColumn"].Value = payrollEmployee.TotalDeduction;
+            row.Cells["DriverPayrollEmployee_NetPayColumn"].Value = payrollEmployee.NetPay;
+        }
+    }
+}

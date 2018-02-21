@@ -342,6 +342,7 @@
             this.ExportDriverButton.TabIndex = 132;
             this.ExportDriverButton.Text = "EXPORT BY DRIVER";
             this.ExportDriverButton.UseVisualStyleBackColor = false;
+            this.ExportDriverButton.Visible = false;
             this.ExportDriverButton.Click += new System.EventHandler(this.ExportDriverButton_Click);
             // 
             // ExportAllButton
