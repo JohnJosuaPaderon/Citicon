@@ -127,7 +127,7 @@ namespace Citicon.DataManager
 
         public static async Task<IEnumerable<Project>> GetListWithoutBillingSiNumberByClientAsync(Client client)
         {
-            using (var getProjectListWithoutBillingSiNumberByClient = new GetProjectListWithoutBIllingSiNumberByClient(client))
+            using (var getProjectListWithoutBillingSiNumberByClient = new GetProjectListWithoutBillingSiNumberByClient(client))
             {
                 var projects = await getProjectListWithoutBillingSiNumberByClient.GetAsync();
                 if (projects != null)

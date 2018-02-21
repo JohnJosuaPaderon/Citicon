@@ -71,7 +71,7 @@ namespace Citicon.DataProcess
                 Worksheet.Cells[32, 2] = Delivery.Admixture;
                 Worksheet.Cells[32, 4] = Delivery.AdmixtureQuantity;
                 Worksheet.Cells[37, 1] = Delivery.PlantLeave?.ToString("HHmm");
-                Worksheet.Cells[4, 6] = Delivery.DeliveryReceiptNumberDisplay;
+                Worksheet.Cells[5, 8] = Delivery.DeliveryReceiptNumberDisplay;
                 Worksheet.Cells[29, 3] = Delivery.ProjectDesign?.MixType == ProjectDesignMixType.PCD ? "PCD" : string.Empty;
 
                 DirectoryResolver.Resolve(SaveLocation);

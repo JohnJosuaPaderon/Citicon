@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    public class GetProjectListWithoutBIllingSiNumberByClient : DataProcessBase
+    public class GetProjectListWithoutBillingSiNumberByClient : DataProcessBase
     {
         private Client Client;
-        public GetProjectListWithoutBIllingSiNumberByClient(Client client)
+        public GetProjectListWithoutBillingSiNumberByClient(Client client)
         {
             Client = client;
         }

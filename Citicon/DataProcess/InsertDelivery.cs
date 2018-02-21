@@ -23,7 +23,7 @@ namespace Citicon.DataProcess
                 .AddOutParameter(Parameter_Id)
                 .AddInParameter("@_ProjectId", _Delivery.Project?.Id)
                 .AddInParameter("@_ProjectDesignId", _Delivery.ProjectDesign?.Id)
-                .AddInParameter("@_DeliveryReceiptNumber", _Delivery.DeliveryReceiptNumber)
+                .AddInOutParameter("@_DeliveryReceiptNumber", _Delivery.DeliveryReceiptNumber)
                 .AddInParameter("@_DeliveryDate", _Delivery.DeliveryDate)
                 .AddInParameter("@_Load", _Delivery.Load)
                 .AddInParameter("@_PlantLeave", _Delivery.PlantLeave)
@@ -56,6 +56,7 @@ namespace Citicon.DataProcess
                 if (await command.ExecuteNonQueryAsync() == 1)
                 {
                     _Delivery.Id = Convert.ToUInt64(command.Parameters[Parameter_Id].Value);
+                    _Delivery.DeliveryReceiptNumber = command.Parameters.GetUInt64("@_DeliveryReceiptNumber");
                     return _Delivery;
                 }
                 else

@@ -30,7 +30,8 @@ namespace Citicon.DataProcess
                 DailyRate = reader.GetDecimal("DailyRate"),
                 BasicPay = reader.GetDecimal("BasicPay"),
                 Allowance = reader.GetDecimal("Allowance"),
-                OvertimeAllowance = reader.GetDecimal("OvertimeAllowance")
+                OvertimeAllowance = reader.GetDecimal("OvertimeAllowance"),
+                ShopRate = reader.GetDecimal("ShopRate")
             };
         }
 

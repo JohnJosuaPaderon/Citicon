@@ -5,6 +5,7 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Citicon.DataProcess
 {
@@ -78,6 +79,7 @@ namespace Citicon.DataProcess
                     }
                     catch (Exception ex)
                     {
+                        MessageBox.Show(ex.Message);
                         Debug.WriteLine(ex.Message);
                         employee = null;
                     }

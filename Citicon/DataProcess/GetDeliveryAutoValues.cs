@@ -31,7 +31,8 @@ namespace Citicon.DataProcess
             return new DeliveryAutoValues()
             {
                 Load = reader.GetUInt32("Load"),
-                CumulativeVolume = reader.GetDecimal("CumulativeVolume")
+                CumulativeVolume = reader.GetDecimal("CumulativeVolume"),
+                DeliveryDate = reader.GetDateTime("DeliveryDate")
             };
         }
 

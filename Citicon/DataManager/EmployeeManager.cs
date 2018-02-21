@@ -84,6 +84,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<decimal> CountTripsPayAsync(Employee employee, DateTimeRange cutOff)
+        {
+            if (employee != null && cutOff != null)
+            {
+                using (var process = new CountTripsPay(employee, cutOff))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public static async Task<EmployeeLogin> GetEmployeeLoginByCode(uint loginCode)
         {
             var process = new GetEmployeeLoginByCode(loginCode);

@@ -25,6 +25,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<DriverPayrollEmployee>> GenerateDriverPayrollEmployeeListAsync(DriverPayroll payroll)
+        {
+            if (payroll != null)
+            {
+                using (var process = new GenerateDriverPayrollEmployeeList(payroll))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task SaveSemiMonthlyAsync(SemiMonthlyPayroll semiMonthlyPayroll, IEnumerable<SemiMonthlyPayrollEmployee> payrollEmployees)
         {
             if (semiMonthlyPayroll != null && payrollEmployees != null && payrollEmployees.Any())

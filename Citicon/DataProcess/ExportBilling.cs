@@ -120,7 +120,7 @@ namespace Citicon.DataProcess
                         field.Result.Text = Billing.Project?.Location;
                         break;
                     case FIELD_DATE:
-                        field.Result.Text = Billing.BillingDate.ToString(FORMAT_DATE);
+                        field.Result.Text = Billing.Deliveries.FirstOrDefault()?.DeliveryDate.ToString(FORMAT_DATE);
                         break;
                     case FIELD_BILLING_NO:
                         field.Result.Text = Billing.BillingNo;
@@ -135,9 +135,15 @@ namespace Citicon.DataProcess
         private void WriteGeneralDetails()
         {
             var designs = new Dictionary<ProjectDesign, List<Delivery>>();
+            var deliveryDate = default(DateTime);
 
             foreach (var delivery in Billing.Deliveries)
             {
+                if (deliveryDate == default(DateTime))
+                {
+                    deliveryDate = delivery.DeliveryDate;
+                }
+
                 if (!designs.ContainsKey(delivery.ProjectDesign))
                 {
                     designs.Add(delivery.ProjectDesign, new List<Delivery>());
@@ -186,7 +192,7 @@ namespace Citicon.DataProcess
                     totalAmount += pumpcreteCharge.TotalAmount;
 
                     cell = table.Cell(counter, 1);
-                    cell.Range.Text = Billing.BillingDate.ToString(FORMAT_DATE);
+                    cell.Range.Text = deliveryDate.ToString(FORMAT_DATE);
 
                     cell = table.Cell(counter, 2);
                     cell.Range.Text = pumpcreteCharge.PumpType?.Name;
@@ -205,7 +211,7 @@ namespace Citicon.DataProcess
                     totalAmount += excessPipeCharge.TotalAmount;
 
                     cell = table.Cell(counter, 1);
-                    cell.Range.Text = Billing.BillingDate.ToString(FORMAT_DATE);
+                    cell.Range.Text = deliveryDate.ToString(FORMAT_DATE);
 
                     cell = table.Cell(counter, 2);
                     cell.Range.Text = excessPipeCharge.AccessoryType?.Value;
@@ -224,7 +230,7 @@ namespace Citicon.DataProcess
                     totalAmount += otherCharge.TotalAmount;
 
                     cell = table.Cell(counter, 1);
-                    cell.Range.Text = Billing.BillingDate.ToString(FORMAT_DATE);
+                    cell.Range.Text = deliveryDate.ToString(FORMAT_DATE);
 
                     cell = table.Cell(counter, 2);
                     cell.Range.Text = otherCharge.Type?.Value;
@@ -274,15 +280,17 @@ namespace Citicon.DataProcess
                 //    Billing.Deliveries.AddRange(list);
                 //}
 
+                var lastDeliveryDate = default(DateTime); 
+
                 foreach (var delivery in Billing.Deliveries)
                 {
                     totalVolume += delivery.Volume;
 
                     cell = table.Cell(counter, 1);
-                    cell.Range.Text = delivery.DeliveryDate.ToString(FORMAT_DATE);
+                    cell.Range.Text = lastDeliveryDate == delivery.DeliveryDate.Date ? string.Empty : delivery.DeliveryDate.ToString(FORMAT_DATE);
 
                     cell = table.Cell(counter, 2);
-                    cell.Range.Text = delivery.ProjectDesign.ToString();
+                    cell.Range.Text = lastDeliveryDate == delivery.DeliveryDate.Date ? string.Empty : delivery.ProjectDesign.ToString();
 
                     cell = table.Cell(counter, 3);
                     cell.Range.Text = delivery.DeliveryReceiptNumberDisplay;
@@ -302,6 +310,7 @@ namespace Citicon.DataProcess
                         table.Rows.Add();
                     }
 
+                    lastDeliveryDate = delivery.DeliveryDate.Date;
                     counter++;
                 }
 

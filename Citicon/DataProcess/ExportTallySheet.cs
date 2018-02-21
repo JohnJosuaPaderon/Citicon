@@ -128,12 +128,12 @@ namespace Citicon.DataProcess
                             Worksheet.Cells[rowCounter, 1] = delivery.Load;
                             Worksheet.Cells[rowCounter, 2] = delivery.DeliveryReceiptNumber;
                             Worksheet.Cells[rowCounter, 3] = delivery.TransitMixer?.PhysicalNumber;
-                            Worksheet.Cells[rowCounter, 4] = delivery.Driver?.ToString();
+                            Worksheet.Cells[rowCounter, 4] = delivery.Driver?.FullName2;
                             Worksheet.Cells[rowCounter, 5] = delivery.PlantLeave;
                             Worksheet.Cells[rowCounter, 6] = delivery.PlantArrive;
                             Worksheet.Cells[rowCounter, 7] = delivery.Volume;
                             Worksheet.Cells[rowCounter, 8] = string.Format("=H{0}+G{1}", rowCounter - 1, rowCounter);
-                            Worksheet.Cells[rowCounter, 9] = delivery.ServiceEngineer?.ToString();
+                            Worksheet.Cells[rowCounter, 9] = delivery.ServiceEngineer?.LastName;
                             rowCounter++;
                         }
 
@@ -143,6 +143,12 @@ namespace Citicon.DataProcess
                         {
                             BorderAround(Worksheet.Range[Worksheet.Cells[deliveryStart, i], Worksheet.Cells[deliveryEnd, i]]);
                         }
+
+                        // NOTE: Merge remarks and re-align
+                        //range = Worksheet.Range[Worksheet.Cells[deliveryStart, 9], Worksheet.Cells[deliveryEnd, 9]];
+                        //range.Merge();
+                        //range.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                        //range.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
                     }
 
                     tallySheetEnd = rowCounter;
@@ -152,7 +158,6 @@ namespace Citicon.DataProcess
                     //rowCounter++;
                 }
             }
-
             Workbook.SaveAs(FilePath);
             PrintOption = ExportExcelPrintOption.None;
             base.Execute();
