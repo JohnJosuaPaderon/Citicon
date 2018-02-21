@@ -286,6 +286,7 @@ namespace Citicon.Forms.Controls
                 if (row.Cells[Delivery_DeliveryReceiptNumberColumn.Name].Value as string == key)
                 {
                     row.Selected = true;
+                    DeliveryDataGridView.FirstDisplayedScrollingRowIndex = row.Index;
                 }
             }
         }

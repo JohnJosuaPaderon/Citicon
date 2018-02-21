@@ -353,6 +353,7 @@ namespace Citicon.Forms.Controls
             EmploymentStatusComboBox.Items.Add(EmploymentStatus.Active);
             EmploymentStatusComboBox.Items.Add(EmploymentStatus.Resigned);
             EmploymentStatusComboBox.Items.Add(EmploymentStatus.Retired);
+            EmploymentStatusComboBox.Items.Add(EmploymentStatus.Inactive);
         }
 
         private async Task LoadCompanyListAsync()

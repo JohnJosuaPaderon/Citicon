@@ -40,6 +40,7 @@ namespace Citicon.Forms.Controls
             {
                 _AutoValues = value;
                 LoadNumericUpDown.Value = value?.Load ?? 1;
+                Delivery_DeliveryDateTimePicker.Value = value?.DeliveryDate ?? DateTime.Now;
                 ComputeCumulativeVolume();
             }
         }
