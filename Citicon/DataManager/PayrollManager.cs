@@ -55,6 +55,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task SaveWeeklyAsync(WeeklyPayroll payroll, IEnumerable<WeeklyPayrollEmployee> payrollEmployees)
+        {
+            if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
+            {
+                using (var process = new SaveWeeklyPayroll(payroll, payrollEmployees))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                throw new Exception("No employees.");
+            }
+        }
+
         public static async Task SaveDriverPayrollAsync(DriverPayroll payroll, IEnumerable<DriverPayrollEmployee> payrollEmployees)
         {
             if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
@@ -64,6 +79,10 @@ namespace Citicon.DataManager
                     await process.ExecuteAsync();
                 }
             }
+            else
+            {
+                throw new Exception("No employees.");
+            }
         }
 
         public static async Task<SemiMonthlyPayrollEmployee> SaveSemiMonthlyPayrollEmployeeAsync(SemiMonthlyPayrollEmployee payrollEmployee, MySqlConnection connection, MySqlTransaction transaction)
@@ -71,6 +90,21 @@ namespace Citicon.DataManager
             if (payrollEmployee != null)
             {
                 using (var process = new SaveSemiMonthlyPayrollEmployee(payrollEmployee))
+                {
+                    return await process.ExecuteAsync(connection, transaction);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<WeeklyPayrollEmployee> SaveWeeklyPayrollEmployeeAsync(WeeklyPayrollEmployee payrollEmployee, MySqlConnection connection, MySqlTransaction transaction)
+        {
+            if (payrollEmployee != null)
+            {
+                using (var process = new SaveWeeklyPayrollEmployee(payrollEmployee))
                 {
                     return await process.ExecuteAsync(connection, transaction);
                 }

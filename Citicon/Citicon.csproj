@@ -134,6 +134,7 @@
     <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GenerateSemiMonthlyPayrollEmployeeList.cs" />
+    <Compile Include="DataProcess\GenerateWeeklyPayrollEmployeeList.cs" />
     <Compile Include="DataProcess\GetCancellableDeliveryListByProjectDesign.cs" />
     <Compile Include="DataProcess\GetCementSuppliedListByProject.cs" />
     <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
@@ -265,6 +266,8 @@
     <Compile Include="DataProcess\SavePayroll.cs" />
     <Compile Include="DataProcess\SaveSemiMonthlyPayroll.cs" />
     <Compile Include="DataProcess\SaveSemiMonthlyPayrollEmployee.cs" />
+    <Compile Include="DataProcess\SaveWeeklyPayroll.cs" />
+    <Compile Include="DataProcess\SaveWeeklyPayrollEmployee.cs" />
     <Compile Include="DataProcess\SearchApprovedProject.cs" />
     <Compile Include="DataProcess\SearchApprovedProjectPredicate.cs" />
     <Compile Include="DataProcess\SearchItem.cs" />
@@ -494,6 +497,8 @@
     <Compile Include="Data\Vehicle.cs" />
     <Compile Include="Data\VehicleType.cs" />
     <Compile Include="Data\VoidCheque.cs" />
+    <Compile Include="Data\WeeklyPayroll.cs" />
+    <Compile Include="Data\WeeklyPayrollEmployee.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\DbParameterCollectionExtension.cs" />
@@ -713,6 +718,13 @@
       <DependentUpon>WeeklyCutOffForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WeeklyCutOffFormController.cs" />
+    <Compile Include="Forms\WeeklyPayrollForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WeeklyPayrollForm.Designer.cs">
+      <DependentUpon>WeeklyPayrollForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WeeklyPayrollFormController.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="Utilities\NightDifferentialWorkingHoursCounter.cs" />
     <Compile Include="Utilities\RegularOvertimeWorkingHoursCounter.cs" />
@@ -1161,6 +1173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WeeklyCutOffForm.resx">
       <DependentUpon>WeeklyCutOffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeeklyPayrollForm.resx">
+      <DependentUpon>WeeklyPayrollForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
