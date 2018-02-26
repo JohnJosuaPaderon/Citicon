@@ -11,7 +11,6 @@ namespace Citicon.Data
         }
 
         public decimal ShopRate { get; set; }
-        public decimal OtherDeduction { get; set; }
         public decimal Holidays { get; private set; }
         public int WorkDays { get; private set; }
         public decimal TripsPay { get; private set; }
@@ -24,27 +23,21 @@ namespace Citicon.Data
             }
         }
 
-        public decimal GrossPay
-        {
-            get
-            {
-                return ShopRatePay + TripsPay;
-            }
-        }
-
-        public decimal TotalDeduction
-        {
-            get
-            {
-                return WithholdingTax + Sss + CashAdvance + Pagibig + SunCellBill + PhilHealth + OtherDeduction;
-            }
-        }
-
         public decimal NetPay
         {
             get
             {
                 return GrossPay - TotalDeduction;
+            }
+        }
+
+        public bool IrregularitiesDetected
+        {
+            get
+            {
+                return
+                    WorkDays < 0 ||
+                    Holidays < 0;
             }
         }
 
@@ -55,6 +48,16 @@ namespace Citicon.Data
             Holidays = result.Holidays;
             WorkDays = result.WorkDays;
             TripsPay = await EmployeeManager.CountTripsPayAsync(Employee, Payroll.CutOff);
+        }
+
+        protected override decimal ComputeGrossPay()
+        {
+            return ShopRatePay + TripsPay + (Holidays * 378.50M);
+        }
+
+        protected override decimal ComputeTotalDeduction()
+        {
+            return WithholdingTax + Sss + SssEc + SssEr + CashAdvance + Pagibig + SunCellBill + PhilHealth + Others;
         }
     }
 }

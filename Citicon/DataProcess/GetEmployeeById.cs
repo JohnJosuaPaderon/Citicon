@@ -72,7 +72,8 @@ namespace Citicon.DataProcess
                                     SSSNumber = reader.GetString("SSSNumber"),
                                     TelephoneNumber = reader.GetString("TelephoneNumber"),
                                     TIN = reader.GetString("TIN"),
-                                    VacationLeave = reader.GetDecimal("VacationLeave")
+                                    VacationLeave = reader.GetDecimal("VacationLeave"),
+                                    ShopRate = reader.GetDecimal("ShopRate")
                                 };
                             }
                         }

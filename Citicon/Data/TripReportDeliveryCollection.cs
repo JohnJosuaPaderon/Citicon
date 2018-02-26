@@ -94,7 +94,17 @@ namespace Citicon.Data
 
         public decimal TotalAmount
         {
-            get { return PricePerTrip * TripCount; }
+            get
+            {
+                var result = 0M;
+
+                foreach (var delivery in Dictionary.Values)
+                {
+                    result += delivery.Route.Rate;
+                }
+
+                return result;
+            }
         }
 
         public void Clear()

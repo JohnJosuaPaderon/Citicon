@@ -55,11 +55,37 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task SaveDriverPayrollAsync(DriverPayroll payroll, IEnumerable<DriverPayrollEmployee> payrollEmployees)
+        {
+            if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
+            {
+                using (var process = new SaveDriverPayroll(payroll, payrollEmployees))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
+
         public static async Task<SemiMonthlyPayrollEmployee> SaveSemiMonthlyPayrollEmployeeAsync(SemiMonthlyPayrollEmployee payrollEmployee, MySqlConnection connection, MySqlTransaction transaction)
         {
             if (payrollEmployee != null)
             {
                 using (var process = new SaveSemiMonthlyPayrollEmployee(payrollEmployee))
+                {
+                    return await process.ExecuteAsync(connection, transaction);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<DriverPayrollEmployee> SaveDriverPayrollEmployeeAsync(DriverPayrollEmployee payrollEmployee, MySqlConnection connection, MySqlTransaction transaction)
+        {
+            if (payrollEmployee != null)
+            {
+                using (var process = new SaveDriverPayrollEmployee(payrollEmployee))
                 {
                     return await process.ExecuteAsync(connection, transaction);
                 }

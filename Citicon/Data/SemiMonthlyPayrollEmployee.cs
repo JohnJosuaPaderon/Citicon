@@ -52,22 +52,6 @@ namespace Citicon.Data
             }
         }
 
-        public decimal GrossPay
-        {
-            get
-            {
-                return BasicPay + RegularOvertimePay + SundayPay + OvertimeAllowance + Allowance + SpecialHolidayPay + SpecialHolidayOvertimePay;
-            }
-        }
-
-        public decimal TotalDeduction
-        {
-            get
-            {
-                return WithholdingTax + Sss + CashAdvance + Pagibig + SunCellBill + PhilHealth;
-            }
-        }
-
         public decimal NetPay
         {
             get
@@ -98,6 +82,16 @@ namespace Citicon.Data
             SpecialHolidayWorkingHours = await SpecialHolidayWorkingHoursCounter.CountAsync(Employee, Payroll.CutOff);
             SpecialHolidayOvertimeWorkingHours = await SpecialHolidayOvertimeWorkingHoursCounter.CountAsync(Employee, Payroll.CutOff);
             NightDifferentialWorkingHours = await NightDifferentialWorkingHoursCounter.CountAsync(Employee, Payroll.CutOff);
+        }
+
+        protected override decimal ComputeGrossPay()
+        {
+            return BasicPay + RegularOvertimePay + SundayPay + OvertimeAllowance + Allowance + SpecialHolidayPay + SpecialHolidayOvertimePay;
+        }
+
+        protected override decimal ComputeTotalDeduction()
+        {
+            return WithholdingTax + Sss + CashAdvance + Pagibig + SunCellBill + PhilHealth + SssEc + SssEr + Others;
         }
     }
 }

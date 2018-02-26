@@ -257,6 +257,8 @@
     <Compile Include="DataProcess\PayrollExists.cs" />
     <Compile Include="DataProcess\ResetProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
+    <Compile Include="DataProcess\SaveDriverPayroll.cs" />
+    <Compile Include="DataProcess\SaveDriverPayrollEmployee.cs" />
     <Compile Include="DataProcess\SaveEmployeeAddition.cs" />
     <Compile Include="DataProcess\SaveEmployeeDeduction.cs" />
     <Compile Include="DataProcess\SavePayment.cs" />
@@ -1191,15 +1193,6 @@
       <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>8</VersionMajor>
       <VersionMinor>4</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="VBIDE">
-      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>3</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

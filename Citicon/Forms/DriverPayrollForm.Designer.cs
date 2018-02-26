@@ -63,6 +63,10 @@
             this.WorkDaysTextBox = new System.Windows.Forms.TextBox();
             this.WorkDaysLabel = new System.Windows.Forms.Label();
             this.DeductionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.OthersTextBox = new System.Windows.Forms.TextBox();
+            this.OthersLabel = new System.Windows.Forms.Label();
+            this.CashAdvanceTextBox = new System.Windows.Forms.TextBox();
+            this.CashAdvanceLabel = new System.Windows.Forms.Label();
             this.PhilHealthTextBox = new System.Windows.Forms.TextBox();
             this.PhilHealthLabel = new System.Windows.Forms.Label();
             this.PagibigTextBox = new System.Windows.Forms.TextBox();
@@ -78,6 +82,7 @@
             this.AdditionsComboBox = new System.Windows.Forms.GroupBox();
             this.ShopRateTextBox = new System.Windows.Forms.TextBox();
             this.ShopRateLabel = new System.Windows.Forms.Label();
+            this.SavePrintButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DriverPayrollEmployeeDataGridView)).BeginInit();
             this.PersonalDetailsGroupBox.SuspendLayout();
             this.TimeLogCalculationsGroupBox.SuspendLayout();
@@ -93,6 +98,7 @@
             this.BranchComboBox.Name = "BranchComboBox";
             this.BranchComboBox.Size = new System.Drawing.Size(197, 25);
             this.BranchComboBox.TabIndex = 3;
+            this.BranchComboBox.SelectedIndexChanged += new System.EventHandler(this.BranchComboBox_SelectedIndexChanged);
             // 
             // BranchLabel
             // 
@@ -389,6 +395,10 @@
             // DeductionsGroupBox
             // 
             this.DeductionsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeductionsGroupBox.Controls.Add(this.OthersTextBox);
+            this.DeductionsGroupBox.Controls.Add(this.OthersLabel);
+            this.DeductionsGroupBox.Controls.Add(this.CashAdvanceTextBox);
+            this.DeductionsGroupBox.Controls.Add(this.CashAdvanceLabel);
             this.DeductionsGroupBox.Controls.Add(this.PhilHealthTextBox);
             this.DeductionsGroupBox.Controls.Add(this.PhilHealthLabel);
             this.DeductionsGroupBox.Controls.Add(this.PagibigTextBox);
@@ -403,10 +413,46 @@
             this.DeductionsGroupBox.Controls.Add(this.WithholdingTaxLabel);
             this.DeductionsGroupBox.Location = new System.Drawing.Point(646, 417);
             this.DeductionsGroupBox.Name = "DeductionsGroupBox";
-            this.DeductionsGroupBox.Size = new System.Drawing.Size(404, 174);
+            this.DeductionsGroupBox.Size = new System.Drawing.Size(404, 218);
             this.DeductionsGroupBox.TabIndex = 23;
             this.DeductionsGroupBox.TabStop = false;
             this.DeductionsGroupBox.Text = "Deductions";
+            // 
+            // OthersTextBox
+            // 
+            this.OthersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OthersTextBox.Location = new System.Drawing.Point(187, 185);
+            this.OthersTextBox.Name = "OthersTextBox";
+            this.OthersTextBox.Size = new System.Drawing.Size(175, 25);
+            this.OthersTextBox.TabIndex = 32;
+            // 
+            // OthersLabel
+            // 
+            this.OthersLabel.AutoSize = true;
+            this.OthersLabel.Location = new System.Drawing.Point(187, 165);
+            this.OthersLabel.Name = "OthersLabel";
+            this.OthersLabel.Size = new System.Drawing.Size(47, 17);
+            this.OthersLabel.TabIndex = 31;
+            this.OthersLabel.Text = "Others";
+            // 
+            // CashAdvanceTextBox
+            // 
+            this.CashAdvanceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CashAdvanceTextBox.Location = new System.Drawing.Point(6, 185);
+            this.CashAdvanceTextBox.Name = "CashAdvanceTextBox";
+            this.CashAdvanceTextBox.Size = new System.Drawing.Size(175, 25);
+            this.CashAdvanceTextBox.TabIndex = 30;
+            // 
+            // CashAdvanceLabel
+            // 
+            this.CashAdvanceLabel.AutoSize = true;
+            this.CashAdvanceLabel.Location = new System.Drawing.Point(6, 165);
+            this.CashAdvanceLabel.Name = "CashAdvanceLabel";
+            this.CashAdvanceLabel.Size = new System.Drawing.Size(89, 17);
+            this.CashAdvanceLabel.TabIndex = 29;
+            this.CashAdvanceLabel.Text = "Cash Advance";
             // 
             // PhilHealthTextBox
             // 
@@ -547,12 +593,29 @@
             this.ShopRateLabel.TabIndex = 2;
             this.ShopRateLabel.Text = "Shop Rate";
             // 
+            // SavePrintButton
+            // 
+            this.SavePrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SavePrintButton.BackColor = System.Drawing.Color.Red;
+            this.SavePrintButton.FlatAppearance.BorderSize = 0;
+            this.SavePrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SavePrintButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SavePrintButton.ForeColor = System.Drawing.Color.White;
+            this.SavePrintButton.Location = new System.Drawing.Point(925, 641);
+            this.SavePrintButton.Name = "SavePrintButton";
+            this.SavePrintButton.Size = new System.Drawing.Size(125, 40);
+            this.SavePrintButton.TabIndex = 24;
+            this.SavePrintButton.Text = "Save && Print";
+            this.SavePrintButton.UseVisualStyleBackColor = false;
+            this.SavePrintButton.Click += new System.EventHandler(this.SavePrintButton_Click);
+            // 
             // DriverPayrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1062, 746);
+            this.Controls.Add(this.SavePrintButton);
             this.Controls.Add(this.AdditionsComboBox);
             this.Controls.Add(this.DeductionsGroupBox);
             this.Controls.Add(this.TimeLogCalculationsGroupBox);
@@ -631,5 +694,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_TotalDeductionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_NetPayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_ExtraColumn;
+        public System.Windows.Forms.TextBox OthersTextBox;
+        private System.Windows.Forms.Label OthersLabel;
+        public System.Windows.Forms.TextBox CashAdvanceTextBox;
+        private System.Windows.Forms.Label CashAdvanceLabel;
+        private System.Windows.Forms.Button SavePrintButton;
     }
 }

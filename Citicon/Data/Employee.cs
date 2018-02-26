@@ -49,6 +49,7 @@ namespace Citicon.Data
         public decimal SickLeave { get; set; }
         public decimal Absences { get; set; }
         public PayrollGroup PayrollGroup { get; set; }
+        public decimal ShopRate { get; set; }
 
         public string FullName
         {

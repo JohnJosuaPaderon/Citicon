@@ -33,7 +33,7 @@ namespace Citicon.DataProcess
             {
                 CashAdvance = default(decimal),
                 Id = default(ulong),
-                OtherDeduction = default(decimal),
+                Others = default(decimal),
                 Pagibig = reader.GetDecimal("Pagibig"),
                 PhilHealth = reader.GetDecimal("PhilHealth"),
                 ShopRate = reader.GetDecimal("ShopRate"),

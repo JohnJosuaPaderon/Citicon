@@ -1,4 +1,5 @@
 ﻿using Citicon.Forms;
+using Citicon.PayrollIntegration.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -81,6 +82,16 @@ namespace Citicon.PayrollApplication
             }
         }
 
+        private HolidayManagementForm HolidayManagementForm
+        {
+            get
+            {
+                var form = new HolidayManagementForm { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void OpenMdiChild(Form form)
         {
             if (ActiveMdiChild != null && ActiveMdiChild.GetType() == form.GetType())
@@ -136,6 +147,11 @@ namespace Citicon.PayrollApplication
         private void DriverPayrollButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(DriverPayrollForm);
+        }
+
+        private void HolidayButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(HolidayManagementForm);
         }
     }
 }

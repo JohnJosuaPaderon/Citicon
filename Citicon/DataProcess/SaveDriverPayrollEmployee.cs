@@ -6,27 +6,23 @@ using System.Threading.Tasks;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class SaveSemiMonthlyPayrollEmployee : DataProcessBase
+    internal sealed class SaveDriverPayrollEmployee : DataProcessBase
     {
-        public SaveSemiMonthlyPayrollEmployee(SemiMonthlyPayrollEmployee payrollEmployee)
+        public SaveDriverPayrollEmployee(DriverPayrollEmployee payrollEmployee)
         {
             _PayrollEmployee = payrollEmployee ?? throw new ArgumentNullException(nameof(payrollEmployee));
         }
 
-        private readonly SemiMonthlyPayrollEmployee _PayrollEmployee;
+        private readonly DriverPayrollEmployee _PayrollEmployee;
 
         private MySqlCommand CreateCommand(MySqlConnection connection, MySqlTransaction transaction)
         {
-            return Utility.CreateProcedureCommand(nameof(SaveSemiMonthlyPayrollEmployee), connection, transaction)
+            return Utility.CreateProcedureCommand(nameof(SaveDriverPayrollEmployee), connection, transaction)
                 .AddOutParameter("@_Id")
                 .AddInParameter("@_PayrollId", _PayrollEmployee.Payroll?.Id)
                 .AddInParameter("@_EmployeeId", _PayrollEmployee.Employee?.Id)
                 .AddInParameter("@_VacationLeave", _PayrollEmployee.VacationLeave)
                 .AddInParameter("@_SickLeave", _PayrollEmployee.SickLeave)
-                .AddInParameter("@_DailyRate", _PayrollEmployee.DailyRate)
-                .AddInParameter("@_BasicPay", _PayrollEmployee.BasicPay)
-                .AddInParameter("@_Allowance", _PayrollEmployee.Allowance)
-                .AddInParameter("@_OvertimeAllowance", _PayrollEmployee.OvertimeAllowance)
                 .AddInParameter("@_WithholdingTax", _PayrollEmployee.WithholdingTax)
                 .AddInParameter("@_Sss", _PayrollEmployee.Sss)
                 .AddInParameter("@_SssEr", _PayrollEmployee.SssEr)
@@ -35,23 +31,18 @@ namespace Citicon.DataProcess
                 .AddInParameter("@_PhilHealth", _PayrollEmployee.PhilHealth)
                 .AddInParameter("@_CashAdvance", _PayrollEmployee.CashAdvance)
                 .AddInParameter("@_SunCellBill", _PayrollEmployee.SunCellBill)
-                .AddInParameter("@_RegularWorkingHours", _PayrollEmployee.RegularWorkingHours)
-                .AddInParameter("@_RegularOvertimeWorkingHours", _PayrollEmployee.RegularOvertimeWorkingHours)
-                .AddInParameter("@_SundayWorkingHours", _PayrollEmployee.SundayWorkingHours)
-                .AddInParameter("@_SpecialHolidayWorkingHours", _PayrollEmployee.SpecialHolidayWorkingHours)
-                .AddInParameter("@_SpecialHolidayOvertimeWorkingHours", _PayrollEmployee.SpecialHolidayOvertimeWorkingHours)
-                .AddInParameter("@_NightDifferentialWorkingHours", _PayrollEmployee.NightDifferentialWorkingHours)
-                .AddInParameter("@_RegularOvertimePay", _PayrollEmployee.RegularOvertimePay)
-                .AddInParameter("@_SundayPay", _PayrollEmployee.SundayPay)
-                .AddInParameter("@_SpecialHolidayPay", _PayrollEmployee.SpecialHolidayPay)
-                .AddInParameter("@_SpecialHolidayOvertimePay", _PayrollEmployee.SpecialHolidayOvertimePay)
                 .AddInParameter("@_GrossPay", _PayrollEmployee.GrossPay)
                 .AddInParameter("@_TotalDeduction", _PayrollEmployee.TotalDeduction)
                 .AddInParameter("@_NetPay", _PayrollEmployee.NetPay)
-                .AddInParameter("@_Others", _PayrollEmployee.Others);
+                .AddInParameter("@_Others", _PayrollEmployee.Others)
+                .AddInParameter("@_ShopRate", _PayrollEmployee.ShopRate)
+                .AddInParameter("@_ShopRatePay", _PayrollEmployee.Holidays)
+                .AddInParameter("@_Holidays", _PayrollEmployee.Holidays)
+                .AddInParameter("@_WorkDays", _PayrollEmployee.WorkDays)
+                .AddInParameter("@_TripsPay", _PayrollEmployee.TripsPay);
         }
 
-        private SemiMonthlyPayrollEmployee Callback(int affectedRows, MySqlCommand command)
+        private DriverPayrollEmployee Callback(int affectedRows, MySqlCommand command)
         {
             if (affectedRows > 0)
             {
@@ -64,7 +55,7 @@ namespace Citicon.DataProcess
             }
         }
 
-        public Task<SemiMonthlyPayrollEmployee> ExecuteAsync(MySqlConnection connection, MySqlTransaction transaction)
+        public Task<DriverPayrollEmployee> ExecuteAsync(MySqlConnection connection, MySqlTransaction transaction)
         {
             return ProcessUtility.HandleExecuteAsync(connection, transaction, CreateCommand, Callback);
         }

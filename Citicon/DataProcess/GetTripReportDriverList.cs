@@ -45,7 +45,8 @@ namespace Citicon.DataProcess
                 FirstName = reader.GetString("FirstName"),
                 MiddleName = reader.GetString("MiddleName"),
                 LastName = reader.GetString("LastName"),
-                Position = JobPositionManager.GetById(reader.GetInt64("PositionId"))
+                Position = JobPositionManager.GetById(reader.GetInt64("PositionId")),
+                ShopRate = reader.GetDecimal("ShopRate")
             };
         }
     }

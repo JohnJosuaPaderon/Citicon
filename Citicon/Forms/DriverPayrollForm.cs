@@ -26,5 +26,15 @@ namespace Citicon.Forms
         {
             _Controller.ChangeCutOff();
         }
+
+        private void BranchComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            _Controller.UpdateBranch();
+        }
+
+        private async void SavePrintButton_Click(object sender, System.EventArgs e)
+        {
+            await _Controller.SaveAndPrintAsync();
+        }
     }
 }

@@ -23,5 +23,13 @@ namespace Citicon.Data
         public decimal PhilHealth { get; set; }
         public decimal CashAdvance { get; set; }
         public decimal SunCellBill { get; set; }
+        public decimal Others { get; set; }
+
+        public decimal GrossPay => ComputeGrossPay();
+        public decimal TotalDeduction => ComputeTotalDeduction();
+        public decimal NetPay => GrossPay - TotalDeduction;
+
+        protected abstract decimal ComputeGrossPay();
+        protected abstract decimal ComputeTotalDeduction();
     }
 }

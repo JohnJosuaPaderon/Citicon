@@ -80,6 +80,10 @@
             this.DailyRateTextBox = new System.Windows.Forms.TextBox();
             this.DailyRateLabel = new System.Windows.Forms.Label();
             this.DeductionsGroupBox = new System.Windows.Forms.GroupBox();
+            this.OthersTextBox = new System.Windows.Forms.TextBox();
+            this.OthersLabel = new System.Windows.Forms.Label();
+            this.CashAdvanceTextBox = new System.Windows.Forms.TextBox();
+            this.CashAdvanceLabel = new System.Windows.Forms.Label();
             this.PhilHealthTextBox = new System.Windows.Forms.TextBox();
             this.PhilHealthLabel = new System.Windows.Forms.Label();
             this.PagibigTextBox = new System.Windows.Forms.TextBox();
@@ -196,7 +200,7 @@
             this.SemiMonthlyPayrollEmployeesDataGridView.ReadOnly = true;
             this.SemiMonthlyPayrollEmployeesDataGridView.RowHeadersVisible = false;
             this.SemiMonthlyPayrollEmployeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.SemiMonthlyPayrollEmployeesDataGridView.Size = new System.Drawing.Size(807, 716);
+            this.SemiMonthlyPayrollEmployeesDataGridView.Size = new System.Drawing.Size(807, 769);
             this.SemiMonthlyPayrollEmployeesDataGridView.TabIndex = 7;
             // 
             // SemiMonthlyPayrollEmployeeColumn
@@ -575,6 +579,10 @@
             // DeductionsGroupBox
             // 
             this.DeductionsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeductionsGroupBox.Controls.Add(this.OthersTextBox);
+            this.DeductionsGroupBox.Controls.Add(this.OthersLabel);
+            this.DeductionsGroupBox.Controls.Add(this.CashAdvanceTextBox);
+            this.DeductionsGroupBox.Controls.Add(this.CashAdvanceLabel);
             this.DeductionsGroupBox.Controls.Add(this.PhilHealthTextBox);
             this.DeductionsGroupBox.Controls.Add(this.PhilHealthLabel);
             this.DeductionsGroupBox.Controls.Add(this.PagibigTextBox);
@@ -589,10 +597,46 @@
             this.DeductionsGroupBox.Controls.Add(this.WithholdingTaxLabel);
             this.DeductionsGroupBox.Location = new System.Drawing.Point(829, 567);
             this.DeductionsGroupBox.Name = "DeductionsGroupBox";
-            this.DeductionsGroupBox.Size = new System.Drawing.Size(404, 174);
+            this.DeductionsGroupBox.Size = new System.Drawing.Size(404, 219);
             this.DeductionsGroupBox.TabIndex = 11;
             this.DeductionsGroupBox.TabStop = false;
             this.DeductionsGroupBox.Text = "Deductions";
+            // 
+            // OthersTextBox
+            // 
+            this.OthersTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.OthersTextBox.Location = new System.Drawing.Point(187, 185);
+            this.OthersTextBox.Name = "OthersTextBox";
+            this.OthersTextBox.Size = new System.Drawing.Size(175, 25);
+            this.OthersTextBox.TabIndex = 28;
+            // 
+            // OthersLabel
+            // 
+            this.OthersLabel.AutoSize = true;
+            this.OthersLabel.Location = new System.Drawing.Point(187, 165);
+            this.OthersLabel.Name = "OthersLabel";
+            this.OthersLabel.Size = new System.Drawing.Size(47, 17);
+            this.OthersLabel.TabIndex = 27;
+            this.OthersLabel.Text = "Others";
+            // 
+            // CashAdvanceTextBox
+            // 
+            this.CashAdvanceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CashAdvanceTextBox.Location = new System.Drawing.Point(6, 185);
+            this.CashAdvanceTextBox.Name = "CashAdvanceTextBox";
+            this.CashAdvanceTextBox.Size = new System.Drawing.Size(175, 25);
+            this.CashAdvanceTextBox.TabIndex = 26;
+            // 
+            // CashAdvanceLabel
+            // 
+            this.CashAdvanceLabel.AutoSize = true;
+            this.CashAdvanceLabel.Location = new System.Drawing.Point(6, 165);
+            this.CashAdvanceLabel.Name = "CashAdvanceLabel";
+            this.CashAdvanceLabel.Size = new System.Drawing.Size(89, 17);
+            this.CashAdvanceLabel.TabIndex = 25;
+            this.CashAdvanceLabel.Text = "Cash Advance";
             // 
             // PhilHealthTextBox
             // 
@@ -710,7 +754,7 @@
             this.SavePrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SavePrintButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SavePrintButton.ForeColor = System.Drawing.Color.White;
-            this.SavePrintButton.Location = new System.Drawing.Point(1108, 747);
+            this.SavePrintButton.Location = new System.Drawing.Point(1108, 800);
             this.SavePrintButton.Name = "SavePrintButton";
             this.SavePrintButton.Size = new System.Drawing.Size(125, 40);
             this.SavePrintButton.TabIndex = 12;
@@ -726,7 +770,7 @@
             this.ViewTimeLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewTimeLogsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewTimeLogsButton.ForeColor = System.Drawing.Color.White;
-            this.ViewTimeLogsButton.Location = new System.Drawing.Point(977, 747);
+            this.ViewTimeLogsButton.Location = new System.Drawing.Point(977, 800);
             this.ViewTimeLogsButton.Name = "ViewTimeLogsButton";
             this.ViewTimeLogsButton.Size = new System.Drawing.Size(125, 40);
             this.ViewTimeLogsButton.TabIndex = 13;
@@ -758,7 +802,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1245, 799);
+            this.ClientSize = new System.Drawing.Size(1245, 852);
             this.Controls.Add(this.ChangeCutOffLinkLabel);
             this.Controls.Add(this.CutOffTextBox);
             this.Controls.Add(this.ViewTimeLogsButton);
@@ -856,5 +900,9 @@
         private System.Windows.Forms.Button ViewTimeLogsButton;
         private System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
         public System.Windows.Forms.TextBox CutOffTextBox;
+        public System.Windows.Forms.TextBox OthersTextBox;
+        private System.Windows.Forms.Label OthersLabel;
+        public System.Windows.Forms.TextBox CashAdvanceTextBox;
+        private System.Windows.Forms.Label CashAdvanceLabel;
     }
 }

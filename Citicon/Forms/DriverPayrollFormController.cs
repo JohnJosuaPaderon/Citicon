@@ -2,6 +2,7 @@
 using Citicon.DataManager;
 using Citicon.Forms.DataLinks;
 using Citicon.WindowsForm;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,11 +21,8 @@ namespace Citicon.Forms
             _SssErHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.SssErTextBox, accept: AcceptSssEr);
             _PagibigHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.PagibigTextBox, accept: AcceptPagibig);
             _PhilHealthHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.PhilHealthTextBox, accept: AcceptPhilHealth);
-        }
-
-        public void ChangeCutOff()
-        {
-            WeeklyCutOffForm.Change(Payroll.CutOff);
+            _CashAdvanceHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.CashAdvanceTextBox, accept: AcceptCashAdvance);
+            _OthersHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.OthersTextBox, accept: AcceptOthers);
         }
 
         private readonly ComboBoxItemSource<Branch> _Branches;
@@ -35,8 +33,30 @@ namespace Citicon.Forms
         private readonly TextBoxHelper<decimal> _SssErHelper;
         private readonly TextBoxHelper<decimal> _PagibigHelper;
         private readonly TextBoxHelper<decimal> _PhilHealthHelper;
+        private readonly TextBoxHelper<decimal> _CashAdvanceHelper;
+        private readonly TextBoxHelper<decimal> _OthersHelper;
 
         public DriverPayroll Payroll { get; private set; }
+
+        private void UpdateCutOff()
+        {
+            if (Payroll?.CutOff != null)
+            {
+                _Form.CutOffTextBox.Text = Payroll.CutOff.ToString();
+            }
+        }
+
+        public void ChangeCutOff()
+        {
+            var cutOff = WeeklyCutOffForm.Change(Payroll.CutOff);
+
+            if (cutOff != null)
+            {
+                Payroll.CutOff.Begin = cutOff.Begin;
+                Payroll.CutOff.End = cutOff.End;
+                UpdateCutOff();
+            }
+        }
 
         private async Task LoadBranchesAsync()
         {
@@ -57,14 +77,27 @@ namespace Citicon.Forms
             if (Payroll == null)
             {
                 Payroll = new DriverPayroll();
+                Payroll.CutOff.Begin = DateTime.Now;
+                Payroll.CutOff.End = DateTime.Now.AddDays(7);
             }
 
             await LoadBranchesAsync();
+            UpdateCutOff();
         }
 
         public async Task GenerateAsync()
         {
+            _PayrollEmployees.Clear();
 
+            var payrollEmployees = await PayrollManager.GenerateDriverPayrollEmployeeListAsync(Payroll);
+
+            if (payrollEmployees != null && payrollEmployees.Any())
+            {
+                foreach (var payrollEmployee in payrollEmployees)
+                {
+                    _PayrollEmployees.Add(payrollEmployee);
+                }
+            }
         }
 
         private DataGridViewRow AddRow(DriverPayrollEmployee payrollEmployee)
@@ -93,6 +126,9 @@ namespace Citicon.Forms
             _Form.PagibigTextBox.Text = string.Empty;
             _Form.PhilHealthTextBox.Text = string.Empty;
             _Form.ShopRateTextBox.Text = string.Empty;
+            _Form.CashAdvanceTextBox.Text = string.Empty;
+            _Form.OthersTextBox.Text = string.Empty;
+            _Form.WithholdingTaxTextBox.Text = string.Empty;
 
             if (payrollEmployee != null)
             {
@@ -107,6 +143,9 @@ namespace Citicon.Forms
                 _Form.PagibigTextBox.Text = payrollEmployee.Pagibig.ToString(Resources.Formats.Currency);
                 _Form.PhilHealthTextBox.Text = payrollEmployee.PhilHealth.ToString(Resources.Formats.Currency);
                 _Form.ShopRateTextBox.Text = payrollEmployee.ShopRate.ToString(Resources.Formats.Currency);
+                _Form.CashAdvanceTextBox.Text = payrollEmployee.CashAdvance.ToString(Resources.Formats.Currency);
+                _Form.OthersTextBox.Text = payrollEmployee.Others.ToString(Resources.Formats.Currency);
+                _Form.WithholdingTaxTextBox.Text = payrollEmployee.WithholdingTax.ToString(Resources.Formats.Currency);
             }
         }
 
@@ -184,6 +223,95 @@ namespace Citicon.Forms
                 selected.PhilHealth = philHealth;
                 _PayrollEmployees.RefreshSelected();
             }
+        }
+
+        private void AcceptCashAdvance(decimal cashAdvance)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.CashAdvance = cashAdvance;
+                _PayrollEmployees.RefreshSelected();
+            }
+        }
+
+        private void AcceptOthers(decimal others)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.Others = others;
+                _PayrollEmployees.RefreshSelected();
+            }
+        }
+
+        public void UpdateBranch()
+        {
+            if (Payroll != null)
+            {
+                Payroll.Branch = _Form.BranchComboBox.SelectedItem as Branch;
+            }
+        }
+
+        public async Task SaveAndPrintAsync()
+        {
+            if (Payroll == null)
+            {
+                _MessageDisplay.Error("General Failure.");
+            }
+            else if (HasNoIrregularities())
+            {
+                _MessageDisplay.Error("We've found some irregularities on some employee's information.");
+            }
+            else
+            {
+                var exists = false;
+                var allowContinue = true;
+
+                try
+                {
+                    exists = await PayrollManager.ExistsAsync(Payroll);
+                }
+                catch (Exception ex)
+                {
+                    _MessageDisplay.Exception(ex);
+                    return;
+                }
+
+                if (exists)
+                {
+                    allowContinue = _MessageDisplay.Question($"Payroll already exists!{Environment.NewLine}Do you want to continue saving? Existing payroll will be overriden.", MessageBoxButtons.YesNo) == DialogResult.Yes;
+                }
+
+                if (allowContinue)
+                {
+                    try
+                    {
+                        Payroll.RunDate = DateTime.Now;
+                        await PayrollManager.SaveDriverPayrollAsync(Payroll, _PayrollEmployees);
+                        _MessageDisplay.Inform("Payroll successfully saved.");
+                    }
+                    catch (Exception ex)
+                    {
+                        _MessageDisplay.Exception(ex);
+                    }
+                }
+            }
+        }
+
+        private bool HasNoIrregularities()
+        {
+            foreach (var payrollEmployee in _PayrollEmployees)
+            {
+                if (payrollEmployee.IrregularitiesDetected)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

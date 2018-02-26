@@ -24,6 +24,8 @@ namespace Citicon.Forms
             _SssErHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.SssErTextBox, accept: AcceptSssEr);
             _PagibigHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.PagibigTextBox, accept: AcceptPagibig);
             _PhilHealthHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.PhilHealthTextBox, accept: AcceptPhilHealth);
+            _CashAdvanceHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.CashAdvanceTextBox, accept: AcceptCashAdvance);
+            _OthersHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.OthersTextBox, accept: AcceptOthers);
         }
 
         private readonly DataGridViewItemSource<SemiMonthlyPayrollEmployee> _Employees;
@@ -37,6 +39,8 @@ namespace Citicon.Forms
         private readonly TextBoxHelper<decimal> _SssErHelper;
         private readonly TextBoxHelper<decimal> _PagibigHelper;
         private readonly TextBoxHelper<decimal> _PhilHealthHelper;
+        private readonly TextBoxHelper<decimal> _CashAdvanceHelper;
+        private readonly TextBoxHelper<decimal> _OthersHelper;
 
         public SemiMonthlyPayroll Payroll { get; private set; }
         public IEnumerable<SemiMonthlyPayrollEmployee> Employees => _Employees;
@@ -132,6 +136,8 @@ namespace Citicon.Forms
             _Form.SssErTextBox.Text = string.Empty;
             _Form.PagibigTextBox.Text = string.Empty;
             _Form.PhilHealthTextBox.Text = string.Empty;
+            _Form.CashAdvanceTextBox.Text = string.Empty;
+            _Form.OthersTextBox.Text = string.Empty;
 
             if (employee != null)
             {
@@ -154,6 +160,8 @@ namespace Citicon.Forms
                 _Form.SssErTextBox.Text = employee.SssEr.ToString(Resources.Formats.Currency);
                 _Form.PagibigTextBox.Text = employee.Pagibig.ToString(Resources.Formats.Currency);
                 _Form.PhilHealthTextBox.Text = employee.PhilHealth.ToString(Resources.Formats.Currency);
+                _Form.CashAdvanceTextBox.Text = employee.CashAdvance.ToString(Resources.Formats.Currency);
+                _Form.OthersTextBox.Text = employee.Others.ToString(Resources.Formats.Currency);
             }
         }
 
@@ -233,6 +241,28 @@ namespace Citicon.Forms
             if (selected != null)
             {
                 selected.PhilHealth = philHealth;
+                _Employees.RefreshSelected();
+            }
+        }
+
+        private void AcceptCashAdvance(decimal cashAdvance)
+        {
+            var selected = _Employees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.CashAdvance = cashAdvance;
+                _Employees.RefreshSelected();
+            }
+        }
+
+        private void AcceptOthers(decimal others)
+        {
+            var selected = _Employees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.Others = others;
                 _Employees.RefreshSelected();
             }
         }

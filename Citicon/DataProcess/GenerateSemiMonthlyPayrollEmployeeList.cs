@@ -46,7 +46,8 @@ namespace Citicon.DataProcess
                 SssEr = reader.GetDecimal("SssEr"),
                 SunCellBill = default(decimal),
                 VacationLeave = default(decimal),
-                WithholdingTax = reader.GetDecimal("WithholdingTax")
+                WithholdingTax = reader.GetDecimal("WithholdingTax"),
+                Others = default(decimal)
             };
             await result.CountTimeLogHoursAsync();
 

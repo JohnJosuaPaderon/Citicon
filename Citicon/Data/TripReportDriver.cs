@@ -14,6 +14,58 @@ namespace Citicon.Data
         public Employee Driver { get; }
         public TripReportDateCollection TripDates { get; }
 
+        public decimal ShopRatePay
+        {
+            get
+            {
+                return Driver.ShopRate * TripDates.Count;
+            }
+        }
+
+        public decimal GrossPay
+        {
+            get
+            {
+                return TotalAmount + ShopRatePay;
+            }
+        }
+
+        public int TotalTrips
+        {
+            get
+            {
+                var result = 0;
+
+                foreach (var tripDate in TripDates)
+                {
+                    foreach (var tripProject in tripDate.Projects)
+                    {
+                        result += tripProject.Deliveries.TripCount;
+                    }
+                }
+
+                return result;
+            }
+        }
+
+        public decimal TotalAmount
+        {
+            get
+            {
+                var result = 0M;
+
+                foreach (var tripDate in TripDates)
+                {
+                    foreach (var tripProject in tripDate.Projects)
+                    {
+                        result += tripProject.Deliveries.TotalAmount;
+                    }
+                }
+
+                return result;
+            }
+        }
+
         public static bool operator ==(TripReportDriver left, TripReportDriver right)
         {
             if (ReferenceEquals(left, right))

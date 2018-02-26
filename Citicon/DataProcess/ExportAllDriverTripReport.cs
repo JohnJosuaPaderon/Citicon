@@ -14,11 +14,13 @@ namespace Citicon.DataProcess
             _TripReport = tripReport;
             _Template = ConfigurationManager.AppSettings.GetString("TripReport.All.Template");
             _SaveDirectory = ConfigurationManager.AppSettings.GetString("TripReport.All.SaveDirectory");
+            _SkippedRow = ConfigurationManager.AppSettings.GetInt32("TripReport.All.SkippedRow");
         }
 
         private readonly TripReport _TripReport;
         private readonly string _Template;
         private readonly string _SaveDirectory;
+        private readonly int _SkippedRow;
 
         public override void Execute()
         {
@@ -49,11 +51,11 @@ namespace Citicon.DataProcess
 
                         foreach (var tripDate in driver.TripDates)
                         {
+                            var beginTripDateRow = rowIndex;
+                            var endTripDateRow = beginTripDateRow;
+
                             foreach (var tripProject in tripDate.Projects)
                             {
-                                range = Worksheet.Cells[rowIndex, 1];
-                                range.Value = tripDate.DeliveryDate;
-
                                 range = Worksheet.Cells[rowIndex, 2];
                                 range.Value = tripProject.Project?.Name;
 
@@ -76,10 +78,58 @@ namespace Citicon.DataProcess
                                 range = Worksheet.Cells[rowIndex, 8];
                                 range.Value = tripProject.Deliveries.TotalAmount;
                                 range.NumberFormat = "#,##0.00";
-                                
+
+                                endTripDateRow = rowIndex;
                                 rowIndex++;
                             }
+
+                            if (beginTripDateRow == endTripDateRow)
+                            {
+                                range = Worksheet.Cells[beginTripDateRow, 1];
+                                range.Value = tripDate.DeliveryDate;
+                            }
+                            else
+                            {
+                                range = Worksheet.Range[Worksheet.Cells[beginTripDateRow, 1], Worksheet.Cells[endTripDateRow, 1]];
+                                range.Merge();
+                                range.Value = tripDate.DeliveryDate;
+                            }
                         }
+
+                        range = Worksheet.Range[Worksheet.Cells[rowIndex, 1], Worksheet.Cells[rowIndex, 8]];
+                        var border = range.Borders[Excel.XlBordersIndex.xlEdgeTop];
+                        border.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+                        range = Worksheet.Range[Worksheet.Cells[rowIndex, 4], Worksheet.Cells[rowIndex, 6]];
+                        range.Merge();
+                        range.Value = "TOTAL";
+                        var font = range.Font;
+                        font.Bold = true;
+
+                        range = Worksheet.Cells[rowIndex, 7];
+                        range.Value = driver.TotalTrips;
+
+                        range = Worksheet.Cells[rowIndex, 8];
+                        range.Value = driver.TotalAmount;
+
+                        rowIndex++;
+
+                        range = Worksheet.Range[Worksheet.Cells[rowIndex, 4], Worksheet.Cells[rowIndex, 7]];
+                        range.Merge();
+                        range.Value = $"Shop Rate @ {driver.Driver.ShopRate} per day X {driver.TripDates.Count} day{(driver.TripDates.Count > 1 ? "s" : string.Empty)}";
+
+                        range = Worksheet.Cells[rowIndex, 8];
+                        range.Value = driver.ShopRatePay;
+                        border = range.Borders[Excel.XlBordersIndex.xlEdgeBottom];
+
+                        rowIndex += 2;
+
+                        range = Worksheet.Cells[rowIndex, 8];
+                        range.Value = driver.GrossPay;
+                        font = range.Font;
+                        font.Bold = true;
+
+                        rowIndex += _SkippedRow;
                     }
                 }
 
