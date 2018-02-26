@@ -32,6 +32,7 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.EmployeeTabControl = new System.Windows.Forms.TabControl();
             this.PersonalInformationTabPage = new System.Windows.Forms.TabPage();
+            this.AddPositionButton = new System.Windows.Forms.Button();
             this.PagIbigRtnDependentCountLabel = new System.Windows.Forms.Label();
             this.PagIbigRtnDependentNumberNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.PagIbigRtnRegistrationDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -99,6 +100,8 @@
             this.SssDeductionNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.SssDeductionLabel = new System.Windows.Forms.Label();
             this.EarningsGroupBox = new System.Windows.Forms.GroupBox();
+            this.ShopRateNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ShopRateLabel = new System.Windows.Forms.Label();
             this.OtAllowanceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.OtAllowanceLabel = new System.Windows.Forms.Label();
             this.AllowanceNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -114,7 +117,6 @@
             this.SickLeaveLabel = new System.Windows.Forms.Label();
             this.VacationLeaveNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.VacationLeaveLabel = new System.Windows.Forms.Label();
-            this.AddPositionButton = new System.Windows.Forms.Button();
             this.EmployeeTabControl.SuspendLayout();
             this.PersonalInformationTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PagIbigRtnDependentNumberNumericUpDown)).BeginInit();
@@ -127,6 +129,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SssErDeductionNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SssDeductionNumericUpDown)).BeginInit();
             this.EarningsGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShopRateNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OtAllowanceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AllowanceNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DailyRateNumericUpDown)).BeginInit();
@@ -245,6 +248,19 @@
             this.PersonalInformationTabPage.TabIndex = 0;
             this.PersonalInformationTabPage.Text = "PERSONAL INFO";
             this.PersonalInformationTabPage.UseVisualStyleBackColor = true;
+            // 
+            // AddPositionButton
+            // 
+            this.AddPositionButton.BackColor = System.Drawing.Color.Red;
+            this.AddPositionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddPositionButton.ForeColor = System.Drawing.Color.White;
+            this.AddPositionButton.Location = new System.Drawing.Point(213, 119);
+            this.AddPositionButton.Name = "AddPositionButton";
+            this.AddPositionButton.Size = new System.Drawing.Size(30, 26);
+            this.AddPositionButton.TabIndex = 52;
+            this.AddPositionButton.Text = "+";
+            this.AddPositionButton.UseVisualStyleBackColor = false;
+            this.AddPositionButton.Click += new System.EventHandler(this.AddPositionButton_Click);
             // 
             // PagIbigRtnDependentCountLabel
             // 
@@ -868,6 +884,8 @@
             // 
             this.EarningsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.EarningsGroupBox.Controls.Add(this.ShopRateNumericUpDown);
+            this.EarningsGroupBox.Controls.Add(this.ShopRateLabel);
             this.EarningsGroupBox.Controls.Add(this.OtAllowanceNumericUpDown);
             this.EarningsGroupBox.Controls.Add(this.OtAllowanceLabel);
             this.EarningsGroupBox.Controls.Add(this.AllowanceNumericUpDown);
@@ -882,6 +900,30 @@
             this.EarningsGroupBox.TabIndex = 1;
             this.EarningsGroupBox.TabStop = false;
             this.EarningsGroupBox.Text = "EARNINGS";
+            // 
+            // ShopRateNumericUpDown
+            // 
+            this.ShopRateNumericUpDown.DecimalPlaces = 2;
+            this.ShopRateNumericUpDown.Location = new System.Drawing.Point(489, 89);
+            this.ShopRateNumericUpDown.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.ShopRateNumericUpDown.Name = "ShopRateNumericUpDown";
+            this.ShopRateNumericUpDown.Size = new System.Drawing.Size(234, 25);
+            this.ShopRateNumericUpDown.TabIndex = 9;
+            this.ShopRateNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ShopRateNumericUpDown.ThousandsSeparator = true;
+            // 
+            // ShopRateLabel
+            // 
+            this.ShopRateLabel.AutoSize = true;
+            this.ShopRateLabel.Location = new System.Drawing.Point(486, 69);
+            this.ShopRateLabel.Name = "ShopRateLabel";
+            this.ShopRateLabel.Size = new System.Drawing.Size(68, 17);
+            this.ShopRateLabel.TabIndex = 8;
+            this.ShopRateLabel.Text = "Shop Rate";
             // 
             // OtAllowanceNumericUpDown
             // 
@@ -1051,19 +1093,6 @@
             this.VacationLeaveLabel.TabIndex = 0;
             this.VacationLeaveLabel.Text = "Vacation Leave (Remaining)";
             // 
-            // AddPositionButton
-            // 
-            this.AddPositionButton.BackColor = System.Drawing.Color.Red;
-            this.AddPositionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddPositionButton.ForeColor = System.Drawing.Color.White;
-            this.AddPositionButton.Location = new System.Drawing.Point(213, 119);
-            this.AddPositionButton.Name = "AddPositionButton";
-            this.AddPositionButton.Size = new System.Drawing.Size(30, 26);
-            this.AddPositionButton.TabIndex = 52;
-            this.AddPositionButton.Text = "+";
-            this.AddPositionButton.UseVisualStyleBackColor = false;
-            this.AddPositionButton.Click += new System.EventHandler(this.AddPositionButton_Click);
-            // 
             // AddEditEmployeeControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1093,6 +1122,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.SssDeductionNumericUpDown)).EndInit();
             this.EarningsGroupBox.ResumeLayout(false);
             this.EarningsGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShopRateNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OtAllowanceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AllowanceNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DailyRateNumericUpDown)).EndInit();
@@ -1194,5 +1224,7 @@
         private System.Windows.Forms.NumericUpDown WithHoldingTaxNumericUpDown;
         private System.Windows.Forms.Label WithholdingTaxLabel;
         private System.Windows.Forms.Button AddPositionButton;
+        private System.Windows.Forms.NumericUpDown ShopRateNumericUpDown;
+        private System.Windows.Forms.Label ShopRateLabel;
     }
 }

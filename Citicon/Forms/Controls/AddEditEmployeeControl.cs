@@ -102,6 +102,7 @@ namespace Citicon.Forms.Controls
             WithHoldingTaxNumericUpDown.Value = 0;
             PagIbigDeductionNumericUpDown.Value = 0;
             PhilHealthDeductionNumericUpDown.Value = 0;
+            ShopRateNumericUpDown.Value = 0;
 
             if (employee?.Addition != null)
             {
@@ -109,6 +110,7 @@ namespace Citicon.Forms.Controls
                 DailyRateNumericUpDown.Value = employee.Addition.DailyRate;
                 AllowanceNumericUpDown.Value = employee.Addition.Allowance;
                 OtAllowanceNumericUpDown.Value = employee.Addition.OvertimeAllowance;
+                ShopRateNumericUpDown.Value = employee.Addition.ShopRate;
             }
 
             if (employee?.Deduction != null)
@@ -219,6 +221,7 @@ namespace Citicon.Forms.Controls
             Employee.Addition.DailyRate = DailyRateNumericUpDown.Value;
             Employee.Addition.Allowance = AllowanceNumericUpDown.Value;
             Employee.Addition.OvertimeAllowance = OtAllowanceNumericUpDown.Value;
+            Employee.Addition.ShopRate = ShopRateNumericUpDown.Value;
 
             if (Employee.Deduction == null)
             {
@@ -231,16 +234,6 @@ namespace Citicon.Forms.Controls
             Employee.Deduction.Pagibig = PagIbigDeductionNumericUpDown.Value;
             Employee.Deduction.SssEc = SssEcDeductionNumericUpDown.Value;
             Employee.Deduction.PhilHealth = PhilHealthDeductionNumericUpDown.Value;
-            //EmployeePayrollAddition.BasicPay = BasicPayNumericUpDown.Value;
-            //EmployeePayrollAddition.DailyRate = DailyRateNumericUpDown.Value;
-            //EmployeePayrollAddition.Allowance = AllowanceNumericUpDown.Value;
-            //EmployeePayrollAddition.OvertimeAllowance = OtAllowanceNumericUpDown.Value;
-            //EmployeePayrollDeduction.Sss = SssDeductionNumericUpDown.Value;
-            //EmployeePayrollDeduction.SssEc = SssEcDeductionNumericUpDown.Value;
-            //EmployeePayrollDeduction.SssEr = SssErDeductionNumericUpDown.Value;
-            //EmployeePayrollDeduction.PagibigLoan = PagIbigDeductionNumericUpDown.Value;
-            //EmployeePayrollDeduction.PhilHealth = PhilHealthDeductionNumericUpDown.Value;
-            //EmployeePayrollDeduction.WithholdingTax = WithHoldingTaxNumericUpDown.Value;
         }
 
         private async void SaveButton_Click(object sender, EventArgs e)

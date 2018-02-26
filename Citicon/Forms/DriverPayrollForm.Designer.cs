@@ -30,10 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DriverPayrollForm));
             this.BranchComboBox = new System.Windows.Forms.ComboBox();
             this.BranchLabel = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@
             this.DriverPayrollEmployeeDataGridView = new System.Windows.Forms.DataGridView();
             this.DriverPayrollEmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverPayrollEmployee_EmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverPayrollEmployee_ShopRateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverPayrollEmployee_GrossPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverPayrollEmployee_TotalDeductionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverPayrollEmployee_NetPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,18 +176,19 @@
             this.DriverPayrollEmployeeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DriverPayrollEmployeeColumn,
             this.DriverPayrollEmployee_EmployeeColumn,
+            this.DriverPayrollEmployee_ShopRateColumn,
             this.DriverPayrollEmployee_GrossPayColumn,
             this.DriverPayrollEmployee_TotalDeductionColumn,
             this.DriverPayrollEmployee_NetPayColumn,
             this.DriverPayrollEmployee_ExtraColumn});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DriverPayrollEmployeeDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DriverPayrollEmployeeDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
             this.DriverPayrollEmployeeDataGridView.EnableHeadersVisualStyles = false;
             this.DriverPayrollEmployeeDataGridView.GridColor = System.Drawing.Color.Red;
             this.DriverPayrollEmployeeDataGridView.Location = new System.Drawing.Point(15, 61);
@@ -211,11 +214,21 @@
             this.DriverPayrollEmployee_EmployeeColumn.ReadOnly = true;
             this.DriverPayrollEmployee_EmployeeColumn.Width = 89;
             // 
+            // DriverPayrollEmployee_ShopRateColumn
+            // 
+            this.DriverPayrollEmployee_ShopRateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Format = "#,##0.00";
+            this.DriverPayrollEmployee_ShopRateColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DriverPayrollEmployee_ShopRateColumn.HeaderText = "Shop Rate";
+            this.DriverPayrollEmployee_ShopRateColumn.Name = "DriverPayrollEmployee_ShopRateColumn";
+            this.DriverPayrollEmployee_ShopRateColumn.ReadOnly = true;
+            this.DriverPayrollEmployee_ShopRateColumn.Width = 85;
+            // 
             // DriverPayrollEmployee_GrossPayColumn
             // 
             this.DriverPayrollEmployee_GrossPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Format = "#,##0.00";
-            this.DriverPayrollEmployee_GrossPayColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Format = "#,##0.00";
+            this.DriverPayrollEmployee_GrossPayColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.DriverPayrollEmployee_GrossPayColumn.HeaderText = "Gross Pay";
             this.DriverPayrollEmployee_GrossPayColumn.Name = "DriverPayrollEmployee_GrossPayColumn";
             this.DriverPayrollEmployee_GrossPayColumn.ReadOnly = true;
@@ -224,8 +237,8 @@
             // DriverPayrollEmployee_TotalDeductionColumn
             // 
             this.DriverPayrollEmployee_TotalDeductionColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Format = "#,##0.00";
-            this.DriverPayrollEmployee_TotalDeductionColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Format = "#,##0.00";
+            this.DriverPayrollEmployee_TotalDeductionColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.DriverPayrollEmployee_TotalDeductionColumn.HeaderText = "Total Deduction";
             this.DriverPayrollEmployee_TotalDeductionColumn.Name = "DriverPayrollEmployee_TotalDeductionColumn";
             this.DriverPayrollEmployee_TotalDeductionColumn.ReadOnly = true;
@@ -234,8 +247,8 @@
             // DriverPayrollEmployee_NetPayColumn
             // 
             this.DriverPayrollEmployee_NetPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Format = "#,##0.00";
-            this.DriverPayrollEmployee_NetPayColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Format = "#,##0.00";
+            this.DriverPayrollEmployee_NetPayColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.DriverPayrollEmployee_NetPayColumn.HeaderText = "Net Pay";
             this.DriverPayrollEmployee_NetPayColumn.Name = "DriverPayrollEmployee_NetPayColumn";
             this.DriverPayrollEmployee_NetPayColumn.ReadOnly = true;
@@ -558,6 +571,7 @@
             this.Name = "DriverPayrollForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Driver-Payroll";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DriverPayrollForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DriverPayrollEmployeeDataGridView)).EndInit();
             this.PersonalDetailsGroupBox.ResumeLayout(false);
@@ -607,14 +621,15 @@
         private System.Windows.Forms.Label SssLabel;
         public System.Windows.Forms.TextBox WithholdingTaxTextBox;
         private System.Windows.Forms.Label WithholdingTaxLabel;
+        private System.Windows.Forms.GroupBox AdditionsComboBox;
+        public System.Windows.Forms.TextBox ShopRateTextBox;
+        private System.Windows.Forms.Label ShopRateLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployeeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_EmployeeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_ShopRateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_GrossPayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_TotalDeductionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_NetPayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DriverPayrollEmployee_ExtraColumn;
-        private System.Windows.Forms.GroupBox AdditionsComboBox;
-        public System.Windows.Forms.TextBox ShopRateTextBox;
-        private System.Windows.Forms.Label ShopRateLabel;
     }
 }

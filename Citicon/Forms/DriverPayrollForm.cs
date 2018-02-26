@@ -24,7 +24,7 @@ namespace Citicon.Forms
 
         private void ChangeCutOffLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            _Controller.ChangeCutOff();
         }
     }
 }

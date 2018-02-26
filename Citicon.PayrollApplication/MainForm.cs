@@ -1,5 +1,4 @@
 ﻿using Citicon.Forms;
-using Citicon.PayrollIntegration.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -72,6 +71,16 @@ namespace Citicon.PayrollApplication
             }
         }
 
+        private DriverPayrollForm DriverPayrollForm
+        {
+            get
+            {
+                var form = new DriverPayrollForm { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void OpenMdiChild(Form form)
         {
             if (ActiveMdiChild != null && ActiveMdiChild.GetType() == form.GetType())
@@ -122,6 +131,11 @@ namespace Citicon.PayrollApplication
         private void MainForm_Load(object sender, EventArgs e)
         {
             OpenMdiChild(TimeLogViewForm);
+        }
+
+        private void DriverPayrollButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(DriverPayrollForm);
         }
     }
 }

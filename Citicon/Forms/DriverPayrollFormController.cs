@@ -2,7 +2,6 @@
 using Citicon.DataManager;
 using Citicon.Forms.DataLinks;
 using Citicon.WindowsForm;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,10 +14,29 @@ namespace Citicon.Forms
         {
             _Branches = new ComboBoxItemSource<Branch>(_Form.BranchComboBox);
             _PayrollEmployees = new DataGridViewItemSource<DriverPayrollEmployee>(_Form.DriverPayrollEmployeeDataGridView, AddRow, SelectedItemChanged, "DriverPayrollEmployeeColumn", RefreshRow);
+            _WithholdingTaxHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.WithholdingTaxTextBox, accept: AcceptWithholdingTax);
+            _SssHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.SssTextBox, accept: AcceptSss);
+            _SssEcHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.SssEcTextBox, accept: AcceptSssEc);
+            _SssErHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.SssErTextBox, accept: AcceptSssEr);
+            _PagibigHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.PagibigTextBox, accept: AcceptPagibig);
+            _PhilHealthHelper = TextBoxHelper<decimal>.CurrencyHelper(_Form.PhilHealthTextBox, accept: AcceptPhilHealth);
+        }
+
+        public void ChangeCutOff()
+        {
+            WeeklyCutOffForm.Change(Payroll.CutOff);
         }
 
         private readonly ComboBoxItemSource<Branch> _Branches;
         private readonly DataGridViewItemSource<DriverPayrollEmployee> _PayrollEmployees;
+        private readonly TextBoxHelper<decimal> _WithholdingTaxHelper;
+        private readonly TextBoxHelper<decimal> _SssHelper;
+        private readonly TextBoxHelper<decimal> _SssEcHelper;
+        private readonly TextBoxHelper<decimal> _SssErHelper;
+        private readonly TextBoxHelper<decimal> _PagibigHelper;
+        private readonly TextBoxHelper<decimal> _PhilHealthHelper;
+
+        public DriverPayroll Payroll { get; private set; }
 
         private async Task LoadBranchesAsync()
         {
@@ -36,12 +54,17 @@ namespace Citicon.Forms
 
         public async Task InitializeAsync()
         {
+            if (Payroll == null)
+            {
+                Payroll = new DriverPayroll();
+            }
+
             await LoadBranchesAsync();
         }
 
         public async Task GenerateAsync()
         {
-            throw new NotImplementedException();
+
         }
 
         private DataGridViewRow AddRow(DriverPayrollEmployee payrollEmployee)
@@ -50,6 +73,7 @@ namespace Citicon.Forms
                 .SetHeight(30)
                 .AddTextBoxCell(payrollEmployee)
                 .AddTextBoxCell(payrollEmployee.Employee)
+                .AddTextBoxCell(payrollEmployee.ShopRate)
                 .AddTextBoxCell(payrollEmployee.GrossPay)
                 .AddTextBoxCell(payrollEmployee.TotalDeduction)
                 .AddTextBoxCell(payrollEmployee.NetPay);
@@ -90,9 +114,76 @@ namespace Citicon.Forms
         {
             row.Cells["DriverPayrollEmployeeColumn"].Value = payrollEmployee;
             row.Cells["DriverPayrollEmployee_EmployeeColumn"].Value = payrollEmployee.Employee;
+            row.Cells["DriverPayrollEmployee_ShopRateColumn"].Value = payrollEmployee.ShopRate;
             row.Cells["DriverPayrollEmployee_GrossPayColumn"].Value = payrollEmployee.GrossPay;
             row.Cells["DriverPayrollEmployee_TotalDeductionColumn"].Value = payrollEmployee.TotalDeduction;
             row.Cells["DriverPayrollEmployee_NetPayColumn"].Value = payrollEmployee.NetPay;
+        }
+
+        private void AcceptWithholdingTax(decimal withholdingTax)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.WithholdingTax = withholdingTax;
+                _PayrollEmployees.RefreshSelected();
+            }
+        }
+
+        private void AcceptSss(decimal sss)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.Sss = sss;
+                _PayrollEmployees.RefreshSelected();
+            }
+        }
+
+        private void AcceptSssEc(decimal sssEc)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.SssEc = sssEc;
+                _PayrollEmployees.RefreshSelected();
+            }
+        }
+
+        private void AcceptSssEr(decimal sssEr)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.SssEr = sssEr;
+                _PayrollEmployees.RefreshSelected();
+            }
+        }
+
+        private void AcceptPagibig(decimal pagibig)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.Pagibig = pagibig;
+                _PayrollEmployees.RefreshSelected();
+            }
+        }
+
+        private void AcceptPhilHealth(decimal philHealth)
+        {
+            var selected = _PayrollEmployees.SelectedItem;
+
+            if (selected != null)
+            {
+                selected.PhilHealth = philHealth;
+                _PayrollEmployees.RefreshSelected();
+            }
         }
     }
 }

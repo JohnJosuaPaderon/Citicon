@@ -710,6 +710,7 @@
     <Compile Include="Forms\WeeklyCutOffForm.Designer.cs">
       <DependentUpon>WeeklyCutOffForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WeeklyCutOffFormController.cs" />
     <Compile Include="Resources.cs" />
     <Compile Include="Utilities\NightDifferentialWorkingHoursCounter.cs" />
     <Compile Include="Utilities\RegularOvertimeWorkingHoursCounter.cs" />

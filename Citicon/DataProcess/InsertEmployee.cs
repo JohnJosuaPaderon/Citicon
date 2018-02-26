@@ -30,7 +30,7 @@ namespace Citicon.DataProcess
                 .AddInParameter("@_PositionId", Employee.Position?.Id)
                 .AddInParameter("@_BranchId", Employee.Branch?.Id)
                 .AddInParameter("@_CompanyId", Employee.Company?.Id)
-                .AddInParameter("@_PayrollType", Employee.PayrollType?.Id)
+                .AddInParameter("@_PayrollTypeId", Employee.PayrollType?.Id)
                 .AddInParameter("@_BirthDate", Employee.BirthDate)
                 .AddInParameter("@_CivilStatus", Employee.CivilStatus.ToString())
                 .AddInParameter("@_EmploymentDate", Employee.EmploymentDate)
