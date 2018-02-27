@@ -76,8 +76,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.3.0.823, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.3.0.823\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="Sorschia.Ui.Wpf">
-      <HintPath>..\..\..\Sorschia v.1\Sorschia.Ui.Wpf\bin\Release\Sorschia.Ui.Wpf.dll</HintPath>
+    <Reference Include="Sorschia.Ui.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Sorschia for Citicon\Sorschia.Ui.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

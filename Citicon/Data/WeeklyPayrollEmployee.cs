@@ -52,14 +52,6 @@ namespace Citicon.Data
             }
         }
 
-        public decimal NetPay
-        {
-            get
-            {
-                return GrossPay - TotalDeduction;
-            }
-        }
-
         public bool IrregularWorkingHoursDetected
         {
             get
