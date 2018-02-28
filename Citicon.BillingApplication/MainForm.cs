@@ -102,6 +102,16 @@ namespace Citicon.BillingApplication
             }
         }
 
+        private ClientAdvancePaymentManagementForm ClientAdvancePaymentManagementForm
+        {
+            get
+            {
+                var form = new ClientAdvancePaymentManagementForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void InitializeSecurity()
         {
             UserSettingsButton.Enabled = User.CurrentUser.Admin;
@@ -172,6 +182,11 @@ namespace Citicon.BillingApplication
         private void CementSuppliedButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(ConsumedCementSuppliedForm);
+        }
+
+        private void ClientAdvancePaymentManagementFormButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(ClientAdvancePaymentManagementForm);
         }
     }
 }

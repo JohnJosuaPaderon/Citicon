@@ -138,6 +138,8 @@
     <Compile Include="DataProcess\GetCancellableDeliveryListByProjectDesign.cs" />
     <Compile Include="DataProcess\GetCementSuppliedListByProject.cs" />
     <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
+    <Compile Include="DataProcess\GetClientAdvancePaymentList.cs" />
+    <Compile Include="DataProcess\GetClientCredit.cs" />
     <Compile Include="DataProcess\GetClientListWithCementSuppliedProject.cs" />
     <Compile Include="DataProcess\GetClientListWithScheduledProjectDesign.cs" />
     <Compile Include="DataProcess\GetCompanyById.cs" />
@@ -257,6 +259,7 @@
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
     <Compile Include="DataProcess\PayrollExists.cs" />
     <Compile Include="DataProcess\ResetProjectDesignLoadCutOff.cs" />
+    <Compile Include="DataProcess\SaveClientAdvancePayment.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />
     <Compile Include="DataProcess\SaveDriverPayroll.cs" />
     <Compile Include="DataProcess\SaveDriverPayrollEmployee.cs" />
@@ -270,6 +273,7 @@
     <Compile Include="DataProcess\SaveWeeklyPayrollEmployee.cs" />
     <Compile Include="DataProcess\SearchApprovedProject.cs" />
     <Compile Include="DataProcess\SearchApprovedProjectPredicate.cs" />
+    <Compile Include="DataProcess\SearchClient.cs" />
     <Compile Include="DataProcess\SearchItem.cs" />
     <Compile Include="DataProcess\SearchItemCategory.cs" />
     <Compile Include="DataProcess\SearchProjectOption.cs" />
@@ -399,6 +403,7 @@
     <Compile Include="Data\CivilStatus.cs" />
     <Compile Include="Data\Classification.cs" />
     <Compile Include="Data\Client.cs" />
+    <Compile Include="Data\ClientAdvancePayment.cs" />
     <Compile Include="Data\Company.cs" />
     <Compile Include="Data\Converters\PayableTypeConverter.cs" />
     <Compile Include="Data\Converters\ProjectTypeConverter.cs" />
@@ -505,6 +510,13 @@
     <Compile Include="Extensions\MySqlCommandExtension.cs" />
     <Compile Include="Extensions\NameValueCollectionExtension.cs" />
     <Compile Include="Extensions\TimeSpanExtension.cs" />
+    <Compile Include="Forms\AddEditClientAdvancePaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditClientAdvancePaymentForm.Designer.cs">
+      <DependentUpon>AddEditClientAdvancePaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditClientAdvancePaymentFormController.cs" />
     <Compile Include="Forms\AddEditEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -535,6 +547,13 @@
     <Compile Include="Forms\ChequeMonitoringForm.Designer.cs">
       <DependentUpon>ChequeMonitoringForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ClientAdvancePaymentManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientAdvancePaymentManagementForm.Designer.cs">
+      <DependentUpon>ClientAdvancePaymentManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientAdvancePaymentManagementFormController.cs" />
     <Compile Include="Forms\ClientManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -981,6 +1000,9 @@
     <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditClientAdvancePaymentForm.resx">
+      <DependentUpon>AddEditClientAdvancePaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditEmployeeForm.resx">
       <DependentUpon>AddEditEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -995,6 +1017,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChequeMonitoringForm.resx">
       <DependentUpon>ChequeMonitoringForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientAdvancePaymentManagementForm.resx">
+      <DependentUpon>ClientAdvancePaymentManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ClientManagementForm.resx">
       <DependentUpon>ClientManagementForm.cs</DependentUpon>

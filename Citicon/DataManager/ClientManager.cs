@@ -26,6 +26,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<decimal> GetCreditAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new GetClientCredit(client))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public static Task<IEnumerable<Client>> GetListWithCementSuppliedProjectAsync()
         {
             using (var process = new GetClientListWithCementSuppliedProject())
@@ -72,6 +87,51 @@ namespace Citicon.DataManager
                 Title = reader.GetString("Title"),
                 Legitimate = reader.GetBoolean("Legitimate")
             };
+        }
+
+        public static async Task<IEnumerable<Client>> SearchAsync(string searchKey)
+        {
+            if (!string.IsNullOrWhiteSpace(searchKey))
+            {
+                using (var process = new SearchClient(searchKey))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<ClientAdvancePayment> SaveAsync(ClientAdvancePayment advancePayment)
+        {
+            if (advancePayment != null)
+            {
+                using (var process = new SaveClientAdvancePayment(advancePayment))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<IEnumerable<ClientAdvancePayment>> GetAdvancePaymentsAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new GetClientAdvancePaymentList(client))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static async Task<IEnumerable<Client>> GetListAsync()

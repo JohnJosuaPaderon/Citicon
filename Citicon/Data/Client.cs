@@ -19,6 +19,7 @@
         public string Designation { get; set; }
         public Employee Employee { get; set; }
         public bool Legitimate { get; set; }
+        public decimal Credit { get; set; }
 
         public override string ToString()
         {

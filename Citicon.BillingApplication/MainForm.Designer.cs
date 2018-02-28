@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ClientAdvancePaymentManagementFormButton = new System.Windows.Forms.Button();
             this.CementSuppliedButton = new System.Windows.Forms.Button();
             this.PurchaseOrderMonitorButton = new System.Windows.Forms.Button();
             this.DeliveryConfirmationButton = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.ClientAdvancePaymentManagementFormButton);
             this.panel1.Controls.Add(this.CementSuppliedButton);
             this.panel1.Controls.Add(this.PurchaseOrderMonitorButton);
             this.panel1.Controls.Add(this.DeliveryConfirmationButton);
@@ -60,6 +62,22 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel1.Size = new System.Drawing.Size(1472, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // ClientAdvancePaymentManagementFormButton
+            // 
+            this.ClientAdvancePaymentManagementFormButton.BackColor = System.Drawing.Color.Red;
+            this.ClientAdvancePaymentManagementFormButton.FlatAppearance.BorderSize = 0;
+            this.ClientAdvancePaymentManagementFormButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClientAdvancePaymentManagementFormButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientAdvancePaymentManagementFormButton.ForeColor = System.Drawing.Color.White;
+            this.ClientAdvancePaymentManagementFormButton.Location = new System.Drawing.Point(1084, 5);
+            this.ClientAdvancePaymentManagementFormButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.ClientAdvancePaymentManagementFormButton.Name = "ClientAdvancePaymentManagementFormButton";
+            this.ClientAdvancePaymentManagementFormButton.Size = new System.Drawing.Size(125, 50);
+            this.ClientAdvancePaymentManagementFormButton.TabIndex = 9;
+            this.ClientAdvancePaymentManagementFormButton.Text = "CLIENT ADVANCE PAYMENT";
+            this.ClientAdvancePaymentManagementFormButton.UseVisualStyleBackColor = false;
+            this.ClientAdvancePaymentManagementFormButton.Click += new System.EventHandler(this.ClientAdvancePaymentManagementFormButton_Click);
             // 
             // CementSuppliedButton
             // 
@@ -132,7 +150,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(1084, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(1219, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -240,6 +258,7 @@
         private System.Windows.Forms.Button DeliveryConfirmationButton;
         private System.Windows.Forms.Button PurchaseOrderMonitorButton;
         private System.Windows.Forms.Button CementSuppliedButton;
+        private System.Windows.Forms.Button ClientAdvancePaymentManagementFormButton;
     }
 }
 
