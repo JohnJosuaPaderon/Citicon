@@ -57,12 +57,19 @@ namespace Citicon.DataProcess
             {
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add(new MySqlParameter { ParameterName = "@_Id", Direction = ParameterDirection.Output });
-                command.Parameters.AddWithValue("@_PaymentType", BillingPayment.PaymentType);
+                command.Parameters.AddWithValue("@_PaymentType", BillingPayment.PaymentType.ToString());
                 command.Parameters.AddWithValue("@_AmountPaid", BillingPayment.AmountPaid);
                 command.Parameters.AddWithValue("@_VatIncluded", BillingPayment.VatIncluded);
                 command.Parameters.AddWithValue("@_VatLess", BillingPayment.VatLess);
                 command.Parameters.AddWithValue("@_Ewt", BillingPayment.Ewt);
                 command.Parameters.AddWithValue("@_TotalVat", BillingPayment.TotalVat);
+                command.Parameters.AddWithValue("@_OrNumber", BillingPayment.OrNumber);
+                command.Parameters.AddWithValue("@_AckNumber", BillingPayment.AckNumber);
+                command.Parameters.AddWithValue("@_CrNumber", BillingPayment.CrNumber);
+                command.Parameters.AddWithValue("@_PrNumber", BillingPayment.PrNumber);
+                command.Parameters.AddWithValue("@_Bank", BillingPayment.Bank);
+                command.Parameters.AddWithValue("@_ChequeNumber", BillingPayment.ChequeNumber);
+                command.Parameters.AddWithValue("@_ChequeDate", BillingPayment.ChequeDate);
                 await command.ExecuteNonQueryAsync();
                 BillingPayment.Id = Convert.ToUInt64(command.Parameters["@_Id"].Value);
             }

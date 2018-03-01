@@ -10,6 +10,13 @@ namespace Citicon.Data
         public bool VatIncluded { get; set; }
         public decimal? VatLess { get; set; }
         public decimal? Ewt { get; set; }
+        public string OrNumber { get; set; }
+        public string AckNumber { get; set; }
+        public string CrNumber { get; set; }
+        public string PrNumber { get; set; }
+        public string Bank { get; set; }
+        public string ChequeNumber { get; set; }
+        public DateTime ChequeDate { get; set; }
         public decimal? TotalVat
         {
             get

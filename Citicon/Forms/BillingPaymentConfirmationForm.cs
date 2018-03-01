@@ -36,8 +36,8 @@ namespace Citicon.Forms
                     {
                         Height = 30
                     };
-                    row.Cells.Add(new DataGridViewTextBoxCell { Value = billing.SiNumber });
                     row.Cells.Add(new DataGridViewTextBoxCell { Value = billing });
+                    row.Cells.Add(new DataGridViewTextBoxCell { Value = billing.SiNumber });
                     row.Cells.Add(new DataGridViewTextBoxCell { Value = billing.AmountDue });
                     row.Cells.Add(new DataGridViewTextBoxCell { Value = billing.AmountPaid });
                     row.Cells.Add(new DataGridViewTextBoxCell { Value = billing.SubTotal });
@@ -190,6 +190,13 @@ namespace Citicon.Forms
             billingPayment.PaymentType = rbtnPaymentType_Cash.Checked ? BillingPaymentType.Cash : BillingPaymentType.Cheque;
             billingPayment.VatIncluded = vatIncluded;
             billingPayment.VatLess = vatIncluded ? nudVatIncluded_VatLess.Value : new decimal?();
+            billingPayment.OrNumber = OrNumberTextBox.Text;
+            billingPayment.AckNumber = AckNumberTextBox.Text;
+            billingPayment.CrNumber = CrNumberTextBox.Text;
+            billingPayment.PrNumber = PrNumberTextBox.Text;
+            billingPayment.Bank = BankTextBox.Text;
+            billingPayment.ChequeNumber = ChequeNumberTextBox.Text;
+            billingPayment.ChequeDate = ChequeDateTimePicker.Value;
 
             var task = BillingPaymentManager.SavePaymentAsync(billingPayment);
             task.ContinueWith(DisplaySavePaymentResult);
