@@ -35,6 +35,7 @@ namespace Citicon.Data
         private decimal _TotalGrossPay;
         private decimal _TotalDeduction;
         private decimal _TotalNetPay;
+        private decimal _TotalNightDifferentialPay;
 
         public decimal TotalDailyRate
         {
@@ -207,6 +208,15 @@ namespace Citicon.Data
             }
         }
 
+        public decimal TotalNightDifferentialPay
+        {
+            get
+            {
+                TryCompute();
+                return _TotalNightDifferentialPay;
+            }
+        }
+
         private void TryCompute()
         {
             if (!Computed)
@@ -232,6 +242,7 @@ namespace Citicon.Data
                     _TotalGrossPay += payrollEmployee.GrossPay;
                     _TotalDeduction += payrollEmployee.TotalDeduction;
                     _TotalNetPay += payrollEmployee.NetPay;
+                    _TotalNightDifferentialPay += payrollEmployee.NightDifferentialPay;
                 }
 
                 Computed = true;

@@ -48,7 +48,8 @@ namespace Citicon.DataProcess
                 .AddInParameter("@_GrossPay", _PayrollEmployee.GrossPay)
                 .AddInParameter("@_TotalDeduction", _PayrollEmployee.TotalDeduction)
                 .AddInParameter("@_NetPay", _PayrollEmployee.NetPay)
-                .AddInParameter("@_Others", _PayrollEmployee.Others);
+                .AddInParameter("@_Others", _PayrollEmployee.Others)
+                .AddInParameter("@_NightDifferentialPay", _PayrollEmployee.NightDifferentialPay);
         }
 
         private SemiMonthlyPayrollEmployee Callback(int affectedRows, MySqlCommand command)

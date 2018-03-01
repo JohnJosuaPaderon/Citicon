@@ -50,6 +50,7 @@ namespace Citicon.DataProcess
             _GrossPayColumn = GetColumnFromConfig("GrossPay");
             _TotalDeductionColumn = GetColumnFromConfig("TotalDeduction");
             _NetPayColumn = GetColumnFromConfig("NetPay");
+            _NightDifferentialPayColumn = GetColumnFromConfig("NightDifferentialPay");
         }
 
         private readonly WeeklyPayroll _Payroll;
@@ -88,6 +89,7 @@ namespace Citicon.DataProcess
         private readonly ExcelColumn _GrossPayColumn;
         private readonly ExcelColumn _TotalDeductionColumn;
         private readonly ExcelColumn _NetPayColumn;
+        private readonly ExcelColumn _NightDifferentialPayColumn;
 
         private ExcelColumn GetColumnFromConfig(string key)
         {
@@ -210,6 +212,7 @@ namespace Citicon.DataProcess
             Write(rowIndex, _SundayPayColumn, payrollEmployee.SundayPay);
             Write(rowIndex, _SpecialHolidayPayColumn, payrollEmployee.SpecialHolidayPay);
             Write(rowIndex, _SpecialHolidayOvertimePayColumn, payrollEmployee.SpecialHolidayOvertimePay);
+            Write(rowIndex, _NightDifferentialPayColumn, payrollEmployee.NightDifferentialPay);
             Write(rowIndex, _GrossPayColumn, payrollEmployee.GrossPay);
             Write(rowIndex, _TotalDeductionColumn, payrollEmployee.TotalDeduction);
             Write(rowIndex, _NetPayColumn, payrollEmployee.NetPay);

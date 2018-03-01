@@ -52,6 +52,14 @@ namespace Citicon.Data
             }
         }
 
+        public decimal NightDifferentialPay
+        {
+            get
+            {
+                return (DailyRate / 8) * NightDifferentialWorkingHours * 1.25M * 0.1M;
+            }
+        }
+
         public bool IrregularWorkingHoursDetected
         {
             get
@@ -78,7 +86,7 @@ namespace Citicon.Data
 
         protected override decimal ComputeGrossPay()
         {
-            return BasicPay + RegularOvertimePay + SundayPay + OvertimeAllowance + Allowance + SpecialHolidayPay + SpecialHolidayOvertimePay;
+            return BasicPay + RegularOvertimePay + SundayPay + OvertimeAllowance + Allowance + SpecialHolidayPay + SpecialHolidayOvertimePay + NightDifferentialPay;
         }
 
         protected override decimal ComputeTotalDeduction()
