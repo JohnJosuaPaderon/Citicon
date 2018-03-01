@@ -601,7 +601,7 @@
             this.SavePrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SavePrintButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SavePrintButton.ForeColor = System.Drawing.Color.White;
-            this.SavePrintButton.Location = new System.Drawing.Point(925, 641);
+            this.SavePrintButton.Location = new System.Drawing.Point(925, 694);
             this.SavePrintButton.Name = "SavePrintButton";
             this.SavePrintButton.Size = new System.Drawing.Size(125, 40);
             this.SavePrintButton.TabIndex = 24;
@@ -654,10 +654,8 @@
 
         public System.Windows.Forms.ComboBox BranchComboBox;
         private System.Windows.Forms.Label BranchLabel;
-        private System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
         public System.Windows.Forms.TextBox CutOffTextBox;
         private System.Windows.Forms.Label CutOffLabel;
-        private System.Windows.Forms.Button GenerateButton;
         public System.Windows.Forms.DataGridView DriverPayrollEmployeeDataGridView;
         private System.Windows.Forms.GroupBox PersonalDetailsGroupBox;
         public System.Windows.Forms.TextBox PositionTextBox;
@@ -698,6 +696,8 @@
         private System.Windows.Forms.Label OthersLabel;
         public System.Windows.Forms.TextBox CashAdvanceTextBox;
         private System.Windows.Forms.Label CashAdvanceLabel;
-        private System.Windows.Forms.Button SavePrintButton;
+        public System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
+        public System.Windows.Forms.Button GenerateButton;
+        public System.Windows.Forms.Button SavePrintButton;
     }
 }

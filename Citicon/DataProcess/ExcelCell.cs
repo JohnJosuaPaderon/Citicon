@@ -1,6 +1,6 @@
 ﻿namespace Citicon.DataProcess
 {
-    public struct ExcelCell
+    public class ExcelCell
     {
         public ExcelCell(int point)
         {

@@ -23,6 +23,14 @@ namespace Citicon.Data
             }
         }
 
+        public decimal HolidaysPay
+        {
+            get
+            {
+                return Holidays * 378.50M;
+            }
+        }
+
         public bool IrregularitiesDetected
         {
             get
@@ -44,7 +52,7 @@ namespace Citicon.Data
 
         protected override decimal ComputeGrossPay()
         {
-            return ShopRatePay + TripsPay + (Holidays * 378.50M);
+            return ShopRatePay + TripsPay + HolidaysPay;
         }
 
         protected override decimal ComputeTotalDeduction()

@@ -844,7 +844,6 @@
         private System.Windows.Forms.Label BranchLabel;
         public System.Windows.Forms.ComboBox BranchComboBox;
         private System.Windows.Forms.Label CutOffLabel;
-        private System.Windows.Forms.Button GenerateButton;
         public System.Windows.Forms.DataGridView SemiMonthlyPayrollEmployeesDataGridView;
         private System.Windows.Forms.GroupBox PersonalDetailsGroupBox;
         private System.Windows.Forms.Label EmployeeNameLabel;
@@ -896,13 +895,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SemiMonthlyPayrollEmployee_TotalDeductionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SemiMonthlyPayrollEmployee_NetPayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SemiMonthlyPayrollEmployee_ExtraColumn;
-        private System.Windows.Forms.Button SavePrintButton;
-        private System.Windows.Forms.Button ViewTimeLogsButton;
-        private System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
         public System.Windows.Forms.TextBox CutOffTextBox;
         public System.Windows.Forms.TextBox OthersTextBox;
         private System.Windows.Forms.Label OthersLabel;
         public System.Windows.Forms.TextBox CashAdvanceTextBox;
         private System.Windows.Forms.Label CashAdvanceLabel;
+        public System.Windows.Forms.Button GenerateButton;
+        public System.Windows.Forms.Button SavePrintButton;
+        public System.Windows.Forms.Button ViewTimeLogsButton;
+        public System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
     }
 }

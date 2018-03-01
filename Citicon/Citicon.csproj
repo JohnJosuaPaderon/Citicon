@@ -120,6 +120,7 @@
     <Compile Include="DataProcess\ExportChequeReport.cs" />
     <Compile Include="DataProcess\ExportChequeVoucher.cs" />
     <Compile Include="DataProcess\ExportDeliveryReceipt.cs" />
+    <Compile Include="DataProcess\ExportDriverPaySlip.cs" />
     <Compile Include="DataProcess\ExportDriverTripReport.cs" />
     <Compile Include="DataProcess\ExportExcelBase.cs" />
     <Compile Include="DataProcess\ExportExcelPrintOption.cs" />
@@ -127,10 +128,12 @@
     <Compile Include="DataProcess\ExportMRIS.cs" />
     <Compile Include="DataProcess\ExportOutgoingStockReport.cs" />
     <Compile Include="DataProcess\ExportSemiMonthlyPayroll.cs" />
+    <Compile Include="DataProcess\ExportSemiMonthlyPaySlip.cs" />
     <Compile Include="DataProcess\ExportStockReport.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
     <Compile Include="DataProcess\ExportWeeklyPayroll.cs" />
+    <Compile Include="DataProcess\ExportWeeklyPaySlip.cs" />
     <Compile Include="DataProcess\GenerateDriverPayrollEmployeeList.cs" />
     <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
@@ -423,6 +426,7 @@
     <Compile Include="Data\Department.cs" />
     <Compile Include="Data\DriverPayroll.cs" />
     <Compile Include="Data\DriverPayrollEmployee.cs" />
+    <Compile Include="Data\DriverPayrollEmployeeCollection.cs" />
     <Compile Include="Data\Employee.cs" />
     <Compile Include="Data\EmployeeAddition.cs" />
     <Compile Include="Data\EmployeeDeduction.cs" />

@@ -255,6 +255,22 @@ namespace Citicon.Forms
             }
         }
 
+        private void EnableEditableControls(bool enabled)
+        {
+            _Form.BranchComboBox.Enabled = enabled;
+            _Form.ChangeCutOffLinkLabel.Enabled = enabled;
+            _Form.GenerateButton.Enabled = enabled;
+            _Form.SavePrintButton.Enabled = enabled;
+            _Form.WithholdingTaxTextBox.Enabled = enabled;
+            _Form.SssTextBox.Enabled = enabled;
+            _Form.SssEcTextBox.Enabled = enabled;
+            _Form.SssErTextBox.Enabled = enabled;
+            _Form.PagibigTextBox.Enabled = enabled;
+            _Form.PhilHealthTextBox.Enabled = enabled;
+            _Form.CashAdvanceTextBox.Enabled = enabled;
+            _Form.OthersTextBox.Enabled = enabled;
+        }
+
         public async Task SaveAndPrintAsync()
         {
             if (Payroll == null)
@@ -289,13 +305,19 @@ namespace Citicon.Forms
                 {
                     try
                     {
+                        EnableEditableControls(false);
                         Payroll.RunDate = DateTime.Now;
                         await PayrollManager.SaveDriverPayrollAsync(Payroll, _PayrollEmployees);
+                        await PayrollManager.ExportDriverPaySlipAsync(Payroll, _PayrollEmployees);
                         _MessageDisplay.Inform("Payroll successfully saved.");
                     }
                     catch (Exception ex)
                     {
                         _MessageDisplay.Exception(ex);
+                    }
+                    finally
+                    {
+                        EnableEditableControls(true);
                     }
                 }
             }

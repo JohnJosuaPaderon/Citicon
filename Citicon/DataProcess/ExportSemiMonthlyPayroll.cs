@@ -127,7 +127,7 @@ namespace Citicon.DataProcess
             }
             else
             {
-                throw new FileNotFoundException("Semi-Monthly Payroll Template not found", nameof(_TemplatePath));
+                throw new FileNotFoundException("Semi-Monthly Payroll Template not found", _TemplatePath);
             }
         }
 

@@ -44,6 +44,14 @@
             this.BranchComboBox = new System.Windows.Forms.ComboBox();
             this.BranchLabel = new System.Windows.Forms.Label();
             this.WeeklyPayrollEmployeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.WeeklyPayrollEmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyPayrollEmployee_EmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyPayrollEmployee_DailyRateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyPayrollEmployee_BasicPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyPayrollEmployee_GrossPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyPayrollEmployee_TotalDeductionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyPayrollEmployee_NetPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WeeklyPayrollEmployee_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ViewTimeLogsButton = new System.Windows.Forms.Button();
             this.SavePrintButton = new System.Windows.Forms.Button();
             this.DeductionsGroupBox = new System.Windows.Forms.GroupBox();
@@ -92,14 +100,6 @@
             this.DepartmentLabel = new System.Windows.Forms.Label();
             this.EmployeeNameLabel = new System.Windows.Forms.Label();
             this.EmployeeNameTextBox = new System.Windows.Forms.TextBox();
-            this.WeeklyPayrollEmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeeklyPayrollEmployee_EmployeeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeeklyPayrollEmployee_DailyRateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeeklyPayrollEmployee_BasicPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeeklyPayrollEmployee_GrossPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeeklyPayrollEmployee_TotalDeductionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeeklyPayrollEmployee_NetPayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WeeklyPayrollEmployee_ExtraColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.WeeklyPayrollEmployeesDataGridView)).BeginInit();
             this.DeductionsGroupBox.SuspendLayout();
             this.EarningsGroupBox.SuspendLayout();
@@ -221,6 +221,78 @@
             this.WeeklyPayrollEmployeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.WeeklyPayrollEmployeesDataGridView.Size = new System.Drawing.Size(849, 764);
             this.WeeklyPayrollEmployeesDataGridView.TabIndex = 22;
+            // 
+            // WeeklyPayrollEmployeeColumn
+            // 
+            this.WeeklyPayrollEmployeeColumn.HeaderText = "Semi-Monthly Payroll Employee";
+            this.WeeklyPayrollEmployeeColumn.Name = "WeeklyPayrollEmployeeColumn";
+            this.WeeklyPayrollEmployeeColumn.ReadOnly = true;
+            this.WeeklyPayrollEmployeeColumn.Visible = false;
+            // 
+            // WeeklyPayrollEmployee_EmployeeColumn
+            // 
+            this.WeeklyPayrollEmployee_EmployeeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.WeeklyPayrollEmployee_EmployeeColumn.HeaderText = "Employee";
+            this.WeeklyPayrollEmployee_EmployeeColumn.Name = "WeeklyPayrollEmployee_EmployeeColumn";
+            this.WeeklyPayrollEmployee_EmployeeColumn.ReadOnly = true;
+            this.WeeklyPayrollEmployee_EmployeeColumn.Width = 89;
+            // 
+            // WeeklyPayrollEmployee_DailyRateColumn
+            // 
+            this.WeeklyPayrollEmployee_DailyRateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Format = "#,##0.00";
+            this.WeeklyPayrollEmployee_DailyRateColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.WeeklyPayrollEmployee_DailyRateColumn.HeaderText = "Daily Rate";
+            this.WeeklyPayrollEmployee_DailyRateColumn.Name = "WeeklyPayrollEmployee_DailyRateColumn";
+            this.WeeklyPayrollEmployee_DailyRateColumn.ReadOnly = true;
+            this.WeeklyPayrollEmployee_DailyRateColumn.Width = 83;
+            // 
+            // WeeklyPayrollEmployee_BasicPayColumn
+            // 
+            this.WeeklyPayrollEmployee_BasicPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Format = "#,##0.00";
+            this.WeeklyPayrollEmployee_BasicPayColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.WeeklyPayrollEmployee_BasicPayColumn.HeaderText = "Basic Pay";
+            this.WeeklyPayrollEmployee_BasicPayColumn.Name = "WeeklyPayrollEmployee_BasicPayColumn";
+            this.WeeklyPayrollEmployee_BasicPayColumn.ReadOnly = true;
+            this.WeeklyPayrollEmployee_BasicPayColumn.Width = 78;
+            // 
+            // WeeklyPayrollEmployee_GrossPayColumn
+            // 
+            this.WeeklyPayrollEmployee_GrossPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Format = "#,##0.00";
+            this.WeeklyPayrollEmployee_GrossPayColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.WeeklyPayrollEmployee_GrossPayColumn.HeaderText = "Gross Pay";
+            this.WeeklyPayrollEmployee_GrossPayColumn.Name = "WeeklyPayrollEmployee_GrossPayColumn";
+            this.WeeklyPayrollEmployee_GrossPayColumn.ReadOnly = true;
+            this.WeeklyPayrollEmployee_GrossPayColumn.Width = 83;
+            // 
+            // WeeklyPayrollEmployee_TotalDeductionColumn
+            // 
+            this.WeeklyPayrollEmployee_TotalDeductionColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.Format = "#,##0.00";
+            this.WeeklyPayrollEmployee_TotalDeductionColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.WeeklyPayrollEmployee_TotalDeductionColumn.HeaderText = "Total Deduction";
+            this.WeeklyPayrollEmployee_TotalDeductionColumn.Name = "WeeklyPayrollEmployee_TotalDeductionColumn";
+            this.WeeklyPayrollEmployee_TotalDeductionColumn.ReadOnly = true;
+            this.WeeklyPayrollEmployee_TotalDeductionColumn.Width = 113;
+            // 
+            // WeeklyPayrollEmployee_NetPayColumn
+            // 
+            this.WeeklyPayrollEmployee_NetPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle7.Format = "#,##0.00";
+            this.WeeklyPayrollEmployee_NetPayColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.WeeklyPayrollEmployee_NetPayColumn.HeaderText = "Net Pay";
+            this.WeeklyPayrollEmployee_NetPayColumn.Name = "WeeklyPayrollEmployee_NetPayColumn";
+            this.WeeklyPayrollEmployee_NetPayColumn.ReadOnly = true;
+            this.WeeklyPayrollEmployee_NetPayColumn.Width = 53;
+            // 
+            // WeeklyPayrollEmployee_ExtraColumn
+            // 
+            this.WeeklyPayrollEmployee_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.WeeklyPayrollEmployee_ExtraColumn.HeaderText = "";
+            this.WeeklyPayrollEmployee_ExtraColumn.Name = "WeeklyPayrollEmployee_ExtraColumn";
+            this.WeeklyPayrollEmployee_ExtraColumn.ReadOnly = true;
             // 
             // ViewTimeLogsButton
             // 
@@ -725,78 +797,6 @@
             this.EmployeeNameTextBox.Size = new System.Drawing.Size(386, 25);
             this.EmployeeNameTextBox.TabIndex = 0;
             // 
-            // WeeklyPayrollEmployeeColumn
-            // 
-            this.WeeklyPayrollEmployeeColumn.HeaderText = "Semi-Monthly Payroll Employee";
-            this.WeeklyPayrollEmployeeColumn.Name = "WeeklyPayrollEmployeeColumn";
-            this.WeeklyPayrollEmployeeColumn.ReadOnly = true;
-            this.WeeklyPayrollEmployeeColumn.Visible = false;
-            // 
-            // WeeklyPayrollEmployee_EmployeeColumn
-            // 
-            this.WeeklyPayrollEmployee_EmployeeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.WeeklyPayrollEmployee_EmployeeColumn.HeaderText = "Employee";
-            this.WeeklyPayrollEmployee_EmployeeColumn.Name = "WeeklyPayrollEmployee_EmployeeColumn";
-            this.WeeklyPayrollEmployee_EmployeeColumn.ReadOnly = true;
-            this.WeeklyPayrollEmployee_EmployeeColumn.Width = 89;
-            // 
-            // WeeklyPayrollEmployee_DailyRateColumn
-            // 
-            this.WeeklyPayrollEmployee_DailyRateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Format = "#,##0.00";
-            this.WeeklyPayrollEmployee_DailyRateColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.WeeklyPayrollEmployee_DailyRateColumn.HeaderText = "Daily Rate";
-            this.WeeklyPayrollEmployee_DailyRateColumn.Name = "WeeklyPayrollEmployee_DailyRateColumn";
-            this.WeeklyPayrollEmployee_DailyRateColumn.ReadOnly = true;
-            this.WeeklyPayrollEmployee_DailyRateColumn.Width = 83;
-            // 
-            // WeeklyPayrollEmployee_BasicPayColumn
-            // 
-            this.WeeklyPayrollEmployee_BasicPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Format = "#,##0.00";
-            this.WeeklyPayrollEmployee_BasicPayColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.WeeklyPayrollEmployee_BasicPayColumn.HeaderText = "Basic Pay";
-            this.WeeklyPayrollEmployee_BasicPayColumn.Name = "WeeklyPayrollEmployee_BasicPayColumn";
-            this.WeeklyPayrollEmployee_BasicPayColumn.ReadOnly = true;
-            this.WeeklyPayrollEmployee_BasicPayColumn.Width = 78;
-            // 
-            // WeeklyPayrollEmployee_GrossPayColumn
-            // 
-            this.WeeklyPayrollEmployee_GrossPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Format = "#,##0.00";
-            this.WeeklyPayrollEmployee_GrossPayColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.WeeklyPayrollEmployee_GrossPayColumn.HeaderText = "Gross Pay";
-            this.WeeklyPayrollEmployee_GrossPayColumn.Name = "WeeklyPayrollEmployee_GrossPayColumn";
-            this.WeeklyPayrollEmployee_GrossPayColumn.ReadOnly = true;
-            this.WeeklyPayrollEmployee_GrossPayColumn.Width = 83;
-            // 
-            // WeeklyPayrollEmployee_TotalDeductionColumn
-            // 
-            this.WeeklyPayrollEmployee_TotalDeductionColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Format = "#,##0.00";
-            this.WeeklyPayrollEmployee_TotalDeductionColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.WeeklyPayrollEmployee_TotalDeductionColumn.HeaderText = "Total Deduction";
-            this.WeeklyPayrollEmployee_TotalDeductionColumn.Name = "WeeklyPayrollEmployee_TotalDeductionColumn";
-            this.WeeklyPayrollEmployee_TotalDeductionColumn.ReadOnly = true;
-            this.WeeklyPayrollEmployee_TotalDeductionColumn.Width = 113;
-            // 
-            // WeeklyPayrollEmployee_NetPayColumn
-            // 
-            this.WeeklyPayrollEmployee_NetPayColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle7.Format = "#,##0.00";
-            this.WeeklyPayrollEmployee_NetPayColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.WeeklyPayrollEmployee_NetPayColumn.HeaderText = "Net Pay";
-            this.WeeklyPayrollEmployee_NetPayColumn.Name = "WeeklyPayrollEmployee_NetPayColumn";
-            this.WeeklyPayrollEmployee_NetPayColumn.ReadOnly = true;
-            this.WeeklyPayrollEmployee_NetPayColumn.Width = 53;
-            // 
-            // WeeklyPayrollEmployee_ExtraColumn
-            // 
-            this.WeeklyPayrollEmployee_ExtraColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.WeeklyPayrollEmployee_ExtraColumn.HeaderText = "";
-            this.WeeklyPayrollEmployee_ExtraColumn.Name = "WeeklyPayrollEmployee_ExtraColumn";
-            this.WeeklyPayrollEmployee_ExtraColumn.ReadOnly = true;
-            // 
             // WeeklyPayrollForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -840,16 +840,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
         public System.Windows.Forms.TextBox CutOffTextBox;
-        private System.Windows.Forms.Button GenerateButton;
         private System.Windows.Forms.Label CutOffLabel;
         public System.Windows.Forms.ComboBox BranchComboBox;
         private System.Windows.Forms.Label BranchLabel;
         public System.Windows.Forms.DataGridView WeeklyPayrollEmployeesDataGridView;
-        private System.Windows.Forms.Button ViewTimeLogsButton;
-        private System.Windows.Forms.Button SavePrintButton;
         private System.Windows.Forms.GroupBox DeductionsGroupBox;
         public System.Windows.Forms.TextBox OthersTextBox;
         private System.Windows.Forms.Label OthersLabel;
@@ -904,5 +899,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn WeeklyPayrollEmployee_TotalDeductionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn WeeklyPayrollEmployee_NetPayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn WeeklyPayrollEmployee_ExtraColumn;
+        public System.Windows.Forms.LinkLabel ChangeCutOffLinkLabel;
+        public System.Windows.Forms.Button GenerateButton;
+        public System.Windows.Forms.Button ViewTimeLogsButton;
+        public System.Windows.Forms.Button SavePrintButton;
     }
 }

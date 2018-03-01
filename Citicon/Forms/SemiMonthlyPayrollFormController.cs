@@ -53,6 +53,7 @@ namespace Citicon.Forms
             }
 
             _Employees.Clear();
+            _Form.CutOffTextBox.Text = Payroll.CutOff.ToString();
             await LoadBranchesAsync();
         }
 
@@ -307,13 +308,19 @@ namespace Citicon.Forms
             {
                 try
                 {
+                    EnableEditableControls(false);
                     await PayrollManager.SaveSemiMonthlyAsync(Payroll, _Employees);
                     await PayrollManager.ExportSemiMonthlyAsync(Payroll, _Employees);
+                    await PayrollManager.ExportSemiMonthlyPaySlipAsync(Payroll, _Employees);
                     _MessageDisplay.Inform("Payroll successfully saved.");
                 }
                 catch (Exception ex)
                 {
                     _MessageDisplay.Exception(ex);
+                }
+                finally
+                {
+                    EnableEditableControls(true);
                 }
             }
         }
@@ -359,6 +366,25 @@ namespace Citicon.Forms
             }
 
             _Form.CutOffTextBox.Text = Payroll.CutOff.ToString();
+        }
+
+        private void EnableEditableControls(bool enabled)
+        {
+            _Form.BranchComboBox.Enabled = enabled;
+            _Form.ChangeCutOffLinkLabel.Enabled = enabled;
+            _Form.GenerateButton.Enabled = enabled;
+            _Form.ViewTimeLogsButton.Enabled = enabled;
+            _Form.SavePrintButton.Enabled = enabled;
+            _Form.AllowanceTextBox.Enabled = enabled;
+            _Form.OvertimeAllowanceTextBox.Enabled = enabled;
+            _Form.WithholdingTaxTextBox.Enabled = enabled;
+            _Form.SssTextBox.Enabled = enabled;
+            _Form.SssEcTextBox.Enabled = enabled;
+            _Form.SssErTextBox.Enabled = enabled;
+            _Form.PagibigTextBox.Enabled = enabled;
+            _Form.PhilHealthTextBox.Enabled = enabled;
+            _Form.CashAdvanceTextBox.Enabled = enabled;
+            _Form.OthersTextBox.Enabled = enabled;
         }
     }
 }

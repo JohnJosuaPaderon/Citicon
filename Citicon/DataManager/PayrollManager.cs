@@ -196,5 +196,38 @@ namespace Citicon.DataManager
                 }
             }
         }
+
+        public static async Task ExportSemiMonthlyPaySlipAsync(SemiMonthlyPayroll payroll, IEnumerable<SemiMonthlyPayrollEmployee> payrollEmployees)
+        {
+            if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
+            {
+                using (var process = new ExportSemiMonthlyPaySlip(payroll, payrollEmployees))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
+
+        public static async Task ExportWeeklyPaySlipAsync(WeeklyPayroll payroll, IEnumerable<WeeklyPayrollEmployee> payrollEmployees)
+        {
+            if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
+            {
+                using (var process = new ExportWeeklyPaySlip(payroll, payrollEmployees))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
+
+        public static async Task ExportDriverPaySlipAsync(DriverPayroll payroll, IEnumerable<DriverPayrollEmployee> payrollEmployees)
+        {
+            if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
+            {
+                using (var process = new ExportDriverPaySlip(payroll, payrollEmployees))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
     }
 }
