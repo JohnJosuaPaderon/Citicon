@@ -130,6 +130,7 @@
     <Compile Include="DataProcess\ExportStockReport.cs" />
     <Compile Include="DataProcess\ExportTallySheet.cs" />
     <Compile Include="DataProcess\ExportTimeLogReport.cs" />
+    <Compile Include="DataProcess\ExportWeeklyPayroll.cs" />
     <Compile Include="DataProcess\GenerateDriverPayrollEmployeeList.cs" />
     <Compile Include="DataProcess\GenerateLatestIssuanceSlipNumber.cs" />
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
@@ -509,6 +510,7 @@
     <Compile Include="Data\VoidCheque.cs" />
     <Compile Include="Data\WeeklyPayroll.cs" />
     <Compile Include="Data\WeeklyPayrollEmployee.cs" />
+    <Compile Include="Data\WeeklyPayrollEmployeeCollection.cs" />
     <Compile Include="DbDataReaderExtension.cs" />
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\DbParameterCollectionExtension.cs" />

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.HolidayButton = new System.Windows.Forms.Button();
             this.DriverPayrollButton = new System.Windows.Forms.Button();
             this.SemiMonthlyPayrollButton = new System.Windows.Forms.Button();
             this.TransitMixerButton = new System.Windows.Forms.Button();
@@ -37,13 +38,14 @@
             this.DriverTripReportButton = new System.Windows.Forms.Button();
             this.UserSettingsButton = new System.Windows.Forms.Button();
             this.ViewTimeLogsButton = new System.Windows.Forms.Button();
-            this.HolidayButton = new System.Windows.Forms.Button();
+            this.WeeklyPayrollButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.WeeklyPayrollButton);
             this.panel1.Controls.Add(this.HolidayButton);
             this.panel1.Controls.Add(this.DriverPayrollButton);
             this.panel1.Controls.Add(this.SemiMonthlyPayrollButton);
@@ -58,6 +60,22 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.panel1.Size = new System.Drawing.Size(1473, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // HolidayButton
+            // 
+            this.HolidayButton.BackColor = System.Drawing.Color.Red;
+            this.HolidayButton.FlatAppearance.BorderSize = 0;
+            this.HolidayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HolidayButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HolidayButton.ForeColor = System.Drawing.Color.White;
+            this.HolidayButton.Location = new System.Drawing.Point(950, 5);
+            this.HolidayButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.HolidayButton.Name = "HolidayButton";
+            this.HolidayButton.Size = new System.Drawing.Size(125, 50);
+            this.HolidayButton.TabIndex = 11;
+            this.HolidayButton.Text = "HOLIDAYS";
+            this.HolidayButton.UseVisualStyleBackColor = false;
+            this.HolidayButton.Click += new System.EventHandler(this.HolidayButton_Click);
             // 
             // DriverPayrollButton
             // 
@@ -98,7 +116,7 @@
             this.TransitMixerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TransitMixerButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TransitMixerButton.ForeColor = System.Drawing.Color.White;
-            this.TransitMixerButton.Location = new System.Drawing.Point(680, 5);
+            this.TransitMixerButton.Location = new System.Drawing.Point(815, 5);
             this.TransitMixerButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.TransitMixerButton.Name = "TransitMixerButton";
             this.TransitMixerButton.Size = new System.Drawing.Size(125, 50);
@@ -114,7 +132,7 @@
             this.RouteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RouteButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RouteButton.ForeColor = System.Drawing.Color.White;
-            this.RouteButton.Location = new System.Drawing.Point(545, 5);
+            this.RouteButton.Location = new System.Drawing.Point(680, 5);
             this.RouteButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.RouteButton.Name = "RouteButton";
             this.RouteButton.Size = new System.Drawing.Size(125, 50);
@@ -130,7 +148,7 @@
             this.DriverTripReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DriverTripReportButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriverTripReportButton.ForeColor = System.Drawing.Color.White;
-            this.DriverTripReportButton.Location = new System.Drawing.Point(410, 5);
+            this.DriverTripReportButton.Location = new System.Drawing.Point(545, 5);
             this.DriverTripReportButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.DriverTripReportButton.Name = "DriverTripReportButton";
             this.DriverTripReportButton.Size = new System.Drawing.Size(125, 50);
@@ -146,7 +164,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(950, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(1085, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -162,7 +180,7 @@
             this.ViewTimeLogsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewTimeLogsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewTimeLogsButton.ForeColor = System.Drawing.Color.White;
-            this.ViewTimeLogsButton.Location = new System.Drawing.Point(275, 5);
+            this.ViewTimeLogsButton.Location = new System.Drawing.Point(410, 5);
             this.ViewTimeLogsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ViewTimeLogsButton.Name = "ViewTimeLogsButton";
             this.ViewTimeLogsButton.Size = new System.Drawing.Size(125, 50);
@@ -171,21 +189,21 @@
             this.ViewTimeLogsButton.UseVisualStyleBackColor = false;
             this.ViewTimeLogsButton.Click += new System.EventHandler(this.ViewTimeLogsButton_Click);
             // 
-            // HolidayButton
+            // WeeklyPayrollButton
             // 
-            this.HolidayButton.BackColor = System.Drawing.Color.Red;
-            this.HolidayButton.FlatAppearance.BorderSize = 0;
-            this.HolidayButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HolidayButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HolidayButton.ForeColor = System.Drawing.Color.White;
-            this.HolidayButton.Location = new System.Drawing.Point(815, 5);
-            this.HolidayButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.HolidayButton.Name = "HolidayButton";
-            this.HolidayButton.Size = new System.Drawing.Size(125, 50);
-            this.HolidayButton.TabIndex = 11;
-            this.HolidayButton.Text = "HOLIDAYS";
-            this.HolidayButton.UseVisualStyleBackColor = false;
-            this.HolidayButton.Click += new System.EventHandler(this.HolidayButton_Click);
+            this.WeeklyPayrollButton.BackColor = System.Drawing.Color.Red;
+            this.WeeklyPayrollButton.FlatAppearance.BorderSize = 0;
+            this.WeeklyPayrollButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.WeeklyPayrollButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WeeklyPayrollButton.ForeColor = System.Drawing.Color.White;
+            this.WeeklyPayrollButton.Location = new System.Drawing.Point(275, 5);
+            this.WeeklyPayrollButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.WeeklyPayrollButton.Name = "WeeklyPayrollButton";
+            this.WeeklyPayrollButton.Size = new System.Drawing.Size(125, 50);
+            this.WeeklyPayrollButton.TabIndex = 12;
+            this.WeeklyPayrollButton.Text = "WEEKLY PAYROLL";
+            this.WeeklyPayrollButton.UseVisualStyleBackColor = false;
+            this.WeeklyPayrollButton.Click += new System.EventHandler(this.WeeklyPayrollButton_Click);
             // 
             // MainForm
             // 
@@ -221,6 +239,7 @@
         private System.Windows.Forms.Button SemiMonthlyPayrollButton;
         private System.Windows.Forms.Button DriverPayrollButton;
         private System.Windows.Forms.Button HolidayButton;
+        private System.Windows.Forms.Button WeeklyPayrollButton;
     }
 }
 

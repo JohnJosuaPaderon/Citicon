@@ -8,14 +8,14 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Citicon.DataProcess
 {
-    internal sealed class ExportSemiMonthlyPayroll : ExportExcelBase
+    internal sealed class ExportWeeklyPayroll : ExportExcelBase
     {
-        private const string CONFIG_PREFIX = "Payroll.SemiMonthly";
+        private const string CONFIG_PREFIX = "Payroll.Weekly";
 
-        public ExportSemiMonthlyPayroll(SemiMonthlyPayroll payroll, IEnumerable<SemiMonthlyPayrollEmployee> payrollEmployees)
+        public ExportWeeklyPayroll(WeeklyPayroll payroll, IEnumerable<WeeklyPayrollEmployee> payrollEmployees)
         {
             _Payroll = payroll ?? throw new ArgumentNullException(nameof(payroll));
-            _PayrollEmployees = new SemiMonthlyPayrollEmployeeCollection(payrollEmployees);
+            _PayrollEmployees = new WeeklyPayrollEmployeeCollection(payrollEmployees);
             _TemplatePath = GetFromConfig("Template");
             _SaveDirectory = GetFromConfig("SaveDirectory");
             _RowIndexStart = GetInt32FromConfig("RowIndexStart");
@@ -52,8 +52,8 @@ namespace Citicon.DataProcess
             _NetPayColumn = GetColumnFromConfig("NetPay");
         }
 
-        private readonly SemiMonthlyPayroll _Payroll;
-        private readonly SemiMonthlyPayrollEmployeeCollection _PayrollEmployees;
+        private readonly WeeklyPayroll _Payroll;
+        private readonly WeeklyPayrollEmployeeCollection _PayrollEmployees;
         private readonly string _TemplatePath;
         private readonly string _SaveDirectory;
         private readonly int _RowIndexStart;
@@ -125,7 +125,7 @@ namespace Citicon.DataProcess
             }
             else
             {
-                throw new FileNotFoundException("Semi-Monthly Payroll Template not found", nameof(_TemplatePath));
+                throw new FileNotFoundException("Weekly Payroll Template not found", nameof(_TemplatePath));
             }
         }
 
@@ -204,7 +204,7 @@ namespace Citicon.DataProcess
             }
         }
 
-        private void WriteCalculations(int rowIndex, SemiMonthlyPayrollEmployee payrollEmployee)
+        private void WriteCalculations(int rowIndex, WeeklyPayrollEmployee payrollEmployee)
         {
             Write(rowIndex, _RegularOvertimePayColumn, payrollEmployee.RegularOvertimePay);
             Write(rowIndex, _SundayPayColumn, payrollEmployee.SundayPay);
@@ -215,7 +215,7 @@ namespace Citicon.DataProcess
             Write(rowIndex, _NetPayColumn, payrollEmployee.NetPay);
         }
 
-        private void WriteTimeLogHours(int rowIndex, SemiMonthlyPayrollEmployee payrollEmployee)
+        private void WriteTimeLogHours(int rowIndex, WeeklyPayrollEmployee payrollEmployee)
         {
             Write(rowIndex, _RegularWorkingHoursColumn, payrollEmployee.RegularWorkingHours);
             Write(rowIndex, _RegularOvertimeWorkingHoursColumn, payrollEmployee.RegularOvertimeWorkingHours);
@@ -225,7 +225,7 @@ namespace Citicon.DataProcess
             Write(rowIndex, _NightDifferentialWorkingHoursColumn, payrollEmployee.NightDifferentialWorkingHours);
         }
 
-        private void WriteDeductions(int rowIndex, SemiMonthlyPayrollEmployee payrollEmployee)
+        private void WriteDeductions(int rowIndex, WeeklyPayrollEmployee payrollEmployee)
         {
             Write(rowIndex, _WithholdingTaxColumn, payrollEmployee.WithholdingTax);
             Write(rowIndex, _SssColumn, payrollEmployee.Sss);
@@ -237,7 +237,7 @@ namespace Citicon.DataProcess
             Write(rowIndex, _SunCellBillColumn, payrollEmployee.SunCellBill);
         }
 
-        private void WriteAdditions(SemiMonthlyPayrollEmployee payrollEmployee, int rowIndex)
+        private void WriteAdditions(WeeklyPayrollEmployee payrollEmployee, int rowIndex)
         {
             Write(rowIndex, _DailyRateColumn, payrollEmployee.DailyRate);
             Write(rowIndex, _BasicPayColumn, payrollEmployee.BasicPay);

@@ -25,6 +25,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<IEnumerable<WeeklyPayrollEmployee>> GenerateWeeklyPayrollEmployeeListAsync(WeeklyPayroll payroll)
+        {
+            if (payroll != null)
+            {
+                using (var process = new GenerateWeeklyPayrollEmployeeList(payroll))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static async Task<IEnumerable<DriverPayrollEmployee>> GenerateDriverPayrollEmployeeListAsync(DriverPayroll payroll)
         {
             if (payroll != null)
@@ -165,6 +180,17 @@ namespace Citicon.DataManager
             if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
             {
                 using (var process = new ExportSemiMonthlyPayroll(payroll, payrollEmployees))
+                {
+                    await process.ExecuteAsync();
+                }
+            }
+        }
+
+        public static async Task ExportWeeklyAsync(WeeklyPayroll payroll, IEnumerable<WeeklyPayrollEmployee> payrollEmployees)
+        {
+            if (payroll != null && payrollEmployees != null && payrollEmployees.Any())
+            {
+                using (var process = new ExportWeeklyPayroll(payroll, payrollEmployees))
                 {
                     await process.ExecuteAsync();
                 }
