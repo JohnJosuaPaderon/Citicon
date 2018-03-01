@@ -135,6 +135,9 @@
     <Compile Include="DataProcess\GenerateQuotationNumberByType.cs" />
     <Compile Include="DataProcess\GenerateSemiMonthlyPayrollEmployeeList.cs" />
     <Compile Include="DataProcess\GenerateWeeklyPayrollEmployeeList.cs" />
+    <Compile Include="DataProcess\GetBillingPaymentById.cs" />
+    <Compile Include="DataProcess\GetBillingPaymentHistory.cs" />
+    <Compile Include="DataProcess\GetBillingsByClient.cs" />
     <Compile Include="DataProcess\GetCancellableDeliveryListByProjectDesign.cs" />
     <Compile Include="DataProcess\GetCementSuppliedListByProject.cs" />
     <Compile Include="DataProcess\GetCementSuppliedProjectListByClient.cs" />
@@ -394,7 +397,9 @@
     <Compile Include="Data\BankAccount.cs" />
     <Compile Include="Data\Billing.cs" />
     <Compile Include="Data\BillingPayment.cs" />
+    <Compile Include="Data\BillingPaymentHistory.cs" />
     <Compile Include="Data\BillingPaymentType.cs" />
+    <Compile Include="Data\BillingPaymentTypeParser.cs" />
     <Compile Include="Data\BillingStructureType.cs" />
     <Compile Include="Data\Branch.cs" />
     <Compile Include="Data\CancelledDelivery.cs" />
@@ -547,6 +552,7 @@
     <Compile Include="Forms\BillingPaymentHistoryViewForm.Designer.cs">
       <DependentUpon>BillingPaymentHistoryViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BillingPaymentHistoryViewFormController.cs" />
     <Compile Include="Forms\ChequeMonitoringForm.cs">
       <SubType>Form</SubType>
     </Compile>

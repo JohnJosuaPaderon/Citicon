@@ -47,5 +47,35 @@ namespace Citicon.DataManager
                 process.Export();
             }
         }
+
+        public static async Task<IEnumerable<Billing>> GetListByClientAsync(Client client)
+        {
+            if (client != null)
+            {
+                using (var process = new GetBillingsByClient(client))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static async Task<IEnumerable<BillingPaymentHistory>> GetPaymentHistoryAsync(Billing billing)
+        {
+            if (billing != null)
+            {
+                using (var process = new GetBillingPaymentHistory(billing))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

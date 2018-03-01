@@ -112,6 +112,16 @@ namespace Citicon.BillingApplication
             }
         }
 
+        private BillingPaymentHistoryViewForm BillingPaymentHistoryViewForm
+        {
+            get
+            {
+                var form = new BillingPaymentHistoryViewForm() { MdiParent = this };
+                form.FormClosed += (s, e) => form = null;
+                return form;
+            }
+        }
+
         private void InitializeSecurity()
         {
             UserSettingsButton.Enabled = User.CurrentUser.Admin;
@@ -187,6 +197,11 @@ namespace Citicon.BillingApplication
         private void ClientAdvancePaymentManagementFormButton_Click(object sender, EventArgs e)
         {
             OpenMdiChild(ClientAdvancePaymentManagementForm);
+        }
+
+        private void PaymentHistoryButton_Click(object sender, EventArgs e)
+        {
+            OpenMdiChild(BillingPaymentHistoryViewForm);
         }
     }
 }

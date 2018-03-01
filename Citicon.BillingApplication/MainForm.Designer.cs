@@ -40,12 +40,14 @@
             this.PaymentButton = new System.Windows.Forms.Button();
             this.SalesInvoiceButton = new System.Windows.Forms.Button();
             this.BillingButton = new System.Windows.Forms.Button();
+            this.PaymentHistoryButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.PaymentHistoryButton);
             this.panel1.Controls.Add(this.ClientAdvancePaymentManagementFormButton);
             this.panel1.Controls.Add(this.CementSuppliedButton);
             this.panel1.Controls.Add(this.PurchaseOrderMonitorButton);
@@ -150,7 +152,7 @@
             this.UserSettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UserSettingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserSettingsButton.ForeColor = System.Drawing.Color.White;
-            this.UserSettingsButton.Location = new System.Drawing.Point(1219, 5);
+            this.UserSettingsButton.Location = new System.Drawing.Point(1354, 5);
             this.UserSettingsButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserSettingsButton.Name = "UserSettingsButton";
             this.UserSettingsButton.Size = new System.Drawing.Size(125, 50);
@@ -223,6 +225,22 @@
             this.BillingButton.UseVisualStyleBackColor = false;
             this.BillingButton.Click += new System.EventHandler(this.BillingButton_Click);
             // 
+            // PaymentHistoryButton
+            // 
+            this.PaymentHistoryButton.BackColor = System.Drawing.Color.Red;
+            this.PaymentHistoryButton.FlatAppearance.BorderSize = 0;
+            this.PaymentHistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PaymentHistoryButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PaymentHistoryButton.ForeColor = System.Drawing.Color.White;
+            this.PaymentHistoryButton.Location = new System.Drawing.Point(1219, 5);
+            this.PaymentHistoryButton.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.PaymentHistoryButton.Name = "PaymentHistoryButton";
+            this.PaymentHistoryButton.Size = new System.Drawing.Size(125, 50);
+            this.PaymentHistoryButton.TabIndex = 10;
+            this.PaymentHistoryButton.Text = "PAYMENT HISTORY";
+            this.PaymentHistoryButton.UseVisualStyleBackColor = false;
+            this.PaymentHistoryButton.Click += new System.EventHandler(this.PaymentHistoryButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -259,6 +277,7 @@
         private System.Windows.Forms.Button PurchaseOrderMonitorButton;
         private System.Windows.Forms.Button CementSuppliedButton;
         private System.Windows.Forms.Button ClientAdvancePaymentManagementFormButton;
+        private System.Windows.Forms.Button PaymentHistoryButton;
     }
 }
 
