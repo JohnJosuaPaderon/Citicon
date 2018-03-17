@@ -394,15 +394,19 @@ namespace Citicon.Forms.Dialogs
             }
         }
 
-        private void EditDesignButton_Click(object sender, EventArgs e)
+        private async void EditDesignButton_Click(object sender, EventArgs e)
         {
             if (ProjectDesignDataGridView.SelectedRows.Count == 1)
             {
                 var projectDesign = ProjectDesignDataGridView.SelectedRows[0].Cells[ProjectDesignColumn.Name].Value as ProjectDesign;
-                AddEditProjectDesignDialog.ShowEditDialog(projectDesign, false);
 
-                ProjectDesignDataGridView.Rows[ProjectDesignDataGridView.SelectedRows[0].Index].Cells[ProjectDesignColumn.Name].Value = projectDesign;
-                ProjectDesignDataGridView.Refresh();
+                if (projectDesign != null)
+                {
+                    AddEditProjectDesignDialog.ShowEditDialog(projectDesign, false);
+
+                    ProjectDesignDataGridView.Rows[ProjectDesignDataGridView.SelectedRows[0].Index].Cells[ProjectDesignColumn.Name].Value = projectDesign;
+                    ProjectDesignDataGridView.Refresh();
+                }
             }
         }
 
@@ -411,7 +415,7 @@ namespace Citicon.Forms.Dialogs
             
         }
 
-        private void RemoveSelectedDesignButton_Click(object sender, EventArgs e)
+        private async void RemoveSelectedDesignButton_Click(object sender, EventArgs e)
         {
             if (ProjectDesignDataGridView.SelectedRows.Count == 1)
             {
@@ -419,20 +423,30 @@ namespace Citicon.Forms.Dialogs
 
                 if (row.Cells[ProjectDesignColumn.Name].Value is ProjectDesign projectDesign && projectDesign.Id > 0)
                 {
-                    DeletedProjectDesigns.Add(projectDesign);
+                    if (await ProjectDesignManager.AlreadyDeliveredAsync(projectDesign))
+                    {
+                        MessageBox.Show("Unable to delete design that had already been delivered.");
+                    }
+                    else
+                    {
+                        DeletedProjectDesigns.Add(projectDesign);
+                    }
                 }
 
                 ProjectDesignDataGridView.Rows.Remove(row);
             }
         }
 
-        private void RemoveAllDesignsButton_Click(object sender, EventArgs e)
+        private async void RemoveAllDesignsButton_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in ProjectDesignDataGridView.Rows)
             {
                 if (row.Cells[ProjectDesignColumn.Name].Value is ProjectDesign projectDesign && projectDesign.Id > 0)
                 {
-                    DeletedProjectDesigns.Add(projectDesign);
+                    if (!await ProjectDesignManager.AlreadyDeliveredAsync(projectDesign))
+                    {
+                        DeletedProjectDesigns.Add(projectDesign);
+                    }
                 }
             }
 

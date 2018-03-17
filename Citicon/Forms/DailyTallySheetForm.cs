@@ -95,9 +95,11 @@ namespace Citicon.Forms
         {
             if (ProjectDesignDataGridView.Rows.Count > 0)
             {
-                var tallySheet = new TallySheetReport();
-                tallySheet.DeliveryDate = SelectDateTimePicker.Value;
-                tallySheet.Dispatcher = "R. CASTILLEJO";
+                var tallySheet = new TallySheetReport
+                {
+                    DeliveryDate = SelectDateTimePicker.Value,
+                    Dispatcher = "R. CASTILLEJO"
+                };
 
                 foreach (DataGridViewRow row in ProjectDesignDataGridView.Rows)
                 {

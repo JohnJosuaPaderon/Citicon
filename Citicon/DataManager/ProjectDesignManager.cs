@@ -196,6 +196,21 @@ namespace Citicon.DataManager
             }
         }
 
+        public static async Task<bool> AlreadyDeliveredAsync(ProjectDesign projectDesign)
+        {
+            if (projectDesign != null)
+            {
+                using (var process = new ProjectDesignAlreadyDelivered(projectDesign))
+                {
+                    return await process.ExecuteAsync();
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static async Task<ProjectDesign> DeleteAsync(ProjectDesign projectDesign, bool includeToRevisedQuotation = false)
         {
             if (projectDesign != null)

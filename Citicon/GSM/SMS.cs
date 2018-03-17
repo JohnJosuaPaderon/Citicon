@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO.Ports;
 using System.Linq;
 using System.Management;
+using System.Threading;
 
 namespace Citicon.GSM
 {
@@ -25,6 +27,20 @@ namespace Citicon.GSM
             }
         }
 
+        public static void ReadMessage()
+        {
+            var sms = new SMS();
+            var coms = sms.GetCOMs();
+            var com = coms.FirstOrDefault();
+
+            if (com != null)
+            {
+                sms.Connect(com);
+                sms.Read();
+                sms.Disconnect();
+            }
+        }
+
         public SMS()
         {
             GsmPort = new SerialPort();
@@ -40,7 +56,7 @@ namespace Citicon.GSM
             {
                 try
                 {
-                    GsmPort.PortName = com.Name;
+                    GsmPort.PortName = "COM10";
                     GsmPort.BaudRate = 9600;
                     GsmPort.Parity = Parity.None;
                     GsmPort.DataBits = 8;
@@ -78,16 +94,28 @@ namespace Citicon.GSM
 
         public void Read()
         {
-            GsmPort.WriteLine("AT+CMGF=1");
-            GsmPort.WriteLine("AT+CPMS=\"SM\"");
-            GsmPort.WriteLine("AT+CMGL=\"ALL\"");
-            GsmPort.Write("\r");
-
-            var response = GsmPort.ReadExisting();
-
-            if (response.EndsWith($"{Environment.NewLine}OK{Environment.NewLine}"))
+            try
             {
+                GsmPort.WriteLine("AT+CMGF=1");
+                Thread.Sleep(500);
+                GsmPort.WriteLine("AT+CPMS=\"SM\"");
+                Thread.Sleep(500);
+                GsmPort.WriteLine("AT+CMGL=\"ALL\"");
+                Thread.Sleep(500);
+                GsmPort.Write("\r");
 
+                var response = GsmPort.ReadExisting();
+
+                if (response.EndsWith($"{Environment.NewLine}OK{Environment.NewLine}"))
+                {
+                    var x = Convert.ToDateTime("18/03/,14:11:02+32");
+                }
+
+                Debug.WriteLine(response);
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
 

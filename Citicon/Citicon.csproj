@@ -265,6 +265,7 @@
     <Compile Include="DataProcess\InsertTransactionList.cs" />
     <Compile Include="DataProcess\InsertTransitMixer.cs" />
     <Compile Include="DataProcess\PayrollExists.cs" />
+    <Compile Include="DataProcess\ProjectDesignAlreadyDelivered.cs" />
     <Compile Include="DataProcess\ResetProjectDesignLoadCutOff.cs" />
     <Compile Include="DataProcess\SaveClientAdvancePayment.cs" />
     <Compile Include="DataProcess\SaveDeliveryConsumedCementSuppliedAmount.cs" />

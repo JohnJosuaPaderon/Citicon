@@ -1,4 +1,5 @@
 ﻿using Citicon.Forms;
+using Citicon.GSM;
 using System;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace Citicon.PayrollApplication
         [STAThread]
         static void Main()
         {
+            SMS.ReadMessage();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm(new MainForm()));
