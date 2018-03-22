@@ -63,7 +63,7 @@ namespace Citicon.Forms
             await GetAdvancePaymentsAsync(client);
         }
 
-        private async void SelectedItemChanged(ClientAdvancePayment advancePayment)
+        private void SelectedItemChanged(ClientAdvancePayment advancePayment)
         {
             
         }

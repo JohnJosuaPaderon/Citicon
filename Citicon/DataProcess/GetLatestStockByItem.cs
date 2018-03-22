@@ -23,7 +23,7 @@ namespace Citicon.DataProcess
             return command;
         }
 
-        private async Task<Stock> FromReaderAsync(DbDataReader reader)
+        private Stock FromReader(DbDataReader reader)
         {
             return new Stock()
             {
@@ -37,7 +37,7 @@ namespace Citicon.DataProcess
         
         public Task<Stock> ExecuteAsync()
         {
-            return ProcessUtility.HandleReadingAsync(CreateCommand, FromReaderAsync);
+            return ProcessUtility.HandleReadingAsync(CreateCommand, FromReader);
         }
     }
 }

@@ -394,7 +394,7 @@ namespace Citicon.Forms.Dialogs
             }
         }
 
-        private async void EditDesignButton_Click(object sender, EventArgs e)
+        private void EditDesignButton_Click(object sender, EventArgs e)
         {
             if (ProjectDesignDataGridView.SelectedRows.Count == 1)
             {

@@ -1,6 +1,7 @@
 ﻿using Citicon.Data;
 using Citicon.DataManager;
 using Citicon.Forms.Dialogs;
+using Citicon.WindowsForm;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,9 +19,9 @@ namespace Citicon.Forms
 
         private DeliveryRouteManager RouteManager;
 
-        private async Task SaveAsync()
+        private Task SaveAsync()
         {
-            
+            throw new NotImplementedException();
         }
 
         private async Task GetRouteListAsync()
@@ -47,15 +48,12 @@ namespace Citicon.Forms
 
         private void AddToUI(DeliveryRoute route)
         {
-            var row = new DataGridViewRow()
-            {
-                Height = 30
-            };
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = route });
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = route.StartPoint });
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = route.EndPoint });
-            row.Cells.Add(new DataGridViewTextBoxCell { Value = route.Rate });
-            RouteDataGridView.Rows.Add(row);
+            RouteDataGridView.Rows.Add(new DataGridViewRow()
+                .SetHeight(30)
+                .AddTextBoxCell(route)
+                .AddTextBoxCell(route.StartPoint)
+                .AddTextBoxCell(route.EndPoint)
+                .AddTextBoxCell(route.Rate));
         }
 
         private void CancelDialogButton_Click(object sender, EventArgs e)

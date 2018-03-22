@@ -38,7 +38,8 @@ namespace Citicon.Data
                 return string.Format("{0:yy}-{1}", DeliveryDate, DeliveryReceiptNumber);
             }
         }
-        
+        public decimal TotalAmount => PricePerCubicMeter * Volume;
+
         public override string ToString()
         {
             return ProjectDesign?.ToString();

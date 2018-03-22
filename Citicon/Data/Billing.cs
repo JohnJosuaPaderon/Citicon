@@ -67,7 +67,7 @@ namespace Citicon.Data
 
             foreach (Delivery delivery in Deliveries)
             {
-                amountDue += (delivery.PricePerCubicMeter * delivery.Volume);
+                amountDue += delivery.TotalAmount;
             }
 
             return amountDue;

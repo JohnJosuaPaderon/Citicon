@@ -113,7 +113,7 @@ namespace Citicon.GSM
 
                 Debug.WriteLine(response);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -169,9 +169,11 @@ namespace Citicon.GSM
 
         private ManagementScope GetScope()
         {
-            var options = new ConnectionOptions();
-            options.Impersonation = ImpersonationLevel.Impersonate;
-            options.EnablePrivileges = true;
+            var options = new ConnectionOptions
+            {
+                Impersonation = ImpersonationLevel.Impersonate,
+                EnablePrivileges = true
+            };
             var connectionString = $@"\\{Environment.MachineName}\root\cimv2";
 
             var scope = new ManagementScope(connectionString, options);

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace Citicon.Forms
 {
@@ -8,9 +9,9 @@ namespace Citicon.Forms
         {
         }
 
-        public async Task SearchAsync()
+        public Task SearchAsync()
         {
-
+            throw new NotImplementedException();
         }
     }
 }

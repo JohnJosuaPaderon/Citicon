@@ -1935,12 +1935,14 @@
             // 
             // tbxNotes
             // 
+            this.tbxNotes.AcceptsReturn = true;
             this.tbxNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxNotes.Location = new System.Drawing.Point(736, 607);
             this.tbxNotes.Margin = new System.Windows.Forms.Padding(2);
+            this.tbxNotes.Multiline = true;
             this.tbxNotes.Name = "tbxNotes";
-            this.tbxNotes.Size = new System.Drawing.Size(660, 25);
+            this.tbxNotes.Size = new System.Drawing.Size(660, 73);
             this.tbxNotes.TabIndex = 10;
             // 
             // AddStructureTypeLinkLabel
